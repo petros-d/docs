@@ -7,6 +7,7 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
+  noIndex: true,
   organizationName: 'astronomer', // Usually your GitHub org/user name.
   projectName: 'docs-site', // Usually your repo name.
   themeConfig: {
