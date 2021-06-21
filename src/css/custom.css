@@ -7,7 +7,7 @@
 
 /* You can override the default Infima variables here. */
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import '~@fontsource/inter';
 
 :root {
   --ifm-color-primary: #308CCA;
@@ -19,6 +19,7 @@
   --ifm-color-primary-lightest: #6aaedb;
   --ifm-navbar-background-color: #F4F4F5;
   --ifm-code-font-size: 95%;
+  --ifm-font-family-base: Inter, sans-serif;
 }
 
 html[data-theme='dark'] {
