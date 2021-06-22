@@ -30,7 +30,7 @@ module.exports = {
         {
           // Client-side routing, used for navigating within the website.
           // The baseUrl will be automatically prepended to this value.
-          to: 'tutorial-basics/install',
+          to: 'install',
           // The string to be shown.
           label: 'Installation',
           // Left or right side of the navbar.
@@ -71,10 +71,6 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
               label: 'GitHub',
               href: 'https://github.com/facebook/docusaurus',
             },
@@ -94,6 +90,9 @@ module.exports = {
           editUrl:
             'https://github.com/facebook/docusaurus/edit/master/website/',
           routeBasePath: '/',
+          admonitions: {
+
+          },
         },
         blog: {
           showReadingTime: true,
