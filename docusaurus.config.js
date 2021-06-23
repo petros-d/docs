@@ -2,7 +2,7 @@
 module.exports = {
   title: 'Astronomer Cloud (Beta)',
   tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'http://7f3436cbcb3c.ngrok.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -11,6 +11,21 @@ module.exports = {
   organizationName: 'astronomer', // Usually your GitHub org/user name.
   projectName: 'docs-site', // Usually your repo name.
   themeConfig: {
+    algolia: {
+      apiKey: '1821ae84c278294f722376cb52b520c0',
+      indexName: 'beta',
+
+      // Optional: see doc section below
+      contextualSearch: true,
+
+      // Optional: see doc section below
+      appId: 'N4IG87ZX4P',
+
+      // Optional: Algolia search parameters
+      searchParameters: {},
+
+      //... other Algolia params
+    },
     colorMode: {
       disableSwitch: true,
     },
@@ -71,10 +86,6 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
               label: 'GitHub',
               href: 'https://github.com/facebook/docusaurus',
             },
@@ -103,6 +114,9 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        sitemap: {
+          changefreq: 'weekly',
         },
       },
     ],
