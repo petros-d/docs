@@ -93,4 +93,4 @@ Here is a `Danger` admonition
 |------|------|---|-------|-----------------------------------------------------------|
 | I     |  am    |  definitely |        | Going to write some `inline` code. |
 |   <ul><li>2.0.0-4</li><li>1.10.14-3</li><li>1.10.12-4</li><li>1.10.10-8</li><li>1.10.7-18</li></ul>    |  bullets      |      Not sure why this line is showing up grey     |          |                    |
-| Hello? | | | | | 
+| Hello? | | | |This is going to be an extremely long table section with no manual line breaks. I want to see whether Docusaurus automatically wraps the text, or whether we need to find an alternative way to break up text within tables, since using a newline breaks the formatting on the table. Hopefully the formatting of this is wrapped and not one really looooooooooooooooooooooooong line! |
