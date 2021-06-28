@@ -18,12 +18,14 @@
   --ifm-color-primary-lighter: #4b9dd4;
   --ifm-color-primary-lightest: #6aaedb;
   --ifm-navbar-background-color: #F4F4F5;
+  --ifm-footer-background-color: #242234;
   --ifm-code-font-size: 95%;
   --ifm-font-family-base: Inter, sans-serif;
 }
 
 html[data-theme='dark'] {
-  --ifm-navbar-background-color: #232427;
+  --ifm-navbar-background-color: #242234;
+  --ifm-footer-background-color: #242234;
 }
 
 .docusaurus-highlight-code-line {
