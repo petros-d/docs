@@ -25,11 +25,11 @@ module.exports = {
         {
           // Client-side routing, used for navigating within the website.
           // The baseUrl will be automatically prepended to this value.
-          to: 'tutorial-basics/install',
+          to: 'https://www.astronomer.io/docs',
           // The string to be shown.
-          label: 'Installation',
+          label: 'Return to Main Docs ↗️',
           // Left or right side of the navbar.
-          position: 'left', // or 'right'
+          position: 'right', // or 'right'
         },
       ],
     },
@@ -70,8 +70,8 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Released Docs',
-              to: 'https://www.astronomer.io/docs/cloud',
+              label: 'Main Site',
+              to: 'https://www.astronomer.io',
             },
             {
               label: 'GitHub',
