@@ -32,4 +32,4 @@ curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.1-g
 
 ## Running the CLI
 
-The beta version of the CLI is installed as an executable. Unlike with the publicly released CLI, commands must be run directly from your project directory (e.g. `/users/.../astro deploy`). To make running commands easier, we recommend adding the path to the executable to your [$PATH](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/) environment variable.
+The beta version of the CLI is installed as an executable. Unlike with the publicly released CLI, commands must be run directly from where you installed the CLI (e.g. `/users/.../astro deploy`). To make running commands easier, we recommend adding the path to the executable to your [$PATH](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/) environment variable.
