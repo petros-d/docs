@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: Deploy Code
+sidebar_label: 'Deploy Code'
 id: deploy-code
 ---
 

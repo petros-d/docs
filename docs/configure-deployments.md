@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-title: Configure Deployments
+sidebar_label: 'Configure Deployments'
 id: configure-deployments
 ---
 

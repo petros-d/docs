@@ -1,11 +1,12 @@
 ---
-sidebar_label: 'Install CLI (Beta)'
+sidebar_label: 'Install the CLI (Beta)'
 title: Install the Astronomer CLI
+id: install-cli
 ---
 
 ## Overview
 
-The Astronomer CLI is your primary tool for deploying code and DAGs to your Airflow Deployments on Astronomer. For the private beta of Astronomer Cloud, we ask that you install a new beta version of the CLI to accompany your beta Cloud installation.
+The Astronomer CLI is the primary tool for deploying code and DAGs to Airflow Deployments on Astronomer. For the private beta of Astronomer Cloud, we ask that you install a new beta version of the CLI to accompany your beta Cloud installation.
 
 ## Install Commands
 

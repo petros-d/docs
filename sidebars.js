@@ -19,7 +19,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Getting Started',
-      items: [`install`, 'configure-deployments', `deploy-code`],
+      items: [`install`, `install-cli`, 'configure-deployments', `deploy-code`],
     },
     {
       type: `doc`,
