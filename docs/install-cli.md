@@ -6,13 +6,13 @@ id: install-cli
 
 ## Overview
 
-The Astronomer CLI is the primary tool for deploying code and DAGs to Airflow Deployments on Astronomer. For the private beta of Astronomer Cloud, we ask that you install a new beta version of the CLI to accompany your beta Cloud installation.
+The Astronomer CLI is the primary tool for deploying code and DAGs to Airflow Deployments on Astronomer. This guide provides setup and usage instructions for the private beta version of the Astronomer CLI, which must be used when deploying DAGs to your beta environment.
 
-## Install Commands
+## Install the CLI
 
-You'll need a specific beta version of the Astronomer CLI to begin deploying DAGs to your beta environment. In an empty directory on your local machine, run one of the following commands depending on your OS.
+In an empty directory on your local machine, run the appropriate command for your OS:
 
-**macOS**
+**Mac**
 
 ```bash
 curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.1-gen2_darwin_amd64/astro -o astro && chmod +x astro
