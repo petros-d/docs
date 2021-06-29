@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: 'Installation'
+id: install
 ---
 
 # Install Astronomer Cloud on AWS
