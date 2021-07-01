@@ -10,22 +10,69 @@
 @import '~@fontsource/inter';
 
 :root {
-  --ifm-color-primary: #308CCA;
-  --ifm-color-primary-dark: #2b7eb6;
-  --ifm-color-primary-darker: #2977ac;
-  --ifm-color-primary-darkest: #22628d;
-  --ifm-color-primary-light: #4198d2;
-  --ifm-color-primary-lighter: #4b9dd4;
-  --ifm-color-primary-lightest: #6aaedb;
-  --ifm-navbar-background-color: #F4F4F5;
-  --ifm-footer-background-color: #242234;
+  --spectra-colors-black: #1a1c1f;
+  --spectra-colors-white: #fff;
+
+  --spectra-colors-gray-100: #f2f3f7;
+  --spectra-colors-gray-200: #e9ebf0;
+  --spectra-colors-gray-300: #dadbe0;
+  --spectra-colors-gray-400: #b5b7bd;
+  --spectra-colors-gray-500: #95979c;
+  --spectra-colors-gray-600: #6e6f73;
+  --spectra-colors-gray-700: #393a3d;
+  --spectra-colors-gray-800: #2a2b2f;
+  --spectra-colors-gray-900: #1a1c1f;
+
+  --spectra-colors-blue-100: #eefaff;
+  --spectra-colors-blue-200: #dff5ff;
+  --spectra-colors-blue-300: #bfeaff;
+  --spectra-colors-blue-400: #6ecfff;
+  --spectra-colors-blue-500: #32b8fb;
+  --spectra-colors-blue-600: #00a7fb;
+  --spectra-colors-blue-700: #0089ce;
+  --spectra-colors-blue-800: #005580;
+  --spectra-colors-blue-900: #00273b;
+
+  --spectra-colors-purple-100: #f4f2fc;
+  --spectra-colors-purple-200: #ece6f9;
+  --spectra-colors-purple-300: #dbcdf6;
+  --spectra-colors-purple-400: #c2aef0;
+  --spectra-colors-purple-500: #9478d2;
+  --spectra-colors-purple-600: #7352ba;
+  --spectra-colors-purple-700: #59408e;
+  --spectra-colors-purple-800: #3f2971;
+  --spectra-colors-purple-900: #1a0d36;
+
+  --ifm-color-primary: var(--spectra-colors-blue-600);
+  --ifm-color-primary-dark: var(--spectra-colors-blue-700);
+  --ifm-color-primary-darker: var(--spectra-colors-blue-800);
+  --ifm-color-primary-darkest: var(--spectra-colors-blue-900);
+  --ifm-color-primary-light: var(--spectra-colors-blue-500);
+  --ifm-color-primary-lighter: var(--spectra-colors-blue-400);
+  --ifm-color-primary-lightest: var(--spectra-colors-blue-300);
+  
+  --ifm-navbar-link-color: var(--spectra-colors-white);
+
+  --ifm-footer-background-color: var(--spectra-colors-purple-900);
+  --ifm-footer-color: var(--spectra-colors-gray-600);
+
   --ifm-code-font-size: 95%;
   --ifm-font-family-base: Inter, sans-serif;
 }
 
 html[data-theme='dark'] {
-  --ifm-navbar-background-color: #242234;
-  --ifm-footer-background-color: #242234;
+  --ifm-background-color: var(--spectra-colors-gray-900);
+  --ifm-footer-background-color: var(--spectra-colors-purple-900);
+  --ifm-navbar-link-color: var(--spectra-colors-white);
+}
+
+.navbar {
+  background-image: linear-gradient(to right, var(--spectra-colors-black), #2e1f51 80%);
+}
+
+.navbar__logo {
+  height: 140%;
+  margin-right: 1rem;
 }
 
 .docusaurus-highlight-code-line {

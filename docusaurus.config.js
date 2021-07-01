@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Astronomer Cloud (Beta)',
-  tagline: 'Scale Infinitely',
+  tagline: 'Get Started with the Next Generation of Astronomer Cloud',
   url: 'https://beta-docs.astronomer.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -12,14 +12,13 @@ module.exports = {
   projectName: 'docs-site', // Usually your repo name.
   themeConfig: {
     colorMode: {
-      disableSwitch: true,
+      disableSwitch: false,
     },
     navbar: {
-      title: 'Cloud Docs (Beta)',
+      title: 'Cloud Docs [BETA]',
       logo: {
-        alt: 'Site Logo',
-        src: 'img/LogoPrimaryLightMode.svg',
-        srcDark: 'img/LogoPrimaryDarkMode.svg'
+        alt: 'Astronomer',
+        src: 'img/LogoPrimaryDarkMode.svg',
       },
       items: [
         {
@@ -34,7 +33,6 @@ module.exports = {
       ],
     },
     footer: {
-      style: 'dark',
       links: [
         {
           title: 'Docs (Beta)',
@@ -57,12 +55,12 @@ module.exports = {
           title: 'Support',
           items: [
             {
-              label: 'ZenDesk',
-              href: 'https://support.astronomer.io/',
+              label: 'Support',
+              href: 'https://support.astronomer.io',
             },
             {
               label: 'Status',
-              href: 'https://status.astronomer.io/',
+              href: 'https://beta-status.astronomer.io',
             },
           ],
         },
@@ -70,17 +68,17 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Main Site',
+              label: 'astronomer.io',
               to: 'https://www.astronomer.io',
             },
             {
-              label: 'GitHub',
+              label: 'Astronomer on GitHub',
               href: 'https://github.com/astronomer',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Astronomer Inc.`,
+      copyright: '© Astronomer',
     },
   },
   presets: [
