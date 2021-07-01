@@ -55,6 +55,7 @@
 
   --ifm-footer-background-color: var(--spectra-colors-purple-900);
   --ifm-footer-color: var(--spectra-colors-gray-600);
+  --ifm-footer-link-color: var(--spectra-colors-white);
 
   --ifm-code-font-size: 95%;
   --ifm-font-family-base: Inter, sans-serif;
@@ -62,8 +63,12 @@
 
 html[data-theme='dark'] {
   --ifm-background-color: var(--spectra-colors-gray-900);
-  --ifm-footer-background-color: var(--spectra-colors-purple-900);
+
   --ifm-navbar-link-color: var(--spectra-colors-white);
+
+  --ifm-footer-background-color: var(--spectra-colors-purple-900);
+  --ifm-footer-color: var(--spectra-colors-gray-600);
+  --ifm-footer-link-color: var(--spectra-colors-white);
 }
 
 .navbar {
