@@ -6,7 +6,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.png',
+  favicon: 'img/favicon.ico',
   noIndex: true,
   organizationName: 'astronomer', // Usually your GitHub org/user name.
   projectName: 'docs-site', // Usually your repo name.
