@@ -22,9 +22,9 @@ module.exports = {
       items: [`install`, `install-cli`, 'configure-deployments', `deploy-code`],
     },
     {
-      type: `doc`,
-      id: `known-issues`,
-      label: 'Known Limitations',
+      type: 'category',
+      label: 'Reference',
+      items: ['resource-usage', 'known-limitations'],
     },
   ],
 };

@@ -1,10 +1,9 @@
 ---
 sidebar_position: 3
-sidebar_label: 'Known Issues'
-id: known-issues
+sidebar_label: 'Known Limitations'
+title: Known Limitations 
+id: known-limitations
 ---
-
-# Known Limitations
 
 - If a User is invited to a Workspace on Astronomer, manual approval is needed.
 - CLI functionality is generally limited.
