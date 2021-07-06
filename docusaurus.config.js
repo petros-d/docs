@@ -1,8 +1,8 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Astronomer Cloud (Beta)',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  tagline: 'Scale Infinitely',
+  url: 'https://beta-docs.astronomer.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -23,18 +23,13 @@ module.exports = {
       },
       items: [
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
-        },
-        {
           // Client-side routing, used for navigating within the website.
           // The baseUrl will be automatically prepended to this value.
-          to: 'tutorial-basics/install',
+          to: 'https://www.astronomer.io/docs',
           // The string to be shown.
-          label: 'Installation',
+          label: 'Return to Main Docs ↗️',
           // Left or right side of the navbar.
-          position: 'left', // or 'right'
+          position: 'right', // or 'right'
         },
       ],
     },
@@ -42,28 +37,32 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Docs (Beta)',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Overview',
               to: '/',
+            },
+            {
+              label: 'Installation',
+              to: '/install',
+            },
+            {
+              label: 'Known Limitations',
+              to: '/known-issues',
             },
           ],
         },
         {
-          title: 'Community',
+          title: 'Support',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'ZenDesk',
+              href: 'https://support.astronomer.io/',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'Status',
+              href: 'https://status.astronomer.io/',
             },
           ],
         },
@@ -71,17 +70,17 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: 'Main Site',
+              to: 'https://www.astronomer.io',
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/astronomer',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Astronomer Inc.`,
     },
   },
   presets: [
@@ -90,16 +89,17 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+          // Let's use this variable to enable an edit button for GA
+          // editURL: https://github.com/astronomer/beta-docs
+
+          // Makes "Overview" the docs landing page
           routeBasePath: '/',
+          admonitions: {
+
+          },
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
