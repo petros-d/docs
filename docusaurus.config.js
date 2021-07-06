@@ -45,7 +45,7 @@ module.exports = {
             },
             {
               label: 'Installation',
-              to: '/tutorial-basics/install',
+              to: '/install',
             },
             {
               label: 'Known Limitations',
