@@ -47,7 +47,7 @@ module.exports = {
             },
             {
               label: 'Known Limitations',
-              to: '/known-issues',
+              to: '/known-limitations',
             },
           ],
         },
@@ -68,7 +68,7 @@ module.exports = {
           title: 'More',
           items: [
             {
-              label: 'astronomer.io',
+              label: 'Astronomer Homepage',
               to: 'https://www.astronomer.io',
             },
             {
