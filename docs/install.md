@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
-sidebar_label: 'Installation'
+sidebar_label: 'Install the Platform'
+id: install
 ---
 
 # Install Astronomer Cloud on AWS
@@ -84,26 +85,10 @@ To create a new Kubernetes cluster for use on Astronomer Cloud, reach out to Ast
 
 Once created, your new cluster will appear in the **Deployment Location** option when creating a new Deployment.
 
-## Step 5: Install the Astronomer CLI
+## Next Steps
 
-You'll need a specific beta version of the Astronomer CLI to begin deploying DAGs to your beta environment. In an empty directory on your local machine, run one of the following commands depending on your OS:
+After installing the Astronomer beta, read the following to learn how to start deploying DAGs to your managed cloud:
 
-**macOS**
-
-```bash
-curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.1-gen2_darwin_amd64/astro -o astro && chmod +x astro
-```
-
-**Windows(powershell)**
-
-```powershell
-Invoke-WebRequest -Uri https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.1-gen2_windows_amd64/astro.exe -OutFile astro.exe
-```
-
-**Linux**
-
-```bash
-curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.1-gen2_linux_amd64/astro -o astro && chmod +x astro
-```
-
-This will download the beta version of the Astronomer CLI as an executable. Unlike with the publicly released CLI, commands must be run directly from your project directory (e.g. `/users/.../astro deploy`). To make running commands easier, we recommend adding the path to the executable to your [$PATH](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/) environment variable.
+- [Install CLI (Beta)](install-cli)
+- [Deploy Code](deploy-code)
+- [Configure Deployments](configure-deployments)

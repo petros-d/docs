@@ -1,7 +1,11 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Astronomer Cloud (Beta)',
+<<<<<<< HEAD
   tagline: 'Get Started with the Next Generation of Astronomer Cloud',
+=======
+  tagline: 'Scale Infinitely',
+>>>>>>> 3681237aed6c8a892d835550c388d2a98456c550
   url: 'https://beta-docs.astronomer.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -43,11 +47,19 @@ module.exports = {
             },
             {
               label: 'Installation',
+<<<<<<< HEAD
               to: '/tutorial-basics/install',
             },
             {
               label: 'Known Limitations',
               to: '/known-limitations',
+=======
+              to: '/install',
+            },
+            {
+              label: 'Known Limitations',
+              to: '/known-issues',
+>>>>>>> 3681237aed6c8a892d835550c388d2a98456c550
             },
           ],
         },
@@ -55,12 +67,21 @@ module.exports = {
           title: 'Support',
           items: [
             {
+<<<<<<< HEAD
               label: 'Support',
               href: 'https://support.astronomer.io',
             },
             {
               label: 'Status',
               href: 'https://beta-status.astronomer.io',
+=======
+              label: 'ZenDesk',
+              href: 'https://support.astronomer.io/',
+            },
+            {
+              label: 'Status',
+              href: 'https://status.astronomer.io/',
+>>>>>>> 3681237aed6c8a892d835550c388d2a98456c550
             },
           ],
         },
@@ -68,17 +89,29 @@ module.exports = {
           title: 'More',
           items: [
             {
+<<<<<<< HEAD
               label: 'Astronomer Homepage',
               to: 'https://www.astronomer.io',
             },
             {
               label: 'Astronomer on GitHub',
+=======
+              label: 'Main Site',
+              to: 'https://www.astronomer.io',
+            },
+            {
+              label: 'GitHub',
+>>>>>>> 3681237aed6c8a892d835550c388d2a98456c550
               href: 'https://github.com/astronomer',
             },
           ],
         },
       ],
+<<<<<<< HEAD
       copyright: '© Astronomer',
+=======
+      copyright: `Copyright © ${new Date().getFullYear()} Astronomer Inc.`,
+>>>>>>> 3681237aed6c8a892d835550c388d2a98456c550
     },
   },
   presets: [
@@ -92,6 +125,9 @@ module.exports = {
 
           // Makes "Overview" the docs landing page
           routeBasePath: '/',
+          admonitions: {
+
+          },
         },
         blog: {
           showReadingTime: true,
