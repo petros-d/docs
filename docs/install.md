@@ -118,7 +118,7 @@ The output of this command is a YAML file containing information about the role:
 
 ## Step 5: Begin the Installation
 
-Let your Astronomer representative know that you completed the role creation step. From there, they'll will configure all of the resources and connections on your cloud necessary for running Airflow.
+Let your Astronomer representative know that you completed the role creation step. From there, they'll configure all of the resources and connections on your cloud necessary for running Airflow.
 
 This process can take some time. Wait for confirmation that the installation was successful before proceeding to the next step.
 
