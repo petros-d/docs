@@ -21,7 +21,7 @@ Before completing this setup, ensure that you have `CreateAccount` and `CreateRo
 If any AWS resources are on a private network, you can choose between two options:
 
 - Allow traffic via the public internet and use allow-lists for communication.
-- Allow Astronomer to create a VPC in your AWS account, and peer into it with one or more VPCs from your broader network.
+- Create a VPC Peering connection between the Astronomer's VPC and the VPCs for your broader network.
 
 If you want to continue with the latter option, you'll additionally need:
 
@@ -62,9 +62,9 @@ With this information, your Astronomer representative will:
 
 ## Step 4: Create an IAM Role for Astronomer
 
-Once your Astronomer cluster has been created, your Astronomer representative will provide you with an External ID for connecting Astronomer to your AWS account
+Once your Astronomer cluster has been created, your Astronomer representative will securely provide you with an External ID for connecting Astronomer to your AWS account. Save the External ID as a secret or some other secure format.
 
-With the External ID provided by Astronomer, click [here](https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/create/review?templateURL=https://astro-quickstart-us-west-2.s3.us-west-2.amazonaws.com/cloud-formation/customer-account.yaml&stackName=AstroCrossAccountIAMRole&param_AstroAccountId=406882777402) or run the following command to create an [admin IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html#getting-started_create-admin-group-console) for Astronomer in your new AWS account:
+With the External ID, click [here](https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/create/review?templateURL=https://astro-quickstart-us-west-2.s3.us-west-2.amazonaws.com/cloud-formation/customer-account.yaml&stackName=AstroCrossAccountIAMRole&param_AstroAccountId=406882777402) or run the following command to create an [admin IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html#getting-started_create-admin-group-console) for Astronomer in your new AWS account:
 
 ```bash
 aws iam create-role --role-name astronomer-remote-management --assume-role-policy-document "{
@@ -125,7 +125,7 @@ This process can take some time. Wait for confirmation that the installation was
 > **Note** If you need to VPC peer with Astronomer, additionally provide the following information to your Astronomer representative:
 >
 >- Subnet CIDRs (RFC 1918 IP Space).
->- VPC Name/ID for peering with Astronomer. This is accessible through the [AWS VPC console](https://console.aws.amazon.com/vpc/).
+>- VPC Name/ID and region for peering with Astronomer. This is accessible through the [AWS VPC console](https://console.aws.amazon.com/vpc/).
 >- The IPs of your DNS servers.
 >
 > You then need to accept a VPC peering request from Astronomer after Astronomer Cloud is installed. To accept the request, follow [Creating and accepting a VPC peering connection](https://docs.aws.amazon.com/vpc/latest/peering/create-vpc-peering-connection.html) in AWS documentation.
