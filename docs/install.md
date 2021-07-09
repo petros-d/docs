@@ -45,7 +45,7 @@ If you're the first person from your team to authenticate, the Astronomer team w
 
 ## Step 2: Create a New AWS Account
 
-Follow [AWS Documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) to create a new AWS Account for Astronomer. Make sure to configure the minimum required details of the account, including:
+Follow [AWS documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) to create a new AWS Account for Astronomer. Make sure to configure the minimum required details of the account, including:
 
 - Account name
 - Payment method
@@ -63,12 +63,11 @@ From here, our team will provision an Astronomer Cluster according to the specif
 
 ## Step 4: Create an IAM Role for Astronomer
 
-Once your Astronomer Cluster has been created, an Astronomer team member will provide you with an External ID that will allow Astronomer to connect to your AWS account. Save the External ID as a secret or in an otherwise secure format.
+Once your Astronomer Cluster has been created, an Astronomer team member will provide you with an [External ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html) that will allow Astronomer to connect to your AWS account. Save the External ID as a secret or in an otherwise secure format.
 
 Depending on your desired AWS region, click on one of the following links to create an [admin IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html#getting-started_create-admin-group-console) for Astronomer in your new AWS account:
 
 - [us-west-2](https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/create/review?templateURL=https://astro-quickstart-us-west-2.s3.us-west-2.amazonaws.com/cloud-formation/customer-account.yaml&stackName=AstroCrossAccountIAMRole&param_AstroAccountId=406882777402)
-
 - [us-east-1](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://astro-quickstart-us-east-1.s3.us-east-1.amazonaws.com/cloud-formation/customer-account.yaml&stackName=AstroCrossAccountIAMRole&param_AstroAccountId=406882777402)
 
 Alternatively, run the following AWS CLI command:
@@ -129,7 +128,7 @@ Let our team know once you've created the admin IAM role for Astronomer. From th
 
 This process can take some time. Wait for confirmation that the installation was successful before proceeding to the next step.
 
-> **Note** If you need to VPC peer with Astronomer, additionally provide the following information to your Astronomer representative:
+> **Note**: If you need to VPC peer with Astronomer, additionally provide the following information to your Astronomer representative:
 >
 >- Subnet CIDRs (RFC 1918 IP Space).
 >- VPC Name/ID and region for peering with Astronomer. This is accessible through the [AWS VPC console](https://console.aws.amazon.com/vpc/).
@@ -147,8 +146,8 @@ Once our team confirms that your Astronomer Cluster has been created, you are re
 
 ## Next Steps
 
-After installing the Astronomer beta, read the following to learn how to start deploying DAGs to your managed cloud:
+Now that you have an Astronomer Cluster up and running, take a look at the docs below for information on how to install the Astronomer CLI, configure your Deployment, and start deploying DAGs.
 
-- [Install CLI (Beta)](install-cli)
-- [Deploy Code](deploy-code)
+- [Install CLI (Private Beta)](install-cli)
 - [Configure Deployments](configure-deployments)
+- [Deploy Code](deploy-code)
