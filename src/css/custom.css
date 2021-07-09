@@ -80,6 +80,10 @@ html[data-theme='dark'] {
   margin-right: 1rem;
 }
 
+.main-wrapper {
+  padding-top: 2rem;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
