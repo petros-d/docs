@@ -1,7 +1,7 @@
 ---
-sidebar_label: "Install on AWS"
-id: install-aws
-title: Install Astronomer Cloud on AWS
+sidebar_label: 'Install on AWS'
+title: 'Install Astronomer Cloud on AWS'
+id: 'install-aws'
 ---
 
 ## Overview

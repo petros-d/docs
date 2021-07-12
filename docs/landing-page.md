@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
-slug: /
 sidebar_label: 'Overview'
-id: landing-page
+title: 'Astronomer Cloud Private Beta Overview'
+id: 'landing-page'
+slug: /
 ---
 
 # Overview
