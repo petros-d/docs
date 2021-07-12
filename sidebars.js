@@ -23,7 +23,7 @@ module.exports = {
     },
     {
       type: `doc`,
-      id: `known-issues`,
+      id: `known-limitations`,
       label: 'Known Limitations',
     },
   ],
