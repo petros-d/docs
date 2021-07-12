@@ -1,6 +1,6 @@
 ---
 sidebar_label: "Resource Usage"
-id: resource-usage
+id: resource-reference-aws
 title: Resource Usage per Cluster
 ---
 

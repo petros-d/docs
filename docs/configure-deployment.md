@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 sidebar_label: 'Configure Deployments'
-id: configure-deployments
+id: configure-deployment
 ---
 
 # Create a Workspace and Deployment
