@@ -43,7 +43,7 @@ module.exports = {
             },
             {
               label: 'Install on AWS',
-              to: 'install-aws',
+              to: '/install-aws',
             },
             {
               label: 'Known Limitations',
