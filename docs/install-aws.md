@@ -10,7 +10,7 @@ Welcome to Astronomer! We're excited to help you get started with the Astronomer
 
 For the initial installation, Astronomer will provision a single Astronomer Cluster which hosts the resources and Apache Airflow components necessary to deploy DAGs and execute tasks. If you'd like to support more than 1 Astronomer Cluster, reach out to us.
 
-For a complete list of the AWS resources that our team will provision in your AWS account, see [Resource Usage](resource-usage).
+For a complete list of the AWS resources that our team will provision in your AWS account, see [Resource Usage](resource-reference-aws).
 
 ## Prerequisites
 
@@ -149,5 +149,5 @@ Once our team confirms that your Astronomer Cluster has been created, you are re
 Now that you have an Astronomer Cluster up and running, take a look at the docs below for information on how to install the Astronomer CLI, configure your Deployment, and start deploying DAGs.
 
 - [Install CLI (Private Beta)](install-cli)
-- [Configure Deployments](configure-deployments)
+- [Configure Deployments](configure-deployment)
 - [Deploy Code](deploy-code)
