@@ -14,16 +14,9 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@docusaurus/core": "2.0.0-beta.0",
-    "@docusaurus/plugin-sitemap": "^2.0.0-beta.1",
-    "@docusaurus/preset-classic": "2.0.0-beta.0",
-    "@fontsource/inter": "^4.4.5",
-=======
     "@docusaurus/core": "2.0.0-beta.3",
     "@docusaurus/preset-classic": "2.0.0-beta.3",
     "@fontsource/inter": "^4.5.0",
->>>>>>> f807f23a6602fd537560765218ac34aaf5221836
     "@mdx-js/react": "^1.6.21",
     "@svgr/webpack": "^5.5.0",
     "clsx": "^1.1.1",
