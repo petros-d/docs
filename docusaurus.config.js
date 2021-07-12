@@ -47,7 +47,7 @@ module.exports = {
             },
             {
               label: 'Known Limitations',
-              to: '/known-issues',
+              to: '/known-limitations',
             },
           ],
         },
