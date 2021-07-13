@@ -6,15 +6,26 @@ id: 'install-aws'
 
 ## Overview
 
-Welcome to Astronomer! We're excited to help you get started with the Astronomer Cloud Private Beta program on AWS. Below, you'll find instructions for how to complete the Astronomer Cloud install process, including prerequisites and the steps required for our team to provision resources within your AWS Account.
+We're excited to help you get started with the Private Beta Program for Astronomer Cloud on AWS. Below, you'll find instructions for how to complete the Astronomer Cloud install process, including prerequisites and the steps required for our team to provision resources in your network.
 
-For the initial installation, Astronomer will provision a single Astronomer Cluster which hosts the resources and Apache Airflow components necessary to deploy DAGs and execute tasks. If you'd like to support more than 1 Astronomer Cluster, reach out to us.
+At a high-level, we'll ask that you come prepared with a new AWS account. From there, you can expect to:
+- Create an account on Astronomer.
+- Share AWS account information with our team.
+- Create an IAM role that Astronomer can assume within your new AWS account.
+
+Astronomer will then create a Cluster within your AWS account that hosts the resources and Apache Airflow components necessary to deploy DAGs and execute tasks. If you'd like to support more than 1 Astronomer Cluster, reach out to us.
 
 For a complete list of the AWS resources that our team will provision in your AWS account, see [Resource Usage](resource-reference-aws).
 
 ## Prerequisites
 
-Before proceeding with setup, you will need a new AWS account with a user that has `CreateAccount` and `CreateRole` permissions on that account. Astronomer will then assume a role on that account to create and manage your Airflow deployments.
+Before completing this setup, you will need:
+
+- A new AWS account.
+- A user that has `CreateAccount` and `CreateRole` permissions on that account.
+
+For instructions, follow [AWS documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/). Once your AWS account is created, proceed to Step 1.
+
 ### VPC Peering Prerequisites (Optional)
 
 If any AWS resources are on a private network, you can choose between two options:
@@ -42,17 +53,9 @@ Once you log in, you'll see a screen that says: "Welcome to Astronomer Cloud Pri
 
 If you're the first person from your team to authenticate, the Astronomer team will add you as a Workspace Admin to a new Workspace named after your Organization. From there, you'll be able to add other team members to that Workspace without Astronomer's assistance.
 
-## Step 2: Create a New AWS Account
+## Step 2: Share Information with Astronomer
 
-Follow [AWS documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/) to create a new AWS Account for Astronomer. Make sure to configure the minimum required details of the account, including:
-
-- Account name
-- Payment method
-- Contact information
-
-## Step 3: Share Information with Astronomer
-
-Once your AWS account is created, provide Astronomer with:
+For the AWS account you created as a prerequisite, provide Astronomer with:
 
 - Your AWS Account ID.
 - Your preferred Astronomer Cluster name.
@@ -60,7 +63,7 @@ Once your AWS account is created, provide Astronomer with:
 
 From here, our team will provision an Astronomer Cluster according to the specifications above.
 
-## Step 4: Create an IAM Role for Astronomer
+## Step 3: Create an IAM Role for Astronomer
 
 Once your Astronomer Cluster has been created, an Astronomer team member will provide you with an [External ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html) that will allow Astronomer to connect to your AWS account. Save the External ID as a secret or in an otherwise secure format.
 
@@ -121,7 +124,7 @@ The output of this command is a YAML file containing information about the role:
 }
 ```
 
-## Step 5: Let Astronomer Complete the Install
+## Step 4: Let Astronomer Complete the Install
 
 Let our team know once you've created the admin IAM role for Astronomer. From there, we will finish creating an Astronomer Cluster in your AWS account that supports Apache Airflow environments.
 
@@ -135,7 +138,7 @@ This process can take some time. Wait for confirmation that the installation was
 >
 > You then need to accept a VPC peering request from Astronomer after Astronomer Cloud is installed. To accept the request, follow [Creating and accepting a VPC peering connection](https://docs.aws.amazon.com/vpc/latest/peering/create-vpc-peering-connection.html) in AWS documentation.
 
-## Step 6: Create a Deployment
+## Step 5: Create a Deployment
 
 Once our team confirms that your Astronomer Cluster has been created, you are ready to create a Deployment and start deploying DAGs. Log in to [the Astronomer UI](https://beta.astronomer.io) again and create a new Deployment. If the installation was successful, your new Astronomer Cluster will be listed as an option in the **Deployment Location**:
 
