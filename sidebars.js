@@ -13,7 +13,7 @@ module.exports = {
   docSidebar: [
     {
       type: 'doc',
-      id: 'landing-page',
+      id: 'overview',
       label: 'Overview',
     },
     {
