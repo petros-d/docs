@@ -28,10 +28,10 @@ For more information on each of these features, explore the documentation links 
 
 Our team will reach out to yours to schedule an onboarding session for the initial install. From there, we recommend reading through the following docs:
 
-- [Configure your Deployment](configure-deployments)
+- [Configure your Deployment](configure-deployment)
 - [Install the Astronomer CLI (Private Beta)](install-cli)
 - [Deploy Code](deploy-code)
 
-If you have a feature request or find a bug to report, reach out to us in the in-app chat modal or drop us a note in our shared Slack Channel.
+If you have a feature request or find a bug to report, reach out to us in the in-app chat modal or drop us a note in our shared Slack Channel. You'll be connected directly with our Product team.
 
-We sincerely appreciate your participation and can't wait to form an even deeper partnership with your team. Let's do this thing!
+Once again, we sincerely appreciate your participation and can't wait to form an even deeper partnership with your team. Let's do this thing!
