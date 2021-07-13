@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Install the CLI (Beta)'
-title: Install the Astronomer CLI
-id: install-cli
+title: 'Install the Astronomer CLI'
+id: 'install-cli'
 ---
 
 ## Overview

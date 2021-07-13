@@ -17,14 +17,29 @@ module.exports = {
       label: 'Overview',
     },
     {
-      type: 'category',
-      label: 'Getting Started',
-      items: [`install`, `install-cli`, 'configure-deployments', `deploy-code`],
+      type: 'doc',
+      id: 'install-aws',
+      label: 'Install on AWS',
     },
     {
-      type: `doc`,
-      id: `known-limitations`,
-      label: 'Known Limitations',
+      type: 'doc',
+      id: 'configure-deployment',
+      label: 'Configure a Deployment',
+    },
+    {
+      type: 'doc',
+      id: 'install-cli',
+      label: 'Install the Astronomer CLI',
+    },
+    {
+      type: 'doc',
+      id: 'deploy-code',
+      label: 'Deploy Code',
+    },
+    {
+      type: 'category',
+      label: 'Reference',
+      items: ['known-limitations', 'resource-reference-aws'],
     },
   ],
 };

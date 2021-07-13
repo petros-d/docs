@@ -1,7 +1,7 @@
 ---
-sidebar_position: 3
 sidebar_label: 'Deploy Code'
-id: deploy-code
+title: 'Deploy Code to Astronomer'
+id: 'deploy-code'
 ---
 
 # Deploy Code to Astronomer Cloud
