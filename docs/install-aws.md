@@ -14,8 +14,7 @@ For a complete list of the AWS resources that our team will provision in your AW
 
 ## Prerequisites
 
-Before completing this setup, ensure that you have `CreateAccount` and `CreateRole` permissions on AWS.
-
+Before proceeding with setup, you will need a new AWS account with a user that has `CreateAccount` and `CreateRole` permissions on that account. Astronomer will then assume a role on that account to create and manage your Airflow deployments.
 ### VPC Peering Prerequisites (Optional)
 
 If any AWS resources are on a private network, you can choose between two options:
