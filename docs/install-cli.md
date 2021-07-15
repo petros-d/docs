@@ -62,18 +62,26 @@ Once you run any of the CLI install commands above, you should see the following
 100   215  100   215    0     0    486      0 --:--:-- --:--:-- --:--:--   486
 ```
 
-To confirm the CLI was installed in the correct directory, run `ls`. You should see:
+To confirm the CLI was installed properly, run the following from the directory you just created:
 
 ```
-your-directory % ls
-astro
+./astro version
+```
+
+You should see the following:
+
+```
+<your-directory> % ./astro version
+Astro CLI Version: 0.2.3-beta
+Git Commit: 8fb6db23e3b01a23a5b697a28f2aca8964a49da9
+Astro Server Version: Please authenticate to a cluster to see server version
 ```
 
 ## Step 4. Run CLI Commands
 
 As noted above, the CLI for Astronomer Cloud is installed as a local executable. For that reason, commands *must* be run from the directory in which you installed the CLI.
 
-To make this easier, we recommend adding the directory you just created for your Astronomer project to your `$PATH` variable. This will allow you to run Astronomer CLI commands _without_ explicitly specifying the absolute path to the Astronomer CLI executable file (`astro`). For more information, see [Linux instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/#adding-a-directory-to-your-path).
+To make this easier, we recommend adding the directory you just created for your Astronomer project to your `$PATH` variable. This will allow you to run Astronomer CLI commands _without_ explicitly specifying the absolute path to the executable file (`astro`). For more information, see [Linux instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/#adding-a-directory-to-your-path).
 
 ### Switch between Astronomer CLI Binaries
 
