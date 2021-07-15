@@ -79,19 +79,13 @@ Astro Server Version: Please authenticate to a cluster to see server version
 
 ## Step 4. Run CLI Commands
 
-As noted above, the CLI for Astronomer Cloud is installed as a local executable. For that reason, commands *must* be run from the directory in which you installed the CLI.
-
-To make this easier, we recommend adding the directory you just created for your Astronomer project to your `$PATH` variable. This will allow you to run Astronomer CLI commands _without_ explicitly specifying the absolute path to the executable file (`astro`). For more information, see [Linux instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/#adding-a-directory-to-your-path).
-
-### Switch between Astronomer CLI Binaries
-
-If you're a current Astronomer customer and have the [original Astronomer CLI binary](https://github.com/astronomer/astro-cli) installed, you'll have to explicitly reference the Astronomer Cloud binary (`astro`) every time you run a command from your project directory.
-
-To run the equivalent of `astro dev init`, for example, you'd have to run:
+As noted above, the Astronomer Cloud CLI is installed as a local executable. For that reason, commands *must* be run from the directory in which you installed the CLI and explicitly reference the binary (`astro`). For the equivalent of `astro dev init`, for example, you'd have to run:
 
 ```
 your-directory % ./astro dev init
 ```
+
+To make this easier, we recommend adding the directory you just created for your Astronomer project to your `$PATH` variable. This will allow you to run Astronomer CLI commands _without_ explicitly specifying the absolute path to the executable file (`astro`). For more information, see [Linux instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/#adding-a-directory-to-your-path).
 
 ## What's Next
 
