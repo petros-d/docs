@@ -6,7 +6,7 @@ id: 'known-limitations'
 
 ## Overview
 
-As we bring on 'Build Partners' into the Private Beta Program for Astronomer Cloud, we're fully commited to being transparent about the current limitations of the product. We're moving fast to remove them and certainly excited to work with your team to build out robust, future-proof solutions that address some of these foundational questions.
+As we bring on 'Build Partners' into the Private Beta Program for Astronomer Cloud, we're fully committed to being transparent about the current limitations of the product. We're moving fast to remove them and certainly excited to work with your team to build out robust, future-proof solutions that address some of these foundational questions.
 
 The list below reflects known issues at the time of writing. It will be updated on a weekly basis.
 
