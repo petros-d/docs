@@ -16,10 +16,10 @@ The list below reflects known issues at the time of writing. It will be updated 
 - When a user first creates an account, they will be asked to validate their email address. Email validation is not currently required to access Astronomer Cloud, but we encourage users to follow the process anyway as we will enforce it in the future.
 - On Private Beta, your team will be limited to a single Astronomer Workspace that supports multiple users and Deployments. Support for an Astronomer "Organization" with multiple Workspaces coming soon.
 - Astronomer Runtime 2.1.1 (with Airflow 2.1.1) is the only version currently supported. For now, you cannot upgrade to a higher version of Airflow or Astronomer Runtime.
-- We do not currently support PgBouncer, but the RDS instance provisioned in your Cluster (`db.r4.large`) will support around 1000 connections to your database, enough to support 10-12 Deployments.
+- We do not currently support PgBouncer, but the RDS instance provisioned in your Cluster will support around 1000 connections to your database, enough to support 10-12 Deployments.
 - Tasks longer than the worker termination grace period may become zombies when KEDA autoscaling is enabled.
 - Requests to Apache Airflow's REST API are not currently supported.
-- If a user changes Workspace roles on Astronomer, it can take a maximum of 5 minutes for corresponding Airflow permission changes to take effect.
+- If a user changes Workspace roles on Astronomer, it can take a maximum of 10 minutes for corresponding Airflow permission changes to take effect.
 - The Astronomer CLI is generally limited to `astro dev` commands, in addition to `astro deploy` and `astro auth login`. Full functionality coming soon.
 
 ## Coming Soon
