@@ -15,7 +15,6 @@ During the Private Beta Program for Astronomer Cloud, you can also use the CLI t
 - Authenticate to Astronomer.
 - List the Astronomer Workspace and Deployments you have access to.
 - Deploy to an Airflow Deployment on Astronomer.
-- Create Users and Deployments.
 
 This guide provides instructions for how to install the Astronomer CLI during the Private Beta Program.
 
@@ -24,8 +23,13 @@ This guide provides instructions for how to install the Astronomer CLI during th
 For Astronomer Cloud, the Astronomer CLI is installed as a local `astro` executable instead of globally on your machine. To start, create a new directory for your Astronomer project by running:
 
 ```
-$ mkdir <new-directory-name>
-$ cd <new-directory-name>
+mkdir <new-directory-name>
+```
+
+Then, run:
+
+```
+cd <new-directory-name>
 ```
 
 Next, we'll install the CLI binary in this directory.
@@ -71,7 +75,7 @@ To confirm the CLI was installed properly, run the following from the directory 
 You should see the following:
 
 ```
-<your-directory> % ./astro version
+% ./astro version
 Astro CLI Version: 0.2.4-beta
 ```
 
@@ -80,7 +84,7 @@ Astro CLI Version: 0.2.4-beta
 As noted above, the Astronomer Cloud CLI is installed as a local executable. For that reason, commands *must* be run from the directory in which you installed the CLI and explicitly reference the binary (`astro`). For the equivalent of `astro dev init`, for example, you'd have to run:
 
 ```
-your-directory % ./astro dev init
+./astro dev init
 ```
 
 To make this easier, we recommend adding the directory you just created for your Astronomer project to your `$PATH` variable. This will allow you to run Astronomer CLI commands _without_ explicitly specifying the absolute path to the executable file (`astro`). For more information, see [Linux instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/#adding-a-directory-to-your-path).
