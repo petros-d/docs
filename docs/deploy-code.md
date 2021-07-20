@@ -174,6 +174,10 @@ Once you log in, you should see the DAGs you just deployed.
 Now that you're familiar with deploying DAGs to Astronomer Cloud, consider reading:
 
 - [Customize your Image](https://www.astronomer.io/docs/cloud/stable/develop/customize-image)
-- [Environment Variables](https://www.astronomer.io/docs/cloud/stable/deploy/environment-variables)
+- [Set Environment Variables](https://www.astronomer.io/docs/cloud/stable/deploy/environment-variables)
 
-These docs live in Astronomer's main documentation page and have not been ported over to Private Beta documentation here, though the functionality described is still applicable. If you have any questions, reach out to us.
+These docs live in Astronomer's main documentation page and have not been ported over to Private Beta documentation here, though the functionality described is still applicable.
+
+For up-to-date information about product limitations during the Private Beta Program, read [Known Limitations](known-limitations).
+
+If you have any questions, reach out to us. We're here to help.
