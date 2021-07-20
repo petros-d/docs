@@ -174,7 +174,6 @@ Once you log in, you should see the DAGs you just deployed.
 Now that you're familiar with deploying DAGs to Astronomer Cloud, consider reading:
 
 - [Customize your Image](https://www.astronomer.io/docs/cloud/stable/develop/customize-image)
-- [How to Run the KubernetesPodOperator Locally](https://www.astronomer.io/docs/cloud/stable/develop/kubepodoperator-local)
 - [Environment Variables](https://www.astronomer.io/docs/cloud/stable/deploy/environment-variables)
 
 These docs live in Astronomer's main documentation page and have not been ported over to Private Beta documentation here, though the functionality described is still applicable. If you have any questions, reach out to us.
