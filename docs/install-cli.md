@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Install the CLI (Beta)'
+sidebar_label: 'Install the CLI'
 title: 'Install the Astronomer CLI'
 id: 'install-cli'
 ---
@@ -56,7 +56,7 @@ Invoke-WebRequest -Uri https://astrohubclistorage.blob.core.windows.net/astrohub
 curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.4-beta_linux_amd64/astro -o astro && chmod +x astro
 ```
 
-## Step 4. Confirm the Install
+## Step 3. Confirm the Install
 
 Once you run any of the CLI install commands above, you should see the following output:
 
