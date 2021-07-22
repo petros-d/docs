@@ -41,19 +41,19 @@ Now, run the appropriate command for your OS in the directory you created in Ste
 ### MacOS
 
 ```bash
-curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.4-beta_darwin_amd64/astro -o astro && chmod +x astro
+curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.5-beta_darwin_amd64/astro -o astro && chmod +x astro
 ```
 
 ### Windows (PowerShell)
 
 ```powershell
-Invoke-WebRequest -Uri https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.4-beta_windows_amd64/astro.exe -OutFile astro.exe
+Invoke-WebRequest -Uri https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.5-beta_windows_amd64/astro.exe -OutFile astro.exe
 ```
 
 ### Linux
 
 ```bash
-curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.4-beta_linux_amd64/astro -o astro && chmod +x astro
+curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.5-beta_linux_amd64/astro -o astro && chmod +x astro
 ```
 
 ## Step 3. Confirm the Install
