@@ -162,11 +162,6 @@ If a deploy is triggered while a Celery Worker is executing a task and **Worker 
 
 If it's your first time deploying, expect to wait a few minutes for the Docker image to build. To confirm that your deploy was successful, open your Deployment in the Astronomer UI and click **Open Airflow** to access the Airflow UI.
 
-Log in to the Airflow UI with the default credentials of:
-
-- Username: `admin`
-- Password: `admin`
-
 Once you log in, you should see the DAGs you just deployed.
 
 ## What's Next
