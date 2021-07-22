@@ -6,9 +6,9 @@ id: 'configure-deployment'
 
 ## Overview
 
-A Deployment on Astronomer is an instance of Astronomer Runtime that is powered by Apache Airflow's core components - a metadata database, a Webserver, one or more Schedulers, and one or more Workers. Every Deployment is hosted on a single Astronomer Cluster, has an isolated set of resources, and operates with a dedicated Postgres metadata database.
+A Deployment on Astronomer Cloud is an instance of Astronomer Runtime that is powered by Apache Airflow's core components - a metadata database, a Webserver, one or more Schedulers, and one or more Workers. Every Deployment is hosted on a single Astronomer Cluster, has an isolated set of resources, and operates with a dedicated Postgres metadata database.
 
-This guide walks you through the process of creating and configuring an Airflow Deployment on Astronomer.
+This guide walks you through the process of creating and configuring an Airflow Deployment.
 
 ## Configure a Workspace
 
@@ -24,11 +24,11 @@ To create an Airflow Deployment on Astronomer Cloud:
 2. On the top right-hand side of the Deployments page, click **New Deployment**.
 3. Set the following:
     - **Name**
-    - **Astronomer Runtime**: For Private Beta, Astronomer Runtime 2.1.1 (Airflow 2.1.1) is available.
+    - **Astronomer Runtime**: For Private Beta, Astronomer Runtime 2.1.1 (based on Airflow 2.1.1) is available.
     - **Description**
     - **Deployment Location**: The Astronomer Cluster in which you want to create this Deployment.
 
-3. Click **Create Deployment** and give the Deployment a few moments to spin up. Within a few seconds, you'll have access to your new Deployment:
+3. Click **Create Deployment** and give it a few moments to spin up. Within a few seconds, you should see the following:
 
     <div class="text--center">
     <img src="/img/docs/deployment-configuration.png" alt="Astronomer UI Deployment Configuration" />
@@ -38,7 +38,7 @@ To create an Airflow Deployment on Astronomer Cloud:
 
 ## Configure Resource Settings
 
-Once you've created a Deployment with default resources, you can always configure these settings to best suit your use case. For reference, Astronomer Cloud supports the `AU` as the primary resource unit. In this context,
+Once you've created a Deployment with default resources, you can always configure these settings to best fit your use case. For reference, Astronomer Cloud supports the `AU` as the primary resource unit. In this context,
 
 - 1 AU = 0.1 CPU, .375 GB Memory
 - 10 AU = 1 CPU, 3.75 GB Memory
@@ -55,7 +55,7 @@ The ability to set minimum and/or maximum number of Workers is coming soon.
 
 ### Worker Grace Period
 
-Celery Workers restart following every change to Environment Variables and every code deploy to your Deployment. This is to make sure that Workers are executing with the most up-to-date code. To minimize disruption to task execution, however, Astronomer supports the ability to set a **Worker Grace Period**.
+Celery Workers are forced to restart upon every change to Environment Variables and every code deploy to your Deployment. This is to make sure that Workers are executing with the most up-to-date code. To minimize disruption to task execution, however, Astronomer supports the ability to set a **Worker Grace Period**.
 
 If a deploy is triggered while a Celery Worker is executing a task and Worker Grace Period is set, the Worker will continue to process that task up to a certain number of minutes before restarting itself. By default, the grace period is 10 minutes.
 
@@ -66,3 +66,11 @@ The [Airflow Scheduler](https://airflow.apache.org/docs/apache-airflow/stable/co
 For example, if you set Scheduler Resources to 10 AU and Scheduler Count to 2, your Airflow Deployment will run with 2 Airflow Schedulers using 10 AU each.
 
 If you experience delays in task execution, which you can track via the Gantt Chart view of the Airflow UI, we recommend increasing the AU allocated towards the Scheduler. The default resource allocation is 10 AU.
+
+## Set Environment Variables
+
+Environment Variables can be used to set [Airflow configurations](https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html) and custom values, both of which can be applied to your Deployment.
+
+Environment Variables can used to configure Airflow Parallelism or a secrets backend to manage Airflow Connections, for example. They can be set either in the **Variables** tab of the Astronomer UI or in your `Dockerfile`. If you're developing locally, they can also be added to a local `.env` file.
+
+For more information on configuring Environment Variables, read [Environment Variables](https://www.astronomer.io/docs/cloud/stable/deploy/environment-variables).
