@@ -41,7 +41,7 @@ If you want to continue with the second option, you'll additionally need:
 
 ## Step 1: Access Astronomer
 
-To begin the Astronomer Cloud install process, first create an account at https://beta.astronomer.io/.
+To begin the Astronomer Cloud install process, first create an account at https://cloud.astronomer.io/.
 
 When you first authenticate to Astronomer Cloud, you can sign in with a Google account, a GitHub account, or an email and password. Once you create an account, your authentication method cannot be changed.
 
@@ -140,7 +140,7 @@ This process can take some time. Wait for confirmation that the installation was
 
 ## Step 5: Create a Deployment
 
-Once our team confirms that your Astronomer Cluster has been created, you are ready to create a Deployment and start deploying DAGs. Log in to [the Astronomer UI](https://beta.astronomer.io) again and create a new Deployment. If the installation was successful, your new Astronomer Cluster will be listed as an option in the **Deployment Location**:
+Once our team confirms that your Astronomer Cluster has been created, you are ready to create a Deployment and start deploying DAGs. Log in to [the Astronomer UI](https://cloud.astronomer.io) again and create a new Deployment. If the installation was successful, your new Astronomer Cluster will be listed as an option in the **Deployment Location**:
 
 <div class="text--center">
   <img src="/img/docs/deployment-location.png" alt="Astronomer UI New Deployment screen" />

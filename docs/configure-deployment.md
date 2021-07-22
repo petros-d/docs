@@ -12,9 +12,7 @@ This guide walks you through the process of creating and configuring an Airflow 
 
 ## Configure a Workspace
 
-When you first sign up for Astronomer Cloud, you can expect to be invited you to a Workspace created for your team. Within a Workspace, you can create a Deployment and push DAGs to that Deployment from the Astronomer CLI or from a CI/CD process. You're free to invite other users to that Workspace and create as many Deployments as you'd like.
-
-For guidelines on how to create and configure a Deployment in your Workspace, read below.
+When you first sign up for Astronomer Cloud, you can expect to be invited to a Workspace created for your team. Within a Workspace, you can create Deployments and push DAGs to any Deployment from the Astronomer CLI or from a CI/CD process. You're free to invite other users to that Workspace and create as many Deployments as you'd like.
 
 ## Create a Deployment
 
@@ -69,8 +67,8 @@ If you experience delays in task execution, which you can track via the Gantt Ch
 
 ## Set Environment Variables
 
-Environment Variables can be used to set [Airflow configurations](https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html) and custom values, both of which can be applied to your Deployment. For exampke, you can configure Airflow Parallelism or a secrets backend to manage Airflow Connections.
+Environment Variables can be used to set [Airflow configurations](https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html) and custom values, both of which can be applied to your Deployment. For example, you can configure Airflow Parallelism or a secrets backend to manage Airflow Connections.
 
-To set Environment Variables, add them to the **Environment Variables** section of the Astronomer UI or in your project's `Dockerfile`. If you're developing locally, they can also be added to a local `.env` file.
+To set Environment Variables, add them to the corresponding section of the Astronomer UI or in your project's `Dockerfile`. If you're developing locally, they can also be added to a local `.env` file.
 
 For more information on configuring Environment Variables, read [Environment Variables on Astronomer](https://www.astronomer.io/docs/cloud/stable/deploy/environment-variables).
