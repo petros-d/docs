@@ -144,7 +144,7 @@ Once you've tested your DAGs locally, you're ready to push them to Astronomer. A
 ./astro auth login astronomer.io
 ```
 
-If you created your account with a username and password, you'll be prompted to enter them directly in your terminal. If you did so via GitHub or Google OAuth, you'll be prompted to grab a temporary token from https://beta.astronomer.io/token.
+If you created your account with a username and password, you'll be prompted to enter them directly in your terminal. If you did so via GitHub or Google OAuth, you'll be prompted to grab a temporary token from https://cloud.astronomer.io/token.
 
 ## Step 4: Push DAGs to an Astronomer Deployment
 
