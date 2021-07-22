@@ -76,7 +76,7 @@ You should see the following:
 
 ```
 % ./astro version
-Astro CLI Version: 0.2.4-beta
+Astro CLI Version: 0.2.5-beta
 ```
 
 ## Step 4. Run CLI Commands
