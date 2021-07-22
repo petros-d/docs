@@ -6,7 +6,7 @@ id: 'configure-deployment'
 
 ## Overview
 
-A Deployment on Astronomer is an instance of Astronomer Runtime that is powered by Apache Airflow's core components - a metadata database, a Webserver, one or more Schedulers, and one or more Workers. Every Deployment is hosted on a single Astronomer Cluster, has a dedicated set of resources, and operates with an isolated Postgres metadata database.
+A Deployment on Astronomer is an instance of Astronomer Runtime that is powered by Apache Airflow's core components - a metadata database, a Webserver, one or more Schedulers, and one or more Workers. Every Deployment is hosted on a single Astronomer Cluster, has an isolated set of resources, and operates with a dedicated Postgres metadata database.
 
 This guide walks you through the process of creating and configuring an Airflow Deployment on Astronomer.
 
@@ -21,27 +21,29 @@ For guidelines on how to create and configure a Deployment in your Workspace, re
 To create an Airflow Deployment on Astronomer Cloud:
 
 1. Log in to the [Astronomer UI](https://cloud.astronomer.io) and go to the **Deployments** tab on the left navigation bar.
-2. On the top right-hand side of the page, click **New Deployment**.
+2. On the top right-hand side of the Deployments page, click **New Deployment**.
 3. Set the following:
     - **Name**
-    - **Astronomer Runtime Version**: For Private Beta, Astronomer Runtime 2.1.1 (Airflow 2.1.1) is available.
+    - **Astronomer Runtime**: For Private Beta, Astronomer Runtime 2.1.1 (Airflow 2.1.1) is available.
     - **Description**
     - **Deployment Location**: The Astronomer Cluster in which you want to create this Deployment.
 
-3. Click **Create Deployment** and give the Deployment a few moments to spin up. Within a few seconds, you'll have access to the **Settings** page of your new Deployment:
+3. Click **Create Deployment** and give the Deployment a few moments to spin up. Within a few seconds, you'll have access to your new Deployment:
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1b18e9d9-ddd9-430c-8676-e4af1541db63/Screen_Shot_2021-06-08_at_2.44.00_PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1b18e9d9-ddd9-430c-8676-e4af1541db63/Screen_Shot_2021-06-08_at_2.44.00_PM.png)
+    <div class="text--center">
+    <img src="/img/docs/deployment-configuration.png" alt="Astronomer UI Deployment Configuration" />
+    </div>
 
-4. To access the Airflow UI for your new Deployment, select **Open Airflow**. This may take a few minutes.
+4. To access the Airflow UI, select **Open Airflow** on the top right. This page may take a few minutes to load.
 
 ## Configure Resource Settings
 
-Once you've created a Deployment with default resources, you can always configure these settings to best suit your needs. For reference, Astronomer Cloud supports the AU as the primary resource unit. In this context,
+Once you've created a Deployment with default resources, you can always configure these settings to best suit your use case. For reference, Astronomer Cloud supports the `AU` as the primary resource unit. In this context,
 
 - 1 AU = 0.1 CPU, .375 GB Memory
 - 10 AU = 1 CPU, 3.75 GB Memory
 
-As we progress through the Private Beta Program, this is subject to change. Read below for guidelines on configuring each resource component.
+As we progress through the Private Beta Program, this is subject to change. Read below for guidelines on how to configure each resource component.
 
 ### Worker Resources
 
@@ -49,7 +51,7 @@ Task execution on Astronomer Cloud is powered by [Airflow's Celery Executor](htt
 
 For the Private Beta Program, all Celery Workers assume the same resources. If you set Worker Resources to 10 AU, for example, your Deployment may scale up to 3 Celery Workers at any given time using 10 AU each for a total of 30 AU (0.3 CPU, 1.125 GB Memory). We recommend 10 AU as the default.
 
-The ability to set minimum or maximum number of Workers is coming soon.
+The ability to set minimum and/or maximum number of Workers is coming soon.
 
 ### Worker Grace Period
 
