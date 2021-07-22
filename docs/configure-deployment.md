@@ -69,8 +69,8 @@ If you experience delays in task execution, which you can track via the Gantt Ch
 
 ## Set Environment Variables
 
-Environment Variables can be used to set [Airflow configurations](https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html) and custom values, both of which can be applied to your Deployment.
+Environment Variables can be used to set [Airflow configurations](https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html) and custom values, both of which can be applied to your Deployment. For exampke, you can configure Airflow Parallelism or a secrets backend to manage Airflow Connections.
 
-Environment Variables can used to configure Airflow Parallelism or a secrets backend to manage Airflow Connections, for example. They can be set either in the **Variables** tab of the Astronomer UI or in your `Dockerfile`. If you're developing locally, they can also be added to a local `.env` file.
+To set Environment Variables, add them to the **Environment Variables** section of the Astronomer UI or in your project's `Dockerfile`. If you're developing locally, they can also be added to a local `.env` file.
 
-For more information on configuring Environment Variables, read [Environment Variables](https://www.astronomer.io/docs/cloud/stable/deploy/environment-variables).
+For more information on configuring Environment Variables, read [Environment Variables on Astronomer](https://www.astronomer.io/docs/cloud/stable/deploy/environment-variables).
