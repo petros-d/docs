@@ -6,7 +6,7 @@ id: 'release-notes'
 
 ## Overview
 
-As part of enhancing your experience with our product, Astronomer is committed to continual development during the Private Beta Program. As you grow with us, expect to see bug fixes and improved functionality on a daily basis.
+Astronomer is committed to continuous development during the Private Beta Program. As you grow with us, expect to see bug fixes and improved functionality on a daily basis.
 
 To keep your team updated, this document will provide a weekly summary of all changes made and released during the Private Beta Program.
 
