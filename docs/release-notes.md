@@ -21,6 +21,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 - Added a **Cluster** field to the Deployments tab in the Astronomer UI. Now, you can reference which Cluster each of your Deployments is in.
 - Replaced our white "A" favicon to one that supports color mode.
 - Informational tooltips now available in **Deployment Configuration**.
+- You can now run `$ astro auth login` without specifying a domain (`astronomer.io` is always assumed).
 
 ### Bug Fixes
 
