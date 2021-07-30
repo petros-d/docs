@@ -39,7 +39,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Reference',
-      items: ['known-limitations', 'resource-reference-aws'],
+      items: ['known-limitations', 'resource-reference-aws', 'release-notes'],
     },
   ],
 };
