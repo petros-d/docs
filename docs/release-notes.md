@@ -12,6 +12,8 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ## July 30, 2021
 
+**Latest CLI Version**: `0.2.7-beta`
+
 ### Improvements
 
 - Increased the limit of **Worker Resources** from 30 AU to 175 AU (17.5 CPU, 65.625 GB RAM). If your tasks require this many resources, reach out to us to make sure that your Cluster is sized appropriately.
@@ -25,3 +27,4 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 - Fixed an issue where a deleted user could not sign up to Astronomer Cloud again.
 - Removed Deployment-level user roles from the Astronomer UI. Support for them coming soon.
 - Fixed an issue where a newly created Deployment wouldn't show up on the list of Deployments in the Workspace.
+- Fixed an issue where users could not push DAGs to a Deployment on Astronomer with `0.2.6-beta` of the Astronomer CLI. To push code, follow [Install the Astronomer CLI](install-cli) and upgrade to `0.2.7-beta`.
