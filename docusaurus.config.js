@@ -9,7 +9,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   noIndex: true,
   organizationName: 'astronomer', // Usually your GitHub org/user name.
-  projectName: 'docs-site', // Usually your repo name.
+  projectName: 'beta-docs', // Usually your repo name.
   themeConfig: {
     algolia: {
       apiKey: '1821ae84c278294f722376cb52b520c0',
