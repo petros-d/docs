@@ -37,9 +37,14 @@ module.exports = {
       label: 'Deploy Code',
     },
     {
+      type: 'doc',
+      id: 'environment-variables',
+      label: 'Set Environment Variables',
+    },
+    {
       type: 'category',
       label: 'Reference',
-      items: ['known-limitations', 'resource-reference-aws', 'release-notes'],
+      items: ['release-notes', 'known-limitations', 'resource-reference-aws', `platform-variables` ],
     },
   ],
 };
