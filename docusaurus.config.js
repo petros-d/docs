@@ -9,8 +9,23 @@ module.exports = {
   favicon: 'img/favicon.ico',
   noIndex: true,
   organizationName: 'astronomer', // Usually your GitHub org/user name.
-  projectName: 'docs-site', // Usually your repo name.
+  projectName: 'beta-docs', // Usually your repo name.
   themeConfig: {
+    algolia: {
+      apiKey: '1821ae84c278294f722376cb52b520c0',
+      indexName: 'beta',
+
+      // Optional: see doc section below
+      contextualSearch: true,
+
+      // Optional: see doc section below
+      appId: 'N4IG87ZX4P',
+
+      // Optional: Algolia search parameters
+      searchParameters: {},
+
+      //... other Algolia params
+    },
     colorMode: {
       disableSwitch: false,
     },
@@ -101,6 +116,11 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          trailingSlash: false,
         },
       },
     ],
