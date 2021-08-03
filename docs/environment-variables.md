@@ -70,27 +70,83 @@ Once your environment variables are added:
 >
 > Environment variables applied via the Astronomer UI only become available once the Docker build process has been completed.
 
-## Environment Variable Priority
+## Set Environment Variables via .env (Local Only)
 
-Given the ability to set environment variables across 3 different methods potentially simultaneously, it's worth noting the precedence each take.
+You can use the [Astronomer CLI](/docs/enterprise/v0.25/develop/cli-quickstart/) to set environment variables based on a specified `.env` file, which was automatically generated when you initialized an Airflow project on Astronomer via `astro dev init`.
 
-On Astronomer, environment variables will be applied and overridden in the following order:
+To add Environment Variables locally:
 
-1. Astronomer UI
-2. Dockerfile
-3. Default Airflow Values (`airflow.cfg`)
+1. Open the `.env` file in your Airflow project directory.
+2. Add your environment variables to the `.env` file.
+3. Rebuild your image by running `astro dev start --env .env`.
 
-For example, if you set `AIRFLOW__CORE__PARALLELISM` with one value via the Astronomer UI and you set the same environment variable with another value in your `Dockerfile`, the value set in the Astronomer UI will take precedence.
+When setting environment variables in your `.env` file, use the following format:
+
+```
+AIRFLOW__CORE__DAG_CONCURRENCY=5
+```
+
+> **Note:** If your Environment Variables contain secrets you don't want to expose in plain-text, you may want to add your `.env` file to `.gitignore` when you deploy these changes to your version control tool.
+
+### Confirm your Environment Variables were Applied
+
+To confirm that the environment variables you just set were applied to your Airflow Deployment locally, first run:
+
+```
+docker ps
+```
+
+This will output 3 Docker containers that were provisioned to run Airflow's 3 primary components on your machine: The Airflow Scheduler, Webserver and Postgres Metadata Database.
+
+Now, create a [Bash session](https://docs.docker.com/engine/reference/commandline/exec/#examples) in your scheduler container by running:
+
+```
+docker exec -it <scheduler-container-name> /bin/bash
+```
+
+If you run `ls -1` following this command, you'll see a list of running files:
+
+```
+bash-5.0$ ls -1
+Dockerfile             airflow.cfg            airflow_settings.yaml  dags                   include                logs                   packages.txt           plugins                requirements.txt       unittests.cfg
+```
+
+Now, run:
+
+```
+env
+```
+
+This should output all Environment Variables that are running locally, some of which are set by you and some of which are set by Astronomer by default.
+
+> **Note:** You can also run `cat airflow.cfg` to output _all_ contents in that file.
+
+### Use multiple .env files
+
+The Astronomer CLI will look for `.env` by default, but if you want to specify multiple files, make `.env` a top-level directory and create sub-files within that folder.
+
+A project with multiple `.env` files might look like the following:
+
+```
+my_project
+  ├── Dockerfile
+  └──  dags
+    └── my_dag
+  ├── plugins
+    └── my_plugin
+  ├── airflow_settings.yaml
+  ├── .env
+    └── dev.env
+    └── prod.env
+```
 
 ## Add Airflow Connections and Variables via Environment Variables
 
 For users who regularly use Airflow Connections and Variables, we recommend storing and fetching them via environment variables.
 
-As mentioned above, Airflow Connections and Variables are stored in Airflow's Metadata Database. Adding them _outside_ of task definitions and operators requires an additional connection to Airflow's Postgres Database, which is called every time the Scheduler parses a DAG (as defined by `process_poll_interval`, which is set to 1 second by default).
+As mentioned above, Airflow Connections and Variables are stored in Airflow's Metadata Database. Adding them outside of task definitions and operators requires an additional connection to Airflow's Postgres Database, which is called every time the Scheduler parses a DAG (as defined by `process_poll_interval`, which is set to 1 second by default).
 
 By adding Connections and Variables as environment variables, you can refer to them more easily in your code and lower the amount of open connections, thus preventing a strain on your Database and resources.
-
-Read below for instructions on both.
 
 ### Airflow Connections
 
@@ -111,7 +167,7 @@ Here, the full environment variable would read:
 ENV AIRFLOW_CONN_MY_PROD_DB=my-conn-type://login:password@host:5432/schema
 ```
 
-You're free to set this environment variable via an `.env` file locally, via your Dockerfile or via the Astronomer UI as explained above. For more information on how to generate your Connection URI, refer to [Airflow's documentation](https://airflow.apache.org/docs/stable/howto/connection/index.html#generating-connection-uri).
+You can set this environment variable via an `.env` file locally, via your Dockerfile, or via the Astronomer UI as explained above. For more information on how to generate your Connection URI, refer to the [Apache Airflow documentation](https://airflow.apache.org/docs/stable/howto/connection/index.html#generating-connection-uri).
 
 ### Airflow Variables
 
@@ -131,3 +187,16 @@ Here, the environment variable would read:
 ```
 ENV AIRFLOW_VAR_MY_VAR=2
 ```
+
+## Environment Variable Priority
+
+Given the ability to set environment variables across 3 different methods potentially simultaneously, it's worth noting the precedence each take.
+
+On Astronomer, environment variables will be applied and overridden in the following order:
+
+1. Astronomer UI
+2. .env (Local only)
+3. Dockerfile
+4. Default Airflow Values (`airflow.cfg`)
+
+For example, if you set `AIRFLOW__CORE__PARALLELISM` with one value via the Astronomer UI and you set the same environment variable with another value in your `Dockerfile`, the value set in the Astronomer UI will take precedence.
