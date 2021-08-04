@@ -190,8 +190,6 @@ ENV AIRFLOW_VAR_MY_VAR=2
 
 ## Environment Variable Priority
 
-Given the ability to set environment variables across 3 different methods potentially simultaneously, it's worth noting the precedence each take.
-
 On Astronomer, environment variables will be applied and overridden in the following order:
 
 1. Astronomer UI
