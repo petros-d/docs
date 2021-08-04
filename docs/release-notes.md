@@ -23,11 +23,9 @@ Note that these release notes cover only changes to Astronomer Cloud. To read re
 - Added a **Cluster** field to the Deployments tab in the Astronomer UI. Now, you can reference which Cluster each of your Deployments is in.
 - Replaced our white "A" favicon to one that supports color mode.
 - Informational tooltips now available in **Deployment Configuration**.
-- You can now run `$ astro auth login` without specifying a domain (`astronomer.io` is always assumed).
 
 ### Bug Fixes
 
 - Fixed an issue where a deleted user could not sign up to Astronomer Cloud again.
 - Removed Deployment-level user roles from the Astronomer UI. Support for them coming soon.
 - Fixed an issue where a newly created Deployment wouldn't show up on the list of Deployments in the Workspace.
-- Fixed an issue where users could not push DAGs to a Deployment on Astronomer with `0.2.6-beta` of the Astronomer CLI. To push code, follow [Install the Astronomer CLI](https://beta-docs.astronomer.io/install-cli) and upgrade to `0.2.7-beta`.
