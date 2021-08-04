@@ -21,7 +21,7 @@ This guide covers:
 - How environment variables are stored on Astronomer
 - How to store Airflow Connections and Variables as environment variables
 
-> Some environment variables on Astronomer Cloud are set at the platform level and cannot be overridden on individual Deployments. For more information on these environment variables, read Platform Environment Variables.
+> Some environment variables on Astronomer Cloud are set at the platform level and cannot be overridden for individual Deployments. For more information on these environment variables, read [Platform Environment Variables](platform-variables).
 
 ## Set Environment Variables via the Astronomer UI
 
