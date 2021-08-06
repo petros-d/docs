@@ -10,6 +10,20 @@ Astronomer is committed to continuous development during the Private Beta Progra
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
+## August 6, 2021
+
+**Latest CLI Version**: `0.2.7-beta`
+
+### Improvements
+
+- Informational tooltips are now available on the **New Deployment** page.
+- All tables across the UI now have their first columns sorted alphabetically by default.
+
+### Bug Fixes
+
+- Fixed an issue where adding a user to a Workspace and then deleting the user from Astronomer made it impossible to create new Deployments in that Workspace.
+- Improved error handling in the Airflow UI in cases where a user does not exist or does not have permission to view a Deployment.
+
 ## July 30, 2021
 
 **Latest CLI Version**: `0.2.7-beta`
