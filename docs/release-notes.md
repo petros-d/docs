@@ -21,7 +21,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Bug Fixes
 
-- Fixed an issue where adding a user to a Workspace and then deleting the user from the platform would make it impossible to create new Deployments in that Workspace.
+- Fixed an issue where adding a user to a Workspace and then deleting the user from the platform made it impossible to create new Deployments in that Workspace.
 - Improved error handling for the Astronomer UI and the Airflow Webserver.
 
 ## July 30, 2021
