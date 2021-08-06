@@ -16,13 +16,12 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Improvements
 
-- If a user belongs to multiple organizations and creates a new Deployment, their list of available Clusters now changes based on their current organization and Workspace.
 - Informational tooltips are now available on the **New Deployment** page.
 
 ### Bug Fixes
 
-- Fixed an issue where adding a user to a Workspace and then deleting the user from the platform made it impossible to create new Deployments in that Workspace.
-- Improved error handling for the Astronomer UI and the Airflow Webserver.
+- Fixed an issue where adding a user to a Workspace and then deleting the user from Astronomer made it impossible to create new Deployments in that Workspace.
+- Improved error handling in the Airflow UI in cases where a user does not exist or does not have permission to view a Deployment.
 
 ## July 30, 2021
 
