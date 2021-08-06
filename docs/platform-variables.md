@@ -1,18 +1,18 @@
 ---
-sidebar_label: 'Platform Environment Variables'
-title: 'Platform Environment Variables'
-id: 'platform-variables'
+sidebar_label: 'Global Environment Variables'
+title: 'Global Environment Variables'
+id: 'global-variables'
 ---
 
 ## Overview
 
-As part of the Astronomer Cloud architecture, certain Airflow environment variables have preset values that cannot be overridden by your organization. This reference page contains information about every permanent environment variable required by the Astronomer platform.
+As part of the Astronomer Cloud architecture, certain environment variables have preset values that cannot be overridden by your organization. This reference page contains information about each global environment variable set by Astronomer.
 
 ## Operator Environment Variables
 
 |Environment Variable | Description | Value |
 |---------------------|-------|------------|
-| AIRFLOW__LOGGING__REMOTE_LOGGING| Enables remote logging | `True` |
+| AIRFLOW__LOGGING__REMOTE_LOGGING| Enables remote logging. | `True` |
 | AIRFLOW__LOGGING__REMOTE_BASE_LOG_FOLDER| Location of remote logging storage | `baseLogFolder`|
 | AIRFLOW__LOGGING__REMOTE_LOG_CONN_ID | Airflow connection ID to access remote logging storage   | `s3_logging` |
 | AIRFLOW__LOGGING__ENCRYPT_S3_LOGS | Determines whether to use server-side encryption for S3 logs | `False` |
@@ -27,8 +27,8 @@ As part of the Astronomer Cloud architecture, certain Airflow environment variab
 | AIRFLOW__WEBSERVER__ENABLE_PROXY_FIX | Determines whether to enable werkzeug ProxyFix middleware for reverse proxy | `True` |
 | AIRFLOW_CONN_AIRFLOW_DB | The connection ID for accessing the Airflow metadata DB.  | `dbConnSecret` |
 | AIRFLOW__CORE__FERNET_KEY |The secret key for saving connection passwords in the metadata DB | `fernetKeySecret` |
-| AIRFLOW__CORE__EXECUTOR  | The executor class that Airflow uses | `executor` |
-| AIRFLOW__KUBERNETES__NAMESPACE| The Kubernetes namespace where Airflow workers are created. | `namespace` |
+| AIRFLOW__CORE__EXECUTOR  | The executor class that Airflow uses. Astronomer Cloud exclusively supports the Celery Executor. | `executor` |
+| AIRFLOW__KUBERNETES__NAMESPACE| The Kubernetes namespace where Airflow Workers are created. | `namespace` |
 | AIRFLOW__CORE__HOSTNAME_CALLABLE | Path to a callable, which resolves to the hostname. | `airflow.utils.net.get_host_ip_address`|
 | AIRFLOW__SCHEDULER__STATSD_ON | Determines whether Statsd is on | `True` |
 | AIRFLOW__SCHEDULER__STATSD_HOST |The hostname for Statsd | `statsd.Hostname`|

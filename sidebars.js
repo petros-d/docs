@@ -44,7 +44,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Reference',
-      items: ['release-notes', 'known-limitations', 'resource-reference-aws', `platform-variables` ],
+      items: ['release-notes', 'known-limitations', 'resource-reference-aws', `global-variables` ],
     },
   ],
 };

@@ -1,6 +1,6 @@
 ---
-sidebar_label: 'Deploy Code'
-title: 'Deploy Code to Astronomer'
+sidebar_label: 'Environment Variables'
+title: 'Set Environment Variables on Astronomer'
 id: 'environment-variables'
 ---
 
@@ -12,7 +12,7 @@ For instance, you can set environment variables to:
 
 - Set up an SMTP service.
 - Limit Airflow parallelism and DAG concurrency.
-- Store Airflow Connections and variables.
+- Store Airflow Connections and Variables.
 - Customize your default DAG view in the Airflow UI (Tree, Graph, Gantt, etc.)
 
 This guide covers:
@@ -21,16 +21,16 @@ This guide covers:
 - How environment variables are stored on Astronomer
 - How to store Airflow Connections and Variables as environment variables
 
-> Some environment variables on Astronomer Cloud are set at the platform level and cannot be overridden for individual Deployments. For more information on these environment variables, read [Platform Environment Variables](platform-variables).
+> **Note:** Some environment variables on Astronomer Cloud are set globally and cannot be overridden for individual Deployments. For more information on these environment variables, read [Global Environment Variables](global-variables).
 
 ## Set Environment Variables via the Astronomer UI
 
 Environment variables can be set directly in the Astronomer UI. To do so:
 
-1. In the Astronomer UI, open an Airflow Deployment.
-2. Open the **Variables** tab.
+1. In the Astronomer UI, open a Deployment.
+2. Next to **Environment Variables**, select **Edit Variables**
 3. Specify an environment variable name and value in the table.
-4. Click **Add**.
+4. Click **Update Variables**.
 
 <div class="text--center">
   <img src="/img/docs/env-vars.png" alt="Environment variables table" />
@@ -55,7 +55,7 @@ If you want to store environment variables using an external version control too
 To add environment variables, declare an ENV statement with the environment variable name and value. Your Dockerfile might look like this:
 
 ```
-FROM quay.io/astronomer/ap-airflow:1.10.7-buster-onbuild
+FROM quay.io/astronomer/astro-runtime:2.1.1
 ENV AIRFLOW__CORE__MAX_ACTIVE_RUNS_PER_DAG=1
 ENV AIRFLOW__CORE__DAG_CONCURRENCY=5
 ENV AIRFLOW__CORE__PARALLELISM=25
@@ -86,7 +86,7 @@ When setting environment variables in your `.env` file, use the following format
 AIRFLOW__CORE__DAG_CONCURRENCY=5
 ```
 
-> **Note:** If your Environment Variables contain secrets you don't want to expose in plain-text, you may want to add your `.env` file to `.gitignore` when you deploy these changes to your version control tool.
+> **Note:** If your environment variables contain secrets you don't want to expose in plain-text, you may want to add your `.env` file to `.gitignore` when you deploy these changes to your version control tool.
 
 ### Confirm your Environment Variables were Applied
 
@@ -142,7 +142,7 @@ my_project
 
 ## Add Airflow Connections and Variables via Environment Variables
 
-For users who regularly use Airflow Connections and Variables, we recommend storing and fetching them via environment variables.
+For users who regularly use [Airflow Connections](https://airflow.apache.org/docs/apache-airflow/stable/concepts/connections.html) and [Variables](https://airflow.apache.org/docs/apache-airflow/stable/concepts/variables.html), we recommend storing and fetching them via environment variables.
 
 As mentioned above, Airflow Connections and Variables are stored in Airflow's Metadata Database. Adding them outside of task definitions and operators requires an additional connection to Airflow's Postgres Database, which is called every time the Scheduler parses a DAG (as defined by `process_poll_interval`, which is set to 1 second by default).
 
