@@ -17,6 +17,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 ### Improvements
 
 - Informational tooltips are now available on the **New Deployment** page.
+- All tables across the UI are now sorted alphabetically by default.
 
 ### Bug Fixes
 
