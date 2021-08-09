@@ -14,7 +14,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 Release date: July 31, 2021
 
-- Bugfix: Fixed an issue where users could not push DAGs to Deployments on Astronomer via the CLI.
+- Bug Fix: Fixed an issue where users could not push DAGs to Deployments on Astronomer via the CLI.
 
 ## v0.2.6-beta
 
