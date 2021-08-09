@@ -12,6 +12,20 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 For release notes specific to the Astronomer CLI, see [Astronomer CLI Release Notes](cli-release-notes).
 
+## August 6, 2021
+
+**Latest CLI Version**: `0.2.7-beta`
+
+### Improvements
+
+- Informational tooltips are now available on the **New Deployment** page.
+- All tables across the UI now have their first columns sorted alphabetically by default.
+
+### Bug Fixes
+
+- Fixed an issue where adding a user to a Workspace and then deleting the user from Astronomer made it impossible to create new Deployments in that Workspace.
+- Improved error handling in the Airflow UI in cases where a user does not exist or does not have permission to view a Deployment.
+
 ## July 30, 2021
 
 **Latest CLI Version**: `0.2.7-beta` ([Release notes](cli-release-notes#v027-beta))
@@ -29,3 +43,7 @@ For release notes specific to the Astronomer CLI, see [Astronomer CLI Release No
 - Fixed an issue where a deleted user could not sign up to Astronomer Cloud again.
 - Removed Deployment-level user roles from the Astronomer UI. Support for them coming soon.
 - Fixed an issue where a newly created Deployment wouldn't show up on the list of Deployments in the Workspace.
+<<<<<<< HEAD
+=======
+- Fixed an issue where users could not push DAGs to a Deployment on Astronomer with `0.2.6-beta` of the Astronomer CLI. To push code, follow [Install the Astronomer CLI](https://beta-docs.astronomer.io/install-cli) and upgrade to `0.2.7-beta`.
+>>>>>>> 160d55c2cd7231f14b9625538007cc9c93972eec
