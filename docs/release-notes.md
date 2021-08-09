@@ -43,7 +43,3 @@ For release notes specific to the Astronomer CLI, see [Astronomer CLI Release No
 - Fixed an issue where a deleted user could not sign up to Astronomer Cloud again.
 - Removed Deployment-level user roles from the Astronomer UI. Support for them coming soon.
 - Fixed an issue where a newly created Deployment wouldn't show up on the list of Deployments in the Workspace.
-<<<<<<< HEAD
-=======
-- Fixed an issue where users could not push DAGs to a Deployment on Astronomer with `0.2.6-beta` of the Astronomer CLI. To push code, follow [Install the Astronomer CLI](https://beta-docs.astronomer.io/install-cli) and upgrade to `0.2.7-beta`.
->>>>>>> 160d55c2cd7231f14b9625538007cc9c93972eec
