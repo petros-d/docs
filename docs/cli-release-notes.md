@@ -14,10 +14,10 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 Release date: July 31, 2021
 
-- Fixed an issue where users could not push DAGs to Airflow Deployments on Astronomer via the CLI.
+- Bugfix: Fixed an issue where users could not push DAGs to Deployments on Astronomer via the CLI.
 
 ## v0.2.6-beta
 
 Release date: July 30, 2021
 
-- You can now run `astro auth login` without specifying a domain (`astronomer.io` is always assumed).
+- Improvement: You can now run `astro auth login` without specifying a domain (`astronomer.io` is always assumed).
