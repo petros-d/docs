@@ -10,7 +10,7 @@ Astronomer is committed to continuous development during the Private Beta Progra
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
-Note that these release notes cover only changes to Astronomer Cloud. To read release notes for the Astronomer CLI, see [Astronomer CLI Release Notes](cli-release-notes)
+For release notes specific to the Astronomer CLI, see [Astronomer CLI Release Notes](cli-release-notes).
 
 ## July 30, 2021
 

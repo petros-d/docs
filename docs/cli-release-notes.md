@@ -6,7 +6,7 @@ id: 'cli-release-notes'
 
 ## Overview
 
-This document provides a summary of all changes made specifically for the Astronomer CLI. For general release notes for Astronomer Cloud, go to [Astronomer Cloud Release Notes](release-notes).
+This document provides a summary of all changes made to the [Astronomer CLI](install-cli). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes).
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
@@ -14,14 +14,10 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 Release date: July 31, 2021
 
-### Minor improvements
-
 - Fixed an issue where users could not push DAGs to Airflow Deployments on Astronomer via the CLI.
 
 ## v0.2.6-beta
 
 Release date: July 30, 2021
-
-### Minor improvements
 
 - You can now run `astro auth login` without specifying a domain (`astronomer.io` is always assumed).
