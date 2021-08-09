@@ -28,15 +28,39 @@ This guide covers:
 Environment variables can be set directly in the Astronomer UI. To do so:
 
 1. In the Astronomer UI, open a Deployment.
-2. Next to **Environment Variables**, select **Edit Variables**
-3. Specify an environment variable name and value in the table.
-4. Click **Update Variables**.
+2. In the Deployment's **Configuration** menu, click **Edit Variables**.
 
-<div class="text--center">
-  <img src="/img/docs/env-vars.png" alt="Environment variables table" />
-</div>
+    <div class="text--center">
+      <img src="/img/docs/edit-variables.png" alt="Edit Variables button highlighted in the Deployment configuration page" />
+    </div>
 
-> **Note:** Input for all configurations officially supported by Airflow are pre-templated, but you can also specify your own values.
+3. Specify an environment variable key and value in the table, then click **Add**.
+
+    <div class="text--center">
+      <img src="/img/docs/add-variables.png" alt="Add Variables button highlighted in the Environment Variables configuration table" />
+    </div>
+
+4. Click **Update Variables** to save your work.
+
+### Edit existing values
+
+If you want to make changes to existing environment variables, you can edit the values for those variable keys. To do so:
+
+1. In the Astronomer UI, open a Deployment.
+2. In the Deployment's **Configuration** menu, click **Edit Variables**.
+3. Click the pencil icon next to the value you want to edit.
+
+    <div class="text--center">
+      <img src="/img/docs/variable-pencil.png" alt="Pencil icon next to an existing value in the Environment Variables configuration table" />
+    </div>
+
+4. Specify the new value for the variable, then click the Green checkmark.
+
+    <div class="text--center">
+      <img src="/img/docs/variable-checkmark.png" alt="Green checkmark icon next to an updated value in the Environment Variables configuration table" />
+    </div>
+
+5. Click **Update Variables** to save your work.
 
 ### How environment variables are stored on Astronomer
 
@@ -52,7 +76,7 @@ If you want to store environment variables using an external version control too
 
 > **Note:** Given that this file will be committed upstream, we strongly recommend using a secrets protocol to store environment variables containing sensitive information.
 
-To add environment variables, declare an ENV statement with the environment variable name and value. Your Dockerfile might look like this:
+To add environment variables, declare an ENV statement with the environment variable key and value. Your Dockerfile might look like this:
 
 ```
 FROM quay.io/astronomer/astro-runtime:2.1.1
