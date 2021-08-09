@@ -64,11 +64,9 @@ If you want to make changes to existing environment variables, you can edit the 
 
 ### How environment variables are stored on Astronomer
 
-All values for environment variables that are added via the Astronomer UI are stored as a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/), which is encrypted at rest and mounted to your Deployment's Airflow pods (Scheduler, Webserver, Worker(s)) as soon as they're set or changed.
+All values for environment variables that are added via the Astronomer UI are stored in the Astronomer Cloud control plane Postgres schema.
 
-Environment variables are not stored in Airflow's Metadata Database and are not stored in Astronomer's platform database. Unlike other components, the Astronomer Houston API fetches them from the Kubernetes Secret instead of the platform's database to render them in the Astronomer UI.
-
-For information on how Airflow Connections and Variables are encrypted on Astronomer, refer to [this forum post](https://forum.astronomer.io/t/how-are-connections-variables-and-env-vars-encrypted-on-astronomer/173).
+For the Astronomer Cloud beta, we don't recommend adding secret values through the Astronomer UI. Instead, we recommend storing these values in an external secrets backend, such as [Vault](https://www.vaultproject.io/).
 
 ## Set Environment Variables via Dockerfile
 
