@@ -40,7 +40,7 @@ Environment variables can be set directly in the Astronomer UI. To do so:
       <img src="/img/docs/add-variables.png" alt="Add Variables button highlighted in the Environment Variables configuration table" />
     </div>
 
-4. Click **Update Variables** to save your work.
+4. Click **Update Variables** to apply your changes. This action will restart your Airflow Scheduler, Webserver, and Workers.
 
 ### Edit existing values
 
@@ -60,13 +60,13 @@ If you want to make changes to existing environment variables, you can edit the 
       <img src="/img/docs/variable-checkmark.png" alt="Green checkmark icon next to an updated value in the Environment Variables configuration table" />
     </div>
 
-5. Click **Update Variables** to save your work.
+5. Click **Update Variables** to apply your changes. This action will restart your Airflow Scheduler, Webserver, and Workers.
 
 ### How environment variables are stored on Astronomer
 
-All values for environment variables that are added via the Astronomer UI are stored in the Astronomer Cloud control plane Postgres schema.
+All values for environment variables that are set in the Astronomer UI are stored in a database managed by Astronomer as part of the "Control Plane". If you set environment variables in your Dockerfile, they are stored in the Docker image that is generated when you run `astro dev start` or `astro deploy`.
 
-For the Astronomer Cloud beta, we don't recommend adding secret values through the Astronomer UI. Instead, we recommend storing these values in an external secrets backend, such as [Vault](https://www.vaultproject.io/).
+If you have an environment variable with sensitive information or credentials, we recommend storing these values in an external secrets backend, such as [Vault](https://www.vaultproject.io/), instead of via the Astronomer UI or your Dockerfile.
 
 ## Set Environment Variables via Dockerfile
 

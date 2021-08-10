@@ -12,7 +12,7 @@ As part of the Astronomer Cloud architecture, certain environment variables have
 
 |Environment Variable | Description | Value |
 |---------------------|-------|------------|
-| `AIRFLOW__LOGGING__REMOTE_LOGGING`| Enables remote logging. | `True` |
+| `AIRFLOW__LOGGING__REMOTE_LOGGING`| Enables remote logging | `True` |
 | `AIRFLOW__LOGGING__REMOTE_BASE_LOG_FOLDER`| Location of remote logging storage | `baseLogFolder`|
 | `AIRFLOW__LOGGING__REMOTE_LOG_CONN_ID` | Airflow connection ID to access remote logging storage   | `s3_logging` |
 | `AIRFLOW__LOGGING__ENCRYPT_S3_LOGS` | Determines whether to use server-side encryption for S3 logs | `False` |
@@ -20,11 +20,11 @@ As part of the Astronomer Cloud architecture, certain environment variables have
 |`AIRFLOW__CORE__SQL_ALCHEMY_CONN`| The SqlAlchemy connection string for the metadata DB | `dbConnSecret` |
 |`AIRFLOW__WEBSERVER__UPDATE_FAB_PERMS`| Determines whether to update FAB permissions on Webserver startup. | `True`|
 | `AIRFLOW__WEBSERVER__ENABLE_PROXY_FIX` | Determines whether to enable werkzeug ProxyFix middleware for reverse proxy | `True` |
-| `AIRFLOW_CONN_AIRFLOW_DB` | The connection ID for accessing the Airflow metadata DB.  | `dbConnSecret` |
+| `AIRFLOW_CONN_AIRFLOW_DB` | The connection ID for accessing the Airflow metadata DB  | `dbConnSecret` |
 | `AIRFLOW__CORE__FERNET_KEY` |The secret key for saving connection passwords in the metadata DB | `fernetKeySecret` |
-| `AIRFLOW__CORE__EXECUTOR`  | The executor class that Airflow uses. Astronomer Cloud exclusively supports the Celery Executor. | `executor` |
+| `AIRFLOW__CORE__EXECUTOR`  | The executor class that Airflow uses. Astronomer Cloud exclusively supports the Celery Executor | `executor` |
 | `AIRFLOW__KUBERNETES__NAMESPACE`| The Kubernetes namespace where Airflow Workers are created. | `namespace` |
-| `AIRFLOW__CORE__HOSTNAME_CALLABLE` | Path to a callable, which resolves to the hostname. | `airflow.utils.net.get_host_ip_address`|
+| `AIRFLOW__CORE__HOSTNAME_CALLABLE` | Path to a callable, which resolves to the hostname | `airflow.utils.net.get_host_ip_address`|
 | `AIRFLOW__SCHEDULER__STATSD_ON` | Determines whether Statsd is on | `True` |
 | `AIRFLOW__SCHEDULER__STATSD_HOST` |The hostname for Statsd | `statsd.Hostname`|
 | `AIRFLOW__SCHEDULER__STATSD_PORT` | The port for Statsd | `strconv.FormatInt(int64(statsd.IngestPort), baseTen)` |
