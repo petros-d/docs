@@ -40,7 +40,7 @@ Environment variables can be set directly in the Astronomer UI. To do so:
       <img src="/img/docs/add-variables.png" alt="Add Variables button highlighted in the Environment Variables configuration table" />
     </div>
 
-4. Click **Update Variables** to apply your changes. This action will restart your Airflow Scheduler, Webserver, and Workers.
+4. Click **Update Variables** to apply your changes. This action restarts your Airflow Scheduler, Webserver, and Workers.
 
 ### Edit existing values
 
@@ -60,7 +60,7 @@ If you want to make changes to existing environment variables, you can edit the 
       <img src="/img/docs/variable-checkmark.png" alt="Green checkmark icon next to an updated value in the Environment Variables configuration table" />
     </div>
 
-5. Click **Update Variables** to apply your changes. This action will restart your Airflow Scheduler, Webserver, and Workers.
+5. Click **Update Variables** to apply your changes. This action restarts your Airflow Scheduler, Webserver, and Workers.
 
 ### How environment variables are stored on Astronomer
 
@@ -212,7 +212,7 @@ ENV AIRFLOW_VAR_MY_VAR=2
 
 ## Environment Variable Priority
 
-On Astronomer, environment variables will be applied and overridden in the following order:
+On Astronomer, environment variables are applied and overridden in the following order:
 
 1. Astronomer UI
 2. .env (Local only)
