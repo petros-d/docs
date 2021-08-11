@@ -42,6 +42,11 @@ module.exports = {
       label: 'Set Environment Variables',
     },
     {
+      type: 'doc',
+      id: 'airflow-api',
+      label: 'Airflow API',
+    },
+    {
       type: 'category',
       label: 'Reference',
       items: [
