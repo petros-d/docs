@@ -6,9 +6,9 @@ id: 'airflow-alerts'
 
 ## Overview
 
-You can utilize Airflow's alerting framework to monitor the health of individual tasks and DAGs across your Airflow Deployments. On Astronomer, setting up task-level alerts requires configuring an SMTP service to handle the delivery of these alerts.
+You can utilize Airflow's alerting framework to monitor the health of individual tasks and DAGs across your Airflow Deployments. On Astronomer, setting up alerts requires configuring an SMTP service for delivering each alert.
 
-If your team isn't already using an SMTP service, we recommend the following:
+If your team isn't already using an SMTP service, we recommend one of the following:
 
 - [SendGrid](https://sendgrid.com/)
 - [Amazon SES](https://aws.amazon.com/ses/)
@@ -17,7 +17,7 @@ This guide provides steps for integrating these external SMTP services on Astron
 
 ## Integrate SendGrid
 
-[SendGrid](https://sendgrid.com/) is an email delivery service that's easy to set up for Airflow task-level alerts. A free SendGrid account grants users 40,000 free emails within the first 30 days of an account opening and 100 emails per day after that. This should be more than enough emails for most alerting use cases.
+[SendGrid](https://sendgrid.com/) is an email delivery service that's easy to set up for Airflow alerts. A free SendGrid account grants users 40,000 free emails within the first 30 days of an account opening and 100 emails per day after that. This should be more than enough emails for most alerting use cases.
 
 To get started with SendGrid:
 
