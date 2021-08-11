@@ -26,7 +26,7 @@ Before making an Airflow API request, you need to retrieve a few key pieces of i
 - An access token.
 - A base Deployment URL.
 
-To retrieve an access token, go to `cloud.astronomer.io/token` can copy the token that appears.
+To retrieve an access token, go to `cloud.astronomer.io/token` and copy the token that appears.
 
 To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The base URL for the Airflow UI is your base Deployment URL. It includes your organization's URL, followed by a short Deployment ID (For example: `https://cloud.astronomer.run/dhbhijp0`).
 
@@ -92,7 +92,7 @@ curl -v -X POST
 
 ### Get All Pools
 
-If you want to get all existing Pools from your Airflow Deployment, you can start with a generic Python command to Airflow's `GET` endpoint:
+If you want to get all existing Pools from your Deployment, you can start with a generic Python command to Airflow's `GET` endpoint:
 
 ```
 GET /api/v1/pools
