@@ -80,6 +80,11 @@ html[data-theme='dark'] {
   margin-right: 1rem;
 }
 
+.navbar__brand:hover,
+.navbar__brand:focus {
+  color: var(--spectra-colors-white);
+}
+
 .main-wrapper {
   padding-top: 2rem;
 }
