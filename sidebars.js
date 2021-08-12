@@ -42,6 +42,11 @@ module.exports = {
       label: 'Set Environment Variables',
     },
     {
+      type: 'doc',
+      id: 'airflow-alerts',
+      label: 'Configure Airflow Alerts',
+    },
+    {
       type: 'category',
       label: 'Reference',
       items: [
