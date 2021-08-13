@@ -58,9 +58,9 @@ module.exports = {
           'cli-release-notes',
         ],
       },
-      `global-variables`,
       'known-limitations',
-      'resource-reference-aws'
+      'resource-reference-aws',
+      'global-variables'
       ],
     },
   ],
