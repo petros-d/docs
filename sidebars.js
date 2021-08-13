@@ -59,7 +59,8 @@ module.exports = {
         ],
       },
       'known-limitations',
-      'resource-reference-aws'
+      'resource-reference-aws',
+      'global-variables'
       ],
     },
   ],
