@@ -191,7 +191,7 @@ ENV AIRFLOW_CONN_MY_PROD_DB=my-conn-type://login:password@host:5432/schema
 
 You can set this environment variable via an `.env` file locally, via your Dockerfile, or via the Astronomer UI as explained above. For more information on how to generate your Connection URI, refer to the [Apache Airflow documentation](https://airflow.apache.org/docs/stable/howto/connection/index.html#generating-connection-uri).
 
-> **Note:** Connections set via environment variable do not appear in the Airflow UI and cannot be modified there. 
+> **Note:** Connections set via environment variables do not appear in the Airflow UI and cannot be modified there. 
 
 ### Airflow Variables
 
