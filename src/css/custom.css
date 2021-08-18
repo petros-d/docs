@@ -85,6 +85,10 @@ html[data-theme='dark'] {
   color: var(--spectra-colors-white);
 }
 
+.navbar__link {
+  font-weight: bold;
+}
+
 .main-wrapper {
   padding-top: 2rem;
 }
@@ -105,4 +109,58 @@ html[data-theme='dark'] {
   border: 0px;
   border-top: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 0;
+}
+
+/* Color Mode Toggle Switch */
+html .react-toggle-track {
+  background-color: var(--spectra-colors-purple-700);
+  width: 54px;
+}
+
+.react-toggle {
+  border: solid 2px var(--spectra-colors-purple-700);
+  border-radius: 100px;
+}
+
+html[data-theme='dark'] .react-toggle .react-toggle-thumb, .react-toggle--checked .react-toggle-thumb {
+  left: 31px;
+}
+
+html .react-toggle-thumb {
+  background-color: var(--spectra-colors-purple-200);
+}
+
+/* Header Search Bar */
+html .DocSearch-Button {
+  height: 28px;
+}
+
+.DocSearch-Button .DocSearch-Search-Icon {
+  height: 14px;
+  width: 14px;
+}
+
+html .DocSearch-Button-Key {
+  background: none;
+  box-shadow: none;
+  margin-right: 0;
+  width: auto;
+  padding-bottom: 0px;
+}
+
+.DocSearch-Button-Keys {
+  justify-content: flex-end;
+}
+
+html .DocSearch-Button-Placeholder {
+  font-size: .85rem;
+}
+html .DocSearch-Button .DocSearch-Search-Icon {
+  color: var(--spectra-colors-gray-800);
+}
+
+html[data-theme='dark'] .DocSearch {
+  /* Search box */
+  --docsearch-searchbox-background: var(--ifm-color-secondary);
+  --docsearch-searchbox-focus-background: var(--ifm-color-white);
 }
