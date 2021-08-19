@@ -160,8 +160,16 @@ html .DocSearch-Button .DocSearch-Search-Icon {
 }
 
 html[data-theme='dark'] .DocSearch {
-  /* Search box */
   --docsearch-searchbox-background: var(--ifm-color-secondary);
   --docsearch-searchbox-focus-background: var(--ifm-color-white);
   --docsearch-text-color: var(--spectra-colors-gray-800);
+}
+
+/* Mobile Menu */
+.navbar__toggle {
+  color: var(--spectra-colors-white);
+}
+
+.navbar-sidebar__brand {
+  background-image: linear-gradient(to right, var(--spectra-colors-black), #2e1f51 80%);
 }
