@@ -163,4 +163,5 @@ html[data-theme='dark'] .DocSearch {
   /* Search box */
   --docsearch-searchbox-background: var(--ifm-color-secondary);
   --docsearch-searchbox-focus-background: var(--ifm-color-white);
+  --docsearch-text-color: var(--spectra-colors-gray-800);
 }
