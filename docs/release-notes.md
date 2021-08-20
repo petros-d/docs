@@ -24,7 +24,7 @@ You can now programmatically update your Airflow Deployments by making requests 
 
 - Set `AIRFLOW_HOME = 'usr/local/airflow'` as a permanent global environment variable.
 - In the Astronomer UI, long environment variable keys and values now wrap.
-- Added links for the Astronomer Registry and certification courses to the left navbar.
+- Added links for the Astronomer Registry and certification courses to the left-hand navbar.
 - Moved the **Teams** and **People** tabs into the **Settings** page of the UI.
 - Moved **Cluster** information into the metadata component of a Deployment's page in the UI.
 - Renamed various UI elements to better represent their functionality.
@@ -32,7 +32,7 @@ You can now programmatically update your Airflow Deployments by making requests 
 
 ### Bug Fixes
 
-- The lefthand navbar in the UI is no longer cut off when minimized on smaller screens.
+- The left-hand navbar in the UI is no longer cut off when minimized on smaller screens.
 - Fixed an issue where you could not delete Workspaces via the UI.
 - Fixed an issue where expired tokens would occasionally appear on `cloud.astronomer.io/token`.
 - Fixed an issue where the UI would initially load an inaccurate number of team members on the **Access** page.
