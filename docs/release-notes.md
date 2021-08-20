@@ -12,6 +12,33 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 For release notes specific to the Astronomer CLI, see [Astronomer CLI Release Notes](cli-release-notes).
 
+## August 20, 2021
+
+**Latest CLI Version**: `0.2.7-beta`
+
+### Support for the Airflow REST API
+
+You can now programmatically update your Airflow Deployments by making requests to Airflow's [REST API](https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html). Currently, this feature works only with temporary tokens available at `cloud.astronomer.io/token`. Support for Deployment API keys is coming soon. For more information on using this feature, read [Airflow API](airflow-api).
+
+### Minor Improvements
+
+- Set `AIRFLOW_HOME = 'usr/local/airflow'` as a permanent global environment variable.
+- In the Astronomer UI, long environment variable keys and values now wrap.
+- Added links for the Astronomer Registry and certification courses to the left navbar.
+- Moved the **Teams** and **People** tabs into the **Settings** page of the UI.
+- Moved **Cluster** information into the metadata component of a Deployment's page in the UI.
+- Renamed various UI elements to better represent their functionality.
+- Increased the upper bound of the **Worker Termination Grace Period** setting from 600 minutes to 1440 minutes.
+
+### Bug Fixes
+
+- The lefthand navbar in the UI is no longer cut off when minimized on smaller screens.
+- Fixed an issue where you could not delete Workspaces via the UI.
+- Fixed an issue where expired tokens would occasionally appear on `cloud.astronomer.io/token`.
+- Fixed an issue where the UI would initially load an inaccurate number of team members on the **Access** page.
+- Fixed alphabetical sorting by name in the **People** tab in the UI.
+- Removed placeholder columns from various tables in the UI.
+
 ## August 6, 2021
 
 **Latest CLI Version**: `0.2.7-beta`
@@ -19,7 +46,6 @@ For release notes specific to the Astronomer CLI, see [Astronomer CLI Release No
 ### Improvements
 
 - Informational tooltips are now available on the **New Deployment** page.
-- All tables across the UI now have their first columns sorted alphabetically by default.
 
 ### Bug Fixes
 

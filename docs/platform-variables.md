@@ -23,6 +23,7 @@ As part of the Astronomer Cloud architecture, certain environment variables have
 | `AIRFLOW_CONN_AIRFLOW_DB` | The connection ID for accessing the Airflow metadata DB  | `dbConnSecret` |
 | `AIRFLOW__CORE__FERNET_KEY` |The secret key for saving connection passwords in the metadata DB | `fernetKeySecret` |
 | `AIRFLOW__CORE__EXECUTOR`  | The executor class that Airflow uses. Astronomer Cloud exclusively supports the Celery Executor | `executor` |
+| `AIRFLOW_HOME`  | The home directory for an Airflow project | `usr/local/airflow` |
 | `AIRFLOW__KUBERNETES__NAMESPACE`| The Kubernetes namespace where Airflow Workers are created | `namespace` |
 | `AIRFLOW__CORE__HOSTNAME_CALLABLE` | Path to a callable, which resolves to the hostname | `airflow.utils.net.get_host_ip_address`|
 | `AIRFLOW__SCHEDULER__STATSD_ON` | Determines whether Statsd is on | `True` |
