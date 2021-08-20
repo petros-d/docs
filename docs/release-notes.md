@@ -18,22 +18,22 @@ For release notes specific to the Astronomer CLI, see [Astronomer CLI Release No
 
 ### Support for the Airflow REST API
 
-You can now programmatically update your Airflow Deployments by making requests to Airflow's [REST API](https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html). Currently, this feature works only with temporary tokens available at `cloud.astronomer.io/token`. Support for Deployment API keys is coming soon. For more information on using this feature, read [Airflow API](airflow-api).
+You can now programmatically trigger DAGs and update your Airflow Deployments on Astronomer by making requests to Airflow's [REST API](https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html). Currently this feature works only with temporary tokens, which are available at `cloud.astronomer.io/token`. Support for Deployment API keys is coming soon. For more information on using this feature, read [Airflow API](airflow-api).
 
 ### Minor Improvements
 
 - Set `AIRFLOW_HOME = 'usr/local/airflow'` as a permanent global environment variable.
-- In the Astronomer UI, long environment variable keys and values now wrap.
+- In the Astronomer UI, long environment variable keys and values now wrap to fit the screen.
 - Added links for the Astronomer Registry and certification courses to the left-hand navbar.
 - Moved the **Teams** and **People** tabs into the **Settings** page of the UI.
-- Moved **Cluster** information into the metadata component of a Deployment's page in the UI.
+- Moved **Cluster** information to the metadata section of a Deployment's information page in the UI.
 - Renamed various UI elements to better represent their functionality.
-- Increased the upper bound of the **Worker Termination Grace Period** setting from 600 minutes to 1440 minutes.
+- Increased the maximum **Worker Termination Grace Period** from 600 minutes (10 hours) to 1440 minutes (24 hours).
 
 ### Bug Fixes
 
 - The left-hand navbar in the UI is no longer cut off when minimized on smaller screens.
-- Fixed an issue where you could not delete Workspaces via the UI.
+- Fixed an issue where you could not delete a Workspace via the UI.
 - Fixed an issue where expired tokens would occasionally appear on `cloud.astronomer.io/token`.
 - Fixed an issue where the UI would initially load an inaccurate number of team members on the **Access** page.
 - Fixed alphabetical sorting by name in the **People** tab in the UI.

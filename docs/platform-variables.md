@@ -31,4 +31,4 @@ As part of the Astronomer Cloud architecture, certain environment variables have
 | `AIRFLOW__SCHEDULER__STATSD_PORT` | The port for Statsd | `strconv.FormatInt(int64(statsd.IngestPort), baseTen)` |
 | `AIRFLOW__METRICS__STATSD_ON` | Determines whether metrics are sent to Statsd | `True` |
 | `AIRFLOW__METRICS__STATSD_HOST` | The hostname for sending metrics to Statsd | `statsd.Hostname`|
-| `AIRFLOW__METRICS__STATSD_PORT` | The port for sending metrics to Statsd | strconv.FormatInt(int64(statsd.IngestPort), baseTen) |
+| `AIRFLOW__METRICS__STATSD_PORT` | The port for sending metrics to Statsd | `strconv.FormatInt(int64(statsd.IngestPort), baseTen)` |
