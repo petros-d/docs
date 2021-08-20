@@ -43,8 +43,13 @@ module.exports = {
     },
     {
       type: 'doc',
+      id: 'airflow-api',
+      label: 'Airflow API',
+    },
+    {
+      type: 'doc',
       id: 'airflow-alerts',
-      label: 'Configure Airflow Alerts',
+      label: 'Airflow Alerts',
     },
     {
       type: 'category',
