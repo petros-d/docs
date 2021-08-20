@@ -10,14 +10,14 @@ You can use Airflow's [REST API](https://airflow.apache.org/docs/apache-airflow/
 
 If you're looking to externally trigger DAG runs without needing to access your Airflow Deployment directly, for example, you can make an HTTP request (in Python, cURL etc.) to the corresponding endpoint in Airflow's API that calls for that exact action.
 
-Currently, requests to the API must be run manually using temporary access tokens. Service accounts with stable API keys will be available in a future update.
+Currently, requests to Airflow's REST API must be run manually using a temporary access token. Deployment API keys are coming soon.
 
 ## Prerequisites
 
 To make an Airflow API request, you need:
 
-- An active Deployment on Astronomer Cloud
-- Curl
+- A Deployment on Astronomer Cloud
+- [cURL](https://curl.se/)
 
 ## Step 1: Retrieve Access Key and URL
 
@@ -26,9 +26,9 @@ Before making an Airflow API request, you need to retrieve a few key pieces of i
 - An access token.
 - A base Deployment URL.
 
-To retrieve an access token, go to `cloud.astronomer.io/token` and copy the token that appears.
+To retrieve an access token, go to `cloud.astronomer.io/token` and copy the token that appears. This token is valid only for 24 hours.
 
-To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The base URL for the Airflow UI is your base Deployment URL. It includes your organization's URL, followed by a short Deployment ID (For example: `https://cloud.astronomer.run/dhbhijp0`).
+To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The base URL for the Airflow UI is your base Deployment URL. It includes your organization's URL, followed by a short Deployment ID (For example: `https://mycompany.astronomer.run/dhbhijp0`).
 
 ## Step 2: Make an Airflow API Request
 
