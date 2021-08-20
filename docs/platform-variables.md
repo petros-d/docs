@@ -18,12 +18,12 @@ As part of the Astronomer Cloud architecture, certain environment variables have
 | `AIRFLOW__LOGGING__ENCRYPT_S3_LOGS` | Determines whether to use server-side encryption for S3 logs | `False` |
 | `AIRFLOW__WEBSERVER__BASE_URL` | The base URL of the Airflow UI  | `https://${fullIngressHostname}`|
 |`AIRFLOW__CORE__SQL_ALCHEMY_CONN`| The SqlAlchemy connection string for the metadata DB | `dbConnSecret` |
-|`AIRFLOW__WEBSERVER__UPDATE_FAB_PERMS`| Determines whether to update FAB permissions on Webserver startup. | `True`|
+|`AIRFLOW__WEBSERVER__UPDATE_FAB_PERMS`| Determines whether to update FAB permissions on Webserver startup | `True`|
 | `AIRFLOW__WEBSERVER__ENABLE_PROXY_FIX` | Determines whether to enable werkzeug ProxyFix middleware for reverse proxy | `True` |
 | `AIRFLOW_CONN_AIRFLOW_DB` | The connection ID for accessing the Airflow metadata DB  | `dbConnSecret` |
 | `AIRFLOW__CORE__FERNET_KEY` |The secret key for saving connection passwords in the metadata DB | `fernetKeySecret` |
 | `AIRFLOW__CORE__EXECUTOR`  | The executor class that Airflow uses. Astronomer Cloud exclusively supports the Celery Executor | `executor` |
-| `AIRFLOW__KUBERNETES__NAMESPACE`| The Kubernetes namespace where Airflow Workers are created. | `namespace` |
+| `AIRFLOW__KUBERNETES__NAMESPACE`| The Kubernetes namespace where Airflow Workers are created | `namespace` |
 | `AIRFLOW__CORE__HOSTNAME_CALLABLE` | Path to a callable, which resolves to the hostname | `airflow.utils.net.get_host_ip_address`|
 | `AIRFLOW__SCHEDULER__STATSD_ON` | Determines whether Statsd is on | `True` |
 | `AIRFLOW__SCHEDULER__STATSD_HOST` |The hostname for Statsd | `statsd.Hostname`|

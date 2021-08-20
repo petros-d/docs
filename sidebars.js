@@ -47,6 +47,11 @@ module.exports = {
       label: 'Airflow API',
     },
     {
+      type: 'doc',
+      id: 'airflow-alerts',
+      label: 'Airflow Alerts',
+    },
+    {
       type: 'category',
       label: 'Reference',
       items: [
@@ -59,7 +64,8 @@ module.exports = {
         ],
       },
       'known-limitations',
-      'resource-reference-aws'
+      'resource-reference-aws',
+      'global-variables'
       ],
     },
   ],
