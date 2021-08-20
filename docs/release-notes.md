@@ -26,7 +26,7 @@ You can now programmatically trigger DAGs and update your Airflow Deployments on
 - In the Astronomer UI, long environment variable keys and values now wrap to fit the screen.
 - Added links for the Astronomer Registry and certification courses to the left-hand navbar.
 - Moved the **Teams** and **People** tabs into the **Settings** page of the UI.
-- Moved **Cluster** information to the metadata section of a Deployment's information page in the UI.
+- Added **Cluster** information to the metadata section of a Deployment's information page in the UI.
 - Renamed various UI elements to better represent their functionality.
 - Increased the maximum **Worker Termination Grace Period** from 600 minutes (10 hours) to 1440 minutes (24 hours).
 
