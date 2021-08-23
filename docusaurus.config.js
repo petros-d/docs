@@ -67,7 +67,7 @@ module.exports = {
           ],
         },
         {
-          title: 'Support',
+          title: 'Resources',
           items: [
             {
               label: 'Support',
