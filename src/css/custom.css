@@ -50,7 +50,7 @@
   --ifm-color-primary-light: var(--spectra-colors-blue-500);
   --ifm-color-primary-lighter: var(--spectra-colors-blue-400);
   --ifm-color-primary-lightest: var(--spectra-colors-blue-300);
-  
+
   --ifm-navbar-link-color: var(--spectra-colors-white);
 
   --ifm-footer-background-color: var(--spectra-colors-purple-900);
@@ -174,4 +174,9 @@ html[data-theme='dark'] .DocSearch {
 
 .navbar-sidebar__brand {
   background-image: linear-gradient(to right, var(--spectra-colors-black), #2e1f51 80%);
+}
+
+/* Table Styling */
+tbody {
+  word-break: break-word;
 }
