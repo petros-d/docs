@@ -35,7 +35,7 @@ If any AWS resources are on a private network, you can choose between two option
 
 If you want to continue with the second option, you'll additionally need:
 
-- Subnet CIDRs (RFC 1918 IP Space). Make sure that these CIDRs do not overlap with existing CIDRs in use by your organization.
+- A CIDR block (RFC 1918 IP Space) no smaller than a `/19` range. You must ensure it does not overlap with the AWS VPC(s) that you will be peering with later. The default CIDR range is `172.20.0.0/19`.
 - VPC Name / ID for peering with Astronomer (accessible through the [AWS VPC console](https://console.aws.amazon.com/vpc/)).
 - The IP addresses of your DNS servers.
 
