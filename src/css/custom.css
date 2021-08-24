@@ -120,6 +120,8 @@ html .react-toggle-track {
 .react-toggle {
   border: solid 2px var(--spectra-colors-purple-700);
   border-radius: 100px;
+  color: white;
+  font-size: 24px;
 }
 
 html[data-theme='dark'] .react-toggle .react-toggle-thumb, .react-toggle--checked .react-toggle-thumb {

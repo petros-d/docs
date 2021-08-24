@@ -29,11 +29,11 @@ module.exports = {
     colorMode: {
       disableSwitch: false,
       switchConfig: {
-        darkIcon: '🌙',
+        darkIcon: '☾',
         darkIconStyle: {
           marginLeft: '1px',
         },
-        lightIcon: '☀️',
+        lightIcon: '☼',
         lightIconStyle: {
           marginLeft: '1px',
         },
