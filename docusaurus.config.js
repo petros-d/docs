@@ -6,7 +6,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
   noIndex: true,
   organizationName: 'astronomer', // Usually your GitHub org/user name.
   projectName: 'beta-docs', // Usually your repo name.
@@ -28,6 +28,16 @@ module.exports = {
     },
     colorMode: {
       disableSwitch: false,
+      switchConfig: {
+        darkIcon: '☾',
+        darkIconStyle: {
+          marginLeft: '1px',
+        },
+        lightIcon: '☼',
+        lightIconStyle: {
+          marginLeft: '1px',
+        },
+      },
     },
     navbar: {
       title: 'Cloud Docs (Private Beta)',
@@ -41,7 +51,7 @@ module.exports = {
           // The baseUrl will be automatically prepended to this value.
           to: 'https://www.astronomer.io/docs',
           // The string to be shown.
-          label: 'Return to Main Docs ↗️',
+          label: 'Return to Main Docs ↗',
           // Left or right side of the navbar.
           position: 'right', // or 'right'
         },
