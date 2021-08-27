@@ -18,7 +18,7 @@ For release notes specific to the Astronomer CLI, see [Astronomer CLI Release No
 
 ### Minor Improvements
 
-- Logging in and out now works across multiple active browser tabs. For example, you can now log in to Astronomer Cloud on one tab and all other tabs running Astronomer Cloud will be automatically updated without refreshing.
+- You can now remain authenticated to Astronomer across multiple active browser tabs. For example, if your session expires and you re-authenticate to Astronomer Cloud on one tab, all other tabs running Astronomer Cloud will be automatically updated without refreshing.
 - If you try to access a given page on Astronomer Cloud while unauthenticated and reach the login screen, logging in now brings you to the original page you requested.
 - In **Settings** under the **Clusters** tab, "Kubeversion" has been renamed to "Kubernetes Version".
 
