@@ -18,14 +18,14 @@ For release notes specific to the Astronomer CLI, see [Astronomer CLI Release No
 
 ### Minor Improvements
 
-- Logging in and out now works across multiple browser tabs. For example, you can now log in to Astronomer Cloud on one tab and all other tabs running Astronomer Cloud will be automatically updated without refreshing.
+- Logging in and out now works across multiple active browser tabs. For example, you can now log in to Astronomer Cloud on one tab and all other tabs running Astronomer Cloud will be automatically updated without refreshing.
 - If you try to access a given page on Astronomer Cloud while unauthenticated and reach the login screen, logging in now brings you to the original page you requested.
 - In **Settings** under the **Clusters** tab, "Kubeversion" has been renamed to "Kubernetes Version".
 
 ### Bug Fixes
 
 - Fixed an issue where an incorrect count of team members would appear in the **People** tab.
-- Hotfixed an issue where the **Clusters** tab would show clusters from organizations you weren't authenticated to.
+- Hotfixed an issue where the **Clusters** tab would show Clusters from organizations you weren't authenticated to.
 
 ## August 20, 2021
 
