@@ -35,12 +35,12 @@ This will generate the following files in that directory:
 
     .
     ├── dags # Where your DAGs go
-    │   ├── example-dag.py # An example DAG that comes with the initialized project
+    │   └── example-dag.py # An example DAG that comes with the initialized project
     ├── Dockerfile # For the Astronomer Runtime Docker image, environment variables, and overrides
     ├── include # For any other files you'd like to include
     ├── plugins # For any custom or community Airflow plugins
-    ├──airflow_settings.yaml # For your Airflow Connections, Variables and Pools (local only)
-    ├──packages.txt # For OS-level packages
+    ├── airflow_settings.yaml # For your Airflow Connections, Variables and Pools (local only)
+    ├── packages.txt # For OS-level packages
     └── requirements.txt # For Python packages
 
 These files make up the Docker image that you'll first push to the Airflow environment on your local machine and then to a Deployment on Astronomer.
