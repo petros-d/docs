@@ -10,6 +10,14 @@ This document provides a summary of all changes made to the [Astronomer CLI](ins
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
+## v0.2.8-beta
+
+Release date: August 31, 2021
+
+- Improvement: Bumped the default Astronomer Runtime version for projects to `3.0.0`
+- Improvement: Updated help text throughout the CLI
+- Improvement: Added a README file to example projects created with `astro dev init`
+
 ## v0.2.7-beta
 
 Release date: July 31, 2021
