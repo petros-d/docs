@@ -76,11 +76,10 @@ Once you have the files you need in your project directory, you're ready to star
 
    You should see the following output:
 
-   ```
-   % astro dev start
+   <pre><code parentName="pre">{`% astro dev start
    Env file ".env" found. Loading...
    Sending build context to Docker daemon  10.75kB
-   Step 1/1 : FROM quay.io/astronomer/astro-runtime:2.1.1
+   Step 1/1 : FROM quay.io/astronomer/astro-runtime:${siteVariables.runtimeVersion}
 
    # Executing 5 build triggers
    ---> Using cache
@@ -100,7 +99,7 @@ Once you have the files you need in your project directory, you're ready to star
    Airflow Webserver: http://localhost:8080
    Postgres Database: localhost:5432/postgres
    The default credentials are admin:admin
-   ```
+   `}</code></pre>
 
 2. To verify that all 3 Docker containers were created, run:
 

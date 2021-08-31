@@ -4,6 +4,8 @@ title: 'Configure a Deployment'
 id: 'configure-deployment'
 ---
 
+import {siteVariables} from '@site/src/versions';
+
 ## Overview
 
 A Deployment on Astronomer Cloud is an instance of Astronomer Runtime that is powered by Apache Airflow's core components - a metadata database, a Webserver, one or more Schedulers, and one or more Workers. Every Deployment is hosted on a single Astronomer Cluster, has an isolated set of resources, and operates with a dedicated Postgres metadata database.
@@ -22,7 +24,7 @@ To create an Airflow Deployment on Astronomer Cloud:
 2. On the top right-hand side of the Deployments page, click **New Deployment**.
 3. Set the following:
     - **Name**
-    - **Astronomer Runtime**: For Private Beta, Astronomer Runtime 2.1.1 (based on Airflow 2.1.1) is available.
+    - **Astronomer Runtime**: For Private Beta, Astronomer Runtime ${siteVariables.runtimeVersion} (based on Airflow 2.1.1) is available.
     - **Description**
     - **Deployment Location**: The Astronomer Cluster in which you want to create this Deployment.
 
