@@ -61,6 +61,7 @@ module.exports = {
         items : [
           'release-notes',
           'cli-release-notes',
+          `runtime-release-notes`
         ],
       },
       'known-limitations',
