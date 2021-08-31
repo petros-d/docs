@@ -4,6 +4,8 @@ title: 'Deploy Code to Astronomer'
 id: 'deploy-code'
 ---
 
+import {siteVariables} from '@site/src/versions';
+
 ## Overview
 
 Astronomer Cloud makes it easy for your team to test Airflow DAGs locally and push them to a Deployment in a Production or Development environment.
@@ -51,9 +53,8 @@ Your `Dockerfile` will include a reference to Astronomer Runtime. Packaged into 
 
 The Docker image you'll find in your Dockerfile by default is:
 
-```
-FROM quay.io/astronomer/astro-runtime:2.1.1
-```
+<pre><code parentName="pre">{`FROM quay.io/astronomer/astro-runtime:${siteVariables.runtimeVersion}
+`}</code></pre>
 
 This Docker image is based on [Airflow 2.1.1](https://airflow.apache.org/docs/apache-airflow/stable/changelog.html#airflow-2-1-1-2021-07-02) and is hosted on [Astronomer's Docker Registry](https://quay.io/repository/astronomer/astro-runtime?tab=tags). As we release support for newer versions of Apache Airflow throughout the Private Beta Program, we'll make sure to let you know.
 
@@ -121,7 +122,7 @@ Once you have the files you need in your project directory, you're ready to star
    ![Example DAG](https://assets2.astronomer.io/main/docs/getting-started/sample_dag.png)
 
 4. To push up changes to any of the files in your project directory, run:
-    
+
     ```
     ./astro dev stop
     ```
