@@ -14,7 +14,7 @@ For release notes specific to the Astronomer CLI, see [Astronomer CLI Release No
 
 ## August 27, 2021
 
-**Latest CLI Version**: `0.2.7-beta`
+**Latest CLI Version**: [`0.2.8-beta`](cli-release-notes#v028-beta)
 
 ### Minor Improvements
 

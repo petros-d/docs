@@ -4,6 +4,8 @@ title: 'Install the Astronomer CLI'
 id: 'install-cli'
 ---
 
+import {siteVariables} from '@site/src/versions';
+
 ## Overview
 
 The Astronomer CLI is the easiest way to run Apache Airflow on your machine.
@@ -40,21 +42,15 @@ Now, run the appropriate command for your OS in the directory you created in Ste
 
 ### MacOS
 
-```bash
-curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.7-beta_darwin_amd64/astro -o astro && chmod +x astro
-```
+<pre><code parentName="pre">{`curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_${siteVariables.cliVersion}_darwin_amd64/astro -o astro && chmod +x astro`}</code></pre>
 
 ### Windows (PowerShell)
 
-```powershell
-Invoke-WebRequest -Uri https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.7-beta_windows_amd64/astro.exe -OutFile astro.exe
-```
+<pre><code parentName="pre">{`Invoke-WebRequest -Uri https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_${siteVariables.cliVersion}_windows_amd64/astro.exe -OutFile astro.exe`}</code></pre>
 
 ### Linux
 
-```bash
-curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.7-beta_linux_amd64/astro -o astro && chmod +x astro
-```
+<pre><code parentName="pre">{`curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_${siteVariables.cliVersion}_linux_amd64/astro -o astro && chmod +x astro`}</code></pre>
 
 ## Step 3. Confirm the Install
 
@@ -74,10 +70,8 @@ To confirm the CLI was installed properly, run the following from the directory 
 
 You should see the following:
 
-```
-% ./astro version
-Astro CLI Version: 0.2.7-beta
-```
+<pre><code parentName="pre">{`% ./astro version
+Astro CLI Version: ${siteVariables.cliVersion}`}</code></pre>
 
 ## Step 4. Run CLI Commands
 
