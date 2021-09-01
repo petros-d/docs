@@ -15,8 +15,6 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Minor improvements
 
-- Added support for Astronomer Runtime on released versions of Astronomer
-- Added an `io.astronomer.docker.runtime.version` label to the Runtime Docker image
 - Upgraded the default Python version to `3.9.6`
 - Added a link to Astronomer Cloud documentation in the Runtime Airflow UI
 
