@@ -8,6 +8,23 @@ Astronomer runtime is a Docker image built and published by Astronomer that exte
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
+## Astronomer Runtime 3.0.1
+
+- Release date: September 1, 2021
+- Airflow version: 2.1.1
+
+### Minor improvements
+
+- The Astronomer Runtime image can now be used in Deployments on released versions of Astronomer such as Astronomer Enterprise v0.25
+- Added an `io.astronomer.docker.runtime.version` label to the Runtime Docker image
+- Upgraded default Python version to `3.9.6`
+- Added a link to Astronomer Cloud documentation in the Runtime Airflow UI
+
+### Bug fixes
+
+- Removed nonfunctional security and user profile elements from the Runtime Airflow UI
+- The Runtime Airflow UI now shows the correct version of Runtime in the footer
+
 ## Astronomer Runtime 3.0.0
 
 - Release date: August 12, 2021
