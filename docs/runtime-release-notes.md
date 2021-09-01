@@ -15,7 +15,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Minor improvements
 
-- The Astronomer Runtime image can now be used in Deployments on released versions of Astronomer such as Astronomer Enterprise v0.25
+- Added support for Astronomer Runtime to released versions of Astronomer
 - Added an `io.astronomer.docker.runtime.version` label to the Runtime Docker image
 - Upgraded default Python version to `3.9.6`
 - Added a link to Astronomer Cloud documentation in the Runtime Airflow UI
