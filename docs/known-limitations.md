@@ -19,16 +19,17 @@ The list below reflects known issues at the time of writing. It will be updated 
 - We do not currently support PgBouncer, but the RDS instance provisioned in your Cluster will support around 1000 connections to your database, enough to support 10-12 Deployments.
 - Tasks longer than the worker termination grace period may become zombies when KEDA autoscaling is enabled.
 - If a user changes Workspace roles on Astronomer, it can take a maximum of 10 minutes for corresponding Airflow permission changes to take effect.
+- The Airflow API can be reached only by using a temporary token. Deployment API keys are coming soon.
 - The Astronomer CLI is generally limited to `astro dev` commands, in addition to `astro deploy` and `astro auth`. Full functionality coming soon.
 - A set of 40 example DAGs will be appear in the Airflow UI when you create a new Deployment. Corresponding DAG files should not appear in your local project directory. To remove these example DAGs at any time, set the following Environment Variable via the Astronomer UI: `AIRFLOW__CORE__LOAD_EXAMPLES=False`
 - Clicking on **Refresh DAG** in the Airflow UI will redirect you to `<org-name>.astronomer.run` (Astronomer Home Page) instead of the task instance URL.
 
 ## Coming Soon
 
-- Deployment Service Accounts.
-- Support for Airflow 2.2.
-- Single Sign-On.
-- Full CLI functionality.
-- Self-service Cluster creation.
-- Support for CLI Install via Homebrew.
-- Analytics.
+- Deployment API Keys
+- Support for Airflow 2.2
+- Single Sign-On
+- Full CLI functionality
+- Self-service Cluster creation
+- Support for CLI Install via Homebrew
+- Analytics
