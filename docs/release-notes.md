@@ -12,6 +12,18 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 For release notes specific to the Astronomer CLI, see [Astronomer CLI Release Notes](cli-release-notes).
 
+## September 3, 2021
+
+**Latest CLI version**: [`0.2.8-beta`](cli-release-notes#v028-beta)
+
+## Bug Fixes
+
+- Added new protections to prevent S3 remote logging connections from breaking
+- Fixed an issue where environment variables with extra spaces could break a Deployment
+- Fixed an issue where Deployments would occasionally persist after being deleted via the UI
+- In the UI, the **Organization** tab in **Settings** is now hidden from non-admin users
+- In the UI, the table view of Deployments no longer shows patch information in a Deployment's **Version** value
+
 ## August 27, 2021
 
 **Latest CLI Version**: [`0.2.8-beta`](cli-release-notes#v028-beta)
