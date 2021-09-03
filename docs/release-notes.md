@@ -21,8 +21,8 @@ For release notes specific to the Astronomer CLI, see [Astronomer CLI Release No
 - Added new protections to prevent S3 remote logging connections from breaking
 - Fixed an issue where environment variables with extra spaces could break a Deployment
 - Fixed an issue where Deployments would occasionally persist after being deleted via the UI
-- In the UI, the **Organization** tab in **Settings** is now hidden from non-admin users.
-- In the UI, the table view of Deployments no longer shows patch information in a Deployment's **Version** value.
+- In the UI, the **Organization** tab in **Settings** is now hidden from non-admin users
+- In the UI, the table view of Deployments no longer shows patch information in a Deployment's **Version** value
 
 ## August 27, 2021
 
