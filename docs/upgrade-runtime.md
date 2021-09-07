@@ -15,7 +15,7 @@ Follow this guide to upgrade a Deployment's Airflow environment using the Astron
 1. In your local Astronomer project directory, open your `Dockerfile`.
 2. Copy the link for the new Astronomer Runtime image into the `FROM` statement in your Dockerfile.
 
-    Once you upgrade Runtime versions, you CANNOT downgrade to an earlier version. The Airflow metadata database structurally changes with each release, making for backwards incompatibility across versions.
+    Once you upgrade Runtime versions, you can't downgrade to an earlier version. The Airflow metadata database structurally changes with each release, making for backwards incompatibility across versions.
 
     For a table reference of available Runtime versions, see [Available Versions](runtime-support-policy#available-versions). For Astronomer's platform's full collection of Docker Images, go to the [Astronomer Runtime repository on Quay.io](https://quay.io/repository/astronomer/astro-runtime?tab=tags).
 
