@@ -8,7 +8,7 @@ id: 'upgrade-runtime'
 
 New versions of Astronomer Runtime are are released regularly to support new major, minor, or patch versions of Apache Airflow. To take advantage of new features, as well as bug and security fixes, we recommend regularly upgrading your Deployment's Runtime version.
 
-Follow this guide to upgrade a Deployment's Airflow environment using the Astronomer CLI.
+Follow this guide to upgrade a Deployment's Airflow environment using the Astronomer CLI. You can use these steps to upgrade to any major, minor, or patch version of Runtime.
 
 ## Step 1: Update Your Dockerfile
 
@@ -17,7 +17,7 @@ Follow this guide to upgrade a Deployment's Airflow environment using the Astron
 
     Once you upgrade Runtime versions, you CANNOT downgrade to an earlier version. The Airflow metadata database structurally changes with each release, making for backwards incompatibility across versions.
 
-    For our platform's full collection of Docker Images, go to [Astronomer's image repository on Quay.io](https://quay.io/repository/astronomer/astro-runtime?tab=tags).
+    For Astronomer's platform's full collection of Docker Images, go to the [Astronomer Runtime repository on Quay.io](https://quay.io/repository/astronomer/astro-runtime?tab=tags).
 
 ## Step 2: Deploy Your Image
 
@@ -38,3 +38,9 @@ To push your upgrade to Astronomer, run `astro deploy` and select the Deployment
 <div class="text--center">
   <img src="/img/docs/version-footer.png" alt="Astronomer Runtime version shown in the Airflow UI footer" />
 </div>
+
+## Patch Versions of Runtime
+
+If you're pushing code a Deployment for the first time without specifying a patch version in your `Dockerfile`, the latest patch version available is automatically pulled.
+
+Subsequent code pushes to this Deployment do not automatically pull the latest corresponding patch version. To upgrade to a new patch version on an existing Deployment, you must follow the steps in this guide to add the new patch version to your `Dockerfile`.
