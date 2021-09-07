@@ -6,7 +6,7 @@ id: 'upgrade-runtime'
 
 ## Overview
 
-New versions of Astronomer Runtime are are released regularly to support new major, minor, or patch versions of Apache Airflow. To take advantage of new features, as well as bug and security fixes, we recommend regularly upgrading your Deployment's Runtime version.
+New versions of Astronomer Runtime are released regularly to support new major, minor, or patch versions of Apache Airflow. To take advantage of new features, as well as bug and security fixes, we recommend regularly upgrading your Deployment's Runtime version.
 
 Follow this guide to upgrade a Deployment's Airflow environment using the Astronomer CLI. You can use these steps to upgrade to any major, minor, or patch version of Runtime.
 
