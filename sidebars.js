@@ -53,6 +53,14 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Astronomer Runtime',
+      items: [
+      'upgrade-runtime',
+      'runtime-support-policy',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Reference',
       items: [
       {
@@ -61,7 +69,8 @@ module.exports = {
         items : [
           'release-notes',
           'cli-release-notes',
-          `runtime-release-notes`
+          'runtime-release-notes',
+          'runtime-support-policy',
         ],
       },
       'known-limitations',

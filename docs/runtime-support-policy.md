@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Versioning and Support Policy'
+sidebar_label: 'Runtime Versioning and Support'
 title: 'Astronomer Runtime Versioning and Support'
 id: 'runtime-support-policy'
 ---
@@ -42,7 +42,7 @@ The format for Runtime hotfix versions is `<base-version>-<hotfix-version>`. For
 
 All hotfix releases have a [corresponding changelog](https://github.com/astronomer/astro-runtime/blob/main/CHANGELOG.md) which specifies the date the hotfix was released and all individual changes made to it. Bugs that are reported by the wider Airflow community are often fixed in Astronomer Runtime before they are fixed in the subsequent open source release.
 
-## Available Versions
+## Available Runtime Versions
 
 The following table contains all Astronomer Runtime images supported on Astronomer Enterprise. For our platform's full collection of Docker images, reference [Astronomer on Quay.io](https://quay.io/repository/astronomer/astro-runtime?tab=tags).
 
