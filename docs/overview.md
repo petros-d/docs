@@ -22,6 +22,12 @@ Astronomer Cloud's architecture enables a few key features, available in Private
 - Astronomer Runtime, a new collection of Docker images set to provide a differentiated Airflow experience. Astronomer Runtime will initially support Airflow 2.1.1.
 - Real-time, in-app chat support powered by Intercom.
 
+The following diagram outlines how the control plane, data plane, and users are connected to enable these features:
+
+<div class="text--center">
+  <img src="/img/docs/architecture-overview.png" alt="High level overview of Astronomer Cloud's architecture" />
+</div>
+
 For more information on each of these features, explore the documentation links below. We will continue to make changes and release new features throughout the course of the Private Beta program with no expected disruption to your data pipelines.
 
 ## Get Started
