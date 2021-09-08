@@ -39,11 +39,11 @@ pymongo==3.7.2
 
 If you don't pin a package to a version, the latest version of the package that's publicly available will be installed by default.
 
-### Rebuild your Image
+### Rebuild your image
 
 Once you've saved those packages in your project files, rebuild your image by running `astro dev stop` followed by `astro dev start`. This process stops your running Docker containers and restarts them with your updated image.
 
-### Confirm your Package was Installed
+### Confirm your package was installed
 
 If you added `pymongo` to your `requirements.txt` file, for example, you can confirm that it was properly installed by running a `docker exec` command into your Scheduler:
 
@@ -272,7 +272,7 @@ The following setup describes how to bring in Python Packages stored in a privat
     - If you don't want keys in this file to be pushed back up to your GitHub repo, consider adding this file to `.gitignore`
     - If you're running Python 3.7 on your machine, replace the reference to Python 3.6 under `# Copy requirements directory` with `/usr/lib/python3.7/site-packages/` above
 
-### Step 2: Build your Image
+### Step 2: Build your image
 
 Run the following in your terminal:
 
@@ -300,7 +300,7 @@ If you're based your custom image off of `quay.io/astronomer/astro-runtime:3.0.1
 FROM custom-astro-runtime:3.0.1-buster
 ```
 
-### Step 4: Push your Custom Image to Astronomer
+### Step 4: Push your custom image to Astronomer
 
 If you're developing locally, push your changes to your Airflow project by running `astro dev stop` followed by `astro dev start`.
 
@@ -308,7 +308,7 @@ If you're pushing up to Astronomer, run `astro deploy` or trigger your CI/CD pip
 
 For more detail on deploying to Astronomer, read [Deploy to Deploy Code](deploy-code).
 
-## Build with a Different Python Version
+## Build with a different Python version
 
 The Astronomer Runtime Docker image has been tested and built only for Python 3.7.
 
