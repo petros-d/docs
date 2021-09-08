@@ -314,10 +314,10 @@ The Astronomer Runtime Docker image has been tested and built only for Python 3.
 
 To run Astronomer Runtime on Docker with Python versions 3.6 or 3.8, you need to create a custom version of the image, specify the `PYTHON_MAJOR_MINOR_VERSION` build argument, and push the custom image to an existing Docker registry. To do so:
 
-1. Using `docker build`, build a custom [Astronomer Runtime Docker image](https://github.com/astronomer/astro-runtime) and specify `PYTHON_MAJOR_MINOR_VERSION` for the version of Python you'd like to support. For example, the command for building a custom Astronomer Runtime image for Airflow 2.0.0 with Python 3.8 would look something like this:
+1. Using `docker build`, build a custom [Astronomer Runtime Docker image](https://github.com/astronomer/astro-runtime) and specify `PYTHON_MAJOR_MINOR_VERSION` for the version of Python you'd like to support. For example, the command for building a custom Astronomer Runtime image for Airflow 2.1.1 with Python 3.8 would look something like this:
 
     ```sh
-    docker build --build-arg PYTHON_MAJOR_MINOR_VERSION=3.8 -t <your-registry>/astro-runtime:<image-tag> https://github.com/astronomer/astro-runtime.git#master:2.0.0/buster
+    docker build --build-arg PYTHON_MAJOR_MINOR_VERSION=3.8 -t <your-registry>/astro-runtime:<image-tag> https://github.com/astronomer/astro-runtime
     ```
 
     We recommend using an image tag that indicates the image is using a different Python version, such as `2.0.0-buster-python3.8`.
