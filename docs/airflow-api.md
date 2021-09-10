@@ -21,31 +21,10 @@ To make an Airflow API request, you need:
 
 Before making an Airflow API request, you need to retrieve a few key pieces of information from Astronomer Cloud. Specifically, you need:
 
-- An API key.
+- A Deployment API key
 - A base Deployment URL.
 
-### Retrieve an Access Token
-
-To create an API key for a Deployment:
-
-1. In the Astronomer UI, open your Deployment.
-2. In the **API Keys** menu, click **Add API Key**:
-
-    <div class="text--center">
-      <img src="/img/docs/add-api-key.png" alt="Add API Key button" />
-    </div>
-
-3. Give the key a name and description, then click **Create API Key**:
-
-    <div class="text--center">
-      <img src="/img/docs/create-api-key.png" alt="Create API Key button" />
-    </div>
-
-From here, you can copy the API Key and Secret for use in your API calls.
-
-Alternatively, you can use a temporary access key. To retrieve a temporary access key, go to `cloud.astronomer.io/token` and copy the key that appears. This key is valid only for 24 hours.
-
-### Retrieve a Deployment URL
+To create a Deployment API key, follow the steps in [Deployment API Keys](api-keys).
 
 To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The base URL for the Airflow UI is your base Deployment URL. It includes your organization's URL, followed by a short Deployment ID (For example: `https://mycompany.astronomer.run/dhbhijp0`).
 
