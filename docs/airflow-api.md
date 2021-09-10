@@ -17,7 +17,7 @@ To make an Airflow API request, you need:
 - A Deployment on Astronomer Cloud
 - [cURL](https://curl.se/)
 
-## Step 1: Retrieve Access Token and URL
+## Step 1: Retrieve a Deployment Access Key and URL
 
 Before making an Airflow API request, you need to retrieve a few key pieces of information from Astronomer Cloud. Specifically, you need:
 
