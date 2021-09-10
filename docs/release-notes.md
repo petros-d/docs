@@ -18,7 +18,7 @@ For release notes specific to the Astronomer CLI, see [Astronomer CLI Release No
 
 ### Deployment API Keys
 
-You can now generate Deployment-specific API keys via the Astronomer UI. You can use Deployment API keys to programmatically deploy DAGs to a given Deployment on Astronomer, or to programmatically update a Deployment's Airflow environment via the Airflow API. For more information, read [Deployment API Keys](api-keys).
+You can now generate Deployment-specific API keys via the Astronomer UI. You can use Deployment API keys to programmatically deploy DAGs to a given Deployment on Astronomer, or to programmatically update a Deployment's Airflow environment via the Airflow API. For more information, read [Deployment API Keys].
 
 ## September 3, 2021
 
