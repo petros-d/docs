@@ -25,7 +25,7 @@ To create an API key for a Deployment:
       <img src="/img/docs/create-api-key.png" alt="Create API Key button" />
     </div>
 
-From here, you can copy the API Key and Secret for use in your API calls.
+From here, you can copy the API Key and Secret for use in API calls and CI/CD pipelines.
 
 Alternatively, you can use a temporary access key. To retrieve a temporary access key, go to `cloud.astronomer.io/token` and copy the key that appears. This key is valid only for 24 hours.
 
