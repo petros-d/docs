@@ -138,10 +138,10 @@ Once you have the files you need in your project directory, you're ready to star
 
 ## Step 3: Authenticate to Astronomer
 
-Once you've tested your DAGs locally, you're ready to push them to Astronomer. As long as you're a Workspace Admin or Editor, you can push code to any Deployment you have access to. To start, authenticate to Astronomer Cloud by running:
+Once you've tested your DAGs locally, you're ready to push them to Astronomer. To start, authenticate to Astronomer Cloud by running:
 
 ```
-./astro auth login astronomer.io
+./astro auth login
 ```
 
 If you created your account with a username and password, you'll be prompted to enter them directly in your terminal. If you did so via GitHub or Google OAuth, you'll be prompted to grab a temporary token from https://cloud.astronomer.io/token.
@@ -169,7 +169,7 @@ Once you log in, you should see the DAGs you just deployed.
 Now that you're familiar with deploying DAGs to Astronomer Cloud, consider reading:
 
 - [Customize your Image](https://www.astronomer.io/docs/cloud/stable/develop/customize-image)
-- [Set Environment Variables](https://www.astronomer.io/docs/cloud/stable/deploy/environment-variables)
+- [Set Environment Variables](environment-variables)
 
 These docs live in Astronomer's main documentation page and have not been ported over to Private Beta documentation here, though the functionality described is still applicable.
 

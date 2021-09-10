@@ -12,11 +12,19 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 For release notes specific to the Astronomer CLI, see [Astronomer CLI Release Notes](cli-release-notes).
 
+## September 10, 2021
+
+**Latest CLI version**: [`0.2.8-beta`](cli-release-notes#v028-beta)
+
+### Deployment API Keys
+
+You can now generate Deployment-specific API keys via the Astronomer UI. You can use Deployment API keys to programmatically deploy DAGs to a given Deployment on Astronomer, or to programmatically update a Deployment's Airflow environment via the Airflow API. For more information, read [Deployment API Keys](api-keys).
+
 ## September 3, 2021
 
 **Latest CLI version**: [`0.2.8-beta`](cli-release-notes#v028-beta)
 
-## Bug Fixes
+### Bug Fixes
 
 - Added new protections to prevent S3 remote logging connections from breaking
 - Fixed an issue where environment variables with extra spaces could break a Deployment
