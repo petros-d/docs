@@ -22,29 +22,25 @@ For guidelines on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runt
 
 An Astronomer Runtime Docker image will be published for every major and minor version of Apache Airflow. For example, Runtime images correspond with Apache Airflow 2.0, 2.1, 2.2 etc. as they're released in the open-source project.
 
+Runtime major version upgrades equate to upgrading Apache Airflow versions, while Runtime minor version upgrades are patch fixes for existing Airflow versions. For example, consider Runtime 3.0.0, which is Astronomer's distribution of Airflow 2.1.1. Runtime 3.1.0 would equate to using a new version of Apache Airflow, whereas Runtime 3.0.1 would include only minor fixes for Airflow 2.1.1.
+
+## Runtime Sources
+
 Runtime Docker images come in two variants:
 
-- `quay.io/astronomer/astro-runtime:<version>-buster-onbuild`
-- `quay.io/astronomer/astro-runtime:<version>-buster`
+- `quay.io/astronomer/astro-runtime:<version>`
+- `quay.io/astronomer/astro-runtime:<version>-base`
 
 For example, the images for Astronomer Runtime 3.0.0 would be:
 
-- `quay.io/astronomer/astro-runtime:3.0.0-buster`
-- `quay.io/astronomer/astro-runtime:3.0.0-buster-onbuild`
+- `quay.io/astronomer/astro-runtime:3.0.0`
+- `quay.io/astronomer/astro-runtime:3.0.0-base`
 
-For the smoothest, out-of-the-box Airflow experience, we strongly recommend and default to `buster-onbuild` images in your project's `Dockerfile`. These images incorporate Docker ONBUILD commands to copy and scaffold your Airflow project directory so you can more easily pass those files to the containers running each core Airflow component.
-
-### Hotfix Versions
-
-In addition to supporting the latest versions of open source Airflow on Astronomer Runtime, our team regularly ships bug and security fixes to Runtime images in hotfix releases.
-
-The format for Runtime hotfix versions is `<base-version>-<hotfix-version>`. For example, the second hotfix release for Runtime 3.0.0 was `3.0.0-2`.
-
-All hotfix releases have a [corresponding changelog](https://github.com/astronomer/astro-runtime/blob/main/CHANGELOG.md) which specifies the date the hotfix was released and all individual changes made to it. Bugs that are reported by the wider Airflow community are often fixed in Astronomer Runtime before they are fixed in the subsequent open source release.
+For the smoothest, out-of-the-box Airflow experience, we strongly recommend and default to using non-`base` images. These images incorporate Docker ONBUILD commands to copy and scaffold your Airflow project directory so you can more easily pass those files to the containers running each core Airflow component.
 
 ## Available Runtime Versions
 
-The following table contains all Astronomer Runtime images supported on Astronomer Enterprise. For our platform's full collection of Docker images, reference [Astronomer on Quay.io](https://quay.io/repository/astronomer/astro-runtime?tab=tags).
+The following table contains all Astronomer Runtime images supported on Astronomer Cloud. For our platform's full collection of Docker images, reference [Astronomer on Quay.io](https://quay.io/repository/astronomer/astro-runtime?tab=tags).
 
 | Airflow Version                                                                      | Debian-based Image                                        |
 | -------------------------------------------------------------------------------------| ----------------------------------------------------------| --------------------------------------------------------------|
