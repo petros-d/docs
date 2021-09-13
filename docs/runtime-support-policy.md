@@ -44,8 +44,8 @@ The following table contains all Astronomer Runtime images supported on Astronom
 
 | Airflow Version                                                                      | Debian-based Image                                        |
 | -------------------------------------------------------------------------------------| ----------------------------------------------------------| --------------------------------------------------------------|
-| [2.1.1](https://github.com/astronomer/astro-runtime/blob/main/CHANGELOG.md#301-2021-08-31)     | FROM quay.io/astronomer/astro-runtime:3.0.0-buster-onbuild   |
-| [2.1.1](https://github.com/astronomer/astro-runtime/blob/main/CHANGELOG.md#301-2021-08-31)     | FROM quay.io/astronomer/astro-runtime:3.0.1-buster-onbuild   |
+| [2.1.1](https://github.com/astronomer/astro-runtime/blob/main/CHANGELOG.md#301-2021-08-31)     | FROM quay.io/astronomer/astro-runtime:3.0.0   |
+| [2.1.1](https://github.com/astronomer/astro-runtime/blob/main/CHANGELOG.md#301-2021-08-31)     | FROM quay.io/astronomer/astro-runtime:3.0.1   |
 
 ## Support Policy
 
