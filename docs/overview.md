@@ -9,7 +9,7 @@ slug: /
 
 Welcome to the Private Beta Program for Astronomer Cloud. We're thrilled to have you onboard as 'Build Partners' as we launch the next generation of our product. We expect our teams to be in close communication throughout the program, and this page will serve as a home for official product documentation.
 
-To start, Astronomer Cloud includes a game-changing deployment model that offers the self-service convenience of a fully managed Cloud service (the “Control Plane”) while respecting the need to keep data private, secure, and within corporate boundaries (the “Data Plane”).
+To start, Astronomer Cloud includes a game-changing deployment model that offers the self-service convenience of a fully managed Cloud service (the “control plane”) while respecting the need to keep data private, secure, and within corporate boundaries (the “data plane”).
 
 This model optimizes for security whilst relieving your team of operational overhead. As we look beyond Private Beta to build a robust set of differentiating features, we very much look forward to hearing your feedback.
 
@@ -17,7 +17,8 @@ This model optimizes for security whilst relieving your team of operational over
 
 Astronomer Cloud's architecture enables a few key features, available in Private Beta:
 
-- Support for Astronomer Cloud on AWS `us-east-1` and `us-west-2`.
+- Multi-tenant control plane completely managed by Astronomer
+- Support for Astronomer data plane on AWS `us-east-1` and `us-west-2`.
 - Worker auto-scaling, powered by Airflow's Celery Executor + KEDA.
 - Astronomer Runtime, a new collection of Docker images set to provide a differentiated Airflow experience. Astronomer Runtime will initially support Airflow 2.1.1.
 - Real-time, in-app chat support powered by Intercom.
