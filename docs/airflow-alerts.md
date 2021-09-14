@@ -6,7 +6,7 @@ id: 'airflow-alerts'
 
 ## Overview
 
-You can utilize Airflow's alerting framework to monitor the health of individual tasks and DAGs across your Airflow Deployments.
+You can utilize Airflow's alerting framework to monitor the health of individual tasks and DAGs across your Airflow Deployments. This guide provides information about configuring various Airflow alerts on Astronomer. 
 
 ## Configure Slack Notifications, Custom Notifications, and SLAs
 
