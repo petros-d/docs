@@ -2,9 +2,8 @@
 sidebar_label: 'Configure a Deployment'
 title: 'Configure a Deployment'
 id: 'configure-deployment'
+runtimeVersion: 3.0.1
 ---
-
-import {siteVariables} from '@site/src/versions';
 
 ## Overview
 
@@ -24,7 +23,7 @@ To create an Airflow Deployment on Astronomer Cloud:
 2. On the top right-hand side of the Deployments page, click **New Deployment**.
 3. Set the following:
     - **Name**
-    - **Astronomer Runtime**: For Private Beta, Astronomer Runtime ${siteVariables.runtimeVersion} (based on Airflow 2.1.1) is available.
+    - **Astronomer Runtime**: For Private Beta, Astronomer Runtime 3.0.1 (based on Airflow 2.1.1) is available.
     - **Description**
     - **Deployment Location**: The Astronomer Cluster in which you want to create this Deployment.
 

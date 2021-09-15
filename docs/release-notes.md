@@ -4,25 +4,19 @@ title: 'Astronomer Cloud Release Notes'
 id: 'release-notes'
 ---
 
+import {siteVariables} from '@site/src/versions';
+
 ## Overview
 
 Astronomer is committed to continuous development during the Private Beta Program. As you grow with us, expect to see bug fixes and improved functionality on a daily basis. To keep your team updated, this document will provide a weekly summary of all changes made and released to Astronomer Cloud during the Private Beta Program.
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
-For release notes specific to the Astronomer CLI, see [Astronomer CLI Release Notes](cli-release-notes).
+**Latest Runtime Version** 3.0.1 ([Release notes](runtime-release-notes))
 
-## September 15, 2021
-
-**Latest CLI version**: [`0.2.8-beta`](cli-release-notes#v028-beta)
-
-### Minor Improvements
-
-This release included changes which improve the Cluster creation and management experience for the Astronomer team. 
+**Latest CLI Version** 0.2.8-beta ([Release notes](cli-release-notes))
 
 ## September 3, 2021
-
-**Latest CLI version**: [`0.2.8-beta`](cli-release-notes#v028-beta)
 
 ### Bug Fixes
 
@@ -34,8 +28,6 @@ This release included changes which improve the Cluster creation and management 
 
 ## August 27, 2021
 
-**Latest CLI Version**: [`0.2.8-beta`](cli-release-notes#v028-beta)
-
 ### Minor Improvements
 
 - You can now remain authenticated to Astronomer across multiple active browser tabs. For example, if your session expires and you re-authenticate to Astronomer Cloud on one tab, all other tabs running Astronomer Cloud will be automatically updated without refreshing.
@@ -46,8 +38,6 @@ This release included changes which improve the Cluster creation and management 
 - Fixed an issue where an incorrect total number of team members would appear in the **People** tab.
 
 ## August 20, 2021
-
-**Latest CLI Version**: `0.2.7-beta`
 
 ### Support for the Airflow REST API
 
@@ -74,8 +64,6 @@ You can now programmatically trigger DAGs and update your Airflow Deployments on
 
 ## August 6, 2021
 
-**Latest CLI Version**: `0.2.7-beta`
-
 ### Improvements
 
 - Informational tooltips are now available on the **New Deployment** page.
@@ -86,8 +74,6 @@ You can now programmatically trigger DAGs and update your Airflow Deployments on
 - Improved error handling in the Airflow UI in cases where a user does not exist or does not have permission to view a Deployment.
 
 ## July 30, 2021
-
-**Latest CLI Version**: `0.2.7-beta` ([Release notes](cli-release-notes#v027-beta))
 
 ### Improvements
 
