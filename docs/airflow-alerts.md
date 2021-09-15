@@ -12,7 +12,7 @@ You can utilize Airflow's alerting framework to monitor the health of individual
 
 Most built-in Airflow alerts, including Slack alerts and SLAs, work out of the box on Astronomer Cloud. You can also write custom alerts that trigger a certain behavior whenever a given task or DAG succeeds or fails. For more information on configuring event-based notifications in Airflow generally, read Astronomer's guide on [Airflow Alerts](https://www.astronomer.io/guides/error-notifications-in-airflow).
 
-Unlike Slack alerts, Airflow email alerts require additional configuration on Astronomer Cloud. The following section covers how to set up an SMTP service to enable Airflow email alerts on Astronomer Cloud.
+Unlike Slack alerts, Airflow email alerts require additional configuration on Astronomer Cloud. The following section covers how to set up an SMTP service to enable Airflow email alerts.
 
 ## Configure Airflow Email Alerts
 
