@@ -4,8 +4,6 @@ title: 'Astronomer Cloud Release Notes'
 id: 'release-notes'
 ---
 
-import {siteVariables} from '@site/src/versions';
-
 ## Overview
 
 Astronomer is committed to continuous development during the Private Beta Program. As you grow with us, expect to see bug fixes and improved functionality on a daily basis. To keep your team updated, this document will provide a weekly summary of all changes made and released to Astronomer Cloud during the Private Beta Program.
