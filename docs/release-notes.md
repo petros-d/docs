@@ -10,13 +10,13 @@ Astronomer is committed to continuous development during the Private Beta Progra
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
-For release notes specific to the Astronomer CLI, see [Astronomer CLI Release Notes](cli-release-notes).
+**Latest Runtime Version**: 3.0.1 ([Release notes](runtime-release-notes))
+
+**Latest CLI Version**: 0.2.8-beta ([Release notes](cli-release-notes))
 
 ## September 3, 2021
 
-**Latest CLI version**: [`0.2.8-beta`](cli-release-notes#v028-beta)
-
-## Bug Fixes
+### Bug Fixes
 
 - Added new protections to prevent S3 remote logging connections from breaking
 - Fixed an issue where environment variables with extra spaces could break a Deployment
@@ -25,8 +25,6 @@ For release notes specific to the Astronomer CLI, see [Astronomer CLI Release No
 - In the UI, the table view of Deployments no longer shows patch information in a Deployment's **Version** value
 
 ## August 27, 2021
-
-**Latest CLI Version**: [`0.2.8-beta`](cli-release-notes#v028-beta)
 
 ### Minor Improvements
 
@@ -38,8 +36,6 @@ For release notes specific to the Astronomer CLI, see [Astronomer CLI Release No
 - Fixed an issue where an incorrect total number of team members would appear in the **People** tab.
 
 ## August 20, 2021
-
-**Latest CLI Version**: `0.2.7-beta`
 
 ### Support for the Airflow REST API
 
@@ -66,8 +62,6 @@ You can now programmatically trigger DAGs and update your Airflow Deployments on
 
 ## August 6, 2021
 
-**Latest CLI Version**: `0.2.7-beta`
-
 ### Improvements
 
 - Informational tooltips are now available on the **New Deployment** page.
@@ -78,8 +72,6 @@ You can now programmatically trigger DAGs and update your Airflow Deployments on
 - Improved error handling in the Airflow UI in cases where a user does not exist or does not have permission to view a Deployment.
 
 ## July 30, 2021
-
-**Latest CLI Version**: `0.2.7-beta` ([Release notes](cli-release-notes#v027-beta))
 
 ### Improvements
 
