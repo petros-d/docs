@@ -20,9 +20,25 @@ For guidelines on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runt
 
 ## Versioning Scheme
 
-An Astronomer Runtime Docker image will be published for every major and minor version of Apache Airflow. For example, Runtime images correspond with Apache Airflow 2.0, 2.1, 2.2 etc. as they're released in the open-source project.
+Astronomer Runtime is versioned independently of Airflow and follows a semantic versioning scheme, with each major version of Astronomer Runtime including support for a single major.minor version of Apache Airflow.
 
 Runtime major version upgrades equate to upgrading Apache Airflow versions, while Runtime minor version upgrades are patch fixes for existing Airflow versions. For example, consider Runtime 3.0.0, which is Astronomer's distribution of Airflow 2.1.1. Runtime 3.1.0 would equate to using a new version of Apache Airflow, whereas Runtime 3.0.1 would include only minor fixes for Airflow 2.1.1.
+
+### Major releases
+
+Major versions of Astronomer Runtime can deliver significant new feature sets from both Apache Airflow and Astronomer that may cause breaking changes and potentially require a user migration. Major Astronomer Runtime release can triggered by:
+
+- A change in the underlying Airflow version.
+- A change in the underlying Airflow version to a new **minor** release that is deemed significant or that causes breaking changes.
+- A backwards-incompatible change in our commercial additions within Runtime that may or may not require users to modify DAG code.
+- A major feature addition to our commercial add-ons within Astronomer Runtime that necessitates an external promise of a major version despite no backwards incompatible changes.
+
+While the OSS Apache Airflow project may be increasingly following semantic versioning more strictly, this model for Astronomer Runtime protects us from introducing backwards incompatible changes to our users without our own versioning schema reflecting that reality.
+
+### Minor releases
+
+
+### Patch releases
 
 ## Runtime Sources
 
