@@ -6,13 +6,13 @@ id: 'airflow-alerts'
 
 ## Overview
 
-You can utilize Airflow's alerting framework to monitor the health of individual tasks and DAGs across your Airflow Deployments. This guide provides information about configuring various Airflow alerts on Astronomer. 
+You can utilize Airflow's alerting framework to monitor the health of individual tasks and DAGs across your Airflow Deployments. This guide provides information about configuring various Airflow alerts on Astronomer.
 
 ## Configure Slack Notifications, Custom Notifications, and SLAs
 
-Most built-in Airflow alerts, including Slack alerts and SLAs, work out of the box on Astronomer Cloud. You can also write custom alerts that trigger a certain behavior whenever a given task succeeds or fails. For more information on configuring these alerts, read Astronomer's guide on [Airflow Alerts](https://www.astronomer.io/guides/error-notifications-in-airflow).
+Most built-in Airflow alerts, including Slack alerts and SLAs, work out of the box on Astronomer Cloud. You can also write custom alerts that trigger a certain behavior whenever a given task or DAG succeeds or fails. For more information on configuring event-based notifications in Airflow generally, read Astronomer's guide on [Airflow Alerts](https://www.astronomer.io/guides/error-notifications-in-airflow).
 
-Airflow email alerts require additional system configuration before use. The following section covers how to set up an SMTP service for Airflow email alerting on Astronomer.
+Unlike Slack alerts, Airflow email alerts require additional configuration on Astronomer Cloud. The following section covers how to set up an SMTP service to enable Airflow email alerts on Astronomer Cloud.
 
 ## Configure Airflow Email Alerts
 
@@ -23,7 +23,7 @@ If your team isn't already using an SMTP service, we recommend one of the follow
 - [SendGrid](https://sendgrid.com/)
 - [Amazon SES](https://aws.amazon.com/ses/)
 
-The following topics provide setup steps for integrating these external SMTP services on Astronomer Cloud, but note that any external SMTP service can be used.
+The following topics provide setup steps for integrating each of these external SMTP services on Astronomer Cloud, but note that any external SMTP service can be used.
 
 ### Integrate with SendGrid
 
