@@ -17,11 +17,11 @@ This model optimizes for security whilst relieving your team of operational over
 
 Astronomer Cloud's architecture enables a few key features, available in Private Beta:
 
-- Multi-tenant control plane completely managed by Astronomer
-- Support for Astronomer data plane on AWS `us-east-1` and `us-west-2`.
-- Worker auto-scaling, powered by Airflow's Celery Executor + KEDA.
-- Astronomer Runtime, a new collection of Docker images set to provide a differentiated Airflow experience. Astronomer Runtime will initially support Airflow 2.1.1.
-- Real-time, in-app chat support powered by Intercom.
+- A secure control plane managed by Astronomer
+- Support for a multi-tenant data plane hosted in your organization's network on AWS (`us-east-1` and `us-west-2`)
+- Worker auto-scaling, powered by Airflow's Celery Executor + KEDA
+- Astronomer Runtime, a new collection of Docker images set to provide a differentiated Airflow experience
+- Real-time, in-app chat support powered by Intercom
 
 The following diagram outlines how the control plane, data plane, and users are connected to enable these features:
 
