@@ -17,10 +17,10 @@ This model optimizes for security whilst relieving your team of operational over
 
 Astronomer Cloud's architecture enables a few key features, available in Private Beta:
 
-- Support for Astronomer Cloud on AWS `us-east-1` and `us-west-2`.
-- Worker auto-scaling, powered by Airflow's Celery Executor + KEDA.
-- Astronomer Runtime, a new collection of Docker images set to provide a differentiated Airflow experience. Astronomer Runtime will initially support Airflow 2.1.1.
-- Real-time, in-app chat support powered by Intercom.
+- Support for Astronomer Cloud on AWS `us-east-1` and `us-west-2`
+- Worker auto-scaling, powered by Airflow's Celery Executor + KEDA
+- Astronomer Runtime, a new collection of Docker images set to provide a differentiated Airflow experience. Astronomer Runtime will initially support Airflow 2.1.1
+- Real-time, in-app chat support powered by Intercom
 
 For more information on each of these features, explore the documentation links below. We will continue to make changes and release new features throughout the course of the Private Beta program with no expected disruption to your data pipelines.
 

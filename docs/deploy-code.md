@@ -10,7 +10,7 @@ import {siteVariables} from '@site/src/versions';
 
 Astronomer Cloud makes it easy for your team to test Airflow DAGs locally and push them to a Deployment in a Production or Development environment.
 
-This guide will walk you through two things:
+This guide will walk you through:
 
 - How to test DAGs on your local machine with the Astronomer CLI.
 - How to deploy DAGs to a Deployment on Astronomer Cloud.
