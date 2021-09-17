@@ -17,14 +17,14 @@ To make an Airflow API request, you need:
 - A Deployment on Astronomer Cloud
 - [cURL](https://curl.se/)
 
-## Step 1: Retrieve a Deployment Access Key and URL
+## Step 1: Retrieve an Access Token and Deployment URL
 
 Before making an Airflow API request, you need to retrieve a few key pieces of information from Astronomer Cloud. Specifically, you need:
 
+- An access token
 - A Deployment API key
-- A base Deployment URL.
 
-To create a Deployment API key, follow the steps in [Deployment API Keys](api-keys).
+To retrieve an access token, go to `cloud.astronomer.io/token` and copy the token that appears. This token is valid only for 24 hours.
 
 To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The base URL for the Airflow UI is your base Deployment URL. It includes your organization's URL, followed by a short Deployment ID (For example: `https://mycompany.astronomer.run/dhbhijp0`).
 
@@ -33,7 +33,7 @@ To retrieve your Deployment URL, open your Deployment in the Astronomer UI and c
 With the information from Step 1, you can now run `GET` or `POST` requests to any supported endpoints in Airflow's [Rest API Reference](https://airflow.apache.org/docs/stable/rest-api-ref.html). For example, to retrieve a list of all DAGs in a Deployment, you can run:
 
 ```sh
-curl -X GET <base-deployment-url>/api/v1/dags -H 'Accept: application/json' -H 'Cache-Control: no-cache' -H "Authorization: Bearer <api-key>"
+curl -X GET <base-deployment-url>/api/v1/dags -H 'Accept: application/json' -H 'Cache-Control: no-cache' -H "Authorization: Bearer <access-token>"
 ```
 
 Below, we'll walk through an example request via cURL to Airflow's "Trigger DAG" endpoint and an example request via Python to the "Get all Pools" endpoint.
