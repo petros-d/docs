@@ -16,7 +16,7 @@ Deployment API keys have the following properties:
 
 :::info
 
-Deployment API keys are similar in behavior and function to [Service Accounts](https://www.astronomer.io/docs/enterprise/v0.25/deploy/ci-cd#step-1-create-a-service-account) from Astronomer Cloud and Enterprise.
+Deployment API keys are similar in behavior and functionality to [Service Accounts](https://www.astronomer.io/docs/enterprise/v0.25/deploy/ci-cd#step-1-create-a-service-account) from Astronomer Cloud and Enterprise.
 
 :::
 
