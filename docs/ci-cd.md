@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'CI/CD'
-title: 'Configure CI/CD Pipelines'
+title: 'Configure CI/CD Pipelines for Deployments'
 id: 'ci-cd'
 ---
 
@@ -18,7 +18,7 @@ This guide provides setup steps for configuring a CI/CD pipeline to deploy DAGs 
 
 To set up CI/CD for a given Deployment, you need:
 
-- A [Deployment API key](deployment-api-keys)
+- A [Deployment API key and secret](deployment-api-keys)
 - An Organization ID. To find this, go to **Settings** > **Organization** in the Astronomer UI and copy the Organization ID that appears
 - A Deployment ID. To find this, open your Deployment in the Astronomer UI and click **Open Airflow**. The Deployment ID is the unique string in the URL for the Airflow UI. (e.g. `dpru1b0d` is the ID in `https://mycompany.astronomer.run/dpru1b0d/home`).
 - A CI/CD management tool, such as GitHub actions
@@ -47,8 +47,8 @@ This workflow is equivalent to the following API calls:
     $ curl --location --request POST 'https://auth.astronomer.io/oauth/token' \
     --header 'content-type: application/json' \
     --data-raw '{
-        "client_id": "${KEY_ID}",
-        "client_secret": "${KEY_SECRET}",
+        "client_id": "${API_KEY_ID}",
+        "client_secret": "${API_KEY_SECRET}",
         "audience": "astronomer-ee",
         "grant_type":"client_credentials"
     }'
@@ -84,10 +84,14 @@ This workflow is equivalent to the following API calls:
 
 ## CI/CD Templates
 
-The following sections provide basic templates for configuring single CI/CD pipelines using popular CI/CD tools. Each template can be implemented as-is to produce a simple CI/CD pipeline, but they can also be reconfigured to manage any number of branches or Deployments based on your needs.
-
+The following section provides basic templates for configuring single CI/CD pipelines using popular CI/CD tools. Each template can be implemented as-is to produce a simple CI/CD pipeline, but they can also be reconfigured to manage any number of branches or Deployments based on your needs. More templates are coming soon.
 
 ### GitHub Actions
+
+Use this GitHub Action in a repository that:
+
+- Hosts a single Airflow project created with `astro dev init`.
+- Has your Deployment API key information stored in [GitHub secrets](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
 
 ```yaml
 name: CI - deploy
