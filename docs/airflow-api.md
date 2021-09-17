@@ -22,7 +22,7 @@ To make an Airflow API request, you need:
 Before making an Airflow API request, you need to retrieve a few key pieces of information from Astronomer Cloud. Specifically, you need:
 
 - An access token
-- A Deployment API key
+- A Deployment URL
 
 To retrieve an access token, go to `cloud.astronomer.io/token` and copy the token that appears. This token is valid only for 24 hours.
 
