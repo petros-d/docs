@@ -20,7 +20,7 @@ To set up CI/CD for a given Deployment, you need:
 
 - A [Deployment API key and secret]
 - An Organization ID. To find this, go to **Settings** > **Organization** in the Astronomer UI and copy the Organization ID that appears
-- A Deployment ID. To find this, open your Deployment in the Astronomer UI and copy the unique string at the end of the URL. (e.g. `cktogz2eg847343yzo9pru1b0d` is the ID in `https://cloud.astronomer.io/deployments/cktogz2eg847343yzo9pru1b0d`)
+- A Deployment ID. To find this, open your Deployment in the Astronomer UI and copy the unique string at the end of the URL (e.g. `cktogz2eg847343yzo9pru1b0d` is the ID in `https://cloud.astronomer.io/deployments/cktogz2eg847343yzo9pru1b0d`)
 - A CI/CD management tool, such as GitHub actions
 - An Airflow project directory hosted in a place that your CI/CD tool can access
 - Docker
