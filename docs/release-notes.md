@@ -10,7 +10,7 @@ Astronomer is committed to continuous development during the Private Beta Progra
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
-**Latest Runtime Version**: 3.0.1 ([Release notes](runtime-release-notes))
+**Latest Runtime Version**: 3.0.2 ([Release notes](runtime-release-notes))
 
 **Latest CLI Version**: 0.2.8-beta ([Release notes](cli-release-notes))
 
