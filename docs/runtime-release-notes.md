@@ -15,7 +15,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Bug fixes
 
-- Fixed several issues that resulted in task logs not appearing in the Runtime Airflow UI
+- Fixed several issues that resulted in task logs not appearing in the Airflow UI
 
 ## Astronomer Runtime 3.0.1
 
