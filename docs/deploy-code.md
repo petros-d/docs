@@ -70,9 +70,9 @@ Once you have the files you need in your project directory, you're ready to star
 
    This command spins up 3 Docker containers on your machine, each for a different Airflow component:
 
-   - **Postgres:** Airflow's Postgres Metadata Database.
-   - **Webserver:** The Airflow component responsible for rendering the Airflow UI.
-   - **Scheduler:** The Airflow component responsible for monitoring and triggering tasks.
+   - **Postgres:** Airflow's Postgres Metadata Database
+   - **Webserver:** The Airflow component responsible for rendering the Airflow UI
+   - **Scheduler:** The Airflow component responsible for monitoring and triggering tasks
 
    You should see the following output:
 
