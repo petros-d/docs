@@ -14,6 +14,12 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 **Latest CLI Version**: 0.2.8-beta ([Release notes](cli-release-notes))
 
+## September 17, 2021
+
+### Support for Deployment API Keys
+
+You can create API keys for your Astronomer Deployments. You can use Deployment API keys to programmatically deploy DAGs to a given Deployment on Astronomer, or to programmatically update a Deployment's Airflow environment via the Airflow API. For more information on configuring this feature, read [Deployment API keys].
+
 ## September 3, 2021
 
 ### Bug Fixes
