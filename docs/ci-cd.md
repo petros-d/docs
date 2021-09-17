@@ -20,7 +20,7 @@ To set up CI/CD for a given Deployment, you need:
 
 - A [Deployment API key and secret](deployment-api-keys)
 - An Organization ID. To find this, go to **Settings** > **Organization** in the Astronomer UI and copy the Organization ID that appears
-- A Deployment ID. To find this, open your Deployment in the Astronomer UI and click **Open Airflow**. The Deployment ID is the unique string in the URL for the Airflow UI. (e.g. `dpru1b0d` is the ID in `https://mycompany.astronomer.run/dpru1b0d/home`).
+- A Deployment ID. To find this, open your Deployment in the Astronomer UI and click **Open Airflow**. The Deployment ID is the unique string in the URL for the Airflow UI. (e.g. `dpru1b0d` is the ID in `https://mycompany.astronomer.run/dpru1b0d/home`)
 - A CI/CD management tool, such as GitHub actions
 - An Airflow project directory hosted in a place that your CI/CD tool can access
 - Docker
@@ -30,17 +30,17 @@ To set up CI/CD for a given Deployment, you need:
 
 This section provides a high level overview of how CI/CD scripts connect to the Astronomer registry and push DAGs. Regardless of what CI/CD tool you use, your pipeline needs to complete these key steps.
 
-You can also use this section to manually test the API calls that will complete these steps in your script.
+You can also use this information to manually test the API calls that complete these steps in your pipeline.
 
-At a high level, your CI/CD script will:
+At a high level, your CI/CD pipeline will:
 
-1. Log in to your Astronomer registry for your Deployment using a Deployment API key.
+1. Access your Deployment using a Deployment API key.
 2. Build your Airflow project into a Docker image.
 3. Deploy the image to your Deployment.
 
 This workflow is equivalent to the following API calls:
 
-1. Log in to the Astronomer registry:
+1. Log in to the Astronomer registry and access your Deployment:
 
     ```sh
     ## API call
@@ -62,7 +62,7 @@ This workflow is equivalent to the following API calls:
     }
     ```
 
-2. Build the Docker image:
+2. Build a Docker image:
 
     ```sh
     ## API call
