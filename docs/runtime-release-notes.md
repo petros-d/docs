@@ -15,7 +15,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Bug fixes
 
-- Fixed task logs not appearing in the Airflow UI by using a new custom task logging handler that does not interfere with AWS credentials or connections configured by users
+- Fixed a series of issues where task logs did not appear in the Airflow UI by using a new custom task logging handler that does not interfere with AWS credentials or connections configured by users
 
 ## Astronomer Runtime 3.0.1
 
