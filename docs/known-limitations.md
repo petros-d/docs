@@ -26,7 +26,6 @@ The list below reflects known issues at the time of writing. It will be updated 
 
 ## Coming Soon
 
-- Deployment API Keys
 - Support for Airflow 2.2
 - Single Sign-On
 - Full CLI functionality
