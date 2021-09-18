@@ -130,12 +130,7 @@ Use this GitHub Action in a repository that hosts a single Astronomer project cr
    - `secrets.KEY_ID` = `<your-key-id>`
    - `secrets.KEY_SECRET` = `<your-key-secret>`
 
-2. Set the following as Environment Variables:
-
-   - `env.ORGANIZATION_ID=<your-organization-id>`
-   - `env.DEPLOYMENT_ID=<your-deployment-id>`
-
-3. Add the following to a new file in `.github/workflows`:
+2. Add the following to a new file in `.github/workflows`, making sure to replace `<organization-id>` and `<deployment-id>` with the values for your Deployment:
 
     ```yaml
     name: CI - deploy
