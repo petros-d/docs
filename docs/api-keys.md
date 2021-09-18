@@ -12,7 +12,7 @@ Deployment API keys have the following properties:
 
 - They can deploy code to Astronomer (customizable permissions coming soon).
 - They are deleted permanently if the corresponding Deployment is deleted.
-- By default, a new API Key is granted access to a Deployment for 24 hours. As long as it's used within that period, the API Key will automatically refresh and be valid for another 24 hours after the moment it was used.
+- By default, a new API key is granted access to a Deployment for 24 hours. As long as it's used within that period, the API key will automatically refresh and be valid for another 24 hours after the moment it was used.
 
 :::info
 
