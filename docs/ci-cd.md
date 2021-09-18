@@ -18,33 +18,31 @@ This guide provides setup steps for configuring a CI/CD pipeline to deploy DAGs 
 
 To set up CI/CD for a given Deployment, you need:
 
-- A [Deployment API key and secret]
+- A [Deployment API key and secret](api-keys)
 - An Organization ID. To find this, go to **Settings** > **Organization** in the Astronomer UI and copy the Organization ID that appears
 - A Deployment ID. To find this, open your Deployment in the Astronomer UI and copy the unique string at the end of the URL (e.g. `cktogz2eg847343yzo9pru1b0d` is the ID in `https://cloud.astronomer.io/deployments/cktogz2eg847343yzo9pru1b0d`)
-- A CI/CD management tool, such as GitHub actions
-- An Airflow project directory hosted in a place that your CI/CD tool can access
-- Docker
+- A CI/CD management tool, such as [GitHub Actions](https://docs.github.com/en/actions)
+- An Astronomer project directory that was [initialized via the Astronomer CLI](deploy-code) and that is hosted in a place that your CI/CD tool can access
+- [Docker](https://docs.docker.com/get-docker/)
 - curl
 
 ## Workflow Overview
 
-This section provides a high level overview of how CI/CD scripts connect to the Astronomer registry and push DAGs. Regardless of what CI/CD tool you use, your pipeline needs to complete these key steps.
-
-You can also use this information to manually test the API calls that complete these steps in your pipeline.
+This section provides a high-level overview of how a CI/CD script can use Deployment API Keys to push DAGs to Astronomer. Regardless of what CI/CD tool you use, your pipeline needs to complete these key steps. You can also use this information to manually test the API calls that complete these steps in your pipeline.
 
 At a high level, your CI/CD pipeline will:
 
-1. Access your Deployment using a Deployment API key.
-2. Build your Airflow project into a Docker image.
+1. Assume access to your Deployment given the `Key ID` and `Key secret` of an existing Deployment API key.
+2. Build your Astronomer project into a Docker image.
 3. Deploy the image to your Deployment.
 
-This workflow is equivalent to the following bash script:
+This workflow is equivalent to the following bash script, titled `ci-cd.sh`:
 
 ```bash title="ci-cd.sh"
-KEY_ID=$1
-KEY_SECRET=$2
-ORGANIZATION_ID=$3
-DEPLOYMENT_ID=$4
+KEY_ID=<your-key-id>
+KEY_SECRET=<your-key-secret>
+ORGANIZATION_ID=<your-organization-id>
+DEPLOYMENT_ID=<your-deployment-id>
 
 # install jq
 # brew install jq
@@ -52,18 +50,18 @@ DEPLOYMENT_ID=$4
 # Create time stamp
 TAG=deploy-`date "+%Y-%m-%d-%HT%M-%S"`
 
-# Step 1. Use the Access token in the `astro auth login` command
+# Step 1. Authenticate to Astronomer's Docker registry with your Deployment API Key ID and Key secret. This is equivalent to running `$ astro auth login` via the Astronomer CLI.
 docker login images.astronomer.cloud -u $KEY_ID -p $KEY_SECRET
 
-# Step 2. Request the Organization Id
 
-# Step 3. Build the image
+# Step 3. Build your Astronomer project into a tagged Docker image.
 docker build . -t images.astronomer.cloud/$ORGANIZATION_ID/$DEPLOYMENT_ID:$TAG
 
-# Step 4. Push the image
+# Step 4. Push that Docker image to Astronomer's Docker registry.
 docker push images.astronomer.cloud/$ORGANIZATION_ID/$DEPLOYMENT_ID:$TAG
 
-# Step 5. Get the access token
+# Step 5. With your Deployment API Key ID and secret, fetch a Deployment API access token. For security reasons, this access token is what ultimately makes your API key valid.
+
 echo "get token"
 TOKEN=$( curl --location --request POST "https://auth.astronomer.io/oauth/token" \
         --header "content-type: application/json" \
@@ -72,7 +70,8 @@ TOKEN=$( curl --location --request POST "https://auth.astronomer.io/oauth/token"
             \"client_secret\": \"$KEY_SECRET\",
             \"audience\": \"astronomer-ee\",
             \"grant_type\": \"client_credentials\"}" | jq -r '.access_token' )
-# Step 6. Create the Image
+# Step 6. Make a request to the Astronomer API that passes metadata from your new Docker image and creates a record for it.
+
 echo "get image id"
 IMAGE=$( curl --location --request POST "https://api.astronomer.io/hub/v1" \
         --header "Authorization: Bearer $TOKEN" \
@@ -86,7 +85,7 @@ IMAGE=$( curl --location --request POST "https://api.astronomer.io/hub/v1" \
                     }
                 }
             }" | jq -r '.data.imageCreate.id')
-# Step 7. Deploy the Image
+# Step 7. Pass the repository URL at which your new Docker image is now available to your Astronomer Deployment. This completes the deploy process and triggers your Scheduler, Webserver, and Workers to restart.
 echo "deploy image"
 curl --location --request POST "https://api.astronomer.io/hub/v1" \
         --header "Authorization: Bearer $TOKEN" \
@@ -103,21 +102,23 @@ curl --location --request POST "https://api.astronomer.io/hub/v1" \
             }"
 ```
 
-You can practice running this script without a CI/CD tool using the following command:
+To run this script without a CI/CD tool, 
 
-```sh
-bash ci-cd.sh <key_id> <key_secret> <organization_id> <deployment_id>
-```
+1. Make the `ci-cd.sh` file executable by running `chmod +x ci-cd.sh`.
+2. Run the following command:
+    ```sh
+    bash ci-cd.sh <your-key-id> <your-key-secret> <your-organization-id> <your-deployment-id>
+    ```
 
 ## CI/CD Templates
 
-The following section provides basic templates for configuring single CI/CD pipelines using popular CI/CD tools. Each template can be implemented as-is to produce a simple CI/CD pipeline, but they can also be reconfigured to manage any number of branches or Deployments based on your needs. More templates are coming soon.
+The following section provides basic templates for configuring individual CI pipelines using popular CI/CD tools. Each template can be implemented as-is to produce a simple CI/CD pipeline, but they can also be reconfigured to manage any number of branches or Deployments based on your needs. More templates are coming soon.
 
 ### GitHub Actions
 
 Use this GitHub Action in a repository that:
 
-- Hosts a single Airflow project created with `astro dev init`.
+- Hosts a single Astronomer project created via the Astronomer CLI on `$ astro dev init`.
 - Has your Deployment API key information stored in [GitHub secrets](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository).
 
 ```yaml
@@ -146,7 +147,7 @@ jobs:
         password: ${{ secrets.KEY_SECRET }}
         registry: images.astronomer.cloud
 
-    - name: Get auth token
+    - name: Get access token
       id: token
       run: |
         token=$( curl --location --request POST 'https://auth.astronomer.io/oauth/token' \
