@@ -48,6 +48,11 @@ module.exports = {
     },
     {
       type: 'doc',
+      id: 'ci-cd',
+      label: 'CI/CD',
+    },
+    {
+      type: 'doc',
       id: 'airflow-api',
       label: 'Airflow API',
     },
