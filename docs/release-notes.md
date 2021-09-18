@@ -10,9 +10,15 @@ Astronomer is committed to continuous development during the Private Beta Progra
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
-**Latest Runtime Version**: 3.0.1 ([Release notes](runtime-release-notes))
+**Latest Runtime Version**: 3.0.2 ([Release notes](runtime-release-notes))
 
 **Latest CLI Version**: 0.2.8-beta ([Release notes](cli-release-notes))
+
+## September 17, 2021
+
+### Support for Deployment API Keys
+
+Astronomer Cloud now officially supports Deployment API keys, which you can use to automate code pushes to Astronomer and integrate your environment with a CI/CD tool such as GitHub Actions. For more information on creating and managing Deployment API keys, see [Deployment API keys](api-keys). For more information on using Deployment API keys to programmatically deploy code, see [CI/CD](ci-cd). Support making requests to Airflow's REST API using API keys is coming soon.
 
 ## September 3, 2021
 
