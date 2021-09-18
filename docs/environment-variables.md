@@ -17,9 +17,9 @@ For instance, you can set environment variables to:
 
 This guide covers:
 
-- How to set environment variables on Astronomer
-- How environment variables are stored on Astronomer
-- How to store Airflow Connections and Variables as environment variables
+- How to set environment variables on Astronomer.
+- How environment variables are stored on Astronomer.
+- How to store Airflow Connections and Variables as environment variables.
 
 > **Note:** Some environment variables on Astronomer Cloud are set globally and cannot be overridden for individual Deployments. For more information on these environment variables, read [Global Environment Variables](global-variables).
 
@@ -191,7 +191,7 @@ ENV AIRFLOW_CONN_MY_PROD_DB=my-conn-type://login:password@host:5432/schema
 
 You can set this environment variable via an `.env` file locally, via your Dockerfile, or via the Astronomer UI as explained above. For more information on how to generate your Connection URI, refer to the [Apache Airflow documentation](https://airflow.apache.org/docs/stable/howto/connection/index.html#generating-connection-uri).
 
-> **Note:** Airflow Connections set via environment variables do not appear in the Airflow UI and cannot be modified there. 
+> **Note:** Airflow Connections set via environment variables do not appear in the Airflow UI and cannot be modified there.
 
 ### Airflow Variables
 

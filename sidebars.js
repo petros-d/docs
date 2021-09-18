@@ -43,6 +43,11 @@ module.exports = {
     },
     {
       type: 'doc',
+      id: 'api-keys',
+      label: 'Deployment API Keys',
+    },
+    {
+      type: 'doc',
       id: 'airflow-api',
       label: 'Airflow API',
     },
