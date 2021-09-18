@@ -18,7 +18,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Support for Deployment API Keys
 
-Astronomer Cloud now officially supports Deployment API keys, which you can use to automate code pushes to Astronomer and integrate your environment with GitHub and your CI/CD tool of choice. For more information on creating and managing Deployment API keys, see [Deployment API keys]. For more information on using Deployment API keys to programmatically deploy code, see [CI/CD]. Support for using API Keys to make requests to Airflow's REST API coming soon.
+Astronomer Cloud now officially supports Deployment API keys, which you can use to automate code pushes to Astronomer and integrate your environment with a CI/CD tool such as GitHub Actions. For more information on creating and managing Deployment API keys, see [Deployment API keys](api-keys). For more information on using Deployment API keys to programmatically deploy code, see [CI/CD](ci-cd). Support for using API Keys to make requests to Airflow's REST API is coming soon.
 
 ## September 3, 2021
 
