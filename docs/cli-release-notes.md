@@ -16,7 +16,7 @@ Release date: September 20, 2021
 
 - Improvement: Bumped the default Astronomer Runtime version for new projects to [`3.0.2`](runtime-release-notes#astronomer-runtime-302)
 - Improvement: You can now use `astro dev run`(https://www.astronomer.io/docs/cloud/stable/resources/cli-reference#astro-dev-run) to run Airflow CLI commands
-- Improvement: You can now use `astro dev run`(https://www.astronomer.io/docs/cloud/stable/resources/cli-reference#astro-dev-logs) to show logs for the Airflow Scheduler and Webserver
+- Improvement: You can now use `astro dev logs`(https://www.astronomer.io/docs/cloud/stable/resources/cli-reference#astro-dev-logs) to show logs for the Airflow Scheduler and Webserver
 
 ## v0.2.8-beta
 
