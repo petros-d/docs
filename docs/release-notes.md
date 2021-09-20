@@ -12,7 +12,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 **Latest Runtime Version**: 3.0.2 ([Release notes](runtime-release-notes))
 
-**Latest CLI Version**: 0.2.8-beta ([Release notes](cli-release-notes))
+**Latest CLI Version**: 0.2.9-beta ([Release notes](cli-release-notes))
 
 ## September 17, 2021
 
