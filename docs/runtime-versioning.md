@@ -38,9 +38,7 @@ Major versions of Astronomer Runtime can deliver significant new feature sets fr
 
 ### Minor Versions
 
-Minor versions of Astronomer Runtime deliver features that are backwards compatible within its given major version. For example, you can upgrade from Astronomer Runtime `5.1` to `5.2` with the guarantee of no breaking changes. Minor release upgrades can be completed at any time and are expected to include minimal to no downtime and maintenance.
-
-Currently, minor releases occur when Astronomer adds minor feature addition within Astronomer Runtime. These features are backwards compatible within the same major release series.
+Minor versions of Astronomer Runtime include features that are backwards compatible within its given major version. For example, you can upgrade from Astronomer Runtime `5.1` to `5.2` with the guarantee of no breaking changes. Minor release upgrades can be completed at any time and are expected to include minimal to no downtime and maintenance.
 
 ### Patch Versions
 
