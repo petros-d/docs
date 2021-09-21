@@ -70,7 +70,7 @@ module.exports = {
           'release-notes',
           'cli-release-notes',
           'runtime-release-notes',
-          'runtime-support-policy',
+          'runtime-versioning',
         ],
       },
       'known-limitations',
