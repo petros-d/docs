@@ -1,6 +1,6 @@
 # Astronomer Cloud Documentation
 
-This repository contains all of the documentation for Astronomer Cloud. Documentation for other Astronomer product offerings is stored in the [`docs` repo](https://github.com/astronomer/docs).
+This repository contains all of the code and content for Astronomer Cloud's [documentation site](http://www.cloud-docs.astronomer.io). Documentation for other Astronomer product offerings is stored in the [`docs` repo](https://github.com/astronomer/docs).
 
 ## Suggest a Change 
 
