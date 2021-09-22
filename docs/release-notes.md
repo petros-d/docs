@@ -6,11 +6,10 @@ id: 'release-notes'
 
 ## Overview
 
-Astronomer is committed to continuous development during the Private Beta Program. As you grow with us, expect to see bug fixes and improved functionality on a daily basis. To keep your team updated, this document will provide a weekly summary of all changes made and released to Astronomer Cloud during the Private Beta Program.
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
-**Latest Runtime Version**: 3.0.2 ([Release notes](runtime-release-notes))
+**Latest Runtime Version**: 3.0.3 ([Release notes](runtime-release-notes))
 
 **Latest CLI Version**: 0.2.9-beta ([Release notes](cli-release-notes))
 
