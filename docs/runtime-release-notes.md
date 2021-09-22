@@ -8,6 +8,15 @@ Astronomer runtime is a Docker image built and published by Astronomer that exte
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
+## Astronomer Runtime 3.0.2
+
+- Release date: September 17, 2021
+- Airflow version: 2.1.1
+
+### Bug fixes
+
+- Fixed a series of issues that prevented task logs from appearing in the Airflow UI by implementing a custom task logging handler that does not interfere with AWS credentials or connections configured by users
+
 ## Astronomer Runtime 3.0.1
 
 - Release date: September 1, 2021

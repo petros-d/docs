@@ -14,7 +14,8 @@ As part of the Astronomer Cloud architecture, certain environment variables have
 |---------------------|-------|------------|
 | `AIRFLOW__LOGGING__REMOTE_LOGGING`| Enables remote logging | `True` |
 | `AIRFLOW__LOGGING__REMOTE_BASE_LOG_FOLDER`| Location of remote logging storage | `baseLogFolder`|
-| `AIRFLOW__LOGGING__REMOTE_LOG_CONN_ID` | Airflow connection ID to access remote logging storage   | `s3_logging` |
+| `AIRFLOW__LOGGING__REMOTE_LOG_CONN_ID` | Airflow connection ID to access remote logging storage   | `astro_s3_logging` |
+| `AIRFLOW_CONN_ASTRO_S3_LOGGING` | Connection URI for writing task logs to Astronomer's managed S3 bucket | `<Connection URI>`|
 | `AIRFLOW__LOGGING__ENCRYPT_S3_LOGS` | Determines whether to use server-side encryption for S3 logs | `False` |
 | `AIRFLOW__WEBSERVER__BASE_URL` | The base URL of the Airflow UI  | `https://${fullIngressHostname}`|
 |`AIRFLOW__CORE__SQL_ALCHEMY_CONN`| The SqlAlchemy connection string for the metadata DB | `dbConnSecret` |
