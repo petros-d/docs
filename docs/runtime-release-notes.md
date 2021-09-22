@@ -15,8 +15,8 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Bug fixes
 
-- Fixed an issue where users couldn't reach Airflow via the REST API
-- Fixed an issue where logging didn't work on locally running Airflow projects
+- Fixed an issue where requests to Airflow's REST API with a temporary authentication token failed- Fixed an issue where logging didn't work on locally running Airflow projects
+- Fixed an issue introduced in Runtime 3.0.2 where `astro dev` commands in the Astronomer CLI did not execute correctly
 
 ## Astronomer Runtime 3.0.2
 
