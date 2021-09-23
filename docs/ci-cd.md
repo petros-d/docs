@@ -38,7 +38,7 @@ At a high level, your CI/CD pipeline will:
 
 This workflow is equivalent to the following bash script:
 
-```bash title="ci-cd.sh"
+```bash title="astronomer-ci.sh"
 ASTRONOMER_KEY_ID=$1
 ASTRONOMER_KEY_SECRET=$2
 ORGANIZATION_ID=$3
