@@ -13,7 +13,7 @@ Follow this guide to upgrade a Deployment's Airflow environment using the Astron
 ## Step 1: Update Your Dockerfile
 
 1. In your local Astronomer project directory, open your `Dockerfile`.
-2. Update the [source](runtime-versioning#runtime-sources) in the `FROM` statement of your Dockerfile to reference a new version of Runtime.
+2. Update the [image](runtime-versioning#runtime-images) in the `FROM` statement of your Dockerfile to a new version of Runtime.
 
     Once you upgrade Runtime versions, you can't downgrade to an earlier version. The Airflow metadata database structurally changes with each release, making for backwards incompatibility across versions.
 

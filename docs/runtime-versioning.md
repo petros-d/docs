@@ -8,7 +8,7 @@ id: "runtime-versioning"
 
 Astronomer Runtime is a Debian-based, production-ready distribution of Apache Airflow that extends the open source project to provide you with differentiated functionality that centers around reliability, efficiency, and performance.
 
-This Docker image is hosted on [Astronomer's Docker Registry](https://quay.io/repository/astronomer/astro-runtime) and allows you to run Airflow on Astronomer Cloud. All projects require that you specify an Astronomer Runtime image in your `Dockerfile`.
+You can use a Runtime Docker image on [Astronomer's Docker Registry](https://quay.io/repository/astronomer/astro-runtime) to run Airflow on Astronomer Cloud. A Deployment on Astronomer runs one version of Runtime, but you can use different versions of Runtime on different Deployments within a given Workspace or Cluster. All Astronomer projects require that you specify an Astronomer Runtime image in your `Dockerfile`.
 
 This document provides information on the following:
 
@@ -50,7 +50,7 @@ A patch release can include:
 - A bug fix to our commercial add-ons within Astronomer Runtime that is backwards compatible.
 - A security fix to our commercial add-ons within Astronomer Runtime that is backwards compatible.
 
-## Runtime Sources
+## Runtime Images
 
 Runtime Docker images come in two variants:
 
@@ -70,6 +70,6 @@ The following table contains all Astronomer Runtime images supported on Astronom
 
 Note that this table includes only major and minor releases of Runtime. When upgrading to a new version of Runtime, you must specify a patch version number in the `FROM` statement of your Dockerfile. For the latest available patch version, see [Runtime Release Notes](runtime-release-notes).
 
-| Runtime Version                | Airflow Version                                                                            | Debian-based Image                                  | Release Date    | End-of-Support Date |
-| ------------------------------ | ------------------------------------------------------------------------------------------ | --------------------------------------------------- | --------------- | ------------------- |
-| [3.0.x](runtime-release-notes) | [2.1.1](https://github.com/astronomer/astro-runtime/blob/main/CHANGELOG.md#301-2021-08-31) | `FROM quay.io/astronomer/astro-runtime:3.0.<patch>` | August 12, 2021 | February 12, 2023   |
+| Runtime Version                | Airflow Version                                                                            | Debian-based Image                                  | Release Date    |
+| ------------------------------ | ------------------------------------------------------------------------------------------ | --------------------------------------------------- | --------------- |
+| [3.0.x](runtime-release-notes) | [2.1.1](https://github.com/astronomer/astro-runtime/blob/main/CHANGELOG.md#301-2021-08-31) | `FROM quay.io/astronomer/astro-runtime:3.0.<patch>` | August 12, 2021 |
