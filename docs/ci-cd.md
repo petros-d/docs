@@ -39,8 +39,8 @@ At a high level, your CI/CD pipeline will:
 This workflow is equivalent to the following bash script:
 
 ```bash title="ci-cd.sh"
-KEY_ID=$1
-KEY_SECRET=$2
+ASTRONOMER_KEY_ID=$1
+ASTRONOMER_KEY_SECRET=$2
 ORGANIZATION_ID=$3
 DEPLOYMENT_ID=$4
 
@@ -53,7 +53,7 @@ TAG=deploy-`date "+%Y-%m-%d-%HT%M-%S"`
 
 # Step 1. Authenticate to Astronomer's Docker registry with your Deployment API key ID and secret. This is equivalent to running `$ astro auth login` via the Astronomer CLI.
 
-docker login images.astronomer.cloud -u $KEY_ID -p $KEY_SECRET
+docker login images.astronomer.cloud -u $ASTRONOMERKEY_ID -p $ASTRONOMER_KEY_SECRET
 
 # Step 2. Build your Astronomer project into a tagged Docker image.
 
@@ -69,8 +69,8 @@ echo "get token"
 TOKEN=$( curl --location --request POST "https://auth.astronomer.io/oauth/token" \
         --header "content-type: application/json" \
         --data-raw "{
-            \"client_id\": \"$KEY_ID\",
-            \"client_secret\": \"$KEY_SECRET\",
+            \"client_id\": \"$ASTRONOMER_KEY_ID\",
+            \"client_secret\": \"$ASTRONOMER_KEY_SECRET\",
             \"audience\": \"astronomer-ee\",
             \"grant_type\": \"client_credentials\"}" | jq -r '.access_token' )
 
@@ -127,8 +127,8 @@ Use this GitHub Action in a repository that hosts a single Astronomer project cr
 
 1. Set the following as [GitHub secrets](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository):
 
-   - `secrets.KEY_ID` = `<your-key-id>`
-   - `secrets.KEY_SECRET` = `<your-key-secret>`
+   - `secrets.ASTRONOMER_KEY_ID` = `<your-key-id>`
+   - `secrets.ASTRONOMER_KEY_SECRET` = `<your-key-secret>`
 
 2. Add the following to a new file in `.github/workflows`, making sure to replace `<organization-id>` and `<deployment-id>` with the values for your Deployment:
 
@@ -146,16 +146,16 @@ Use this GitHub Action in a repository that hosts a single Astronomer project cr
           ORGANIZATION_ID: <organization-id>
           DEPLOYMENT_ID: <deployment-id>
         steps:
+        - uses: actions/checkout@v2
         - name: Get current date
           id: date
           run: echo "::set-output name=date::$(date +'%Y-%m-%d-%HT%M-%S')"
-        - uses: actions/checkout@v1
         - name: Publish to Astronomer.io
           uses: elgohr/Publish-Docker-Github-Action@2.6
           with:
             name: ${{ env.ORGANIZATION_ID }}/${{ env.DEPLOYMENT_ID }}:deploy-${{ steps.date.outputs.date }}
-            username: ${{ secrets.KEY_ID }}
-            password: ${{ secrets.KEY_SECRET }}
+            username: ${{ secrets.ASTRONOMER_KEY_ID }}
+            password: ${{ secrets.ASTRONOMER_KEY_SECRET }}
             registry: images.astronomer.cloud
 
         - name: Get access token
@@ -163,7 +163,7 @@ Use this GitHub Action in a repository that hosts a single Astronomer project cr
           run: |
             token=$( curl --location --request POST 'https://auth.astronomer.io/oauth/token' \
             --header 'content-type: application/json' \
-            --data-raw '{ "client_id": "${{ secrets.KEY_ID }}","client_secret": "${{ secrets.KEY_SECRET }}","audience": "astronomer-ee","grant_type":"client_credentials"}' | jq -r '.access_token' )
+            --data-raw '{ "client_id": "${{ secrets.ASTRONOMER_KEY_ID }}","client_secret": "${{ secrets.ASTRONOMER_KEY_SECRET }}","audience": "astronomer-ee","grant_type":"client_credentials"}' | jq -r '.access_token' )
             echo "::set-output name=auth_token::$token"
 
         - name: Create image
