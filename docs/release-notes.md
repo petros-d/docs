@@ -13,6 +13,17 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 **Latest Runtime Version**: 3.0.3 ([Release notes](runtime-release-notes))
 **Latest CLI Version**: 0.2.9-beta ([Release notes](cli-release-notes))
 
+## September 28, 2021
+
+### Minor Improvements
+
+- In the UI, a new element on the Deployment information screen shows the health status of a Deployment. Currently, a Deployment is considered unhealthy when its Webserver is down.
+- You no longer need a password to access Astronomer Cloud documentation.
+
+### Bug Fixes
+
+- Fixed an issue where the Astronomer UI Deployment information screen showed an incorrect Astronomer Runtime version number.
+
 ## September 17, 2021
 
 ### Support for Deployment API Keys
