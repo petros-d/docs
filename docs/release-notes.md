@@ -22,7 +22,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Bug Fixes
 
-- Fixed an issue where the Astronomer UI Deployment information screen showed an incorrect Astronomer Runtime version number.
+- Fixed an issue where the Astronomer UI Deployment information screen showed an incorrect Astronomer Runtime version number
 
 ## September 17, 2021
 
