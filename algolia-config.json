@@ -1,10 +1,10 @@
 {
   "index_name": "beta",
   "start_urls": [
-    "cloud-docs.astronomer.io"
+    "docs.astronomer.io"
   ],
   "sitemap_urls": [
-    "cloud-docs.astronomer.io/sitemap.xml"
+    "docs.astronomer.io/sitemap.xml"
   ],
   "sitemap_alternate_links": true,
   "stop_urls": [],
