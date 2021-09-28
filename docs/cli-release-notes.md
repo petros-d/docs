@@ -14,7 +14,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 Release date: September 28, 2021
 
-- Improvement: `astro dev init` now always pulls in the latest version of Astronomer Runtime for newly scaffolded Astronomer projects. This means that you no longer have to upgrade the CLI in order to take advantage of a new Runtime release. Note that you still need to manually [upgrade Runtime](upgrade-runtime) for existing projects.
+- Improvement: `astro dev init` now always pulls the latest version of Astronomer Runtime for new projects. This means that you no longer have to upgrade the CLI in order to take advantage of a new Runtime release. Note that you still need to manually [upgrade Runtime](upgrade-runtime) for existing projects.
 - Improvement: Updated error messages throughout the CLI to be more clear and useful
 
 ## v0.2.9-beta
