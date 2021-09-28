@@ -60,7 +60,6 @@ module.exports = {
           'release-notes',
           'cli-release-notes',
           'runtime-release-notes',
-          'runtime-versioning',
         ],
       },
       'known-limitations',
