@@ -98,8 +98,8 @@ module.exports = {
               to: 'https://www.astronomer.io',
             },
             {
-              label: 'Astronomer on GitHub',
-              href: 'https://github.com/astronomer',
+              label: 'Docs on GitHub',
+              href: 'https://github.com/astronomer/cloud-docs',
             },
           ],
         },
@@ -113,13 +113,11 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Let's use this variable to enable an edit button for GA
-          // editURL: https://github.com/astronomer/beta-docs
-
-          // Makes "Overview" the docs landing page
+          editUrl: ({versionDocsDirPath, docPath}) =>
+    `https://github.com/astronomer/cloud-docs/blob/main/docs/${docPath}`,
+          editLocalizedFiles: true,
           routeBasePath: '/',
           admonitions: {
-
           },
         },
         blog: {
