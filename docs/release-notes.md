@@ -17,7 +17,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Minor Improvements
 
-- In the UI, a new element on the Deployment information screen shows the health status of a Deployment. Currently, a Deployment is considered unhealthy when its Webserver is down.
+- In the UI, a new element on the Deployment information screen shows the health status of a Deployment. Currently, a Deployment is considered unhealthy if its Webserver is down.
 - You no longer need a password to access Astronomer Cloud documentation.
 
 ### Bug Fixes
