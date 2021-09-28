@@ -119,7 +119,7 @@ To run this script without a CI/CD tool,
 
 ## CI/CD Templates
 
-The following section provides basic templates for configuring individual CI pipelines using popular CI/CD tools. Each template can be implemented as-is to produce a simple CI/CD pipeline, but they can also be reconfigured to manage any number of branches or Deployments based on your needs. More templates are coming soon.
+The following section provides basic templates for configuring individual CI pipelines using popular CI/CD tools. Each template can be implemented as-is to produce a simple CI/CD pipeline, but we recommend reconfiguring the templates to work with your own directory structures, workflows, and best practices. More templates are coming soon.
 
 ### GitHub Actions
 
