@@ -17,7 +17,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 :::danger
 
-This feature introduces a breaking change to code deploys. Starting on September 28, you must be using version 1.0.0 of the Astronomer CLI to successfully deploy code onto any Deployment. For more information, read the [CLI release notes](cli-release-notes).
+This release introduces a breaking change to code deploys via the Astronomer CLI. Starting on September 28, you must upgrade to v1.0.0 of the CLI to deploy code to Astronomer. [CI/CD processes](ci-cd) enabled by Deployment API Keys will continue to work and will not be affected. For more information, read the [CLI release notes](cli-release-notes).
 
 :::
 

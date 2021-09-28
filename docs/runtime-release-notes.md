@@ -4,28 +4,11 @@ title: 'Astronomer Runtime Release Notes'
 id: 'runtime-release-notes'
 ---
 
+## Overview
+
 Astronomer runtime is a Docker image built and published by Astronomer that extends the Apache Airflow project to provide a differentiated experience. This document provides a summary of all changes made to each available version of Astronomer Runtime. For general product release notes, go to [Astronomer Cloud Release Notes](release-notes).
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
-
-## Astronomer Runtime 3.0.3
-
-- Release date: September 22, 2021
-- Airflow version: 2.1.1
-
-### Bug fixes
-
-- Fixed an issue where requests to Airflow's REST API with a temporary authentication token failed
-- Fixed an issue introduced in Runtime 3.0.2 where `astro dev` commands in the Astronomer CLI did not execute correctly
-
-## Astronomer Runtime 3.0.2
-
-- Release date: September 17, 2021
-- Airflow version: 2.1.1
-
-### Bug fixes
-
-- Fixed a series of issues that prevented task logs from appearing in the Airflow UI by implementing a custom task logging handler that does not interfere with AWS credentials or connections configured by users
 
 ## Astronomer Runtime 3.0.1
 
