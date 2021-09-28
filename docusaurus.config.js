@@ -2,7 +2,7 @@
 module.exports = {
   title: 'Astronomer Cloud (Beta)',
   tagline: 'Get Started with the Next Generation of Astronomer Cloud',
-  url: 'https://beta-docs.astronomer.io',
+  url: 'https://docs.astronomer.io',
   baseUrl: '/',
   noIndex: true,
   onBrokenLinks: 'throw',
