@@ -23,12 +23,17 @@ This feature introduces a breaking change to code deploys. Starting on September
 
 ### Minor Improvements
 
-- In the UI, a new element on the Deployment information screen shows the health status of a Deployment. Currently, a Deployment is considered unhealthy if its Webserver is down.
-- You no longer need a password to access Astronomer Cloud documentation.
+- In the Astronomer UI, a new element on the Deployment information screen shows the health status of a Deployment. Currently, a Deployment is considered unhealthy if the Airflow Webserver is not running and the Airflow UI is not available:
+
+    <div class="text--center">
+      <img src="/img/docs/deployment-health.png" alt="Deployment Health text in the UI" />
+    </div>
+
+- The documentation home for Astronomer Cloud has been moved to `docs.astronomer.io`, and you no longer need a password to access the page.
 
 ### Bug Fixes
 
-- Fixed an issue where the UI Deployment information screen showed an incorrect Astronomer Runtime version number
+- The Astronomer UI now correctly renders a Deployment's running version of Astronomer Runtime.
 
 ## September 17, 2021
 

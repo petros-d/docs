@@ -22,8 +22,8 @@ To create an Airflow Deployment on Astronomer Cloud:
 2. On the top right-hand side of the Deployments page, click **New Deployment**.
 3. Set the following:
     - **Name**
-    - **Astronomer Runtime**
     - **Description**
+    - **Astronomer Runtime**: By default, the latest version of Astronomer Runtime is selected
     - **Deployment Location**: The Astronomer Cluster in which you want to create this Deployment.
 
 3. Click **Create Deployment** and give it a few moments to spin up. Within a few seconds, you should see the following:
