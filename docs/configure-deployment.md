@@ -41,13 +41,13 @@ Once you've created a Deployment with default resources, you can always configur
 - 1 AU = 0.1 CPU, .375 GB Memory
 - 10 AU = 1 CPU, 3.75 GB Memory
 
-As we progress through the Private Beta Program, this is subject to change. Read below for guidelines on how to configure each resource component.
+Over time, these units are subject to change. Read below for guidelines on how to configure each resource component.
 
 ### Worker Resources
 
 Task execution on Astronomer Cloud is powered by [Airflow's Celery Executor](https://airflow.apache.org/docs/apache-airflow/stable/executor/celery.html) with [KEDA](https://www.astronomer.io/blog/the-keda-autoscaler), which enables Workers to auto-scale between 0 and 10 depending on real-time workload.
 
-For the Private Beta Program, all Celery Workers assume the same resources. If you set Worker Resources to 10 AU, for example, your Deployment may scale up to 3 Celery Workers at any given time using 10 AU each for a total of 30 AU (3 CPU, 11.25 GB Memory). We recommend 10 AU as the default.
+All Celery Workers assume the same resources. If you set Worker Resources to 10 AU, for example, your Deployment may scale up to 3 Celery Workers at any given time using 10 AU each for a total of 30 AU (3 CPU, 11.25 GB Memory). We recommend 10 AU as the default.
 
 The ability to set minimum and/or maximum number of Workers is coming soon.
 

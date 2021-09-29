@@ -6,7 +6,7 @@ id: 'install-aws'
 
 ## Overview
 
-We're excited to help you get started with the Private Beta Program for Astronomer Cloud on AWS. Below, you'll find instructions for how to complete the Astronomer Cloud install process, including prerequisites and the steps required for our team to provision resources in your network.
+We're excited to help you get started with Astronomer Cloud on AWS. Below, you'll find instructions for how to complete the Astronomer Cloud install process, including prerequisites and the steps required for our team to provision resources in your network.
 
 At a high-level, we'll ask that you come prepared with a new AWS account. From there, you can expect to:
 - Create an account on Astronomer.
@@ -48,8 +48,6 @@ When you first authenticate to Astronomer Cloud, you can sign in with a Google a
 <div class="text--center">
   <img src="/img/docs/login.png" alt="Astronomer Cloud login screen" />
 </div>
-
-Once you log in, you'll see a screen that says: "Welcome to Astronomer Cloud Private Beta! Please contact your Workspace Admin to be added to the system."
 
 If you're the first person from your team to authenticate, the Astronomer team will add you as a Workspace Admin to a new Workspace named after your Organization. From there, you'll be able to add other team members to that Workspace without Astronomer's assistance.
 
@@ -150,6 +148,6 @@ Once our team confirms that your Astronomer Cluster has been created, you are re
 
 Now that you have an Astronomer Cluster up and running, take a look at the docs below for information on how to install the Astronomer CLI, configure your Deployment, and start deploying DAGs.
 
-- [Install CLI (Private Beta)](install-cli)
+- [Install CLI](install-cli)
 - [Configure Deployments](configure-deployment)
 - [Deploy Code](deploy-code)

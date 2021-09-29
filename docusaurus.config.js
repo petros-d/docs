@@ -41,7 +41,7 @@ module.exports = {
       },
     },
     navbar: {
-      title: 'Cloud Docs (Private Beta)',
+      title: 'Cloud Docs (Beta)',
       logo: {
         alt: 'Astronomer',
         src: 'img/LogoPrimaryDarkMode.svg',

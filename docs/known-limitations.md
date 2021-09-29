@@ -6,7 +6,7 @@ id: 'known-limitations'
 
 ## Overview
 
-As we bring on 'Build Partners' into the Private Beta Program for Astronomer Cloud, we're fully committed to being transparent about the current limitations of the product. We're moving fast to remove them and certainly excited to work with your team to build out robust solutions that address some of these foundational questions.
+As we bring on 'Build Partners' into Astronomer Cloud, we're fully committed to being transparent about the current limitations of the product. We're moving fast to remove them and certainly excited to work with your team to build out robust solutions that address some of these foundational questions.
 
 The list below reflects known issues at the time of writing. It will be updated on a weekly basis.
 
@@ -14,7 +14,7 @@ The list below reflects known issues at the time of writing. It will be updated 
 
 - Assistance from our team is required to give the first user in your Organization access to Astronomer Cloud.
 - When a user first creates an account, they will be asked to validate their email address. Email validation is not currently required to access Astronomer Cloud, but we encourage users to follow the process anyway as we will enforce it in the future.
-- On Private Beta, your team will be limited to a single Astronomer Workspace that supports multiple users and Deployments. Support for an Astronomer "Organization" with multiple Workspaces coming soon.
+- Your team will be limited to a single Astronomer Workspace that supports multiple users and Deployments. Support for an Astronomer "Organization" with multiple Workspaces coming soon.
 - If you're running Astronomer Runtime `2.1.1`, `3.0.0`, or `3.0.1`, the Astronomer Runtime field in the Astronomer UI shows `Unknown`. Once you upgrade to Runtime 3.0.2+, your Deployment's version of Runtime is correctly listed.
 - We do not currently support PgBouncer, but the RDS instance provisioned in your Cluster will support around 1000 connections to your database, enough to support 10-12 Deployments.
 - Tasks longer than the worker termination grace period may become zombies when KEDA autoscaling is enabled.
