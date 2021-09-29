@@ -15,7 +15,7 @@ This model optimizes for security whilst relieving your team of operational over
 
 ## Features
 
-Astronomer Cloud's architecture enables a few key features:
+Astronomer Cloud's architecture enables a few key features, available today:
 
 - A secure control plane managed by Astronomer
 - Support for a multi-tenant data plane hosted in your organization's network on AWS (`us-east-1` and `us-west-2`)
