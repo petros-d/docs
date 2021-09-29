@@ -13,6 +13,28 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 **Latest Runtime Version**: 3.0.3 ([Release notes](runtime-release-notes))
 **Latest CLI Version**: 1.0.0 ([Release notes](cli-release-notes))
 
+## September 28, 2021
+
+:::danger
+
+This release introduces a breaking change to code deploys via the Astronomer CLI. Starting on September 28, you must upgrade to v1.0.0 of the CLI to deploy code to Astronomer. [CI/CD processes](ci-cd) enabled by Deployment API Keys will continue to work and will not be affected. For more information, read the [CLI release notes](cli-release-notes).
+
+:::
+
+### Minor Improvements
+
+- In the Astronomer UI, a new element on the Deployment information screen shows the health status of a Deployment. Currently, a Deployment is considered unhealthy if the Airflow Webserver is not running and the Airflow UI is not available:
+
+    <div class="text--center">
+      <img src="/img/docs/deployment-health.png" alt="Deployment Health text in the UI" />
+    </div>
+
+- The documentation home for Astronomer Cloud has been moved to `docs.astronomer.io`, and you no longer need a password to access the page.
+
+### Bug Fixes
+
+- The Astronomer UI now correctly renders a Deployment's running version of Astronomer Runtime.
+
 ## September 17, 2021
 
 ### Support for Deployment API Keys
