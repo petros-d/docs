@@ -1,6 +1,6 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Astronomer Cloud (Beta)',
+  title: 'Astronomer Cloud',
   tagline: 'Get Started with the Next Generation of Astronomer Cloud',
   url: 'https://docs.astronomer.io',
   baseUrl: '/',
@@ -41,7 +41,7 @@ module.exports = {
       },
     },
     navbar: {
-      title: 'Cloud Docs (Private Beta)',
+      title: 'Cloud Docs',
       logo: {
         alt: 'Astronomer',
         src: 'img/LogoPrimaryDarkMode.svg',

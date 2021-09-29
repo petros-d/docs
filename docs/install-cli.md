@@ -12,13 +12,13 @@ The Astronomer CLI is the easiest way to run Apache Airflow on your machine.
 
 From the CLI, you can create a local Apache Airflow environment with a dedicated Webserver, Scheduler and Postgres Database. Once you initialize a project on Astronomer, you can easily customize your image (e.g. add Python or OS-level packages, plugins etc.) and push that image to run on your local machine.
 
-During the Private Beta Program for Astronomer Cloud, you can also use the CLI to:
+You can also use the CLI to:
 
 - Authenticate to Astronomer.
 - List the Astronomer Workspace and Deployments you have access to.
 - Deploy to an Airflow Deployment on Astronomer.
 
-This guide provides instructions for how to install the Astronomer CLI during the Private Beta Program.
+This guide provides instructions for how to install the Astronomer CLI.
 
 ## Step 1. Create a Directory for your Astronomer Project
 

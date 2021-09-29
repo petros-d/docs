@@ -56,7 +56,7 @@ The Docker image you'll find in your Dockerfile by default is:
 <pre><code parentName="pre">{`FROM quay.io/astronomer/astro-runtime:${siteVariables.runtimeVersion}
 `}</code></pre>
 
-This Docker image is based on [Airflow 2.1.1](https://airflow.apache.org/docs/apache-airflow/stable/changelog.html#airflow-2-1-1-2021-07-02) and is hosted on [Astronomer's Docker Registry](https://quay.io/repository/astronomer/astro-runtime?tab=tags). As we release support for newer versions of Apache Airflow throughout the Private Beta Program, we'll make sure to let you know.
+This Docker image is based on [Airflow 2.1.1](https://airflow.apache.org/docs/apache-airflow/stable/changelog.html#airflow-2-1-1-2021-07-02) and is hosted on [Astronomer's Docker Registry](https://quay.io/repository/astronomer/astro-runtime?tab=tags). As we release support for newer versions of Apache Airflow, we'll make sure to let you know.
 
 ## Step 2: Run Airflow Locally
 
@@ -171,8 +171,6 @@ Now that you're familiar with deploying DAGs to Astronomer Cloud, consider readi
 - [Customize your Image](https://www.astronomer.io/docs/cloud/stable/develop/customize-image)
 - [Set Environment Variables](environment-variables)
 
-These docs live in Astronomer's main documentation page and have not been ported over to Private Beta documentation here, though the functionality described is still applicable.
-
-For up-to-date information about product limitations during the Private Beta Program, read [Known Limitations](known-limitations).
+For up-to-date information about product limitations, read [Known Limitations](known-limitations).
 
 If you have any questions, reach out to us. We're here to help.
