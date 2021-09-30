@@ -17,7 +17,7 @@ To run Airflow locally via the CLI, you need:
 - The Astronomer CLI
 - Docker
 
-### Creating a Local Project Directory
+### Creating a Local Project
 
 To create a new Airflow project folder, open an empty directory and run `astro dev init`. This command generates the following files in the directory:
 
@@ -48,6 +48,8 @@ If the project builds successfully, you can access the Airflow UI by going to `h
 ### Updating a Local Project
 
 To make code changes to a locally running Airflow project, run `astro dev stop` followed by `astro dev start`. When combined, these commands rebuild and restart your project with any additional code changes that were made while it was last running.
+
+Occasionally for testing or upgrades, you might need to restart your entire Airflow project. To do this, run `astro dev kill`. This command deletes all data associated with your local Postgres metadata database, including Airflow Connections, logs, and task history.
 
 ### Monitoring a Local Project
 
