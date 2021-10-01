@@ -17,8 +17,8 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Minor Improvements
 
-- In the Astronomer UI, the **Open Airflow** button is now disabled until a Deployment is live and healthy 
-- Workspace Admins can now both edit user permissions and remove users within a given Workspace
+- In the Astronomer UI, the **Open Airflow** button is now disabled until the Airflow UI of the Deployment is available.
+- Workspace Admins can now edit user permissions and remove users within a given Workspace.
 
 ## September 28, 2021
 
