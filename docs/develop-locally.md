@@ -44,7 +44,7 @@ These files make up the Docker image that runs in your local Airflow environment
 
 ### Astronomer Runtime
 
-Your `Dockerfile` includes a reference to Astronomer Runtime. Packaged into a Debian-based Docker image, Astronomer Runtime extends the Apache Airflow open source project to provide you with differentiated functionality that centers around reliability, efficiency, and performance.
+Your `Dockerfile` includes a reference to Astronomer Runtime. Packaged into a Debian-based Docker image, Astronomer Runtime extends the Apache Airflow open source project to provide you with differentiated functionality that centers around reliability, efficiency, and performance. For more information on what's included in Runtime and how it's released, see [Runtime Versioning](runtime-versioning).
 
 The Docker image you'll find in your Dockerfile by default is:
 
