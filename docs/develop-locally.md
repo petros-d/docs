@@ -21,14 +21,14 @@ You might want to run Airflow locally to test DAGs before pushing them to an Ast
 
 To run Airflow locally via the CLI, you need:
 
-- The Astronomer CLI
+- [The Astronomer CLI](install-cli)
 - [Docker](https://www.docker.com/products/docker-desktop)
 
 ## Initializing an Airflow Project
 
 To create a new Astronomer project folder, open an empty directory and run `astro dev init`. This command generates the following files in the directory:
 
-
+```
 .
 ├── dags # Where your DAGs go
 │   └── example-dag.py # An example DAG that comes with the initialized project
@@ -38,6 +38,7 @@ To create a new Astronomer project folder, open an empty directory and run `astr
 ├── airflow_settings.yaml # For your Airflow Connections, Variables and Pools (local only)
 ├── packages.txt # For OS-level packages
 └── requirements.txt # For Python packages
+```
 
 These files make up the Docker image that runs in your local Airflow environment.
 
