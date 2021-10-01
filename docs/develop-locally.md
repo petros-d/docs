@@ -86,13 +86,15 @@ Postgres Database: localhost:5432/postgres
 The default credentials are admin:admin
 `}</code></pre>
 
-If the project builds successfully, you can access the Airflow UI by going to `http://localhost:8080/` and logging in with `admin` for both your username and password. You can also access your Postgres database at `localhost:5432/postgres`.
+If the project builds successfully, you can access the Airflow UI by going to `http://localhost:8080/` and logging in with `admin` for both your username and password.
 
 After logging in, you should see the DAGs from your `dags` directory in the Airflow UI.
 
 <div class="text--center">
 <img src="/img/docs/sample-dag.png" alt="Example DAG in the Airflow UI" />
 </div>
+
+You can also access your Postgres database at `localhost:5432/postgres`.
 
 ## Updating an Astronomer Project
 
