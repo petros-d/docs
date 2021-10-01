@@ -110,7 +110,7 @@ All changes made to the following files will be picked up as soon as they're sav
 
 Once you save your changes, refresh the Airflow Webserver in your browser to see them render.
 
-### Other Changes
+### Environment Changes
 
 All changes made to the following files require rebuilding your image:
 
