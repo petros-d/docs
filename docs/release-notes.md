@@ -13,6 +13,13 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 **Latest Runtime Version**: 3.0.3 ([Release notes](runtime-release-notes))
 **Latest CLI Version**: 1.0.0 ([Release notes](cli-release-notes))
 
+## October 1, 2021
+
+### Minor Improvements
+
+- In the Astronomer UI, the **Open Airflow** button is now disabled until the Airflow UI of the Deployment is available.
+- Workspace Admins can now edit user permissions and remove users within a given Workspace.
+
 ## September 28, 2021
 
 :::danger
