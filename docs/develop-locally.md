@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'Develop Locally'
-title: 'Run Airflow Locally Using the Astronomer CLI'
+title: 'Develop Code Locally with the Astronomer CLI'
 id: 'develop-locally'
 ---
 
