@@ -27,7 +27,7 @@ module.exports = {
       label: 'Develop',
       items: [
       'deploy-code',
-      'develop-locally'
+      'develop-locally',
       'environment-variables',
       'airflow-api',
       'airflow-alerts',

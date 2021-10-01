@@ -89,7 +89,9 @@ If the project builds successfully, you can access the Airflow UI by going to `h
 
 After logging in, you should see the DAGs from your `dags` directory in the Airflow UI.
 
-![Example DAG](https://assets2.astronomer.io/main/docs/getting-started/sample_dag.png)
+<div class="text--center">
+<img src="/img/docs/sample-dag.png" alt="Example DAG in the Airflow UI" />
+</div>
 
 ## Updating an Astronomer Project
 
@@ -126,7 +128,7 @@ To continue monitoring logs, run `astro dev logs --follow`. The `--follow` flag 
 
 ## Running Airflow CLI Commands
 
-To run Apache Airflow CLI commands in your project, run `astro dev run` followed by an Airflow command.
+To run [Apache Airflow CLI](https://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.html) commands in your project, run `astro dev run` followed by an Airflow command.
 
 For example, the Apache Airflow command for viewing your entire configuration is `airflow config list`. To run this command with the Astronomer CLI, you would run `astro dev run config list` instead.
 
