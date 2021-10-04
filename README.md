@@ -17,15 +17,15 @@ GitHub issues are triaged by the Astronomer team and addressed promptly. Once yo
 
 To contribute to Cloud docs, fork this repo and create a branch off of `main`. You can do this either directly in the GitHub repository or by clicking the "Edit this page" button on any published document.
 
-Once you have submitted a PR for your changes, Netlify will add a coment to your PR that includes a link to a staging website with your changes.
+Once you have submitted a PR for your changes, Netlify will add a comment to your PR that includes a link to a staging website with your changes.
 
-Small edits and typo fixes don't need to be linked to an issue and should be mergerd quickly. To get timely review on a larger contribution, we recommend first creating a detailed GitHub issue describing the problem and linking that within your PR.
+Small edits and typo fixes don't need to be linked to an issue and should be merged quickly. To get a timely review on a larger contribution, we recommend first creating a detailed GitHub issue describing the problem and linking that within your PR.
 
 Every update to the `main` branch of this repository will trigger a rebuild of our production documentation page at https://www.docs.astronomer.io. It might take a few moments for your merged changes to appear.
 
 ### Build Astronomer Docs Locally
 
-If you want to submit a screenshot, GIF, or a new documentation file, we recommend building and testing your documentation locally. Astronomer Cloud docs are built with [Docusaurus](https://docusaurus.io/), which is our static site generator. Read the following sections for instructions on how to build and test your documentation changes locally with Docusaurus.
+If you want to submit a screenshot, GIF, or a new documentation file, we recommend building and testing your documentation change locally. Astronomer Cloud docs are built with [Docusaurus](https://docusaurus.io/), which is our static site generator. Read the following sections for instructions on how to build and test your documentation changes locally with Docusaurus.
 
 #### Installation
 
