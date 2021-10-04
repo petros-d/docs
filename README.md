@@ -15,7 +15,12 @@ GitHub issues are triaged by the Astronomer team and addressed promptly. Once yo
 
 ## Contribute
 
-To contribute to Cloud docs, fork this repo and create a branch off of `main`. You can do this either directly in the GitHub repository or by clicking the "Edit this page" button on any published document.
+If you'd like to contribute to Astronomer Docs directly, you are welcome to create a Pull Request (PR) to this repository with your suggested changes. To do so:
+
+1. Fork this repository
+2. Create a branch off of `main`
+3. Make your changes in that branch.
+4. Submit a PR for review.
 
 Once you have submitted a PR for your changes, Netlify will add a coment to your PR that includes a link to a staging website with your changes.
 
