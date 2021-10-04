@@ -4,11 +4,13 @@ title: 'Deploy Code to Astronomer'
 id: 'deploy-code'
 ---
 
+import {siteVariables} from '@site/src/versions';
+
 ## Overview
 
 Astronomer Cloud makes it easy for your team to test Airflow DAGs locally and push them to a Deployment in a Production or Development environment.
 
-This guide will walk you through two things:
+This guide will walk you through:
 
 - How to test DAGs on your local machine with the Astronomer CLI.
 - How to deploy DAGs to a Deployment on Astronomer Cloud.
@@ -35,12 +37,12 @@ This will generate the following files in that directory:
 
     .
     ├── dags # Where your DAGs go
-    │   ├── example-dag.py # An example DAG that comes with the initialized project
+    │   └── example-dag.py # An example DAG that comes with the initialized project
     ├── Dockerfile # For the Astronomer Runtime Docker image, environment variables, and overrides
     ├── include # For any other files you'd like to include
     ├── plugins # For any custom or community Airflow plugins
-    ├──airflow_settings.yaml # For your Airflow Connections, Variables and Pools (local only)
-    ├──packages.txt # For OS-level packages
+    ├── airflow_settings.yaml # For your Airflow Connections, Variables and Pools (local only)
+    ├── packages.txt # For OS-level packages
     └── requirements.txt # For Python packages
 
 These files make up the Docker image that you'll first push to the Airflow environment on your local machine and then to a Deployment on Astronomer.
@@ -51,11 +53,10 @@ Your `Dockerfile` will include a reference to Astronomer Runtime. Packaged into 
 
 The Docker image you'll find in your Dockerfile by default is:
 
-```
-FROM quay.io/astronomer/astro-runtime:2.1.1
-```
+<pre><code parentName="pre">{`FROM quay.io/astronomer/astro-runtime:${siteVariables.runtimeVersion}
+`}</code></pre>
 
-This Docker image is based on [Airflow 2.1.1](https://airflow.apache.org/docs/apache-airflow/stable/changelog.html#airflow-2-1-1-2021-07-02) and is hosted on [Astronomer's Docker Registry](https://quay.io/repository/astronomer/astro-runtime?tab=tags). As we release support for newer versions of Apache Airflow throughout the Private Beta Program, we'll make sure to let you know.
+This Docker image is based on [Airflow 2.1.1](https://airflow.apache.org/docs/apache-airflow/stable/changelog.html#airflow-2-1-1-2021-07-02) and is hosted on [Astronomer's Docker Registry](https://quay.io/repository/astronomer/astro-runtime?tab=tags). As we release support for newer versions of Apache Airflow, we'll make sure to let you know.
 
 ## Step 2: Run Airflow Locally
 
@@ -69,17 +70,16 @@ Once you have the files you need in your project directory, you're ready to star
 
    This command spins up 3 Docker containers on your machine, each for a different Airflow component:
 
-   - **Postgres:** Airflow's Postgres Metadata Database.
-   - **Webserver:** The Airflow component responsible for rendering the Airflow UI.
-   - **Scheduler:** The Airflow component responsible for monitoring and triggering tasks.
+   - **Postgres:** Airflow's Postgres Metadata Database
+   - **Webserver:** The Airflow component responsible for rendering the Airflow UI
+   - **Scheduler:** The Airflow component responsible for monitoring and triggering tasks
 
    You should see the following output:
 
-   ```
-   % astro dev start
+   <pre><code parentName="pre">{`% astro dev start
    Env file ".env" found. Loading...
    Sending build context to Docker daemon  10.75kB
-   Step 1/1 : FROM quay.io/astronomer/astro-runtime:2.1.1
+   Step 1/1 : FROM quay.io/astronomer/astro-runtime:${siteVariables.runtimeVersion}
 
    # Executing 5 build triggers
    ---> Using cache
@@ -99,7 +99,7 @@ Once you have the files you need in your project directory, you're ready to star
    Airflow Webserver: http://localhost:8080
    Postgres Database: localhost:5432/postgres
    The default credentials are admin:admin
-   ```
+   `}</code></pre>
 
 2. To verify that all 3 Docker containers were created, run:
 
@@ -121,7 +121,7 @@ Once you have the files you need in your project directory, you're ready to star
    ![Example DAG](https://assets2.astronomer.io/main/docs/getting-started/sample_dag.png)
 
 4. To push up changes to any of the files in your project directory, run:
-    
+
     ```
     ./astro dev stop
     ```
@@ -138,10 +138,10 @@ Once you have the files you need in your project directory, you're ready to star
 
 ## Step 3: Authenticate to Astronomer
 
-Once you've tested your DAGs locally, you're ready to push them to Astronomer. As long as you're a Workspace Admin or Editor, you can push code to any Deployment you have access to. To start, authenticate to Astronomer Cloud by running:
+Once you've tested your DAGs locally, you're ready to push them to Astronomer. To start, authenticate to Astronomer Cloud by running:
 
 ```
-./astro auth login astronomer.io
+./astro auth login
 ```
 
 If you created your account with a username and password, you'll be prompted to enter them directly in your terminal. If you did so via GitHub or Google OAuth, you'll be prompted to grab a temporary token from https://cloud.astronomer.io/token.
@@ -169,10 +169,8 @@ Once you log in, you should see the DAGs you just deployed.
 Now that you're familiar with deploying DAGs to Astronomer Cloud, consider reading:
 
 - [Customize your Image](https://www.astronomer.io/docs/cloud/stable/develop/customize-image)
-- [Set Environment Variables](https://www.astronomer.io/docs/cloud/stable/deploy/environment-variables)
+- [Set Environment Variables](environment-variables)
 
-These docs live in Astronomer's main documentation page and have not been ported over to Private Beta documentation here, though the functionality described is still applicable.
-
-For up-to-date information about product limitations during the Private Beta Program, read [Known Limitations](known-limitations).
+For up-to-date information about product limitations, read [Known Limitations](known-limitations).
 
 If you have any questions, reach out to us. We're here to help.

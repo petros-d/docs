@@ -3,9 +3,7 @@
  - create an ordered group of docs
  - render a sidebar for each doc of that group
  - provide next/previous navigation
-
  The sidebars can be generated from the filesystem, or explicitly defined here.
-
  Create as many sidebars as you want.
  */
 
@@ -17,39 +15,39 @@ module.exports = {
       label: 'Overview',
     },
     {
-      type: 'doc',
-      id: 'install-aws',
-      label: 'Install on AWS',
+      type: 'category',
+      label: 'Getting Started',
+      items: [
+      'install-aws',
+      'install-cli',
+      ],
     },
     {
-      type: 'doc',
-      id: 'configure-deployment',
-      label: 'Configure a Deployment',
+      type: 'category',
+      label: 'Develop',
+      items: [
+      'deploy-code',
+      'environment-variables',
+      'airflow-api',
+      'airflow-alerts',
+      ],
     },
     {
-      type: 'doc',
-      id: 'install-cli',
-      label: 'Install the Astronomer CLI',
+      type: 'category',
+      label: 'Manage Deployments',
+      items: [
+      'configure-deployment',
+      'api-keys',
+      'ci-cd',
+      ],
     },
     {
-      type: 'doc',
-      id: 'deploy-code',
-      label: 'Deploy Code',
-    },
-    {
-      type: 'doc',
-      id: 'environment-variables',
-      label: 'Set Environment Variables',
-    },
-    {
-      type: 'doc',
-      id: 'airflow-api',
-      label: 'Airflow API',
-    },
-    {
-      type: 'doc',
-      id: 'airflow-alerts',
-      label: 'Airflow Alerts',
+      type: 'category',
+      label: 'Astronomer Runtime',
+      items: [
+      'upgrade-runtime',
+      'runtime-versioning',
+      ],
     },
     {
       type: 'category',
@@ -61,6 +59,7 @@ module.exports = {
         items : [
           'release-notes',
           'cli-release-notes',
+          'runtime-release-notes',
         ],
       },
       'known-limitations',

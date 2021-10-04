@@ -4,19 +4,21 @@ title: 'Install the Astronomer CLI'
 id: 'install-cli'
 ---
 
+import {siteVariables} from '@site/src/versions';
+
 ## Overview
 
 The Astronomer CLI is the easiest way to run Apache Airflow on your machine.
 
 From the CLI, you can create a local Apache Airflow environment with a dedicated Webserver, Scheduler and Postgres Database. Once you initialize a project on Astronomer, you can easily customize your image (e.g. add Python or OS-level packages, plugins etc.) and push that image to run on your local machine.
 
-During the Private Beta Program for Astronomer Cloud, you can also use the CLI to do the following:
+You can also use the CLI to:
 
 - Authenticate to Astronomer.
 - List the Astronomer Workspace and Deployments you have access to.
 - Deploy to an Airflow Deployment on Astronomer.
 
-This guide provides instructions for how to install the Astronomer CLI during the Private Beta Program.
+This guide provides instructions for how to install the Astronomer CLI.
 
 ## Step 1. Create a Directory for your Astronomer Project
 
@@ -40,21 +42,15 @@ Now, run the appropriate command for your OS in the directory you created in Ste
 
 ### MacOS
 
-```bash
-curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.7-beta_darwin_amd64/astro -o astro && chmod +x astro
-```
+<pre><code parentName="pre">{`curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_${siteVariables.cliVersion}_darwin_amd64/astro -o astro && chmod +x astro`}</code></pre>
 
 ### Windows (PowerShell)
 
-```powershell
-Invoke-WebRequest -Uri https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.7-beta_windows_amd64/astro.exe -OutFile astro.exe
-```
+<pre><code parentName="pre">{`Invoke-WebRequest -Uri https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_${siteVariables.cliVersion}_windows_amd64/astro.exe -OutFile astro.exe`}</code></pre>
 
 ### Linux
 
-```bash
-curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_0.2.7-beta_linux_amd64/astro -o astro && chmod +x astro
-```
+<pre><code parentName="pre">{`curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_${siteVariables.cliVersion}_linux_amd64/astro -o astro && chmod +x astro`}</code></pre>
 
 ## Step 3. Confirm the Install
 
@@ -74,10 +70,8 @@ To confirm the CLI was installed properly, run the following from the directory 
 
 You should see the following:
 
-```
-% ./astro version
-Astro CLI Version: 0.2.7-beta
-```
+<pre><code parentName="pre">{`% ./astro version
+Astro CLI Version: ${siteVariables.cliVersion}`}</code></pre>
 
 ## Step 4. Run CLI Commands
 

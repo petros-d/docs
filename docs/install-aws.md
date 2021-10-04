@@ -6,7 +6,7 @@ id: 'install-aws'
 
 ## Overview
 
-We're excited to help you get started with the Private Beta Program for Astronomer Cloud on AWS. Below, you'll find instructions for how to complete the Astronomer Cloud install process, including prerequisites and the steps required for our team to provision resources in your network.
+We're excited to help you get started with Astronomer Cloud on AWS. Below, you'll find instructions for how to complete the Astronomer Cloud install process, including prerequisites and the steps required for our team to provision resources in your network.
 
 At a high-level, we'll ask that you come prepared with a new AWS account. From there, you can expect to:
 - Create an account on Astronomer.
@@ -35,7 +35,7 @@ If any AWS resources are on a private network, you can choose between two option
 
 If you want to continue with the second option, you'll additionally need:
 
-- Subnet CIDRs (RFC 1918 IP Space). Make sure that these CIDRs do not overlap with existing CIDRs in use by your organization.
+- A CIDR block (RFC 1918 IP Space) no smaller than a `/19` range. You must ensure it does not overlap with the AWS VPC(s) that you will be peering with later. The default CIDR range is `172.20.0.0/19`.
 - VPC Name / ID for peering with Astronomer (accessible through the [AWS VPC console](https://console.aws.amazon.com/vpc/)).
 - The IP addresses of your DNS servers.
 
@@ -48,8 +48,6 @@ When you first authenticate to Astronomer Cloud, you can sign in with a Google a
 <div class="text--center">
   <img src="/img/docs/login.png" alt="Astronomer Cloud login screen" />
 </div>
-
-Once you log in, you'll see a screen that says: "Welcome to Astronomer Cloud Private Beta! Please contact your Workspace Admin to be added to the system."
 
 If you're the first person from your team to authenticate, the Astronomer team will add you as a Workspace Admin to a new Workspace named after your Organization. From there, you'll be able to add other team members to that Workspace without Astronomer's assistance.
 
@@ -140,16 +138,16 @@ This process can take some time. Wait for confirmation that the installation was
 
 ## Step 5: Create a Deployment
 
-Once our team confirms that your Astronomer Cluster has been created, you are ready to create a Deployment and start deploying DAGs. Log in to [the Astronomer UI](https://cloud.astronomer.io) again and create a new Deployment. If the installation was successful, your new Astronomer Cluster will be listed as an option in the **Deployment Location**:
+Once our team confirms that your Astronomer Cluster has been created, you are ready to create a Deployment and start deploying DAGs. Log in to [the Astronomer UI](https://cloud.astronomer.io) again and [create a new Deployment](configure-deployment). If the installation was successful, your new Astronomer Cluster will be listed as an option under the **Cluster** menu:
 
 <div class="text--center">
-  <img src="/img/docs/deployment-location.png" alt="Astronomer UI New Deployment screen" />
+  <img src="/img/docs/cluster-menu.png" alt="Astronomer UI New Deployment screen" />
 </div>
 
 ## Next Steps
 
 Now that you have an Astronomer Cluster up and running, take a look at the docs below for information on how to install the Astronomer CLI, configure your Deployment, and start deploying DAGs.
 
-- [Install CLI (Private Beta)](install-cli)
+- [Install CLI](install-cli)
 - [Configure Deployments](configure-deployment)
 - [Deploy Code](deploy-code)

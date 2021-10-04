@@ -6,15 +6,70 @@ id: 'release-notes'
 
 ## Overview
 
-Astronomer is committed to continuous development during the Private Beta Program. As you grow with us, expect to see bug fixes and improved functionality on a daily basis. To keep your team updated, this document will provide a weekly summary of all changes made and released to Astronomer Cloud during the Private Beta Program.
+Astronomer is committed to continuous development of Astronomer Cloud. As you grow with us, expect to see bug fixes and improved functionality on a daily basis. To keep your team updated, this document will provide a weekly summary of all changes made and released to Astronomer Cloud.
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
-For release notes specific to the Astronomer CLI, see [Astronomer CLI Release Notes](cli-release-notes).
+**Latest Runtime Version**: 3.0.3 ([Release notes](runtime-release-notes))
+**Latest CLI Version**: 1.0.0 ([Release notes](cli-release-notes))
+
+## October 1, 2021
+
+### Minor Improvements
+
+- In the Astronomer UI, the **Open Airflow** button is now disabled until the Airflow UI of the Deployment is available.
+- Workspace Admins can now edit user permissions and remove users within a given Workspace.
+
+## September 28, 2021
+
+:::danger
+
+This release introduces a breaking change to code deploys via the Astronomer CLI. Starting on September 28, you must upgrade to v1.0.0 of the CLI to deploy code to Astronomer. [CI/CD processes](ci-cd) enabled by Deployment API Keys will continue to work and will not be affected. For more information, read the [CLI release notes](cli-release-notes).
+
+:::
+
+### Minor Improvements
+
+- In the Astronomer UI, a new element on the Deployment information screen shows the health status of a Deployment. Currently, a Deployment is considered unhealthy if the Airflow Webserver is not running and the Airflow UI is not available:
+
+    <div class="text--center">
+      <img src="/img/docs/deployment-health.png" alt="Deployment Health text in the UI" />
+    </div>
+
+- The documentation home for Astronomer Cloud has been moved to `docs.astronomer.io`, and you no longer need a password to access the page.
+
+### Bug Fixes
+
+- The Astronomer UI now correctly renders a Deployment's running version of Astronomer Runtime.
+
+## September 17, 2021
+
+### Support for Deployment API Keys
+
+Astronomer Cloud now officially supports Deployment API keys, which you can use to automate code pushes to Astronomer and integrate your environment with a CI/CD tool such as GitHub Actions. For more information on creating and managing Deployment API keys, see [Deployment API keys](api-keys). For more information on using Deployment API keys to programmatically deploy code, see [CI/CD](ci-cd). Support making requests to Airflow's REST API using API keys is coming soon.
+
+## September 3, 2021
+
+### Bug Fixes
+
+- Added new protections to prevent S3 remote logging connections from breaking
+- Fixed an issue where environment variables with extra spaces could break a Deployment
+- Fixed an issue where Deployments would occasionally persist after being deleted via the UI
+- In the UI, the **Organization** tab in **Settings** is now hidden from non-admin users
+- In the UI, the table view of Deployments no longer shows patch information in a Deployment's **Version** value
+
+## August 27, 2021
+
+### Minor Improvements
+
+- You can now remain authenticated to Astronomer across multiple active browser tabs. For example, if your session expires and you re-authenticate to Astronomer Cloud on one tab, all other tabs running Astronomer Cloud will be automatically updated without refreshing.
+- If you try to access a given page on Astronomer Cloud while unauthenticated and reach the login screen, logging in now brings you to the original page you requested.
+
+### Bug Fixes
+
+- Fixed an issue where an incorrect total number of team members would appear in the **People** tab.
 
 ## August 20, 2021
-
-**Latest CLI Version**: `0.2.7-beta`
 
 ### Support for the Airflow REST API
 
@@ -41,8 +96,6 @@ You can now programmatically trigger DAGs and update your Airflow Deployments on
 
 ## August 6, 2021
 
-**Latest CLI Version**: `0.2.7-beta`
-
 ### Improvements
 
 - Informational tooltips are now available on the **New Deployment** page.
@@ -53,8 +106,6 @@ You can now programmatically trigger DAGs and update your Airflow Deployments on
 - Improved error handling in the Airflow UI in cases where a user does not exist or does not have permission to view a Deployment.
 
 ## July 30, 2021
-
-**Latest CLI Version**: `0.2.7-beta` ([Release notes](cli-release-notes#v027-beta))
 
 ### Improvements
 
