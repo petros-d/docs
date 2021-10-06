@@ -47,7 +47,7 @@ If you just need to make a single API call, you can use a temporary access token
 
 ## Reauthorize an API Key
 
-By default, a new API key is granted access to a Deployment via a token for 24 hours. To continue using the API key after its cretion, you need to retrieve a new token at least every 24 hours. You can retrieve a new token using the following API call:
+By default, a new API key is granted access to a Deployment via a token for 24 hours. To continue using the API key after its creation, you need to retrieve a new token at least every 24 hours. You can retrieve a new token using the following API call:
 
 ```curl
 curl --location --request POST "https://auth.astronomer.io/oauth/token" \
