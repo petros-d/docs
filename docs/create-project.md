@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Create a Project'
 title: 'Create an Astronomer Project'
-id: 'Create a Project'
+id: 'create-project'
 ---
 
 import {siteVariables} from '@site/src/versions';
