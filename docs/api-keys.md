@@ -6,19 +6,21 @@ id: 'api-keys'
 
 ## Overview
 
-This guide provides instructions for how to create API keys for your Astronomer Deployments. You can use Deployment API keys to programmatically deploy DAGs to a given Deployment on Astronomer.
+This guide provides instructions for how to create API keys for Deployments on Astronomer. You can use API keys to programmatically deploy DAGs to a Deployment on Astronomer.
 
 Deployment API keys have the following properties:
 
 - They can deploy code to Astronomer (customizable permissions coming soon).
 - They are deleted permanently if the corresponding Deployment is deleted.
-- By default, a new API key is granted access to a Deployment via a token for 24 hours. After 24 hours, the token expires. To continue using an API key after 24 hours, you need to retrieve another token as described in [Reauthorize an API Key](api-keys#reauthorize-an-api-key).
-
-Deployment API keys are an improved and more secure version of [Service Accounts](https://www.astronomer.io/docs/enterprise/v0.25/deploy/ci-cd#step-1-create-a-service-account), which are available in other Astronomer products.
-
-:::
+- By default, an API key is granted access to a Deployment via an access token that is valid for 24 hours. After 24 hours, the access token expires. To continue using an API key after 24 hours, you need to retrieve another token as described in [Refresh Access Token](api-keys#refresh-access-token).
 
 This guide provides steps for creating and deleting Deployment API keys.
+
+:::tip
+
+Deployment API keys are an improved and more secure iteration of [Service Accounts](https://www.astronomer.io/docs/enterprise/v0.25/deploy/ci-cd#step-1-create-a-service-account), which are available in other Astronomer products.
+
+:::
 
 ## Create an API Key
 
@@ -37,29 +39,29 @@ To create an API key for a Deployment:
       <img src="/img/docs/create-api-key.png" alt="Create API Key button" />
     </div>
 
-From here, you can copy the API key ID and secret for use in API calls and CI/CD pipelines. Make sure to save this key secret securely, as this is the only time you will have access to see it in plain text.
+From here, you can copy the API key ID and secret for use in API calls and CI/CD pipelines. The API key ID and secret are equivalent to a username and password that last indefinitely unless explicitly changed. Make sure to save the key secret securely, as this is the only time you will have access to see it in plain text.
 
 :::tip
 
-If you just need to make a single API call, you can use a temporary access token instead of a key secret. To retrieve a temporary access key, go to `cloud.astronomer.io/token` and copy the key that appears. This key is valid only for 24 hours.
+If you just need to make a single API call, you can use a temporary user authentication token instead of a Deployment API key ID and secret pair. To retrieve a temporary authentication token, go to `cloud.astronomer.io/token` and copy the token that appears. This token is valid only for 24 hours.
 
 :::
 
-## Reauthorize an API Key
+## Refresh Access Token
 
-By default, a new API key is granted access to a Deployment via a token for 24 hours. To continue using the API key after its creation, you need to retrieve a new token at least every 24 hours. You can retrieve a new token using the following API call:
+In order for a machine or process to deploy code to a Deployment on Astronomer, a Deployment API key ID and secret are used to generate an access token that is valid for 24 hours. This access token is what has permissions to deploy code. To continue using an API key after its creation, you need to retrieve a new access token either every 24 hours or every time you need it if longer than 24 hours. To retrieve a new access token with an existing API key ID and secret, run the following API request:
 
 ```curl
 curl --location --request POST "https://auth.astronomer.io/oauth/token" \
         --header "content-type: application/json" \
         --data-raw "{
-            \"client_id\": \"<deployment-key-id>\",
-            \"client_secret\": \"<deployment-key-secret>\",
+            \"client_id\": \"<api-key-id>\",
+            \"client_secret\": \"<api-key-secret>\",
             \"audience\": \"astronomer-ee\",
             \"grant_type\": \"client_credentials\"}" | jq -r '.access_token'
 ```
 
-We strongly recommend adding some form of this API call to any CI/CD pipelines that utilize Deployment API keys.
+Make sure to replace `api-key-id` and `api-key-secret` in this request with values that correspond to your own API key. We strongly recommend adding some form of this API request to any CI/CD pipelines that utilize Deployment API keys. For more information, see [CI/CD on Astronomer](ci-cd).
 
 ## Delete an API Key
 
