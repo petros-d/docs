@@ -51,11 +51,10 @@ If it's your first time deploying, expect to wait a few minutes for the Docker i
 
 Once you log in, you should see the DAGs you just deployed.
 
-## What's Next
+## Next Steps
 
 Now that you're familiar with deploying DAGs to Astronomer Cloud, consider reading:
 
-- [Customize your Image](https://www.astronomer.io/docs/cloud/stable/develop/customize-image)
 - [Set Environment Variables](environment-variables)
 
 For up-to-date information about product limitations, read [Known Limitations](known-limitations).

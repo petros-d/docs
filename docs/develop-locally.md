@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'Develop Locally'
-title: 'Develop Code Locally with the Astronomer CLI'
+title: 'Develop Your Local Astronomer Project'
 id: 'develop-locally'
 ---
 
@@ -8,101 +8,54 @@ import {siteVariables} from '@site/src/versions';
 
 ## Overview
 
-The Astronomer CLI is the easiest way to run Apache Airflow on your machine. From the CLI, you can create a local Apache Airflow environment with a dedicated Webserver, Scheduler and Postgres Database.
+This document explains the various ways you can work in a local Astronomer project. Specifically, this guide provides instructions on how to:
 
-You might want to run Airflow locally to test DAGs before pushing them to an Astronomer Deployment. The Astronomer CLI includes all of the tools you need to write, run, and monitor DAGs on your local machine. As you work with Apache Airflow on Astronomer, use this guide to:
+- Add DAG code to your project
+- Add Python and OS-level packages to your project
+- Add dependencies to your project
+- Run on-build commands
+- Use the Airflow CLI
+- Add environment variables locally
 
-- Test your Astronomer project locally.
-- Access logs for your locally running Airflow components.
-- Access a local instance of the Airflow UI.
-- Run Airflow CLI Commands.
+## Prerequisites
 
-### Prerequisites
+To develop locally, you need:
 
-To run Airflow locally via the CLI, you need:
-
+- An existing [Astronomer project](create-project).
 - [The Astronomer CLI](install-cli)
 - [Docker](https://www.docker.com/products/docker-desktop)
 
-## Initializing an Airflow Project
+## Run a Project Locally
 
-To create a new Astronomer project folder, open an empty directory and run `astro dev init`. This command generates the following files in the directory:
-
-```
-.
-├── dags # Where your DAGs go
-│   └── example-dag.py # An example DAG that comes with the initialized project
-├── Dockerfile # For the Astronomer Runtime Docker image, environment variables, and overrides
-├── include # For any other files you'd like to include
-├── plugins # For any custom or community Airflow plugins
-├── airflow_settings.yaml # For your Airflow Connections, Variables and Pools (local only)
-├── packages.txt # For OS-level packages
-└── requirements.txt # For Python packages
-```
-
-These files make up the Docker image that runs in your local Airflow environment.
-
-### Astronomer Runtime
-
-Your `Dockerfile` includes a reference to Astronomer Runtime. Packaged into a Debian-based Docker image, Astronomer Runtime extends the Apache Airflow open source project to provide you with differentiated functionality that centers around reliability, efficiency, and performance. For more information on what's included in Runtime and how it's released, see [Runtime Versioning](runtime-versioning).
-
-By default, the Docker image in your Dockerfile is:
-
-<pre><code parentName="pre">{`FROM quay.io/astronomer/astro-runtime:${siteVariables.runtimeVersion}
-`}</code></pre>
-
-## Running Airflow Locally
-
-To start a local Astronomer project, run `astro dev start` from your project directory. This command builds your project and spins up 3 Docker containers on your machine, each for a different Airflow component:
+To run a local Astronomer project, run `astro dev start`. This command builds your project and spins up 3 Docker containers on your machine, each for a different Airflow component:
 
 - **Postgres:** Airflow's metadata database
 - **Webserver:** The Airflow component responsible for rendering the Airflow UI
 - **Scheduler:** The Airflow component responsible for monitoring and triggering tasks
 
-After running the command, you should see the following output:
+Once the project builds, you can access the Airflow UI by going to `http://localhost:8080/` and logging in with `admin` for both your username and password. You can also access your Postgres database at `localhost:5432/postgres`.
 
-<pre><code parentName="pre">{`% astro dev start
-Env file ".env" found. Loading...
-Sending build context to Docker daemon  10.75kB
-Step 1/1 : FROM quay.io/astronomer/astro-runtime:${siteVariables.runtimeVersion}
+### Access Airflow Logs
 
-# Executing 5 build triggers
----> Using cache
----> Using cache
----> Using cache
----> Using cache
----> Using cache
----> 5160cfd00623
-Successfully built 5160cfd00623
-Successfully tagged astro-trial_705330/airflow:latest
-INFO[0000] [0/3] [postgres]: Starting
-INFO[0002] [1/3] [postgres]: Started
-INFO[0002] [1/3] [scheduler]: Starting
-INFO[0003] [2/3] [scheduler]: Started
-INFO[0003] [2/3] [webserver]: Starting
-INFO[0004] [3/3] [webserver]: Started
-Airflow Webserver: http://localhost:8080
-Postgres Database: localhost:5432/postgres
-The default credentials are admin:admin
-`}</code></pre>
+To show logs for the Scheduler or Webserver in a locally running Astronomer project, run `astro dev logs`. Once you run this command, the most recent logs for these components appear in your terminal window.
 
-If the project builds successfully, you can access the Airflow UI by going to `http://localhost:8080/` and logging in with `admin` for both your username and password.
+To continue monitoring logs, run `astro dev logs --follow`. The `--follow` flag ensures that the latest logs continue to appear in your terminal window.
 
-After logging in, you should see the DAGs from your `dags` directory in the Airflow UI.
+### Run Airflow CLI Commands
 
-<div class="text--center">
-<img src="/img/docs/sample-dag.png" alt="Example DAG in the Airflow UI" />
-</div>
+To run [Apache Airflow CLI](https://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.html) commands in your locally running project, run `astro dev run` followed by an Airflow command.
 
-You can also access your Postgres database at `localhost:5432/postgres`.
+For example, the Apache Airflow command for viewing your entire configuration is `airflow config list`. To run this command with the Astronomer CLI, you would run `astro dev run config list` instead.
 
-## Updating an Astronomer Project
+## Rebuild a Project
 
-If you're making a change to your Astronomer project, you might have to update your local Airflow environment to run your changes locally.
+All Astronomer projects require you to specify a Debian-based Astronomer Runtime image in a `Dockerfile`. When you run your project locally or on Astronomer Cloud, all of your DAG code, packages, and configurations are built into this image.
+
+If you're making a change to your Astronomer project, you might have to rebuild your image and update your local Airflow environment to run your changes locally.
 
 ### DAG Code Changes
 
-All changes made to the following files will be picked up as soon as they're saved to your code editor:
+All changes made to the following files will be live in your project as soon as you save them to your code editor:
 
 - `dags`
 - `plugins`
@@ -119,25 +72,143 @@ All changes made to the following files require rebuilding your image:
 - `requirements.txt`
 - `airflow_settings.yaml`
 
-To rebuild your image after making a change to any of these files, `astro dev stop` followed by `astro dev start`. In addition to rebuilding your image, these commands restart the Docker containers running your local Airflow environment.
+To rebuild your project after making a change to any of these files, `astro dev stop` followed by `astro dev start`. In addition to rebuilding your image, these commands restart the Docker containers running your local Airflow environment.
 
 > **Note:** Note: As you develop locally, it may be necessary to reset your Docker containers and metadata DB for testing purposes. To do so, run astro dev kill instead of astro dev stop when rebuilding your image. This deletes all data associated with your local Postgres metadata database, including Airflow Connections, logs, and task history.
 
-## Accessing Airflow Logs
+## Add DAGs
 
-To show logs for the Scheduler or Webserver in a locally running Astronomer project, run `astro dev logs`. Once you run this command, the most recent logs for these components appear in your terminal window.
+DAGs are stored in the `dags` folder of your Astronomer project. To add a DAG to your project, simply add its `.py` file to this folder.
 
-To continue monitoring logs, run `astro dev logs --follow`. The `--follow` flag ensures that the latest logs continue to appear in your terminal window.
+### Add DAG Helper Functions
 
-## Running Airflow CLI Commands
+To build additional helper functions for DAGs into your Astronomer project, we recommend adding a folder of `helper_functions` with a set of files that can be used by Airflow DAGs. To do this:
 
-To run [Apache Airflow CLI](https://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.html) commands in your project, run `astro dev run` followed by an Airflow command.
+1. Add a directory of `helper_functions` to your local project:
 
-For example, the Apache Airflow command for viewing your entire configuration is `airflow config list`. To run this command with the Astronomer CLI, you would run `astro dev run config list` instead.
+    ```bash
+    .
+    ├── airflow_settings.yaml
+    ├── dags
+    │   └── example-dag.py
+    ├── Dockerfile
+    ├── helper_functions
+    │   └── helper.py
+    ├── include
+    ├── packages.txt
+    ├── plugins
+    │   └── example-plugin.py
+    └── requirements.txt
+    ```
 
-## What's Next
+2. [Rebuild your project](develop-locally#rebuild-a-project).
 
-After you've successfully run an Astronomer project locally, we recommend reading the following documentation to learn about deploying your project to Astronomer:
+To confirm that your helper functions were successfully installed:
 
-- [Configure a Deployment](configure-deployment)
-- [Deploy Code](deploy-code)
+1. Run `docker ps` to identify the 3 running docker containers on your machine
+2. Copy the container ID of your Scheduler container
+3. Run the following command to see your new directory in the container:
+
+    ```bash
+    $ docker exec -it <scheduler-container-id> /bin/bash
+    bash-4.4$ ls
+    Dockerfile  airflow_settings.yaml  helper_functions  logs  plugins  unittests.cfg
+    airflow.cfg  dags  include  packages.txt  requirements.txt
+    ```
+
+## Add Python and OS-level Packages
+
+To build Python and OS-level packages into your Astronomer project, add them to your `requirements.txt` and `packages.txt` files. Add Python packages to your `requirements.txt` and OS-level packages to your `packages.txt` file.
+
+To pin a version of a package, use the following syntax:
+
+```text
+<package-name>==<version>
+```
+
+To exclusively use Pymongo 3.7.2, for example, add the following line to your `requirements.txt` file:
+
+```text
+pymongo==3.7.2
+```
+
+If you don't pin a package to a version, the latest version of the package that's publicly available is installed by default.
+
+Once you've saved these packages in your project files, [rebuild your project](develop-locally#rebuild-a-project).
+
+### Confirm your package was installed
+
+If you added `pymongo` to your `requirements.txt` file, for example, you can confirm that it was properly installed by running a `docker exec` command into your Scheduler:
+
+1. Run `docker ps` to identify the 3 running docker containers on your machine
+2. Copy the container ID of your Scheduler container
+3. Run the following:
+
+```
+docker exec -it <scheduler-container-id> pip freeze | grep pymongo
+
+pymongo==3.7.2
+```
+
+## Configure `airflow_settings.yaml` (Local Development Only)
+
+When you first initialize a new Astronomer project, a file called `airflow_settings.yaml` is automatically generated. With this file, you can configure and programmatically generate Airflow [Connections](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html), [Pools](https://airflow.apache.org/docs/apache-airflow/stable/concepts/pools.html), and [Variables](https://airflow.apache.org/docs/apache-airflow/stable/howto/variable.html) when you're developing locally.
+
+:::caution
+If you are storing your project in a public directory, we recommend adding this file to your `.gitignore` or equivalent secret management service.
+:::
+
+### Add Airflow Connections, Pools, and Variables
+
+By default, the `airflow_settings.yaml` file includes the following template:
+
+```yaml
+airflow:
+  connections:
+    - conn_id: my_new_connection
+      conn_type: postgres
+      conn_host: 123.0.0.4
+      conn_schema: airflow
+      conn_login: user
+      conn_password: pw
+      conn_port: 5432
+      conn_extra:
+  pools:
+    - pool_name: my_new_pool
+      pool_slot: 5
+      pool_description:
+  variables:
+    - variable_name: my_variable
+      variable_value: my_value
+```
+
+This template includes all possible configuration values. If you want to add another Connection, Pool, or Variable, you can copy the existing fields for the given resource and replace the default values with your own. For instance, to create another Variable, you can add its values under the existing default Variable like so:
+
+```yaml
+variables:
+  - variable_name: my_variable
+    variable_value: my_value
+  - variable_name: my_second_variable
+    variable_value: value987
+```
+
+Once you've saved those packages in your project files, [rebuild your project](develop-locally#rebuild-a-project). When you access the Airflow UI for your project at `localhost:8080`, you should see your new resources in the **Connections**, **Pools**, and **Variables** tabs.
+
+## Run Commands on Build
+
+To run extra system commands when your Airflow image builds, add them to your `Dockerfile` as a `RUN` command. These commands run as the last step in the image build process.
+
+For example, if you want to run `ls` when your image builds, your `Dockerfile` would look like this:
+
+<pre><code parentName="pre">{`FROM quay.io/astronomer/astro-runtime:${siteVariables.runtimeVersion}
+`}</code></pre>
+
+## Add Environment Variables (Local development only)
+
+The Astronomer CLI comes with the ability to bring in Environment Variables from a specified file by running `astro dev start` with an `--env` flag:
+
+```
+astro dev start --env .env
+```
+
+This feature is available for local development only. For more detail on how to add Environment Variables both locally and on Astronomer Cloud, refer to [Environment Variables](environment-variables).

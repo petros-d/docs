@@ -73,8 +73,6 @@ You should see the following:
 <pre><code parentName="pre">{`% astro version
 Astro CLI Version: ${siteVariables.cliVersion}`}</code></pre>
 
-## What's Next
+## Next Steps
 
-Now that you've installed the Astronomer CLI, you're ready to initialize a local Airflow environment and push DAGs to Astronomer Cloud.
-
-For instructions, go to [Develop Locally](develop-locally).
+Now that you've installed the Astronomer CLI, you're ready to initialize a local Airflow environment and push DAGs to Astronomer Cloud. For instructions, read [Create a Project](create-project).
