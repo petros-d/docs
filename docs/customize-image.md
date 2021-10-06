@@ -4,6 +4,8 @@ title: 'Customize the Astronomer Runtime Image'
 id: 'customize-image'
 ---
 
+import {siteVariables} from '@site/src/versions';
+
 ## Overview
 
 All Astronomer projects require you to specify a Debian-based Astronomer Runtime image in a `Dockerfile`. While the Runtime Docker image includes packages, dependencies, and logic to support your experience with Apache Airflow, almost all use cases require that you customize your Astronomer project in some way.
