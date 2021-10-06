@@ -1,9 +1,10 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Astronomer Cloud (Beta)',
+  title: 'Astronomer Cloud',
   tagline: 'Get Started with the Next Generation of Astronomer Cloud',
-  url: 'https://beta-docs.astronomer.io',
+  url: 'https://docs.astronomer.io',
   baseUrl: '/',
+  noIndex: true,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.svg',
@@ -40,7 +41,7 @@ module.exports = {
       },
     },
     navbar: {
-      title: 'Cloud Docs (Private Beta)',
+      title: 'Cloud Docs',
       logo: {
         alt: 'Astronomer',
         src: 'img/LogoPrimaryDarkMode.svg',
@@ -97,8 +98,8 @@ module.exports = {
               to: 'https://www.astronomer.io',
             },
             {
-              label: 'Astronomer on GitHub',
-              href: 'https://github.com/astronomer',
+              label: 'Docs on GitHub',
+              href: 'https://github.com/astronomer/cloud-docs',
             },
           ],
         },
@@ -112,13 +113,11 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Let's use this variable to enable an edit button for GA
-          // editURL: https://github.com/astronomer/beta-docs
-
-          // Makes "Overview" the docs landing page
+          editUrl: ({versionDocsDirPath, docPath}) =>
+    `https://github.com/astronomer/cloud-docs/blob/main/docs/${docPath}`,
+          editLocalizedFiles: true,
           routeBasePath: '/',
           admonitions: {
-
           },
         },
         blog: {

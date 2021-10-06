@@ -43,6 +43,61 @@
   --spectra-colors-purple-800: #3f2971;
   --spectra-colors-purple-900: #1a0d36;
 
+  --spectra-colors-green-100: #d6f5e6;
+  --spectra-colors-green-200: #c4edd9;
+  --spectra-colors-green-300: #6dd6a3;
+  --spectra-colors-green-400: #17b468;
+  --spectra-colors-green-500: #00b45d;
+  --spectra-colors-green-600: #009b50;
+  --spectra-colors-green-700: #016f39;
+  --spectra-colors-green-800: #004724;
+  --spectra-colors-green-900: #001f10;
+
+  --spectra-colors-yellow-100: #fff8da;
+  --spectra-colors-yellow-200: #fff2bb;
+  --spectra-colors-yellow-300: #ffe987;
+  --spectra-colors-yellow-400: #ffe367;
+  --spectra-colors-yellow-500: #ffda35;
+  --spectra-colors-yellow-600: #ffd100;
+  --spectra-colors-yellow-700: #dcb400;
+  --spectra-colors-yellow-800: #806900;
+  --spectra-colors-yellow-900: #473b00;
+
+  --spectra-colors-red-100: #ffece9;
+  --spectra-colors-red-200: #ffcdc6;
+  --spectra-colors-red-300: #f58d7e;
+  --spectra-colors-red-400: #f4553f;
+  --spectra-colors-red-500: #f4442c;
+  --spectra-colors-red-600: #d72e17;
+  --spectra-colors-red-700: #a51400;
+  --spectra-colors-red-800: #470801;
+  --spectra-colors-red-900: #1f0300;
+
+  --ifm-color-success: var(--spectra-colors-green-400);
+  --ifm-color-success-contrast-background: var(--spectra-colors-green-100);
+  --ifm-color-success-contrast-foreground: var(--spectra-colors-green-900);
+  --ifm-color-success-dark: var(--spectra-colors-green-500);
+
+  --ifm-color-info: var(--spectra-colors-blue-400);
+  --ifm-color-info-contrast-background: var(--spectra-colors-blue-100);
+  --ifm-color-info-contrast-foreground: var(--spectra-colors-blue-900);
+  --ifm-color-info-dark: var(--spectra-colors-blue-500);
+
+  --ifm-color-warning: var(--spectra-colors-yellow-400);
+  --ifm-color-warning-contrast-background: var(--spectra-colors-yellow-100);
+  --ifm-color-warning-contrast-foreground: var(--spectra-colors-yellow-900);
+  --ifm-color-warning-dark: var(--spectra-colors-yellow-500);
+
+  --ifm-color-danger: var(--spectra-colors-red-400);
+  --ifm-color-danger-contrast-background: var(--spectra-colors-red-100);
+  --ifm-color-danger-contrast-foreground: var(--spectra-colors-red-900);
+  --ifm-color-danger-dark: var(--spectra-colors-red-500);
+
+  --ifm-color-secondary: var(--spectra-colors-gray-200);
+  --ifm-color-secondary-contrast-background: var(--spectra-colors-gray-100);
+  --ifm-color-secondary-contrast-foreground: var(--spectra-colors-gray-900);
+  --ifm-color-secondary-dark: var(--spectra-colors-gray-300);
+
   --ifm-color-primary: var(--spectra-colors-blue-600);
   --ifm-color-primary-dark: var(--spectra-colors-blue-700);
   --ifm-color-primary-darker: var(--spectra-colors-blue-800);
@@ -50,7 +105,7 @@
   --ifm-color-primary-light: var(--spectra-colors-blue-500);
   --ifm-color-primary-lighter: var(--spectra-colors-blue-400);
   --ifm-color-primary-lightest: var(--spectra-colors-blue-300);
-  
+
   --ifm-navbar-link-color: var(--spectra-colors-white);
 
   --ifm-footer-background-color: var(--spectra-colors-purple-900);
@@ -174,4 +229,69 @@ html[data-theme='dark'] .DocSearch {
 
 .navbar-sidebar__brand {
   background-image: linear-gradient(to right, var(--spectra-colors-black), #2e1f51 80%);
+}
+
+/* Table Styling */
+table {
+  border: solid 1px var(--ifm-table-border-color);
+}
+
+table tr th:first-child, table tr td:first-child {
+  border-left: none;
+}
+
+table tr th:last-child, table tr td:last-child {
+  border-right: none;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+table td {
+  min-width: 225px;
+}
+
+table::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 7px;
+}
+
+table::-webkit-scrollbar-track {
+  background-color: var(--spectra-colors-gray-100);
+  border-top: solid 1px var(--ifm-table-border-color);
+}
+
+table::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background-color: var(--ifm-table-border-color);
+  -webkit-box-shadow: 0 0 1px var(--ifm-table-border-color);
+}
+
+.alert--success {
+  --ifm-alert-background-color-highlight: hsl(
+    var(--spectra-colors-green-400),
+    var(15%)
+  );
+}
+
+.alert--info {
+  --ifm-alert-background-color-highlight: hsl(
+    var(--spectra-colors-blue-400),
+    var(15%)
+  );
+}
+
+.alert--caution {
+  --ifm-alert-background-color-highlight: hsl(
+    var(--spectra-colors-yellow-400),
+    var(15%)
+  );
+}
+
+.alert--danger {
+  --ifm-alert-background-color-highlight: hsl(
+    var(--spectra-colors-red-200),
+    var(15%)
+  );
 }

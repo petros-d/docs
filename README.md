@@ -1,33 +1,47 @@
-# Website
+# Astronomer Cloud Documentation
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+This repository contains all of the code and content that powers Astronomer Cloud [documentation](http://www.cloud-docs.astronomer.io). Documentation for other Astronomer product offerings is stored in the [`docs` repo](https://github.com/astronomer/docs).
 
-## Installation
+## Suggest a Change
 
-```console
-yarn install
-```
+If you notice something in our documentation that is wrong, misleading, or could use additional context, the easiest way to make an impact is to create a GitHub issue in this repository. To do so,
 
-## Local Development
+1. Go to [Issues](https://github.com/astronomer/cloud-docs/issues)
+2. Select **New Issue**
+3. Depending on the change you have in mind, select a GitHub issue template.
+4. Tell us what you think we can do better by answering the questions in the template.
+
+GitHub issues are triaged by the Astronomer team and addressed promptly. Once you create a GitHub issue, our team may follow up with you with additional questions or comments. Once our team has addressed it, you'll get a notification via GitHub that the issue has been closed and that a change is now live.
+
+## Contribute
+
+If you'd like to contribute to Astronomer Docs directly, you are welcome to create a Pull Request (PR) to this repository with your suggested changes. To do so:
+
+1. Fork this repository
+2. Create a branch off of `main`
+3. Make your changes in that branch.
+4. Submit a PR for review.
+
+Once you have submitted a PR for your changes, Netlify will add a comment to your PR that includes a link to a staging website with your changes.
+
+Small edits and typo fixes don't need to be linked to an issue and should be merged quickly. To get a timely review on a larger contribution, we recommend first creating a detailed GitHub issue describing the problem and linking that within your PR.
+
+Every update to the `main` branch of this repository will trigger a rebuild of our production documentation page at https://www.docs.astronomer.io. It might take a few moments for your merged changes to appear.
+
+### Build Astronomer Docs Locally
+
+If you want to submit a screenshot, GIF, or a new documentation file, we recommend building and testing your documentation change locally. Astronomer Cloud docs are built with [Docusaurus](https://docusaurus.io/), which is our static site generator. Read the following sections for instructions on how to build and test your documentation changes locally with Docusaurus.
+
+#### Installation
+
+Please read the [Docusaurus documentation](https://docusaurus.io/docs/installation#requirements) for information on installing the tools you'll need to work with Docusaurus locally.
+
+#### Local Development
+
+To serve a local version of the Astronomer Cloud docs site with your changes, run:
 
 ```console
 yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
-
-```console
-yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-```console
-GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+This command both builds and serves your local changes. By default, your local build is accessible at `localhost:3000`. From here, any changes you save in your text editor will render on this local site in real time.

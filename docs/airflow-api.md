@@ -8,9 +8,7 @@ id: 'airflow-api'
 
 You can use Airflow's [REST API](https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html) to automate various Airflow workflows in your Deployments.
 
-If you're looking to externally trigger DAG runs without needing to access your Airflow Deployment directly, for example, you can make an HTTP request (in Python, cURL etc.) to the corresponding endpoint in Airflow's API that calls for that exact action.
-
-Currently, requests to Airflow's REST API must be run manually using a temporary access token. Deployment API keys are coming soon.
+If you're looking to externally trigger DAG runs without needing to access your Airflow Deployment directly, for example, you can make an HTTP request (in Python, cURL etc.) to the corresponding endpoint in Airflow's API.
 
 ## Prerequisites
 
@@ -19,12 +17,12 @@ To make an Airflow API request, you need:
 - A Deployment on Astronomer Cloud
 - [cURL](https://curl.se/)
 
-## Step 1: Retrieve Access Key and URL
+## Step 1: Retrieve an Access Token and Deployment URL
 
 Before making an Airflow API request, you need to retrieve a few key pieces of information from Astronomer Cloud. Specifically, you need:
 
 - An access token.
-- A base Deployment URL.
+- A Deployment URL.
 
 To retrieve an access token, go to `cloud.astronomer.io/token` and copy the token that appears. This token is valid only for 24 hours.
 
@@ -57,7 +55,7 @@ The command for your request should look like this:
 ```
 curl -v -X POST
 <base-deployment-url>/api/v1/dags/<dag-id>/dag_runs
--H 'Authorization: Bearer <access-token> ’
+-H 'Authorization: Bearer <api-key> ’
 -H ‘Cache-Control: no-cache’
 -H ‘content-type: application/json’ -d ‘{}’
 ```
@@ -87,7 +85,7 @@ Here, your request becomes:
 ```
 curl -v -X POST
 <base-deployment-url>/api/v1/dags/<dag-id>/dag_runs
--H ‘Authorization: <access-token>’
+-H ‘Authorization: <api-key>’
 -H ‘Cache-Control: no-cache’
 -H ‘content-type: application/json’ -d ‘{“execution_date”:“2019-11-16T11:34:00”}’
 ```
@@ -105,7 +103,7 @@ Here, your request would look like this:
 ```python
 python
 import requests
-token="<access-Key>"
+token="<api-key>"
 base_url="<base-deployment-url>"
 resp = requests.get(
    url=base_url + "<base-deployment-url>/api/v1/pools",

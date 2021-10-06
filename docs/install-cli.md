@@ -12,13 +12,13 @@ The Astronomer CLI is the easiest way to run Apache Airflow on your machine.
 
 From the CLI, you can create a local Apache Airflow environment with a dedicated Webserver, Scheduler and Postgres Database. Once you initialize a project on Astronomer, you can easily customize your image (e.g. add Python or OS-level packages, plugins etc.) and push that image to run on your local machine.
 
-During the Private Beta Program for Astronomer Cloud, you can also use the CLI to do the following:
+You can also use the CLI to:
 
 - Authenticate to Astronomer.
 - List the Astronomer Workspace and Deployments you have access to.
 - Deploy to an Airflow Deployment on Astronomer.
 
-This guide provides instructions for how to install the Astronomer CLI during the Private Beta Program.
+This guide provides instructions for how to install the Astronomer CLI.
 
 ## Step 1. Create a Directory for your Astronomer Project
 
@@ -65,26 +65,16 @@ Once you run any of the CLI install commands above, you should see the following
 To confirm the CLI was installed properly, run the following from the directory you just created:
 
 ```
-./astro version
+astro version
 ```
 
 You should see the following:
 
-<pre><code parentName="pre">{`% ./astro version
+<pre><code parentName="pre">{`% astro version
 Astro CLI Version: ${siteVariables.cliVersion}`}</code></pre>
-
-## Step 4. Run CLI Commands
-
-As noted above, the Astronomer Cloud CLI is installed as a local executable. For that reason, commands *must* be run from the directory in which you installed the CLI and explicitly reference the binary (`astro`). For the equivalent of `astro dev init`, for example, you'd have to run:
-
-```
-./astro dev init
-```
-
-To make this easier, we recommend adding the directory you just created for your Astronomer project to your `$PATH` variable. This will allow you to run Astronomer CLI commands _without_ explicitly specifying the absolute path to the executable file (`astro`). For more information, see [Linux instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/#adding-a-directory-to-your-path).
 
 ## What's Next
 
 Now that you've installed the Astronomer CLI, you're ready to initialize a local Airflow environment and push DAGs to Astronomer Cloud.
 
-For instructions, go to [Deploy Code on Astronomer Cloud](deploy-code).
+For instructions, go to [Develop Locally](develop-locally).
