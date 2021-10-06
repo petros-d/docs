@@ -17,7 +17,7 @@ This guide provides instructions on how to:
 - Add environment variables locally
 - Build from a private repository
 
-> **Note:** The guidelines below assume that you've initialized a project on Astronomer via `astro dev init`. For more information on initializing projects, refer to our [Deploy Code](deploy-code).
+> **Note:** The guidelines below assume that you've initialized a project on Astronomer via `astro dev init`. For more information on initializing projects, refer to our [Develop Locally](develop-locally).
 
 ## Add Python and OS-level Packages
 
