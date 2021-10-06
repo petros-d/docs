@@ -53,7 +53,7 @@ TAG=deploy-`date "+%Y-%m-%d-%HT%M-%S"`
 
 # Step 1. Authenticate to Astronomer's Docker registry with your Deployment API key ID and secret. This is equivalent to running `$ astro auth login` via the Astronomer CLI.
 
-docker login images.astronomer.cloud -u $ASTRONOMERKEY_ID -p $ASTRONOMER_KEY_SECRET
+docker login images.astronomer.cloud -u $ASTRONOMER_KEY_ID -p $ASTRONOMER_KEY_SECRET
 
 # Step 2. Build your Astronomer project into a tagged Docker image.
 
