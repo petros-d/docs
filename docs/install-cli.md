@@ -73,6 +73,16 @@ You should see the following:
 <pre><code parentName="pre">{`% astro version
 Astro CLI Version: ${siteVariables.cliVersion}`}</code></pre>
 
+## Step 4. Run CLI Commands
+
+As noted above, the Astronomer Cloud CLI is installed as a local executable. For that reason, commands must be run from the directory in which you installed the CLI and explicitly reference the binary (`astro`). For the equivalent of `astro dev init`, for example, you'd have to run:
+
+```
+./astro dev init
+```
+
+To make this easier, we recommend adding the directory you just created for your Astronomer project to your `$PATH` variable. This allows you to run Astronomer CLI commands without explicitly specifying the absolute path to the executable file (`astro`). For more information, see [Linux instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/#adding-a-directory-to-your-path).
+
 ## Next Steps
 
 Now that you've installed the Astronomer CLI, you're ready to initialize a local Airflow environment and push DAGs to Astronomer Cloud. For instructions, read [Create a Project](create-project).
