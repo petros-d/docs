@@ -6,59 +6,78 @@ id: 'deferrable-operators'
 
 ## Overview
 
-Deferrable (often called "Async") Operators are a feature that first became available in Airflow 2.2. They allow Operators or Sensors that have a long idle period - where they're waiting on an external system or event - to free up worker space ("defer") during that time.
+Deferrable or "async" Operators are a feature available starting in Airflow 2.2. Deferrable Operators differ from traditional sensors because they don't take up a Worker or Executor slot when waiting for an external signal.
 
-If you run an Airflow installation that spends a significant amount of time in these kinds of operators or sensors - for example, `S3Sensor`, `HTTPSensor` or the `DatabricksSubmitRunOperator`, then moving to Deferrable Operators will give you significant savings in terms of your cluster running costs - potentially over 50%.
+This results in a significant performance improvement for Operators or Sensors that spend a long time in a deferred state, such as `S3Sensor`, `HTTPSensor` or the `DatabricksSubmitRunOperator`. Using the deferrable versions of these Operators can potentially save your cluster running costs by over 50%.
 
-In addition, the deferred part of Deferrable Operators runs on a new, highly-available "trigger" system within Airflow - meaning that operators waiting in this *deferred* phase of execution are themselves highly-available and able to recover from multi-machine outages, unlike the traditional non-deferrable operators.
+The deferring function of deferrable Operators, known as a Trigger, runs on a new, highly-available Triggerer component within Airflow. This means that deferrable Operators waiting in a deferred phase are also highly-available, which makes it easy to recover from multi-machine outages.
+
+On Astronomer Cloud, Triggerers are automatically managed, meaning you can start using deferrable Operators in your DAGs without additional implementation steps. This guide explains how deferrable Operators work, as well as how to use them in your DAGs. Additionally, this guide contains information about each of Astronomer's own deferrable Operators.
+
+### How It Works
+
+Airflow 2.2 introduces a new concept called a Trigger. Triggers are designed to run in a lightweight, highly-available fashion using asynchronous Python.
+
+Because of this, thousands of Triggers can be run in a single process, resulting in significant efficiency improvements over running sensors and Operators in a single process each.
+
+Deferrable Operators are simply Operators that are designed around a companion Trigger. The process for running a deferrable Operator is as follows:
+
+1. The Operator calls Airflow to determine if it should defer based on a new trigger.
+2. Airflow suspends the Operator's task and starts up the Trigger.
+3. If the Trigger fires, the Task is resumed and passed a small amount of state from before it suspended. From here, it can finish execution. If the trigger doesn't fire, the task stays suspended in a deferred state.
+
+A new Airflow component called the Triggerer takes care of running triggers and signaling tasks to resume when their conditions have been met. Like the Scheduler, it is designed to be highly-available: If a machine running Triggers shuts down unexpectedly, the Triggers can be recovered and moved to any warm-standby machine also running a Triggerer.
+
+To learn more about about this system and the low-level implementation details, read the Apache Airflow [Deferring documentation](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html).
 
 ## Using Deferrable Operators
 
-Deferrable Operators do have a different underlying implementation to traditional Operators, and so each operator that you'd like to defer needs two pieces of work:
+Deferrable Operators are drop-in replacements for their traditional Operator counterparts. To use a deferrable version of an existing Operator in your DAG, you simply need to import the deferrable Operator. For example, to use Astronomer's deferrable `ExternalTaskSensor`, you would add the following line to your DAG:
 
-- There needs to be a deferrable version of the Operator or Sensor written
-- You need to swap in this version in your DAGs
+```py
+from astronomer.operators import ExternalTaskSensor
+```
 
-You will also need to be using Airflow 2.2 or higher, and ensure that a `triggerer` process is running in addition to the `scheduler`. If you are on Astronomer Cloud, this will be handled automatically for you when you select an appropriate image for your DAGs to run on.
+After adding this line, any instance of an `ExternalTaskSensor` in your DAG becomes deferrable.
 
-Astronomer maintains an ever-growing selection of Deferrable Operators available to our commercial customers that are drop-in replacements for existing operators; all you need to do is change a single import line in your DAGs to take advantage of them.
+Some additional notes about using deferrable Operators:
 
-You also have the option of writing your own Deferrable Operators and Triggers for custom API or service usage - we are happy to help Astronomer customers with this process.
+- Currently, not all Operators have a deferrable version. There are a few open source deferrable Operators, plus additional Operators designed and maintained by Astronomer.
+- To use deferrable Operators, you must run Airflow 2.2 or higher and ensure that a Triggerer is running in addition to the Scheduler. If you are on Astronomer Cloud, this is handled automatically for you when you select an appropriate image for your DAGs to run on.
+- You can write your own deferrable Operators and Triggers for custom API or service usage. Astronomer is happy to help customers with this process.
 
-## Technical Details
+## Astronomer's Deferrable Operators
 
-Behind the scenes, the way this works is a new feature in Airflow 2.2 called Triggers. Triggers are an alternative *workload* type from tasks, that are designed to be run in a lightweight, highly-available fashion using asynchronous Python.
+Astronomer maintains a collection of deferrable Operators available to commercial customers. These are drop-in replacements for non-deferrable Operators, meaning you only have to change the import statements in your DAGs to begin using them.
 
-The result of this is that thousands of triggers can be run in a single process, allowing very significant efficiency improvements over the traditional pattern of running these sensors and operators in a single process each.
+This section contains information on each available deferrable Operator, including example import statements. If there are any differences between a deferrable Operator and its non-deferrable counterpart, those changes are listed in a Notes section.
 
-Deferrable Operators are simply Operators that are designed around a companion Trigger. At some point in its execution, the Operator calls Airflow to ask it to defer based on a new trigger, and Airflow will suspend that Task and start up the trigger. Once the trigger fires, the Task is resumed, passed a small amount of state that it persisted before it suspended, and it can finish execution.
+### Prerequisites
 
-A new Airflow component called the `triggerer` takes care of running triggers and signalling Tasks to resume when their conditions have been met, and like the modern scheduler, is designed to be highly-available; if a machine running triggers dies, they will automatically be recovered and moved to a warm-standby machine if multiple `triggerers` are running.
+To use Operators maintained by Astronomer, you must first install the `astronomer-operator-wrappers` package.
 
-If you want to read more about this system and the low-level implementation details, you can refer to Airflow's [Concepts: Deferring](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html) documentation.
-
-## Available Astronomer Operators
-
-To use these operators, you must first install the `astronomer-operator-wrappers` package, and then change your imports as mentioned below.
-
-Note that these operators are **only available in commercial Astronomer environments**, such as our Cloud product. The package is designed to fall back to the non-deferrable options in other environments, so your DAGs will still run everywhere, but the deferrable portions will only work on our platforms.
+Note that these Operators are available only in commercial Astronomer environments, such as Astronomer Cloud. The package is designed to fall back to the non-deferrable options in other environments, but the deferrable portions work only on Astronomer.
 
 ### Databricks Operators
 
-We provide deferrable versions of both the `DatabricksSubmitRunOperator` and the `DatabricksRunNowOperator`:
+We provide deferrable versions of both the `DatabricksSubmitRunOperator` and the `DatabricksRunNowOperator`. These Operators wait in a deferred state while waiting for their respective Databricks jobs to complete.
+
+#### Import statement
 
 ```python
 from astronomer.operators import DatabricksSubmitRunOperator, DatabricksRunNowOperator
 ```
 
-They are entirely API-compatible with the Airflow operators with matching names, and will defer while waiting for their job to complete.
+### ExternalTaskSensor
 
-### External Task Sensor
+This is a drop-in replacement for Airflow's [`ExternalTaskSensor`](https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/sensors/external_task/index.html#module-airflow.sensors.external_task), deferring itself while it waits for the given Task or DAG to complete.
+
+#### Import statement
 
 ```python
 from astronomer.operators import ExternalTaskSensor
 ```
 
-This is a drop-in replacement for Airflow's [`ExternalTaskSensor`](https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/sensors/external_task/index.html#module-airflow.sensors.external_task), deferring itself while it waits for the given Task or DAG to complete.
+#### Notes
 
-There is one slight change of behavior - if there are multiple matching Tasks or DAGs, and any of them have failed, this sensor will also fail, rather than hanging forever like the open-source version does.
+There is one difference between the deferrable ExternalTaskSensor and the non-deferrable ExternalTaskSensor: If there are multiple matching Tasks or DAGs and any of them have failed, the deferrable sensor also fails, whereas the non-deferrable sensor freezes indefinitely.
