@@ -12,7 +12,7 @@ Deployment API keys have the following properties:
 
 - They can deploy code to Astronomer (customizable permissions coming soon).
 - They are deleted permanently if the corresponding Deployment is deleted.
-- By default, an API key is granted access to a Deployment via an access token that is valid for 24 hours. After 24 hours, the access token expires. To continue using an API key after 24 hours, you need to retrieve another token as described in [Refresh Access Token](api-keys#refresh-access-token).
+- They last indefinitely and can be used to fetch an access token that assumes the permissions associated with the Deployment API key. This access token is required by the Astronomer API to complete the deploy code process and is only valid for 24 hours. After 24 hours, the access token expires and cannot be used. For more information, read [Refresh Access Token](api-keys#refresh-access-token).
 
 This guide provides steps for creating and deleting Deployment API keys.
 
@@ -39,7 +39,7 @@ To create an API key for a Deployment:
       <img src="/img/docs/create-api-key.png" alt="Create API Key button" />
     </div>
 
-From here, you can copy the API key ID and secret for use in API calls and CI/CD pipelines. The API key ID and secret are equivalent to a username and password that last indefinitely unless explicitly changed. Make sure to save the key secret securely, as this is the only time you will have access to see it in plain text.
+From here, you can copy the API key ID and secret for use in API calls and CI/CD pipelines. Make sure to save the key secret securely, as this is the only time you will have access to see it in plain text.
 
 :::tip
 
@@ -49,7 +49,7 @@ If you just need to make a single API call, you can use a temporary user authent
 
 ## Refresh Access Token
 
-In order for a machine or process to deploy code to a Deployment on Astronomer, a Deployment API key ID and secret are used to generate an access token that is valid for 24 hours. This access token is what has permissions to deploy code. To continue using an API key after its creation, you need to retrieve a new access token either every 24 hours or every time you need it if longer than 24 hours. To retrieve a new access token with an existing API key ID and secret, run the following API request:
+In order to deploy code on Astronomer with a Deployment API key, you need to use the API key ID and secret to fetch an access token. This access token is required by the Astronomer API to trigger the deploy code process. It is valid only for 24 hours. To fetch a token with an existing API key ID and secret, run the following API request:
 
 ```curl
 curl --location --request POST "https://auth.astronomer.io/oauth/token" \
@@ -61,7 +61,7 @@ curl --location --request POST "https://auth.astronomer.io/oauth/token" \
             \"grant_type\": \"client_credentials\"}" | jq -r '.access_token'
 ```
 
-Make sure to replace `api-key-id` and `api-key-secret` in this request with values that correspond to your own API key. We strongly recommend adding some form of this API request to any CI/CD pipelines that utilize Deployment API keys. For more information, see [CI/CD on Astronomer](ci-cd).
+Make sure to replace `api-key-id` and `api-key-secret` in this request with values that correspond to your own API key. To avoid fetching this token every 24 hours, we strongly recommend adding this API request to any CI/CD pipeline that uses Deployment API keys. That way, your access token is automatically refreshed every time your CI/CD pipeline needs it to complete the deploy code process. For more information, see [CI/CD on Astronomer](ci-cd).
 
 ## Delete an API Key
 
