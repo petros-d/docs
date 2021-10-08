@@ -8,10 +8,10 @@ id: 'api-keys'
 
 This guide provides instructions for how to create API keys for Deployments on Astronomer. You can use API keys to programmatically deploy DAGs to a Deployment on Astronomer.
 
-Deployment API keys have the following properties:
+A Deployment API key has the following properties:
 
-- They can deploy code to Astronomer (customizable permissions coming soon).
-- They are deleted permanently if the corresponding Deployment is deleted.
+- It can deploy code to Astronomer (customizable permissions coming soon).
+- It is deleted permanently if its corresponding Deployment is deleted.
 - They last indefinitely and can be used to fetch an access token that assumes the permissions associated with the Deployment API key. This access token is required by the Astronomer API to complete the deploy code process and is only valid for 24 hours. After 24 hours, the access token expires and cannot be used. For more information, read [Refresh Access Token](api-keys#refresh-access-token).
 
 This guide provides steps for creating and deleting Deployment API keys.
@@ -61,7 +61,9 @@ curl --location --request POST "https://auth.astronomer.io/oauth/token" \
             \"grant_type\": \"client_credentials\"}" | jq -r '.access_token'
 ```
 
-Make sure to replace `api-key-id` and `api-key-secret` in this request with values that correspond to your own API key. To avoid fetching this token every 24 hours, we strongly recommend adding this API request to any CI/CD pipeline that uses Deployment API keys. That way, your access token is automatically refreshed every time your CI/CD pipeline needs it to complete the deploy code process. For more information, see [CI/CD on Astronomer](ci-cd).
+Make sure to replace `api-key-id` and `api-key-secret` in this request with values that correspond to your own API key. 
+
+To avoid manually fetching this token, we strongly recommend adding this API request to any CI/CD pipeline that uses Deployment API keys. That way, your access token is automatically refreshed every time your CI/CD pipeline needs it to complete the deploy code process. For examples of this implementation, see [CI/CD on Astronomer](ci-cd).
 
 ## Delete an API Key
 
