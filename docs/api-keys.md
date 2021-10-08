@@ -11,8 +11,8 @@ This guide provides instructions for how to create API keys for Deployments on A
 A Deployment API key has the following properties:
 
 - It can deploy code to Astronomer (customizable permissions coming soon).
-- It is deleted permanently if its corresponding Deployment is deleted.
 - Its key ID and secret are valid indefinitely and can be used to fetch a short-lived access token that assumes the permissions of the Deployment API key. This access token is required by the Astronomer API to complete the deploy code process. For more information on using this token, read [Refresh Access Token](api-keys#refresh-access-token).
+- It is deleted permanently if its corresponding Deployment is deleted.
 
 This guide provides steps for creating and deleting Deployment API keys.
 
