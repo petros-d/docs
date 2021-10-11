@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'CI/CD'
-title: 'Configure CI/CD Pipelines for Deployments'
+title: 'Configure CI/CD to Automate Deploying Code to Astronomer'
 id: 'ci-cd'
 ---
 
@@ -133,7 +133,7 @@ Use this GitHub Action in a repository that hosts a single Astronomer project cr
 2. Add the following to a new file in `.github/workflows`, making sure to replace `<organization-id>` and `<deployment-id>` with the values for your Deployment:
 
     ```yaml
-    name: CI - deploy
+    name: Astronomer CI - Deploy Code
 
     on:
       push:
