@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'CI/CD'
-title: 'Configure CI/CD to Automate Deploying Code to Astronomer'
+title: 'Automate Code Deploys with CI/CD'
 id: 'ci-cd'
 ---
 
