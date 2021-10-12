@@ -7,11 +7,11 @@ slug: /
 
 ## Overview
 
-Welcome to Astronomer Cloud. We're thrilled to have you onboard as 'Build Partners' as we launch the next generation of our product. We expect our teams to be in close communication throughout the program, and this page will serve as a home for official product documentation.
+Welcome to Astronomer Cloud. We're thrilled to have you onboard as we launch the next generation of our product. This page will serve as a home for official product documentation for Astronomer Cloud.
 
 To start, Astronomer Cloud includes a game-changing deployment model that offers the self-service convenience of a fully managed Cloud service (the “control plane”) while respecting the need to keep data private, secure, and within corporate boundaries (the “data plane”).
 
-This model optimizes for security whilst relieving your team of operational overhead. As we look beyond initial release and build a robust set of differentiating features, we very much look forward to hearing your feedback.
+This model optimizes for security whilst relieving your team of operational overhead. We have a strong foundation available today and look forward to hearing your feedback as we build a robust set of differentiating features.
 
 ## Features
 
@@ -21,7 +21,6 @@ Astronomer Cloud's architecture enables a few key features, available today:
 - Support for a multi-tenant data plane hosted in your organization's network on AWS (`us-east-1` and `us-west-2`)
 - Worker auto-scaling, powered by Airflow's Celery Executor + KEDA
 - Astronomer Runtime, a new collection of Docker images set to provide a differentiated Airflow experience. Astronomer Runtime currently supports Airflow 2.1.1. Support for Airflow 2.2 coming soon
-- Real-time, in-app chat support powered by Intercom
 
 The following diagram outlines how the control plane, data plane, and users are connected to enable these features:
 
@@ -35,10 +34,8 @@ For more information on each of these features, explore the documentation links 
 
 Our team will reach out to yours to schedule an onboarding session for the initial install. From there, we recommend reading through the following docs:
 
-- [Configure your Deployment](configure-deployment)
 - [Install the Astronomer CLI](install-cli)
-- [Deploy Code](deploy-code)
+- [Develop Locally](develop-locally)
+- [Configure your Deployment](configure-deployment)
 
-If you have a feature request or find a bug to report, reach out to us in the in-app chat modal or drop us a note in our shared Slack Channel. You'll be connected directly with our Product team.
-
-Once again, we sincerely appreciate your participation and can't wait to form an even deeper partnership with your team. Let's do this thing!
+If you have a feature request or find a bug to report, reach out to us at support@astronomer.io or drop our team a note in our shared Slack Channel. You'll be connected directly with our Product team.
