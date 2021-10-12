@@ -8,20 +8,26 @@ import {siteVariables} from '@site/src/versions';
 
 ## Overview
 
-Before deploying Airflow pipelines to Astronomer Cloud, you first need to create an Astronomer project on your local machine. An Astronomer project contains all of the code necessary to run your Airflow pipelines, including DAGs, plugins, and packages.
+To develop Airflow pipelines on Astronomer, you need to create an Astronomer project on your local machine. An Astronomer project contains the set of files necessary to run Airflow, including dedicated folders for your DAG files, plugins, and dependencies. Once you've tested these files locally, the Astronomer project structure makes it easy to deploy your pipelines to Astronomer.
 
 The Astronomer project structure makes it easy to manage and deploy your pipelines to Astronomer Cloud. This guide provides instructions for creating a new Astronomer project, as well as information about the default Astronomer project structure.
 
 ## Prerequisites
 
-To create a local Astronomer project, you need:
+To create an Astronomer project, you need:
 
 - [The Astronomer CLI](install-cli)
 - [Docker](https://www.docker.com/products/docker-desktop)
 
 ## Step 1: Create an Astronomer Project
 
-To create a new Astronomer project folder, open an empty directory and run `astro dev init`. This command generates the following files in the directory:
+To create a new Astronomer project folder, open the directory where you installed the CLI and run:
+
+```sh
+astro dev init
+```
+
+This command generates the following files in the directory:
 
 ```
 .
@@ -35,22 +41,22 @@ To create a new Astronomer project folder, open an empty directory and run `astr
 └── requirements.txt # For Python packages
 ```
 
-These files make up the Docker image that runs in your local Airflow environment.
+These files are necessary for building a Docker image that can run Airflow pipelines on either your local machine or Astronomer Cloud.
 
 ### Astronomer Runtime
 
-Your `Dockerfile` includes a reference to Astronomer Runtime. Packaged into a Debian-based Docker image, Astronomer Runtime extends the Apache Airflow open source project to provide you with differentiated functionality that centers around reliability, efficiency, and performance. For more information on what's included in Runtime and how it's released, see [Runtime Versioning](runtime-versioning).
+Your `Dockerfile` includes a reference to Astronomer Runtime. Packaged into a Debian-based Docker image, Astronomer Runtime extends the Apache Airflow open source project to provide you with differentiated functionality that centers around reliability, efficiency, and performance. For more information on what's included in Runtime and how it's versioned, see [Runtime Versioning](runtime-versioning).
 
 By default, the Docker image in your Dockerfile is:
 
 <pre><code parentName="pre">{`FROM quay.io/astronomer/astro-runtime:${siteVariables.runtimeVersion}
 `}</code></pre>
 
-## Step 2: Test Your Project Locally
+## Step 2: Build Your Project Locally
 
-To test your local Astronomer project, run `astro dev start` from your project directory. This command builds your project and spins up 3 Docker containers on your machine to run it.
+To confirm that you successfully initialized an Astronomer project, run `astro dev start` from your project directory. This command builds your project and spins up 3 Docker containers on your machine to run it.
 
-After running the command, you should see the following output:
+As your project builds locally, you should see the following output:
 
 <pre><code parentName="pre">{`% astro dev start
 Env file ".env" found. Loading...
@@ -77,7 +83,7 @@ Postgres Database: localhost:5432/postgres
 The default credentials are admin:admin
 `}</code></pre>
 
-If the project builds successfully, you can access the Airflow UI by going to `http://localhost:8080/` and logging in with `admin` for both your username and password.
+Once your project builds successfully, you can access the Airflow UI by going to `http://localhost:8080/` and logging in with `admin` for both your username and password.
 
 After logging in, you should see the DAGs from your `dags` directory in the Airflow UI.
 
@@ -86,11 +92,3 @@ After logging in, you should see the DAGs from your `dags` directory in the Airf
 </div>
 
 Running your project locally is an important step when testing your Astronomer project. For more information on running a local Airflow environment, read [Run a Project Locally](develop-locally#run-a-project-locally).
-
-## Next Steps
-
-After you've successfully run an Astronomer project locally, we recommend reading the following documentation to learn about developing and deploying your project:
-
-- [Develop Locally](develop-locally)
-- [Configure a Deployment](configure-deployment)
-- [Deploy Code](deploy-code)

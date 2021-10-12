@@ -85,4 +85,4 @@ To make this easier, we recommend adding the directory you just created for your
 
 ## Next Steps
 
-Now that you've installed the Astronomer CLI, you're ready to initialize a local Airflow environment and push DAGs to Astronomer Cloud. For instructions, read [Create a Project](create-project).
+Now that you've installed the Astronomer CLI, you're ready to create a local Airflow environment and start developing locally. For instructions, read [Create an Astronomer Project](create-project).
