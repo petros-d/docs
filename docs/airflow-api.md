@@ -24,9 +24,9 @@ Before making an Airflow API request, you need to retrieve a few key pieces of i
 - An access token.
 - A Deployment URL.
 
-To retrieve an access token, go to `cloud.astronomer.io/token` and copy the token that appears. This token is valid only for 24 hours. In this doc, we use `<access-token>` as a placeholder for this value. Replace it with your own.
+To retrieve an access token, go to `cloud.astronomer.io/token` and copy the token that appears. This token is valid only for 24 hours.
 
-To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The base URL for the Airflow UI is your base Deployment URL. It includes your organization's URL, followed by a short Deployment ID (For example: `https://mycompany.astronomer.run/dhbhijp0`). In this doc, we use `<base-deployment-url>` as a placeholder for this value. Replace it with your own.
+To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The URL where you are now accessing the Airflow UI is your Deployment URL. It includes the name of your Organization and a short Deployment ID. For example: `https://mycompany.astronomer.run/dhbhijp0`.
 
 ## Step 2: Make an Airflow API Request
 
