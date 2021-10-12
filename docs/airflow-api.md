@@ -42,7 +42,7 @@ Below, we'll walk through an example request via cURL to Airflow's "Trigger DAG"
 
 Use the following example API requests to begin automating your own Airflow actions. For more examples, see Airflow's [Rest API Reference](https://airflow.apache.org/docs/stable/rest-api-ref.html).
 
-### Trigger a DAG (cURL)
+### Trigger a DAG
 
 If you'd like to externally trigger a DAG run, you can start with a generic cURL command to Airflow's POST endpoint:
 
@@ -96,7 +96,7 @@ curl -v -X POST
 -H ‘content-type: application/json’ -d ‘{“execution_date”:“2019-11-16T11:34:00”}’
 ```
 
-### Get All Pools (Python)
+### Get All Pools
 
 If you want to get all existing Pools from your Deployment, you can start with a generic Python command to Airflow's `GET` endpoint:
 
