@@ -17,17 +17,15 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Support for Airflow 2.2.0
 
-Astronomer Runtime 4.0.0 includes all of the new features and fixes in Apache Airflow 2.2.0, plus additional fixes and features developed by the Astronomer team. The following are some of the most notable new features:
+Astronomer Runtime 4.0.0 includes every new feature and fix in Apache Airflow 2.2.0, plus additional fixes and features developed by the Astronomer team. The following are some of the most notable new features:
 
-- **Custom Timetables:** You can now use a new Timetable expression to determine when your DAGs run. Unlike cron expressions and timedeltas, Timetables use a more flexible and intuitive  `data_interval`. They can also be plugged in to any DAG, meaning that it's easy to use community-developed and other external Timetables in your own project.
+- **Custom Timetables:** You can now use a new Timetable expression to determine when your DAGs run. Unlike cron expressions and timedeltas, Timetables use a more flexible and intuitive  `data_interval`. They can also be plugged in to any DAG, meaning that it's easy to use community-developed and other external Timetables in your own project. Fore more information on using timetables, read the [Apache Airflow Documentation](https://airflow.apache.org/docs/apache-airflow/stable/howto/timetable.html).
 
-    Astronomer Runtime exclusively includes a `TradingHoursTimetable` that you can use out of the box to run your DAGs whenever a given market is open for trade.  
+    Astronomer Runtime includes an additional `TradingHoursTimetable` that you can use out of the box to run a DAG whenever a given market is open for trade.  
 
-- **Deferrable Operators:** Deferrable operators are a special type of operator that can wait for an external signal without taking up a worker slot. To run tasks using deferrable operators, Airflow 2.2 introduces a new, lightweight, and highly available component called a Triggerer. For more information on using deferrable operators and managing the triggerer, read the [Apache Airflow documentation](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html).
+- **Deferrable Operators:** Deferrable operators are a special type of operator that can wait for an external signal without taking up a Worker or Scheduler slot. To run tasks using deferrable operators, Airflow 2.2 introduces a new, lightweight, and highly available component called a Triggerer.
 
-    Astronomer Runtime exclusively includes several deferrable versions of existing operators. For more information about these operators, read [Astronomer's Deferrable Operators].
-
-### Bug Fixes    
+    On Astronomer Cloud, Triggerers are automatically managed, meaning you can start using deferrable Operators in your DAGs without additional implementation steps. For more information on using deferrable operators, read the [Apache Airflow documentation](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html).
 
 ## Astronomer Runtime 3.0.3
 
