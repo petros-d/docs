@@ -136,6 +136,11 @@ This process can take some time. Wait for confirmation that the installation was
 >
 > You then need to accept a VPC peering request from Astronomer after Astronomer Cloud is installed. To accept the request, follow [Creating and accepting a VPC peering connection](https://docs.aws.amazon.com/vpc/latest/peering/create-vpc-peering-connection.html) in AWS documentation.
 
+> **Note**: Once VPC peered with Astronomer, configure and validate the following to ensure successful network communications between Astronomer Cloud and your resources:
+>
+>- Egress Routes on Astronomer Route Table
+>- Network ACLs and/or Security Group rules of your resources
+
 ## Step 5: Create a Deployment
 
 Once our team confirms that your Astronomer Cluster has been created, you are ready to create a Deployment and start deploying DAGs. Log in to [the Astronomer UI](https://cloud.astronomer.io) again and [create a new Deployment](configure-deployment). If the installation was successful, your new Astronomer Cluster will be listed as an option under the **Cluster** menu:
