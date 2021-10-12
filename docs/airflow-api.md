@@ -33,7 +33,7 @@ To retrieve your Deployment URL, open your Deployment in the Astronomer UI and c
 With the information from Step 1, you can now run `GET` or `POST` requests to any supported endpoints in Airflow's [Rest API Reference](https://airflow.apache.org/docs/stable/rest-api-ref.html). For example, to retrieve a list of all DAGs in a Deployment, you can run:
 
 ```sh
-curl -X GET <base-deployment-url>/api/v1/dags -H 'Accept: application/json' -H 'Cache-Control: no-cache' -H "Authorization: Bearer <access-token>"
+curl -X GET <deployment-url>/api/v1/dags -H 'Accept: application/json' -H 'Cache-Control: no-cache' -H "Authorization: Bearer <access-token>"
 ```
 
 Below, we'll walk through an example request via cURL to Airflow's "Trigger DAG" endpoint and an example request via Python to the "Get all Pools" endpoint.
@@ -42,23 +42,29 @@ Below, we'll walk through an example request via cURL to Airflow's "Trigger DAG"
 
 Use the following example API requests to begin automating your own Airflow actions. For more examples, see Airflow's [Rest API Reference](https://airflow.apache.org/docs/stable/rest-api-ref.html).
 
-### Trigger a DAG
+### Trigger a DAG (cURL)
 
 If you'd like to externally trigger a DAG run, you can start with a generic cURL command to Airflow's POST endpoint:
 
 ```
-POST /airflow/api/v1/dags/<DAG_ID>/dag_runs
+POST /airflow/api/v1/dags/<dag-id>/dag_runs
 ```
 
 The command for your request should look like this:
 
 ```
 curl -v -X POST
-<base-deployment-url>/api/v1/dags/<dag-id>/dag_runs
--H 'Authorization: Bearer <access-token> ’
+<deployment-url>/api/v1/dags/<dag-id>/dag_runs
+-H 'Authorization: Bearer <access-token>’
 -H ‘Cache-Control: no-cache’
 -H ‘content-type: application/json’ -d ‘{}’
 ```
+
+Make sure to replace the following values with your own:
+
+- `<dag-id>`
+- `<deployment-url>`
+- `<access-token>`
 
 This will trigger a DAG run for your desired DAG with an `execution_date` value of `NOW()`, which is equivalent to clicking the **Play** button in the main **DAGs** view of the Airflow UI.
 
@@ -84,13 +90,13 @@ Here, your request becomes:
 
 ```
 curl -v -X POST
-<base-deployment-url>/api/v1/dags/<dag-id>/dag_runs
+<deployment-url>/api/v1/dags/<dag-id>/dag_runs
 -H ‘Authorization: <access-token>’
 -H ‘Cache-Control: no-cache’
 -H ‘content-type: application/json’ -d ‘{“execution_date”:“2019-11-16T11:34:00”}’
 ```
 
-### Get All Pools
+### Get All Pools (Python)
 
 If you want to get all existing Pools from your Deployment, you can start with a generic Python command to Airflow's `GET` endpoint:
 
@@ -104,9 +110,9 @@ Here, your request would look like this:
 python
 import requests
 token="<access-token>"
-base_url="<base-deployment-url>"
+base_url="<deployment-url>"
 resp = requests.get(
-   url=base_url + "<base-deployment-url>/api/v1/pools",
+   url=base_url + "/api/v1/pools",
    headers={"Authorization": token},
    data={}
 )
