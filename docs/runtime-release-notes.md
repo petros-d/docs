@@ -17,9 +17,9 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Support for Airflow 2.2.0
 
-Astronomer Runtime 4.0.0 includes every new feature and fix in Apache Airflow 2.2.0, plus additional fixes and features developed by the Astronomer team. The following are some of the most notable new features:
+Astronomer Runtime 4.0.0 includes every new feature and fix in Apache Airflow 2.2.0, plus additional fixes and features developed by Astronomer. The following are some of the most notable new features:
 
-- **Custom Timetables:** You can now use a new Timetable expression to determine when your DAGs run. Unlike cron expressions and timedeltas, Timetables use a more flexible and intuitive  `data_interval`. They can also be plugged in to any DAG, meaning that it's easy to use community-developed and other external Timetables in your own project. Fore more information on using timetables, read the [Apache Airflow Documentation](https://airflow.apache.org/docs/apache-airflow/stable/howto/timetable.html).
+- **Custom Timetables:** You can now use a new Timetable expression to determine when your DAGs run. Unlike cron expressions and timedeltas, Timetables use a more flexible and intuitive  `data_interval`. They can also be plugged into any DAG, meaning that it's easy to use community-developed and other external Timetables in your own project. For more information on using timetables, read the [Apache Airflow Documentation](https://airflow.apache.org/docs/apache-airflow/stable/howto/timetable.html).
 
     Astronomer Runtime includes an additional `TradingHoursTimetable` that you can use out of the box to run a DAG whenever a given market is open for trade.  
 
