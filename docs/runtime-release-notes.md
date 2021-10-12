@@ -37,12 +37,12 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 ### Minor improvements
 
 - Upgraded the default Python version to `3.9.6`
-- Added a link to Astronomer Cloud documentation in the Runtime Airflow UI
+- Added a link to Astronomer Cloud documentation in the Airflow UI
 
 ### Bug fixes
 
-- Removed nonfunctional security and user profile elements from the Runtime Airflow UI
-- The Runtime Airflow UI now shows the correct version of Runtime in the footer
+- Removed nonfunctional security and user profile elements from the Airflow UI
+- The Airflow UI now shows the correct version of Astronomer Runtime in the footer
 
 ## Astronomer Runtime 3.0.0
 

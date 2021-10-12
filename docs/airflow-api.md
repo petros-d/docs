@@ -24,9 +24,9 @@ Before making an Airflow API request, you need to retrieve a few key pieces of i
 - An access token.
 - A Deployment URL.
 
-To retrieve an access token, go to `cloud.astronomer.io/token` and copy the token that appears. This token is valid only for 24 hours.
+To retrieve an access token, go to `cloud.astronomer.io/token` and copy the token that appears. This token is valid only for 24 hours. In this doc, we use `<access-token>` as a placeholder for this value. Replace it with your own.
 
-To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The base URL for the Airflow UI is your base Deployment URL. It includes your organization's URL, followed by a short Deployment ID (For example: `https://mycompany.astronomer.run/dhbhijp0`).
+To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The base URL for the Airflow UI is your base Deployment URL. It includes your organization's URL, followed by a short Deployment ID (For example: `https://mycompany.astronomer.run/dhbhijp0`). In this doc, we use `<base-deployment-url>` as a placeholder for this value. Replace it with your own.
 
 ## Step 2: Make an Airflow API Request
 
@@ -55,7 +55,7 @@ The command for your request should look like this:
 ```
 curl -v -X POST
 <base-deployment-url>/api/v1/dags/<dag-id>/dag_runs
--H 'Authorization: Bearer <api-key> ’
+-H 'Authorization: Bearer <access-token> ’
 -H ‘Cache-Control: no-cache’
 -H ‘content-type: application/json’ -d ‘{}’
 ```
@@ -85,7 +85,7 @@ Here, your request becomes:
 ```
 curl -v -X POST
 <base-deployment-url>/api/v1/dags/<dag-id>/dag_runs
--H ‘Authorization: <api-key>’
+-H ‘Authorization: <access-token>’
 -H ‘Cache-Control: no-cache’
 -H ‘content-type: application/json’ -d ‘{“execution_date”:“2019-11-16T11:34:00”}’
 ```
@@ -103,7 +103,7 @@ Here, your request would look like this:
 ```python
 python
 import requests
-token="<api-key>"
+token="<access-token>"
 base_url="<base-deployment-url>"
 resp = requests.get(
    url=base_url + "<base-deployment-url>/api/v1/pools",
