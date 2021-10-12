@@ -54,7 +54,17 @@ By default, the Docker image in your Dockerfile is:
 
 ## Step 2: Build Your Project Locally
 
-To confirm that you successfully initialized an Astronomer project, run `astro dev start` from your project directory. This command builds your project and spins up 3 Docker containers on your machine to run it.
+To confirm that you successfully initialized an Astronomer project, run the following command from your project directory:
+
+```sh
+astro dev start
+```
+
+This command builds your project and spins up 3 Docker containers on your machine, each for a different Airflow component:
+
+- **Postgres:** Airflow's metadata database
+- **Webserver:** The Airflow component responsible for rendering the Airflow UI
+- **Scheduler:** The Airflow component responsible for monitoring and triggering tasks
 
 As your project builds locally, you should see the following output:
 
