@@ -10,7 +10,7 @@ Astronomer is committed to continuous development of Astronomer Cloud. As you gr
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
-**Latest Runtime Version**: 3.0.3 ([Release notes](runtime-release-notes))
+**Latest Runtime Version**: 4.0.0 ([Release notes](runtime-release-notes))
 **Latest CLI Version**: 1.0.0 ([Release notes](cli-release-notes))
 
 ## October 1, 2021
@@ -24,7 +24,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 :::danger
 
-This release introduces a breaking change to code deploys via the Astronomer CLI. Starting on September 28, you must upgrade to v1.0.0 of the CLI to deploy code to Astronomer. [CI/CD processes](ci-cd) enabled by Deployment API Keys will continue to work and will not be affected. For more information, read the [CLI release notes](cli-release-notes).
+This release introduces a breaking change to code deploys via the Astronomer CLI. Starting on September 28, you must upgrade to v1.0.0 of the CLI to deploy code to Astronomer. [CI/CD processes](ci-cd) enabled by Deployment API keys will continue to work and will not be affected. For more information, read the [CLI release notes](cli-release-notes).
 
 :::
 

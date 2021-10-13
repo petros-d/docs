@@ -6,9 +6,36 @@ id: 'runtime-release-notes'
 
 ## Overview
 
-Astronomer runtime is a Docker image built and published by Astronomer that extends the Apache Airflow project to provide a differentiated experience. This document provides a summary of all changes made to each available version of Astronomer Runtime. For general product release notes, go to [Astronomer Cloud Release Notes](release-notes).
+Astronomer Runtime is a Docker image built and published by Astronomer that extends the Apache Airflow project to provide a differentiated experience. This document provides a summary of all changes made to each available version of Astronomer Runtime.
 
-If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
+For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runtime). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes). If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or [support@astronomer.io](mailto:support@astronomer.io).
+
+## Astronomer Runtime 4.0.0
+
+- Release date: October 12, 2021
+- Airflow version: 2.2.0
+
+### Support for Airflow 2.2.0
+
+Astronomer Runtime 4.0.0 is a significant release that supports and enhances [Apache Airflow 2.2.0](https://airflow.apache.org/blog/airflow-2.2.0/), an exciting milestone in the open source project. Most notably, this release introduces custom timetables and deferrable operators.
+
+#### Custom Timetables
+
+Timetables represent a powerful new framework that allows Airflow users to create custom schedules using Python. In an effort to provide more flexibility and address known limitations imposed by cron, timetables use an intuitive `data_interval` that, for example, allows you to schedule a DAG to run daily on Monday through Friday, but not on the weekend. Timetables can be easily plugged into existing DAGs, which means that it's easy to create your own or use community-developed timetables in your project.
+
+In addition to supporting the timetables framework, the team at Astronomer has built a `TradingHoursTimetable` that's ready to use in Runtime 4.0.0. You can use this timetable to run a DAG based on whether or not a particular global market is open for trade.
+
+For more information on using timetables, read the [Apache Airflow Documentation](https://airflow.apache.org/docs/apache-airflow/stable/howto/timetable.html).
+
+#### Deferrable Operators
+
+Deferrable operators are a new type of Airflow operator that promises improved performance and lower resource costs. While standard operators and sensors take up a "worker slot" even when they are waiting for an external trigger and not actually executing a task, deferrable operators are designed to suspend themselves and free up that "worker slot" while they wait. This is made possible by a new, lightweight Airflow component called the Triggerer.
+
+Existing Airflow operators have to be re-written according to the deferrable operator framework. In addition to supporting those available in the open source project, Astronomer has built an exclusive collection of deferrable operators in Runtime 4.0.0. This collection includes the `DatabricksSubmitRunOperator`, the `DatabricksRunNowOperator`, and the `ExternalTaskSensor`. These are designed to be drop-in replacements for corresponding operators currently in use.
+    
+As part of supporting deferrable operators, the Triggerer is now available as a fully managed component on Astronomer Cloud. This means that you can start using deferrable Operators in your DAGs as soon as you're ready.
+
+For more information on using deferrable operators, read the [Apache Airflow documentation](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html).
 
 ## Astronomer Runtime 3.0.3
 
@@ -37,12 +64,12 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 ### Minor improvements
 
 - Upgraded the default Python version to `3.9.6`
-- Added a link to Astronomer Cloud documentation in the Runtime Airflow UI
+- Added a link to Astronomer Cloud documentation in the Airflow UI
 
 ### Bug fixes
 
-- Removed nonfunctional security and user profile elements from the Runtime Airflow UI
-- The Runtime Airflow UI now shows the correct version of Runtime in the footer
+- Removed nonfunctional security and user profile elements from the Airflow UI
+- The Airflow UI now shows the correct version of Astronomer Runtime in the footer
 
 ## Astronomer Runtime 3.0.0
 
