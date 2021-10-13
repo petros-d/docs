@@ -31,6 +31,7 @@ module.exports = {
       'environment-variables',
       'airflow-api',
       'airflow-alerts',
+      'deferrable-operators',
       ],
     },
     {
