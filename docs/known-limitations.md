@@ -6,9 +6,11 @@ id: 'known-limitations'
 
 ## Overview
 
-As we bring on 'Build Partners' into Astronomer Cloud, we're fully committed to being transparent about the current limitations of the product. We're moving fast to remove them and certainly excited to work with your team to build out robust solutions that address some of these foundational questions.
+As we introduce Astronomer Cloud to market, we're committed to maintaining transparency about the current limitations of the product as well as the roadmap ahead of us.
 
-The list below reflects known issues at the time of writing. It will be updated on a weekly basis.
+The list below represents known issues at the time of writing. We're moving fast to address these and are excited to work with Astronomer users as we identify solutions to some of these foundational questions.
+
+If you have any concerns or questions, don't hesitate to reach out to us.
 
 ## Known Limitations
 
