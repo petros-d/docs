@@ -34,7 +34,7 @@ To learn more about about deferring and implementation details, read the Apache 
 
 ## Prerequisites
 
-To use Runtime's Deferrable Operators, you must first install the `astronomer-operator-wrappers` package. To do so, add the package to the `packages.txt` file of your Astronomer project as described in [Customize Your Image]. You also need to be upgrade [Astronomer Runtime 4.0.0] as described in [Upgrade Runtime].
+To use Runtime's Deferrable Operators, you must first install the `astronomer-operator-wrappers` package. To do so, add the package to the `packages.txt` file of your Astronomer project. You also need to upgrade to [Astronomer Runtime 4.0.0](release-notes#astronomer-runtime-4-0-0) as described in [Upgrade Runtime](upgrade-runtime).
 
 Note that these Operators are available only in commercial Astronomer environments, such as Astronomer Cloud. The package is designed to fall back to the non-deferrable options in other environments, but the deferrable portions work only on Astronomer.
 
@@ -74,7 +74,7 @@ from astronomer.operators import DatabricksSubmitRunOperator, DatabricksRunNowOp
 
 ### ExternalTaskSensor
 
-This is a drop-in replacement for Airflow's `[ExternalTaskSensor](https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/sensors/external_task/index.html#module-airflow.sensors.external_task)`, deferring itself while it waits for the given Task or DAG to complete.
+This is a drop-in replacement for Airflow's `[ExternalTaskSensor]`(https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/sensors/external_task/index.html#module-airflow.sensors.external_task). It defers itself while waiting for a given Task or DAG to complete.
 
 > **Note:** There is a difference between the deferrable ExternalTaskSensor and the non-deferrable ExternalTaskSensor: If there are multiple matching Tasks or DAGs and any of them have failed, the deferrable sensor also fails, whereas the non-deferrable sensor freezes indefinitely.
 
