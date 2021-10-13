@@ -8,7 +8,7 @@ id: 'runtime-release-notes'
 
 Astronomer Runtime is a Docker image built and published by Astronomer that extends the Apache Airflow project to provide a differentiated experience. This document provides a summary of all changes made to each available version of Astronomer Runtime.
 
-For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runtime). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes). If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
+For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runtime). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes). If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or [support@astronomer.io](mailto:support@astronomer.io).
 
 ## Astronomer Runtime 4.0.0
 
