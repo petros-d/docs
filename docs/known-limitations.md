@@ -6,11 +6,11 @@ id: 'known-limitations'
 
 ## Overview
 
-As we introduce Astronomer Cloud to market, we're committed to maintaining transparency about the current limitations of the product as well as the roadmap ahead of us.
+As we build and grow Astronomer Cloud, our team is committed to maintaining transparency about the current limitations of the product as well as the roadmap ahead of us.
 
-The list below represents known issues at the time of writing. We're moving fast to address these and are excited to work with Astronomer users as we identify solutions to some of these foundational questions.
+The list below represents known issues at the time of writing. We're moving fast to address these and are excited to work with customers as we identify solutions to some of these foundational questions.
 
-If you have any concerns or questions, don't hesitate to reach out to us.
+If you have questions or thoughts about any item below, don't hesitate to reach out to us.
 
 ## Known Limitations
 
