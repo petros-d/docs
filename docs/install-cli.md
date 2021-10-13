@@ -75,7 +75,7 @@ Astro CLI Version: ${siteVariables.cliVersion}`}</code></pre>
 
 ## Step 4. Run CLI Commands
 
-As noted above, the Astronomer Cloud CLI is installed as a local executable. For that reason, commands must be run from the directory in which you installed the CLI and explicitly reference the binary (`astro`). For the equivalent of `astro auth login`, for example, you'd have to run:
+As noted above, the Astronomer Cloud CLI is installed as a local executable. For that reason, you must run CLI commands from the directory in which you installed the CLI and explicitly reference the binary (`astro`). For the equivalent of `astro auth login`, for example, you'd have to run:
 
 ```
 ./astro auth login
