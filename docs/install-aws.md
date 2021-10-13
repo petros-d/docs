@@ -135,6 +135,11 @@ This process can take some time. Wait for confirmation that the installation was
 >- The IPs of your DNS servers.
 >
 > You then need to accept a VPC peering request from Astronomer after Astronomer Cloud is installed. To accept the request, follow [Creating and accepting a VPC peering connection](https://docs.aws.amazon.com/vpc/latest/peering/create-vpc-peering-connection.html) in AWS documentation.
+>
+> Once VPC peered with Astronomer, configure and validate the following to ensure successful network communications between Astronomer Cloud and your resources:
+>
+>- Egress Routes on Astronomer Route Table
+>- [Network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html#nacl-tasks) and/or [Security Group](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#working-with-security-groups) rules of your resources
 
 ## Step 5: Create a Deployment
 
