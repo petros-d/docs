@@ -139,7 +139,7 @@ This process can take some time. Wait for confirmation that the installation was
 > Once VPC peered with Astronomer, configure and validate the following to ensure successful network communications between Astronomer Cloud and your resources:
 >
 >- Egress Routes on Astronomer Route Table
->- Network ACLs and/or Security Group rules of your resources
+>- [Network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html#nacl-tasks) and/or [Security Group](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#working-with-security-groups) rules of your resources
 
 ## Step 5: Create a Deployment
 
