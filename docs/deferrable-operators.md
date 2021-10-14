@@ -31,7 +31,7 @@ Deferrable Operators are simply Operators that are designed around a companion T
 
 A new Airflow component called the Triggerer takes care of running Triggers and signaling tasks to resume when their conditions have been met. Like the Scheduler, it is designed to be highly-available: If a machine running Triggers shuts down unexpectedly, the Triggers can be recovered and moved to any warm-standby machine also running a Triggerer.
 
-To learn more about about deferring and implementation details, read the Apache Airflow [Deferring documentation](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html).
+To learn more about deferring and implementation details, read the Apache Airflow [Deferring documentation](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html).
 
 ## Prerequisites
 
