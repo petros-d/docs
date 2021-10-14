@@ -29,7 +29,7 @@ For more information on using timetables, read the [Apache Airflow Documentation
 
 #### Deferrable Operators
 
-[Deferrable operators](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html) are a new type of Airflow operator that promises improved performance and lower resource costs. While standard operators and sensors take up a "worker slot" even when they are waiting for an external trigger and not actually executing a task, Deferrable Operators are designed to suspend themselves and free up that "worker slot" while they wait. This is made possible by a new, lightweight Airflow component called the Triggerer.
+[Deferrable operators](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html) are a new type of Airflow operator that promises improved performance and lower resource costs. While standard operators and sensors take up a Worker slot even when they are waiting for an external trigger, Deferrable Operators are designed to suspend themselves and free up that Worker slot while they wait. This is made possible by a new, lightweight Airflow component called the Triggerer.
 
 Existing Airflow operators have to be re-written according to the Deferrable Operator framework. In addition to supporting those available in the open source project, Astronomer has built an exclusive collection of Deferrable Operators in Runtime 4.0.0. This collection includes the `DatabricksSubmitRunOperator`, the `DatabricksRunNowOperator`, and the `ExternalTaskSensor`. These are designed to be drop-in replacements for corresponding operators currently in use.
 
