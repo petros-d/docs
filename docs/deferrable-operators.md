@@ -38,34 +38,34 @@ To learn more about deferring, read the Apache Airflow [documention on Deferring
 
 ## Using Deferrable Operators
 
-Deferrable Operators are drop-in replacements for their traditional Operator counterparts. Airflow 2.2.0 shipped with `DateTimeSensorAsync` and `TimeDeltaSensorAsync`, but other Sensors and Operators need to be written. As an Astronomer customer, you have exclusive access to an additional set of Deferrable Operators designed and maintained by our team.
+Deferrable Operators are intended to replace their traditional Operator counterparts. Airflow 2.2 shipped with `DateTimeSensorAsync` and `TimeDeltaSensorAsync`, but other Sensors and Operators need to be written. As an Astronomer customer, you have exclusive access to an additional set of Deferrable Operators designed and maintained by our team.
 
-If you're interested in writing and contributing a Deferrable Operator and Trigger for your own use case, we're happy to help with the process.
+If you're interested in writing and contributing a Deferrable Operator and Trigger, we're happy to help with the process.
 
 ### Prerequisites
 
-To use Deferrable Operators on Astronomer, you must first:
+To use Deferrable Operators on Astronomer Cloud, you must first:
 
 - Add the `astronomer-operator-wrappers` package to the `packages.txt` file of your Astronomer project.
-- Upgrade to [Astronomer Runtime 4.0.0](release-notes#astronomer-runtime-4-0-0) as described in [Upgrade Runtime](upgrade-runtime).
+- Upgrade to [Astronomer Runtime 4.0+](release-notes#astronomer-runtime-4-0-0) as described in [Upgrade Runtime](upgrade-runtime).
 
 ### Import a Deferrable Operator
 
 To use a deferrable version of an existing Operator in your DAG, you simply need to:
 
-- Change your import statement
+- Replace your import statement
 - Change your DAG to reference the Async class name
 
-Airflow's `TimeSensorAsync`, for example, is a replacement of the non-deferrable `TimeSensor` ([source](https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/sensors/time_sensor/index.html?highlight=timesensor#module-contents)). To use `TimeSensorAsync`, remove your existing `import` and replace it with the following:
+Airflow's `TimeSensorAsync` Operator, for example, is a replacement of the non-deferrable `TimeSensor` ([source](https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/sensors/time_sensor/index.html?highlight=timesensor#module-contents)). To use `TimeSensorAsync`, remove your existing `import` and replace it with the following:
 
 ```python
 # Remove this import:
 # from airflow.sensors.time_sensor import TimeSensor
 # Replace with:
-from airflow.sensors.time_sensor import TimeSensorAsync
+from airflow.sensors.time_sensor import TimeSensorAsync as TimeSensor
 ```
 
-Then, change any instance of an `TimeSensor` in your DAG to `TimeSensorAsync`.
+To avoid changing your DAG to referene the Async class name, the `import TimeSensorAsync as TimeSensor` part of this example takes care of treating instances of `TimeSensor` as `TimeSensorAsync`.
 
 ## Astronomer's Deferrable Operators
 
