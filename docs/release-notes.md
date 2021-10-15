@@ -19,9 +19,9 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 ### Minor Improvements
 
 - When creating a new Deployment, you can now select only the latest patch version for each major version of Astronomer Runtime.
-- In the Astronomer UI, a Deployment now opens by default if it's the only Deployment in the Cluster.
-- In the Airflow UI, your Deployment name now appears on the homepage.
-- In the Astronomer UI, you can now see the health status for each Deployment in your Cluster on the **Deployments** page's table view:
+- When creating a new Deployment in the Astronomer UI, the cluster is pre-selected if there is only one cluster available.
+- The name of your Astronomer Deployment now appears on the main DAGs view of the Airflow UI.
+- You can now see the health status for each Deployment in your Workspace on the table view of the **Deployments** page in the Astronomer UI:
 
    <div class="text--center">
      <img src="/img/docs/health-status-table.png" alt="Deployment Health statuses visible in the Deployments table view" />
