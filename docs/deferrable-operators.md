@@ -60,9 +60,9 @@ Some additional notes about using Deferrable Operators:
 
 Astronomer Runtime includes a collection of Deferrable Operators available exclusively to Astronomer Cloud users. These are drop-in replacements for non-Deferrable Operators, meaning you only have to change the import statements in your DAGs to begin using them.
 
-This section contains information on each available Deferrable Operator, including example import statements.
+This section contains information on each available Deferrable Operator on Astronomer Runtime, including example import statements.
 
-> **Note:** When Operators in the `astronomer-operator-wrappers` are used outside of Astronomer Cloud, the package falls back to using the open source, non-deferrable versions of each Operator.
+> **Note:** When Operators in the `astronomer-operator-wrappers` are used outside of Astronomer Runtime environments, the package falls back to using the open source, non-deferrable versions of each Operator.
 
 ### Databricks Operators
 
