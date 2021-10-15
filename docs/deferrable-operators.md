@@ -66,7 +66,7 @@ This section contains information on each available Deferrable Operator on Astro
 
 ### Databricks Operators
 
-We provide deferrable versions of both the `DatabricksSubmitRunOperator` and the `DatabricksRunNowOperator`. These Operators wait in a deferred state while waiting for their respective Databricks jobs to complete.
+We provide deferrable versions of both the `DatabricksSubmitRunOperator` and the `DatabricksRunNowOperator`. These Operators wait in a deferred state while waiting for their respective Databricks job to complete.
 
 #### Import statement
 
