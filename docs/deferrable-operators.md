@@ -8,13 +8,13 @@ id: 'deferrable-operators'
 
 [Apache Airflow 2.2](https://airflow.apache.org/blog/airflow-2.2.0/) introduces [Deferrable Operators](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html), a powerful new framework for executing tasks. Available in Astronomer Runtime 4.0+, Deferrable Operators are a new type of Airflow Operator that promises improved performance and lower resource costs.
 
-In Airflow, it's common for users to configure tasks that wait for some condition to be met before executing or triggering another task. While standard Airflow Operators and Sensors perform that function well, those tasks have historically needed to take up a Worker or Scheduler slot the entire time that they are waiting for that external condition to be met.
+In Airflow, it's common for users to configure tasks that wait for some condition to be met before executing or triggering another task. While standard Airflow Operators and Sensors perform that function well, tasks have historically needed to take up a Worker or Scheduler slot the entire time that they are waiting for an external condition to be met.
 
-In an exciting effort to reduce resource consumption during that process, the Deferrable Operator framework instead allows a task to suspend itself and free up that Worker or Scheduler slot for as long as it's waiting for a condition to be met. For tasks that typically spend a long time in a deferred state, such as those using the `S3Sensor`, the `HTTPSensor`, or the `DatabricksSubmitRunOperator`, replacing them with a Deferrable Operator counterpart can result in significant per-task cost savings and performance improvements.
+In an exciting effort to reduce resource consumption during that process, the Deferrable Operator framework instead allows a task to suspend itself and free up that Worker or Scheduler slot for the entire duration of the waiting period. For tasks that typically spend a long time in a deferred state, such as those using the `S3Sensor`, the `HTTPSensor`, or the `DatabricksSubmitRunOperator`, replacing them with a Deferrable Operator can result in significant per-task cost savings and performance improvements.
 
 Tasks that use Deferrable Operators rely on a new, highly-available Airflow component called the Triggerer. The Triggerer component is supported and entirely managed on Astronomer Cloud, which means that you can start using Deferrable Operators in your DAGs as long as you're running Astronomer Runtime 4.0+. As an Astronomer customer, you additionally have exclusive access to several deferrable versions of open source operators that are easy to plug into your code.
 
-This guide explains how Deferrable Operators work, how to implement Deferrable Operators in your DAGs, and references the set of Deferrable Operators built exclusively for Astronomer customers.
+This guide explains how Deferrable Operators work and how to implement them in your DAGs.
 
 ## How Deferrable Operators Work
 
@@ -34,7 +34,7 @@ The process for running a task using a Deferrable Operator is as follows:
 3. The Triggerer runs the task's Trigger periodically to check whether or not the condition has been met.
 4. Once the Triggerer condition succeeds, the Task is again queued by the Scheduler. This time, the task begins executing its main function when as soon as it's picked up by a Worker.
 
-To learn more about deferring, read the Apache Airflow [Deferring documentation](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html).
+To learn more about deferring, read the Apache Airflow [documention on Deferring](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html).
 
 ## Using Deferrable Operators
 
