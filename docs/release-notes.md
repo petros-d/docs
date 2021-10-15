@@ -13,6 +13,28 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 **Latest Runtime Version**: 4.0.0 ([Release notes](runtime-release-notes))
 **Latest CLI Version**: 1.0.0 ([Release notes](cli-release-notes))
 
+## October 15, 2021
+
+### Minor Improvements
+
+- In the Astronomer UI, a Deployment is now open by default if it's the only one in the Cluster.
+- When creating a new Deployment, you can now select only the latest patch version for each major version of Astronomer Runtime.
+- The Astronomer UI now saves your color mode preference.
+- The Airflow UI now shows your Deployment name on the homepage.
+- In the Astronomer UI, you can now see the health status for each Deployment in your Cluster on the **Deployments** page's table view:
+
+   <div class="text--center">
+     <img src="/img/docs/health-status-table.png" alt="Deployment Health statuses visible in the Deployments table view" />
+   </div>
+
+- In the Astronomer UI, you can now access the Airflow UI for Deployments via the **Deployments** page's card view:
+
+    <div class="text--center">
+      <img src="/img/docs/open-airflow-card.png" alt="Open Airflow button in the Deployments table view" />
+    </div>
+
+
+
 ## October 1, 2021
 
 ### Minor Improvements
