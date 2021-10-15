@@ -27,9 +27,13 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
      <img src="/img/docs/health-status-table.png" alt="Deployment Health statuses visible in the Deployments table view" />
    </div>
 
-- In the Astronomer UI, you can now access the Airflow UI for Deployments via the **Deployments** page's card view.
-- The Astronomer UI now saves your color mode preference.
+- In the Astronomer UI, you can now access the Airflow UI for Deployments via the **Deployments** page's card view:
 
+    <div class="text--center">
+      <img src="/img/docs/open-airflow-card.png" alt="Open Airflow button in the Deployments page card view" />
+    </div>
+
+- The Astronomer UI now saves your color mode preference.
 
 ## October 1, 2021
 
