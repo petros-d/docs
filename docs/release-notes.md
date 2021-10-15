@@ -11,7 +11,29 @@ Astronomer is committed to continuous development of Astronomer Cloud. As you gr
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
 **Latest Runtime Version**: 4.0.0 ([Release notes](runtime-release-notes))
-**Latest CLI Version**: 1.0.0 ([Release notes](cli-release-notes))
+
+**Latest CLI Version**: 1.0.1 ([Release notes](cli-release-notes))
+
+## October 15, 2021
+
+### Minor Improvements
+
+- When creating a new Deployment, you can now select only the latest patch version for each major version of Astronomer Runtime.
+- When creating a new Deployment in the Astronomer UI, the cluster is pre-selected if there is only one cluster available.
+- The name of your Astronomer Deployment now appears on the main DAGs view of the Airflow UI.
+- You can now see the health status for each Deployment in your Workspace on the table view of the **Deployments** page in the Astronomer UI:
+
+   <div class="text--center">
+     <img src="/img/docs/health-status-table.png" alt="Deployment Health statuses visible in the Deployments table view" />
+   </div>
+
+- In the Astronomer UI, you can now access the Airflow UI for Deployments via the **Deployments** page's card view:
+
+    <div class="text--center">
+      <img src="/img/docs/open-airflow-card.png" alt="Open Airflow button in the Deployments page card view" />
+    </div>
+
+- The Astronomer UI now saves your color mode preference.
 
 ## October 1, 2021
 
