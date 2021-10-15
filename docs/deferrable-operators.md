@@ -80,7 +80,7 @@ This is a drop-in replacement for Airflow's [`ExternalTaskSensor`](https://airfl
 
 > **Note:** There is a difference between the deferrable ExternalTaskSensor and the non-deferrable ExternalTaskSensor: If there are multiple matching Tasks or DAGs and any of them have failed, the deferrable sensor also fails, whereas the non-deferrable sensor freezes indefinitely.
 
-### Import statement
+#### Import statement
 
 ```python
 from astronomer.operators import ExternalTaskSensor
