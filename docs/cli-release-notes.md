@@ -10,6 +10,12 @@ This document provides a summary of all changes made to the [Astronomer CLI](ins
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
+## v1.0.1
+
+Release date: October 15, 2021
+
+- This release contains changes exclusively related to the Astronomer CLI developer experience.
+
 ## v1.0.0
 
 Release date: September 28, 2021

@@ -6,9 +6,11 @@ id: 'known-limitations'
 
 ## Overview
 
-As we bring on 'Build Partners' into Astronomer Cloud, we're fully committed to being transparent about the current limitations of the product. We're moving fast to remove them and certainly excited to work with your team to build out robust solutions that address some of these foundational questions.
+As we build and grow Astronomer Cloud, our team is committed to maintaining transparency about the current limitations of the product as well as the roadmap ahead of us.
 
-The list below reflects known issues at the time of writing. It will be updated on a weekly basis.
+The list below represents known issues at the time of writing. We're moving fast to address these and are excited to work with customers as we identify solutions to some of these foundational questions.
+
+If you have questions or thoughts about any item below, don't hesitate to reach out to us.
 
 ## Known Limitations
 
@@ -17,18 +19,20 @@ The list below reflects known issues at the time of writing. It will be updated 
 - Your team will be limited to a single Astronomer Workspace that supports multiple users and Deployments. Support for an Astronomer "Organization" with multiple Workspaces coming soon.
 - If you're running Astronomer Runtime `2.1.1`, `3.0.0`, or `3.0.1`, the Astronomer Runtime field in the Astronomer UI shows `Unknown`. Once you upgrade to Runtime 3.0.2+, your Deployment's version of Runtime is correctly listed.
 - We do not currently support PgBouncer, but the RDS instance provisioned in your Cluster will support around 1000 connections to your database, enough to support 10-12 Deployments.
-- Tasks longer than the worker termination grace period may become zombies when KEDA autoscaling is enabled.
+- Tasks longer than the worker termination grace period may become zombies.
 - If a user changes Workspace roles on Astronomer, it can take a maximum of 10 minutes for corresponding Airflow permission changes to take effect.
-- The Airflow API can be reached only by using a temporary token. Deployment API keys are coming soon.
+- [Requests to Airflow's REST API](airflow-api) can only be made using a temporary token. Support for long-lasting Deployment API keys coming soon.
 - The Astronomer CLI is generally limited to `astro dev` commands, in addition to `astro deploy` and `astro auth`. Full functionality coming soon.
 - A set of 40 example DAGs will be appear in the Airflow UI when you create a new Deployment. Corresponding DAG files should not appear in your local project directory. To remove these example DAGs at any time, set the following Environment Variable via the Astronomer UI: `AIRFLOW__CORE__LOAD_EXAMPLES=False`
-- Clicking on **Refresh DAG** in the Airflow UI will redirect you to `<org-name>.astronomer.run` (Astronomer Home Page) instead of the task instance URL.
+- Clicking on **Refresh DAG** in the Airflow UI will redirect you to `<org-name>.astronomer.run` (Astronomer Home Page) instead of the task instance URL. We recommend upgrading to [Runtime 4.0](runtime-release-notes#astronomer-runtime-400), as Airflow 2.2 no longer supports this refresh button in the Airflow UI.
+- Environment Variables are visible to all Workspace users in the Astronomer UI in plaintext. Support for Environment Variables treated as a secret coming soon.
 
 ## Coming Soon
 
-- Support for Airflow 2.2
+- Long-lasting Deployment API Keys
+- Support for CLI Install via Homebrew
+- Environment Variables as secret
 - Single Sign-On
 - Full CLI functionality
 - Self-service Cluster creation
-- Support for CLI Install via Homebrew
 - Analytics
