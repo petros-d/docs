@@ -11,6 +11,7 @@ Astronomer is committed to continuous development of Astronomer Cloud. As you gr
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
 **Latest Runtime Version**: 4.0.0 ([Release notes](runtime-release-notes))
+
 **Latest CLI Version**: 1.0.0 ([Release notes](cli-release-notes))
 
 ## October 15, 2021
