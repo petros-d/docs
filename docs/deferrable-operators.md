@@ -16,7 +16,7 @@ This guide explains how Deferrable Operators work and how to implement them in y
 
 ### How It Works
 
-Airflow 2.2 introduces two new concepts to support Deferrable Operators: The Trigger and the Triggerer.
+Airflow 2.2 introduces two new concepts to support Deferrable Operators: the Trigger and the Triggerer.
 
 A **Trigger** is a small, asynchronous Python function that quickly and continuously evaluates a given condition. Due to its design, thousands of Triggers can be run in a single process, resulting in significant efficiency improvements over running sensors and Operators in a single process each. In order for an Operator to be deferrable, it must have its own Trigger code that determines when and how the Operator is deferred.
 
