@@ -63,7 +63,7 @@ Astronomer Runtime includes a collection of Deferrable Operators that are availa
 
 This section contains information and example import statements for all Deferrable Operators available exclusively on Astronomer Runtime.
 
-> **Note:** When Operators in the `astronomer-operator-wrappers` in environments that don't run on Astronomer Runtime, the package falls back to using the open source, non-deferrable versions of each Operator.
+> **Note:** When you use Deferrable Operators in the `astronomer-operator-wrappers` package outside of a Runtime environment, the package falls back to using the open source, non-deferrable versions of each Operator.
 
 ### Databricks Operators
 
