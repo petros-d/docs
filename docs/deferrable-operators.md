@@ -53,7 +53,7 @@ from airflow.sensors.time_sensor import TimeSensorAsync as TimeSensor
 
 Some additional notes about using Deferrable Operators:
 
-- The examples in this document import Deferrable Operator classes as their non-deferrable class names, meaning that you don't have to replace existing instances of non-deferrable Operators in your DAGs. If you don't include this part of the import statement, you additionally need to replace all instances of non-deferrable Operators with Deferrable Operators.
+- In the previous example, the statement imports the Deferrable Operator class with its non-deferrable class name, meaning that you don't have to replace existing instances of non-deferrable Operators in your DAGs. If you don't include this part of the import statement, you additionally need to replace all instances of non-deferrable Operators with Deferrable Operators.
 - Currently, not all Operators have a deferrable version. There are a few open source Deferrable Operators, plus additional Operators designed and maintained by Astronomer.
 - You can write your own Deferrable Operators and Triggers for custom API or service usage. For more information, read the [Apache Airflow documentation](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html).
 
