@@ -56,7 +56,7 @@ Some additional notes about using Deferrable Operators:
 - In the previous example, the statement imports the Deferrable Operator class with its non-deferrable class name, meaning that you don't have to replace existing instances of non-deferrable Operators in your DAGs. If you don't include this part of the import statement, you additionally need to replace all instances of non-deferrable Operators with Deferrable Operators.
 - Currently, not all Operators have a deferrable version. There are a few open source Deferrable Operators, plus additional Operators designed and maintained by Astronomer.
 - You can write your own Deferrable Operators and Triggers for custom API or service usage. If you need help with writing a custom Deferrable Operator, reach out to your Astronomer representative.
-- There are some scenarios where it's more appropriate to use a traditional sensor in [`reschedule`](https://github.com/apache/airflow/blob/1.10.2/airflow/sensors/base_sensor_operator.py#L46-L56) mode. If your task doesn't often defer because it needs to wait only a few seconds for a condition to be met, then we recommend using a traditional sensor instead of a Deferrable Operator.
+- There are some scenarios where it's more appropriate to use a traditional sensor in [`reschedule`](https://github.com/apache/airflow/blob/1.10.2/airflow/sensors/base_sensor_operator.py#L46-L56) mode for checking whether a condition has been met. If your task doesn't often defer because it needs to wait only a few seconds for a condition to be met, then we recommend using a traditional sensor instead of a Deferrable Operator.
 
 ## Astronomer's Deferrable Operators
 
