@@ -6,11 +6,11 @@ id: 'deferrable-operators'
 
 ## Overview
 
-Introduced in [Apache Airflow 2.2](https://airflow.apache.org/blog/airflow-2.2.0/), Deferrable Operators are a powerful type of Airflow Operator that you can use to improve the performance of your Deployments and lower your resource costs.
+[Apache Airflow 2.2](https://airflow.apache.org/blog/airflow-2.2.0/) introduces [Deferrable Operators](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html), a powerful type of Airflow Operator that promises lower resource costs and improved performance.
 
-In Airflow, you can configure tasks to wait for some external condition to be met before executing or triggering another task. Tasks using standard Operators and Sensors take up a Worker or Scheduler slot when checking if an external condition has been met. In comparison, tasks using Deferrable Operators suspend themselves and don't take up a Worker or Scheduler slot when checking if a condition has been met. Using the Deferrable versions of Operators or Sensors that typically spend a long time waiting for an condition to be met, such as the `S3Sensor`, the `HTTPSensor`, or the `DatabricksSubmitRunOperator`, can result in significant per-task cost savings and performance improvements.
+In Airflow, it's common to use [Sensors](https://airflow.apache.org/docs/apache-airflow/stable/concepts/sensors.html) and some [Operators](https://airflow.apache.org/docs/apache-airflow/stable/concepts/operators.html) to configure tasks that wait for some external condition to be met before executing or triggering another task. While tasks using standard Operators and Sensors take up a Worker or Scheduler slot when checking if an external condition has been met, Deferrable Operators suspend themselves during that process. This releases the Worker to take on other tasks. Using the Deferrable versions of Operators or Sensors that typically spend a long time waiting for a condition to be met, such as the `S3Sensor`, the `HTTPSensor`, or the `DatabricksSubmitRunOperator`, can result in significant per-task cost savings and performance improvements.
 
-Deferrable Operators rely on a new, highly available Airflow component called the Triggerer. The Triggerer is entirely managed on Astronomer Cloud, meaning that you can start using Deferrable Operators in your DAGs as long as you're running Astronomer Runtime 4.0+. As an Astronomer customer, you additionally have exclusive access to several deferrable versions of open source Operators.
+Deferrable Operators rely on a new Airflow component called the Triggerer. The Triggerer is highly available and entirely managed on Astronomer Cloud, meaning that you can start using Deferrable Operators in your DAGs as long as you're running Astronomer Runtime 4.0+. As an Astronomer customer, you additionally have exclusive access to several deferrable versions of open source Operators.
 
 This guide explains how Deferrable Operators work and how to implement them in your DAGs.
 
@@ -33,9 +33,9 @@ For implementation details on Deferrable Operators, read the [Apache Airflow doc
 
 ## Prerequisites
 
-To use Deferrable Operators on Astronomer Cloud, you must first upgrade your Deployments to [Astronomer Runtime 4.0.0](release-notes#astronomer-runtime-4-0-0) as described in [Upgrade Runtime](upgrade-runtime).
+To use Deferrable Operators on Astronomer Cloud, you must first upgrade to [Astronomer Runtime 4.0+](release-notes#astronomer-runtime-4-0-0) as described in [Upgrade Runtime](upgrade-runtime).
 
-Additionally, if you want to use Deferrable Operators available exclusively on Astronomer Runtime, you must add the `astronomer-operator-wrappers` package to the `packages.txt` file of your Astronomer project.
+To use Deferrable Operators available exclusively on Astronomer Runtime, you must additionally add the `astronomer-operator-wrappers` package to the `packages.txt` file of your Astronomer project.
 
 ## Using Deferrable Operators
 
@@ -54,8 +54,8 @@ Some additional notes about using Deferrable Operators:
 
 - For open source Operators, we recommend importing the Deferrable Operator class as its non-deferrable class name. If you don't include this part of the import statement, you need to replace all instances of non-deferrable Operators in your DAGs. In the above example, that would require replacing all instances of `TimeSensor` with `TimeSensorAsync`.
 - Currently, not all Operators have a deferrable version. There are a few open source Deferrable Operators, plus additional Operators designed and maintained by Astronomer.
-- You can write your own Deferrable Operators and Triggers and contribute these to the open source project. If you need help with writing a custom Deferrable Operator, reach out to your Astronomer representative.
-- There are some use cases where it's more appropriate to use a traditional Sensor instead of a Deferrable Operator. If your task needs to wait only a few seconds for a condition to be met, we recommend using a Sensor in [`reschedule`](https://github.com/apache/airflow/blob/1.10.2/airflow/sensors/base_sensor_operator.py#L46-L56] mode to avoid unnecessary resource overhead.
+- If you're interested in the deferrable version of an Operator that is not generally available, you can write your own and contribute these to the open source project. If you need help with writing a custom Deferrable Operator, reach out to your Astronomer representative.
+- There are some use cases where it can be more appropriate to use a traditional Sensor instead of a Deferrable Operator. For example, if your task needs to wait only a few seconds for a condition to be met, we recommend using a Sensor in [`reschedule`](https://github.com/apache/airflow/blob/1.10.2/airflow/sensors/base_sensor_operator.py#L46-L56] mode to avoid unnecessary resource overhead.
 
 ## Astronomer's Deferrable Operators
 
@@ -72,7 +72,7 @@ Astronomer Runtime includes the following Databricks Operators:
 - `DatabricksSubmitRunOperator`
 - `DatabricksRunNowOperator`
 
-Tasks using these Operators wait in a deferred state while waiting for their respective Databricks job to complete.
+Tasks using these Operators remain in a deferred state while waiting for their respective Databricks job to complete.
 
 #### Import statement
 
