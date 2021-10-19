@@ -59,7 +59,7 @@ Some additional notes about using Deferrable Operators:
 
 ## Astronomer's Deferrable Operators
 
-Astronomer maintains a collection of Deferrable Operators that are available exclusively on Astronomer Runtime. These are drop-in replacements for non-Deferrable Operators, meaning that you only have to change the import statements in your DAGs to begin using them.
+Astronomer maintains a collection of Deferrable Operators that are available exclusively on Astronomer Runtime. These Operators are drop-in replacements for non-Deferrable Operators, meaning that you only have to change the import statements in your DAGs to begin using them.
 
 This section contains information and example import statements for all Deferrable Operators written by Astronomer.
 
