@@ -19,8 +19,8 @@ This guide provides setup steps for configuring a CI/CD pipeline to deploy DAGs 
 To set up CI/CD for a given Deployment, you need:
 
 - A [Deployment API key ID and secret](api-keys)
-- An Organization ID. To find this, go to **Settings** > **Organization** in the Astronomer UI and copy the Organization ID that appears
-- A Deployment ID. To find this, open your Deployment in the Astronomer UI and copy the unique string at the end of the URL (e.g. `cktogz2eg847343yzo9pru1b0d` is the ID in `https://cloud.astronomer.io/deployments/cktogz2eg847343yzo9pru1b0d`)
+- An Organization ID. To find this, go to [**Organization Settings** in the Astronomer UI](https://cloud.astronomer.io/settings) and copy the Organization ID displayed there.
+- A Deployment ID. To find this, open your Deployment in the Astronomer UI and copy the unique string at the end of the URL (e.g. `cktogz2eg847343yzo9pru1b0d` is the ID in `https://cloud.astronomer.io/<workspaceId>/deployments/cktogz2eg847343yzo9pru1b0d`)
 - A CI/CD management tool, such as [GitHub Actions](https://docs.github.com/en/actions)
 - An Astronomer project directory that was [initialized via the Astronomer CLI](deploy-code) and is hosted in a place that your CI/CD tool can access
 - [Docker](https://docs.docker.com/get-docker/)
