@@ -45,7 +45,7 @@ For example, Airflow's `TimeSensorAsync` is a replacement of the non-deferrable 
 
 ```python
 # Remove this import:
-# from airflow.operators.sensors import ExternalTaskSensor
+# from airflow.operators.sensors import TimeSensor
 # Replace with:
 from airflow.sensors.time_sensor import TimeSensorAsync as TimeSensor
 ```
