@@ -26,7 +26,7 @@ If you have questions or thoughts about any item below, don't hesitate to reach 
 - A set of 40 example DAGs will be appear in the Airflow UI when you create a new Deployment. Corresponding DAG files should not appear in your local project directory. To remove these example DAGs at any time, set the following Environment Variable via the Astronomer UI: `AIRFLOW__CORE__LOAD_EXAMPLES=False`
 - Clicking on **Refresh DAG** in the Airflow UI will redirect you to `<org-name>.astronomer.run` (Astronomer Home Page) instead of the task instance URL. We recommend upgrading to [Runtime 4.0](runtime-release-notes#astronomer-runtime-400), as Airflow 2.2 no longer supports this refresh button in the Airflow UI.
 - Environment Variables are visible to all Workspace users in the Astronomer UI in plaintext. Support for Environment Variables treated as a secret is coming soon.
-- Deferrable operators work only on Astronomer Cloud Deployments. Support for running Triggerers in local environments is coming soon.
+- Currently, deferrable operators are not supported in local Airflow environments created via the Astronomer CLI. To use deferrable operators, you must have a Deployment running [Runtime 4.0+](runtime-release-notes#astronomer-runtime-400).
 
 ## Coming Soon
 
