@@ -6,7 +6,7 @@ id: 'deferrable-operators'
 
 ## Overview
 
-[Apache Airflow 2.2](https://airflow.apache.org/blog/airflow-2.2.0/) introduces [Deferrable operators](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html), a powerful type of Airflow operator that promises lower resource costs and improved performance.
+[Apache Airflow 2.2](https://airflow.apache.org/blog/airflow-2.2.0/) introduces [deferrable operators](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html), a powerful type of Airflow operator that promises lower resource costs and improved performance.
 
 In Airflow, it's common to use [sensors](https://airflow.apache.org/docs/apache-airflow/stable/concepts/sensors.html) and some [operators](https://airflow.apache.org/docs/apache-airflow/stable/concepts/operators.html) to configure tasks that wait for some external condition to be met before executing or triggering another task. While tasks using standard operators and sensors take up a Worker or Scheduler slot when checking if an external condition has been met, deferrable operators suspend themselves during that process. This releases the Worker to take on other tasks. Using the deferrable versions of operators or sensors that typically spend a long time waiting for a condition to be met, such as the `S3Sensor`, the `HTTPSensor`, or the `DatabricksSubmitRunOperator`, can result in significant per-task cost savings and performance improvements.
 

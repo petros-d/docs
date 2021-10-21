@@ -33,7 +33,7 @@ For more information on using timetables, read the [Apache Airflow Documentation
 
 Existing Airflow operators have to be re-written according to the deferrable operator framework. In addition to supporting those available in the open source project, Astronomer has built an exclusive collection of deferrable operators in Runtime 4.0.0. This collection includes the `DatabricksSubmitRunOperator`, the `DatabricksRunNowOperator`, and the `ExternalTaskSensor`. These are designed to be drop-in replacements for corresponding operators currently in use.
 
-As part of supporting deferrable operators, the Triggerer is now available as a fully managed component on Astronomer Cloud. This means that you can start using deferrable operators in your DAGs as soon as you're ready. For more general information on deferrable operators, as well as how to use Astronomer's exclusive deferrable operators, read [Deferrable operators](deferrable-operators).
+As part of supporting deferrable operators, the Triggerer is now available as a fully managed component on Astronomer Cloud. This means that you can start using deferrable operators in your DAGs as soon as you're ready. For more general information on deferrable operators, as well as how to use Astronomer's exclusive deferrable operators, read [Deferrable Operators](deferrable-operators).
 
 ## Astronomer Runtime 3.0.3
 
