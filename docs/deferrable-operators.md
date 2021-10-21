@@ -37,7 +37,7 @@ To use deferrable operators on Astronomer Cloud, you must first upgrade to [Astr
 
 To use deferrable operators available exclusively on Astronomer Runtime, you must additionally add the `astronomer-operator-wrappers` package to the `packages.txt` file of your Astronomer project.
 
-## Using deferrable operators
+## Using Deferrable Operators
 
 To use a deferrable version of an existing operator in your DAG, you only need to replace the import statement for the existing operator.
 
@@ -57,7 +57,7 @@ Some additional notes about using deferrable operators:
 - If you're interested in the deferrable version of an operator that is not generally available, you can write your own and contribute these to the open source project. If you need help with writing a custom deferrable operator, reach out to your Astronomer representative.
 - There are some use cases where it can be more appropriate to use a traditional sensor instead of a deferrable operator. For example, if your task needs to wait only a few seconds for a condition to be met, we recommend using a Sensor in [`reschedule` mode](https://github.com/apache/airflow/blob/1.10.2/airflow/sensors/base_sensor_operator.py#L46-L56) to avoid unnecessary resource overhead.
 
-## Astronomer's deferrable operators
+## Astronomer's Deferrable Operators
 
 Astronomer maintains a collection of deferrable operators that are available exclusively on Astronomer Runtime. These operators are drop-in replacements for non-Deferrable operators, meaning that you only have to change the import statements in your DAGs to begin using them.
 
