@@ -24,7 +24,7 @@ To make an Airflow API request, you need:
 - An API key.
 - A Deployment URL.
 
-To create an API key, follow the steps in [Deployment API Keys](api-keys). You will use the API key secret to make calls to the API. Note that you still need to [refresh your access token](api-keys#refresh-access-token) at least once every 24 hours to access your Deployment via API key.
+To create an API key, follow the steps in [Deployment API Keys](api-keys). Be sure to copy the API key secret, as you need to include this in your REST API calls. Note that you still need to [refresh your access token](api-keys#refresh-access-token) at least once every 24 hours to access your Deployment via API key.
 
 To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The URL where you are now accessing the Airflow UI is your Deployment URL. It includes the name of your Organization and a short Deployment ID. For example: `https://mycompany.astronomer.run/dhbhijp0`.
 
