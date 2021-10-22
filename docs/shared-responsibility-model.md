@@ -1,6 +1,5 @@
 ---
 sidebar_label: 'Shared Responsibility Model'
-title: 'Shared Responsibility Model'
 id: 'shared-responsibility-model'
 ---
 
