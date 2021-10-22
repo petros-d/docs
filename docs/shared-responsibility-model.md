@@ -1,9 +1,8 @@
 ---
 sidebar_label: 'Shared Responsibility Model'
+title: "Shared Responsibility Model"
 id: 'shared-responsibility-model'
 ---
-
-## Shared Responsibility Model
 
 Astronomer Cloud security and reliability of customer tasks is the highest priority. As an Astronomer Cloud customer, you benefit from a fully-managed data orchestration platform, that is built to meet the requirements of the most security-sensitive organizations.
 
