@@ -30,7 +30,7 @@ To retrieve your Deployment URL, open your Deployment in the Astronomer UI and c
 
 ::: info
 
-If you need to call the Airflow API only once, you can retrieve a temporary access token at `cloud.astronomer.io/token`. This token lasts only for 24 hours.
+If you need to call the Airflow API only once, you can retrieve a temporary access token (24 hours) at `cloud.astronomer.io/token`. If you retrieve a token here, you can skip the instructions in [Request Access Token](api-keys#request-access-token).
 
 :::
 
