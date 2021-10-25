@@ -24,11 +24,11 @@ All Airflow API calls require the following two values:
 - An access token
 - A Deployment URL
 
-To retrieve an access token, [create a Deployment API key](api-keys#create-an-api-key) and follow the instructions in [Request Access Token](api-keys#request-access-token). Note that you need to [refresh your access token](api-keys#refresh-access-token) every time you make a request to the Airflow API. To avoid manually fetching this token, we strongly recommend adding a command to request an access token in any CI/CD pipeline that uses the Airflow API. For examples of this implementation, see [CI/CD Templates](ci-cd#cicd-templates).
+To retrieve an access token, [create a Deployment API key](api-keys#create-an-api-key) on Astronomer and follow the instructions in [Request Access Token](api-keys#request-access-token). Note that you need to refresh that token every time you make a request to the Airflow API. To avoid manually doing so, we strongly recommend adding a step that fetches a new access token to any CI/CD pipeline that calls the Airflow API. That way, your access token is automatically refreshed every time your CI/CD pipeline needs it. For examples of this implementation, see [CI/CD Templates](ci-cd#cicd-templates).
 
 ::: info
 
-If you need to call the Airflow API only once, you can retrieve a temporary access token (24 hours) at `cloud.astronomer.io/token`. If you retrieve a token here, you can skip the instructions in [Request Access Token](api-keys#request-access-token).
+If you need to call the Airflow API only once, you can retrieve a temporary access token (24 hours) at `https://cloud.astronomer.io/token`. If you retrieve a token here, you can skip the instructions in [Request Access Token](api-keys#request-access-token).
 
 :::
 
@@ -70,7 +70,7 @@ Make sure to replace the following values with your own:
 
 - `<dag-id>`
 - `<deployment-url>`
-- `<api-key-secret>`
+- `<access-token>`
 
 This will trigger a DAG run for your desired DAG with an `execution_date` value of `NOW()`, which is equivalent to clicking the **Play** button in the main **DAGs** view of the Airflow UI.
 
