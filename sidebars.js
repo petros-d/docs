@@ -67,8 +67,7 @@ module.exports = {
       'known-limitations',
       'resource-reference-aws',
       'global-variables',
-      'shared-responsibility-model',
-      'update-iam-role-trust-relationship'
+      'shared-responsibility-model'
       ],
     },
   ],
