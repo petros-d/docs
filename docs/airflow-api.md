@@ -19,21 +19,21 @@ To make an Airflow API request, you need:
 
 ## Step 1: Retrieve an Access Token and Deployment URL
 
-To make an Airflow API request, you need:
+All Airflow API calls require the following two values:
 
-- An API key.
+- An access token.
 - A Deployment URL.
 
-To create an API key, follow the steps in [Deployment API Keys](api-keys). Be sure to copy the API key secret, as you need to include this in your REST API calls. Note that you still need to [refresh your access token](api-keys#refresh-access-token) at least once every 24 hours to access your Deployment via API key.
+To retrieve an access token, follow the steps in [Request Access Token](api-keys#request-access-token). Note that you need to [refresh your access token](api-keys#refresh-access-token) every time you make a request to the Airflow API. To avoid manually fetching this token, we strongly recommend adding re-requesting access tokens in any CI/CD pipeline that uses the Airflow API. For examples of this implementation, see [CI/CD Templates](ci-cd#cicd-templates).
 
-To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The URL where you are now accessing the Airflow UI is your Deployment URL. It includes the name of your Organization and a short Deployment ID. For example: `https://mycompany.astronomer.run/dhbhijp0`.
+To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The URL for the Airflow UI is your Deployment URL. It includes the name of your Organization and a short Deployment ID. For example, your Deployment URL will look similar to `https://mycompany.astronomer.run/dhbhijp0`.
 
 ## Step 2: Make an Airflow API Request
 
 With the information from Step 1, you can now run `GET` or `POST` requests to any supported endpoints in Airflow's [Rest API Reference](https://airflow.apache.org/docs/stable/rest-api-ref.html). For example, to retrieve a list of all DAGs in a Deployment, you can run:
 
 ```sh
-curl -X GET <deployment-url>/api/v1/dags -H 'Accept: application/json' -H 'Cache-Control: no-cache' -H "Authorization: Bearer <api-key-secret>"
+curl -X GET <deployment-url>/api/v1/dags -H 'Accept: application/json' -H 'Cache-Control: no-cache' -H "Authorization: Bearer <access-token>"
 ```
 
 Below, we'll walk through an example request via cURL to Airflow's "Trigger DAG" endpoint and an example request via Python to the "Get all Pools" endpoint.
@@ -55,7 +55,7 @@ The command for your request should look like this:
 ```
 curl -v -X POST
 <deployment-url>/api/v1/dags/<dag-id>/dag_runs
--H 'Authorization: Bearer <api-key-secret>’
+-H 'Authorization: Bearer <access-token>’
 -H ‘Cache-Control: no-cache’
 -H ‘content-type: application/json’ -d ‘{}’
 ```
@@ -91,7 +91,7 @@ Here, your request becomes:
 ```
 curl -v -X POST
 <deployment-url>/api/v1/dags/<dag-id>/dag_runs
--H ‘Authorization: <api-key-secret>’
+-H ‘Authorization: <access-token>’
 -H ‘Cache-Control: no-cache’
 -H ‘content-type: application/json’ -d ‘{“execution_date”:“2019-11-16T11:34:00”}’
 ```
@@ -109,7 +109,7 @@ Here, your request would look like this:
 ```python
 python
 import requests
-token="<api-key-secret>"
+token="<access-token>"
 base_url="<deployment-url>"
 resp = requests.get(
    url=base_url + "/api/v1/pools",
