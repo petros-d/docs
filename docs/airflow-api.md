@@ -21,8 +21,8 @@ To make an Airflow API request, you need:
 
 All Airflow API calls require the following two values:
 
-- An access token.
-- A Deployment URL.
+- An access token
+- A Deployment URL
 
 To retrieve an access token, follow the steps in [Request Access Token](api-keys#request-access-token). Note that you need to [refresh your access token](api-keys#refresh-access-token) every time you make a request to the Airflow API. To avoid manually fetching this token, we strongly recommend adding re-requesting access tokens in any CI/CD pipeline that uses the Airflow API. For examples of this implementation, see [CI/CD Templates](ci-cd#cicd-templates).
 
