@@ -24,7 +24,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 - Fixed an issue where you could not access Airflow's REST API with a Deployment API key.
 - Fixed an issue where you couldn't update or delete an API key after creating it.
-
+- Fixed an issue where calling the `imageDeploy` API mutation with a Deployment API key would result in an error.
 ## October 15, 2021
 
 ### Minor Improvements
