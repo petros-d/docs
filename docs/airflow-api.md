@@ -28,6 +28,12 @@ To retrieve an access token, follow the steps in [Request Access Token](api-keys
 
 To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The URL for the Airflow UI is your Deployment URL. It includes the name of your Organization and a short Deployment ID. For example, your Deployment URL will look similar to `https://mycompany.astronomer.run/dhbhijp0`.
 
+::: info
+
+If you need to call the Airflow API only once, you can retrieve a temporary access token at `cloud.astronomer.io/token`. This token lasts only for 24 hours.
+
+:::
+
 ## Step 2: Make an Airflow API Request
 
 With the information from Step 1, you can now run `GET` or `POST` requests to any supported endpoints in Airflow's [Rest API Reference](https://airflow.apache.org/docs/stable/rest-api-ref.html). For example, to retrieve a list of all DAGs in a Deployment, you can run:
