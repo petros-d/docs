@@ -27,6 +27,6 @@ The customer is responsible for managing certain security aspects of their Astro
 - Store and retrieve [API keys](api-keys), connections and [environment variables](environment-variables) for your data pipelines
 - Integrate with your federated identity management platform for secure single sign-on (SSO) authentication and customer managed credentials
 - Develop and maintain data pipelines with security and quality coding best practices, inclusive of vulnerability management of your plugins and dependencies
-- [Regularly upgrade your Deployment(s)](https://docs.astronomer.io/upgrade-runtime) to the latest Astronomer Runtime to take advantage of new functionality, as well as bug and security fixes
+- Regularly [upgrade your Deployment(s)](upgrade-runtime) to the latest Astronomer Runtime to take advantage of new functionality, as well as bug and security fixes
 - [Configure and manage Deployment resource settings](https://docs.astronomer.io/configure-deployment) for your data pipeline workloads
 - [Secure the network communications](https://docs.astronomer.io/install-aws#step-4-let-astronomer-complete-the-install) between your Data Plane and sensitive data resources
