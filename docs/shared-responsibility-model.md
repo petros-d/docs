@@ -4,7 +4,7 @@ title: "Shared Responsibility Model"
 id: 'shared-responsibility-model'
 ---
 
-Astronomer Cloud security and reliability of customer tasks is the highest priority. As an Astronomer Cloud customer, you benefit from a fully-managed data orchestration platform, that is built to meet the requirements of the most security-sensitive organizations.
+Astronomer's highest priority is the security and reliability of your tasks. As an Astronomer Cloud customer, you benefit from a fully-managed data orchestration platform that meets the requirements of the most security-sensitive organizations.
 
 Security is a shared responsibility between Astronomer and you (the customer), as described below.
 
