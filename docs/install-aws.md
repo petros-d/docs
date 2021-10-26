@@ -121,7 +121,7 @@ The output of this command is a YAML file containing information about the role:
 }
 ```
 
-For subsequent Cluster deployments, [update your existing IAM Role Trust Relationship](update-iam-role-trust-relationship) with the External ID provided by Astronomer.
+To provision additional Clusters, complete the setup in [Add a Cluster](add-a-cluster) after completing your initial installation. 
 
 ## Step 4: Let Astronomer Complete the Install
 
