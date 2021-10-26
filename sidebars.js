@@ -74,7 +74,6 @@ module.exports = {
       'known-limitations',
       'resource-reference-aws',
       'global-variables',
-      'update-iam-role-trust-relationship'
       ],
     },
   ],
