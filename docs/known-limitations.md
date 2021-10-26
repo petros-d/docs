@@ -21,7 +21,6 @@ If you have questions or thoughts about any item below, don't hesitate to reach 
 - We do not currently support PgBouncer, but the RDS instance provisioned in your Cluster will support around 1000 connections to your database, enough to support 10-12 Deployments.
 - Tasks longer than the worker termination grace period may become zombies.
 - If a user changes Workspace roles on Astronomer, it can take a maximum of 10 minutes for corresponding Airflow permission changes to take effect.
-- [Requests to Airflow's REST API](airflow-api) can only be made using a temporary token. Support for long-lasting Deployment API keys coming soon.
 - The Astronomer CLI is generally limited to `astro dev` commands, in addition to `astro deploy` and `astro auth`. Full functionality coming soon.
 - A set of 40 example DAGs will be appear in the Airflow UI when you create a new Deployment. Corresponding DAG files should not appear in your local project directory. To remove these example DAGs at any time, set the following Environment Variable via the Astronomer UI: `AIRFLOW__CORE__LOAD_EXAMPLES=False`
 - Clicking on **Refresh DAG** in the Airflow UI will redirect you to `<org-name>.astronomer.run` (Astronomer Home Page) instead of the task instance URL. We recommend upgrading to [Runtime 4.0](runtime-release-notes#astronomer-runtime-400), as Airflow 2.2 no longer supports this refresh button in the Airflow UI.

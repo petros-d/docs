@@ -19,14 +19,20 @@ To make an Airflow API request, you need:
 
 ## Step 1: Retrieve an Access Token and Deployment URL
 
-Before making an Airflow API request, you need to retrieve a few key pieces of information from Astronomer Cloud. Specifically, you need:
+All Airflow API calls require the following two values:
 
-- An access token.
-- A Deployment URL.
+- An access token
+- A Deployment URL
 
-To retrieve an access token, go to `cloud.astronomer.io/token` and copy the token that appears. This token is valid only for 24 hours.
+To retrieve an access token, [create a Deployment API key](api-keys#create-an-api-key) on Astronomer and follow the instructions in [Request Access Token](api-keys#request-access-token). Note that you need to refresh that token every time you make a request to the Airflow API. To avoid manually doing so, we strongly recommend adding a step that fetches a new access token to any CI/CD pipeline that calls the Airflow API. That way, your access token is automatically refreshed every time your CI/CD pipeline needs it. For examples of this implementation, see [CI/CD Templates](ci-cd#cicd-templates).
 
-To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The URL where you are now accessing the Airflow UI is your Deployment URL. It includes the name of your Organization and a short Deployment ID. For example: `https://mycompany.astronomer.run/dhbhijp0`.
+::: info
+
+If you need to call the Airflow API only once, you can retrieve a temporary access token (24 hours) at `https://cloud.astronomer.io/token`. If you retrieve a token here, you can skip the instructions in [Request Access Token](api-keys#request-access-token).
+
+:::
+
+To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The URL for the Airflow UI is your Deployment URL. It includes the name of your Organization and a short Deployment ID. For example, your Deployment URL will look similar to `https://mycompany.astronomer.run/dhbhijp0`.
 
 ## Step 2: Make an Airflow API Request
 
