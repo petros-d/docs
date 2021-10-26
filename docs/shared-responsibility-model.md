@@ -8,7 +8,9 @@ Astronomer's highest priority is the security and reliability of your tasks. As 
 
 Security is a shared responsibility between Astronomer and you (the customer), as described below.
 
-**Security of the Astronomer Cloud** - Astronomer is responsible for providing a secure and reliable managed service offering, inclusive of:
+## Astronomer's Security Responsibilities
+
+Astronomer is responsible for providing a secure and reliable managed service offering, including:
 
 - [Control Plane](https://docs.astronomer.io/#features) and core services (Cloud UI, Cloud API, Deployment Access, Cloud Image Repository)
 - Secure authentication and authorization to all interfaces (UI, API, CLI)
