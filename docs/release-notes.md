@@ -14,7 +14,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 **Latest CLI Version**: 1.0.2 ([Release notes](cli-release-notes))
 
-## October 22, 2021
+## October 25, 2021
 
 ### Minor Improvements
 
