@@ -33,13 +33,11 @@ For implementation details on deferrable operators, read the [Apache Airflow doc
 
 ## Prerequisites
 
-<<<<<<< HEAD
-To use deferrable operators on Astronomer Cloud, you must deploy your code to a Deployment running [Astronomer Runtime 4.0+](release-notes#astronomer-runtime-4-0-0). Currently, deferrable operators are not supported in local Airflow environments created via the Astronomer CLI. For more information on upgrading your Deployment's Runtime version, read [Upgrade Runtime](upgrade-runtime).
-=======
-To use deferrable operators on Astronomer Cloud, you must first upgrade to [Astronomer Runtime 4.0+](release-notes#astronomer-runtime-4-0-0) as described in [Upgrade Runtime](upgrade-runtime).
->>>>>>> 6c40aafa84f9c1d1f30b084956c9a47caee06a8e
+To use deferrable operators on Astronomer Cloud, you must deploy your code to a Deployment running [Astronomer Runtime 4.0+](release-notes#astronomer-runtime-4-0-0). For more information on upgrading your Deployment's Runtime version, read [Upgrade Runtime](upgrade-runtime).
 
 To use deferrable operators available exclusively on Astronomer Runtime, you must additionally add the `astronomer-operator-wrappers` package to the `packages.txt` file of your Astronomer project.
+
+> **Note:** Support for the Triggerer in local Airflow environments running via the Astronomer CLI is coming soon. In the meantime, this means you cannot test deferrable operator functionally locally. If you run a DAG locally that imports a deferrable operator, the DAG falls back to using the non-deferrable version of that operator.
 
 ## Using Deferrable Operators
 
