@@ -4,29 +4,31 @@ title: "Shared Responsibility Model"
 id: 'shared-responsibility-model'
 ---
 
+## Overview
+
 Astronomer's highest priority is the security and reliability of your tasks. As an Astronomer Cloud customer, you benefit from a fully-managed data orchestration platform that meets the requirements of the most security-sensitive organizations.
 
-Security is a shared responsibility between Astronomer and you (the customer), as described below.
+Astronomer Cloud operates on a model of shared responsibility, which means that both the Astronomer team and Astronomer customers are responsible for the security of the platform. This document specifies areas of security ownership for both Astronomer customers and the Astronomer team.
 
 ## Astronomer's Security Responsibilities
 
 Astronomer is responsible for providing a secure and reliable managed service offering, including:
 
-- [Control Plane](https://docs.astronomer.io/#features) and core services (Cloud UI, Cloud API, Deployment Access, Cloud Image Repository)
-- Secure authentication and authorization to all interfaces (UI, API, CLI)
-- Automated provisioning, scaling, and configuration management of Astronomer Cloud resources in the Data Plane
-- Ongoing maintenance (currency, hardening, patching) and uptime monitoring of Astronomer Cloud [resources](https://docs.astronomer.io/resource-reference-aws) in the Data Plane
-- Data encryption (at rest/in flight) of Astronomer managed components (Control and Data Planes)
-- Latest production-ready and supported distribution of [Astronomer Runtime](https://docs.astronomer.io/upgrade-runtime) available for net-new and to be upgraded Deployments
+- Managing the [Control Plane](#features) and core services (Cloud UI, Cloud API, Deployment Access, Cloud Image Repository).
+- Securing authentication and authorization to all interfaces (UI, API, CLI).
+- Automating provisioning, scaling, and configuration management of Astronomer Cloud resources in the Data Plane.
+- Completing ongoing maintenance (currency, hardening, patching) and uptime monitoring of Astronomer Cloud. [resources](resource-reference-aws) in the Data Plane.
+- Maintaining data encryption (at rest/in flight) of Astronomer managed components (Control and Data Planes).
+- Consistently releasing production-ready and supported distributions of [Astronomer Runtime](upgrade-runtime) net-new and to-be-upgraded Deployments.
 
 ## Customer Security Responsibilities  
 
 The customer is responsible for managing certain security aspects of their Astronomer Cloud Organization and Deployments, including:
 
-- Invite, remove, and manage roles and permissions of users and API keys within your organization and workspace(s)
-- Store and retrieve [API keys](api-keys), connections and [environment variables](environment-variables) for your data pipelines
-- Integrate with your federated identity management platform for secure single sign-on (SSO) authentication and customer managed credentials
-- Develop and maintain data pipelines with security and quality coding best practices, inclusive of vulnerability management of your plugins and dependencies
-- Regularly [upgrade your Deployment(s)](upgrade-runtime) to the latest Astronomer Runtime to take advantage of new functionality, as well as bug and security fixes
-- [Configure and manage Deployment resource settings](https://docs.astronomer.io/configure-deployment) for your data pipeline workloads
-- [Secure the network communications](install-aws#step-4-let-astronomer-complete-the-install) between your Data Plane and sensitive data resources
+- Inviting, removing, and managing roles and permissions of users and API keys within their organization and workspace(s).
+- Storing and retrieving [API keys](api-keys), connections and [environment variables](environment-variables) for data pipelines.
+- Integrating with their federated identity management platform for secure single sign-on (SSO) authentication and customer managed credentials.
+- Developing and maintaining data pipelines with security and quality coding best practices, inclusive of vulnerability management of plugins and dependencies.
+- Regularly [upgrading their Deployment(s)](upgrade-runtime) to the latest Astronomer Runtime version to take advantage of new functionality, as well as bug and security fixes.
+- [Configuring and managing Deployment resource settings](configure-deployment) for data pipeline workloads.
+- [Securing the network communications](install-aws#step-4-let-astronomer-complete-the-install) between their Data Plane and sensitive data resources.
