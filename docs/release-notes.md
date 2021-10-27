@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Astronomer Cloud'
 title: 'Astronomer Cloud Release Notes'
-id: 'release-notes'
+id: release-notes
 ---
 
 ## Overview

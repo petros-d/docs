@@ -1,7 +1,7 @@
 ---
 title: 'Make Requests to the Apache Airflow API'
 sidebar_label: 'Airflow API'
-id: 'airflow-api'
+id: airflow-api
 ---
 
 ## Overview

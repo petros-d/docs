@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Astronomer Runtime'
 title: 'Astronomer Runtime Release Notes'
-id: 'runtime-release-notes'
+id: runtime-release-notes
 ---
 
 ## Overview

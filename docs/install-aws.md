@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Install on AWS'
 title: 'Install Astronomer Cloud on AWS'
-id: 'install-aws'
+id: install-aws
 ---
 
 ## Overview
@@ -121,7 +121,7 @@ The output of this command is a YAML file containing information about the role:
 }
 ```
 
-To provision additional Clusters, complete the setup in [Add a Cluster](add-a-cluster) after completing your initial installation. 
+To provision additional Clusters, complete the setup in [Add a Cluster](add-a-cluster) after completing your initial installation.
 
 ## Step 4: Let Astronomer Complete the Install
 

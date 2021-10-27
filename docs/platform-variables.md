@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Global Environment Variables'
 title: 'Global Environment Variables'
-id: 'global-variables'
+id: global-variables
 ---
 
 ## Overview

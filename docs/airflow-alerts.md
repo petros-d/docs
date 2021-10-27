@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Airflow Alerts'
 title: 'Configure Airflow Alerts on Astronomer'
-id: 'airflow-alerts'
+id: airflow-alerts
 ---
 
 ## Overview

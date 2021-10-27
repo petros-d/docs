@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Add a Cluster'
 title: "Add a New Cluster"
-id: 'add-a-cluster'
+id: add-a-cluster
 ---
 
 On Astronomer Cloud, you can configure multiple Clusters for hosting and running your data pipelines. By default, each Astronomer installation starts with one Cluster. This guide provides instructions for provisioning additional Clusters on your Astronomer Cloud installation.

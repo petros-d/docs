@@ -1,7 +1,7 @@
 ---
 sidebar_label: "AWS Resource Reference"
 title: "Resources Required for Astronomer Cloud on AWS"
-id: "resource-reference-aws"
+id: resource-reference-aws
 ---
 
 Astronomer provisions a specific set of resources for each Cluster running on your cloud. Use the following document as a reference for what resources are provisioned, as well as their purpose in the Cluster.

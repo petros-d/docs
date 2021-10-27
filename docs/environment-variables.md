@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Environment Variables'
 title: 'Set Environment Variables on Astronomer'
-id: 'environment-variables'
+id: environment-variables
 ---
 
 ## Overview
