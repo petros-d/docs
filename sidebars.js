@@ -45,6 +45,13 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Administer',
+      items: [
+      'add-a-cluster',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Astronomer Runtime',
       items: [
       'upgrade-runtime',
@@ -67,7 +74,7 @@ module.exports = {
       'known-limitations',
       'resource-reference-aws',
       'global-variables',
-      'shared-responsibility-model'
+      'shared-responsibility-model',
       ],
     },
   ],
