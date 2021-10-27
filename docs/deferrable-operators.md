@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Deferrable Operators'
 title: 'Deferrable Operators'
-id: 'deferrable-operators'
+id: deferrable-operators
 ---
 
 ## Overview

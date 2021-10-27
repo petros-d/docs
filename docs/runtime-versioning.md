@@ -1,7 +1,7 @@
 ---
 sidebar_label: "Runtime Versioning"
 title: "Astronomer Runtime Versioning"
-id: "runtime-versioning"
+id: runtime-versioning
 ---
 
 ## Overview

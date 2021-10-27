@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Configure a Deployment'
 title: 'Configure a Deployment'
-id: 'configure-deployment'
+id: configure-deployment
 ---
 
 ## Overview

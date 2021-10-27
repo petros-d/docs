@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Known Limitations'
 title: 'Known Limitations'
-id: 'known-limitations'
+id: known-limitations
 ---
 
 ## Overview

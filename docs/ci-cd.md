@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'CI/CD'
 title: 'Automate Code Deploys with CI/CD'
-id: 'ci-cd'
+id: ci-cd
 ---
 
 ## Overview

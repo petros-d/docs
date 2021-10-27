@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Shared Responsibility Model'
 title: "Shared Responsibility Model"
-id: 'shared-responsibility-model'
+id: shared-responsibility-model
 ---
 
 ## Overview
@@ -14,7 +14,7 @@ Astronomer Cloud operates on a model of shared responsibility, which means that 
 
 Astronomer is responsible for providing a secure and reliable managed service offering, including:
 
-- Managing the [Control Plane](#features) and core services (Cloud UI, Cloud API, Deployment Access, and Cloud Image Repository).
+- Managing the Control Plane and core services (Cloud UI, Cloud API, Deployment Access, and Cloud Image Repository).
 - Securing authentication and authorization to all interfaces (UI, API, and CLI).
 - Automating provisioning, scaling, and configuration management of Astronomer Cloud resources in the Data Plane.
 - Completing ongoing maintenance (currency, hardening, patching) and uptime monitoring of Astronomer Cloud [resources](resource-reference-aws) in the Data Plane.

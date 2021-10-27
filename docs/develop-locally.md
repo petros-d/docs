@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Develop Locally'
 title: 'Develop Code Locally with the Astronomer CLI'
-id: 'develop-locally'
+id: develop-locally
 ---
 
 import {siteVariables} from '@site/src/versions';

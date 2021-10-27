@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Install the CLI'
 title: 'Install the Astronomer CLI'
-id: 'install-cli'
+id: install-cli
 ---
 
 import {siteVariables} from '@site/src/versions';

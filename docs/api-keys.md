@@ -1,7 +1,7 @@
 ---
 title: 'Manage Deployment API Keys'
 sidebar_label: 'Deployment API Keys'
-id: 'api-keys'
+id: api-keys
 ---
 
 ## Overview
