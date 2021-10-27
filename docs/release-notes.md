@@ -12,7 +12,18 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 **Latest Runtime Version**: 4.0.0 ([Release notes](runtime-release-notes))
 
-**Latest CLI Version**: 1.0.1 ([Release notes](cli-release-notes))
+**Latest CLI Version**: 1.0.2 ([Release notes](cli-release-notes))
+
+## October 25, 2021
+
+### Minor Improvements
+
+- When deleting a Deployment via the UI, you now have to type the name of the Deployment in order to confirm its deletion.
+
+### Bug Fixes
+
+- Fixed an issue where you could not access Airflow's REST API with a Deployment API key.
+- Fixed an issue where calling the `imageDeploy` API mutation with a Deployment API key would result in an error.
 
 ## October 15, 2021
 

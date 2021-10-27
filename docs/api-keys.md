@@ -47,9 +47,9 @@ If you just need to make a single API call, you can use a temporary user authent
 
 :::
 
-## Refresh Access Token
+## Request Access Token
 
-In order to deploy code on Astronomer with a Deployment API key, you need to use the API key ID and secret to fetch an access token. This access token is required by the Astronomer API to trigger the deploy code process. It is valid only for 24 hours. To fetch a token with an existing API key ID and secret, run the following API request:
+In order to deploy code on Astronomer with a Deployment API key, you need to use the API key ID and secret to request an access token. This access token is required by the Astronomer API to trigger the deploy code process. It is valid only for 24 hours. To fetch a token with an existing API key ID and secret, run the following API request:
 
 ```curl
 curl --location --request POST "https://auth.astronomer.io/oauth/token" \
@@ -61,9 +61,9 @@ curl --location --request POST "https://auth.astronomer.io/oauth/token" \
             \"grant_type\": \"client_credentials\"}" | jq -r '.access_token'
 ```
 
-Make sure to replace `api-key-id` and `api-key-secret` in this request with values that correspond to your own API key. 
+Make sure to replace `api-key-id` and `api-key-secret` in this request with values that correspond to your own API key.
 
-To avoid manually fetching this token, we strongly recommend adding this API request to any CI/CD pipeline that uses Deployment API keys. That way, your access token is automatically refreshed every time your CI/CD pipeline needs it to complete the deploy code process. For examples of this implementation, see [CI/CD on Astronomer](ci-cd).
+To avoid manually fetching this token, we strongly recommend adding this API request to any CI/CD pipeline that uses Deployment API keys. That way, your access token is automatically refreshed every time your CI/CD pipeline needs it to complete the deploy code process. For examples of this implementation, see [CI/CD Templates](ci-cd#cicd-templates).
 
 ## Delete an API Key
 
