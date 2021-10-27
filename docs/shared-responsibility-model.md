@@ -21,7 +21,7 @@ Astronomer is responsible for providing a secure and reliable managed service of
 - Maintaining data encryption (at rest/in flight) of Astronomer managed components (Control and Data Planes).
 - Consistently releasing production-ready and supported distributions of [Astronomer Runtime](upgrade-runtime) for net-new and to-be-upgraded Deployments.
 
-## Customer Security Responsibilities  
+## Customer's Security Responsibilities  
 
 The customer is responsible for managing certain security aspects of their Astronomer Cloud Organization and Deployments, including:
 
