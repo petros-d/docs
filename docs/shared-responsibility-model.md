@@ -14,19 +14,19 @@ Astronomer Cloud operates on a model of shared responsibility, which means that 
 
 Astronomer is responsible for providing a secure and reliable managed service offering, including:
 
-- Managing the [Control Plane](#features) and core services (Cloud UI, Cloud API, Deployment Access, Cloud Image Repository).
-- Securing authentication and authorization to all interfaces (UI, API, CLI).
+- Managing the [Control Plane](#features) and core services (Cloud UI, Cloud API, Deployment Access, and Cloud Image Repository).
+- Securing authentication and authorization to all interfaces (UI, API, and CLI).
 - Automating provisioning, scaling, and configuration management of Astronomer Cloud resources in the Data Plane.
-- Completing ongoing maintenance (currency, hardening, patching) and uptime monitoring of Astronomer Cloud. [resources](resource-reference-aws) in the Data Plane.
+- Completing ongoing maintenance (currency, hardening, patching) and uptime monitoring of Astronomer Cloud [resources](resource-reference-aws) in the Data Plane.
 - Maintaining data encryption (at rest/in flight) of Astronomer managed components (Control and Data Planes).
-- Consistently releasing production-ready and supported distributions of [Astronomer Runtime](upgrade-runtime) net-new and to-be-upgraded Deployments.
+- Consistently releasing production-ready and supported distributions of [Astronomer Runtime](upgrade-runtime) for net-new and to-be-upgraded Deployments.
 
 ## Customer Security Responsibilities  
 
 The customer is responsible for managing certain security aspects of their Astronomer Cloud Organization and Deployments, including:
 
-- Inviting, removing, and managing roles and permissions of users and API keys within their organization and workspace(s).
-- Storing and retrieving [API keys](api-keys), connections and [environment variables](environment-variables) for data pipelines.
+- Managing roles and permissions of users and API keys within their organization and Workspace(s).
+- Storing and retrieving [API keys](api-keys), connections, and [environment variables](environment-variables) for data pipelines.
 - Integrating with their federated identity management platform for secure single sign-on (SSO) authentication and customer managed credentials.
 - Developing and maintaining data pipelines with security and quality coding best practices, inclusive of vulnerability management of plugins and dependencies.
 - Regularly [upgrading their Deployment(s)](upgrade-runtime) to the latest Astronomer Runtime version to take advantage of new functionality, as well as bug and security fixes.
