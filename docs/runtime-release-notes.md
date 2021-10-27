@@ -10,19 +10,19 @@ Astronomer Runtime is a Docker image built and published by Astronomer that exte
 
 For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runtime). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes). If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or [support@astronomer.io](mailto:support@astronomer.io).
 
-## Astronomer Runtime 4.0.0
+## Astronomer Runtime 4.0.1
 
-- Release date: October 12, 2021
+- Release date: October 26, 2021
 - Airflow version: 2.2.0
 
 ### Bug Fixes
 
 - Fixed an issue where worker pods were stuck in a terminating state when scaling down
-- Fixed an issue where `4.0.x` Runtime images did not show the correct version number in the Airflow UI navbar and footer
+- Fixed an issue where the Airflow UI navbar and footer did not show the correct running version of Astronomer Runtime
 
 ## Astronomer Runtime 4.0.0
 
-- Release date: October 26, 2021
+- Release date: October 12, 2021
 - Airflow version: 2.2.0
 
 ### Support for Airflow 2.2.0
@@ -52,7 +52,7 @@ As part of supporting deferrable operators, the Triggerer is now available as a 
 
 ### Bug Fixes
 
-- (Backported from Runtime 4.0.1) Fixed an issue where worker pods were stuck in a terminating state when scaling down
+- Fixed an issue where worker pods were stuck in a terminating state when scaling down (backported from Runtime 4.0.1)
 
 ## Astronomer Runtime 3.0.3
 
