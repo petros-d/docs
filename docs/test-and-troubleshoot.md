@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Testing and Troubleshooting'
 title: 'Test and Troubleshoot Your Astronomer Project'
-id: 'test-and-troubleshoot'
+id: test-and-troubleshoot
 ---
 
 ## Overview
