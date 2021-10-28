@@ -177,12 +177,12 @@ html[data-theme="dark"] {
 
 /* Color Mode Toggle Switch */
 html
-  .toggleTrack_node_modules-\@docusaurus-theme-classic-lib-next-theme-Toggle-styles-module {
+.navbar__items--right div:first-of-type div:first-of-type {
   background-color: var(--spectra-colors-purple-700);
   width: 54px;
 }
 
-.toggle_node_modules-\@docusaurus-theme-classic-lib-next-theme-Toggle-styles-module {
+.navbar__items--right div:first-of-type {
   border: solid 2px var(--spectra-colors-purple-700);
   border-radius: 100px;
   color: white;
@@ -195,7 +195,7 @@ html[data-theme="dark"] .react-toggle .react-toggle-thumb,
 }
 
 html
-  .toggleTrackThumb_node_modules-\@docusaurus-theme-classic-lib-next-theme-Toggle-styles-module {
+.navbar__items--right div:first-of-type div:first-of-type div:last-of-type {
   background-color: var(--spectra-colors-purple-200);
 }
 
