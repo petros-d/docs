@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Testing and Troubleshooting'
 title: 'Test and Troubleshoot Your Astronomer Project'
-id: 'create-project'
+id: 'test-and-troubleshoot'
 ---
 
 ## Overview
@@ -81,7 +81,7 @@ For example, the Apache Airflow command for viewing your entire configuration is
 
 ## Hard Reset Your Project
 
-In most cases, [restarting your local project](develop-project#restart-a-local-project) is sufficient for testing and making changes to your project. However, it is sometimes necessary to fully reset your Docker containers and metadata DB for testing purposes. To do so, run the following command: 
+In most cases, [restarting your local project](develop-project#restart-a-local-project) is sufficient for testing and making changes to your project. However, it is sometimes necessary to fully reset your Docker containers and metadata DB for testing purposes. To do so, run the following command:
 
 ```sh
 astro dev kill
