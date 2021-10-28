@@ -11,8 +11,14 @@ Astronomer is committed to continuous development of Astronomer Cloud. As you gr
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
 **Latest Runtime Version**: 4.0.1 ([Release notes](runtime-release-notes))
-
 **Latest CLI Version**: 1.0.2 ([Release notes](cli-release-notes))
+
+## October 28, 2021
+
+### Bug Fixes
+
+- Fixed an issue where you couldn't push code to Astronomer with a Deployment API Key via a CI/CD process.
+- Fixed an issue where you couldn't update or delete an API key after creating it.
 
 ## October 25, 2021
 
