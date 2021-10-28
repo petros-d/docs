@@ -178,12 +178,17 @@ html[data-theme="dark"] {
 /* Color Mode Toggle Switch */
 html
 .navbar__items--right div:first-of-type div:first-of-type {
-  background-color: var(--spectra-colors-purple-700);
   width: 54px;
 }
 
-.navbar__items--right div:first-of-type {
+.navbar__items--right > div:first-of-type {
+  border: solid 2px #5a408e;
+  border-radius: 1rem;
+}
+
+.navbar__items--right div[role=button] {
   border: solid 2px var(--spectra-colors-purple-700);
+  background: var(--spectra-colors-purple-700);
   border-radius: 100px;
   color: white;
   font-size: 24px;
