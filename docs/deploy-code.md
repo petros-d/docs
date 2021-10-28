@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Deploy Code'
 title: 'Deploy Code to Astronomer'
-id: 'deploy-code'
+id: deploy-code
 ---
 
 import {siteVariables} from '@site/src/versions';

@@ -10,7 +10,7 @@ module.exports = {
   favicon: 'img/favicon.svg',
   noIndex: true,
   organizationName: 'astronomer', // Usually your GitHub org/user name.
-  projectName: 'beta-docs', // Usually your repo name.
+  projectName: 'cloud-docs', // Usually your repo name.
   themeConfig: {
     algolia: {
       apiKey: '1821ae84c278294f722376cb52b520c0',
@@ -52,7 +52,7 @@ module.exports = {
           // The baseUrl will be automatically prepended to this value.
           to: 'https://www.astronomer.io/docs',
           // The string to be shown.
-          label: 'Return to Main Docs ↗',
+          label: 'Go to Main Docs ↗',
           // Left or right side of the navbar.
           position: 'right', // or 'right'
         },
@@ -61,7 +61,7 @@ module.exports = {
     footer: {
       links: [
         {
-          title: 'Docs (Beta)',
+          title: 'Astronomer Cloud Docs',
           items: [
             {
               label: 'Overview',
@@ -113,8 +113,8 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: ({versionDocsDirPath, docPath}) =>
-    `https://github.com/astronomer/cloud-docs/blob/main/docs/${docPath}`,
+          editUrl: ({ versionDocsDirPath, docPath }) =>
+            `https://github.com/astronomer/cloud-docs/blob/main/docs/${docPath}`,
           editLocalizedFiles: true,
           routeBasePath: '/',
           admonitions: {

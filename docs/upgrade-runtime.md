@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Upgrade Runtime'
 title: 'Upgrade Astronomer Runtime'
-id: 'upgrade-runtime'
+id: upgrade-runtime
 ---
 
 ## Overview

@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Astronomer Cloud'
 title: 'Astronomer Cloud Release Notes'
-id: 'release-notes'
+id: release-notes
 ---
 
 ## Overview
@@ -10,8 +10,41 @@ Astronomer is committed to continuous development of Astronomer Cloud. As you gr
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
-**Latest Runtime Version**: 3.0.3 ([Release notes](runtime-release-notes))
-**Latest CLI Version**: 1.0.0 ([Release notes](cli-release-notes))
+**Latest Runtime Version**: 4.0.1 ([Release notes](runtime-release-notes))
+
+**Latest CLI Version**: 1.0.2 ([Release notes](cli-release-notes))
+
+## October 25, 2021
+
+### Minor Improvements
+
+- When deleting a Deployment via the UI, you now have to type the name of the Deployment in order to confirm its deletion.
+
+### Bug Fixes
+
+- Fixed an issue where you could not access Airflow's REST API with a Deployment API key.
+- Fixed an issue where calling the `imageDeploy` API mutation with a Deployment API key would result in an error.
+
+## October 15, 2021
+
+### Minor Improvements
+
+- When creating a new Deployment, you can now select only the latest patch version for each major version of Astronomer Runtime.
+- When creating a new Deployment in the Astronomer UI, the cluster is pre-selected if there is only one cluster available.
+- The name of your Astronomer Deployment now appears on the main DAGs view of the Airflow UI.
+- You can now see the health status for each Deployment in your Workspace on the table view of the **Deployments** page in the Astronomer UI:
+
+   <div class="text--center">
+     <img src="/img/docs/health-status-table.png" alt="Deployment Health statuses visible in the Deployments table view" />
+   </div>
+
+- In the Astronomer UI, you can now access the Airflow UI for Deployments via the **Deployments** page's card view:
+
+    <div class="text--center">
+      <img src="/img/docs/open-airflow-card.png" alt="Open Airflow button in the Deployments page card view" />
+    </div>
+
+- The Astronomer UI now saves your color mode preference.
 
 ## October 1, 2021
 
@@ -24,7 +57,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 :::danger
 
-This release introduces a breaking change to code deploys via the Astronomer CLI. Starting on September 28, you must upgrade to v1.0.0 of the CLI to deploy code to Astronomer. [CI/CD processes](ci-cd) enabled by Deployment API Keys will continue to work and will not be affected. For more information, read the [CLI release notes](cli-release-notes).
+This release introduces a breaking change to code deploys via the Astronomer CLI. Starting on September 28, you must upgrade to v1.0.0 of the CLI to deploy code to Astronomer. [CI/CD processes](ci-cd) enabled by Deployment API keys will continue to work and will not be affected. For more information, read the [CLI release notes](cli-release-notes).
 
 :::
 

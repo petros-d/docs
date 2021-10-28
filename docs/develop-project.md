@@ -1,7 +1,7 @@
 ---
-sidebar_label: 'Develop Locally'
-title: 'Develop Your Local Astronomer Project'
-id: 'develop-locally'
+sidebar_label: 'Develop a Project'
+title: 'Develop Your Astronomer Project'
+id: 'develop-project'
 ---
 
 import {siteVariables} from '@site/src/versions';

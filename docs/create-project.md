@@ -8,9 +8,9 @@ import {siteVariables} from '@site/src/versions';
 
 ## Overview
 
-To develop Airflow pipelines on Astronomer, you need to create an Astronomer project on your local machine. An Astronomer project contains the set of files necessary to run Airflow, including dedicated folders for your DAG files, plugins, and dependencies. Once you've tested these files locally, the Astronomer project structure makes it easy to deploy your pipelines to Astronomer.
+To run Airflow pipelines on Astronomer Cloud, you first need to create an Astronomer project. An Astronomer project contains the set of files necessary to run Airflow, including dedicated folders for your DAG files, plugins, and dependencies. Once you've tested these files locally, the Astronomer project structure makes it easy to deploy your pipelines to Astronomer.
 
-The Astronomer project structure makes it easy to manage and deploy your pipelines to Astronomer Cloud. This guide provides instructions for creating a new Astronomer project, as well as information about the default Astronomer project structure.
+This guide provides instructions for creating a new Astronomer project, as well as information about the default Astronomer project structure.
 
 ## Prerequisites
 
@@ -41,7 +41,7 @@ This command generates the following files in the directory:
 └── requirements.txt # For Python packages
 ```
 
-These files are necessary for building a Docker image that can run Airflow pipelines on either your local machine or Astronomer Cloud.
+This set of files will build into a Docker image that you can either run on your local machine or deploy to Astronomer Cloud.
 
 ### Astronomer Runtime
 
@@ -101,4 +101,4 @@ After logging in, you should see the DAGs from your `dags` directory in the Airf
 <img src="/img/docs/sample-dag.png" alt="Example DAG in the Airflow UI" />
 </div>
 
-Running your project locally is an important step when testing your Astronomer project. For more information on running a local Airflow environment, read [Run a Project Locally](develop-locally#run-a-project-locally).
+Running your project locally is the best way to test your DAGs before pushing them to Astronomer Cloud. For more information on running a local Airflow environment, read [Test and Troubleshoot](test-and-troubleshoot#run-a-project-locally).

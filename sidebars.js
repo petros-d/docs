@@ -31,6 +31,7 @@ module.exports = {
       'environment-variables',
       'airflow-api',
       'airflow-alerts',
+      'deferrable-operators',
       ],
     },
     {
@@ -40,6 +41,13 @@ module.exports = {
       'configure-deployment',
       'api-keys',
       'ci-cd',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Administer',
+      items: [
+      'add-a-cluster',
       ],
     },
     {
@@ -65,7 +73,8 @@ module.exports = {
       },
       'known-limitations',
       'resource-reference-aws',
-      'global-variables'
+      'global-variables',
+      'shared-responsibility-model',
       ],
     },
   ],

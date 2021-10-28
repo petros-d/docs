@@ -1,7 +1,7 @@
 ---
 title: 'Make Requests to the Apache Airflow API'
 sidebar_label: 'Airflow API'
-id: 'airflow-api'
+id: airflow-api
 ---
 
 ## Overview
@@ -19,21 +19,27 @@ To make an Airflow API request, you need:
 
 ## Step 1: Retrieve an Access Token and Deployment URL
 
-Before making an Airflow API request, you need to retrieve a few key pieces of information from Astronomer Cloud. Specifically, you need:
+All Airflow API calls require the following two values:
 
-- An access token.
-- A Deployment URL.
+- An access token
+- A Deployment URL
 
-To retrieve an access token, go to `cloud.astronomer.io/token` and copy the token that appears. This token is valid only for 24 hours.
+To retrieve an access token, [create a Deployment API key](api-keys#create-an-api-key) on Astronomer and follow the instructions in [Request Access Token](api-keys#request-access-token). Note that you need to refresh that token every time you make a request to the Airflow API. To avoid manually doing so, we strongly recommend adding a step that fetches a new access token to any CI/CD pipeline that calls the Airflow API. That way, your access token is automatically refreshed every time your CI/CD pipeline needs it. For examples of this implementation, see [CI/CD Templates](ci-cd#cicd-templates).
 
-To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The base URL for the Airflow UI is your base Deployment URL. It includes your organization's URL, followed by a short Deployment ID (For example: `https://mycompany.astronomer.run/dhbhijp0`).
+::: info
+
+If you need to call the Airflow API only once, you can retrieve a temporary access token (24 hours) at `https://cloud.astronomer.io/token`. If you retrieve a token here, you can skip the instructions in [Request Access Token](api-keys#request-access-token).
+
+:::
+
+To retrieve your Deployment URL, open your Deployment in the Astronomer UI and click **Open Airflow**. The URL for the Airflow UI is your Deployment URL. It includes the name of your Organization and a short Deployment ID. For example, your Deployment URL will look similar to `https://mycompany.astronomer.run/dhbhijp0`.
 
 ## Step 2: Make an Airflow API Request
 
 With the information from Step 1, you can now run `GET` or `POST` requests to any supported endpoints in Airflow's [Rest API Reference](https://airflow.apache.org/docs/stable/rest-api-ref.html). For example, to retrieve a list of all DAGs in a Deployment, you can run:
 
 ```sh
-curl -X GET <base-deployment-url>/api/v1/dags -H 'Accept: application/json' -H 'Cache-Control: no-cache' -H "Authorization: Bearer <access-token>"
+curl -X GET <deployment-url>/api/v1/dags -H 'Accept: application/json' -H 'Cache-Control: no-cache' -H "Authorization: Bearer <access-token>"
 ```
 
 Below, we'll walk through an example request via cURL to Airflow's "Trigger DAG" endpoint and an example request via Python to the "Get all Pools" endpoint.
@@ -47,18 +53,24 @@ Use the following example API requests to begin automating your own Airflow acti
 If you'd like to externally trigger a DAG run, you can start with a generic cURL command to Airflow's POST endpoint:
 
 ```
-POST /airflow/api/v1/dags/<DAG_ID>/dag_runs
+POST /airflow/api/v1/dags/<dag-id>/dag_runs
 ```
 
 The command for your request should look like this:
 
 ```
 curl -v -X POST
-<base-deployment-url>/api/v1/dags/<dag-id>/dag_runs
--H 'Authorization: Bearer <api-key> ’
+<deployment-url>/api/v1/dags/<dag-id>/dag_runs
+-H 'Authorization: Bearer <access-token>’
 -H ‘Cache-Control: no-cache’
 -H ‘content-type: application/json’ -d ‘{}’
 ```
+
+Make sure to replace the following values with your own:
+
+- `<dag-id>`
+- `<deployment-url>`
+- `<access-token>`
 
 This will trigger a DAG run for your desired DAG with an `execution_date` value of `NOW()`, which is equivalent to clicking the **Play** button in the main **DAGs** view of the Airflow UI.
 
@@ -84,8 +96,8 @@ Here, your request becomes:
 
 ```
 curl -v -X POST
-<base-deployment-url>/api/v1/dags/<dag-id>/dag_runs
--H ‘Authorization: <api-key>’
+<deployment-url>/api/v1/dags/<dag-id>/dag_runs
+-H ‘Authorization: <access-token>’
 -H ‘Cache-Control: no-cache’
 -H ‘content-type: application/json’ -d ‘{“execution_date”:“2019-11-16T11:34:00”}’
 ```
@@ -103,10 +115,10 @@ Here, your request would look like this:
 ```python
 python
 import requests
-token="<api-key>"
-base_url="<base-deployment-url>"
+token="<access-token>"
+base_url="<deployment-url>"
 resp = requests.get(
-   url=base_url + "<base-deployment-url>/api/v1/pools",
+   url=base_url + "/api/v1/pools",
    headers={"Authorization": token},
    data={}
 )
