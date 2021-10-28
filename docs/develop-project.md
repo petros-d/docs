@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Develop a Project'
 title: 'Develop Your Astronomer Project'
-id: 'develop-project'
+id: develop-project
 ---
 
 import {siteVariables} from '@site/src/versions';
@@ -10,7 +10,7 @@ import {siteVariables} from '@site/src/versions';
 
 This document explains the various ways you can work in a local Astronomer project. Specifically, this guide provides instructions on how to:
 
-- Add DAG code to your project
+- Add DAG files to your project
 - Add Python and OS-level packages to your project
 - Add dependencies to your project
 - Run on-build commands
@@ -25,9 +25,9 @@ To develop locally, you need:
 - [The Astronomer CLI](install-cli)
 - [Docker](https://www.docker.com/products/docker-desktop)
 
-## Run a Project Locally
+## Build and Run a Project
 
-To run a local Astronomer project, run `astro dev start`. This command builds your project and spins up 3 Docker containers on your machine, each for a different Airflow component:
+To run your Astronomer project locally, run `astro dev start`. This command builds your project and spins up 3 Docker containers on your machine, each for a different Airflow component:
 
 - **Postgres:** Airflow's metadata database
 - **Webserver:** The Airflow component responsible for rendering the Airflow UI
@@ -35,23 +35,24 @@ To run a local Astronomer project, run `astro dev start`. This command builds yo
 
 Once the project builds, you can access the Airflow UI by going to `http://localhost:8080/` and logging in with `admin` for both your username and password. You can also access your Postgres database at `localhost:5432/postgres`.
 
-### Access Airflow Logs
+> **Note:** If you see Error: cannot start, project already running when you run this command, it means your local Airflow environment is already running your project. If there are changes you'd like to apply to your project, see Rebuild a Project.
 
-To show logs for the Scheduler or Webserver in a locally running Astronomer project, run `astro dev logs`. Once you run this command, the most recent logs for these components appear in your terminal window.
+### Restart a Local Project
 
-To continue monitoring logs, run `astro dev logs --follow`. The `--follow` flag ensures that the latest logs continue to appear in your terminal window.
+To restart a locally running Astronomer project, run the following two commands:
 
-### Run Airflow CLI Commands
+```sh
+$ astro dev stop
+$ astro dev start
+```
 
-To run [Apache Airflow CLI](https://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.html) commands in your locally running project, run `astro dev run` followed by an Airflow command.
-
-For example, the Apache Airflow command for viewing your entire configuration is `airflow config list`. To run this command with the Astronomer CLI, you would run `astro dev run config list` instead.
+These commands rebuild your image and restart the Docker containers running on your local machine with that new image. Alternatively, you can run just `astro dev stop` to stop your Docker containers without restarting or rebuilding your project.
 
 ## Rebuild a Project
 
 All Astronomer projects require you to specify a Debian-based Astronomer Runtime image in a `Dockerfile`. When you run your project locally or on Astronomer Cloud, all of your DAG code, packages, and configurations are built into this image.
 
-If you're making a change to your Astronomer project, you might have to rebuild your image and update your local Airflow environment to run your changes locally.
+Depending on the change you're making to your Astronomer project, you might have to rebuild your image to run your changes locally.
 
 ### DAG Code Changes
 
@@ -61,7 +62,7 @@ All changes made to the following files will be live in your project as soon as 
 - `plugins`
 - `include`
 
-Once you save your changes, refresh the Airflow Webserver in your browser to see them render.
+Once you save your changes, refresh the Airflow UI in your browser to see them render.
 
 ### Environment Changes
 
@@ -72,7 +73,14 @@ All changes made to the following files require rebuilding your image:
 - `requirements.txt`
 - `airflow_settings.yaml`
 
-To rebuild your project after making a change to any of these files, `astro dev stop` followed by `astro dev start`. In addition to rebuilding your image, these commands restart the Docker containers running your local Airflow environment.
+To rebuild your project after making a change to any of these files, run the following two commands:
+
+```sh
+$ astro dev stop
+$ astro dev start
+```
+
+In addition to rebuilding your image, these commands restart the Docker containers running your local Airflow environment.
 
 > **Note:** Note: As you develop locally, it may be necessary to reset your Docker containers and metadata DB for testing purposes. To do so, run astro dev kill instead of astro dev stop when rebuilding your image. This deletes all data associated with your local Postgres metadata database, including Airflow Connections, logs, and task history.
 
@@ -152,10 +160,12 @@ pymongo==3.7.2
 
 ## Configure `airflow_settings.yaml` (Local Development Only)
 
-When you first initialize a new Astronomer project, a file called `airflow_settings.yaml` is automatically generated. With this file, you can configure and programmatically generate Airflow [Connections](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html), [Pools](https://airflow.apache.org/docs/apache-airflow/stable/concepts/pools.html), and [Variables](https://airflow.apache.org/docs/apache-airflow/stable/howto/variable.html) when you're developing locally.
+When you first initialize a new Astronomer project, a file called `airflow_settings.yaml` is automatically generated. With this file, you can configure and programmatically generate Airflow [Connections](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html), [Pools](https://airflow.apache.org/docs/apache-airflow/stable/concepts/pools.html), and [Variables](https://airflow.apache.org/docs/apache-airflow/stable/howto/variable.html) so that you don't have to manually redefine these objects every time you restart your project.
+
+As a security measure, `airflow_settings.yaml` works only in local environments. If you deploy your project to a Deployment, the values in this file will not be pushed. To more easily manage your Airflow objects on Astronomer, we recommend [configuring a secrets backend](https://www.astronomer.io/docs/cloud/stable/customize-airflow/secrets-backend).
 
 :::caution
-If you are storing your project in a public directory, we recommend adding this file to your `.gitignore` or equivalent secret management service.
+If you are storing your project in a public directory or version control tool, we recommend adding this file to your `.gitignore` or equivalent secret management service.
 :::
 
 ### Add Airflow Connections, Pools, and Variables
