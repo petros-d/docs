@@ -20,7 +20,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 The Cloud UI has been redesigned so that you can more intuitively manage Organizations, Workspaces, and your user profile.
 
-The homepage is now a global view. From here, you can now see all Workspaces you have access to, as well as information and settings related to your **Organization**, which is a collection of specific users, teams, and Workspaces. Many features related to Organizations are coming soon, and the UI better represents how Organizations are structured and what you can do with them in the future:
+To start, the homepage is now a global view. From here, you can now see all Workspaces you have access to, as well as information and settings related to your **Organization**, which is a collection of specific users, teams, and Workspaces. Many features related to Organizations are coming soon, and the UI better represents how Organizations are structured and what you can do with them in the future:
 
 <div class="text--center">
   <img src="/img/docs/ui-release-note1.png" alt="New global menu in the UI" />
