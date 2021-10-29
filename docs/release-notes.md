@@ -14,6 +14,45 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 **Latest CLI Version**: 1.0.2 ([Release notes](cli-release-notes))
 
+## October 29, 2021
+
+### Cloud UI Redesign
+
+The Cloud UI has been redesigned so that you can more intuitively manage Organizations, Workspaces, and your user profile.
+
+The homepage is now a global view. From here, you can now see all Workspaces you have access to, as well as information and settings related to your **Organization**, which is a collection of specific users, teams, and Workspaces. Many features related to Organizations are coming soon, and the UI better represents how Organizations are structured and what you can do with them in the future:
+
+<div class="text--center">
+  <img src="/img/docs/ui-release-note1.png" alt="New global menu in the UI" />
+</div>
+
+You can now select specific Workspaces to work in. When you click into a Workspace, you'll notice the lefthand menu bar is now entirely dedicated to Workspace actions:
+
+- The Rocket icon brings you to the **Deployments** menu.
+- The People icon brings you to the **Workspace Access** menu.
+- The Gear icon brings you to the **Workspace Settings** menu.
+
+To get back to the global menu, you can either click the Astronomer "A" or click the Workspace name to produce a dropdown menu with your Organization.
+
+<div class="text--center">
+  <img src="/img/docs/ui-release-note1.png" alt="New Workspace menu in the UI" />
+</div>
+
+All user configurations can be found by clicking your user profile picture in the upper righthand corner of the UI. From the dropdown menu that appears, you can both configure user settings and access other Astronomer resources such as the Cloud documentation and the Astronomer Registry.
+
+<div class="text--center">
+  <img src="/img/docs/ui-release-note1.png" alt="New profile menu in the UI" />
+</div>
+
+### Minor Improvements
+
+- In a Deployment's information page, the **Astronomer Runtime** info box now also shows the version of Apache Airflow that the Deployment's Runtime image is based on.
+- You can now use any sized `t2`,`t3`, or `m5` EC2 instance to run the Data Plane.
+
+### Bug Fixes
+
+- Fixed an issue where a new Deployment's health status did not update unless you refreshed the Cloud UI
+
 ## October 25, 2021
 
 ### Minor Improvements
