@@ -17,8 +17,8 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Bug Fixes
 
-- Fixed an issue where you couldn't push code to Astronomer with a Deployment API Key via a CI/CD process.
-- Fixed an issue where you couldn't update or delete an API key after creating it.
+- Fixed an issue where you couldn't push code to Astronomer with a Deployment API Key via a CI/CD process
+- Fixed an issue where you couldn't update or delete an API key after creating it
 
 ## October 25, 2021
 
@@ -28,8 +28,8 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Bug Fixes
 
-- Fixed an issue where you could not access Airflow's REST API with a Deployment API key.
-- Fixed an issue where calling the `imageDeploy` API mutation with a Deployment API key would result in an error.
+- Fixed an issue where you could not access Airflow's REST API with a Deployment API key
+- Fixed an issue where calling the `imageDeploy` API mutation with a Deployment API key would result in an error
 
 ## October 15, 2021
 
@@ -106,7 +106,7 @@ Astronomer Cloud now officially supports Deployment API keys, which you can use 
 
 ### Bug Fixes
 
-- Fixed an issue where an incorrect total number of team members would appear in the **People** tab.
+- Fixed an issue where an incorrect total number of team members would appear in the **People** tab
 
 ## August 20, 2021
 
@@ -116,46 +116,46 @@ You can now programmatically trigger DAGs and update your Airflow Deployments on
 
 ### Minor Improvements
 
-- Set `AIRFLOW_HOME = 'usr/local/airflow'` as a permanent global environment variable.
-- In the Astronomer UI, long environment variable keys and values now wrap to fit the screen.
-- Added links for the Astronomer Registry and certification courses to the left-hand navbar.
-- Moved the **Teams** and **People** tabs into the **Settings** page of the UI.
-- Added **Cluster** information to the metadata section of a Deployment's information page in the UI.
-- Renamed various UI elements to better represent their functionality.
-- Increased the maximum **Worker Termination Grace Period** from 600 minutes (10 hours) to 1440 minutes (24 hours).
+- Set `AIRFLOW_HOME = 'usr/local/airflow'` as a permanent global environment variable
+- In the Astronomer UI, long environment variable keys and values now wrap to fit the screen
+- Added links for the Astronomer Registry and certification courses to the left-hand navbar
+- Moved the **Teams** and **People** tabs into the **Settings** page of the UI
+- Added **Cluster** information to the metadata section of a Deployment's information page in the UI
+- Renamed various UI elements to better represent their functionality
+- Increased the maximum **Worker Termination Grace Period** from 600 minutes (10 hours) to 1440 minutes (24 hours)
 
 ### Bug Fixes
 
-- The left-hand navbar in the UI is no longer cut off when minimized on smaller screens.
-- Fixed an issue where you could not delete a Workspace via the UI.
-- Fixed an issue where expired tokens would occasionally appear on `cloud.astronomer.io/token`.
-- Fixed an issue where the UI would initially load an inaccurate number of team members on the **Access** page.
-- Fixed alphabetical sorting by name in the **People** tab in the UI.
-- Removed placeholder columns from various tables in the UI.
+- The left-hand navbar in the UI is no longer cut off when minimized on smaller screens
+- Fixed an issue where you could not delete a Workspace via the UI
+- Fixed an issue where expired tokens would occasionally appear on `cloud.astronomer.io/token`
+- Fixed an issue where the UI would initially load an inaccurate number of team members on the **Access** page
+- Fixed alphabetical sorting by name in the **People** tab in the UI
+- Removed placeholder columns from various tables in the UI
 
 ## August 6, 2021
 
-### Improvements
+### Minor Improvements
 
 - Informational tooltips are now available on the **New Deployment** page.
 
 ### Bug Fixes
 
-- Fixed an issue where adding a user to a Workspace and then deleting the user from Astronomer made it impossible to create new Deployments in that Workspace.
-- Improved error handling in the Airflow UI in cases where a user does not exist or does not have permission to view a Deployment.
+- Fixed an issue where adding a user to a Workspace and then deleting the user from Astronomer made it impossible to create new Deployments in that Workspace
+- Improved error handling in the Airflow UI in cases where a user does not exist or does not have permission to view a Deployment
 
 ## July 30, 2021
 
 ### Improvements
 
-- Increased the limit of **Worker Resources** from 30 AU to 175 AU (17.5 CPU, 65.625 GB RAM). If your tasks require this many resources, reach out to us to make sure that your Cluster is sized appropriately.
-- Collapsed the **People** and **Teams** tabs on the left-hand navigation bar into a single **Access** tab.
-- Added a **Cluster** field to the Deployments tab in the Astronomer UI. Now, you can reference which Cluster each of your Deployments is in.
-- Replaced our white "A" favicon to one that supports color mode.
-- Informational tooltips now available in **Deployment Configuration**.
+- Increased the limit of **Worker Resources** from 30 AU to 175 AU (17.5 CPU, 65.625 GB RAM). If your tasks require this many resources, reach out to us to make sure that your Cluster is sized appropriately
+- Collapsed the **People** and **Teams** tabs on the left-hand navigation bar into a single **Access** tab
+- Added a **Cluster** field to the Deployments tab in the Astronomer UI. Now, you can reference which Cluster each of your Deployments is in
+- Replaced our white "A" favicon to one that supports color mode
+- Informational tooltips are now available in **Deployment Configuration**
 
 ### Bug Fixes
 
-- Fixed an issue where a deleted user could not sign up to Astronomer Cloud again.
-- Removed Deployment-level user roles from the Astronomer UI. Support for them coming soon.
-- Fixed an issue where a newly created Deployment wouldn't show up on the list of Deployments in the Workspace.
+- Fixed an issue where a deleted user could not sign up to Astronomer Cloud again
+- Removed Deployment-level user roles from the Astronomer UI. Support for them coming soon
+- Fixed an issue where a newly created Deployment wouldn't show up on the list of Deployments in the Workspace
