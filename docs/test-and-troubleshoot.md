@@ -1,12 +1,12 @@
 ---
 sidebar_label: 'Testing and Troubleshooting'
-title: 'Test and Troubleshoot Your Astronomer Project'
-id: test-and-troubleshoot
+title: 'Test and Troubleshoot Locally'
+id: test-and-troubleshoot-locally
 ---
 
 ## Overview
 
-This document provides information about testing and troubleshooting your Astronomer project within a locally running Airflow environment. Running and testing your project locally before deploying it to Astronomer Cloud is a best practice, especially if you are deploying to a production Cluster.
+As you develop data pipelines on Astronomer, we strongly recommend running and testing your DAGs locally before deploying your project to a Deployment on Astronomer Cloud. This document provides information about testing and troubleshooting DAGs in a local Apache Airflow environment with the Astronomer CLI.
 
 ## Run a Project Locally
 
@@ -16,21 +16,15 @@ Whenever you want to test your code, the first step is always to start a local A
 astro dev start
 ```
 
-This command builds your project and spins up 3 Docker containers on your machine, each for a different Airflow component:
+For more information about running your project locally, read [Build and Run a Project](develop-project#build-and-run-a-project).
 
-- **Postgres:** Airflow's metadata database
-- **Webserver:** The Airflow component responsible for rendering the Airflow UI
-- **Scheduler:** The Airflow component responsible for monitoring and triggering tasks
+## View Airflow Task Logs
 
-Once the project builds, you can access the Airflow UI by going to `http://localhost:8080/` and logging in with `admin` for both your username and password. You can also access your Postgres database at `localhost:5432/postgres`.
-
-## View Task Logs
-
-You can view logs for individual task runs in the Airflow UI. This is useful if you want to troubleshoot why a specific task run failed or retried.
+You can view logs for individual tasks in the Airflow UI. This is useful if you want to troubleshoot why a specific task instance failed or retried.
 
 To access these logs:
 
-1. In your local Airflow environment or in a Deployment on Astronomer, access the Airflow UI.
+1. Access the Airflow UI in your local Airflow environment.
 2. Open the DAG you want to troubleshoot:
 
     <div class="text--center">
@@ -57,7 +51,7 @@ To access these logs:
 
 ## Access Airflow Component Logs
 
-To show logs for the Scheduler or Webserver in a locally running Astronomer project, run the following command:
+To show logs for your Airflow Scheduler, Webserver, or Metadata DB locally, run the following command:
 
 ```sh
 astro dev logs
@@ -75,16 +69,20 @@ To continue monitoring logs, run `astro dev logs --follow`. The `--follow` flag 
 
 ## Run Airflow CLI Commands
 
-To run [Apache Airflow CLI](https://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.html) commands locally, run `astro dev run` followed by an Airflow command.
+To run [Apache Airflow CLI](https://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.html) commands locally, run the following:
+
+```sh
+astro dev run <airflow-cli-command>
+```
 
 For example, the Apache Airflow command for viewing your entire configuration is `airflow config list`. To run this command with the Astronomer CLI, you would run `astro dev run config list` instead.
 
-## Hard Reset Your Project
+## Hard Reset Your Local Environment
 
-In most cases, [restarting your local project](develop-project#restart-a-local-project) is sufficient for testing and making changes to your project. However, it is sometimes necessary to fully reset your Docker containers and metadata DB for testing purposes. To do so, run the following command:
+In most cases, [restarting your local project](develop-project#restart-your-local-environment) is sufficient for testing and making changes to your project. However, it is sometimes necessary to kill your Docker containers and metadata DB for testing purposes. To do so, run the following command:
 
 ```sh
 astro dev kill
 ```
 
-This command deletes all data associated with your local Postgres metadata database, including Airflow Connections, logs, and task history.
+This command forces your running containers to stop and deletes all data associated with your local Postgres metadata database, including Airflow Connections, logs, and task history.

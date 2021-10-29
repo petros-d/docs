@@ -33,7 +33,7 @@ module.exports = {
       'airflow-api',
       'airflow-alerts',
       'deferrable-operators',
-      'test-and-troubleshoot',
+      'test-and-troubleshoot-locally',
       ],
     },
     {

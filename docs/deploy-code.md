@@ -18,7 +18,7 @@ To deploy DAGs to Astronomer, you must have:
 
 - The [Astronomer CLI](install-cli) installed in an empty directory.
 - An Astronomer Workspace with at least one [Deployment](configure-deployment).
-- A [local Astronomer project](develop-locally).
+- A [local Astronomer project](create-project).
 - [Docker](https://www.docker.com/products/docker-desktop).
 
 > **Note:** If you’re running the Astronomer CLI with [buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/) enabled in Docker, you may see an error (`buildkit not supported by daemon`). Learn more in [this forum post](https://forum.astronomer.io/t/buildkit-not-supported-by-daemon-error-command-docker-build-t-airflow-astro-bcb837-airflow-latest-failed-failed-to-execute-cmd-exit-status-1/857).

@@ -93,7 +93,15 @@ Postgres Database: localhost:5432/postgres
 The default credentials are admin:admin
 `}</code></pre>
 
+## Step 3: Access the Airflow UI
+
 Once your project builds successfully, you can access the Airflow UI by going to `http://localhost:8080/` and logging in with `admin` for both your username and password.
+
+:::info
+
+It might take a few minutes for the Airflow UI to be available. As you wait for the Webserver container to start up, you may need to refresh your browser.
+
+:::
 
 After logging in, you should see the DAGs from your `dags` directory in the Airflow UI.
 
@@ -101,4 +109,4 @@ After logging in, you should see the DAGs from your `dags` directory in the Airf
 <img src="/img/docs/sample-dag.png" alt="Example DAG in the Airflow UI" />
 </div>
 
-Running your project locally is the best way to test your DAGs before pushing them to Astronomer Cloud. For more information on running a local Airflow environment, read [Test and Troubleshoot](test-and-troubleshoot#run-a-project-locally).
+Running your project locally is the best way to test your DAGs before pushing them to Astronomer Cloud. For more information on running a local Airflow environment, read [Test and Troubleshoot](test-and-troubleshoot-locally#run-a-project-locally).
