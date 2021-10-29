@@ -1,7 +1,7 @@
 ---
-title: "Apply a Platform Configuration Change on Astronomer"
-navTitle: "Apply a Config Change"
-description: "How to apply platform-wide configuration changes to Astronomer via Helm."
+sidebar_label: 'Apply a Config Change'
+title: 'Apply an Enterprise Platform Configuration Change'
+id: apply-platform-config
 ---
 
 ## Overview

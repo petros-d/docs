@@ -1,7 +1,7 @@
 ---
-title: "Configure Airflow Email Alerts on Astronomer"
-navTitle: "Airflow Alerts"
-description: "Configure Email Alerts on Astronomer to monitor the health of your Airflow Deployment and the status of your tasks."
+sidebar_label: 'Airflow Alerts'
+title: 'Configure Airflow Alerts on Astronomer Enterprise'
+id: airflow-alerts
 ---
 
 ## Overview
