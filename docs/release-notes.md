@@ -11,13 +11,14 @@ Astronomer is committed to continuous development of Astronomer Cloud. As you gr
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
 **Latest Runtime Version**: 4.0.1 ([Release notes](runtime-release-notes))
+
 **Latest CLI Version**: 1.0.2 ([Release notes](cli-release-notes))
 
 ## October 29, 2021
 
-### Cloud UI Redesign
+### Astronomer UI Redesign
 
-The Cloud UI has been redesigned so that you can more intuitively manage Organizations, Workspaces, and your user profile.
+The Astronomer UI has been redesigned so that you can more intuitively manage Organizations, Workspaces, and your user profile.
 
 To start, the homepage is now a global view. From here, you can now see all Workspaces that you have access to, as well as information and settings related to your **Organization**: a collection of specific users, teams, and Workspaces. Many features related to Organizations are coming soon, but the UI now better represents how Organizations are structured and what you can do with them in the future:
 
@@ -45,8 +46,9 @@ All user configurations can be found by clicking your user profile picture in th
 
 ### Minor Improvements
 
-- In a Deployment's information page, the **Astronomer Runtime** info box now also shows the version of Apache Airflow that the Deployment's Runtime image is based on.
-- You can now use any sized `t2`,`t3`, or `m5` EC2 instance to run the Data Plane.
+- You can now create new Clusters in `us-east-2` and `ca-central-1`.
+- In the Deployment detail page, **Astronomer Runtime** now shows the version of Apache Airflow that the Deployment's Astronomer Runtime version is based on.
+- You can now create or modify an existing Astronomer Cluster to run any size of the `t2`,`t3`, `m5`, or `m5d` [AWS EC2 instances](https://aws.amazon.com/ec2/instance-types/).
 
 ### Bug Fixes
 
