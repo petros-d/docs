@@ -35,13 +35,13 @@ You can now also select specific Workspaces to work in. When you click in to a W
 To return to the global menu, you can either click the Astronomer "A" or click the Workspace name to produce a dropdown menu with your Organization.
 
 <div class="text--center">
-  <img src="/img/docs/ui-release-note1.png" alt="New Workspace menu in the UI" />
+  <img src="/img/docs/ui-release-note2.png" alt="New Workspace menu in the UI" />
 </div>
 
 All user configurations can be found by clicking your user profile picture in the upper righthand corner of the UI. From the dropdown menu that appears, you can both configure user settings and access other Astronomer resources such as documentation and the Astronomer Registry.
 
 <div class="text--center">
-  <img src="/img/docs/ui-release-note1.png" alt="New profile menu in the UI" />
+  <img src="/img/docs/ui-release-note3.png" alt="New profile menu in the UI" />
 </div>
 
 ### Minor Improvements
