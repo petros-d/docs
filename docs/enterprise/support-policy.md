@@ -1,7 +1,7 @@
 ---
-title: "Astronomer Certified Versioning and Support"
-navTitle: "Versioning and Support Policy"
-description: "Versioning and support policy for Astronomer's Apache Airflow offering, Astronomer Certified."
+title: 'Astronomer Certified Versioning and Support'
+sidebar_label: 'Versioning and Support Policy'
+id: support-policy-enterprise
 ---
 
 ## Overview

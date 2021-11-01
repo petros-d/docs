@@ -1,7 +1,7 @@
 ---
-title: "Astronomer Enterprise FAQ"
-navTitle: "FAQ"
-description: "Commonly asked questions and answers pertaining to Astronomer Enterprise."
+sidebar_label: 'FAQ'
+title: 'Astronomer Enterprise FAQ'
+id: faq-enterprise
 ---
 
 ## Networking

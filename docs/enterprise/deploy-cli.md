@@ -1,7 +1,7 @@
 ---
-title: "Deploy DAGs via the Astronomer CLI"
-navTitle: "Deploy DAGs via CLI"
-description: "How to push DAGs to your Airflow Deployment on Astronomer using the Astronomer CLI."
+sidebar_label: 'Deploy DAGs via CLI'
+title: 'Deploy DAGs to Astronomer Enterprise via CLI'
+id: deploy-cli-enterprise
 ---
 
 ## Overview

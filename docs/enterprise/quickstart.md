@@ -1,7 +1,7 @@
 ---
-title: "Astronomer Enterprise Quickstart"
-navTitle: "Quickstart"
-description: "A guide to getting started on Astronomer Enterprise."
+title: 'Astronomer Enterprise Quickstart'
+sidebar_label: 'Quickstart'
+id: quickstart-enterprise
 ---
 
 Welcome to Astronomer.

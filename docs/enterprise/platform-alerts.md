@@ -1,7 +1,7 @@
 ---
-title: "Alerting in Astronomer Enterprise"
-navTitle: "Enterprise Alerts"
-description: "Route common Airflow Deployment and platform alerts to your preferred channel via Prometheus Alertmanager."
+title: 'Alerting in Astronomer Enterprise'
+sidebar_label: 'Enterprise Alerts'
+id: platform-alerts-enterprise
 ---
 
 ## Overview

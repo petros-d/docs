@@ -1,7 +1,7 @@
 ---
-title: "How to Run the KubernetesPodOperator Locally"
-navTitle: "Local KubernetesPodOperator"
-description: "How to run and test the KubernetesPodOperator on your local machine."
+title: 'How to Run the KubernetesPodOperator Locally'
+sidebar_label: 'Local KubernetesPodOperator'
+id: kubepodoperator-local-enterprise
 ---
 
 ## Setup Kubernetes

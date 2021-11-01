@@ -1,7 +1,7 @@
 ---
-title: "Metrics in Astronomer Enterprise"
-navTitle: "Metrics"
-description: "Get a single-pane view into the health of your deployments with Grafana dashboards."
+sidebar_label: 'Metrics'
+title: 'Metrics in Astronomer Enterprise'
+id: grafana-metrics-enterprise
 ---
 
 ## Overview

@@ -1,7 +1,7 @@
 ---
-title: "Using Registry Back Ends in Astronomer Enterprise"
-navTitle: "Use a Registry Backend"
-description: "How to configure a registry back end to work with the Astronomer platform."
+title: 'Using Registry Back Ends in Astronomer Enterprise'
+sidebar_label: 'Use a Registry Backend'
+id: registry-backend-enterprise
 ---
 
 ## Overview

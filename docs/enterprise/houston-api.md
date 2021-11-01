@@ -1,7 +1,7 @@
 ---
-title: "The Houston API"
-navTitle: "Houston API"
-description: "How to use the GraphQL Playground to interact with Astronomer's API."
+sidebar_label: 'Houston API'
+title: 'Houston API'
+id: houston-api
 ---
 
 ## Overview

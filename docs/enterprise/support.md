@@ -1,7 +1,7 @@
 ---
-title: "Support"
-navTitle: "Support"
-description: "How to get the most from Astronomer Support."
+title: 'Support for Astronomer Enterprise'
+navTitle: 'Support'
+id: support-enterprise
 ---
 
 Our mission at Astronomer is to help organizations adopt [Apache Airflow](https://airflow.apache.org/).

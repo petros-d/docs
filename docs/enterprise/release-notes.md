@@ -1,7 +1,7 @@
 ---
-title: "Astronomer v0.26 Release Notes"
-navTitle: "Release Notes"
-description: "Astronomer Enterprise release notes."
+title: 'Astronomer v0.26 Release Notes'
+sidebar_label: 'Release Notes'
+id: release-notes-enterprise
 ---
 
 ## Overview

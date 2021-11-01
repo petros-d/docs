@@ -1,7 +1,7 @@
 ---
-title: "Upgrade Apache Airflow on Astronomer"
-navTitle: "Upgrade Airflow"
-description: "How to adjust and upgrade Airflow versions on Astronomer."
+title: 'Upgrade Apache Airflow on Astronomer Enterprise'
+sidebar_label: 'Upgrade Airflow'
+id: manage-airflow-versions-enterprise
 ---
 
 ## Overview

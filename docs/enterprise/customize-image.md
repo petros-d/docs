@@ -1,7 +1,7 @@
 ---
-title: "Customize your Airflow Image on Astronomer"
-navTitle: "Customize Images"
-description: "How to customize your Airflow Image on Astronomer, including guidance on adding dependencies and running commands on build."
+sidebar_label: 'Customize Image'
+title: 'Customize Your Image on Astronomer Enterprise'
+id: customize-image-enterprise
 ---
 
 ## Overview

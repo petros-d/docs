@@ -1,7 +1,7 @@
 ---
-title: "Upgrade an Astronomer Certified Airflow Environment"
-navTitle: "Upgrade Astronomer Certified"
-description: "Upgrade your Apache Airflow environment by installing the latest version of Astronomer Certified."
+title: 'Upgrade an Astronomer Certified Airflow Environment'
+sidebar_label: 'Upgrade Astronomer Certified'
+id: upgrade-ac-enterprise
 ---
 
 ## Overview

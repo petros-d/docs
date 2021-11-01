@@ -1,7 +1,7 @@
 ---
-title: "Configure Resources"
-navTitle: "Configure Resources"
-description: "A summary of how platform and Airflow deployment resources are created in the context of the Astronomer platform."
+sidebar_label: 'Configure Platform Resources'
+title: 'Astronomer Enterprise Platform Resources'
+id: configure-platform-resources-enterprise
 ---
 
 ## Configuring Platform Resources

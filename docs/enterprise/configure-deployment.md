@@ -1,7 +1,7 @@
 ---
-title: "Configure an Airflow Deployment on Astronomer"
-navTitle: "Configure a Deployment"
-description: "How to configure your Airflow Deployment's Resources on Astronomer."
+sidebar_label: 'Configure a Deployment'
+title: 'Configure a Deployment on Astronomer Enterprise'
+id: configure-deployment-enterprise
 ---
 
 ## Overview

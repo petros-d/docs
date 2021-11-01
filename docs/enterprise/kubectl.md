@@ -1,7 +1,7 @@
 ---
-title: "kubectl Guide"
-navTitle: "kubectl"
-description: "How to deploy Astronomer Airflow instances with kubectl and Helm."
+sidebar_label: 'kubectl'
+title: 'Use kubectl To Administer Astronomer Enterprise'
+id: kubectl-enterprise
 ---
 
 ### Kubectl and Helm

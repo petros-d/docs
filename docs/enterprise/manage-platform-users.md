@@ -1,7 +1,7 @@
 ---
-title: "Manage Users on Astronomer Enterprise"
-navTitle: "Platform User Management"
-description: "How to add and customize user permissions on the platform, enable public sign-ups and add system administrators."
+title: 'Manage Users on Astronomer Enterprise'
+sidebar_label: 'Platform User Management'
+id: manage-platform-users-enterprise
 ---
 
 ## Overview

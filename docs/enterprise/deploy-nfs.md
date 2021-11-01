@@ -1,7 +1,7 @@
 ---
-title: "Deploy DAGs via NFS Volume"
-navTitle: "Deploy DAGs via NFS Volume"
-description: "How to push DAGs to an Airflow Deployment on Astronomer using an external NFS volume."
+sidebar_label: 'Deploy DAGs via NFS'
+title: 'Deploy DAGs to Astronomer Enterprise via NFS'
+id: deploy-nfs-enterprise
 ---
 
 ## Overview

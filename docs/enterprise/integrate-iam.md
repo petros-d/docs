@@ -1,7 +1,7 @@
 ---
-title: "Integrate IAM Roles"
-navTitle: "Integrate IAM Roles"
-description: "How to append IAM roles to an Airflow Deployment on Astronomer."
+sidebar_label: 'Integrate IAM Roles'
+title: 'Integrate IAM Roles on Astronomer Enterprise'
+id: integrate-iam-enterprise
 ---
 
 ## Overview

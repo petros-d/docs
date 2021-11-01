@@ -1,7 +1,7 @@
 ---
-title: "Environment Variables on Astronomer"
-navTitle: "Environment Variables"
-description: "How to manage Airflow Environment Variables on Astronomer."
+sidebar_label: 'Environment Variables'
+title: 'Set Environment Variables on Astronomer Enterprise'
+id: environment-variables-enterprise
 ---
 
 ## Overview

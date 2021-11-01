@@ -1,7 +1,7 @@
 ---
-title: "Upgrade to a Patch Version of Astronomer Enterprise"
-navTitle: "Upgrade to a Patch Version"
-description: "How to update your Astronomer Enterprise Platform to a new patch version."
+title: 'Upgrade to a Patch Version of Astronomer Enterprise'
+sidebar_label: 'Upgrade to a Patch Version'
+id: upgrade-astronomer-patch-enterprise
 ---
 
 ## Overview

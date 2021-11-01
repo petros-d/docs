@@ -1,7 +1,7 @@
 ---
-title: "Install Packages to Astronomer Certified"
-navTitle: "Install Packages"
-description: "Install OS-level and Python-level packages for Airflow using Astronomer Certified."
+sidebar_label: 'Install Packages'
+title: 'Install Packages on Astronomer Certified Images'
+id: install-packages-enterprise
 ---
 
 ## Overview

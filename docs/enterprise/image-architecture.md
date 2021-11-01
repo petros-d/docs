@@ -1,7 +1,7 @@
 ---
-title: "Astronomer Certified Image Architecture"
-navTitle: "Docker Image Architecture"
-description: "Reference documentation for Astronomer's Docker image for Apache Airflow."
+sidebar_label: 'Astronomer Certified Architecture'
+title: 'Astronomer Certified Image Architecture'
+id: image-architecture-enterprise
 ---
 
 ## Overview

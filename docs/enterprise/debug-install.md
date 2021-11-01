@@ -1,7 +1,7 @@
 ---
-title: "Debugging Your Installation"
-navTitle: "Debugging"
-description: "Common gotchas users run into while deploying and running Astronomer Enterprise."
+sidebar_label: 'Debugging'
+title: 'Debug Your Astronomer Enterprise Installation'
+id: debug-install-enterprise
 ---
 
 
@@ -83,7 +83,7 @@ Now try connecting with `psql`:
 
 ```
 /houston # psql -U <username> -h <host> -p <port>
-Password for user <username>: 
+Password for user <username>:
 
 ```
 If the connection times out here, there may be a networking issue.

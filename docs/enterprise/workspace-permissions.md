@@ -1,7 +1,7 @@
 ---
-title: "Manage User Permissions on Astronomer Enterprise"
-navTitle: "User Permissions"
-description: "Manage user roles and permissions on any Astronomer Workspace and all Airflow Deployments within it."
+title: 'Manage User Permissions on Astronomer Enterprise'
+sidebar_label: 'User Permissions'
+id: workspace-permissions-enterprise
 ---
 
 ## Overview

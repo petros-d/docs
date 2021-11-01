@@ -1,7 +1,7 @@
 ---
-title: "Run the KubernetesPodOperator on Astronomer"
-navTitle: "KubernetesPodOperator"
-description: "How to run the KubernetesPodOperator on Astronomer."
+title: 'Run the KubernetesPodOperator on Astronomer Enterprise'
+sidebar_label: 'KubernetesPodOperator'
+id: `kubepodoperator-enterprise`
 ---
 
 ## Overview

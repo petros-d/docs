@@ -1,7 +1,7 @@
 ---
-title: "Integrate an Auth System on Astronomer Enterprise"
-navTitle: "Integrate an Auth System"
-description: "Integrate your internal authentication server with Astronomer Enterprise."
+sidebar_label: 'Integrate an Auth System'
+title: 'Integrate an Auth System on Astronomer Enterprise'
+id: integrate-auth-system-enterprise
 ---
 
 ## Overview

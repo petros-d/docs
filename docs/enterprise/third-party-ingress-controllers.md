@@ -1,7 +1,7 @@
 ---
-title: "Use a Third-Party Ingress Controller"
-navTitle: "Third-Party Ingress Controllers"
-description: "How to use a pre-existing ingress controller on Astronomer"
+title: 'Use a Third-Party Ingress Controller'
+sidebar_label: 'Third-Party Ingress Controllers'
+id: 'third-party-ingress-controllers-enterprise'
 ---
 
 ## Overview

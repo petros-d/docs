@@ -1,7 +1,7 @@
 ---
-title: "Astronomer Enterprise Disaster Recovery Guide"
-navTitle: "Disaster Recovery"
-description: "A guide to Platform Backups and Disaster Recovery for Astronomer Enterprise."
+sidebar_label: 'Disaster Recovery'
+title: 'Astronomer Enterprise Disaster Recovery Guide'
+id: disaster-recovery-enterprise
 ---
 
 ## Overview

@@ -1,7 +1,7 @@
 ---
-title: "Forward Astronomer Logs to Amazon S3"
-navTitle: "Forward Logs to S3"
-description: "How to configure Astronomer Enterprise to forward logs to Amazon S3."
+title: 'Forward Astronomer Enterprise Logs to Amazon S3'
+sidebar_label: 'Forward Logs to S3'
+id: logs-to-s3-enterprise
 ---
 
 ## Overview
