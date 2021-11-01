@@ -10,7 +10,7 @@ Astronomer is committed to continuous development of Astronomer Cloud. As you gr
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
-**Latest Runtime Version**: 4.0.1 ([Release notes](runtime-release-notes))
+**Latest Runtime Version**: 4.0.2 ([Release notes](runtime-release-notes))
 
 **Latest CLI Version**: 1.0.2 ([Release notes](cli-release-notes))
 
@@ -48,7 +48,7 @@ All user configurations can be found by clicking your user profile picture in th
 
 - You can now create new Clusters in `us-east-2` and `ca-central-1`.
 - In the Deployment detail page, **Astronomer Runtime** now shows the version of Apache Airflow that the Deployment's Astronomer Runtime version is based on.
-- You can now create or modify an existing Astronomer Cluster to run any size of the `t2`,`t3`, `m5`, or `m5d` [AWS EC2 instances](https://aws.amazon.com/ec2/instance-types/).
+- You can now create or modify an existing Astronomer Cluster to run any size of the `t2`,`t3`, `m5`, or `m5d` [AWS EC2 instances](resource-reference-aws).
 
 ### Bug Fixes
 

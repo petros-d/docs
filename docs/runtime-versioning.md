@@ -72,4 +72,5 @@ Note that this table includes only major and minor releases of Runtime. When upg
 
 | Runtime Version                | Airflow Version                                                                            | Debian-based Image                                  | Release Date    |
 | ------------------------------ | ------------------------------------------------------------------------------------------ | --------------------------------------------------- | --------------- |
-| [3.0.x](runtime-release-notes) | [2.1.1](https://github.com/astronomer/astro-runtime/blob/main/CHANGELOG.md#301-2021-08-31) | `FROM quay.io/astronomer/astro-runtime:3.0.<patch>` | August 12, 2021 |
+| [3.0.x](runtime-release-notes) | [2.1.1](https://github.com/apache/airflow/releases/tag/2.1.1) | `FROM quay.io/astronomer/astro-runtime:3.0.<patch>` | August 12, 2021 |
+| [4.0.x](runtime-release-notes) | [2.2.x](https://github.com/apache/airflow/releases/tag/2.2.0) | `FROM quay.io/astronomer/astro-runtime:4.0.<patch>` | October 12, 2021 |
