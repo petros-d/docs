@@ -1,7 +1,7 @@
 ---
-title: "Astronomer CLI Reference Guide"
-navTitle: "CLI Reference Guide"
-description: "A list of every command and setting in the Astronomer CLI."
+sidebar_label: 'CLI Reference Guide'
+title: 'Astronomer CLI Reference Guide'
+id: cli-reference-guide
 ---
 
 ## Overview

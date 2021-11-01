@@ -1,7 +1,7 @@
 ---
-title: "The Astronomer CLI on Windows 10"
-exclude: "true"
-description: "How to install the Windows-based CLI or the Unix-based CLI a Windows Subsystem for Linux (WSL)."
+sidebar_label: 'Windows 10'
+title: 'Astronomer CLI Installation for Windows 10'
+id: cli-windows-10
 ---
 
 Welcome to Astronomer!

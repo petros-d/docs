@@ -1,9 +1,8 @@
 ---
-title: "Deploy to Astronomer via CI/CD"
-navTitle: "CI/CD"
-description: "Automate the deploy process to your Airflow Deployment by setting up a CI/CD pipeline with a Service Account on Astronomer."
+sidebar_label: 'CI/CD'
+title: 'Configure CI/CD on Astronomer Enterprise'
+id: enterprise-cicd
 ---
-<!-- markdownlint-disable-file -->
 
 ## Overview
 
