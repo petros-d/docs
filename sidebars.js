@@ -78,4 +78,65 @@ module.exports = {
       ],
     },
   ],
+  enterpriseSidebar: [
+    {
+      type: 'category',
+      label: 'Getting Started',
+      items: [
+      'quickstart-enterprise',
+      'faq-enterprise',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Develop',
+      items: [
+      'customize-image',
+      'kubepodoperator-local-enterprise',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Install',
+      items: [
+      'install-aws-enterprise',
+      'install-azure-enterprise',
+      'install-gcp-enterprise',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Administer',
+      items: [
+      'add-a-cluster',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Astronomer Runtime',
+      items: [
+      'upgrade-runtime',
+      'runtime-versioning',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Reference',
+      items: [
+      {
+        type: 'category',
+        label: 'Release Notes',
+        items : [
+          'release-notes',
+          'cli-release-notes',
+          'runtime-release-notes',
+        ],
+      },
+      'known-limitations',
+      'resource-reference-aws',
+      'global-variables',
+      'shared-responsibility-model',
+      ],
+    },
+  ],
 };
