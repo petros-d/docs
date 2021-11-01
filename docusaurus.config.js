@@ -5,7 +5,7 @@ module.exports = {
   url: 'https://docs.astronomer.io',
   baseUrl: '/',
   noIndex: true,
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.svg',
   noIndex: true,
@@ -41,20 +41,23 @@ module.exports = {
       },
     },
     navbar: {
-      title: 'Cloud Docs',
+      title: 'Docs',
       logo: {
         alt: 'Astronomer',
         src: 'img/LogoPrimaryDarkMode.svg',
       },
       items: [
         {
-          // Client-side routing, used for navigating within the website.
-          // The baseUrl will be automatically prepended to this value.
-          to: 'https://www.astronomer.io/docs',
-          // The string to be shown.
-          label: 'Go to Main Docs ↗',
-          // Left or right side of the navbar.
-          position: 'right', // or 'right'
+          type: 'doc',
+          position: 'left',
+          docId: 'overview',
+          label: 'Cloud',
+        },
+        {
+          type: 'doc',
+          position: 'left',
+          docId: 'enterprise/overview-enterprise',
+          label: 'Enterprise',
         },
       ],
     },

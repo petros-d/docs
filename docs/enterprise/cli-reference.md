@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'CLI Reference Guide'
 title: 'Astronomer CLI Reference Guide'
-id: cli-reference-guide-enterprise
+id: cli-reference-enterprise
 ---
 
 ## Overview

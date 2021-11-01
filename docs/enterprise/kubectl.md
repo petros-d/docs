@@ -12,7 +12,8 @@ id: kubectl-enterprise
 Both these tools are needed to deploy Astronomer onto a Kubernetes cluster. We also recommend using [`kubectx`](https://github.com/ahmetb/kubectx) to simplify commands (the rest of this guide will use `kubectx`).
 
 ### Base Namespace and Release
-The initial `helm install` command to deploy Astronomer requires a [namespace]() to deploy the base platform pods into.
+
+The initial `helm install` command to deploy Astronomer requires a namespace to deploy the base platform pods into.
 
 ```
 helm install -f config.yaml . datarouter
@@ -133,9 +134,8 @@ ___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
 [2019-05-09 17:53:30,341] {jobs.py:1514} INFO - There are 2 files in /usr/local/airflow/dags
 [2019-05-09 17:53:30,343] {kubernetes_executor.py:691} INFO - Start Kubernetes executor
 ```
-A full description of a pods status, resource request, and other data can be found with the [`describe`]() command
 
-
+A full description of a pods status, resource request, and other data can be found with the `describe` command
 
 ```bash
 root@orbiter: kubectl describe po/accurate-bolide-9914-scheduler-7d4f5596b5-g72pg
