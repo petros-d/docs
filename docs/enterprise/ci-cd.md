@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'CI/CD'
 title: 'Configure CI/CD on Astronomer Enterprise'
-id: enterprise-cicd
+id: ci-cd-enterprise
 ---
 
 ## Overview

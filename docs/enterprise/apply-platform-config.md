@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Apply a Config Change'
 title: 'Apply an Enterprise Platform Configuration Change'
-id: apply-platform-config
+id: apply-platform-config-enterprise
 ---
 
 ## Overview

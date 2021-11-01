@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Airflow API'
 title: 'Make Requests to the Airflow API'
-id: airflow-api
+id: airflow-api-enterprise
 ---
 
 ## Overview

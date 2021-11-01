@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Security'
 title: 'Astronomer Certified Security'
-id: ac-security
+id: ac-security-enterprise
 ---
 
 ## Overview

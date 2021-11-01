@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Access the Airflow Database'
 title: 'Access the Airflow Database'
-id: access-airflow-database
+id: access-airflow-database-enterprise
 ---
 
 ## Overview
