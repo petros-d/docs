@@ -20,7 +20,7 @@ Astronomer Cloud's architecture enables a few key features, available today:
 - A secure control plane managed by Astronomer
 - Support for a multi-tenant data plane hosted in your organization's network on AWS 
 - Worker auto-scaling, powered by Airflow's Celery Executor + KEDA
-- Astronomer Runtime, a new collection of Docker images set to provide a differentiated Airflow experience
+- Astronomer Runtime, a new collection of Docker images which provides a differentiated Apache Airflow experience. Astronomer Runtime includes timely support for the latest major, minor, and patch versions of Airflow, starting with Airflow 2.1.1
 
 The following diagram outlines how the control plane, data plane, and users are connected to enable these features:
 
