@@ -216,7 +216,7 @@ For example, if you want to run `ls` when your image builds, your `Dockerfile` w
 RUN ls
 `}</code></pre>
 
-## Add Environment Variables (Local development only)
+## Add Environment Variables (Local Development Only)
 
 The Astronomer CLI comes with the ability to bring in Environment Variables from a specified file by running `astro dev start` with an `--env` flag:
 
