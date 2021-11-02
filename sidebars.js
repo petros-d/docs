@@ -26,12 +26,14 @@ module.exports = {
       type: 'category',
       label: 'Develop',
       items: [
+      'create-project',
+      'develop-project',
       'deploy-code',
-      'develop-locally',
       'environment-variables',
       'airflow-api',
       'airflow-alerts',
       'deferrable-operators',
+      'test-and-troubleshoot-locally',
       ],
     },
     {
