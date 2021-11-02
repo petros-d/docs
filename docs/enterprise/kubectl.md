@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'kubectl'
 title: 'Use kubectl To Administer Astronomer Enterprise'
-id: kubectl-enterprise
+id: kubectl
 ---
 
 ### Kubectl and Helm

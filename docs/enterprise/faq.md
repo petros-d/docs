@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'FAQ'
 title: 'Astronomer Enterprise FAQ'
-id: faq-enterprise
+id: faq
 ---
 
 ## Networking

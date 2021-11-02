@@ -1,7 +1,7 @@
 ---
 title: 'Version Compatibility Reference for Astronomer Enterprise'
 sidebar_label: 'Version Compatibility Reference'
-id: version-compatibility-reference-enterprise
+id: version-compatibility-reference
 ---
 
 ## Overview

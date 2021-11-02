@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Integrate an Auth System'
 title: 'Integrate an Auth System on Astronomer Enterprise'
-id: integrate-auth-system-enterprise
+id: integrate-auth-system
 ---
 
 ## Overview

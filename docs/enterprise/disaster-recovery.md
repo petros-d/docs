@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Disaster Recovery'
 title: 'Astronomer Enterprise Disaster Recovery Guide'
-id: disaster-recovery-enterprise
+id: disaster-recovery
 ---
 
 ## Overview

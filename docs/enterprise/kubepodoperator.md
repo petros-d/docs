@@ -1,7 +1,7 @@
 ---
 title: 'Run the KubernetesPodOperator on Astronomer Enterprise'
 sidebar_label: 'KubernetesPodOperator'
-id: kubepodoperator-enterprise
+id: kubepodoperator
 ---
 
 ## Overview

@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Logging'
 title: 'Kibana Logging on Astronomer Enterprise'
-id: kibana-logging-enterprise
+id: kibana-logging
 ---
 
 All Airflow logs from your Astronomer logs will flow to Elasticsearch and can be visualized on Kibana. Like Grafana, this view is only available to system admins.

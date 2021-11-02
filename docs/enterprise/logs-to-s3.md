@@ -1,7 +1,7 @@
 ---
 title: 'Forward Astronomer Enterprise Logs to Amazon S3'
 sidebar_label: 'Forward Logs to S3'
-id: logs-to-s3-enterprise
+id: logs-to-s3
 ---
 
 ## Overview

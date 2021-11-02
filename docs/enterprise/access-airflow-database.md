@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Access the Airflow Database'
 title: 'Access the Airflow Database'
-id: access-airflow-database-enterprise
+id: access-airflow-database
 ---
 
 ## Overview
@@ -348,7 +348,7 @@ In this example, that'd be:
 
 To finish creating and confirming your connection, enter the credentials from Step 7 into the `airflow_db` connection in the Airflow UI.
 
-If you want to store this connection and access it programmatically, you're also free to store it in a [Secret Backend](/docs/enterprise/v0.26/customize-airflow-secrets-backend).
+If you want to store this connection and access it programmatically, you're also free to store it in a [Secret Backend](enterprise/secrets-backend-enterprise).
 
 ## What's Next
 

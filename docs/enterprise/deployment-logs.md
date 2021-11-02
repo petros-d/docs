@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Deployment Logs'
 title: 'Deployment Logs on Astronomer Enterprise'
-id: deployment-logs-enterprise
+id: deployment-logs
 ---
 ## Overview
 

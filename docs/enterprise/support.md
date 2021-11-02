@@ -1,7 +1,7 @@
 ---
 title: 'Support for Astronomer Enterprise'
 navTitle: 'Support'
-id: support-enterprise
+id: support
 ---
 
 Our mission at Astronomer is to help organizations adopt [Apache Airflow](https://airflow.apache.org/).

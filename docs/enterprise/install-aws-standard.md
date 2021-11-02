@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'AWS'
 title: 'Install Astronomer Enterprise on AWS EKS'
-id: install-aws-enterprise
+id: install-aws
 ---
 
 This guide describes the steps to install Astronomer Enterprise on Amazon Web Services (AWS), which allows you to deploy and scale [Apache Airflow](https://airflow.apache.org/) within an AWS [Elastic Kubernetes Service](https://aws.amazon.com/eks/) (EKS) cluster.

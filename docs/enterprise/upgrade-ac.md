@@ -1,7 +1,7 @@
 ---
 title: 'Upgrade an Astronomer Certified Airflow Environment'
 sidebar_label: 'Upgrade Astronomer Certified'
-id: upgrade-ac-enterprise
+id: upgrade-ac
 ---
 
 ## Overview

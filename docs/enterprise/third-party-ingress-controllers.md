@@ -1,7 +1,7 @@
 ---
 title: 'Use a Third-Party Ingress Controller'
 sidebar_label: 'Third-Party Ingress Controllers'
-id: 'third-party-ingress-controllers-enterprise'
+id: third-party-ingress-controllers
 ---
 
 ## Overview

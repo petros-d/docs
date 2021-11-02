@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Customize Image'
 title: 'Customize Your Image on Astronomer Enterprise'
-id: customize-image-enterprise
+id: customize-image
 ---
 
 ## Overview

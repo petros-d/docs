@@ -1,7 +1,7 @@
 ---
 title: 'Using Registry Back Ends in Astronomer Enterprise'
 sidebar_label: 'Use a Registry Backend'
-id: registry-backend-enterprise
+id: registry-backend
 ---
 
 ## Overview

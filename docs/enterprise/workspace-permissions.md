@@ -1,7 +1,7 @@
 ---
 title: 'Manage User Permissions on Astronomer Enterprise'
 sidebar_label: 'User Permissions'
-id: workspace-permissions-enterprise
+id: workspace-permissions
 ---
 
 ## Overview

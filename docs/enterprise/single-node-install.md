@@ -1,7 +1,7 @@
 ---
 title: 'Install Astronomer Certified on a Virtual Machine'
 sidebar_label: 'Install on a Virtual Machine'
-id: single-node-install-enterprise
+id: single-node-install
 ---
 
 ## Overview

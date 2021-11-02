@@ -1,7 +1,7 @@
 ---
 title: 'Alerting in Astronomer Enterprise'
 sidebar_label: 'Enterprise Alerts'
-id: platform-alerts-enterprise
+id: platform-alerts
 ---
 
 ## Overview

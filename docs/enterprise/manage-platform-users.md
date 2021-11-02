@@ -1,7 +1,7 @@
 ---
 title: 'Manage Users on Astronomer Enterprise'
 sidebar_label: 'Platform User Management'
-id: manage-platform-users-enterprise
+id: manage-platform-users
 ---
 
 ## Overview

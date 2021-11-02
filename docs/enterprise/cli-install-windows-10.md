@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Windows 10'
 title: 'Astronomer CLI Installation for Windows 10'
-id: cli-windows-10-enterprise
+id: cli-windows-10
 ---
 
 Welcome to Astronomer!

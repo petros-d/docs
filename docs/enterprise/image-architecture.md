@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Astronomer Certified Architecture'
 title: 'Astronomer Certified Image Architecture'
-id: image-architecture-enterprise
+id: image-architecture
 ---
 
 ## Overview
