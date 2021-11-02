@@ -55,6 +55,7 @@ Once you log in, you should see the DAGs you just deployed.
 
 Now that you're familiar with deploying DAGs to Astronomer Cloud, consider reading:
 
+- [Develop Project](develop-project)
 - [Set Environment Variables](environment-variables)
 
 For up-to-date information about product limitations, read [Known Limitations](known-limitations).

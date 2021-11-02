@@ -10,22 +10,21 @@ import {siteVariables} from '@site/src/versions';
 
 This document explains the various ways you can modify and build your Astronomer project to fit your team's use case. Specifically, this guide provides instructions on how to:
 
-- Add DAG files to your project
-- Add Python and OS-level packages to your project
+- Build and run a project
+- Deploy changes to a project
 - Add dependencies to your project
 - Run on-build commands
-- Use the Airflow CLI
-- Add environment variables locally
+- Add connections, pools, and environment variables locally
 
 ## Prerequisites
 
-To develop locally, you need:
+To develop an Astronomer project and test it locally, you need:
 
 - An existing [Astronomer project](create-project).
 - [The Astronomer CLI](install-cli)
 - [Docker](https://www.docker.com/products/docker-desktop)
 
-## Build and Run a Project
+## Build and Run a Project Locally
 
 To run your Astronomer project locally, run the following command:
 
@@ -43,7 +42,7 @@ Once the project builds, you can access the Airflow UI by going to `http://local
 
 ::: info
 
-The Astronomer CLI is a wrapper around [Docker Compose](https://docs.docker.com/compose/), a tool for defining and running multi-container Docker applications. If you're familiar with Docker Compose, you'll recognize that the astro dev start command is functionally equivalent to docker compose start.
+The Astronomer CLI is a wrapper around [Docker Compose](https://docs.docker.com/compose/), a tool for defining and running multi-container Docker applications. If you're familiar with Docker Compose, you'll recognize that the `astro dev start` command, for example, is functionally equivalent to `docker compose start`.
 
 :::
 
@@ -68,7 +67,7 @@ Depending on the change you're making to your Astronomer project, you might have
 
 ### DAG Code Changes
 
-All changes made to the following files will be live in your project as soon as you save them to your code editor:
+All changes made to the following files will be live in your local Airflow environment as soon as you save them to your code editor:
 
 - `dags`
 - `plugins`
@@ -85,16 +84,7 @@ All changes made to the following files require rebuilding your image:
 - `requirements.txt`
 - `airflow_settings.yaml`
 
-To rebuild your project after making a change to any of these files, run the following two commands:
-
-```sh
-$ astro dev stop
-$ astro dev start
-```
-
-In addition to rebuilding your image, these commands restart the Docker containers running your local Airflow environment.
-
-> **Note:** Note: As you develop locally, it may be necessary to reset your Docker containers and metadata DB for testing purposes. To do so, run `astro dev kill` instead of `astro dev stop` when rebuilding your image. This deletes all data associated with your local Postgres metadata database, including Airflow Connections, logs, and task history.
+To rebuild your project after making a change to any of these files, you must [restart your local environment](develop-project#restart-your-local-environment).
 
 ## Add Python and OS-level Packages
 
@@ -214,7 +204,7 @@ variables:
     variable_value: value987
 ```
 
-Once you've saved those packages in your project files, [restart your local environment](develop-project#restart-your-local-environment). When you access the Airflow UI for your project at `localhost:8080`, you should see your new resources in the **Connections**, **Pools**, and **Variables** tabs.
+Once you've saved these values in your `airflow_settings.yaml`, [restart your local environment](develop-project#restart-your-local-environment). When you access the Airflow UI for your project at `localhost:8080`, you should see these values in the **Connections**, **Pools**, and **Variables** tabs.
 
 ## Run Commands on Build
 
@@ -223,6 +213,7 @@ To run extra system commands when your Airflow image builds, add them to your `D
 For example, if you want to run `ls` when your image builds, your `Dockerfile` would look like this:
 
 <pre><code parentName="pre">{`FROM quay.io/astronomer/astro-runtime:${siteVariables.runtimeVersion}
+RUN ls
 `}</code></pre>
 
 ## Add Environment Variables (Local development only)

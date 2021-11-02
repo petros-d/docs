@@ -41,7 +41,7 @@ This command generates the following files in the directory:
 └── requirements.txt # For Python packages
 ```
 
-This set of files will build into a Docker image that you can either run on your local machine or deploy to Astronomer Cloud.
+This set of files will build into a Docker image that you can both run on your local machine and deploy to Astronomer Cloud.
 
 ### Astronomer Runtime
 
@@ -108,5 +108,7 @@ After logging in, you should see the DAGs from your `dags` directory in the Airf
 <div class="text--center">
 <img src="/img/docs/sample-dag.png" alt="Example DAG in the Airflow UI" />
 </div>
+
+## Next Steps
 
 Running your project locally is the best way to test your DAGs before pushing them to Astronomer Cloud. For more information on running a local Airflow environment, read [Test and Troubleshoot](test-and-troubleshoot-locally#run-a-project-locally).

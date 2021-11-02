@@ -10,13 +10,7 @@ As you develop data pipelines on Astronomer, we strongly recommend running and t
 
 ## Run a Project Locally
 
-Whenever you want to test your code, the first step is always to start a local Airflow environment. To run an Airflow locally, run:
-
-```sh
-astro dev start
-```
-
-For more information about running your project locally, read [Build and Run a Project](develop-project#build-and-run-a-project).
+Whenever you want to test your code, the first step is always to start a local Airflow environment. To build your Astronomer project locally, follow the steps in [Build and Run a Project](develop-project#build-and-run-a-project-locally).
 
 ## View Airflow Task Logs
 
@@ -24,7 +18,7 @@ You can view logs for individual tasks in the Airflow UI. This is useful if you 
 
 To access these logs:
 
-1. Access the Airflow UI in your local Airflow environment.
+1. Access the Airflow UI in your local Airflow environment by going to http://localhost:8080.
 2. Open the DAG you want to troubleshoot:
 
     <div class="text--center">
