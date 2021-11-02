@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Testing and Troubleshooting'
+sidebar_label: 'Test and Troubleshoot'
 title: 'Test and Troubleshoot Locally'
 id: test-and-troubleshoot-locally
 ---
@@ -18,7 +18,7 @@ You can view logs for individual tasks in the Airflow UI. This is useful if you 
 
 To access these logs:
 
-1. Access the Airflow UI in your local Airflow environment by going to http://localhost:8080.
+1. Access the Airflow UI in your local Airflow environment by going to `http://localhost:8080`.
 2. Open the DAG you want to troubleshoot:
 
     <div class="text--center">
