@@ -1,7 +1,7 @@
 ---
 title: 'How to Run the KubernetesPodOperator Locally'
 sidebar_label: 'Local KubernetesPodOperator'
-id: kubepodoperator-local-enterprise
+id: kubepodoperator-local
 ---
 
 ## Setup Kubernetes

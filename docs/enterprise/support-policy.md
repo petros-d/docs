@@ -1,7 +1,7 @@
 ---
 title: 'Astronomer Certified Versioning and Support'
 sidebar_label: 'Versioning and Support Policy'
-id: support-policy-enterprise
+id: support-policy
 ---
 
 ## Overview

@@ -1,7 +1,7 @@
 ---
 title: 'Upgrade Apache Airflow on Astronomer Enterprise'
 sidebar_label: 'Upgrade Airflow'
-id: manage-airflow-versions-enterprise
+id: manage-airflow-versions
 ---
 
 ## Overview

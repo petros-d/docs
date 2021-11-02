@@ -1,7 +1,7 @@
 ---
 title: 'Configure Pre-Created Kubernetes Namespaces for Astronomer Enterprise'
 sidebar_label: 'Pre-Create Namespaces'
-id: pre-create-namespaces-enterprise
+id: pre-create-namespaces
 ---
 
 ## Overview

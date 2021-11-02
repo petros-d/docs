@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Deploy DAGs via NFS'
 title: 'Deploy DAGs to Astronomer Enterprise via NFS'
-id: deploy-nfs-enterprise
+id: deploy-nfs
 ---
 
 ## Overview

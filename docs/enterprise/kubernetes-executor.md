@@ -1,7 +1,7 @@
 ---
 title: 'Run the Kubernetes Executor on Astronomer Enterprise'
 sidebar_label: 'Kubernetes Executor'
-id: kubernetes-executor-enterprise
+id: kubernetes-executor
 ---
 
 ## Overview

@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Houston API'
 title: 'Houston API'
-id: houston-api-enterprise
+id: houston-api
 ---
 
 ## Overview

@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Configure Platform Resources'
 title: 'Astronomer Enterprise Platform Resources'
-id: configure-platform-resources-enterprise
+id: configure-platform-resources
 ---
 
 ## Configuring Platform Resources

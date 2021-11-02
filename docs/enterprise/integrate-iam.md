@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Integrate IAM Roles'
 title: 'Integrate IAM Roles on Astronomer Enterprise'
-id: integrate-iam-enterprise
+id: integrate-iam
 ---
 
 ## Overview

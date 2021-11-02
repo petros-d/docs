@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Deploy DAGs via CLI'
 title: 'Deploy DAGs to Astronomer Enterprise via CLI'
-id: deploy-cli-enterprise
+id: deploy-cli
 ---
 
 ## Overview

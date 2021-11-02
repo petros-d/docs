@@ -1,7 +1,7 @@
 ---
 title: 'Upgrade to a Patch Version of Astronomer Enterprise'
 sidebar_label: 'Upgrade to a Patch Version'
-id: upgrade-astronomer-patch-enterprise
+id: upgrade-astronomer-patch
 ---
 
 ## Overview

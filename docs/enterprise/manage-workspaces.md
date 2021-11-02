@@ -1,7 +1,7 @@
 ---
 title: 'Manage Workspaces and Deployments on Astronomer'
 sidebar_label: 'Create a Workspace'
-id: manage-workspaces-enterprise
+id: manage-workspaces
 ---
 
 ## Overview

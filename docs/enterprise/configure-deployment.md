@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Configure a Deployment'
 title: 'Configure a Deployment on Astronomer Enterprise'
-id: configure-deployment-enterprise
+id: configure-deployment
 ---
 
 ## Overview

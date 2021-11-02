@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Install Packages'
 title: 'Install Packages on Astronomer Certified Images'
-id: install-packages-enterprise
+id: install-packages
 ---
 
 ## Overview

@@ -1,7 +1,7 @@
 ---
 title: 'Renew TLS Certificates on Astronomer Enterprise'
 sidebar_label: 'Renew a TLS Certificate'
-id: renew-tls-cert-enterprise
+id: renew-tls-cert
 ---
 
 ## Overview

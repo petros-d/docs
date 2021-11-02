@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Metrics'
 title: 'Metrics in Astronomer Enterprise'
-id: grafana-metrics-enterprise
+id: grafana-metrics
 ---
 
 ## Overview
