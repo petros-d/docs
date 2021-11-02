@@ -1,54 +1,70 @@
 ---
-sidebar_label: 'Add a Cluster'
-title: "Add a New Cluster"
-id: add-a-cluster
+sidebar_label: 'Create a Cluster'
+title: "Create a New Cluster on Astronomer Cloud"
+id: create-cluster
 ---
 
-On Astronomer Cloud, you can configure multiple Clusters for hosting and running your data pipelines. By default, each Astronomer installation starts with one Cluster. This guide provides instructions for provisioning additional Clusters on your Astronomer Cloud installation.
+## Overview
+
+The Astronomer Cloud install process on AWS typically starts with 1 Cluster per Organization. Depending on your use case, however, your team can choose to configure multiple Astronomer Clusters. This could enable a few benefits, including:
+
+- 1 Cluster in 1 AWS region, 1 Cluster in another AWS region
+- 1 Production Cluster, 1 Development Cluster
+
+Within a single Workspace, you can host Deployments across multiple Clusters. For example, you could have Production Deployments running in your Production Cluster and Development Deployments running in your Development Cluster.
+
+This guide provides instructions for provisioning additional Clusters within your Astronomer Cloud Organization.
 
 ## Prerequisites
 
-To complete this setup, you need to have completed your Astronomer Cloud installation as described in [Install on AWS](install-aws). Additionally, you need permission to edit trust policies on your organization's AWS account.
+To complete this setup, you need to have:
 
-## Setup
+- Completed the initial Astronomer Cloud install process as described in [install on AWS](install-aws)
+- Permissions to edit trust policies in your AWS account for Astronomer
 
-To add a new Cluster to your Astronomer Cloud installation:
+## Step 1: Submit a Request to Astronomer
 
-1. Reach out to your Astronomer representative and request a new Cluster. For each new Cluster that you want to provision, your Astronomer representative will ask for the following information:
+To create a new Cluster in your Organization, you must first reach out to your Astronomer representative. For each new Cluster that you want to provision, you'll need to provide our team with the following information:
 
-    - Your AWS Account ID
-    - Your preferred name for the Cluster
-    - The AWS region that you want to host the Cluster in (us-east-1 or us-west-2)
+  - Your AWS Account ID
+  - Your preferred Astronomer Cluster name
+  - The AWS region that you want to host the Cluster in (`us-east-1`, `us-east-2`, `us-west-2` or `ca-central-1`)
 
-    For each new Cluster, your Astronomer representative will provide you with a unique External ID. Make note of this value for the next step.
+Once we accept your request, your Astronomer representative will provide you with a unique **External ID**. Make note of this value for the next step.
 
-2. In the AWS IAM console, [edit the `astronomer-remote-management` trust relationship](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/edit_trust.html) to include trust policies for your new Clusters.
+> **Note:** Astronomer will create a Cluster with our [default AWS resource configuration](resource-reference-aws) unless otherwise specified. If you're interested in a particular EC2 instance type or have any other cluster requirements, let us know.
 
-    If you only have 1 Cluster deployed, you will see the following under **Policy Document**:
+## Step 2: Edit AWS Trust Policy
 
-    ```yaml
+In the AWS IAM console, [edit the `astronomer-remote-management` trust relationship](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/edit_trust.html) to include trust policies for your new Cluster.
+
+If you only have 1 existing Cluster, you will see the following under **Policy Document**:
+
+```yaml
+{
+  "Version": "2012-10-17",
+  "Statement": [
     {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "AWS": "arn:aws:iam::406882777402:root"
-          },
-          "Action": "sts:AssumeRole",
-          "Condition": {
-            "StringEquals": {
-              "sts:ExternalId": "<my-1st-ExternalID>"
-            }
-          }
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::406882777402:root"
+      },
+      "Action": "sts:AssumeRole",
+      "Condition": {
+        "StringEquals": {
+          "sts:ExternalId": "<your-1st-External-ID>"
         }
-      ]
+      }
     }
-    ```
+  ]
+}
+```
 
-    Add the trust policy for your new Cluster(s) below your existing Cluster. The trust policy should be the same as the policy for your existing cluster, but with a different External ID. For example, your complete policy document might look like the following:
+Now, add the trust policy for your new Astronomer Cluster below the corresponding trust policy for your existing Cluster. These two trust policies should be the same but with a different **External ID**.
 
-    ```yaml
+For example, your policy for two Astronomer Clusters might look like the following:
+
+```yaml
     {
       "Version": "2012-10-17",
       "Statement": [
@@ -60,7 +76,7 @@ To add a new Cluster to your Astronomer Cloud installation:
           "Action": "sts:AssumeRole",
           "Condition": {
             "StringEquals": {
-              "sts:ExternalId": "<your-1st-ExternalID>"
+              "sts:ExternalId": "<your-1st-External-ID>"
             }
           }
         },
@@ -72,13 +88,22 @@ To add a new Cluster to your Astronomer Cloud installation:
           "Action": "sts:AssumeRole",
           "Condition": {
             "StringEquals": {
-              "sts:ExternalId": "<your-2nd-ExternalID>"
+              "sts:ExternalId": "<your-2nd-External-ID>"
             }
           }
         }
       ]
     }
-    ```
+```
 
-3. Click **Update Trust Policy** to apply the new trust relationship.
-4. Notify Astronomer that you finished configuring the trust policy. From here, an Astronomer representative will finalize the Cluster installation and notify you when it's complete. Once the installation is complete, you should be able to select your new Cluster as a **Deployment Location** when [creating a new Deployment](configure-deployment).
+Once you've modified your trust policy, click **Update Trust Policy** in the AWS Console to apply the new trust relationship.
+
+## Step 3: Confirm with Astronomer
+
+Once you have finished configuring the trust policy, notify Astronomer that you have done so. From here, the Astronomer team will finish creating the Cluster in your AWS account and notify you when it's complete.
+
+## Step 4: Create a Deployment in your Cluster
+
+Once your Cluster is available, you should be able to create a new Deployment within that cluster. To do so, go to your Workspace and select **Create Deployment** > **Deployment Location**.
+
+For more information, read [creating a new Deployment](configure-deployment).

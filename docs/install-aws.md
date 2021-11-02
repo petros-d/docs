@@ -1,19 +1,19 @@
 ---
-sidebar_label: 'Install on AWS'
+sidebar_label: 'Install Astronomer on AWS'
 title: 'Install Astronomer Cloud on AWS'
 id: install-aws
 ---
 
 ## Overview
 
-We're excited to help you get started with Astronomer Cloud on AWS. Below, you'll find instructions for how to complete the Astronomer Cloud install process, including prerequisites and the steps required for our team to provision resources in your network.
+We're excited to get you started with Astronomer Cloud on AWS. Below, you'll find instructions for how to complete the Astronomer Cloud install process, including prerequisites and the steps required for our team to provision resources in your network.
 
 At a high-level, we'll ask that you come prepared with a new AWS account. From there, you can expect to:
 - Create an account on Astronomer.
 - Share AWS account information with our team.
 - Create an IAM role that Astronomer can assume within your new AWS account.
 
-Astronomer will then create a Cluster within your AWS account that hosts the resources and Apache Airflow components necessary to deploy DAGs and execute tasks. If you'd like to support more than 1 Astronomer Cluster, reach out to us.
+Astronomer will then create a Cluster within your AWS account that hosts the resources and Apache Airflow components necessary to deploy DAGs and execute tasks. If you'd like to support more than 1 Astronomer Cluster, [reach out to us](https://support.astronomer.io).
 
 For a complete list of the AWS resources that our team will provision in your AWS account, see [Resource Usage](resource-reference-aws).
 
@@ -22,9 +22,14 @@ For a complete list of the AWS resources that our team will provision in your AW
 Before completing this setup, you will need:
 
 - A new AWS account.
-- A user that has `CreateAccount` and `CreateRole` permissions on that account.
+- A user that has `CreateRole` permissions on that account.
 
-For instructions, follow [AWS documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/). Once your AWS account is created, proceed to Step 1.
+For instructions on creating a new AWS account, follow [AWS documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/). Once your AWS account is created, proceed to Step 1.
+
+:::tip
+
+If you have one or more existing AWS accounts, you can use [AWS Organizations](https://aws.amazon.com/organizations/) to manage billing, users, and more in a central place. For more information on how to add your Astronomer AWS account to your AWS Organization, read ["Inviting an AWS account to join your organization"](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html).
+:::
 
 ### VPC Peering Prerequisites (Optional)
 
