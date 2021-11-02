@@ -57,7 +57,7 @@ For the AWS account you created as a prerequisite, provide Astronomer with:
 
 - Your AWS Account ID.
 - Your preferred Astronomer Cluster name.
-- The AWS region that you want to host your Cluster in (`us-east-1` or `us-west-2`).
+- The AWS region that you want to host your Cluster in (`us-east-1`, `us-east-2`, `us-west-2` or `ca-central-1`).
 
 From here, our team will provision an Astronomer Cluster according to the specifications above.
 
