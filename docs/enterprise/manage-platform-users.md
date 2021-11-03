@@ -6,7 +6,7 @@ id: manage-platform-users
 
 ## Overview
 
-In addition to Workspace-level [role-based access control (RBAC) functionality](/docs/enterprise/v0.26/manage-astronomer/workspace-permissions/) core to our platform, Astronomer Enterprise allows teams to customize *how* they want users to create accounts on Astronomer and what they're able to do on the platform - both on Astronomer and Airflow.
+In addition to Workspace-level [role-based access control (RBAC) functionality](enterprise/workspace-permissions) core to our platform, Astronomer Enterprise allows teams to customize *how* they want users to create accounts on Astronomer and what they're able to do on the platform - both on Astronomer and Airflow.
 
 Read below for a high-level overview of user management and guidelines around public signups, role customization and adding System Admins.
 
@@ -67,7 +67,7 @@ Once on the platform, administrators can customize permissions across teams. On 
 1. Workspace Level (Viewer, Editor, Admin)
 2. System Level (Viewer, Editor, Admin)
 
-Workspace roles apply to all Airflow Deployments within a single Workspace, whereas System Roles apply to *all* Workspaces across a single cluster. For a detailed breakdown of the 3 Workspace-level roles on Astronomer (Viewer, Editor and Admin), read [Manage User Permissions on an Astronomer Workspace](/docs/enterprise/v0.26/manage-astronomer/workspace-permissions/).
+Workspace roles apply to all Airflow Deployments within a single Workspace, whereas System Roles apply to *all* Workspaces across a single cluster. For a detailed breakdown of the 3 Workspace-level roles on Astronomer (Viewer, Editor and Admin), read [Manage User Permissions on an Astronomer Workspace](enterprise/workspace-permissions).
 
 ## Customize Permissions
 

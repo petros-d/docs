@@ -10,22 +10,22 @@ When you install Astronomer, a number of platform-level settings will be set by 
 
 For example, you can:
 
-* [Integrate an Auth system](https://www.astronomer.io/docs/enterprise/v0.26/manage-astronomer/integrate-auth-system)
-* [Add a registry backend](https://www.astronomer.io/docs/enterprise/v0.26/manage-astronomer/registry-backend)
-* [Change resource allocation limits](https://www.astronomer.io/docs/enterprise/v0.26/manage-astronomer/configure-platform-resources)
+* [Integrate an Auth system](enterprise/integrate-auth-system)
+* [Add a registry backend](enterprise/registry-backend)
+* [Change resource allocation limits](enterprise/configure-platform-resources)
 * Update any other key-value pair specified in the [default configuration file](https://github.com/astronomer/astronomer/blob/master/values.yaml)
 
 To configure these settings, follow the steps below.
 
-> **Note:** If you're interested in upgrading Astronomer to a new patch version of the platform, read [Upgrade to a Patch Version](https://www.astronomer.io/docs/enterprise/v0.26/manage-astronomer/upgrade-astronomer-patch).
+> **Note:** If you're interested in upgrading Astronomer to a new patch version of the platform, read [Upgrade to a Patch Version](enterprise/upgrade-astronomer-patch).
 
 ## Step 1: Open Your config.yaml File
 
 This file was created when you installed Astronomer using one of the following guides:
 
-* [AWS EKS Installation Guide](https://www.astronomer.io/docs/enterprise/v0.26/install/aws/install-aws-standard#6-configure-your-helm-chart)
-* [GCP GKE Installation Guide](https://www.astronomer.io/docs/enterprise/v0.26/install/gcp/install-gcp-standard#7-configure-your-helm-chart)
-* [Azure AKS Installation Guide](https://www.astronomer.io/docs/enterprise/v0.26/install/azure/install-azure-standard#6-configure-your-helm-chart)
+* [AWS EKS Installation Guide](enterprise/install-aws#6-configure-your-helm-chart)
+* [GCP GKE Installation Guide](enterprise/install-gcp#step-7-configure-your-helm-chart)
+* [Azure AKS Installation Guide](enterprise/install-azure#step-6-configure-your-helm-chart)
 
 ## Step 2: Update Key-Value Pairs
 

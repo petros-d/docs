@@ -41,7 +41,7 @@ You can see who has access to the Workspace in the **Users** tab.
 
 If you'd like to share access to other members of your organization, invite them to a Workspace you're a part of. Once your team members are part of your Workspace, Deployment admins can grant them varying levels of access to Airflow Deployments within the Workspace. Likewise, Workspace admins can grant them varying levels of access to the entire Workspace.
 
-An exact breakdown of user roles and their respective levels of access can be found in [Manage User Permissions on an Astronomer Workspace](/docs/enterprise/v0.26/manage-astronomer/workspace-permissions/).
+An exact breakdown of user roles and their respective levels of access can be found in [Manage User Permissions on an Astronomer Workspace](enterprise/workspace-permissions).
 
 In addition, Enterprise system admins can add or remove specific permissions for each type of user role. For more information on this feature, read [Customize Permissions](https://www.astronomer.io/docs/enterprise/v0.26/manage-astronomer/manage-platform-users#customize-permissions).
 

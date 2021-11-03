@@ -49,7 +49,7 @@ To install the latest version of the Astronomer CLI via [Homebrew](https://brew.
 brew install astronomer/tap/astro
 ```
 
-For more information on the Astronomer CLI, read [CLI Quickstart](https://www.astronomer.io/docs/enterprise/v0.26/develop/cli-quickstart).
+For more information on the Astronomer CLI, read [CLI Quickstart](enterprise/cli-quickstart).
 
 ## Step 3: Install Astronomer Enterprise
 
@@ -215,5 +215,5 @@ Once you've successfully installed your Astronomer platform, we recommend doing 
 
 * [Invite new users to Astronomer](https://www.astronomer.io/docs/enterprise/v0.26/manage-astronomer/manage-platform-users)
 * [Manage permissions](https://www.astronomer.io/docs/enterprise/v0.26/manage-astronomer/workspace-permissions) for your new users
-* Integrate an [Auth System](/docs/enterprise/v0.26/manage-astronomer/integrate-auth-system/)
+* Integrate an [Auth System](enterprise/integrate-auth-system)
 * Set up [CI/CD](https://www.astronomer.io/docs/enterprise/v0.26/deploy/ci-cd)

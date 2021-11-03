@@ -671,7 +671,7 @@ Run `astro version` to see both your CLI version and Astronomer platform version
 
 ### Related documentation
 
-- [CLI Quickstart](https://www.astronomer.io/docs/enterprise/v0.26/develop/cli-quickstart)
+- [CLI Quickstart](enterprise/cli-quickstart)
 
 ## astro workspace
 

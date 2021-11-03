@@ -487,8 +487,8 @@ If you have Airflow pods in the state "ImagePullBackoff", check the pod descript
 To help you make the most of Astronomer Enterprise, check out the following additional resources:
 
 * [Renew TLS Certificates on Astronomer Enterprise](/docs/enterprise/v0.26/manage-astronomer/renew-tls-cert/)
-* [Integrating an Auth System](/docs/enterprise/v0.26/manage-astronomer/integrate-auth-system/)
-* [Configuring Platform Resources](/docs/enterprise/v0.26/manage-astronomer/configure-platform-resources/)
+* [Integrating an Auth System](enterprise/integrate-auth-system)
+* [Configuring Platform Resources](enterprise/configure-platform-resources)
 * [Managing Users on Astronomer Enterprise](/docs/enterprise/v0.26/manage-astronomer/manage-platform-users/)
 
 ### Astronomer Support Team

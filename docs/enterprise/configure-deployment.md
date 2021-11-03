@@ -169,7 +169,7 @@ Environment Variables can be used to set [Airflow configurations](https://airflo
 
 These can include setting Airflow Parallelism, an SMTP service for Alerts, or a [secrets backend](https://www.astronomer.io/docs/enterprise/v0.26/customize-airflow/secrets-backend) to manage Airflow Connections and Variables.
 
-Environment Variables can be set for your Airflow Deployment either in the **Variables** tab of the Astronomer UI or in your `Dockerfile`. If you're developing locally, they can also be added to a local `.env` file. For more information on configuring Environment Variables, read [Environment Variables on Astronomer](/docs/enterprise/v0.26/deploy/environment-variables/).
+Environment Variables can be set for your Airflow Deployment either in the **Variables** tab of the Astronomer UI or in your `Dockerfile`. If you're developing locally, they can also be added to a local `.env` file. For more information on configuring Environment Variables, read [Environment Variables on Astronomer](enterprise/environment-variables).
 
 > **Note**: Environment Variables are distinct from [Airflow Variables](https://airflow.apache.org/docs/apache-airflow/stable/howto/variable.html?highlight=variables) and [XComs](https://airflow.apache.org/docs/apache-airflow/stable/concepts.html?highlight=xcom#concepts-xcom), which you can configure directly via the Airflow UI and are used for inter-task communication.
 

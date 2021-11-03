@@ -28,7 +28,7 @@ To create a Service Account via the Astronomer UI:
 2. Go to **Deployment** > **Service Accounts**.
    ![New Service Account](https://assets2.astronomer.io/main/docs/ci-cd/ci-cd-new-service-account.png)
 3. Give your Service Account a **Name**, **User Role**, and **Category** (_Optional_).
-   > **Note:** In order for a Service Account to have permission to push code to your Airflow Deployment, it must have either the Editor or Admin role. For more information on Workspace roles, refer to [Roles and Permissions](/docs/enterprise/v0.26/manage-astronomer/workspace-permissions/).
+   > **Note:** In order for a Service Account to have permission to push code to your Airflow Deployment, it must have either the Editor or Admin role. For more information on Workspace roles, refer to [Roles and Permissions](enterprise/workspace-permissions).
 
    ![Name Service Account](https://assets2.astronomer.io/main/docs/ci-cd/ci-cd-name-service-account.png)
 4. Save the API Key that was generated. Depending on your use case, you may want to store this key in an Environment Variable or secret management tool of choice.
@@ -54,7 +54,7 @@ To create a Deployment-level Service Account via the Astronomer CLI:
    ```
 4.  Save the API Key that was generated. Depending on your use case, you might want to store this key in an Environment Variable or secret management tool of choice.
 
-For more information on the Astronomer CLI, read [CLI Quickstart](https://www.astronomer.io/docs/enterprise/v0.26/develop/cli-quickstart).
+For more information on the Astronomer CLI, read [CLI Quickstart](enterprise/cli-quickstart).
 
 ## Step 2: Make an Airflow API Request
 
