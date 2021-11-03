@@ -178,7 +178,7 @@ To delete a Deployment, you'll need:
 1. Permission (SysAdmin or Workspace Admin)
 2. A Deployment ID
 
-> **Note:** For more information about the SysAdmin role, reference our ["User Management" doc](/docs/enterprise/v0.26/manage-astronomer/manage-platform-users/).
+> **Note:** For more information about the SysAdmin role, reference our ["User Management" doc](enterprise/manage-platform-users).
 
 If you don't already have a Deployment ID, run `astro deployment list` via the Astronomer CLI or follow the steps in the "Query an Airflow Deployment" section above.
 
@@ -343,7 +343,7 @@ If you're assigning a user a different System-Level Role, replace `SYSTEM_ADMIN`
 
 ### Create a service account
 
-You can create Deployment and Workspace-level accounts in the Astronomer UI as described in [Deploy to Astronomer via CI/CD](https://www.astronomer.io/docs/enterprise/v0.26/deploy/ci-cd). Alternatively, you can create platform-level service accounts programatically via the Houston API. To create a service account via the Houston API, run the following in your GraphQL Playground:
+You can create Deployment and Workspace-level accounts in the Astronomer UI as described in [Deploy to Astronomer via CI/CD](enterprise/ci-cd). Alternatively, you can create platform-level service accounts programatically via the Houston API. To create a service account via the Houston API, run the following in your GraphQL Playground:
 
 ```graphql
 mutation CreateSystemServiceAccount {

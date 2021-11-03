@@ -10,7 +10,7 @@ When you install Astronomer, a number of platform-level settings will be set by 
 
 For example, you can:
 
-* [Integrate an Auth system](enterprise/integrate-auth-system)
+* [Integrate an Auth system](integrate-auth-system)
 * [Add a registry backend](enterprise/registry-backend)
 * [Change resource allocation limits](enterprise/configure-platform-resources)
 * Update any other key-value pair specified in the [default configuration file](https://github.com/astronomer/astronomer/blob/master/values.yaml)
@@ -23,9 +23,9 @@ To configure these settings, follow the steps below.
 
 This file was created when you installed Astronomer using one of the following guides:
 
-* [AWS EKS Installation Guide](enterprise/install-aws#6-configure-your-helm-chart)
-* [GCP GKE Installation Guide](enterprise/install-gcp#step-7-configure-your-helm-chart)
-* [Azure AKS Installation Guide](enterprise/install-azure#step-6-configure-your-helm-chart)
+* [AWS EKS Installation Guide](install-aws#step-8-configure-your-helm-chart)
+* [GCP GKE Installation Guide](install-gcp#step-7-configure-your-helm-chart)
+* [Azure AKS Installation Guide](install-azure#step-7-configure-your-helm-chart)
 
 ## Step 2: Update Key-Value Pairs
 

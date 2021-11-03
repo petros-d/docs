@@ -13,7 +13,7 @@ To install Astronomer on AKS, you'll need access to the following tools and perm
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 * [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
-* A compatible version of Kubernetes as described in Astronomer's [Version Compatibility Reference](https://www.astronomer.io/docs/enterprise/v0.26/resources/version-compatibility-reference)
+* A compatible version of Kubernetes as described in Astronomer's [Version Compatibility Reference](enterprise/version-compatibility-reference)
 * [Helm v3.2.1](https://github.com/helm/helm/releases/tag/v3.2.1)
 * SMTP Service & Credentials (e.g. Mailgun, Sendgrid, etc.)
 * Permission to create and modify resources on AKS
@@ -136,7 +136,7 @@ To obtain a TLS certificate, complete one of the following setups:
 
 [Let's Encrypt](https://letsencrypt.org/) is a free and secure certificate authority (CA) service that provides TLS certificates that renew automatically every 90 days. Use this option if you are configuring Astronomer for a smaller organization without a dedicated security team.
 
-To set up TLS certificates this way, follow the guidelines in [Automatically Renew TLS Certificates Using Let's Encrypt](https://www.astronomer.io/docs/enterprise/v0.26/manage-astronomer/renew-tls-cert#automatically-renew-tls-certificates-using-lets-encrypt). Make note of the certificate you create in this setup for Step 5.
+To set up TLS certificates this way, follow the guidelines in [Automatically Renew TLS Certificates Using Let's Encrypt](enterprise/renew-tls-cert#automatically-renew-tls-certificates-using-lets-encrypt). Make note of the certificate you create in this setup for Step 5.
 
 ### Option 2: Request a TLS certificate from your security team
 
@@ -210,7 +210,7 @@ A few additional configuration notes:
 
 ## Step 7: Configure Your Helm Chart
 
-> **Note:** If you want to use a third-party ingress controller for Astronomer, complete the setup steps in [Third-Party Ingress Controllers](/docs/enterprise/v0.26/manage-astronomer/third-party-ingress-controllers) in addition to this configuration.
+> **Note:** If you want to use a third-party ingress controller for Astronomer, complete the setup steps in [Third-Party Ingress Controllers](enterprise/third-party-ingress-controllers) in addition to this configuration.
 
 As a next step, create a file named `config.yaml` in an empty directory.
 
@@ -308,7 +308,7 @@ smtpUrl: smtps://USERNAME:PW@HOST/?pool=true
 
 >> **Note:** If there are `/` or other escape characters in your username or password, you may need to [URL encode](https://www.urlencoder.org/) those characters.
 
-These are the minimum values you need to configure for installing Astronomer. For information on additional configuration, read [What's Next](https://www.astronomer.io/docs/enterprise/v0.26/install/azure/install-azure-standard#whats-next).
+These are the minimum values you need to configure for installing Astronomer. For information on additional configuration, read [What's Next](enterprise/install-azure#whats-next).
 
 ## Step 8: Install Astronomer
 
@@ -332,7 +332,7 @@ This will ensure that you pull the latest from our Helm repository. Finally, run
 helm install -f config.yaml --version=0.26 --namespace=<your-platform-namespace> <your-platform-release-name> astronomer/astronomer
 ```
 
-This command will install the latest available patch version of Astronomer Enterprise v0.26. To override latest and specify a patch, add it to the `--version=` flag in the format of `0.26.x`. To install Astronomer Enterprise v0.26.2, for example, specify `--version=0.26.2`. For information on all available patch versions, refer to [Enterprise Release Notes](/docs/enterprise/v0.26/resources/release-notes/).
+This command will install the latest available patch version of Astronomer Enterprise v0.26. To override latest and specify a patch, add it to the `--version=` flag in the format of `0.26.x`. To install Astronomer Enterprise v0.26.2, for example, specify `--version=0.26.2`. For information on all available patch versions, refer to [Enterprise Release Notes](enterprise/release-notes).
 
 Once you run the commands above, a set of Kubernetes pods will be generated in your namespace. These pods power the individual services required to run our platform, including the Astronomer UI and Houston API.
 
@@ -389,7 +389,7 @@ astronomer-prometheus-blackbox-exporter-65f6c5f456-szr4s   1/1     Running      
 astronomer-registry-0                                      1/1     Running             0          24m
 ```
 
-If you are seeing issues here, check out our [guide on debugging your installation](/docs/enterprise/v0.26/troubleshoot/debug-install/).
+If you are seeing issues here, check out our [guide on debugging your installation](enterprise/debug-install).
 
 ## Step 10: Configure DNS
 
@@ -486,10 +486,10 @@ If you have Airflow pods in the state "ImagePullBackoff", check the pod descript
 
 To help you make the most of Astronomer Enterprise, check out the following additional resources:
 
-* [Renew TLS Certificates on Astronomer Enterprise](/docs/enterprise/v0.26/manage-astronomer/renew-tls-cert/)
+* [Renew TLS Certificates on Astronomer Enterprise](enterprise/renew-tls-cert)
 * [Integrating an Auth System](enterprise/integrate-auth-system)
 * [Configuring Platform Resources](enterprise/configure-platform-resources)
-* [Managing Users on Astronomer Enterprise](/docs/enterprise/v0.26/manage-astronomer/manage-platform-users/)
+* [Managing Users on Astronomer Enterprise](enterprise/manage-platform-users)
 
 ### Astronomer Support Team
 
@@ -498,4 +498,4 @@ If you have any feedback or need help during this process and aren't in touch wi
 * [Community Forum](https://forum.astronomer.io): General Airflow + Astronomer FAQs
 * [Astronomer Support Portal](https://support.astronomer.io/hc/en-us/): Platform or Airflow issues
 
-For detailed guidelines on reaching out to Astronomer Support, reference our guide [here](/docs/enterprise/v0.26/resources/support/).
+For detailed guidelines on reaching out to Astronomer Support, reference our guide [here](enterprise/support).

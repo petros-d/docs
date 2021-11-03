@@ -71,4 +71,4 @@ Alternatively, when you run `astro deployment create` command via the Astronomer
 
 If no namespaces are available, you will receive an error when creating a new Deployment in both the UI and the CLI. To reuse a pre-created namespace, you need to first delete the Deployment using it.
 
-> **Note:** Pre-created namespaces may take several days to become available again after deleting their associated Deployment. To immediately reuse a pre-created namespace, you need to hard-delete its associated Deployment as described in [Delete a Deployment](/docs/enterprise/v0.26/deploy/configure-deployment#delete-a-deployment).
+> **Note:** Pre-created namespaces may take several days to become available again after deleting their associated Deployment. To immediately reuse a pre-created namespace, you need to hard-delete its associated Deployment as described in [Delete a Deployment](enterprise/configure-deployment#delete-a-deployment).

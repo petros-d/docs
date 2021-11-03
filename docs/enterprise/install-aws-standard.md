@@ -11,7 +11,7 @@ This guide describes the steps to install Astronomer Enterprise on Amazon Web Se
 To install Astronomer on EKS, you'll need access to the following tools and permissions:
 
 * The [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html)
-* A compatible version of Kubernetes as described in Astronomer's [Version Compatibility Reference](https://www.astronomer.io/docs/enterprise/v0.26/resources/version-compatibility-reference)
+* A compatible version of Kubernetes as described in Astronomer's [Version Compatibility Reference](enterprise/version-compatibility-reference)
 * The [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 * The [OpenSSL CLI](https://www.openssl.org/docs/man1.0.2/man1/openssl.html)
 * [Helm v3.2.1](https://github.com/helm/helm/releases/tag/v3.2.1)
@@ -91,7 +91,7 @@ To obtain a TLS certificate, complete one of the following setup options:
 
 [Let's Encrypt](https://letsencrypt.org/) is a free and secure certificate authority (CA) service that provides TLS certificates that renew automatically every 90 days. Use this option if you are configuring Astronomer for a smaller organization without a dedicated security team.
 
-To set up TLS certificates this way, follow the guidelines in [Automatically Renew TLS Certificates Using Let's Encrypt](https://www.astronomer.io/docs/enterprise/v0.26/manage-astronomer/renew-tls-cert#automatically-renew-tls-certificates-using-lets-encrypt). Make note of the certificate you create in this setup for Step 5.
+To set up TLS certificates this way, follow the guidelines in [Automatically Renew TLS Certificates Using Let's Encrypt](enterprise/renew-tls-cert#automatically-renew-tls-certificates-using-lets-encrypt). Make note of the certificate you create in this setup for Step 5.
 
 ### Option 2: Request a TLS certificate from your security team
 
@@ -197,7 +197,7 @@ kubectl create secret generic astronomer-bootstrap \
 
 ## Step 8: Configure Your Helm Chart
 
-> **Note:** If you want to use a third-party ingress controller for Astronomer, complete the setup steps in [Third-Party Ingress Controllers](/docs/enterprise/v0.26/manage-astronomer/third-party-ingress-controllers) in addition to this configuration.
+> **Note:** If you want to use a third-party ingress controller for Astronomer, complete the setup steps in [Third-Party Ingress Controllers](enterprise/third-party-ingress-controllers) in addition to this configuration.
 
 As a next step, create a file named `config.yaml` in an empty directory.
 
@@ -302,7 +302,7 @@ This will ensure that you pull the latest from our Helm repository. Finally, run
 helm install -f config.yaml --version=0.26 --namespace=<your-platform-namespace> <your-platform-release-name> astronomer/astronomer
 ```
 
-This command will install the latest available patch version of Astronomer Enterprise v0.26. To override latest and specify a patch, add it to the `--version=` flag in the format of `0.26.x`. To install Astronomer Enterprise v0.26.2, for example, specify `--version=0.26.2`. For information on all available patch versions, refer to [Enterprise Release Notes](/docs/enterprise/v0.26/resources/release-notes/).
+This command will install the latest available patch version of Astronomer Enterprise v0.26. To override latest and specify a patch, add it to the `--version=` flag in the format of `0.26.x`. To install Astronomer Enterprise v0.26.2, for example, specify `--version=0.26.2`. For information on all available patch versions, refer to [Enterprise Release Notes](enterprise/release-notes).
 
 Once you run the commands above, a set of Kubernetes pods will be generated in your namespace. These pods power the individual services required to run our platform, including the Astronomer UI and Houston API.
 
@@ -359,7 +359,7 @@ astronomer-prometheus-blackbox-exporter-65f6c5f456-szr4s   1/1     Running      
 astronomer-registry-0                                      1/1     Running             0          24m
 ```
 
-If you are seeing issues here, check out our [guide on debugging your installation](/docs/enterprise/v0.26/troubleshoot/debug-install/).
+If you are seeing issues here, check out our [guide on debugging your installation](enterprise/debug-install/).
 
 ## Step 11: Configure DNS
 
@@ -457,10 +457,10 @@ If you have Airflow pods in an `ImagePullBackoff` state, check the pod descripti
 
 To help you make the most of Astronomer Enterprise, check out the following additional resources:
 
-* [Renew TLS Certificates on Astronomer Enterprise](/docs/enterprise/v0.26/manage-astronomer/renew-tls-cert/)
+* [Renew TLS Certificates on Astronomer Enterprise](enterprise/renew-tls-cert/)
 * [Integrating an Auth System](enterprise/integrate-auth-system)
 * [Configuring Platform Resources](enterprise/configure-platform-resources)
-* [Managing Users on Astronomer Enterprise](/docs/enterprise/v0.26/manage-astronomer/manage-platform-users/)
+* [Managing Users on Astronomer Enterprise](enterprise/manage-platform-users)
 
 ### Astronomer Support Team
 
@@ -469,4 +469,4 @@ If you have any feedback or need help during this process and aren't in touch wi
 * [Community Forum](https://forum.astronomer.io): General Airflow + Astronomer FAQs
 * [Astronomer Support Portal](https://support.astronomer.io/hc/en-us/): Platform or Airflow issues
 
-For detailed guidelines on reaching out to Astronomer Support, reference our guide [here](/docs/enterprise/v0.26/resources/support/).
+For detailed guidelines on reaching out to Astronomer Support, reference our guide [here](enterprise/support).

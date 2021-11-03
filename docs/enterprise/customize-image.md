@@ -71,7 +71,7 @@ docker exec -it <scheduler-container-id> pip freeze | grep pymongo
 pymongo==3.7.2
 ```
 
-> **Note:** Astronomer Certified, Astronomer's distribution of Apache Airflow, is available both as a Debian and Alpine base. We strongly recommend using Debian, as it's much easier to install dependencies and often presents less incompatability issues than an Alpine Linux image. For details on both, refer to our [Airflow Versioning Doc](/docs/enterprise/v0.26/customize-airflow/manage-airflow-versions/).
+> **Note:** Astronomer Certified, Astronomer's distribution of Apache Airflow, is available both as a Debian and Alpine base. We strongly recommend using Debian, as it's much easier to install dependencies and often presents less incompatability issues than an Alpine Linux image. For details on both, refer to our [Airflow Versioning Doc](enterprise/manage-airflow-versions).
 
 ## Add Other Dependencies
 
@@ -124,7 +124,7 @@ When you first initialize a new Airflow project on Astronomer, a file titled `ai
 
 For security reasons, the `airflow_settings.yaml` file is currently _only_ for local development and should not be used for pushing up code to Astronomer via `$ astro deploy`. For the same reason, we'd recommend adding this file to your `.gitignore`.
 
-> **Note:** If you're interested in programmatically managing Airflow Connections, Variables or Environment Variables, we'd recommend integrating a ["Secret Backend"](/docs/enterprise/v0.26/customize-airflow/secrets-backend) to help you do so.
+> **Note:** If you're interested in programmatically managing Airflow Connections, Variables or Environment Variables, we'd recommend integrating a ["Secret Backend"](enterprise/secrets-backend) to help you do so.
 
 ### Add Airflow Connections, Pools, Variables
 
@@ -263,7 +263,7 @@ If you're running the Debian-based Astronomer Certified image for Airflow 1.10.1
 FROM quay.io/astronomer/ap-airflow:1.10.12-buster AS stage1
 ```
 
-For a list of all Airflow Images supported on Astronomer, refer to [Upgrade Apache Airflow on Astronomer](/docs/enterprise/v0.26/customize-airflow/manage-airflow-versions/).
+For a list of all Airflow Images supported on Astronomer, refer to [Upgrade Apache Airflow on Astronomer](enterprise/manage-airflow-versions).
 
 > **Note:** Do NOT include `-onbuild` at the end of your Airflow Image as you typically would in your `Dockerfile`.
 
@@ -343,7 +343,7 @@ Now, let's push your new image to Astronomer.
 - If you're developing locally, run `$ astro dev stop` > `$ astro dev start`
 - If you're pushing up to Astronomer, you're free to deploy by running `$ astro deploy` or by triggering your CI/CD pipeline
 
-For more detail on the Astronomer deployment process, refer to [Deploy to Astronomer via the CLI](/docs/enterprise/v0.26/deploy/deploy-cli/).
+For more detail on the Astronomer deployment process, refer to [Deploy to Astronomer via the CLI](enterprise/deploy-cli).
 
 ## Build with a Different Python Version
 

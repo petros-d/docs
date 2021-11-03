@@ -15,7 +15,7 @@ These alerts fire based on metrics collected by Prometheus. If the conditions of
 
 Astronomer offers built-in Deployment and platform alerts, as well as the ability to create custom alerts in Helm using [PromQL query language](https://prometheus.io/docs/prometheus/latest/querying/basics/). This guide provides all of the information you need to configure Prometheus Alertmanager, subscribe to built-in alerts, and create custom alerts.
 
-In addition to configuring platform and Deployment-level alerts, you can also set email alerts that trigger on DAG and task-based events. For more information on configuring Airflow alerts, read [Airflow Alerts](https://www.astronomer.io/docs/enterprise/v0.26/customize-airflow/airflow-alerts).
+In addition to configuring platform and Deployment-level alerts, you can also set email alerts that trigger on DAG and task-based events. For more information on configuring Airflow alerts, read [Airflow Alerts](enterprise/airflow-alerts).
 
 ## Anatomy of an Alert
 

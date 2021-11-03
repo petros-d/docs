@@ -272,5 +272,5 @@ Deployment Viewers cannot deploy to, modify, or delete anything within an Airflo
 
 As an Astronomer Enterprise user, you're free to customize all user permissions at the platform-level. For more information, read:
 
-- [Manage Users on Astronomer Enterprise](https://www.astronomer.io/docs/enterprise/v0.26/manage-astronomer/manage-platform-users#customize-permissions)
+- [Manage Users on Astronomer Enterprise](enterprise/manage-platform-users#customize-permissions)
 - [Integrate an Auth System](enterprise/integrate-auth-system)

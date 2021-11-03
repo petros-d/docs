@@ -8,11 +8,11 @@ id: deploy-nfs
 
 Starting in Astronomer Enterprise v0.25, you can use an external [Network File System (NFS) Volume](https://kubernetes.io/docs/concepts/storage/volumes/#nfs) to deploy DAGs to an Airflow Deployment on Astronomer.
 
-Unlike [deploying DAGs via the Astronomer CLI](/docs/enterprise/v0.26/deploy/deploy-cli), deploying DAGs to an NFS volume, such as Azure File Storage or Google Cloud Filestore, does not require rebuilding a Docker image and restarting your underlying Airflow service. When a DAG is added to an NFS volume, it automatically appears in the Airflow UI without requiring additional action or causing downtime.
+Unlike [deploying DAGs via the Astronomer CLI](enterprise/deploy-cli), deploying DAGs to an NFS volume, such as Azure File Storage or Google Cloud Filestore, does not require rebuilding a Docker image and restarting your underlying Airflow service. When a DAG is added to an NFS volume, it automatically appears in the Airflow UI without requiring additional action or causing downtime.
 
 This guide provides the necessary setup for connecting an NFS volume to Astronomer as a DAG deploy option. Some considerations before completing this setup:
 
-- You can configure NFS volumes only to deploy DAGs. To push dependencies or other requirements to your Airflow Deployment, you still need to update your `requirements.txt` and `packages.txt` files and deploy via either the [Astronomer CLI](docs/enterprise/v0.26/deploy/deploy-cli) or [CI/CD](docs/enterprise/v0.26/deploy/ci-cd). For more information on pushing code to your Airflow environment, read [Customize Images](/docs/enterprise/v0.26/develop/customize-image).
+- You can configure NFS volumes only to deploy DAGs. To push dependencies or other requirements to your Airflow Deployment, you still need to update your `requirements.txt` and `packages.txt` files and deploy via either the [Astronomer CLI](docs/enterprise/v0.26/deploy/deploy-cli) or [CI/CD](docs/enterprise/v0.26/deploy/ci-cd). For more information on pushing code to your Airflow environment, read [Customize Images](enterprise/customize-image).
 - If you configure an NFS volume for an Airflow Deployment, you can't deploy DAGs via the Astronomer CLI or an Astronomer service account. These options are available only for Deployments configured with an image-based deploy mechanism.
 - You can configure NFS volumes only for Airflow Deployments running Airflow 2.0+.
 
@@ -56,4 +56,4 @@ Workspace editors can configure a new or existing Airflow Deployment to use a pr
 4. In the **NFS Location** field that appears, enter the location of your volume-based DAG directory as `<IP>:/<path>` (for example: `192.168.0.1:/path/to/your/dags`).
 5. Save your changes.
 
-> **Note:** NFS volumes can also be configured via the Astronomer CLI. To do so, specify the `--nfs-location` flag when running [`astro deployment create`](/docs/enterprise/v0.26/resources/cli-reference#astro-deployment-create) or [`astro deployment update`](/docs/enterprise/v0.26/resources/cli-reference#astro-deployment-update).
+> **Note:** NFS volumes can also be configured via the Astronomer CLI. To do so, specify the `--nfs-location` flag when running [`astro deployment create`](enterprise/cli-reference#astro-deployment-create) or [`astro deployment update`](enterprise/cli-reference#astro-deployment-update).

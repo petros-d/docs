@@ -15,7 +15,7 @@ This guide walks you through the process of creating and configuring an Airflow 
 To create an Airflow Deployment, you'll need:
 * [The Astronomer CLI](enterprise/cli-quickstart) installed.
 * An Astronomer platform at `app.BASEDOMAIN`.
-* An Astronomer [Workspace](https://www.astronomer.io/docs/enterprise/v0.26/deploy/manage-workspaces).
+* An Astronomer [Workspace](enterprise/manage-workspaces).
 
 ## Create a Deployment
 
@@ -83,7 +83,7 @@ The [Airflow Scheduler](https://airflow.apache.org/docs/apache-airflow/stable/sc
 
 If you experience delays in task execution, which you can track via the [Gantt Chart](https://airflow.apache.org/docs/apache-airflow/stable/ui.html#gantt-chart) view of the Airflow UI, we recommend increasing the AU allocated towards the Scheduler. The default resource allocation is 10 AU.
 
-> **Tip:** To set alerts that notify you via email when your Airflow Scheduler is underprovisioned, refer to [Airflow Alerts](/docs/enterprise/v0.26/customize-airflow/airflow-alerts/).
+> **Tip:** To set alerts that notify you via email when your Airflow Scheduler is underprovisioned, refer to [Airflow Alerts](enterprise/airflow-alerts).
 
 #### Scheduler Count
 
@@ -137,7 +137,7 @@ After you save these changes, push your `config.yaml` file to your installation 
 
 ## Kubernetes Executor: Set Extra Capacity
 
-On Astronomer, resources required for the [KubernetesPodOperator](https://www.astronomer.io/docs/enterprise/v0.26/customize-airflow/kubepodoperator) or the [Kubernetes Executor](/docs/enterprise/v0.26/customize-airflow/kubernetes-executor) are set as **Extra Capacity**.
+On Astronomer, resources required for the [KubernetesPodOperator](enterprise/kubepodoperator) or the [Kubernetes Executor](enterprise/kubernetes-executor) are set as **Extra Capacity**.
 
 The Kubernetes Executor and KubernetesPodOperator each spin up an individual Kubernetes pod for each task that needs to be executed, then spin down the pod once that task is completed.
 
@@ -167,7 +167,7 @@ If a deploy is triggered while a Celery Worker is executing a task and **Worker 
 
 Environment Variables can be used to set [Airflow configurations](https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html) and custom values, both of which can be applied to your Airflow Deployment either locally or on Astronomer.
 
-These can include setting Airflow Parallelism, an SMTP service for Alerts, or a [secrets backend](https://www.astronomer.io/docs/enterprise/v0.26/customize-airflow/secrets-backend) to manage Airflow Connections and Variables.
+These can include setting Airflow Parallelism, an SMTP service for Alerts, or a [secrets backend](enterprise/secrets-backend) to manage Airflow Connections and Variables.
 
 Environment Variables can be set for your Airflow Deployment either in the **Variables** tab of the Astronomer UI or in your `Dockerfile`. If you're developing locally, they can also be added to a local `.env` file. For more information on configuring Environment Variables, read [Environment Variables on Astronomer](enterprise/environment-variables).
 
@@ -202,7 +202,7 @@ You can use two different DAG deploy mechanisms on Astronomer:
 
 ### Image-based deploys
 
-By default, you can deploy DAGs to an Airflow Deployment by building them into a Docker image and pushing that image to the Astronomer Registry via the CLI or API. This workflow is described in [Deploy DAGs via the CLI](/docs/enterprise/v0.26/deploy/deploy-cli).
+By default, you can deploy DAGs to an Airflow Deployment by building them into a Docker image and pushing that image to the Astronomer Registry via the CLI or API. This workflow is described in [Deploy DAGs via the CLI](enterprise/deploy-cli).
 
 This mechanism builds your DAGs into a Docker image alongside all other files in your Airflow project directory, including your Python and OS-level packages, your Dockerfile, and your plugins.
 
