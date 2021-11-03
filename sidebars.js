@@ -50,6 +50,7 @@ module.exports = {
       label: 'Administer',
       items: [
       'add-a-cluster',
+      'add-users',
       ],
     },
     {
