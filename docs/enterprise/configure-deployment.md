@@ -13,7 +13,7 @@ This guide walks you through the process of creating and configuring an Airflow 
 ## Prerequisites
 
 To create an Airflow Deployment, you'll need:
-* [The Astronomer CLI](/docs/enterprise/v0.26/develop/cli-quickstart/) installed.
+* [The Astronomer CLI](enterprise/cli-quickstart) installed.
 * An Astronomer platform at `app.BASEDOMAIN`.
 * An Astronomer [Workspace](https://www.astronomer.io/docs/enterprise/v0.26/deploy/manage-workspaces).
 
@@ -133,7 +133,7 @@ astronomer:
               minAirflowVersion: "2.2.0"    
 ```
 
-After you save these changes, push your `config.yaml` file to your installation as described in [Apply a Config Change](/docs/enterprise/v0.26/manage-astronomer/apply-platform-config).
+After you save these changes, push your `config.yaml` file to your installation as described in [Apply a Config Change](enterprise/apply-platform-config).
 
 ## Kubernetes Executor: Set Extra Capacity
 
@@ -187,7 +187,7 @@ astronomer:
         manualReleaseNames: true # Allows you to set your release names
 ```
 
-Then, push the updated `config.yaml` file to your installation as described in [Apply a Config Change](https://www.astronomer.io/docs/enterprise/v0.26/manage-astronomer/apply-platform-config).
+Then, push the updated `config.yaml` file to your installation as described in [Apply a Config Change](enterprise/apply-platform-config).
 
 After applying this change, the **Release Name** field in the Astronomer UI becomes configurable:
 
@@ -228,7 +228,7 @@ In your Astronomer database, the corresponding `Deployment` record will be given
 
 ### Hard delete a Deployment
 
-> **Note:** This feature must first be enabled at the platform level before it can be used. To enable this feature, set `deployments.hardDeleteDeployment: true` in your `config.yaml` file and push the changes to your platform as described in [Apply a Config Change](https://www.astronomer.io/docs/enterprise/v0.26/manage-astronomer/apply-platform-config).
+> **Note:** This feature must first be enabled at the platform level before it can be used. To enable this feature, set `deployments.hardDeleteDeployment: true` in your `config.yaml` file and push the changes to your platform as described in [Apply a Config Change](enterprise/apply-platform-config).
 
 To reuse a custom release name given to an existing Deployment, you need to first hard delete both the Deployment's metadata database and the Deployment's entry in your Astronomer database. To do so, select the **Hard Delete?** checkbox before clicking **Delete Deployment**. Alternatively, you can run `astro deployment delete --hard` via the Astronomer CLI.
 

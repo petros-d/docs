@@ -58,7 +58,7 @@ astronomer:
 
 ```
 
-Then, push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](https://www.astronomer.io/docs/enterprise/v0.26/manage-astronomer/apply-platform-config).
+Then, push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](enterprise/apply-platform-config).
 
 ### User Roles on Astronomer
 
@@ -135,7 +135,7 @@ astronomer:
             deployment.images.push: true
 ```
 
-Then, push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](https://www.astronomer.io/docs/enterprise/v0.26/manage-astronomer/apply-platform-config).
+Then, push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](enterprise/apply-platform-config).
 
 ## System Roles
 

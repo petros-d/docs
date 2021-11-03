@@ -17,7 +17,7 @@ More specifically, this doc includes instructions for how to:
 - Add Environment Variables Locally
 - Build from a Private Repository
 
-> **Note:** The guidelines below assume that you've initialized a project on Astronomer via `$ astro dev init`. If you haven't done so already, refer to our ["CLI Quickstart" doc](/docs/enterprise/v0.26/develop/cli-quickstart/).
+> **Note:** The guidelines below assume that you've initialized a project on Astronomer via `$ astro dev init`. If you haven't done so already, refer to our ["CLI Quickstart" doc](enterprise/cli-quickstart).
 
 ## Add Python and OS-level Packages
 
@@ -249,7 +249,7 @@ Read below for guidelines.
 - An intialized Astronomer Airflow project and corresponding directory
 - An [SSH Key](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) to your Private GitHub repo
 
-If you haven't initialized an Airflow Project on Astronomer (by running `$ astro dev init`), reference our [CLI Quickstart Guide](/docs/enterprise/v0.26/develop/cli-quickstart/).
+If you haven't initialized an Airflow Project on Astronomer (by running `$ astro dev init`), reference our [CLI Quickstart Guide](enterprise/cli-quickstart).
 
 ### Step 1. Create a file called Dockerfile.build
 

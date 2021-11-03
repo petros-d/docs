@@ -59,7 +59,7 @@ To start using pre-created namespaces:
 
     > **Note:** If you want to add more namespaces in the future, you first need to ensure that those namespaces exist in Kubernetes before specifying their names in your `config.yaml` file.
 
-3. Save the changes in your `config.yaml` file and push them to Astronomer as described in [Apply a Config Change](/docs/enterprise/v0.26/manage-astronomer/apply-platform-config).
+3. Save the changes in your `config.yaml` file and push them to Astronomer as described in [Apply a Config Change](enterprise/apply-platform-config).
 
 ## Using Pre-Created Namespaces
 
