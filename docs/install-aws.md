@@ -28,7 +28,7 @@ For instructions on creating a new AWS account, follow [AWS documentation](https
 
 :::tip
 
-If you have one or more existing AWS accounts, you can use [AWS Organizations](https://aws.amazon.com/organizations/) to manage billing, users, and more in a central place. For more information on how to add your Astronomer AWS account to your AWS Organization, read ["Inviting an AWS account to join your organization"](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html).
+If you have one or more existing AWS accounts, you can use [AWS Organizations](https://aws.amazon.com/organizations/) to manage billing, users, and more in a central place. For more information on how to add your Astronomer AWS account to your AWS Organization, read [Amazon's documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html).
 :::
 
 ### VPC Peering Prerequisites (Optional)
