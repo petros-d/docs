@@ -8,7 +8,7 @@ id: overview
 
 Astronomer makes it easy to run, monitor, and scale [Apache Airflow](https://github.com/apache/airflow) deployments in our cloud or yours. Source code is made available for the benefit of customers.
 
-If you'd like to see the platform in action, [start a free trial on our SaaS service, Astronomer Cloud](https://www.astronomer.io/get-astronomer/) and run through our [getting started guide](https://www.astronomer.io/docs/enterprise/stable/get-started/quickstart/). This is a good first step, even if you're ultimately interested in running Astronomer Enterprise in your own Kubernetes cluster.
+If you'd like to see the platform in action, [start a free trial on our SaaS service, Astronomer Cloud](https://www.astronomer.io/get-astronomer/) and run through our [getting started guide](enterprise/quickstart). This is a good first step, even if you're ultimately interested in running Astronomer Enterprise in your own Kubernetes cluster.
 
 ## Architecture
 
@@ -18,30 +18,29 @@ If you'd like to see the platform in action, [start a free trial on our SaaS ser
 
 We have created guides for installing Astronomer on a number of Kubernetes environments:
 
-* [Amazon Web Services EKS](https://www.astronomer.io/docs/enterprise/stable/install/aws/install-aws-standard/)
-* [Google Cloud Platform GKE](https://www.astronomer.io/docs/enterprise/stable/install/gcp/install-gcp-standard/)
-* [Microsoft Azure AKS](https://www.astronomer.io/docs/enterprise/stable/install/azure/install-azure-standard/)
+* [Amazon Web Services EKS](enterprise/install-aws)
+* [Google Cloud Platform GKE](enterprise/install-gcp)
+* [Microsoft Azure AKS](enterprise/install-azure)
 
 ## Customizing Your Installation
 
 Because the platform uses Helm throughout, it's very easy to customize your Astronomer installation. Below are some guides for most common customizations:
 
-* [Integrating Auth Systems](https://www.astronomer.io/docs/enterprise/stable/manage-astronomer/integrate-auth-system/)
-* [Configuring Resources with Helm](https://www.astronomer.io/docs/enterprise/stable/manage-astronomer/manage-platform-users/)
-* [Configuring a Registry Back End](https://www.astronomer.io/docs/enterprise/stable/manage-astronomer/registry-backend/)
-* [Built-in Alerts](https://www.astronomer.io/docs/enterprise/stable/monitor/platform-alerts/)
+* [Integrating Auth Systems](enterprise/integrate-auth-system)
+* [Configuring Resources with Helm](enterprise/manage-platform-users)
+* [Configuring a Registry Back End](enterprise/registry-backend)
+* [Built-in Alerts](enterprise/platform-alerts)
 
 ## Administration
 
 There are many tools at your disposal for administrating Astronomer:
 
-* [The Houston API Playground](https://www.astronomer.io/docs/enterprise/stable/manage-astronomer/houston-api/)
-* [Metrics](https://www.astronomer.io/docs/enterprise/stable/monitor/grafana-metrics/)
-* [Using Kibana](https://www.astronomer.io/docs/enterprise/stable/monitor/kibana-logging/)
-* [Using kubectl](https://www.astronomer.io/docs/enterprise/stable/troubleshoot/kubectl/)
-* [Pulling Postgres Credentials](https://www.astronomer.io/docs/enterprise/stable/customize-airflow/access-airflow-database/)
-* [Upgrade to a Patch Version of Astronomer Enterprise](https://www.astronomer.io/docs/enterprise/stable/manage-astronomer/upgrade-astronomer-patch/)
-* [Migrating An Airflow Deployment to Astronomer](https://www.astronomer.io/docs/enterprise/)
+* [The Houston API Playground](enterprise/houston-api)
+* [Metrics](enterprise/grafana-metrics)
+* [Using Kibana](enterprise/kibana-logging)
+* [Using kubectl](enterprise/kubectl)
+* [Pulling Postgres Credentials](enterprise/access-airflow-database)
+* [Upgrade to a Patch Version of Astronomer Enterprise](enterprise/upgrade-astronomer-patch/)
 
 ## License
 

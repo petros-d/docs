@@ -43,7 +43,7 @@ If you'd like to share access to other members of your organization, invite them
 
 An exact breakdown of user roles and their respective levels of access can be found in [Manage User Permissions on an Astronomer Workspace](enterprise/workspace-permissions).
 
-In addition, Enterprise system admins can add or remove specific permissions for each type of user role. For more information on this feature, read [Customize Permissions](enterprise/manage-platform-users#customize-permissions).
+In addition, Enterprise system admins can add or remove specific permissions for each type of user role. For more information on this feature, read [Customize Permissions](manage-platform-users#customize-permissions).
 
 ## Service Accounts
 

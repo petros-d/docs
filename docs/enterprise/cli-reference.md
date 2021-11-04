@@ -586,7 +586,7 @@ Runs a single [Airflow CLI command](https://airflow.apache.org/docs/apache-airfl
 
 ### Related documentation
 
-- [Access to the Airflow CLI](enterprise/customize-image#access-to-the-airflow-cli)
+- [Access to the Airflow CLI](customize-image#access-to-the-airflow-cli)
 
 ## astro dev start
 
@@ -624,7 +624,6 @@ Runs a script that checks whether all files in your local Airflow project are co
 
 ### Related documentation
 
-- [Upgrade to Apache Airflow 2.0 on Astronomer](enterprise/upgrade-to-airflow-2)
 - [Running the Airflow Upgrade Check Package](https://airflow.apache.org/docs/apache-airflow/stable/upgrade-check.html#upgrade-check)
 
 ## astro upgrade

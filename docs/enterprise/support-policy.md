@@ -44,11 +44,11 @@ The format for AC hotfix versions is `<base-version>-<hotfix-version>`. For exam
 
 All hotfix releases have a [corresponding changelog](https://github.com/astronomer/ap-airflow/blob/master/2.1.0/CHANGELOG.md) which specifies the date the hotfix was released and all individual changes made to it. Bugs that are reported by the wider Airflow community are often fixed in Astronomer Certified before they are fixed in the subsequent open source release.
 
-For information on how to upgrade to the latest hotfix release, read [Upgrade to an AC Patch Version](enterprise/manage-airflow-versions#patch-versions-of-astronomer-certified).
+For information on how to upgrade to the latest hotfix release, read [Upgrade to an AC Patch Version](manage-airflow-versions#patch-versions-of-astronomer-certified).
 
 ## Available Versions
 
-The following table contains all Astronomer Certified images supported on Astronomer Enterprise. For our platform's full collection of Docker images, reference [Astronomer on Quay.io](https://quay.io/repository/astronomer/ap-airflow?tab=tags). For more information on Alpine and Debian as distinct system distributions, read [Migrate from Alpine to Debian](enterprise/manage-airflow-versions#migrate-from-alpine-to-debian).
+The following table contains all Astronomer Certified images supported on Astronomer Enterprise. For our platform's full collection of Docker images, reference [Astronomer on Quay.io](https://quay.io/repository/astronomer/ap-airflow?tab=tags). For more information on Alpine and Debian as distinct system distributions, read [Migrate from Alpine to Debian](manage-airflow-versions#migrate-from-alpine-to-debian).
 
 | Airflow Version                                                                      | Debian-based Image                                        | Alpine-based Image                                            |
 | -------------------------------------------------------------------------------------| ----------------------------------------------------------| --------------------------------------------------------------|

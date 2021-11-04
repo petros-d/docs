@@ -136,7 +136,7 @@ To obtain a TLS certificate, complete one of the following setups:
 
 [Let's Encrypt](https://letsencrypt.org/) is a free and secure certificate authority (CA) service that provides TLS certificates that renew automatically every 90 days. Use this option if you are configuring Astronomer for a smaller organization without a dedicated security team.
 
-To set up TLS certificates this way, follow the guidelines in [Automatically Renew TLS Certificates Using Let's Encrypt](enterprise/renew-tls-cert#automatically-renew-tls-certificates-using-lets-encrypt). Make note of the certificate you create in this setup for Step 5.
+To set up TLS certificates this way, follow the guidelines in [Automatically Renew TLS Certificates Using Let's Encrypt](renew-tls-cert#automatically-renew-tls-certificates-using-lets-encrypt). Make note of the certificate you create in this setup for Step 5.
 
 ### Option 2: Request a TLS certificate from your security team
 
@@ -308,7 +308,7 @@ smtpUrl: smtps://USERNAME:PW@HOST/?pool=true
 
 >> **Note:** If there are `/` or other escape characters in your username or password, you may need to [URL encode](https://www.urlencoder.org/) those characters.
 
-These are the minimum values you need to configure for installing Astronomer. For information on additional configuration, read [What's Next](enterprise/install-azure#whats-next).
+These are the minimum values you need to configure for installing Astronomer. For information on additional configuration, read [What's Next](install-azure#whats-next).
 
 ## Step 8: Install Astronomer
 

@@ -43,7 +43,7 @@ Running Airflow with the Astronomer Certified Docker image requires specific ver
 - Database: PostgreSQL (11, 12), MySQL (5.7, 8.0+)
 - System Distribution: Debian 10 (Buster)
 
-> **Note:** While the Astronomer Certified Python Wheel supports Python versions 3.6, 3.7, and 3.8, Astronomer Certified Docker images have been tested and built only with Python 3.7. To run Astronomer Certified on Docker with Python 3.6 or 3.8, you can create a custom image with a different Python version specified. For more information, read [Change Python Versions](https://www.astronomer.ioenterprise/customize-image#build-with-a-different-python-version).
+> **Note:** While the Astronomer Certified Python Wheel supports Python versions 3.6, 3.7, and 3.8, Astronomer Certified Docker images have been tested and built only with Python 3.7. To run Astronomer Certified on Docker with Python 3.6 or 3.8, you can create a custom image with a different Python version specified. For more information, read [Change Python Versions](https://www.astronomer.iocustomize-image#build-with-a-different-python-version).
 
 These requirements are slightly different for running only the Python wheel. For the Python wheel, you can use:
 
@@ -59,7 +59,7 @@ When an Airflow service is started, it checks a file for runtime environment var
 
 If you run the Astronomer Certified Docker image without the Astronomer platform, environment variables are defined in your Dockerfile. They can be overwritten with a runtime command, such as `docker run`.
 
-If you're running the Astronomer Certified Docker image with the Astronomer platform, there are a few ways you can configure environment variables. For more information, read [Environment Variables](docs/enterprise/v0.26/deploy/environment-variables).
+If you're running the Astronomer Certified Docker image with the Astronomer platform, there are a few ways you can configure environment variables. For more information, read [Environment Variables](enterprise/environment-variables).
 
 Astronomer Certified supports the same environment variables as Apache Airflow. For a list of all configurable environment variables, read the [Apache Airflow documentation](https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html).
 

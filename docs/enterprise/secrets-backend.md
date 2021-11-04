@@ -29,7 +29,7 @@ To use this feature, you'll need the following:
 If you do not already have a Vault server deployed but would like to test this feature, we'd recommend either:
 
 1. Deploying a light-weight server using [this Heroku Element](https://elements.heroku.com/buttons/pallavkothari/vault)
-2. Deploying a local server via the instructions in [our Airflow and Vault guide](/guides/airflow-and-hashicorp-vault)
+2. Deploying a local server via the instructions in [our Airflow and Vault guide](https://www.astronomer.io/guides/airflow-and-hashicorp-vault)
 
 ### Write a Connection to Vault
 
@@ -237,7 +237,7 @@ This setup assumes that you already have a Google Cloud project with [Secret Man
 1. [Create a service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts) with the appropriate permissions on Google Cloud.
 2. Add the [Secret Manager Secret Accessor](https://cloud.google.com/secret-manager/docs/access-control) role to the service account.
 3. Create and download a [JSON service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys) for the service account.
-4. In the Astronomer UI, set the following [environment variables](docs/enterprise/v0.26/deploy/environment-variables) in your Airflow Deployment, making sure to paste the entire JSON key file in place of `<your-key-file>`:
+4. In the Astronomer UI, set the following [environment variables](enterprise/environment-variables) in your Airflow Deployment, making sure to paste the entire JSON key file in place of `<your-key-file>`:
 
     ```sh
     AIRFLOW__SECRETS__BACKEND=airflow.providers.google.cloud.secrets.secret_manager.CloudSecretManagerBackend

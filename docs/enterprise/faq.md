@@ -90,7 +90,7 @@ See [Integrate Auth System](enterprise/integrate-auth-system)
 
 Astronomer has a flexible [auth front end](enterprise/integrate-auth-system), with pre-built integrations for Google Auth, Okta, Auth0, and others.
 
-If you choose to use Google Auth, we have [documentation available](enterprise/integrate-auth-systems).
+If you choose to use Google Auth, we have [documentation available](enterprise/integrate-auth-system).
 
 ### How can implement RBAC with this solution?
 

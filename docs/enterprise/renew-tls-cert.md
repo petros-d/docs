@@ -116,7 +116,7 @@ Once you set up a TLS certificate for Astronomer, you'll need to establish a pro
    kubectl get certificates
    ```
 
-6. Note your certificate name for when you create a Kubernetes TLS secret and push it to your Enterprise configuration as described in the Enterprise installation guide ([AWS](install-aws#step-5-create-a-kubernetes-tls-secret)/[GCP](enterprise/install-gcp#step-5-create-a-kubernetes-tls-secret)/[AKS](enterprise/azure/install-azure-standard#step-5-create-a-kubernetes-tls-secret)).
+6. Note your certificate name for when you create a Kubernetes TLS secret and push it to your Enterprise configuration as described in the Enterprise installation guide ([AWS](install-aws#step-5-create-a-kubernetes-tls-secret)/[GCP](install-gcp#step-5-create-a-kubernetes-tls-secret)/[AKS](install-azure/#step-5-create-a-kubernetes-tls-secret)).
 
 ## Manually Renew TLS Certificates
 
@@ -127,7 +127,7 @@ Larger organizations with dedicated security teams will likely have their own pr
    kubectl delete secret astronomer-tls
    ```
 
-2. Follow the instructions for requesting a TLS certificate from your organization's security team as described in [Step 4: Configure TLS](https://www.astronomer.io/docs/enterprise/v0.26/install/aws/install-aws-standard#step-4-configure-tls). The linked guide is written for users installing Astronomer on AWS, but this step is the same regardless of which service you use.
+2. Follow the instructions for requesting a TLS certificate from your organization's security team as described in [Step 4: Configure TLS](install-aws#step-4-configure-tls). The linked guide is written for users installing Astronomer on AWS, but this step is the same regardless of which service you use.
 
 3. Restart your Houston, nginx, and registry pods to begin using the new certificate by running the following commands:
    ```sh

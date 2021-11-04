@@ -215,7 +215,7 @@ Your Airflow user password is stored in your `sys-config` file (owned by `root:r
 AIRFLOW__CORE__SQL_ALCHEMY_CONN_CMD=vault kv get -field=dsn secret/airflow-db
 ```
 
-For more information on this feature, read [Integrating Airflow and Hashicorp Vault](/guides/airflow-and-hashicorp-vault).
+For more information on this feature, read [Integrating Airflow and Hashicorp Vault](https://www.astronomer.io/guides/airflow-and-hashicorp-vault).
 
 ## Step 8: Set Up the Scheduler
 

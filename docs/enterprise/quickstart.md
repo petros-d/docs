@@ -12,7 +12,7 @@ Whether you're exploring our Enterprise or Cloud offering, we've designed this t
 
 ## Step 1: Start with Astronomer Cloud
 
-If you want to get a sense of Astronomer Enterprise without going through the installation process, try out Cloud by [starting a 14-day Trial](/trial/). At its core, Astronomer Cloud is a large-scale deployment of Astronomer Enterprise that is fully managed by our team. Cloud provides parallel Airflow functionality to Enterprise with just a few key differences:
+If you want to get a sense of Astronomer Enterprise without going through the installation process, try out [Cloud](https://www.astronomer.io/product/cloud/). At its core, Astronomer Cloud is a large-scale deployment of Astronomer Enterprise that is fully managed by our team. Cloud provides parallel Airflow functionality to Enterprise with just a few key differences:
 
 - Astronomer Cloud runs in Astronomer's VPC and uses the public internet, whereas Astronomer Enterprise runs in your own environment according to your own security settings.
 - Astronomer Cloud is billed on CPU and Memory usage on a monthly basis, whereas Enterprise is billed through an annual license.
@@ -57,9 +57,9 @@ If you are in charge of setting up Astronomer for your team, follow one of our E
 
 We have documentation for deploying Astronomer on:
 
-- Amazon Elastic Kubernetes Service (EKS) (via [Helm](enterprise/install-aws-standard))
-- [Google Kubernetes Engine (GKE)](enterprise/install-gcp-standard)
-- [Azure Kubernetes Service (AKS)](enterprise/install-azure-standard)
+- Amazon Elastic Kubernetes Service (EKS) (via [Helm](enterprise/install-aws))
+- [Google Kubernetes Engine (GKE)](enterprise/install-gcp)
+- [Azure Kubernetes Service (AKS)](enterprise/install-azure)
 
 ## Step 4: Create a Project
 
