@@ -6,7 +6,7 @@ id: add-users
 
 ## Overview
 
-As a Workspace Admin, you can invite users with Astronomer accounts to your Workspace. From here, you can grant them a role with permissions to complete certain actions across the Workspace.
+As a Workspace Admin, you can add users with Astronomer Cloud accounts to your Workspace. From here, you can grant them a role with permissions to complete certain actions across the Workspace.
 
 This guide provides steps for adding a user to an Astronomer Workspace.
 
