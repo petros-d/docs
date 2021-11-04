@@ -102,7 +102,6 @@ Once you've modified your trust policy, click **Update Trust Policy** in the AWS
 
 Once you have finished configuring the trust policy, notify Astronomer that you have done so. From here, the Astronomer team will finish creating the Cluster in your AWS account and notify you when it's complete.
 
-## Step 4: Create a Deployment in your Cluster
 
 Once your Cluster is available, you should be able to create a new Deployment within that cluster. To do so, go to your Workspace and select **Create Deployment** > **Deployment Location**.
 
