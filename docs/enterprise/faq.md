@@ -38,8 +38,7 @@ You can find a list of all components used by the platform in the [Astronomer Pl
 ### What Docker version is used for deployment?
 
 * AWS: Astronomer prefers to use the EKS-optimized AMIs provided by AWS. These will automatically include the latest, stable Docker version tested by Amazon with EKS. We recommend [looking up the AMI ID](https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html) to find the image appropriate for your Kubernetes version and AWS region. You may have additional requirements that necessitate building your own AMI. You might build these with Packer, in which case you may want to reference the EKS [optimized Packer configuration](https://github.com/awslabs/amazon-eks-ami). Assuming that you are using Kubernetes 1.14, it looks like AWS is using Docker version 18.09 for the [latest release of the EKS AMI](https://github.com/awslabs/amazon-eks-ami/blob/da2d05a60929f9d258355b8a597f2917c35896f4/eks-worker-al2.json#L17).
-* GKE: has a similar set up to EKS where they provide an optimized machine image that is ideal for running in their managed kubernetes service. For Astronomer cloud, we are making use of these GKE images, using Kubernetes 1.14. This is also using Docker version 18.09. [This page includes the release notes](https://cloud.google.com/container-optimized-os/docs/release-notes) for the GKE optimized machine images (called ‘container optimized OS’ or ‘COS’ for short). This page indicates the [release notes for GKE in general](https://cloud.google.com/kubernetes-engine/docs/release-notes). GKE has a nice feature introduced last year called “Release channels” that are nice for automatically upgrading Kubernetes version. GKE also has [a few other machine images besides COS](https://cloud.google.com/kubernetes-engine/docs/concepts/node-images).
-
+* GKE: has a similar set up to EKS where they provide an optimized machine image that is ideal for running in their managed kubernetes service. For Astronomer, we are making use of these GKE images, using Kubernetes 1.14. This is also using Docker version 18.09. [This page includes the release notes](https://cloud.google.com/container-optimized-os/docs/release-notes) for the GKE optimized machine images (called ‘container optimized OS’ or ‘COS’ for short). This page indicates the [release notes for GKE in general](https://cloud.google.com/kubernetes-engine/docs/release-notes). GKE has a nice feature introduced last year called “Release channels” that are nice for automatically upgrading Kubernetes version. GKE also has [a few other machine images besides COS](https://cloud.google.com/kubernetes-engine/docs/concepts/node-images).
 
 ## System-Level Access Requirements
 
@@ -174,10 +173,3 @@ Minor bugfix/CVE patches are applied to individual releases for 18 months.
 ### How does patching work for this setup?
 
 Kubernetes and node upgrades are generally managed by the customer. Platform version upgrades are performed with Helm, assisted by Astronomer support team if required. See https://www.astronomer.io/docs/ee-upgrade-guide/.
-
-
-## Astronomer Cloud
-
-### How often does Astronomer perform pentests for its own platform? How quickly are vulnerabilities from these reports addressed?
-
-We are in the process of SOC2 Type2 certification, and as such our policy on pen-testing our SaaS service is changing. We will follow industry standards in accordance with SOC2 guidelines.

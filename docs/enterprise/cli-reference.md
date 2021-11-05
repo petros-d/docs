@@ -125,8 +125,8 @@ If you have access to more than one Astronomer platform, each will have a unique
 
 | Subcommand | Usage                                                                                                                                              |
 | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `login`    | To log in to Astronomer Cloud, run `astro auth login gcp0001.us-east4.astronomer.io`. For Enterprise, run `astro auth login <base-domain>`.    |
-| `logout`   | To log out of Astronomer Cloud, run `astro auth logout gcp0001.us-east4.astronomer.io`. For Enterprise, run `astro auth logout <base-domain>`. |
+| `login`    | To log in to Astronomer Cloud, run `astro auth login`. For Enterprise, run `astro auth login <base-domain>`.    |
+| `logout`   | To log out of Astronomer Cloud, run `astro auth logout`. For Enterprise, run `astro auth logout <base-domain>`. |
 
 ## astro cluster
 

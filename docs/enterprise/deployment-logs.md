@@ -24,7 +24,7 @@ A few use cases:
 
 To view logs on Astronomer, you'll need:
 
-- An account on Astronomer Cloud OR access to an Astronomer Enterprise Installation
+- Access to an Astronomer Enterprise Installation
 - An Airflow deployment on Astronomer
 
 ## View Logs

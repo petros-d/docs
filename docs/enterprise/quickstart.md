@@ -10,15 +10,7 @@ This guide will help you get started on Astronomer by walking through a sample D
 
 Whether you're exploring our Enterprise or Cloud offering, we've designed this to be a great way to become familiar with our platform.
 
-## Step 1: Start with Astronomer Cloud
-
-If you want to get a sense of Astronomer Enterprise without going through the installation process, try out [Cloud](https://www.astronomer.io/product/cloud/). At its core, Astronomer Cloud is a large-scale deployment of Astronomer Enterprise that is fully managed by our team. Cloud provides parallel Airflow functionality to Enterprise with just a few key differences:
-
-- Astronomer Cloud runs in Astronomer's VPC and uses the public internet, whereas Astronomer Enterprise runs in your own environment according to your own security settings.
-- Astronomer Cloud is billed on CPU and Memory usage on a monthly basis, whereas Enterprise is billed through an annual license.
-- Astronomer Cloud doesn't give users access to the same Grafana/ Kibana monitoring stack that you have in Astronomer Enterprise.
-
-## Step 2: Install the Astronomer CLI
+## Step 1: Install the Astronomer CLI
 
 The [Astronomer CLI](https://github.com/astronomer/astro-cli) is the easiest way to run Apache Airflow on your machine. From the CLI, you can establish a local testing environment and deploy to Astronomer Cloud whenever you're ready.
 
@@ -51,7 +43,7 @@ brew install astronomer/tap/astro
 
 For more information on the Astronomer CLI, read [CLI Quickstart](enterprise/cli-quickstart).
 
-## Step 3: Install Astronomer Enterprise
+## Step 2: Install Astronomer Enterprise
 
 If you are in charge of setting up Astronomer for your team, follow one of our Enterprise installation guides to get Astronomer running on your Kubernetes Cluster.
 
@@ -61,7 +53,7 @@ We have documentation for deploying Astronomer on:
 - [Google Kubernetes Engine (GKE)](enterprise/install-gcp)
 - [Azure Kubernetes Service (AKS)](enterprise/install-azure)
 
-## Step 4: Create a Project
+## Step 3: Create a Project
 
 Using the Astronomer CLI, create an Airflow project to work from that lives on your local machine:
 
@@ -111,7 +103,7 @@ To help you get started, your initialized project includes an `example-dag` in `
 
 If you'd like to deploy some more functional DAGs, upload your own or check out [example DAGs we've open sourced](https://github.com/airflow-plugins/example-dags).
 
-## Step 5: Identify your Base Domain and Log in
+## Step 4: Identify your Base Domain and Log in
 
 Since Astronomer is running entirely on your infrastructure, the Astronomer UI will be located at a base domain specific to your organization. Head to `app.BASEDOMAIN` in your web browser and log in. You're in the right place if you see the following login screen:
 
@@ -119,7 +111,7 @@ Since Astronomer is running entirely on your infrastructure, the Astronomer UI w
 
 > **Note:** If you are not the first person to log in, you will need an email invite to the platform.
 
-## Step 6: Create a Workspace
+## Step 5: Create a Workspace
 
 If you're the first person to log in to the Astronomer UI, click **New Workspace** to create a Workspace.
 
@@ -129,7 +121,7 @@ You can think of Workspaces the same way you'd think of teams - a space that spe
 
 For more information, read [Manage Workspaces and Deployments](enterprise/manage-workspaces).
 
-## Step 7: Authenticate to Astronomer from the CLI
+## Step 6: Authenticate to Astronomer from the CLI
 
 You can authenticate to Astronomer using the following command:
 
@@ -141,7 +133,7 @@ You'll be prompted to authenticate and select the Workspace that you want to ope
 
 The first user to log in to the Astronomer platform will become a System Admin by default. Additional users can be added via the Astronomer UI or CLI. For more information on user permissions at the platform level, read [Manage Users on Astronomer Enterprise](enterprise/manage-platform-users).
 
-## Step 8: Create an Airflow Deployment
+## Step 7: Create an Airflow Deployment
 
 In the Astronomer UI, use the **New Deployment** menu to configure the following:
 
@@ -156,7 +148,7 @@ Once you've finished, click **Create Deployment**. After it spins up, your new D
 
 For a production environment, you'll likely need to set resources and configure your Airflow Deployment to fit the needs of your organization. For more information on configuring Deployments, read [Configure an Airflow Deployment on Astronomer](enterprise/configure-deployment).
 
-## Step 9: Deploy a DAG
+## Step 8: Deploy a DAG
 
 You can now use Astronomer to start Airflow locally and deploy code. To do so:
 
@@ -193,7 +185,7 @@ You can now use Astronomer to start Airflow locally and deploy code. To do so:
 
     You should be able to view `example-dag` in the Airflow UI. You should also be able to turn on `example-dag` and see task runs begin to accumulate in the **Recent Tasks** column.
 
-## Step 10: Access Metrics
+## Step 9: Access Metrics
 
 Once you've turned on the `example-dag` in the Airflow UI, go to the **Metrics** tab in the Astronomer UI to see metrics for your Deployment in real time.
 
