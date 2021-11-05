@@ -38,4 +38,4 @@ Our team will reach out to yours to schedule an onboarding session for the initi
 - [Develop Project](develop-project)
 - [Configure your Deployment](configure-deployment)
 
-If you have a feature request or find a bug to report, reach out to us at support@astronomer.io or drop our team a note in our shared Slack Channel. You'll be connected directly with our Product team.
+If you have a feature request or a bug to report, reach out to [Astronomer Support](https://support.astronomer.io) or drop our team a note in Slack. We're here to help.

@@ -10,6 +10,12 @@ This document provides a summary of all changes made to the [Astronomer CLI](ins
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
+## v1.0.3
+
+Release date: November 5, 2021
+
+- Bug Fix: Fixed an issue where users saw errors related to S3 in Airflow task logs when running locally (e.g. `Failed to verify remote log exists s3:///`).
+
 ## v1.0.2
 
 Release date: October 25, 2021

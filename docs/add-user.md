@@ -19,7 +19,7 @@ To add a user to a Workspace, you must have:
 
 ## Step 1: Invite the User to Astronomer
 
-If the user you want to add doesn't already have an account on Astronomer Cloud, tell them to go to `cloud.astronomer.io` and sign up. Once they create an account, they will see the following screen:
+If the user you want to add doesn't already have an account on Astronomer Cloud, tell them to go to https://cloud.astronomer.io and sign up. Once they create an account, they will see the following screen:
 
 <div class="text--center">
   <img src="/img/docs/welcome-user.png" alt="Successful account creation screen" />
