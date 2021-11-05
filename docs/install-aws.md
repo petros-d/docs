@@ -157,4 +157,4 @@ Now that you have an Astronomer Cluster up and running, take a look at the docs 
 - [Install CLI](install-cli)
 - [Configure Deployments](configure-deployment)
 - [Deploy Code](deploy-code)
-- [Add Users](add-users)
+- [Add Users](add-user)
