@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'Test and Troubleshoot'
+sidebar_label: 'Test and Troubleshoot Locally'
 title: 'Test and Troubleshoot Locally'
 id: test-and-troubleshoot-locally
 ---
