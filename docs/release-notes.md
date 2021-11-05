@@ -14,6 +14,12 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 **Latest CLI Version**: 1.0.2 ([Release notes](cli-release-notes))
 
+## November 5, 2021
+
+### Bug fixes
+
+- Fixed an issue where a new user could not exit the Astronomer UI "Welcome" screen if they hadn't yet been invited to a Workspace.
+
 ## October 29, 2021
 
 ### Astronomer UI Redesign
