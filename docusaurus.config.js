@@ -8,7 +8,6 @@ module.exports = {
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.svg',
-  noIndex: true,
   organizationName: 'astronomer', // Usually your GitHub org/user name.
   projectName: 'cloud-docs', // Usually your repo name.
   themeConfig: {
@@ -49,9 +48,9 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          position: 'left',
-          docId: 'overview',
+          docId: 'cloud/overview',
           label: 'Cloud',
+          position: 'left',
         },
         {
           type: 'doc',
@@ -68,15 +67,15 @@ module.exports = {
           items: [
             {
               label: 'Overview',
-              to: '/',
+              to: 'cloud/overview',
             },
             {
               label: 'Install on AWS',
-              to: '/install-aws',
+              to: 'cloud/install-aws',
             },
             {
               label: 'Known Limitations',
-              to: '/known-limitations',
+              to: 'cloud/known-limitations',
             },
           ],
         },
@@ -115,11 +114,12 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve('./sidebarsCloud.js'),
           editUrl: ({ versionDocsDirPath, docPath }) =>
-            `https://github.com/astronomer/cloud-docs/blob/main/docs/${docPath}`,
+            `https://github.com/astronomer/cloud-docs/blob/main/docs/cloud/${docPath}`,
           editLocalizedFiles: true,
           routeBasePath: '/',
+          path: 'docs',
           admonitions: {
           },
         },
@@ -136,4 +136,17 @@ module.exports = {
       },
     ],
   ],
+  plugins: [
+      [
+        '@docusaurus/plugin-content-docs',
+        {
+          id: 'enterprise',
+          routeBasePath: 'enterprise',
+          editUrl: ({ versionDocsDirPath, docPath }) =>
+            `https://github.com/astronomer/cloud-docs/blob/main/docs/enterprise/${docPath}`,
+          editCurrentVersion: true,
+          sidebarPath: require.resolve('./sidebarsEnterprise.js'),
+        },
+      ],
+    ],
 };

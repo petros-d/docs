@@ -8,77 +8,7 @@
  */
 
 module.exports = {
-  docSidebar: [
-    {
-      type: 'doc',
-      id: 'overview',
-      label: 'Overview',
-    },
-    {
-      type: 'category',
-      label: 'Getting Started',
-      items: [
-      'install-aws',
-      'install-cli',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Develop',
-      items: [
-      'deploy-code',
-      'develop-locally',
-      'environment-variables',
-      'airflow-api',
-      'airflow-alerts',
-      'deferrable-operators',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Manage Deployments',
-      items: [
-      'configure-deployment',
-      'api-keys',
-      'ci-cd',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Administer',
-      items: [
-      'add-a-cluster',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Astronomer Runtime',
-      items: [
-      'upgrade-runtime',
-      'runtime-versioning',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Reference',
-      items: [
-      {
-        type: 'category',
-        label: 'Release Notes',
-        items : [
-          'release-notes',
-          'cli-release-notes',
-          'runtime-release-notes',
-        ],
-      },
-      'known-limitations',
-      'resource-reference-aws',
-      'global-variables',
-      'shared-responsibility-model',
-      ],
-    },
-  ],
-  enterpriseSidebar: [
+  enterprise: [
     {
       type: 'doc',
       id: 'enterprise/overview',
