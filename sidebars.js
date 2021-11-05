@@ -18,8 +18,8 @@ module.exports = {
       type: 'category',
       label: 'Getting Started',
       items: [
-      'install-aws',
-      'install-cli',
+        'install-aws',
+        'install-cli',
       ],
     },
     {
@@ -40,16 +40,16 @@ module.exports = {
       type: 'category',
       label: 'Manage Deployments',
       items: [
-      'configure-deployment',
-      'api-keys',
-      'ci-cd',
+        'configure-deployment',
+        'api-keys',
+        'ci-cd',
       ],
     },
     {
       type: 'category',
-      label: 'Administer',
+      label: 'Manage Clusters',
       items: [
-      'add-a-cluster',
+      'create-cluster',
       'add-user',
       ],
     },
@@ -57,27 +57,27 @@ module.exports = {
       type: 'category',
       label: 'Astronomer Runtime',
       items: [
-      'upgrade-runtime',
-      'runtime-versioning',
+        'upgrade-runtime',
+        'runtime-versioning',
       ],
     },
     {
       type: 'category',
       label: 'Reference',
       items: [
-      {
-        type: 'category',
-        label: 'Release Notes',
-        items : [
-          'release-notes',
-          'cli-release-notes',
-          'runtime-release-notes',
-        ],
-      },
-      'known-limitations',
-      'resource-reference-aws',
-      'global-variables',
-      'shared-responsibility-model',
+        {
+          type: 'category',
+          label: 'Release Notes',
+          items: [
+            'release-notes',
+            'cli-release-notes',
+            'runtime-release-notes',
+          ],
+        },
+        'known-limitations',
+        'resource-reference-aws',
+        'global-variables',
+        'shared-responsibility-model',
       ],
     },
   ],
