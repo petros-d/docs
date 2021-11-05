@@ -55,7 +55,7 @@ Once you log in, you should see the DAGs you just deployed.
 
 Now that you're familiar with deploying DAGs to Astronomer Cloud, consider reading:
 
-- [Customize your Image](https://www.astronomer.io/docs/cloud/stable/develop/customize-image)
+- [Develop Locally](develop-locally)
 - [Set Environment Variables](environment-variables)
 
 For up-to-date information about product limitations, read [Known Limitations](known-limitations).

@@ -71,4 +71,4 @@ Environment Variables can be used to set [Airflow configurations](https://airflo
 
 To set Environment Variables, add them to the corresponding section of the Astronomer UI or in your project's `Dockerfile`. If you're developing locally, they can also be added to a local `.env` file.
 
-For more information on configuring Environment Variables, read [Environment Variables on Astronomer](https://www.astronomer.io/docs/cloud/stable/deploy/environment-variables).
+For more information on configuring Environment Variables, read [Environment Variables on Astronomer](enterprise/environment-variables).
