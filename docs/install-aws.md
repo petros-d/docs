@@ -157,8 +157,9 @@ Once our team confirms that your Astronomer Cluster has been created, you are re
 
 ## Next Steps
 
-Now that you have an Astronomer Cluster up and running, take a look at the docs below for information on how to install the Astronomer CLI, configure your Deployment, and start deploying DAGs.
+Now that you have an Astronomer Cluster up and running, take a look at the docs below for information on how to start working in Astronomer:
 
 - [Install CLI](install-cli)
 - [Configure Deployments](configure-deployment)
 - [Deploy Code](deploy-code)
+- [Add Users](add-user)
