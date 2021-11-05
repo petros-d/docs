@@ -6,7 +6,7 @@ id: add-users
 
 ## Overview
 
-As a Workspace Admin, you can add users with Astronomer Cloud accounts to your Workspace. From here, you can grant them a role with permissions to complete certain actions across the Workspace.
+As a Workspace Admin, you can add users with Astronomer Cloud accounts to your Workspace. From here, you can grant them a role with permissions for specific actions across the Workspace.
 
 This guide provides steps for adding a user to an Astronomer Workspace.
 
@@ -19,7 +19,7 @@ To add users to a Workspace, you must have:
 
 ## Step 1: Invite the User to Astronomer
 
-If the user you want to add doesn't already have an Astronomer account, tell them to go to `cloud.astronomer.io` and sign up. Once they successfully create an account, they will see the following screen:
+If the user you want to add doesn't already have an Astronomer account, tell them to go to `cloud.astronomer.io` and sign up. When they successfully create an account, they will see the following screen:
 
 <div class="text--center">
   <img src="/img/docs/welcome-user.png" alt="Successful account creation screen" />
