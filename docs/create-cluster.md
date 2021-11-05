@@ -32,7 +32,12 @@ To create a new Cluster in your Organization, you must first reach out to your A
 
 Your Astronomer representative will provide you with a unique `External ID` for each new Cluster. Make note of this value for the next step.
 
-> **Note:** Astronomer creates new Clusters with a [default AWS resource configuration](resource-reference-aws) unless otherwise specified. If you're interested in a particular EC2 instance type or have any other cluster requirements, let your Astronomer representative know.
+:::info
+
+Astronomer creates new Clusters with a [default AWS resource configuration](resource-reference-aws) unless otherwise specified. If you're interested in a particular EC2 instance type or have any other cluster requirements, let your Astronomer representative know.
+
+:::
+
 
 ## Step 2: Edit Your AWS Trust Policy
 

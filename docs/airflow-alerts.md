@@ -53,7 +53,11 @@ To get started with SendGrid:
    AIRFLOW__SMTP__SMTP_MAIL_FROM=<your-sendgrid-email>
    ```
 
-   >**Note:** To prevent unauthorized users in your Workspace from seeing sensitive information, we recommend storing your `SMTP_PASSWORD` environment variable using an external secrets service.
+   :::tip
+
+   To prevent unauthorized users in your Workspace from seeing sensitive information, we recommend storing your `SMTP_PASSWORD` environment variable using an external secrets service.
+
+   :::
 
 7. Click **Update Variables** to push your configuration to your Deployment.
 

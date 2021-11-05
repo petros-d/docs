@@ -46,7 +46,11 @@ The Astronomer CLI is a wrapper around [Docker Compose](https://docs.docker.com/
 
 :::
 
-> **Note:** If you see `Error: cannot start, project already running` when you run this command, it means your local Airflow environment is already running your project. If there are changes you'd like to apply to your project, see Rebuild a Project.
+:::tip
+
+If you see `Error: cannot start, project already running` when you run this command, it means your local Airflow environment is already running your project. If there are changes you'd like to apply to your project, see [restart your local environment](develop-project#make-changes-to-your-project).
+
+:::
 
 ### Restart Your Local Environment
 
