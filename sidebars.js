@@ -47,7 +47,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Manage Clusters',
+      label: 'Administration',
       items: [
       'create-cluster',
       'add-user',
