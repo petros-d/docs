@@ -14,7 +14,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 Release date: November 5, 2021
 
-- Bug Fix: Fixed an issue where users saw errors related to S3 in Airflow task logs when running locally (e.g. `Failed to verify remote log exists s3:///`).
+- Bug Fix: Fixed an issue where users saw errors related to S3 in Webserver logs when running locally (e.g. `Failed to verify remote log exists s3:///`).
 
 ## v1.0.2
 
