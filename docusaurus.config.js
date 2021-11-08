@@ -1,4 +1,5 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
+
 module.exports = {
   title: 'Astronomer Cloud',
   tagline: 'Get Started with the Next Generation of Astronomer Cloud',
@@ -56,6 +57,11 @@ module.exports = {
           to: '/enterprise/overview-enterprise',
           label: 'Enterprise',
         },
+        {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            docsPluginId: 'enterprise',
+        },
       ],
     },
     footer: {
@@ -69,11 +75,11 @@ module.exports = {
             },
             {
               label: 'Install on AWS',
-              to: '/cloud/install-aws',
+              to: 'install-aws',
             },
             {
               label: 'Known Limitations',
-              to: '/cloud/known-limitations',
+              to: 'known-limitations',
             },
           ],
         },
@@ -116,7 +122,7 @@ module.exports = {
           editUrl: ({ docPath }) =>
             `https://github.com/astronomer/cloud-docs/blob/main/docs/cloud/${docPath}`,
           editLocalizedFiles: true,
-          routeBasePath: 'cloud',
+          routeBasePath: '/',
           path: 'cloud',
           admonitions: {
           },
