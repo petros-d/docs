@@ -127,9 +127,6 @@ module.exports = {
           admonitions: {
           },
         },
-        blog: {
-          showReadingTime: true,
-        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
