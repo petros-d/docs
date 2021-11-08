@@ -47,15 +47,13 @@ module.exports = {
       },
       items: [
         {
-          type: 'doc',
-          docId: 'cloud/overview',
+          to: '/',
           label: 'Cloud',
           position: 'left',
         },
         {
-          type: 'doc',
           position: 'left',
-          docId: 'enterprise/overview',
+          to: '/enterprise/overview-enterprise',
           label: 'Enterprise',
         },
       ],
@@ -67,15 +65,15 @@ module.exports = {
           items: [
             {
               label: 'Overview',
-              to: 'cloud/overview',
+              to: '/',
             },
             {
               label: 'Install on AWS',
-              to: 'cloud/install-aws',
+              to: '/cloud/install-aws',
             },
             {
               label: 'Known Limitations',
-              to: 'cloud/known-limitations',
+              to: '/cloud/known-limitations',
             },
           ],
         },
@@ -118,8 +116,8 @@ module.exports = {
           editUrl: ({ docPath }) =>
             `https://github.com/astronomer/cloud-docs/blob/main/docs/cloud/${docPath}`,
           editLocalizedFiles: true,
-          routeBasePath: '/',
-          path: 'docs',
+          routeBasePath: 'cloud',
+          path: 'cloud',
           admonitions: {
           },
         },
@@ -146,6 +144,7 @@ module.exports = {
             `https://github.com/astronomer/cloud-docs/blob/main/docs/enterprise/${docPath}`,
         editCurrentVersion: true,
         sidebarPath: require.resolve('./sidebarsEnterprise.js'),
+        path: 'enterprise',
       },
     ],
   ],

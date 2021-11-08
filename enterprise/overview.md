@@ -1,7 +1,7 @@
 ---
 title: 'Astronomer Enterprise Overview'
 sidebar_label: 'Overview'
-id: overview
+id: overview-enterprise
 ---
 
 ## Overview
