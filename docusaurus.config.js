@@ -61,6 +61,7 @@ module.exports = {
             type: 'docsVersionDropdown',
             position: 'right',
             docsPluginId: 'enterprise',
+            dropdownActiveClassDisabled: true,
         },
       ],
     },
@@ -148,6 +149,14 @@ module.exports = {
         editCurrentVersion: true,
         sidebarPath: require.resolve('./sidebarsEnterprise.js'),
         path: 'enterprise',
+        lastVersion: 'current',
+        versions: {
+        current: {
+          label: '0.26',
+          path: '',
+          banner: 'none',
+         },
+       },
       },
     ],
   ],
