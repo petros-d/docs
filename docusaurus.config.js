@@ -53,15 +53,23 @@ module.exports = {
           position: 'left',
         },
         {
-          position: 'left',
-          to: '/enterprise/overview-enterprise',
+          type: 'dropdown',
           label: 'Enterprise',
-        },
-        {
-            type: 'docsVersionDropdown',
-            position: 'right',
-            docsPluginId: 'enterprise',
-            dropdownActiveClassDisabled: true,
+          position: 'left',
+          items: [
+            {
+              label: 'Current',
+              to: '/enterprise/overview-enterprise',
+            },
+            {
+              label: '0.25',
+              to: '/enterprise/0.25/overview-enterprise'
+            },
+            {
+              label: '0.23',
+              to: '/enterprise/0.23/overview-enterprise'
+            },
+          ],
         },
       ],
     },
@@ -119,11 +127,12 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
+          id: 'cloud',
           sidebarPath: require.resolve('./sidebarsCloud.js'),
           editUrl: ({ docPath }) =>
             `https://github.com/astronomer/cloud-docs/blob/main/docs/cloud/${docPath}`,
           editLocalizedFiles: true,
-          routeBasePath: '/',
+          routeBasePath: '/cloud',
           path: 'cloud',
           admonitions: {
           },
