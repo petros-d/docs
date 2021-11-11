@@ -81,7 +81,20 @@ As noted above, the Astronomer Cloud CLI is installed as a local executable. For
 ./astro dev init
 ```
 
-To make this easier, we recommend adding the directory you just created for your Astronomer project to your `$PATH` variable. This allows you to run Astronomer CLI commands without explicitly specifying the absolute path to the executable file (`astro`). For more information, see [Linux instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/#adding-a-directory-to-your-path).
+::: tip
+
+To run the CLI more easily, we recommend configuring your local machine to run Astronomer CLI commands without needing to specify the absolute path to the executable file . You can do so in one of two ways:
+
+- Add the directory you just created for your Astronomer project to your `$PATH` variable. For more information, see [Linux instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/#adding-a-directory-to-your-path).
+
+- Create a symbolic link in your `bin` directory using a command similar to the following:
+
+   ```sh
+   sudo ln -s /source/path/to/astro /usr/local/bin/astro
+   ```
+
+   If you're an existing [open source Astronomer CLI](https://github.com/astronomer/astro-cli) user, we recommend changing the name of this symbolic link to something other than `astro` (for example, `astrocloud`).
+:::
 
 ## Next Steps
 
