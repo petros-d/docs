@@ -318,3 +318,9 @@ table::-webkit-scrollbar-thumb {
     var(15%)
   );
 }
+
+.dropdown--right {
+  margin-right: var(--ifm-navbar-item-padding-horizontal);
+  padding: calc(var(--ifm-navbar-item-padding-vertical) * 0.5) var(--ifm-navbar-item-padding-horizontal);
+}
+
