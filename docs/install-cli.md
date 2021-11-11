@@ -85,8 +85,7 @@ As noted above, the Astronomer Cloud CLI is installed as a local executable. For
 
 To run the CLI more easily, we recommend configuring your local machine to run Astronomer CLI commands without needing to specify the absolute path to the executable file . You can do so in one of two ways:
 
-- Add the directory you just created for your Astronomer project to your `$PATH` variable. For more information, see [Linux instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/#adding-a-directory-to-your-path).
-
+- Add the directory you created for your Astronomer project to your `$PATH` variable. For more information, see [Linux instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/#adding-a-directory-to-your-path).
 - Create a symbolic link in your `bin` directory using a command similar to the following:
 
    ```sh
