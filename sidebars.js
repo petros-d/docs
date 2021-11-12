@@ -40,9 +40,10 @@ module.exports = {
       type: 'category',
       label: 'Manage Deployments',
       items: [
-        'configure-deployment',
+        'configure-deploysment',
         'api-keys',
         'ci-cd',
+        'deployment-metrics',
       ],
     },
     {
