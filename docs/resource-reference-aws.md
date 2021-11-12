@@ -40,11 +40,13 @@ Astronomer Cloud supports the following AWS regions:
 - `us-west-`
 - `ca-central-1`
 
+Modifying the region of an existing Cluster on Astronomer is not supported.
+
 ### Node Instance Type
 
 Astronomer Cloud supports a variety of AWS EC2 instance types. Instance types comprise of varying combinations of CPU, memory, storage, and networking capacity. All system and Airflow components within a single Cluster are powered by the nodes specified during the Cluster creation or modification process.
 
-For detailed information on each instance type, reference [AWS documentation](https://aws.amazon.com/ec2/instance-types/). If you're interested in a node type that is not on this list, reach out to [Astronomer Support](https://support.astronomer.io).
+For detailed information on each instance type, reference [AWS documentation](https://aws.amazon.com/ec2/instance-types/). If you're interested in a node type that is not on this list, reach out to [Astronomer Support](https://support.astronomer.io). Not all instance types are supported in all AWS regions.
 
 :::info
 
