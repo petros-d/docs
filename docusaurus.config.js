@@ -80,15 +80,15 @@ module.exports = {
           items: [
             {
               label: 'Overview',
-              to: 'cloud',
+              to: '/',
             },
             {
               label: 'Install on AWS',
-              to: 'install-aws',
+              to: 'cloud/install-aws',
             },
             {
               label: 'Known Limitations',
-              to: 'known-limitations',
+              to: 'cloud/known-limitations',
             },
           ],
         },
