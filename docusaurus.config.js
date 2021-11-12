@@ -48,7 +48,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'cloud',
+          to: 'cloud/overview',
           label: 'Cloud',
           position: 'left',
         },
