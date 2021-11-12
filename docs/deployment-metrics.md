@@ -6,13 +6,13 @@ id: deployment-metrics
 
 ## Overview
 
-The Astronomer Cloud UI shows high level metrics for each Deployment in your Workspace. These metrics can be viewed from both the **Deployments** menu and individual Deployment pages.
+The Astronomer Cloud UI shows high level metrics for each Deployment in your Workspace over the past 24 hours. These metrics can be viewed from both the **Deployments** menu and individual Deployment pages.
 
 This guide provides information about each available Deployment metric in Astronomer Cloud.
 
 ## Deployment Performance
 
-You can view metrics related to a Deployment's performance directly in the Astronomer Cloud UI. Metrics are recorded and updated at the start of each hour in UTC.
+You can view metrics related to a Deployment's performance directly in the Astronomer Cloud UI. Metrics are recorded and updated at the start of each hour, shown in both UTC and your local browser timezone.
 
 <div class="text--center">
   <img src="/img/docs/deployment-metrics.png" alt="Metrics dashboard in the Cloud UI" />
@@ -50,9 +50,9 @@ The bolded value denotes the total number of tasks that the metric is checking. 
 
 The third Deployment metric records the peak CPU usage by worker nodes over hour-long intervals. Each bar in the graph shows how much CPU was being used across workers at the height of their usage for a given hour in UTC.
 
-This value is measured as a percentage of the maximum allowed CPU usage for a Deployment. The number of Celery workers per Deployment auto-scales based on worker concurrency, which means that the maximum allowed CPU for a single Deployment may change at any given time.
+This value is measured as a percentage of the maximum allowed CPU usage for a Deployment. The number of Celery workers per Deployment auto-scales based on a combination of worker concurrency and the number of `running` and `queued` tasks, which means that the maximum allowed CPU for a single Deployment may change at any given time.
 
-You can hover over each bar to see the specific hour interval and the specific percentage of maximum CPU that was used during peak usage.
+You can hover over each bar to see the specific hour interval and the percentage of maximum CPU that was used during peak usage.
 
 The value above the graph shows the peak CPU usage over the last 24 hours.
 
@@ -62,4 +62,4 @@ The third Deployment metric records the peak memory usage by worker nodes over h
 
 You can hover over each bar to see the specific hour interval and the specific percentage of maximum memory that was used during peak usage.
 
-The value above the graph shows the memory usage over the last 24 hours.
+The value above the graph shows the peak memory usage across all workers over the last 24 hours.

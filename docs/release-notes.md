@@ -18,7 +18,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Deployment Metrics Dashboard
 
-In the Astronomer UI, your Deployment pages now show high level metrics for Deployment health and performance.
+In the Astronomer UI, your Deployment pages now show high-level metrics for Deployment health and performance over the past 24 hours.
 
 <div class="text--center">
   <img src="/img/docs/deployment-metrics.png" alt="New metrics in the Cloud UI" />
@@ -28,7 +28,7 @@ For more information on this feature, read [Deployment Metrics](deployment-metri
 
 ### Bug Fixes
 
-- Resolved a security vulnerability by setting `AIRFLOW__WEBSERVER__COOKIE_SECURE=True` as a permanent environment variable
+- Resolved a security vulnerability by setting `AIRFLOW__WEBSERVER__COOKIE_SECURE=True` as a global environment variable
 
 ## November 5, 2021
 
