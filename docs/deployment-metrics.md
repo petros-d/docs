@@ -13,11 +13,11 @@ The Astronomer Cloud UI shows 4 high-level metrics for each Deployment in your W
 - Worker CPU
 - Worker Memory
 
-Metrics are recorded and updated at the start of each hour, which is displayed in both UTC and your local browser timezone. Each bar across all graphs covers a complete hour while the entire time window for a single graph is 24 hours. For example, a single bar might represent `16:00` to `17:00` while the entire time window of the graph might represent `Nov 1 16:00` to `Nov 2 16:00`.
-
 <div class="text--center">
   <img src="/img/docs/deployment-metrics.png" alt="Metrics dashboard in the Cloud UI" />
 </div>
+
+Metrics are recorded and updated at the start of each hour, which is displayed in both UTC and your local browser timezone. Each bar across all graphs covers a complete hour while the entire time window for a single graph is 24 hours. For example, a single bar might represent `16:00` to `17:00` while the entire time window of the graph might represent `Nov 1 16:00` to `Nov 2 16:00`.
 
 These metrics serve as high-level reports that are intended to be viewed at a glance. For example, you might notice failed task instances in the Astronomer Cloud UI and then open the Airflow UI to troubleshoot.
 
