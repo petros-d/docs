@@ -35,7 +35,7 @@ You can hover over each bar to see the corresponding hour interval displayed in 
 
 The bolded value above the graph denotes the total number of DAG runs that have been executed in the last 24 hours.
 
-::: caution
+:::caution
 
 The DAG runs metric does not record DAG run timeouts as failed runs. To see timed out DAG runs, you must go into the Airflow UI to check on the statuses of each DAG run there.
 
