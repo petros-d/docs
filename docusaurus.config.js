@@ -80,15 +80,15 @@ module.exports = {
           items: [
             {
               label: 'Overview',
-              to: '/',
+              to: 'cloud',
             },
             {
               label: 'Install on AWS',
-              to: 'cloud/install-aws',
+              to: 'install-aws',
             },
             {
               label: 'Known Limitations',
-              to: 'cloud/known-limitations',
+              to: 'known-limitations',
             },
           ],
         },
@@ -131,7 +131,7 @@ module.exports = {
           editUrl: ({ docPath }) =>
             `https://github.com/astronomer/cloud-docs/blob/main/docs/cloud/${docPath}`,
           editLocalizedFiles: true,
-          routeBasePath: '/cloud/',
+          routeBasePath: '/',
           path: 'cloud',
           admonitions: {
           },
