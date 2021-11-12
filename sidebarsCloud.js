@@ -11,8 +11,8 @@ module.exports = {
   cloud: [
     {
       type: 'doc',
-      id: 'overview-cloud',
       label: 'Overview',
+      id: 'overview'
     },
     {
       type: 'category',

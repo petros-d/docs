@@ -3,7 +3,7 @@
 module.exports = {
   title: 'Astronomer Cloud',
   tagline: 'Get Started with the Next Generation of Astronomer Cloud',
-  url: 'https://docs.astronomer.io',
+  url: 'https://docs.astronomer.io/',
   baseUrl: '/',
   noIndex: true,
   onBrokenLinks: 'warn',
@@ -48,7 +48,7 @@ module.exports = {
       },
       items: [
         {
-          to: '/',
+          to: 'cloud',
           label: 'Cloud',
           position: 'left',
         },
@@ -58,7 +58,7 @@ module.exports = {
           position: 'left',
           items: [
             {
-              label: 'Current',
+              label: '0.26 (Latest)',
               to: '/enterprise/overview-enterprise',
             },
             {
@@ -80,7 +80,7 @@ module.exports = {
           items: [
             {
               label: 'Overview',
-              to: '/',
+              to: 'cloud',
             },
             {
               label: 'Install on AWS',
@@ -132,7 +132,7 @@ module.exports = {
           editUrl: ({ docPath }) =>
             `https://github.com/astronomer/cloud-docs/blob/main/docs/cloud/${docPath}`,
           editLocalizedFiles: true,
-          routeBasePath: '/cloud',
+          routeBasePath: 'overview',
           path: 'cloud',
           admonitions: {
           },

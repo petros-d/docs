@@ -1,8 +1,9 @@
 ---
 sidebar_label: 'Overview'
 title: 'Welcome to Astronomer Cloud'
-slug: /
-id: overview-cloud
+slug: overview
+id: cloud
+sidebarPath: sidebarsCloud
 ---
 
 ## Overview
