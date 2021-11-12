@@ -43,6 +43,7 @@ module.exports = {
         'configure-deployment',
         'api-keys',
         'ci-cd',
+        'deployment-metrics',
       ],
     },
     {

@@ -14,6 +14,22 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 **Latest CLI Version**: 1.0.2 ([Release notes](cli-release-notes))
 
+## November 11, 2021
+
+### Deployment Metrics Dashboard
+
+In the Astronomer UI, your Deployment pages now show high-level metrics for Deployment health and performance over the past 24 hours.
+
+<div class="text--center">
+  <img src="/img/docs/deployment-metrics.png" alt="New metrics in the Cloud UI" />
+</div>
+
+For more information on this feature, read [Deployment Metrics](deployment-metrics).
+
+### Bug Fixes
+
+- Resolved a security vulnerability by setting `AIRFLOW__WEBSERVER__COOKIE_SECURE=True` as a global environment variable
+
 ## November 5, 2021
 
 ### Bug fixes
