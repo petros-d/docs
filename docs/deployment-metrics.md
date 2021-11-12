@@ -26,9 +26,9 @@ The following sections describe each of these metrics from left to right.
 
 The first Deployment metric records successful and failed DAG runs over hour-long intervals. A [DAG run](https://airflow.apache.org/docs/apache-airflow/stable/dag-run.html) is defined as an instantiation of a DAG in time.
 
-Each bar in the graph covers a complete hour in UTC. If a bar is partially or fully red, it means that one or multiple DAG runs failed within that hour interval.
+Each bar in the graph covers a complete hour (i.e. `16:00 to 17:00`). If a bar is partially or fully red, it means that one or multiple DAG runs failed within that hour interval.
 
-You can hover over each bar to see the specific hour interval, the number of successful DAG runs, and the number of failed DAG runs.
+You can hover over each bar to see the specific hour interval displayed in both UTC and your local timezone, the number of successful DAG runs, and the number of failed DAG runs.
 
 The bolded value denotes the total number of DAGs that the metric is checking. The metric checks only unpaused DAGs for DAG runs, so this number might be less than the total number of DAGs in your Deployment.
 
@@ -40,15 +40,15 @@ The DAG runs metric does not record DAG run timeouts as failed runs. To see time
 
 ### Task Runs
 
-The second Deployment metric records successful and failed task runs over hour-long intervals. Each bar in the graph covers a complete hour in UTC (for example, `16:00 to 17:00`). If a bar is partially or fully red, it means that one or multiple task runs failed within that hour interval.
+The second Deployment metric records successful and failed task instances over hour-long intervals. A [task instance](https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html#task-instances) is defined as an individual instantiation of a task at a specific point in time.
 
-You can hover over each bar to see the specific hour interval, the number of successful task runs, and the number of failed task runs.
+Each bar in the graph covers a complete hour (i.e. `16:00` - `17:00`). If a bar is partially or fully red, it means that one or more task instances failed within that hour interval. You can hover over each bar to see the corresponding hour interval displayed in both UTC and your local timezone, and the number of successful and failed task instances within that hour interval.
 
-The bolded value denotes the total number of tasks that the metric is checking. The metric checks only unpaused DAGs for task runs, so this number might be less than the total number of tasks in your Deployment.
+The bolded value denotes the total number of tasks that the metric is checking. The metric checks only unpaused DAGs for task instances, so this number might be less than the total number of tasks in your Deployment.
 
 ### Worker CPU
 
-The third Deployment metric records the peak CPU usage by worker nodes over hour-long intervals. Each bar in the graph shows how much CPU was being used across workers at the height of their usage for a given hour in UTC.
+The third Deployment metric records the peak CPU usage by worker nodes over hour-long intervals. Each bar in the graph shows how much CPU was being used across workers at the height of their usage for a given hour.
 
 This value is measured as a percentage of the maximum allowed CPU usage for a Deployment. The number of Celery workers per Deployment auto-scales based on a combination of worker concurrency and the number of `running` and `queued` tasks, which means that the maximum allowed CPU for a single Deployment may change at any given time.
 
