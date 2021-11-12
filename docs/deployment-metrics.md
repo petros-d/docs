@@ -51,7 +51,7 @@ The bolded value above the graph denotes the total number of tasks that have run
 
 ## Resource Usage
 
-The third and fourth Deployment metrics in the Astronomer UI provide visibility into the resources being consumed by the Workers in your Deployment as measure by CPU and memory consumption.
+The third and fourth Deployment metrics in the Astronomer UI provide visibility into the resources being consumed by the Workers in your Deployment as measured by CPU and memory consumption.
 
 :::info
 
