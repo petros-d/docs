@@ -26,7 +26,7 @@ In the Astronomer UI, your Deployment pages now show high level metrics for Depl
 
 For more information on this feature, read [Deployment Metrics](deployment-metrics).
 
-### Bug fixes
+### Bug Fixes
 
 - Resolved a security vulnerability by setting `AIRFLOW__WEBSERVER__COOKIE_SECURE=True` as a permanent environment variable
 
