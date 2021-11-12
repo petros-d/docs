@@ -6,21 +6,26 @@ id: deployment-metrics
 
 ## Overview
 
-The Astronomer Cloud UI shows high level metrics for each Deployment in your Workspace over the past 24 hours. These metrics can be viewed from both the **Deployments** menu and individual Deployment pages.
+The Astronomer Cloud UI shows 4 high-level metrics for each Deployment in your Workspace over the last 24 hours. These metrics can be viewed from both the **Deployments** menu and individual Deployment pages. They include:
 
-This guide provides information about each available Deployment metric in Astronomer Cloud.
+- DAG Runs
+- Task Instances
+- Worker CPU
+- Worker Memory
 
-## Deployment Performance
-
-You can view metrics related to a Deployment's performance directly in the Astronomer Cloud UI. Metrics are recorded and updated at the start of each hour, shown in both UTC and your local browser timezone. Each bar in all graphs covers a complete hour. For example, `16:00` to `17:00`.
+Metrics are recorded and updated at the start of each hour, which is displayed in both UTC and your local browser timezone. Each bar across all graphs covers a complete hour while the entire time window for a single graph is 24 hours. For example, a single bar might represent `16:00` to `17:00` while the entire time window of the graph might represent `Nov 1 16:00` to `Nov 2 16:00`.
 
 <div class="text--center">
   <img src="/img/docs/deployment-metrics.png" alt="Metrics dashboard in the Cloud UI" />
 </div>
 
-These metrics serve as high-level reports on Deployment performance to be viewed at a glance. For example, you might notice failed task instances in the Astronomer Cloud UI and then open the Airflow UI to troubleshoot.
+These metrics serve as high-level reports that are intended to be viewed at a glance. For example, you might notice failed task instances in the Astronomer Cloud UI and then open the Airflow UI to troubleshoot.
 
-The following sections describe each of these metrics from left to right.
+The following sections describe each of the 4 available metrics from left to right.
+
+## Deployment Performance
+
+The first and second Deployment metrics in the Astronomer UI give you visibility into the performance of your Deployment as measured by successes and failures of both DAG runs and task instances.
 
 ### DAG Runs
 
@@ -28,7 +33,7 @@ The first Deployment metric records successful and failed DAG runs over hour-lon
 
 You can hover over each bar to see the corresponding hour interval displayed in both UTC and your local timezone. Below that, you can see the number of successful DAG runs and the number of failed DAG runs. If a bar is partially or fully red, it means that one or more DAG runs failed within that hour interval.
 
-The bolded value above the graph denotes the total number of DAGs that the metric is checking. The metric checks only unpaused DAGs for DAG runs, so this number might be less than the total number of DAGs in your Deployment.
+The bolded value above the graph denotes the total number of DAG runs that have been executed in the last 24 hours.
 
 ::: caution
 
@@ -42,11 +47,11 @@ The second Deployment metric records successful and failed task instances over h
 
 You can hover over each bar to see the corresponding hour interval displayed in both UTC and your local timezone. Below that, you can see the number of successful and failed task instances. If a bar is partially or fully red, it means that one or more task instances failed within that hour interval.
 
-The bolded value above the graph denotes the total number of tasks that the metric is checking. The metric checks only unpaused DAGs for task instances, so this number might be less than the total number of tasks in your Deployment.
+The bolded value above the graph denotes the total number of tasks that have run in the last 24 hours.
 
 ## Resource Usage
 
-The third and fourth Deployment metrics in the Astronomer UI provide visibility into the resources being consumed by the Celery Workers in your Deployment. The third is specific to worker CPU, and the fourth is specific to worker memory.
+The third and fourth Deployment metrics in the Astronomer UI provide visibility into the resources being consumed by the Workers in your Deployment as measure by CPU and memory consumption.
 
 :::info
 
