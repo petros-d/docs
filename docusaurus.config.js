@@ -131,7 +131,7 @@ module.exports = {
           editUrl: ({ docPath }) =>
             `https://github.com/astronomer/cloud-docs/blob/main/docs/cloud/${docPath}`,
           editLocalizedFiles: true,
-          routeBasePath: 'cloud',
+          routeBasePath: '/',
           path: 'cloud',
           admonitions: {
           },
