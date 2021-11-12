@@ -127,12 +127,11 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          id: 'cloud',
           sidebarPath: require.resolve('./sidebarsCloud.js'),
           editUrl: ({ docPath }) =>
             `https://github.com/astronomer/cloud-docs/blob/main/docs/cloud/${docPath}`,
           editLocalizedFiles: true,
-          routeBasePath: 'overview',
+          routeBasePath: 'cloud',
           path: 'cloud',
           admonitions: {
           },
