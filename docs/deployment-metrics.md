@@ -6,7 +6,7 @@ id: deployment-metrics
 
 ## Overview
 
-The Astronomer Cloud UI shows 4 high-level metrics for each Deployment in your Workspace over the last 24 hours. These metrics can be viewed from both the **Deployments** menu and individual Deployment pages. They include:
+The Astronomer Cloud UI shows 4 high-level charts for each Deployment in your Workspace over the last 24 hours. These charts can be viewed from both the **Deployments** menu and individual Deployment pages. They include:
 
 - DAG Runs
 - Task Instances
@@ -17,15 +17,17 @@ The Astronomer Cloud UI shows 4 high-level metrics for each Deployment in your W
   <img src="/img/docs/deployment-metrics.png" alt="Metrics dashboard in the Cloud UI" />
 </div>
 
-Metrics are recorded and updated at the start of each hour, which is displayed in both UTC and your local browser timezone. Each bar across all graphs covers a complete hour while the entire time window for a single graph is 24 hours. For example, a single bar might represent `16:00` to `17:00` while the entire time window of the graph might represent `Nov 1 16:00` to `Nov 2 16:00`.
+The data in these 4 graphs is recorded hourly and is displayed in both UTC and your local browser timezone. Each bar across all graphs covers a complete hour while the entire time window for a single graph is 24 hours. For example, a single bar might represent `16:00` to `17:00` while the entire time window of the graph might represent `Nov 1 16:00` to `Nov 2 16:00`.
 
-These metrics serve as high-level reports that are intended to be viewed at a glance. For example, you might notice failed task instances in the Astronomer Cloud UI and then open the Airflow UI to troubleshoot.
+The data for the most recent hour will be for the hour to date. For example, if you are looking at this page at 16:30, then the bar for the `16:00-17:00` hour interval would show data for `16:00-16:30`.
 
-The following sections describe each of the 4 available metrics from left to right.
+These charts serve as high-level reports that are intended to be viewed at a glance. For example, you might notice failed task instances in the Astronomer Cloud UI and then open the Airflow UI to troubleshoot.
+
+The following sections describe each of the 4 available charts from left to right.
 
 ## Deployment Performance
 
-The first and second Deployment metrics in the Astronomer UI give you visibility into the performance of your Deployment as measured by successes and failures of both DAG runs and task instances.
+The **DAG** and **Tasks** charts in the Astronomer UI give you visibility into the performance of your Deployment as measured by successes and failures of both DAG runs and task instances.
 
 ### DAG Runs
 
@@ -43,7 +45,7 @@ The DAG runs metric does not record DAG run timeouts as failed runs. To see time
 
 ### Task Instances
 
-The second Deployment metric records successful and failed task instances over hour-long intervals. A [task instance](https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html#task-instances) is defined as an instantiation of a task at a specific point in time.
+The **Tasks** chart records successful and failed task instances over hour-long intervals. A [task instance](https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html#task-instances) is defined as an instantiation of a task at a specific point in time.
 
 You can hover over each bar to see the corresponding hour interval displayed in both UTC and your local timezone. Below that, you can see the number of successful and failed task instances. If a bar is partially or fully red, it means that one or more task instances failed within that hour interval.
 
@@ -51,7 +53,7 @@ The bolded value above the graph denotes the total number of tasks that have run
 
 ## Resource Usage
 
-The third and fourth Deployment metrics in the Astronomer UI provide visibility into the resources being consumed by the Workers in your Deployment as measured by CPU and memory consumption.
+The **Worker CPU** and **Worker Memory** charts in the Astronomer UI provide visibility into the resources being consumed by the Workers in your Deployment as measured by CPU and memory consumption.
 
 :::info
 
