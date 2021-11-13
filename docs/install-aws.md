@@ -21,10 +21,10 @@ For a complete list of the AWS resources that our team will provision in your AW
 
 Before completing this setup, you will need:
 
-- A new AWS account.
+- A dedicated AWS account.
 - A user that has `CreateRole` permissions on that account.
 
-For instructions on creating a new AWS account, follow [AWS documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/). Once your AWS account is created, proceed to Step 1.
+Astronomer Cloud requires a dedicated AWS account. For security reasons, the install process is not currently supported on an AWS account that has other tooling running in it. For instructions on creating a new AWS account, follow [AWS documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/). Once your AWS account is created, proceed to Step 1.
 
 :::tip
 
