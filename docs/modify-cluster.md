@@ -6,7 +6,7 @@ id: modify-cluster
 
 ## Overview
 
-Unless otherwise specified, new Clusters on Astronomer Cloud are created with a set of [default configurations](resource-reference-aws#defaults). Depending on your use case, you may decide that you want to modify an existing Cluster to run different a configuration.
+Unless otherwise specified, new Clusters on Astronomer Cloud are created with a set of [default configurations](resource-reference-aws#defaults). Depending on your use case, you may decide that you want to modify an existing Cluster to run a different configuration.
 
 For example, if you have a new set of DAGs that require significantly more CPU and Memory than your existing workloads, you may be interested in modifying your Cluster from running `m5.4xlarge` nodes to running `m5.8xlarge` nodes.
 

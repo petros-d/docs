@@ -48,12 +48,6 @@ Astronomer Cloud supports a variety of AWS EC2 instance types. Instance types co
 
 For detailed information on each instance type, reference [AWS documentation](https://aws.amazon.com/ec2/instance-types/). If you're interested in a node type that is not on this list, reach out to [Astronomer Support](https://support.astronomer.io). Not all instance types are supported in all AWS regions.
 
-:::info
-
-Currently, a single Cluster on Astronomer Cloud cannot be configured with more than one node instance type. In early 2022, we expect to introduce support for Worker Queues, which will allow you to run Airflow Workers of varying node types and sizes within a single Deployment. If this is something your team is interested in, reach out to us - we'd love to hear from you.
-
-:::
-
 **m5**
    - m5.large
    - m5.xlarge
@@ -86,6 +80,12 @@ Currently, a single Cluster on Astronomer Cloud cannot be configured with more t
    - t3.medium
    - t3.large
    - t3.2xlarge
+
+:::info
+
+Currently, a single Cluster on Astronomer Cloud cannot be configured with more than one node instance type. In early 2022, we expect to introduce support for Worker Queues, which will allow you to run Airflow Workers of varying node types and sizes within a single Deployment. If this is something your team is interested in, reach out to us - we'd love to hear from you.
+
+:::
 
 :::tip
 
