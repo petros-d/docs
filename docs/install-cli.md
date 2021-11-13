@@ -92,7 +92,7 @@ To run the CLI more easily, we recommend configuring your local machine to run A
    sudo ln -s /source/path/to/astro /usr/local/bin/astro
    ```
 
-   If you're an existing [open source Astronomer CLI](https://github.com/astronomer/astro-cli) user, we recommend changing the name of this symbolic link to something other than `astro` (for example, `astrocloud`).
+   If you're an existing user of the original [Astronomer CLI](https://github.com/astronomer/astro-cli), we recommend changing the name of this symbolic link and creating an alias to something other than `astro` (for example, `astrocloud`).
 :::
 
 ## Next Steps
