@@ -8,7 +8,7 @@ import {siteVariables} from '@site/src/versions';
 
 ## Overview
 
-Astronomer Cloud makes it easy for your team to test Airflow DAGs locally and push them to a Deployment in a Production or Development environment. The following diagram shows how your Astronomer project can be packaged and deployed to Astronomer Cloud via CLI.
+Astronomer Cloud makes it easy for your team to test Airflow DAGs locally and push them to a Deployment in a Production or Development environment. The following diagram shows how your Astronomer project can be packaged and deployed to Astronomer Cloud via the Astronomer CLI.
 
 ![Deploy Code](/img/docs/deploy-architecture.png)
 
