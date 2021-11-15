@@ -81,7 +81,7 @@ As noted above, the Astronomer Cloud CLI is installed as a local executable. For
 ./astro dev init
 ```
 
-::: tip
+:::tip
 
 To run the CLI more easily, we recommend configuring your local machine to run Astronomer CLI commands without needing to specify the absolute path to the executable file . You can do so in one of two ways:
 
