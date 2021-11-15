@@ -56,6 +56,8 @@ module.exports = {
         {
           type: 'dropdown',
           label: 'Enterprise',
+          to: 'enterprise/overview-enterprise',
+          activeBaseRegex: 'enterprise',
           position: 'left',
           items: [
             {
@@ -85,11 +87,11 @@ module.exports = {
             },
             {
               label: 'Install on AWS',
-              to: 'install-aws',
+              to: 'cloud/install-aws',
             },
             {
               label: 'Known Limitations',
-              to: 'known-limitations',
+              to: 'cloud/known-limitations',
             },
           ],
         },
