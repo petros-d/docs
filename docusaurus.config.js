@@ -59,6 +59,7 @@ module.exports = {
           to: 'enterprise/overview-enterprise',
           activeBaseRegex: 'enterprise',
           position: 'left',
+          activeClassName: 'navbar__link--active',
           items: [
             {
               label: '0.26 (Latest)',
