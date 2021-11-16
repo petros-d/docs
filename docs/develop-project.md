@@ -220,11 +220,11 @@ For example, if you want to run `ls` when your image builds, your `Dockerfile` w
 RUN ls
 `}</code></pre>
 
-## Override the CLI's Docker Compose File
+## Override the CLI's Docker Compose File (Local Development Only)
 
-The Astronomer CLI is built on top of [Docker Compose](https://docs.docker.com/compose/), which is a tool for defining and running multi-container Docker applications. You can override the CLI's Docker Compose configurations by adding a `docker-compose.override.yml` file to your Astronomer project directory. Any values in this file override the CLI's default settings whenever you run `astro dev start`.
+The Astronomer CLI is built on top of [Docker Compose](https://docs.docker.com/compose/), which is a tool for defining and running multi-container Docker applications. You can override the CLI's Docker Compose configurations by adding a `docker-compose.override.yml` file to your Astronomer project. Any values in this file override the CLI's default settings whenever you run `astro dev start`.
 
-To see what values you can override, reference the CLI's [Docker Compose File](https://github.com/astronomer/astro-cli/blob/main/airflow/include/composeyml.go). The linked file is for the original Astronomer CLI, but the values here are identical to those used in the Astronomer Cloud CLI.
+To see what values you can override, reference the CLI's [Docker Compose file](https://github.com/astronomer/astro-cli/blob/main/airflow/include/composeyml.go). The linked file is for the original Astronomer CLI, but the values here are identical to those used in the Astronomer Cloud CLI.
 
 For example, to add another volume mount for a directory named `custom_dependencies`, add the following to your `docker-compose.override.yml` file:
 
