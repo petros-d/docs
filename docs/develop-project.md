@@ -220,6 +220,32 @@ For example, if you want to run `ls` when your image builds, your `Dockerfile` w
 RUN ls
 `}</code></pre>
 
+## Override the CLI's Docker Compose File
+
+The Astronomer CLI is built on top of [Docker Compose](https://docs.docker.com/compose/), which is a tool for defining and running multi-container Docker applications. You can override the CLI's Docker Compose configurations by adding a `docker-compose.override.yml` file to your Astronomer project directory. Any values in this file override the CLI's default settings whenever you run `astro dev start`.
+
+To see what values you can override, reference the CLI's [Docker Compose File](https://github.com/astronomer/astro-cli/blob/main/airflow/include/composeyml.go). The linked file is for the original Astronomer CLI, but the values here are identical to those in the Astronomer Cloud CLI.
+
+For example, to add another volume mount for a directory named `custom_dependencies`, add the following to your `docker-compose.override.yml` file:
+
+```yaml
+version: "2"
+services:
+  scheduler:
+    volumes:
+      - /home/astronomer_project/custom_dependencies:/usr/local/airflow/custom_dependencies:ro
+```
+
+Make sure to specify `version: "2"` and follow the format of the source code file linked above.
+
+After running `astro dev start`, any changes made within the `custom_dependencies` directory are be picked up automatically as with files in your `dags` directory. To see your overrides live in local Airflow environment, you can run the following command for any container running Airflow:
+
+```sh
+docker exec -it <container-name> ls -al
+```
+
+> **Note:** The Astronomer CLI does not support overrides to environment variables. To learn more about setting environment variables, read [Environment Variables](environment-variables).
+
 ## Add Environment Variables (Local Development Only)
 
 The Astronomer CLI comes with the ability to bring in Environment Variables from a specified file by running `astro dev start` with an `--env` flag:
