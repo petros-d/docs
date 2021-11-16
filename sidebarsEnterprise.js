@@ -26,6 +26,7 @@ module.exports = {
       type: 'category',
       label: 'Develop',
       items: [
+      'cli-quickstart',
       'customize-image',
       'kubepodoperator-local',
       ],

@@ -20,7 +20,7 @@ A few clarifying notes:
 
 ## Prerequisites
 
-* [The Astronomer CLI](install-cli)
+* [The Astronomer CLI](enterprise/cli-quickstart)
 * Admin access on an Astronomer Workspace
 * Direct access to your Kubernetes Cluster (e.g. permission to run `$ kubectl describe po`)
 * A compatible version of Kubernetes as described in Astronomer's [Version Compatibility Reference](enterprise/version-compatibility-reference)

@@ -41,7 +41,7 @@ To install the latest version of the Astronomer CLI via [Homebrew](https://brew.
 brew install astronomer/tap/astro
 ```
 
-For more information on the Astronomer CLI, read [CLI Quickstart](install-cli).
+For more information on the Astronomer CLI, read [CLI Quickstart](enterprise/cli-quickstart).
 
 ## Step 2: Install Astronomer Enterprise
 

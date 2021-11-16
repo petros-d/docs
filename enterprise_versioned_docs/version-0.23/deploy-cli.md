@@ -14,13 +14,13 @@ For guidance on automating this process, refer to [Deploy to Astronomer via CI/C
 
 Alternatively, you can configure an external NFS volume for DAG deploys. For more information, read [Deploy DAGs to an NFS Volume](enterprise/deploy-nfs).
 
-> **Note:** We recommend that all users test their code locally via the Astronomer CLI before pushing it to an Airflow Deployment on Astronomer. For guidelines on developing locally, refer to [CLI Quickstart](install-cli).
+> **Note:** We recommend that all users test their code locally via the Astronomer CLI before pushing it to an Airflow Deployment on Astronomer. For guidelines on developing locally, refer to [CLI Quickstart](enterprise/cli-quickstart).
 
 ## Prerequisites
 
 In order to push up DAGs to a Deployment on Astronomer, you must have:
 
-* [The Astronomer CLI](install-cli) installed.
+* [The Astronomer CLI](enterprise/cli-quickstart) installed.
 * Access to an Astronomer platform at `https://app.BASEDOMAIN`.
 * An Astronomer [Workspace](enterprise/manage-workspaces) with at least one active [Airflow Deployment](enterprise/configure-deployment).
 
@@ -56,7 +56,7 @@ To see the list of Deployments within a particular Workspace, run:
 astro deployment list
 ```
 
-For more specific CLI guidelines and commands, read [CLI Quickstart](install-cli).
+For more specific CLI guidelines and commands, read [CLI Quickstart](enterprise/cli-quickstart).
 
 ## Step 3: Deploy to Astronomer
 

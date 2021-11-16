@@ -13,7 +13,7 @@ This guide walks you through the process of creating and configuring an Airflow 
 ## Prerequisites
 
 To create an Airflow Deployment, you'll need:
-* [The Astronomer CLI](install-cli) installed.
+* [The Astronomer CLI](enterprise/cli-quickstart) installed.
 * An Astronomer platform at `app.BASEDOMAIN`.
 * An Astronomer [Workspace](enterprise/manage-workspaces).
 
