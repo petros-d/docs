@@ -12,12 +12,12 @@ For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-ru
 
 ## Astronomer Runtime 4.0.3
 
-- Release date: November 16, 2021
+- Release date: November 15, 2021
 - Airflow version: 2.2.2
 
 ### Minor Improvements
 
-- Added support for [Airflow 2.2.2](https://airflow.apache.org/docs/apache-airflow/stable/changelog.html#airflow-2-2-2-2021-11-15), which includes a series of bug fixes for timetables and DAG scheduling.
+- Added support for [Airflow 2.2.2](https://airflow.apache.org/docs/apache-airflow/stable/changelog.html#airflow-2-2-2-2021-11-15), which includes a series of bug fixes for timetables, DAG scheduling, and database migrations. Most notably, it resolves an issue where some DAG runs would be missing in the Airflow UI if `catchup=True` was set.
 
 ## Astronomer Runtime 4.0.2
 
