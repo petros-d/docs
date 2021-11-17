@@ -10,6 +10,15 @@ Astronomer Runtime is a Docker image built and published by Astronomer that exte
 
 For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runtime). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes). If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or [support@astronomer.io](mailto:support@astronomer.io).
 
+## Astronomer Runtime 4.0.3
+
+- Release date: November 16, 2021
+- Airflow version: 2.2.2
+
+### Minor Improvements
+
+- Added support for [Airflow 2.2.2](https://airflow.apache.org/docs/apache-airflow/stable/changelog.html#airflow-2-2-2-2021-11-15), which includes a series of bug fixes for timetables and DAG scheduling.
+
 ## Astronomer Runtime 4.0.2
 
 - Release date: October 29, 2021
