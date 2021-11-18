@@ -42,7 +42,7 @@ Environment variables can be set directly in the Astronomer UI. To do so:
 
 ### Edit existing values
 
-If you want to make changes to existing environment variables, you can edit the values for those variable keys. To do so:
+If you want to make changes to an existing environment variable, you can modify the variable's value at any time. To do so:
 
 1. In the Astronomer UI, open a Deployment.
 2. In the Deployment's **Configuration** menu, click **Edit Variables**.
@@ -56,6 +56,18 @@ If you want to make changes to existing environment variables, you can edit the 
 
 5. Click **Update Variables** to apply your changes. This action restarts your Airflow Scheduler, Webserver, and Workers.
 
+:::info
+
+Once an environment variable key has been set, it cannot be changed. Only an environment variable's value can be modified.
+
+:::
+
+:::caution
+
+Environment Variables that are set as secret can be modified, but the variable's secret value will never be shown to the user once it's been saved. To modify a secret environment variable, you'll be prompted to enter a new value.
+
+:::
+
 ### How environment variables are stored on Astronomer
 
 All environment variables set from the Astronomer UI are stored in a database managed by Astronomer as part of the Control Plane. Values for secret environment variables are encrypted and stored in a managed volume such that they cannot be viewed in plain text by anyone, including Astronomer staff.
@@ -66,7 +78,11 @@ If you set environment variables in your Dockerfile, they are stored in the Dock
 
 If you want to store environment variables using an external version control tool, we recommend setting them in your `Dockerfile`. This file is automatically created when you first initialize an Airflow project on Astronomer via `astro dev init`.
 
-> **Note:** Given that this file will be committed upstream, we strongly recommend either storing sensitive variables via the Astronomer UI or using a 3rd party secrets protocol.
+:::caution
+
+Given that this file will be committed to your version control tool and to Astronomer, we strongly recommend either storing sensitive environment variables via the Astronomer UI or using a third party secrets backend.
+
+:::
 
 To add environment variables, declare an ENV statement with the environment variable key and value. Your Dockerfile might look like this:
 
