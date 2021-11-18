@@ -32,7 +32,7 @@ Environment variables can be set directly in the Astronomer UI. To do so:
 
     ![Edit Variables button highlighted in the Deployment configuration page](/img/docs/edit-variables.png)
 
-3. Specify an environment variable key and value in the table. You can additionally select the **Secret** checkbox to permanently hide the variable's value from all users in your Workspace.
+3. Specify an environment variable key and value in the table. To permanently hide the variable's value from all users in your Workspace, additionally select the **Secret** checkbox.
 
     When you finish configuring the environment variable, click **Add**.
 
