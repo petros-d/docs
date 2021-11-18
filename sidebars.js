@@ -29,7 +29,6 @@ module.exports = {
         'create-project',
         'develop-project',
         'deploy-code',
-        'environment-variables',
         'airflow-api',
         'airflow-alerts',
         'deferrable-operators',
@@ -44,6 +43,7 @@ module.exports = {
         'api-keys',
         'ci-cd',
         'deployment-metrics',
+        'environment-variables',
       ],
     },
     {

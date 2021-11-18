@@ -6,13 +6,19 @@ id: release-notes
 
 ## Overview
 
-Astronomer is committed to continuous development of Astronomer Cloud. As you grow with us, expect to see bug fixes and improved functionality on a daily basis. To keep your team updated, this document will provide a weekly summary of all changes made and released to Astronomer Cloud.
+Astronomer is committed to continuous development of Astronomer Cloud. As you grow with us, expect to see bug fixes and improved functionality on a regular basis. To keep your team updated, this document will provide a weekly summary of all changes made and released to Astronomer Cloud.
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
 **Latest Runtime Version**: 4.0.3 ([Release notes](runtime-release-notes))
 
 **Latest CLI Version**: 1.0.2 ([Release notes](cli-release-notes))
+
+## November 17, 2021
+
+### Secret Environment Variables
+
+You can now set secret environment variables via the Astronomer Cloud UI. The values of secret environment variables are hidden from all users in your Workspace, making them ideal for storing sensitive information related to your Astronomer projects. For more information, read [Set Environment Variables via the Astronomer UI](environment-variables#set-environment-variables-via-the-astronomer-ui).
 
 ## November 11, 2021
 
