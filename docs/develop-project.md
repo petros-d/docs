@@ -239,7 +239,7 @@ AIRFLOW__CORE__DAG_CONCURRENCY=5
 
 > **Note:** If your environment variables contain secrets you don't want to expose in plain-text, you may want to add your `.env` file to `.gitignore` when you deploy these changes to your version control tool.
 
-### Confirm your Environment Variables were Applied
+### Confirm your environment variables were applied
 
 To confirm that the environment variables you just set were applied to your Airflow Deployment locally, first run:
 
