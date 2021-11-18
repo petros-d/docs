@@ -58,9 +58,9 @@ If you want to make changes to existing environment variables, you can edit the 
 
 ### How environment variables are stored on Astronomer
 
-All values for environment variables that are set in the Astronomer UI are stored in a database managed by Astronomer as part of the Control Plane. If you set environment variables in your Dockerfile, they are stored in the Docker image that is generated when you run `astro dev start` or `astro deploy`.
+All values for environment variables that are set in the Astronomer UI are stored in a database managed by Astronomer as part of the Control Plane. Secret environment variables are encrypted and stored in a managed volume such that they cannot be viewed in plain text by anyone, including Astronomer staff.
 
-If you have an environment variable with sensitive information or credentials, we recommend setting the variable as **Secret** via the UI instead of storing it in your Dockerfile.
+If you set environment variables in your Dockerfile, they are stored in the Docker image that is generated when you run `astro dev start` or `astro deploy`. If you have an environment variable with sensitive information or credentials, we strongly recommend setting the variable as a secret via the Astronomer Cloud UI instead of storing it in your Dockerfile.
 
 ## Set Environment Variables via Dockerfile
 
