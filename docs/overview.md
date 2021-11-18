@@ -39,3 +39,5 @@ Our team will reach out to yours to schedule an onboarding session for the initi
 - [Configure your Deployment](configure-deployment)
 
 If you have a feature request or a bug to report, reach out to [Astronomer Support](https://support.astronomer.io) or drop our team a note in Slack. We're here to help.
+
+If you are interested in the status of Astronomer Cloud and would like to subscribe to updates, visit our [status page](https://cloud-status.astronomer.io).
