@@ -223,7 +223,7 @@ RUN ls
 
 ## Set Environment Variables via .env (Local Development Only)
 
-For Astronomer projects deployed on Astronomer Cloud, we generally recommend [setting environment variables via the Astronomer UI](environment-variables#set-environment-variables-via-the-astronomer-ui). For projects not yet deployed on Astronomer Cloud, you can use the [Astronomer CLI](install-cli) to set environment variables based on the `.env` file that was generated when you initialized an Astronomer project via `astro dev init`.
+For Astronomer projects deployed on Astronomer Cloud, we generally recommend [setting environment variables via the Astronomer UI](environment-variables#set-environment-variables-via-the-astronomer-ui). For projects in local development, you can use the [Astronomer CLI](install-cli) to set environment variables in the `.env` file that was generated when you initialized an Astronomer project via `astro dev init`.
 
 To add Environment Variables locally:
 
@@ -237,17 +237,21 @@ When setting environment variables in your `.env` file, use the following format
 AIRFLOW__CORE__DAG_CONCURRENCY=5
 ```
 
-> **Note:** If your environment variables contain secrets you don't want to expose in plain-text, you may want to add your `.env` file to `.gitignore` when you deploy these changes to your version control tool.
+:::tip
+
+If your environment variables contain sensitive information or credentials that you don't want to expose in plain-text, you may want to add your `.env` file to `.gitignore` when you deploy these changes to your version control tool.
+
+:::
 
 ### Confirm your environment variables were applied
 
-To confirm that the environment variables you just set were applied to your Airflow Deployment locally, first run:
+To confirm that the environment variables you just set were applied in your local Airflow environment, first run:
 
 ```
 docker ps
 ```
 
-This will output 3 Docker containers that were provisioned to run Airflow's 3 primary components on your machine: The Airflow Scheduler, Webserver and Postgres Metadata Database.
+This will output the 3 Docker containers that comprise the Airflow environment on your local machine: the Airflow Scheduler, Webserver, and Postgres metadata database.
 
 Now, create a [Bash session](https://docs.docker.com/engine/reference/commandline/exec/#examples) in your scheduler container by running:
 
