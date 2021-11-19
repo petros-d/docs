@@ -39,6 +39,7 @@ Astronomer Cloud supports the following AWS regions:
 - `us-east-2`
 - `us-west-2`
 - `ca-central-1`
+- `sa-east-1`
 
 Modifying the region of an existing Cluster on Astronomer is not supported. If you're interested in an AWS region that is not on this list, reach out to [Astronomer Support](https://support.astronomer.io).
 

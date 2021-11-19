@@ -14,11 +14,16 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 **Latest CLI Version**: 1.0.2 ([Release notes](cli-release-notes))
 
-## November 17, 2021
+## November 19, 2021
 
 ### Secret Environment Variables
 
 You can now set secret environment variables via the Astronomer Cloud UI. The values of secret environment variables are hidden from all users in your Workspace, making them ideal for storing sensitive information related to your Astronomer projects. For more information, read [Set Environment Variables via the Astronomer UI](environment-variables#set-environment-variables-via-the-astronomer-ui).
+
+### Minor Improvements
+
+- You can now create new Clusters in `sa-east-1`.
+- Extra whitespace is now automatically removed from environment variables.
 
 ## November 11, 2021
 

@@ -223,11 +223,11 @@ RUN ls
 
 ## Set Environment Variables via .env (Local Development Only)
 
-For Astronomer projects deployed on Astronomer Cloud, we generally recommend [setting environment variables via the Astronomer UI](environment-variables#set-environment-variables-via-the-astronomer-ui). For projects in local development, you can use the [Astronomer CLI](install-cli) to set environment variables in the `.env` file that was generated when you initialized an Astronomer project via `astro dev init`.
+For Astronomer projects deployed on Astronomer Cloud, we generally recommend [setting environment variables via the Astronomer UI](environment-variables#set-environment-variables-via-the-astronomer-ui). For local development, you can use the [Astronomer CLI](install-cli) to set environment variables in your project's `.env` file.
 
 To add Environment Variables locally:
 
-1. Open the `.env` file in your Airflow project directory.
+1. Open the `.env` file in your Astronomer project directory.
 2. Add your environment variables to the `.env` file.
 3. Rebuild your image by running `astro dev start --env .env`.
 

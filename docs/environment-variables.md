@@ -56,11 +56,7 @@ If you want to make changes to an existing environment variable, you can modify 
 
 5. Click **Update Variables** to apply your changes. This action restarts your Airflow Scheduler, Webserver, and Workers.
 
-:::info
-
 Once an environment variable key has been set, it cannot be changed. Only an environment variable's value can be modified.
-
-:::
 
 :::caution
 
@@ -70,9 +66,7 @@ Environment Variables that are set as secret can be modified, but the variable's
 
 ### How environment variables are stored on Astronomer
 
-All environment variables set from the Astronomer UI are stored in a database managed by Astronomer as part of the Control Plane. Values for secret environment variables are encrypted and stored in a managed volume such that they cannot be viewed in plain text by anyone, including Astronomer staff.
-
-If you set environment variables in your Dockerfile, they are stored in the Docker image that is generated when you run `astro dev start` or `astro deploy`. If you have an environment variable with sensitive information or credentials, we strongly recommend setting the variable as a secret via the Astronomer Cloud UI instead of storing it in your Dockerfile.
+All environment variables set from the Astronomer UI are stored in a database managed by Astronomer as part of the Control Plane. Values for secret environment variables are encrypted and stored in a managed secrets backend such that they cannot be viewed in plain text by anyone, including Astronomer staff.
 
 ## Set Environment Variables via Dockerfile
 
