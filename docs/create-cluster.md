@@ -82,8 +82,8 @@ For example, your policy for two Astronomer Clusters might look like the followi
       "Condition": {
         "StringEquals": {
           "sts:ExternalId": [
-            <External-ID-1>,
-            <External-ID-2>,
+            "<External-ID-1>",
+            "<External-ID-2>",
           ]
         }
       }
