@@ -57,7 +57,7 @@ If you only have 1 existing Cluster, you will see the following under **Policy D
       "Action": "sts:AssumeRole",
       "Condition": {
         "StringEquals": {
-          "sts:ExternalId": "<your-1st-External-ID>"
+          "sts:ExternalId": "<External-ID-1>"
         }
       }
     }
@@ -65,40 +65,31 @@ If you only have 1 existing Cluster, you will see the following under **Policy D
 }
 ```
 
-Add the trust policy for your new Astronomer Cluster below the corresponding trust policy for your existing Cluster. These two trust policies should be the same but with a different **External ID**.
+Now, add the External ID that corresponds to your new Cluster to the bottom of the existing trust policy such that the External IDs for all of your Clusters are listed.
 
 For example, your policy for two Astronomer Clusters might look like the following:
 
 ```yaml
+{
+  "Version": "2012-10-17",
+  "Statement": [
     {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "AWS": "arn:aws:iam::406882777402:root"
-          },
-          "Action": "sts:AssumeRole",
-          "Condition": {
-            "StringEquals": {
-              "sts:ExternalId": "<your-1st-External-ID>"
-            }
-          }
-        },
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "AWS": "arn:aws:iam::406882777402:root"
-          },
-          "Action": "sts:AssumeRole",
-          "Condition": {
-            "StringEquals": {
-              "sts:ExternalId": "<your-2nd-External-ID>"
-            }
-          }
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::406882777402:root"
+      },
+      "Action": "sts:AssumeRole",
+      "Condition": {
+        "StringEquals": {
+          "sts:ExternalId": [
+            <External-ID-1>,
+            <External-ID-2>,
+          ]
         }
-      ]
+      }
     }
+  ]
+}
 ```
 
 Once you've modified your trust policy, click **Update Trust Policy** in the AWS Console to apply the new trust relationship.
