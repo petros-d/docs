@@ -9,14 +9,6 @@ slug: /
 
 Welcome to Astronomer Cloud. We're thrilled to have you onboard as we launch the next generation of our product. This page will serve as a home for official product documentation for Astronomer Cloud.
 
-[Download this docx using Markdown](./assets/blah.yaml)
-
-<a
-  target="_blank"
-  href={require(`./assets/blah.yaml`).default}>
-  Download this docx
-</a>
-
 To start, Astronomer Cloud includes a game-changing deployment model that offers the self-service convenience of a fully managed Cloud service (the “control plane”) while respecting the need to keep data private, secure, and within corporate boundaries (the “data plane”).
 
 This model optimizes for security whilst relieving your team of operational overhead. We have a strong foundation available today and look forward to hearing your feedback as we build a robust set of differentiating features.

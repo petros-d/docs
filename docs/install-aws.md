@@ -75,7 +75,7 @@ Once your Astronomer Cluster has been created, an Astronomer team member will pr
 
 For your first Cluster deployment, use the link below to create an [admin IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html#getting-started_create-admin-group-console) for Astronomer in your new AWS account:
 
-- [Create IAM Role](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://astro-quickstart-us-east-1.s3.us-east-1.amazonaws.com/cloud-formation/customer-account.yaml&stackName=AstroCrossAccountIAMRole&param_AstroAccountId=406882777402)
+- [IAM Role Template](./assets/role-template.yaml)
 
 Alternatively, run the following AWS CLI command:
 
