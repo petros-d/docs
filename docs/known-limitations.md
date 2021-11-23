@@ -30,7 +30,6 @@ If you have questions or thoughts about any item below, don't hesitate to reach 
 
 - Long-lasting Deployment API Keys
 - Support for CLI Install via Homebrew
-- Environment Variables as secret
 - Single Sign-On
 - Full CLI functionality
 - Self-service Cluster and Workspace creation
