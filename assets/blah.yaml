@@ -1,0 +1,59 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  This template creates a cross-account IAM Role that gives Astronomer admin access. Astronomer wil use this role to create and manage resources in your AWS account.
+Metadata:
+  QuickStartDocumentation:
+    EntrypointName: "Parameters for creating a new cross-account IAM role"
+    AWS::CloudFormation::Interface:
+      ParameterGroups:
+        - Label:
+            default: "Required IAM role configuration"
+          Parameters:
+            - AstroAccountId
+            - ExternalId
+      ParameterLabels:
+        AstroAccountId:
+          default: Astronomer account ID
+        ExternalId:
+          default: Randomly generated External ID from Astronomer
+​
+Parameters:
+  AstroAccountId:
+      Type: String
+      Description: Astronomer account ID.
+  ExternalId:
+    Type: String
+    Description: Randomly generated External ID from Astronomer.
+Resources:
+  CrossAccountIAMRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: astronomer-remote-management
+      AssumeRolePolicyDocument: !Sub |
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                  "AWS": "arn:aws:iam::${AstroAccountId}:root"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                  "StringEquals": {
+                  "sts:ExternalId": "${ExternalId}"
+                }
+              }
+            }
+          ]
+        }
+      Policies:
+      - PolicyName: admin-access
+        PolicyDocument:
+          Statement:
+          - Effect: Allow
+            Action: "*"
+            Resource: "*"
+Outputs:
+  CrossAccountIAMRole:
+    Value: !GetAtt CrossAccountIAMRole.Arn
