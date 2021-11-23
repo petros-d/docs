@@ -22,8 +22,8 @@ You can now set secret environment variables via the Astronomer Cloud UI. The va
 
 ### Minor Improvements
 
-- You can now create new Clusters in `sa-east-1`.
-- Extra whitespace is now automatically removed from environment variables.
+- You can now create new Clusters in AWS `sa-east-1`.
+- Extra whitespace at the end of any environment variable that is set via the Astronomer UI is now automatically removed to ensure the variable is passed correctly.
 
 ## November 11, 2021
 
