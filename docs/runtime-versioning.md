@@ -70,7 +70,7 @@ The following table contains all Astronomer Runtime images supported on Astronom
 
 Note that this table includes only major and minor releases of Runtime. When upgrading to a new version of Runtime, you must specify a patch version number in the `FROM` statement of your Dockerfile. For the latest available patch version, see [Runtime Release Notes](runtime-release-notes).
 
-| Runtime Version                | Airflow Version                                                                            | Debian-based Image                                  | Release Date    |
-| ------------------------------ | ------------------------------------------------------------------------------------------ | --------------------------------------------------- | --------------- |
-| [3.0.x](runtime-release-notes) | [2.1.1](https://github.com/apache/airflow/releases/tag/2.1.1) | `FROM quay.io/astronomer/astro-runtime:3.0.<patch>` | August 12, 2021 |
-| [4.0.x](runtime-release-notes) | [2.2.x](https://github.com/apache/airflow/releases/tag/2.2.0) | `FROM quay.io/astronomer/astro-runtime:4.0.<patch>` | October 12, 2021 |
+| Runtime Version                | Airflow Version                                               | Debian-based Image                           | Python Version | Release Date     |
+|--------------------------------|---------------------------------------------------------------|----------------------------------------------|----------------|------------------|
+| [3.0.x](runtime-release-notes) | [2.1.1](https://github.com/apache/airflow/releases/tag/2.1.1) | `FROM quay.io/astronomer/astro-runtime:3.0.<patch>` | 3.9            | August 12, 2021  |
+| [4.0.x](runtime-release-notes) | [2.2.x](https://github.com/apache/airflow/releases/tag/2.2.0) | `FROM quay.io/astronomer/astro-runtime:4.0.<patch>` | 3.9            | October 12, 2021 |
