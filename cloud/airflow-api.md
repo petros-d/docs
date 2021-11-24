@@ -26,7 +26,7 @@ All Airflow API calls require the following two values:
 
 To retrieve an access token, [create a Deployment API key](api-keys#create-an-api-key) on Astronomer and follow the instructions in [Request Access Token](api-keys#request-access-token). Note that you need to refresh that token every time you make a request to the Airflow API. To avoid manually doing so, we strongly recommend adding a step that fetches a new access token to any CI/CD pipeline that calls the Airflow API. That way, your access token is automatically refreshed every time your CI/CD pipeline needs it. For examples of this implementation, see [CI/CD Templates](ci-cd#cicd-templates).
 
-::: info
+:::info
 
 If you need to call the Airflow API only once, you can retrieve a temporary access token (24 hours) at `https://cloud.astronomer.io/token`. If you retrieve a token here, you can skip the instructions in [Request Access Token](api-keys#request-access-token).
 

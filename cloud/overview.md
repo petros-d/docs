@@ -35,7 +35,9 @@ For more information on each of these features, explore the documentation links 
 Our team will reach out to yours to schedule an onboarding session for the initial install. From there, we recommend reading through the following docs:
 
 - [Install the Astronomer CLI](install-cli)
-- [Develop Locally](develop-locally)
+- [Develop Project](develop-project)
 - [Configure your Deployment](configure-deployment)
 
-If you have a feature request or find a bug to report, reach out to us at support@astronomer.io or drop our team a note in our shared Slack Channel. You'll be connected directly with our Product team.
+If you have a feature request or a bug to report, reach out to [Astronomer Support](https://support.astronomer.io). We're here to help.
+
+To check on the operational status of Astronomer Cloud, visit our [status page](https://cloud-status.astronomer.io). You can subscribe to updates by clicking on **Subscribe to Updates** on the top-right of the page and entering your email address.

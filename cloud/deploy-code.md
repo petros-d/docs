@@ -8,7 +8,15 @@ import {siteVariables} from '@site/src/versions';
 
 ## Overview
 
-Astronomer Cloud makes it easy for your team to test Airflow DAGs locally and push them to a Deployment in a Production or Development environment.
+Astronomer Cloud makes it easy for your team to test Airflow DAGs locally and push them to a Deployment in a Production or Development environment. The following diagram shows how your Astronomer project can be packaged and deployed to Astronomer Cloud via the Astronomer CLI.
+
+![Deploy Code](/img/docs/deploy-architecture.png)
+
+:::info
+
+The process for deploying an Astronomer project via CI/CD varies slightly from this diagram. For more information, refer to [CI/CD: Workflow Overview](ci-cd#workflow-overview).
+
+:::
 
 This guide explains how to deploy DAGs to a Deployment on Astronomer Cloud.
 
@@ -18,7 +26,7 @@ To deploy DAGs to Astronomer, you must have:
 
 - The [Astronomer CLI](install-cli) installed in an empty directory.
 - An Astronomer Workspace with at least one [Deployment](configure-deployment).
-- A [local Astronomer project](develop-locally).
+- An [Astronomer project](create-project).
 - [Docker](https://www.docker.com/products/docker-desktop).
 
 > **Note:** If you’re running the Astronomer CLI with [buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/) enabled in Docker, you may see an error (`buildkit not supported by daemon`). Learn more in [this forum post](https://forum.astronomer.io/t/buildkit-not-supported-by-daemon-error-command-docker-build-t-airflow-astro-bcb837-airflow-latest-failed-failed-to-execute-cmd-exit-status-1/857).
@@ -51,11 +59,15 @@ If it's your first time deploying, expect to wait a few minutes for the Docker i
 
 Once you log in, you should see the DAGs you just deployed.
 
-## What's Next
+## Next Steps
 
 Now that you're familiar with deploying DAGs to Astronomer Cloud, consider reading:
 
+<<<<<<< HEAD:cloud/deploy-code.md
 - [Develop Locally](develop-locally)
+=======
+- [Develop Project](develop-project)
+>>>>>>> 44ec2e1dc9b109b8711df782ea92b80580159ff8:docs/deploy-code.md
 - [Set Environment Variables](environment-variables)
 
 For up-to-date information about product limitations, read [Known Limitations](known-limitations).

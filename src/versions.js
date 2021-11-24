@@ -1,4 +1,4 @@
 export const siteVariables = {
-  cliVersion: '1.0.2',
-  runtimeVersion: '4.0.2'
+  cliVersion: '1.0.3',
+  runtimeVersion: '4.0.4'
 };

@@ -10,13 +10,13 @@ import {siteVariables} from '@site/src/versions';
 
 The Astronomer CLI is the easiest way to run Apache Airflow on your machine.
 
-From the CLI, you can create a local Apache Airflow environment with a dedicated Webserver, Scheduler and Postgres Database. Once you initialize a project on Astronomer, you can easily customize your image (e.g. add Python or OS-level packages, plugins etc.) and push that image to run on your local machine.
+From the CLI, you can run a local Apache Airflow environment with a dedicated Webserver, Scheduler and Postgres Database. Once you create an Astronomer project, you can easily customize it (e.g. add Python or OS-level packages, plugins etc.) and test it on your local machine.
 
 You can also use the CLI to:
 
 - Authenticate to Astronomer.
 - List the Astronomer Workspace and Deployments you have access to.
-- Deploy to an Airflow Deployment on Astronomer.
+- Deploy a project to Astronomer Cloud.
 
 This guide provides instructions for how to install the Astronomer CLI.
 
@@ -81,10 +81,20 @@ As noted above, the Astronomer Cloud CLI is installed as a local executable. For
 ./astro dev init
 ```
 
-To make this easier, we recommend adding the directory you just created for your Astronomer project to your `$PATH` variable. This allows you to run Astronomer CLI commands without explicitly specifying the absolute path to the executable file (`astro`). For more information, see [Linux instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/#adding-a-directory-to-your-path).
+:::tip
 
-## What's Next
+To run the CLI more easily, we recommend configuring your local machine to run Astronomer CLI commands without needing to specify the absolute path to the executable file . You can do so in one of two ways:
 
-Now that you've installed the Astronomer CLI, you're ready to initialize a local Airflow environment and push DAGs to Astronomer Cloud.
+- Add the directory you created for your Astronomer project to your `$PATH` variable. For more information, see [Linux instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/#adding-a-directory-to-your-path).
+- Create a symbolic link in your `bin` directory using a command similar to the following:
 
-For instructions, go to [Develop Locally](develop-locally).
+   ```sh
+   sudo ln -s /source/path/to/astro /usr/local/bin/astro
+   ```
+
+   If you're an existing user of the original [Astronomer CLI](https://github.com/astronomer/astro-cli), we recommend changing the name of this symbolic link and creating an alias to something other than `astro` (for example, `astrocloud`).
+:::
+
+## Next Steps
+
+Now that you've installed the Astronomer CLI, you're ready to create an Astronomer project and start developing locally. For instructions, read [Create an Astronomer Project](create-project).

@@ -1,19 +1,19 @@
 ---
-sidebar_label: 'Install on AWS'
+sidebar_label: 'Install Astronomer on AWS'
 title: 'Install Astronomer Cloud on AWS'
 id: install-aws
 ---
 
 ## Overview
 
-We're excited to help you get started with Astronomer Cloud on AWS. Below, you'll find instructions for how to complete the Astronomer Cloud install process, including prerequisites and the steps required for our team to provision resources in your network.
+We're excited to get you started with Astronomer Cloud on AWS. Below, you'll find instructions for how to complete the Astronomer Cloud install process, including prerequisites and the steps required for our team to provision resources in your network.
 
 At a high-level, we'll ask that you come prepared with a new AWS account. From there, you can expect to:
 - Create an account on Astronomer.
 - Share AWS account information with our team.
 - Create an IAM role that Astronomer can assume within your new AWS account.
 
-Astronomer will then create a Cluster within your AWS account that hosts the resources and Apache Airflow components necessary to deploy DAGs and execute tasks. If you'd like to support more than 1 Astronomer Cluster, reach out to us.
+Astronomer will then create a Cluster within your AWS account that hosts the resources and Apache Airflow components necessary to deploy DAGs and execute tasks. If you'd like to support more than 1 Astronomer Cluster, [reach out to us](https://support.astronomer.io).
 
 For a complete list of the AWS resources that our team will provision in your AWS account, see [Resource Usage](resource-reference-aws).
 
@@ -21,10 +21,15 @@ For a complete list of the AWS resources that our team will provision in your AW
 
 Before completing this setup, you will need:
 
-- A new AWS account.
-- A user that has `CreateAccount` and `CreateRole` permissions on that account.
+- A dedicated AWS account.
+- A user that has `CreateRole` permissions on that account.
 
-For instructions, follow [AWS documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/). Once your AWS account is created, proceed to Step 1.
+Astronomer Cloud requires a dedicated AWS account. For security reasons, the install process is not currently supported on an AWS account that has other tooling running in it. For instructions on creating a new AWS account, follow [AWS documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/). Once your AWS account is created, proceed to Step 1.
+
+:::tip
+
+If you have one or more existing AWS accounts, you can use [AWS Organizations](https://aws.amazon.com/organizations/) to manage billing, users, and more in a central place. For more information on how to add your Astronomer AWS account to your AWS Organization, read [Amazon's documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html).
+:::
 
 ### VPC Peering Prerequisites (Optional)
 
@@ -57,22 +62,25 @@ For the AWS account you created as a prerequisite, provide Astronomer with:
 
 - Your AWS Account ID.
 - Your preferred Astronomer Cluster name.
-- The AWS region that you want to host your Cluster in (`us-east-1`, `us-east-2`, `us-west-2` or `ca-central-1`).
+- The AWS region that you want to host your Cluster in.
+- Your preferred node instance type.
 
-From here, our team will provision an Astronomer Cluster according to the specifications above.
+If not specified, we will create a Cluster with two `m5.xlarge` nodes in `us-east-1` by default. For information on all supported regions and configurations, see [AWS Resource Reference](resource-reference-aws).
+
+From here, our team will provision an Astronomer Cluster according to the specifications you provided.
 
 ## Step 3: Create an IAM Role for Astronomer
 
-Once your Astronomer Cluster has been created, an Astronomer team member will provide you with an [External ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html) that will allow Astronomer to connect to your AWS account. Save the External ID as a secret or in an otherwise secure format.
+Once your Astronomer Cluster has been created, an Astronomer team member will provide you with an [External ID](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html) that will allow Astronomer to connect to your AWS account. Save the External ID as a secret or in an otherwise secure format for use in the AWS CLI.
 
-For your first Cluster deployment, use the link below to create an [admin IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html#getting-started_create-admin-group-console) for Astronomer in your new AWS account:
+Then, click the link below to create an [admin IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html#getting-started_create-admin-group-console) for Astronomer in your new AWS account:
 
-- [Create IAM Role](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://astro-quickstart-us-east-1.s3.us-east-1.amazonaws.com/cloud-formation/customer-account.yaml&stackName=AstroCrossAccountIAMRole&param_AstroAccountId=406882777402)
+- [Create IAM Role](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://astro-cross-account-role-template.s3.us-east-2.amazonaws.com/customer-account.yaml&stackName=AstroCrossAccountIAMRole&param_AstroAccountId=406882777402)
 
 Alternatively, run the following AWS CLI command:
 
 ```bash
-aws iam create-role --role-name astronomer-remote-management --assume-role-policy-document "{
+$ aws iam create-role --role-name astronomer-remote-management --assume-role-policy-document "{
     \"Version\": \"2012-10-17\",
     \"Statement\": [
         {
@@ -90,10 +98,10 @@ aws iam create-role --role-name astronomer-remote-management --assume-role-polic
     ]
 }"
 
-aws iam attach-role-policy --policy-arn arn:aws:iam::aws:policy/AdministratorAccess --role-name astronomer-remote-management
+$ aws iam attach-role-policy --policy-arn arn:aws:iam::aws:policy/AdministratorAccess --role-name astronomer-remote-management
 ```
 
-The output of this command is a YAML file containing information about the role:
+The output of the last command is a YAML file containing information about the role:
 
 ```yaml
 {
@@ -121,7 +129,7 @@ The output of this command is a YAML file containing information about the role:
 }
 ```
 
-To provision additional Clusters, complete the setup in [Add a Cluster](add-a-cluster) after completing your initial installation.
+To provision additional Clusters, complete the setup in [Create a Cluster](create-cluster) after completing your initial installation.
 
 ## Step 4: Let Astronomer Complete the Install
 
@@ -152,8 +160,9 @@ Once our team confirms that your Astronomer Cluster has been created, you are re
 
 ## Next Steps
 
-Now that you have an Astronomer Cluster up and running, take a look at the docs below for information on how to install the Astronomer CLI, configure your Deployment, and start deploying DAGs.
+Now that you have an Astronomer Cluster up and running, take a look at the docs below for information on how to start working in Astronomer:
 
 - [Install CLI](install-cli)
 - [Configure Deployments](configure-deployment)
 - [Deploy Code](deploy-code)
+- [Add Users](add-user)
