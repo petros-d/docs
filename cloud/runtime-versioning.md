@@ -2,6 +2,7 @@
 sidebar_label: "Runtime Versioning"
 title: "Astronomer Runtime Versioning"
 id: runtime-versioning
+description: Learn how Astronomer Runtime is versioned and released. 
 ---
 
 ## Overview

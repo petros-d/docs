@@ -2,6 +2,7 @@
 sidebar_label: 'Install the CLI'
 title: 'Install the Astronomer CLI'
 id: install-cli
+description: Install the Astronomer CLI, which you can use to run Airflow locally and deploy code to Astronomer Cloud.
 ---
 
 import {siteVariables} from '@site/src/versions';

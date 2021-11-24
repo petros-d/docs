@@ -2,6 +2,7 @@
 sidebar_label: 'Install Packages'
 title: 'Install Packages on Astronomer Certified Images'
 id: install-packages
+description: Install OS-level and Python-level packages for Airflow using Astronomer Certified.
 ---
 
 ## Overview

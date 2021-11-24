@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'Azure'
 title: 'Install Astronomer Enterprise on Azure AKS'
-id: install-azure
+description: Install Astronomer Enterprise on Azure Kubernetes Service (AKS).
 ---
 
 This guide describes the steps to install Astronomer Enterprise on Azure, which allows you to deploy and scale [Apache Airflow](https://airflow.apache.org/) on an [Azure Kubernetes Service](https://azure.microsoft.com/en-us/services/kubernetes-service/) (AKS) cluster.

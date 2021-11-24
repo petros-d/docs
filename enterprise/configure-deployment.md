@@ -2,6 +2,7 @@
 sidebar_label: 'Configure a Deployment'
 title: 'Configure a Deployment on Astronomer Enterprise'
 id: configure-deployment
+description: Configure your Airflow Deployment's resources on Astronomer Enterprise.
 ---
 
 ## Overview

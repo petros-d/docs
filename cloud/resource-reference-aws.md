@@ -2,6 +2,7 @@
 sidebar_label: "AWS Resource Reference"
 title: "Resources Required for Astronomer Cloud on AWS"
 id: resource-reference-aws
+description: A list of resources that Astronomer will provision for new Astronomer Cloud installations. 
 ---
 
 ## Overview

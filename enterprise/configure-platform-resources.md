@@ -2,6 +2,7 @@
 sidebar_label: 'Configure Platform Resources'
 title: 'Astronomer Enterprise Platform Resources'
 id: configure-platform-resources
+description: A summary of how platform and Airflow deployment resources are created in the context of Astronomer Enterprise.
 ---
 
 ## Configuring Platform Resources

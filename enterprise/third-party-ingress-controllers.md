@@ -2,6 +2,7 @@
 title: 'Use a Third-Party Ingress Controller'
 sidebar_label: 'Third-Party Ingress Controllers'
 id: third-party-ingress-controllers
+description: Use a pre-existing ingress controller on Astronomer Enterprise.
 ---
 
 ## Overview

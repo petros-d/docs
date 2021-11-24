@@ -2,6 +2,7 @@
 title: 'Astronomer Enterprise Quickstart'
 sidebar_label: 'Quickstart'
 id: quickstart
+description: Get started on Astronomer Enterprise.
 ---
 
 Welcome to Astronomer.

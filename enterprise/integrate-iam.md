@@ -2,6 +2,7 @@
 sidebar_label: 'Integrate IAM Roles'
 title: 'Integrate IAM Roles on Astronomer Enterprise'
 id: integrate-iam
+description: Append IAM roles to an Airflow Deployment on Astronomer Enterprise.
 ---
 
 ## Overview

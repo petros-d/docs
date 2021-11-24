@@ -2,6 +2,8 @@
 sidebar_label: 'Access the Airflow Database'
 title: 'Access the Airflow Database'
 id: access-airflow-database
+description: Access Airflow's Postgres Metadata Database on Astronomer Enterprise.
+
 ---
 
 ## Overview

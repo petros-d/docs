@@ -2,6 +2,7 @@
 title: 'How to Run the KubernetesPodOperator Locally'
 sidebar_label: 'Local KubernetesPodOperator'
 id: kubepodoperator-local
+description: Test the KubernetesPodOperator on your local machine.
 ---
 
 ## Setup Kubernetes

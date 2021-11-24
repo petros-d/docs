@@ -2,6 +2,7 @@
 sidebar_label: 'Windows 10'
 title: 'Astronomer CLI Installation for Windows 10'
 id: cli-install-windows-10
+description: Install the Windows-based CLI or the Unix-based CLI a Windows Subsystem for Linux (WSL).
 ---
 
 Welcome to Astronomer!

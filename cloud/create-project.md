@@ -2,6 +2,7 @@
 sidebar_label: 'Create a Project'
 title: 'Create an Astronomer Project'
 id: 'create-project'
+description: Create an Astronomer project locally using the Astronomer CLI.
 ---
 
 import {siteVariables} from '@site/src/versions';

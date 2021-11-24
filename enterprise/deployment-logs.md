@@ -2,6 +2,7 @@
 sidebar_label: 'Deployment Logs'
 title: 'Deployment Logs on Astronomer Enterprise'
 id: deployment-logs
+description: View and search Airflow Webserver, Scheduler, and Worker logs via the Astronomer Enterprise UI.
 ---
 ## Overview
 

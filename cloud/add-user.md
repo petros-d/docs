@@ -2,6 +2,7 @@
 sidebar_label: 'Add a User'
 title: 'Add a User to a Workspace'
 id: add-user
+description: Add a user to a Workspace on Astronomer Cloud.
 ---
 
 ## Overview

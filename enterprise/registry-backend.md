@@ -2,6 +2,7 @@
 title: 'Using Registry Back Ends in Astronomer Enterprise'
 sidebar_label: 'Use a Registry Backend'
 id: registry-backend
+description: Configure a registry back end to work with the Astronomer platform.
 ---
 
 ## Overview

@@ -2,6 +2,7 @@
 sidebar_label: 'Disaster Recovery'
 title: 'Astronomer Enterprise Disaster Recovery Guide'
 id: disaster-recovery
+description: A guide to platform backups and disaster recovery for Astronomer Enterprise.
 ---
 
 ## Overview

@@ -2,6 +2,7 @@
 title: "Astronomer Enterprise CLI Quickstart"
 sidebar_label: "Enterprise CLI Quickstart"
 id: cli-quickstart
+description: Establish a local testing environment and deploy to Astronomer Enterprise from the CLI.
 ---
 
 ## Overview

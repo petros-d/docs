@@ -2,6 +2,7 @@
 title: 'Version Compatibility Reference for Astronomer Enterprise'
 sidebar_label: 'Version Compatibility Reference'
 id: version-compatibility-reference
+description: A reference of all adjacent tooling required to run Astronomer Enterprise and corresponding version compatibility.
 ---
 
 ## Overview

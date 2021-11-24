@@ -2,6 +2,7 @@
 sidebar_label: 'Astronomer CLI'
 title: 'Astronomer CLI Release Notes'
 id: cli-release-notes
+description: Release notes for Astronomer Cloud's CLI.
 ---
 
 ## Overview

@@ -2,6 +2,7 @@
 sidebar_label: 'Apply a Config Change'
 title: 'Apply an Enterprise Platform Configuration Change'
 id: apply-platform-config
+description: Apply platform-wide configuration changes to Astronomer via Helm.
 ---
 
 ## Overview

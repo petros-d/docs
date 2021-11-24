@@ -2,6 +2,7 @@
 sidebar_label: 'Debugging'
 title: 'Debug Your Astronomer Enterprise Installation'
 id: debug-install
+description: Common snags users run into while deploying and running Astronomer Enterprise.
 ---
 
 

@@ -2,6 +2,7 @@
 title: 'Renew TLS Certificates on Astronomer Enterprise'
 sidebar_label: 'Renew a TLS Certificate'
 id: renew-tls-cert
+description: Update and auto-renew your organization's TLS Certificate for Astronomer Enterprise.
 ---
 
 ## Overview

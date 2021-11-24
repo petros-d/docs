@@ -2,6 +2,7 @@
 title: 'Configure Pre-Created Kubernetes Namespaces for Astronomer Enterprise'
 sidebar_label: 'Pre-Create Namespaces'
 id: pre-create-namespaces
+description: Manually create Kubernetes namespaces for new Deployments.
 ---
 
 ## Overview

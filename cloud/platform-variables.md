@@ -2,6 +2,7 @@
 sidebar_label: 'Global Environment Variables'
 title: 'Global Environment Variables'
 id: global-variables
+description: A list of all permanent global environment variables set by Astronomer Cloud.
 ---
 
 ## Overview

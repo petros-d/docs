@@ -2,6 +2,7 @@
 sidebar_label: 'Airflow Alerts'
 title: 'Configure Airflow Alerts on Astronomer Enterprise'
 id: airflow-alerts
+description: Configure Email Alerts on Astronomer Enterprise to monitor the health of your Airflow Deployment and the status of your tasks.
 ---
 
 ## Overview

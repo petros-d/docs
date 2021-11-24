@@ -2,6 +2,7 @@
 title: 'Manage Users on Astronomer Enterprise'
 sidebar_label: 'Platform User Management'
 id: manage-platform-users
+description: Add and customize user permissions on Astronomer Enterprise.
 ---
 
 ## Overview

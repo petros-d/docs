@@ -2,6 +2,7 @@
 title: 'Manage Deployment API Keys'
 sidebar_label: 'Deployment API Keys'
 id: api-keys
+description: Create a Deployment API key for use with the Airflow API and CI/CD pipelines.
 ---
 
 ## Overview

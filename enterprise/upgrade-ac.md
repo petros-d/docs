@@ -2,6 +2,7 @@
 title: 'Upgrade an Astronomer Certified Airflow Environment'
 sidebar_label: 'Upgrade Astronomer Certified'
 id: upgrade-ac
+description: Upgrade your Apache Airflow environment by installing the latest version of Astronomer Certified.
 ---
 
 ## Overview

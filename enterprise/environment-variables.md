@@ -2,6 +2,7 @@
 sidebar_label: 'Environment Variables'
 title: 'Set Environment Variables on Astronomer Enterprise'
 id: environment-variables
+description: Manage environment variables on Astronomer Enterprise.
 ---
 
 ## Overview

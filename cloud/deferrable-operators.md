@@ -2,6 +2,7 @@
 sidebar_label: 'Deferrable Operators'
 title: 'Deferrable Operators'
 id: deferrable-operators
+description: How to use deferrable operators, including Astronomer Runtime-exclusive Databricks operators.
 ---
 
 ## Overview

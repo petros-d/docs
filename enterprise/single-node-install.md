@@ -2,6 +2,7 @@
 title: 'Install Astronomer Certified on a Virtual Machine'
 sidebar_label: 'Install on a Virtual Machine'
 id: single-node-install
+description: Configure a simple Apache Airflow environment with the Astronomer Certified Python wheel on a virtual machine.
 ---
 
 ## Overview

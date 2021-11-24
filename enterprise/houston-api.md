@@ -2,6 +2,7 @@
 sidebar_label: 'Houston API'
 title: 'Houston API'
 id: houston-api
+description: Use the GraphQL Playground to interact with Astronomer Enterprise's API.
 ---
 
 ## Overview

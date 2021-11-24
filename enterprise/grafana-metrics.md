@@ -2,6 +2,7 @@
 sidebar_label: 'Metrics'
 title: 'Metrics in Astronomer Enterprise'
 id: grafana-metrics
+description: Get a single-pane view into the health of your Astronomer Enterprise Deployments with Grafana dashboards.
 ---
 
 ## Overview

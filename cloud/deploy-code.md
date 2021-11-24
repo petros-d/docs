@@ -2,6 +2,7 @@
 sidebar_label: 'Deploy Code'
 title: 'Deploy Code to Astronomer'
 id: deploy-code
+description: Push local project code to a Deployment on Astronomer Cloud.
 ---
 
 import {siteVariables} from '@site/src/versions';

@@ -2,6 +2,7 @@
 sidebar_label: 'CLI Reference Guide'
 title: 'Astronomer CLI Reference Guide'
 id: cli-reference
+description: A list of every command and setting in the Astronomer CLI.
 ---
 
 ## Overview

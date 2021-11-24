@@ -2,6 +2,7 @@
 sidebar_label: 'Logging'
 title: 'Kibana Logging on Astronomer Enterprise'
 id: kibana-logging
+description: Use Kibana to monitor platform-wide Airflow logs from Astronomer Enterprise.
 ---
 
 All Airflow logs from your Astronomer logs will flow to Elasticsearch and can be visualized on Kibana. Like Grafana, this view is only available to system admins.

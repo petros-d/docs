@@ -2,6 +2,7 @@
 title: 'Make Requests to the Apache Airflow API'
 sidebar_label: 'Airflow API'
 id: airflow-api
+description: Make requests to the Apache Airflow UI by creating a Deployment API key.
 ---
 
 ## Overview

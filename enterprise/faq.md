@@ -1,7 +1,7 @@
 ---
 sidebar_label: 'FAQ'
 title: 'Astronomer Enterprise FAQ'
-id: faq
+description: Commonly asked questions and answers for Astronomer Enterprise.
 ---
 
 ## Networking

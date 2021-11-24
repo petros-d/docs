@@ -2,6 +2,7 @@
 sidebar_label: 'kubectl'
 title: 'Use kubectl To Administer Astronomer Enterprise'
 id: kubectl
+description: Deploy Astronomer Enterprise Airflow instances with kubectl and Helm.
 ---
 
 ### Kubectl and Helm

@@ -1,8 +1,9 @@
 ---
 sidebar_label: 'Overview'
-title: 'Welcome to Astronomer Cloud'
+title: 'Astronomer Cloud Documentation'
 id: overview
 slug: /
+description: Learn how to run fully-managed Airflow instances in your cloud.
 ---
 
 ## Overview

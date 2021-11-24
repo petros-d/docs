@@ -2,6 +2,7 @@
 title: 'Configure an External Secrets Backend on Astronomer Enterprise'
 sidebar_label: 'Configure a Secrets Backend'
 id: secrets-backend
+description: Configure a secret backend tool on Astronomer Enterprise to store Airflow Connections and Variables.
 ---
 
 As of [Airflow 1.10.10](https://airflow.apache.org/docs/1.10.10/howto/use-alternative-secrets-backend.html), users can manage and sync Airflow Connections and Variables from a variety of external secrets backend tools, including [Hashicorp Vault](https://www.vaultproject.io/), [AWS SSM Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html), and [GCP Secret Manager](https://cloud.google.com/secret-manager).

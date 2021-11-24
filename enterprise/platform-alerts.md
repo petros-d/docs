@@ -2,6 +2,7 @@
 title: 'Alerting in Astronomer Enterprise'
 sidebar_label: 'Enterprise Alerts'
 id: platform-alerts
+description: Route common Airflow Deployment and platform alerts from Astronomer Enterprise via Prometheus Alertmanager.
 ---
 
 ## Overview

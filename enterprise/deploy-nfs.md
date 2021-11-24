@@ -2,6 +2,7 @@
 sidebar_label: 'Deploy DAGs via NFS'
 title: 'Deploy DAGs to Astronomer Enterprise via NFS'
 id: deploy-nfs
+description: Push DAGs to an Airflow Deployment on Astronomer Enterprise using an external NFS volume.
 ---
 
 ## Overview

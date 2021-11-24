@@ -2,6 +2,7 @@
 title: 'Manage Workspaces and Deployments on Astronomer'
 sidebar_label: 'Create a Workspace'
 id: manage-workspaces
+description: Manage Astronomer Workspaces and Airflow Deployments via the Astronomer UI.
 ---
 
 ## Overview

@@ -2,6 +2,7 @@
 sidebar_label: 'CI/CD'
 title: 'Configure CI/CD on Astronomer Enterprise'
 id: ci-cd
+description: Automate the deploy process to your Airflow Deployment on Astronomer Enterprise.
 ---
 
 ## Overview

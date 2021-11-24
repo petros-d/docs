@@ -2,6 +2,7 @@
 sidebar_label: 'Develop a Project'
 title: 'Develop Your Astronomer Project'
 id: develop-project
+description: Learn how to work on Astronomer projects, including how to update, rebuild, and add dependencies.
 ---
 
 import {siteVariables} from '@site/src/versions';
