@@ -254,12 +254,76 @@ The Astronomer CLI does not support overrides to environment variables that are 
 
 :::
 
-## Add Environment Variables (Local Development Only)
+## Set Environment Variables via .env (Local Development Only)
 
-The Astronomer CLI comes with the ability to bring in Environment Variables from a specified file by running `astro dev start` with an `--env` flag:
+For Astronomer projects deployed on Astronomer Cloud, we generally recommend [setting environment variables via the Astronomer UI](environment-variables#set-environment-variables-via-the-astronomer-ui). For local development, you can use the [Astronomer CLI](install-cli) to set environment variables in your project's `.env` file.
+
+To add Environment Variables locally:
+
+1. Open the `.env` file in your Astronomer project directory.
+2. Add your environment variables to the `.env` file.
+3. Rebuild your image by running `astro dev start --env .env`.
+
+When setting environment variables in your `.env` file, use the following format:
 
 ```
-astro dev start --env .env
+AIRFLOW__CORE__DAG_CONCURRENCY=5
 ```
 
-This feature is available for local development only. For more detail on how to add Environment Variables both locally and on Astronomer Cloud, refer to [Environment Variables](environment-variables).
+:::tip
+
+If your environment variables contain sensitive information or credentials that you don't want to expose in plain-text, you may want to add your `.env` file to `.gitignore` when you deploy these changes to your version control tool.
+
+:::
+
+### Confirm your environment variables were applied
+
+To confirm that the environment variables you just set were applied in your local Airflow environment, first run:
+
+```
+docker ps
+```
+
+This will output the 3 Docker containers that comprise the Airflow environment on your local machine: the Airflow Scheduler, Webserver, and Postgres metadata database.
+
+Now, create a [Bash session](https://docs.docker.com/engine/reference/commandline/exec/#examples) in your scheduler container by running:
+
+```
+docker exec -it <scheduler-container-name> /bin/bash
+```
+
+If you run `ls -1` following this command, you'll see a list of running files:
+
+```
+bash-5.0$ ls -1
+Dockerfile             airflow.cfg            airflow_settings.yaml  dags                   include                logs                   packages.txt           plugins                requirements.txt       unittests.cfg
+```
+
+Now, run:
+
+```
+env
+```
+
+This should output all Environment Variables that are running locally, some of which are set by you and some of which are set by Astronomer by default.
+
+> **Note:** You can also run `cat airflow.cfg` to output _all_ contents in that file.
+
+### Use multiple .env files
+
+The Astronomer CLI will look for `.env` by default, but if you want to specify multiple files, make `.env` a top-level directory and create sub-files within that folder.
+
+A project with multiple `.env` files might look like the following:
+
+```
+my_project
+  ├── Dockerfile
+  └──  dags
+    └── my_dag
+  ├── plugins
+    └── my_plugin
+  ├── airflow_settings.yaml
+  ├── .env
+    └── dev.env
+    └── prod.env
+```
