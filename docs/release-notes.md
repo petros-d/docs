@@ -18,7 +18,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ### Secret Environment Variables
 
-You can now set secret environment variables via the Astronomer Cloud UI. The values of secret environment variables are hidden from all users in your Workspace, making them ideal for storing sensitive information related to your Astronomer projects. For more information, read [Set Environment Variables via the Astronomer UI](environment-variables#set-environment-variables-via-the-astronomer-ui).
+You can now set secret environment variables via the Astronomer Cloud UI. The values of secret environment variables are hidden from all users in your Workspace, making them ideal for storing sensitive information related to your Astronomer projects. For more information, read [Set Environment Variables via the Astronomer UI](https://docs.astronomer.io/environment-variables#set-environment-variables-via-the-astronomer-ui).
 
 ### Minor Improvements
 
