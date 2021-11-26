@@ -7,13 +7,15 @@ description: Astronomer Enterprise release notes.
 
 ## Overview
 
-Astronomer v0.26 is the latest available minor version of Astronomer Enterprise. v0.26 is **not** part of Astronomer's long-term support (LTS) release model for Astronomer Enterprise, meaning that you do not need to run a script to upgrade from v0.25 to v0.26. For upgrade instructions, read [Upgrade to v0.26]. For instructions on how to upgrade to a patch version within the Astronomer v0.25 series, refer to [Upgrade to a Patch Version of Astronomer Enterprise](enterprise/upgrade-astronomer-patch).
+This document includes all release notes for Astronomer Enterprise v0.26.
+
+Astronomer v0.26 is the latest Stable version of Astronomer Enterprise, while v0.25 remains the latest Long-Term Support (LTS) version. To upgrade to Astronomer v0.26 from v0.25, read [Upgrade to v0.26](upgrade-to-0-2/). For more information about Enterprise release channels, read [Release and Lifecycle Policies](release-lifecycle-policy).
 
 We're committed to testing all Astronomer Enterprise versions for scale, reliability and security on Amazon EKS, Google GKE and Azure AKS. If you have any questions or an issue to report, don't hesitate to [reach out to us](https://support.astronomer.io).
 
-## 0.26.0
+## 0.26.4
 
-Release date: October 14, 2021
+Release date: November 22, 2021
 
 ### Support for Airflow 2.2.0
 
@@ -29,14 +31,24 @@ For more information on using timetables, read the [Apache Airflow Documentation
 
 Deferrable operators are a new type of Airflow operator that promises improved performance and lower resource costs. While standard operators and sensors take up a Worker or Scheduler slot even when they are waiting for an external trigger, deferrable operators are designed to suspend themselves and free up that Worker or Scheduler slot while they wait. This is made possible by a new, lightweight Airflow component called the Triggerer.
 
-As part of supporting deferrable operators, you can provision multiple Triggerers on your Astronomer Deployments. By provisioning multiple Triggerers, you can ensure that tasks using Deferrable Operators are run even when one Triggerer goes down. For more information about configuring Triggerers and other resources, see [Configure a Deployment](enterprise/configure-deployment).
+As part of supporting deferrable operators, you can provision multiple Triggerers on your Astronomer Deployments. By provisioning multiple Triggerers, you can ensure that tasks using Deferrable Operators are run even when one Triggerer goes down. For more information about configuring Triggerers and other resources, see [Configure a Deployment](configure-deployment).
+
+### CLI Verbosity Flag
+
+You can now specify a `--verbosity` flag for all Astronomer CLI commands. When you specify this flag with a CLI command, the CLI prints out [Logrus](https://github.com/sirupsen/logrus) logs as the command runs. This is useful for debugging any errors that might result from a CLI command.
+
+The flag prints out different levels of logs depending on the value that you pass it. Each possible value (`debug`, `info`, `warn`, `error`, `fatal`, and `panic`) maps to a different Logrus logging level. For more information about these logging levels, read the [Logrus documentation](https://github.com/sirupsen/logrus#level-logging).
 
 ### Minor Improvements
 
+- You can now create a custom set of cluster-level permissions for the Astronomer Commander service by setting `astronomer.global.clusterRoles: false` in your `config.yaml` file and pushing a new [RoleBinding](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) to a [pre-created Kubernetes namespace](pre-create-namespaces).
+- In the `astronomer.houston.config` section of your `config.yaml` file, you can now configure a list of `allowedSystemLevelDomains []`. If you configure this list, only users with emails from domains specified in the list (for example, `<company>.com`) can be granted System Admin privileges.
 - Greatly improved load times for the **System Admin** page in the UI.
+- You can now specify a node port for 3rd party ingress controllers with a service type of `nodePort`.
 
 ### Bug Fixes
 
-- Fixed an issue where making and deploying changes to an existing Deployment via the UI would not result in a "Deployment in Progress" message
-- Fixed a security vulnerability where someone could access a Registry endpoint without appropriate credentials
-- Fixed an issue where you could not manually trigger a DAG on a Deployment running a OSS Airflow image that's less than v2.0.0
+- Fixed an issue where you could not update an existing Deployment's IAM role via the Astronomer CLI
+- Fixed an issue where Deployments would not work on clusters with custom domains
+- Fixed error handling when interacting with a Deployment that wasn't fully spun up
+- Added a new validation step for Airflow Helm chart values configured in the `astronomer.houston.config.deployments.helm.airflow` section of `config.yaml`

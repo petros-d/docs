@@ -1,26 +1,62 @@
 ---
 title: 'Astronomer Certified Versioning and Support'
 sidebar_label: 'Versioning and Support Policy'
+id: ac-support-policy
 description: Versioning and lifecycle policy for Astronomer Certified, Astronomer's Apache Airflow offering.
 ---
 
 ## Overview
 
-Astronomer Certified (AC) is a Debian-based, production-ready distribution of Apache Airflow that mirrors the open source project and undergoes additional levels of rigorous testing conducted by our team.
+Astronomer Certified (AC) is a Debian-based, production-ready distribution of Apache Airflow that mirrors the open source project and undergoes additional levels of rigorous testing conducted by our team. New versions of AC are issued regularly based on Apache Airflow's community release schedule.
 
-This Docker image is hosted on [Astronomer's Docker Registry](https://quay.io/repository/astronomer/ap-airflow?tab=tags) and allows you to run Airflow on Astronomer. All projects require that you specify an Astronomer Certified image in your `Dockerfile`.
+This Docker image is hosted on [Astronomer's Docker Registry](https://quay.io/repository/astronomer/ap-airflow?tab=tags) and allows you to run Airflow on Astronomer. All projects require that you specify an AC image in your `Dockerfile`.
 
 This document provides information on the following:
 
-- How Astronomer Certified is versioned
-- Which versions of Astronomer Certified are currently available
-- The support schedule and end-of-support date for all versions
+- How AC is versioned
+- Which versions of AC are currently available
+- The maintenance schedule and end-of-maintenance date for all versions
 
-For guidelines on how to upgrade, read [Upgrade Apache Airflow on Astronomer](enterprise/manage-airflow-versions).
+For guidelines on how to upgrade, read [Upgrade Apache Airflow on Astronomer](manage-airflow-versions).
+
+## Release Channels
+
+To meet the unique needs of different operating environments, Astronomer Certified versions fall into one of two release channels:
+
+- **Stable:** Includes the latest Astronomer and Airflow features
+- **Long-term Support (LTS):** Includes long-term testing, stability, and maintenance for a core set of features
+
+For users that want the newest features from Astronomer and Apache Airflow on an incremental basis, we recommend following the stable release channel and upgrading to new versions as soon as they are made generally available. New versions of AC are issued regularly and depend on Apache Airflow's community release schedule.
+
+For users that want to optimize for the highest level of reliability and stability, we recommend upgrading only to LTS versions as they're made available. Release channels are not binding, so you are free to upgrade to any available version of AC at any time.
 
 ## Versioning Scheme
 
-An Astronomer Certified (AC) Docker image will be published for every major and minor version of Apache Airflow. For example, AC images correspond with Apache Airflow 2.0, 2.1, 2.2 etc. as they're released in the open-source project.
+Astronomer Certified follows [Semantic Versioning](https://semver.org/). This means that Astronomer ships Major, Minor, and Patch releases of AC in the format of `major.minor.patch-hotfix`.
+
+- **Major** versions are released for significant feature additions, including backward-incompatible changes to an API or DAG specification.
+- **Minor** versions are released for functional changes, including backward-compatible changes to an API or DAG specification.
+- **Patch** versions are released for bug and security fixes that resolve incorrect behavior.
+- **Hotfix** versions may include bug or security fixes not yet available in community releases of Apache Airflow.
+
+For AC `2.1.3-5`, for example:
+
+- Major = `2.`
+- Minor = `.1`
+- Patch = `.3`
+- Hotfix = `-5`
+
+An AC Docker image will be published for every major and minor version of Apache Airflow. For example, AC images that correspond with Apache Airflow 2.0, 2.1, 2.2 etc. will be available on Astronomer as they're released in the open source project.
+
+It is considered safe to upgrade to minor and patch versions within a major version. Upgrade guidance for major and LTS versions is provided with each release. There is no relation between an AC release's version number and its release channel.
+
+### Hotfix Versions
+
+All hotfix releases of AC have a [corresponding changelog](https://github.com/astronomer/ap-airflow/blob/master/2.1.0/CHANGELOG.md) which specifies the date the hotfix was released and all individual changes made to it. Bugs that are reported by the wider Airflow community are often fixed in AC before they are fixed in the subsequent open source release.
+
+For information on how to upgrade to the latest hotfix release, read [Upgrade to an AC Patch Version](manage-airflow-versions#patch-versions-of-astronomer-certified).
+
+### Distribution
 
 AC Docker images come in two variants:
 
@@ -34,69 +70,60 @@ For example, the images for Astronomer Certified 2.1.0 would be:
 
 For the smoothest, out-of-the-box Airflow experience, we strongly recommend and default to `buster-onbuild` images in your project's `Dockerfile`. These images incorporate Docker ONBUILD commands to copy and scaffold your Airflow project directory so you can more easily pass those files to the containers running each core Airflow component.
 
-For complex use cases that require customizing AC base image, read [Customize your Airflow Image on Astronomer](https://www.astronomer.ioenterprise/customize-image).
+For complex use cases that require customizing AC base image, read [Customize your Airflow Image on Astronomer](customize-image).
 
-### Hotfix Versions
+## Backport Policy for Bug and Security Fixes
 
-In addition to supporting the latest versions of open source Airflow on Astronomer Certified, our team regularly ships bug and security fixes to AC images in hotfix releases.
+If a major stability bug in Astronomer Certified  is identified by Astronomer, a fix will be backported to all LTS versions and only the latest stable version. For users on a stable version that is not latest, our team will recommend that you upgrade. Major issues in this category may result in significant delays in task scheduling as well as potential data loss.
 
-The format for AC hotfix versions is `<base-version>-<hotfix-version>`. For example, the second hotfix release for AC 2.1.0 was `2.1.0-2`.
+If a major security issue is identified, a fix will be backported and made available as a new AC hotfix version for _all_ available stable and LTS releases. Major issues in this category are classified by a combination of impact and exploitability.
 
-All hotfix releases have a [corresponding changelog](https://github.com/astronomer/ap-airflow/blob/master/2.1.0/CHANGELOG.md) which specifies the date the hotfix was released and all individual changes made to it. Bugs that are reported by the wider Airflow community are often fixed in Astronomer Certified before they are fixed in the subsequent open source release.
+In rare instances, the Astronomer team may make an exception and backport a bug or security fix to a release that is beyond the commitment stated above. To submit a request for consideration, please reach out to your customer success manager.
 
-For information on how to upgrade to the latest hotfix release, read [Upgrade to an AC Patch Version](manage-airflow-versions#patch-versions-of-astronomer-certified).
+## Astronomer Certified Maintenance Policy
 
-## Available Versions
+The maintenance period for an Astronomer Certified version depends on its release channel:
 
-The following table contains all Astronomer Certified images supported on Astronomer Enterprise. For our platform's full collection of Docker images, reference [Astronomer on Quay.io](https://quay.io/repository/astronomer/ap-airflow?tab=tags). For more information on Alpine and Debian as distinct system distributions, read [Migrate from Alpine to Debian](manage-airflow-versions#migrate-from-alpine-to-debian).
+| Release Channel | Maintenance Duration |
+| --------------- | -------------------- |
+| Stable          | 6 Months             |
+| LTS             | 18 Months            |
 
-| Airflow Version                                                                      | Debian-based Image                                        | Alpine-based Image                                            |
-| -------------------------------------------------------------------------------------| ----------------------------------------------------------| --------------------------------------------------------------|
-| [1.10.10](https://github.com/astronomer/ap-airflow/blob/master/1.10.10/CHANGELOG.md) | FROM quay.io/astronomer/ap-airflow:1.10.10-buster-onbuild | FROM quay.io/astronomer/ap-airflow:1.10.10-alpine3.10-onbuild |
-| [1.10.12](https://github.com/astronomer/ap-airflow/blob/master/1.10.12/CHANGELOG.md) | FROM quay.io/astronomer/ap-airflow:1.10.12-buster-onbuild | FROM quay.io/astronomer/ap-airflow:1.10.12-alpine3.10-onbuild |
-| [1.10.14](https://github.com/astronomer/ap-airflow/blob/master/1.10.14/CHANGELOG.md) | FROM quay.io/astronomer/ap-airflow:1.10.14-buster-onbuild | N/A                                                           |
-| [1.10.15](https://github.com/astronomer/ap-airflow/blob/master/1.10.15/CHANGELOG.md) | FROM quay.io/astronomer/ap-airflow:1.10.15-buster-onbuild | N/A                                                           |
-| [2.0.0](https://github.com/astronomer/ap-airflow/blob/master/2.0.0/CHANGELOG.md)     | FROM quay.io/astronomer/ap-airflow:2.0.0-buster-onbuild   | N/A                                                           |
-| [2.0.2](https://github.com/astronomer/ap-airflow/blob/master/2.0.2/CHANGELOG.md)     | FROM quay.io/astronomer/ap-airflow:2.0.2-buster-onbuild   | N/A                                                           |
-| [2.1.0](https://github.com/astronomer/ap-airflow/blob/master/2.1.0/CHANGELOG.md)     | FROM quay.io/astronomer/ap-airflow:2.1.0-buster-onbuild   | N/A                                                           |
-| [2.1.1](https://github.com/astronomer/ap-airflow/blob/master/2.1.1/CHANGELOG.md)     | FROM quay.io/astronomer/ap-airflow:2.1.1-buster-onbuild   | N/A                                                           |
-| [2.1.3](https://github.com/astronomer/ap-airflow/blob/master/2.1.3/CHANGELOG.md)     | FROM quay.io/astronomer/ap-airflow:2.1.3-buster-onbuild   | N/A                                                           |
-| [2.1.4](https://github.com/astronomer/ap-airflow/blob/master/2.1.4/CHANGELOG.md)     | FROM quay.io/astronomer/ap-airflow:2.1.4-buster-onbuild   | N/A                                                           |
-| [2.2.0](https://github.com/astronomer/ap-airflow/blob/master/2.2.0/CHANGELOG.md)             | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 | Debian 10 (Buster)              | 0.18.6, 0.18.7, 0.19.0 | 6.2.1 | 4.4.7  |
+For each `major.minor` pair, only the latest patch and hot-fix combination is supported at any given time. If you report an issue with an Astronomer Certified patch or hot-fix version that is not latest, the Astronomer Support team will always ask that you upgrade as a first step to resolution. For example, the Support team encourages any user who reports an issue with Astronomer Certified 2.2.2 to first upgrade to 2.2.3 as soon as it's generally available.
 
-## Support Policy
-
-Astronomer is committed to supporting all patch versions of Astronomer Certified (AC) for a total of 18 months from the release date of the Docker image and Python wheel. Within the support window of each Astronomer Certified version, the following is true:
+Within the maintenance window of each Astronomer Certified version, the following is true:
 
 - A Python wheel and set of Docker images corresponding to that version are available for download via [Quay.io](http://quay.io), PyPi and [Downloads](https://www.astronomer.io/downloads).
 - Astronomer will regularly publish hotfixes for bug or security issues identified as high priority.
 - The Astronomer Support team will offer support for paying customers running a supported version of AC via the [Astronomer Support Portal](https://support.astronomer.io).
 - A user can create a new Airflow Deployment via the Astronomer UI, CLI, or API with any supported version of AC.
 
-When a version of Airflow is not supported, the following is true:
+When the maintenance window for a version of AC ends, the following is true:
 
-- The Astronomer Support team is not obligated to answer questions regarding an Airflow Deployment that is running an unsupported version of Airflow or Astronomer Certified.
-- New Airflow Deployments cannot be created with a version of AC that is no longer supported. Deprecated versions will *not* render as an option in the Deployment creation process from the Astronomer UI, API, or CLI.
-- The latest version of the Astronomer CLI will render a warning if a user pushes a Docker image to Astronomer that corresponds to a version of Airflow that is no longer supported.
-- Users can continue to locally test versions of AC that are no longer supported via the Astronomer CLI.
-- Service will not be interrupted for Airflow Deployments running a version of AC that is no longer supported.
+- The Astronomer Support team is not obligated to answer questions regarding an Airflow Deployment that is running that version.
+- New Airflow Deployments cannot be created with that version of AC. Unsupported versions will _not_ render as an option in the Deployment creation process from the Astronomer UI, API, or CLI.
+- The latest version of the Astronomer CLI will show a warning if a user pushes a Docker image to Astronomer that corresponds to that version.
 
-## Support Schedule
+To ensure reliability, service will not be interrupted for Astronomer Deployments running a version of AC that is no longer supported. Unsupported versions will also continue to be available for local development and testing via the Astronomer CLI.
 
-The following table contains the exact support timeline for each published version of Astronomer Certified. These timelines are based on an 18-month support lifecycle.
+### End of Maintenance Date
 
-| AC Version | Release Date   | Support Period | End-of-Support Date |
-|------------|----------------|----------------|---------------------|
-| 1.10.5     | Sep 4, 2019    | 18 Months      | March 4, 2021       |
-| 1.10.7     | Dec 20, 2019   | 18 Months      | June 20, 2021       |
-| 1.10.10    | April 23, 2020 | 18 Months      | Oct 23, 2021        |
-| 1.10.12    | Sep 30, 2020   | 18 Months      | March 30, 2022      |
-| 1.10.14    | Dec 10, 2020   | 18 Months      | June 10, 2022       |
-| 1.10.15    | March 19, 2021 | 18 Months      | Sep 19, 2022        |
-| 2.0.0      | Dec 17, 2020   | 18 Months      | June 17, 2022       |
-| 2.0.2      | April 26, 2021 | 18 Months      | Oct 26, 2022        |
-| 2.1.0      | May 21, 2021   | 18 Months      | Nov 21, 2022        |
-| 2.1.1      | July 2, 2021   | 18 Months      | Jan 2, 2023         |
-| 2.1.3      | Aug 23, 2021   | 18 Months      | Feb 23, 2023        |
-| 2.1.4      | Sep 19, 2021   | 18 Months      | March 19, 2023      |
-| 2.2.0      | Oct 13, 2021   | 18 Months      | April 13, 2023      |
+Maintenance is discontinued the last day of the month for a given version. For example, if the maintenance window for a version of Astronomer Certified is January - June of a given year, that version will be maintained by Astronomer until the last day of June.
+
+## Astronomer Certified Lifecycle Schedule
+
+The following table contains the exact lifecycle for each published version of Astronomer Certified. These timelines are based on the LTS and Stable release channel maintenance policies.
+
+| AC Version                                                                           | Release Date   | Release Channel | Maintenance Period | End of Maintenance Date |
+| ------------------------------------------------------------------------------------ | -------------- | --------------- | ------------------ | ----------------------- |
+| [1.10.10](https://github.com/astronomer/ap-airflow/blob/master/1.10.10/CHANGELOG.md) | April 23, 2020 | LTS             | 18 Months          | October 2021            |
+| [1.10.12](https://github.com/astronomer/ap-airflow/blob/master/1.10.12/CHANGELOG.md) | Sep 30, 2020   | Stable          | 16 Months           | January, 2022*          |
+| [1.10.14](https://github.com/astronomer/ap-airflow/blob/master/1.10.14/CHANGELOG.md) | Dec 10, 2020   | Stable          | 13 Months           | January, 2022*           |
+| [1.10.15](https://github.com/astronomer/ap-airflow/blob/master/1.10.15/CHANGELOG.md) | March 19, 2021 | LTS             | 18 Months          | September, 2022            |
+| [2.0.x](https://github.com/astronomer/ap-airflow/blob/master/2.0.0/CHANGELOG.md)     | Dec 17, 2020   | Stable          | 13 Months           | January, 2022*           |
+| [2.1.x](https://github.com/astronomer/ap-airflow/blob/master/2.1.4/CHANGELOG.md)     | May 21, 2021   | LTS             | 18 Months          | November 2022            |
+| [2.2.x](https://github.com/astronomer/ap-airflow/blob/master/2.2.0/CHANGELOG.md)     | Oct 12, 2021   | Stable          | 6 Months           | April 2022          |
+
+*This maintenance policy is in effect as of November, 2021. Given the wide usage of AC 1.10.14, 1.10.15, and 2.0, the Astronomer team has extended their maintenance period through January, 2022.
+
+If you have any questions or concerns, reach out to [Astronomer Support](https://support.astronomer.io).

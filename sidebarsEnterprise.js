@@ -103,7 +103,7 @@ module.exports = {
       'logs-to-s3',
       'install-packages',
       'upgrade-ac',
-      'support-policy',
+      'ac-support-policy',
       ],
     },
     {

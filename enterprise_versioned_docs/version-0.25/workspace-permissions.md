@@ -216,7 +216,6 @@ Below a Workspace _Admin_, an _Editor_:
 A Workspace _Viewer_ is limited to read-only mode. _Viewers_:
 
 - Can list users in a Workspace
-- Can view all Airflow Deployments in the Workspace
 - Can view all Service Accounts in the Workspace
 - Cannot delete or modify the Workspace or its users
 
