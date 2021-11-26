@@ -1,38 +1,27 @@
 ---
-title: 'Upgrade to a Patch Version of Astronomer Enterprise'
-sidebar_label: 'Upgrade to a Patch Version'
-id: upgrade-astronomer-patch
-description: Update your Astronomer Enterprise Platform to a new patch version.
+title: 'Upgrade to a Stable or Patch Version of Astronomer Enterprise'
+sidebar_label: 'Upgrade to a Stable Version'
+id: upgrade-astronomer-stable
+description: Update your Astronomer Enterprise Platform to a new stable or patch version.
 ---
 
 ## Overview
 
-Astronomer releases are available to Enterprise customers on a quarterly basis as part of a long-term support (LTS) release model. Critical security and bug fixes will be regularly shipped as patch versions that follow LTS releases.
+Stable releases of Astronomer Enterprise are available to Enterprise customers on a monthly basis as part of the release model described in [Release and Lifecycle Policy](release-lifecycle-policy). Patch release of Astronomer Enterprise follow up on stable releases with additional bug and security fixes.
 
-Patch releases will be made available between quarterly LTS releases and require a simple upgrade process. If you're on Astronomer v0.25, follow the instructions below to upgrade to any v0.25 patch version as soon as it is made available. For information on all patch releases, refer to [Enterprise Release Notes](enterprise/release-notes).
+Stable and patch releases require a simple upgrade process. Follow this guide to upgrade to any stable or patch version before the next available LTS release. For information on all stable and patch releases, refer to [Enterprise Release Notes](release-notes).
 
 A few notes before you get started:
-- The following guidelines are only for upgrading to the latest Astronomer v0.25 patch version. To determine whether the latest version of Astronomer is a minor or patch version, read the Astronomer Platform Versioning guidelines below.
-- The patch upgrade process will NOT affect running Airflow tasks as long as `upgradeDeployments.enabled=false` is set in the script below.
-- Patch version updates will NOT cause any downtime to Astronomer services (Astronomer UI, Houston API, Astronomer CLI).
+- The patch upgrade process will not affect running Airflow tasks as long as `upgradeDeployments.enabled=false` is set in the script below.
+- Patch and stable version updates will not cause any downtime to Astronomer services (Astronomer UI, Houston API, Astronomer CLI).
 
 > **Note:** Astronomer v0.16.5 and beyond includes an improved upgrade process that allows Airflow Deployments to remain unaffected through a platform upgrade that includes changes to the [Astronomer Airflow Chart](https://github.com/astronomer/airflow-chart).
 >
 > Now, Airflow Chart changes only take effect when another restart event is triggered by a user (e.g. a code push, Environment Variable change, resource or executor adjustment, etc).
 
-## Astronomer Platform Versioning
-
-Astronomer platform releases follow a semantic versioning scheme. All versions are written as a 3-component number in the format of `x.y.z`. In this syntax,
-
-- X: Major Version
-- Y: Minor Version
-- Z: Patch/Hotfix
-
-For example, upgrading Astronomer from v0.16.4 to v0.16.5 would be considered upgrading to a patch version, whereas upgrading from v0.15.0 to v0.16.0 would be considered upgrading to the latest minor version.
-
 ## Step 1: Ensure You Have a Copy of Your Astronomer config.yaml File
 
-First, ensure you have a copy of the `config.yaml` file of your platform namespace if you don't already.
+First, ensure you have a copy of the `config.yaml` file of your platform namespace.
 
 To do this, you can run:
 
@@ -74,7 +63,7 @@ helm3 repo update
 # upgradeDeployments false ensures that Airflow charts are not upgraded when this script is ran
 # If you deployed a config change that is intended to reconfigure something inside Airflow,
 # then you may set this value to "true" instead. When it is "true", then each Airflow chart will
-# restart.
+# restart. Note that some stable version upgrades require setting this value to true regardless of your own configuration.
 helm3 upgrade --namespace $NAMESPACE \
             -f ./config.yaml \
             --reset-values \

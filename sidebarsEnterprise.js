@@ -75,7 +75,7 @@ module.exports = {
       'workspace-permissions',
       'manage-platform-users',
       'houston-api',
-      'upgrade-astronomer-patch',
+      'upgrade-astronomer-stable',
       'apply-platform-config',
       'registry-backend',
       'configure-platform-resources',

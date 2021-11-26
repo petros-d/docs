@@ -154,7 +154,7 @@
         },
         {
           "type": "doc",
-          "id": "version-0.23/upgrade-astronomer-patch"
+          "id": "version-0.23/upgrade-astronomer-stable"
         },
         {
           "type": "doc",
@@ -234,7 +234,7 @@
         },
         {
           "type": "doc",
-          "id": "version-0.23/support-policy"
+          "id": "version-0.23/ac-support-policy"
         }
       ],
       "collapsible": true,

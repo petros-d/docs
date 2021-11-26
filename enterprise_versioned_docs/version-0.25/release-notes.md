@@ -6,7 +6,7 @@ id: release-notes
 
 ## Overview
 
-Astronomer v0.26 is the latest available minor version of Astronomer Enterprise. v0.26 is **not** part of Astronomer's long-term support (LTS) release model for Astronomer Enterprise, meaning that you do not need to run a script to upgrade from v0.25 to v0.26. For upgrade instructions, read [Upgrade to v0.26]. For instructions on how to upgrade to a patch version within the Astronomer v0.25 series, refer to [Upgrade to a Patch Version of Astronomer Enterprise](enterprise/upgrade-astronomer-patch).
+Astronomer v0.26 is the latest available minor version of Astronomer Enterprise. v0.26 is **not** part of Astronomer's long-term support (LTS) release model for Astronomer Enterprise, meaning that you do not need to run a script to upgrade from v0.25 to v0.26. For upgrade instructions, read [Upgrade to v0.26]. For instructions on how to upgrade to a patch version within the Astronomer v0.25 series, refer to [Upgrade to a Patch Version of Astronomer Enterprise](enterprise/upgrade-astronomer-stable).
 
 We're committed to testing all Astronomer Enterprise versions for scale, reliability and security on Amazon EKS, Google GKE and Azure AKS. If you have any questions or an issue to report, don't hesitate to [reach out to us](https://support.astronomer.io).
 
