@@ -8,11 +8,9 @@ description: Learn how to run fully-managed Airflow instances in your cloud.
 
 ## Overview
 
-Welcome to Astronomer Cloud. We're thrilled to have you onboard as we launch the next generation of our product. This page will serve as a home for official product documentation for Astronomer Cloud.
+Astronomer Cloud is a fully-managed Airflow instance in your cloud and the easiest way to deploy, manage, and monitor data pipelines.
 
-To start, Astronomer Cloud includes a game-changing deployment model that offers the self-service convenience of a fully managed Cloud service (the “control plane”) while respecting the need to keep data private, secure, and within corporate boundaries (the “data plane”).
-
-This model optimizes for security whilst relieving your team of operational overhead. We have a strong foundation available today and look forward to hearing your feedback as we build a robust set of differentiating features.
+The Astronomer Cloud deployment model offers the self-service convenience of a fully managed Cloud service (the Control Plane) while respecting the need to keep data private, secure, and within corporate boundaries (the Data Plane). This model optimizes for security whilst relieving your team of operational overhead.
 
 ## Features
 
@@ -29,11 +27,9 @@ The following diagram outlines how the control plane, data plane, and users are 
   <img src="/img/docs/architecture-overview.png" alt="High level overview of Astronomer Cloud's architecture" />
 </div>
 
-For more information on each of these features, explore the documentation links below. We will continue to make changes and release new features with no expected disruption to your data pipelines.
-
 ## Get Started
 
-Our team will reach out to yours to schedule an onboarding session for the initial install. From there, we recommend reading through the following docs:
+The Astronomer team will schedule an onboarding session for your initial install. From there, we recommend reading through the following docs:
 
 - [Install the Astronomer CLI](install-cli)
 - [Develop Project](develop-project)
