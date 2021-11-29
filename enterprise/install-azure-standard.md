@@ -1,6 +1,7 @@
 ---
 sidebar_label: 'Azure'
 title: 'Install Astronomer Enterprise on Azure AKS'
+id: install-azure
 description: Install Astronomer Enterprise on Azure Kubernetes Service (AKS).
 ---
 
