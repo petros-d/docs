@@ -7,7 +7,7 @@ description: 'Documentation for how to run Airflow at enterprise scale with Astr
 
 ## Overview
 
-Astronomer makes it easy to run, monitor, and scale [Apache Airflow](https://github.com/apache/airflow) deployments in our cloud or yours. Source code is made available for the benefit of customers.
+Astronomer Enterprise makes it easy to run, monitor, and scale [Apache Airflow](https://github.com/apache/airflow) deployments in your cloud.
 
 ## Architecture
 
