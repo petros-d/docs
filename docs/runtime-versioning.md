@@ -16,7 +16,7 @@ This document provides information on the following:
 - Which versions of Astronomer Runtime are currently available
 - The support schedule and end-of-support date for all versions
 
-For guidelines on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runtime).
+For guidelines on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runtime.md).
 
 ## Versioning Scheme
 
@@ -68,7 +68,7 @@ To provide the smoothest out-of-the-box Airflow experience, the Astronomer CLI d
 
 The following table contains all Astronomer Runtime images supported on Astronomer Cloud. For our platform's full collection of Docker images, reference [Astronomer on Quay.io](https://quay.io/repository/astronomer/astro-runtime?tab=tags).
 
-Note that this table includes only major and minor releases of Runtime. When upgrading to a new version of Runtime, you must specify a patch version number in the `FROM` statement of your Dockerfile. For the latest available patch version, see [Runtime Release Notes](runtime-release-notes).
+Note that this table includes only major and minor releases of Runtime. When upgrading to a new version of Runtime, you must specify a patch version number in the `FROM` statement of your Dockerfile. For the latest available patch version, see [Runtime Release Notes](runtime-release-notes.md).
 
 | Runtime Version                | Airflow Version                                               | Debian-based Image                           | Python Version | Release Date     |
 |--------------------------------|---------------------------------------------------------------|----------------------------------------------|----------------|------------------|
