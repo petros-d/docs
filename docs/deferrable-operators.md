@@ -33,7 +33,7 @@ For implementation details on deferrable operators, read the [Apache Airflow doc
 
 ## Prerequisites
 
-To use deferrable operators on Astronomer Cloud, you must deploy your code to a Deployment running [Astronomer Runtime 4.0+](release-notes#astronomer-runtime-4-0-0.md). For more information on upgrading your Deployment's Runtime version, read [Upgrade Runtime](upgrade-runtime.md).
+To use deferrable operators on Astronomer Cloud, you must deploy your code to a Deployment running [Astronomer Runtime 4.0+](runtime-release-notes#astronomer-runtime-4-0-0.md). For more information on upgrading your Deployment's Runtime version, read [Upgrade Runtime](upgrade-runtime.md).
 
 To use deferrable operators available exclusively on Astronomer Runtime, you must additionally add the `astronomer-operator-wrappers` package to the `packages.txt` file of your Astronomer project.
 
