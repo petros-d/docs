@@ -10,15 +10,15 @@ Astronomer is committed to continuous development of Astronomer Cloud. As you gr
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
-**Latest Runtime Version**: 4.0.4 ([Release notes](runtime-release-notes))
+**Latest Runtime Version**: 4.0.4 ([Release notes](runtime-release-notes.md))
 
-**Latest CLI Version**: 1.0.3 ([Release notes](cli-release-notes))
+**Latest CLI Version**: 1.0.3 ([Release notes](cli-release-notes.md))
 
 ## November 19, 2021
 
 ### Secret Environment Variables
 
-You can now set secret environment variables via the Astronomer Cloud UI. The values of secret environment variables are hidden from all users in your Workspace, making them ideal for storing sensitive information related to your Astronomer projects. For more information, read [Set Environment Variables via the Astronomer UI](environment-variables#set-environment-variables-via-the-astronomer-ui).
+You can now set secret environment variables via the Astronomer Cloud UI. The values of secret environment variables are hidden from all users in your Workspace, making them ideal for storing sensitive information related to your Astronomer projects. For more information, read [Set Environment Variables via the Astronomer UI](environment-variables.md#set-environment-variables-via-the-astronomer-ui).
 
 ### Minor Improvements
 
@@ -35,7 +35,7 @@ In the Astronomer UI, your Deployment pages now show high-level metrics for Depl
   <img src="/img/docs/deployment-metrics.png" alt="New metrics in the Cloud UI" />
 </div>
 
-For more information on this feature, read [Deployment Metrics](deployment-metrics).
+For more information on this feature, read [Deployment Metrics](deployment-metrics.md).
 
 ### Bug Fixes
 
@@ -137,7 +137,7 @@ All user configurations can be found by clicking your user profile picture in th
 
 :::danger
 
-This release introduces a breaking change to code deploys via the Astronomer CLI. Starting on September 28, you must upgrade to v1.0.0 of the CLI to deploy code to Astronomer. [CI/CD processes](ci-cd) enabled by Deployment API keys will continue to work and will not be affected. For more information, read the [CLI release notes](cli-release-notes).
+This release introduces a breaking change to code deploys via the Astronomer CLI. Starting on September 28, you must upgrade to v1.0.0 of the CLI to deploy code to Astronomer. [CI/CD processes](ci-cd.md) enabled by Deployment API keys will continue to work and will not be affected. For more information, read the [CLI release notes](cli-release-notes.md).
 
 :::
 
@@ -159,7 +159,7 @@ This release introduces a breaking change to code deploys via the Astronomer CLI
 
 ### Support for Deployment API Keys
 
-Astronomer Cloud now officially supports Deployment API keys, which you can use to automate code pushes to Astronomer and integrate your environment with a CI/CD tool such as GitHub Actions. For more information on creating and managing Deployment API keys, see [Deployment API keys](api-keys). For more information on using Deployment API keys to programmatically deploy code, see [CI/CD](ci-cd). Support making requests to Airflow's REST API using API keys is coming soon.
+Astronomer Cloud now officially supports Deployment API keys, which you can use to automate code pushes to Astronomer and integrate your environment with a CI/CD tool such as GitHub Actions. For more information on creating and managing Deployment API keys, see [Deployment API keys](api-keys.md). For more information on using Deployment API keys to programmatically deploy code, see [CI/CD](ci-cd.md). Support making requests to Airflow's REST API using API keys is coming soon.
 
 ## September 3, 2021
 
@@ -186,7 +186,7 @@ Astronomer Cloud now officially supports Deployment API keys, which you can use 
 
 ### Support for the Airflow REST API
 
-You can now programmatically trigger DAGs and update your Airflow Deployments on Astronomer by making requests to Airflow's [REST API](https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html). Currently this feature works only with temporary tokens, which are available at `cloud.astronomer.io/token`. Support for Deployment API keys is coming soon. For more information on using this feature, read [Airflow API](airflow-api).
+You can now programmatically trigger DAGs and update your Airflow Deployments on Astronomer by making requests to Airflow's [REST API](https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html). Currently this feature works only with temporary tokens, which are available at `cloud.astronomer.io/token`. Support for Deployment API keys is coming soon. For more information on using this feature, read [Airflow API](airflow-api.md).
 
 ### Minor Improvements
 

@@ -16,7 +16,7 @@ This guide provides instructions for creating a new Astronomer project, as well 
 
 To create an Astronomer project, you need:
 
-- [The Astronomer CLI](install-cli)
+- [The Astronomer CLI](install-cli.md)
 - [Docker](https://www.docker.com/products/docker-desktop)
 
 ## Step 1: Create an Astronomer Project
@@ -45,7 +45,7 @@ This set of files will build into a Docker image that you can both run on your l
 
 ### Astronomer Runtime
 
-Your `Dockerfile` includes a reference to Astronomer Runtime. Packaged into a Debian-based Docker image, Astronomer Runtime extends the Apache Airflow open source project to provide you with differentiated functionality that centers around reliability, efficiency, and performance. For more information on what's included in Runtime and how it's versioned, see [Runtime Versioning](runtime-versioning).
+Your `Dockerfile` includes a reference to Astronomer Runtime. Packaged into a Debian-based Docker image, Astronomer Runtime extends the Apache Airflow open source project to provide you with differentiated functionality that centers around reliability, efficiency, and performance. For more information on what's included in Runtime and how it's versioned, see [Runtime Versioning](runtime-versioning.md).
 
 By default, the Docker image in your Dockerfile is:
 
@@ -111,4 +111,4 @@ After logging in, you should see the DAGs from your `dags` directory in the Airf
 
 ## Next Steps
 
-Running your project locally is the best way to test your DAGs before pushing them to Astronomer Cloud. For more information on running a local Airflow environment, read [Test and Troubleshoot](test-and-troubleshoot-locally#run-a-project-locally).
+Running your project locally is the best way to test your DAGs before pushing them to Astronomer Cloud. For more information on running a local Airflow environment, read [Test and Troubleshoot](test-and-troubleshoot-locally.md#run-a-project-locally).

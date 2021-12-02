@@ -129,7 +129,7 @@ The output of the last command is a YAML file containing information about the r
 }
 ```
 
-To provision additional Clusters, complete the setup in [Create a Cluster](create-cluster) after completing your initial installation.
+To provision additional Clusters, complete the setup in [Create a Cluster](create-cluster.md) after completing your initial installation.
 
 ## Step 4: Let Astronomer Complete the Install
 
@@ -152,7 +152,7 @@ This process can take some time. Wait for confirmation that the installation was
 
 ## Step 5: Create a Deployment
 
-Once our team confirms that your Astronomer Cluster has been created, you are ready to create a Deployment and start deploying DAGs. Log in to [the Astronomer UI](https://cloud.astronomer.io) again and [create a new Deployment](configure-deployment). If the installation was successful, your new Astronomer Cluster will be listed as an option under the **Cluster** menu:
+Once our team confirms that your Astronomer Cluster has been created, you are ready to create a Deployment and start deploying DAGs. Log in to [the Astronomer UI](https://cloud.astronomer.io) again and [create a new Deployment](configure-deployment.md). If the installation was successful, your new Astronomer Cluster will be listed as an option under the **Cluster** menu:
 
 <div class="text--center">
   <img src="/img/docs/cluster-menu.png" alt="Astronomer UI New Deployment screen" />
@@ -162,7 +162,7 @@ Once our team confirms that your Astronomer Cluster has been created, you are re
 
 Now that you have an Astronomer Cluster up and running, take a look at the docs below for information on how to start working in Astronomer:
 
-- [Install CLI](install-cli)
-- [Configure Deployments](configure-deployment)
-- [Deploy Code](deploy-code)
-- [Add Users](add-user)
+- [Install CLI](install-cli.md)
+- [Configure Deployments](configure-deployment.md)
+- [Deploy Code](deploy-code.md)
+- [Add Users](add-user.md)

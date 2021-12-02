@@ -34,9 +34,9 @@ For more information on each of these features, explore the documentation links 
 
 Our team will reach out to yours to schedule an onboarding session for the initial install. From there, we recommend reading through the following docs:
 
-- [Install the Astronomer CLI](install-cli)
-- [Develop Project](develop-project)
-- [Configure your Deployment](configure-deployment)
+- [Install the Astronomer CLI](install-cli.md)
+- [Develop Project](develop-project.md)
+- [Configure your Deployment](configure-deployment.md)
 
 If you have a feature request or a bug to report, reach out to [Astronomer Support](https://support.astronomer.io). We're here to help.
 

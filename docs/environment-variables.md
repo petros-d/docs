@@ -151,7 +151,7 @@ ENV AIRFLOW_VAR_MY_VAR=2
 On Astronomer, environment variables are applied and overridden in the following order:
 
 1. Astronomer UI
-2. [.env (local development only)](develop-project#set-environment-variables-via-env-local-development-only))
+2. [.env (local development only)](develop-project.md#set-environment-variables-via-env-local-development-only))
 3. Dockerfile
 4. Default Airflow Values (`airflow.cfg`)
 

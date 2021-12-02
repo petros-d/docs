@@ -6,7 +6,7 @@ id: cli-release-notes
 
 ## Overview
 
-This document provides a summary of all changes made to the [Astronomer CLI](install-cli). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes).
+This document provides a summary of all changes made to the [Astronomer CLI](install-cli.md). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes.md).
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
@@ -32,14 +32,14 @@ Release date: October 15, 2021
 
 Release date: September 28, 2021
 
-- Improvement: `astro dev init` now always pulls the latest version of Astronomer Runtime for new projects. This means that you no longer have to upgrade the CLI in order to take advantage of a new Runtime release. Note that you still need to manually [upgrade Runtime](upgrade-runtime) for existing projects.
+- Improvement: `astro dev init` now always pulls the latest version of Astronomer Runtime for new projects. This means that you no longer have to upgrade the CLI in order to take advantage of a new Runtime release. Note that you still need to manually [upgrade Runtime](upgrade-runtime.md) for existing projects.
 - Improvement: Updated error messages throughout the CLI to be more clear and useful
 
 ## v0.2.9-beta
 
 Release date: September 20, 2021
 
-- Improvement: Bumped the default Astronomer Runtime version for new projects to [`3.0.2`](runtime-release-notes#astronomer-runtime-302)
+- Improvement: Bumped the default Astronomer Runtime version for new projects to [`3.0.2`](runtime-release-notes.md#astronomer-runtime-302)
 - Improvement: You can now use [`astro dev run`](https://www.astronomer.io/docs/cloud/stable/resources/cli-reference#astro-dev-run) to run Airflow CLI commands
 - Improvement: You can now use [`astro dev logs`](https://www.astronomer.io/docs/cloud/stable/resources/cli-reference#astro-dev-logs) to show logs for the Airflow Scheduler and Webserver when developing locally
 
@@ -47,7 +47,7 @@ Release date: September 20, 2021
 
 Release date: August 31, 2021
 
-- Improvement: Bumped the default Astronomer Runtime version for new projects to [`3.0.0`](runtime-release-notes#astronomer-runtime-300)
+- Improvement: Bumped the default Astronomer Runtime version for new projects to [`3.0.0`](runtime-release-notes.md#astronomer-runtime-300)
 - Improvement: Updated help text throughout the CLI
 - Improvement: Projects created with `astro dev init` now include a README file
 

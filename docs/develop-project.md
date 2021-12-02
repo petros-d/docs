@@ -20,8 +20,8 @@ This document explains the various ways you can modify and build your Astronomer
 
 To develop an Astronomer project and test it locally, you need:
 
-- An existing [Astronomer project](create-project).
-- [The Astronomer CLI](install-cli)
+- An existing [Astronomer project](create-project.md).
+- [The Astronomer CLI](install-cli.md)
 - [Docker](https://www.docker.com/products/docker-desktop)
 
 ## Build and Run a Project Locally
@@ -48,7 +48,7 @@ The Astronomer CLI is a wrapper around [Docker Compose](https://docs.docker.com/
 
 :::tip
 
-If you see `Error: cannot start, project already running` when you run this command, it means your local Airflow environment is already running your project. If there are changes you'd like to apply to your project, see [restart your local environment](develop-project#make-changes-to-your-project).
+If you see `Error: cannot start, project already running` when you run this command, it means your local Airflow environment is already running your project. If there are changes you'd like to apply to your project, see [restart your local environment](develop-project.md#make-changes-to-your-project).
 
 :::
 
@@ -88,7 +88,7 @@ All changes made to the following files require rebuilding your image:
 - `requirements.txt`
 - `airflow_settings.yaml`
 
-To rebuild your project after making a change to any of these files, you must [restart your local environment](develop-project#restart-your-local-environment).
+To rebuild your project after making a change to any of these files, you must [restart your local environment](develop-project.md#restart-your-local-environment).
 
 ## Add Python and OS-level Packages
 
@@ -108,7 +108,7 @@ pymongo==3.7.2
 
 If you don't pin a package to a version, the latest version of the package that's publicly available is installed by default.
 
-Once you've saved these packages in your project files, [restart your local environment](develop-project#restart-your-local-environment).
+Once you've saved these packages in your project files, [restart your local environment](develop-project.md#restart-your-local-environment).
 
 ### Confirm your package was installed
 
@@ -149,7 +149,7 @@ To build additional helper functions for DAGs into your Astronomer project, we r
     └── requirements.txt
     ```
 
-2. [Restart Your Local Environment](develop-project#restart-your-local-environment).
+2. [Restart Your Local Environment](develop-project.md#restart-your-local-environment).
 
 To confirm that your helper functions were successfully installed:
 
@@ -208,7 +208,7 @@ variables:
     variable_value: value987
 ```
 
-Once you've saved these values in your `airflow_settings.yaml`, [restart your local environment](develop-project#restart-your-local-environment). When you access the Airflow UI for your project at `localhost:8080`, you should see these values in the **Connections**, **Pools**, and **Variables** tabs.
+Once you've saved these values in your `airflow_settings.yaml`, [restart your local environment](develop-project.md#restart-your-local-environment). When you access the Airflow UI for your project at `localhost:8080`, you should see these values in the **Connections**, **Pools**, and **Variables** tabs.
 
 ## Run Commands on Build
 
@@ -223,7 +223,7 @@ RUN ls
 
 ## Set Environment Variables via .env (Local Development Only)
 
-For Astronomer projects deployed on Astronomer Cloud, we generally recommend [setting environment variables via the Astronomer UI](environment-variables#set-environment-variables-via-the-astronomer-ui). For local development, you can use the [Astronomer CLI](install-cli) to set environment variables in your project's `.env` file.
+For Astronomer projects deployed on Astronomer Cloud, we generally recommend [setting environment variables via the Astronomer UI](environment-variables.md#set-environment-variables-via-the-astronomer-ui). For local development, you can use the [Astronomer CLI](install-cli.md) to set environment variables in your project's `.env` file.
 
 To add Environment Variables locally:
 
