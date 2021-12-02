@@ -12,13 +12,13 @@ When you install Astronomer, a number of platform-level settings will be set by 
 For example, you can:
 
 * [Integrate an Auth system](integrate-auth-system)
-* [Add a registry backend](enterprise/registry-backend)
-* [Change resource allocation limits](enterprise/configure-platform-resources)
+* [Add a registry backend](registry-backend)
+* [Change resource allocation limits](configure-platform-resources)
 * Update any other key-value pair specified in the [default configuration file](https://github.com/astronomer/astronomer/blob/master/values.yaml)
 
 To configure these settings, follow the steps below.
 
-> **Note:** If you're interested in upgrading Astronomer to a new patch version of the platform, read [Upgrade to a Patch Version](enterprise/upgrade-astronomer-stable).
+> **Note:** If you're interested in upgrading Astronomer to a new patch version of the platform, read [Upgrade to a Patch Version](upgrade-astronomer-stable).
 
 ## Step 1: Open Your config.yaml File
 

@@ -43,7 +43,7 @@ To query our API, you must first authenticate as an Astronomer user.
 
 To authenticate:
 
-1. Go to https://app.BASEDOMAIN/token and copy the API token. Alternatively, note the **API Key** of a [service account](https://www.astronomer.ioenterprise/ci-cd#step-1-create-a-service-account).
+1. Go to https://app.BASEDOMAIN/token and copy the API token. Alternatively, note the **API Key** of a [service account](ci-cd#step-1-create-a-service-account).
 2. Open Astronomer's Houston API GraphQL Playground at `https://houston.BASEDOMAIN/v1`.
 3. Expand the `HTTP Headers` section on the bottom left of the page.
 4. Paste the API token you acquired from Step 1 in the following format: `{"authorization": "<api-token>"}`
@@ -179,7 +179,7 @@ To delete a Deployment, you'll need:
 1. Permission (SysAdmin or Workspace Admin)
 2. A Deployment ID
 
-> **Note:** For more information about the SysAdmin role, reference our ["User Management" doc](enterprise/manage-platform-users).
+> **Note:** For more information about the SysAdmin role, reference our ["User Management" doc](manage-platform-users).
 
 If you don't already have a Deployment ID, run `astro deployment list` via the Astronomer CLI or follow the steps in the "Query an Airflow Deployment" section above.
 
@@ -344,7 +344,7 @@ If you're assigning a user a different System-Level Role, replace `SYSTEM_ADMIN`
 
 ### Create a service account
 
-You can create Deployment and Workspace-level accounts in the Astronomer UI as described in [Deploy to Astronomer via CI/CD](enterprise/ci-cd). Alternatively, you can create platform-level service accounts programatically via the Houston API. To create a service account via the Houston API, run the following in your GraphQL Playground:
+You can create Deployment and Workspace-level accounts in the Astronomer UI as described in [Deploy to Astronomer via CI/CD](ci-cd). Alternatively, you can create platform-level service accounts programatically via the Houston API. To create a service account via the Houston API, run the following in your GraphQL Playground:
 
 ```graphql
 mutation CreateSystemServiceAccount {

@@ -51,7 +51,7 @@ These requirements are slightly different for running only the Python wheel. For
 - Database: PostgreSQL (9.6, 10, 11, 12, 13), MySQL (5.7, 8+), SQLite (3.15.0+)
 - System Distribution: Debian 10 (Buster)
 
- For more information on running a Python wheel installation of Astronomer Certified, read [Install on a Virtual Machine](enterprise/single-node-install).
+ For more information on running a Python wheel installation of Astronomer Certified, read [Install on a Virtual Machine](single-node-install).
 
 ## Environment Variables
 
@@ -59,7 +59,7 @@ When an Airflow service is started, it checks a file for runtime environment var
 
 If you run the Astronomer Certified Docker image without the Astronomer platform, environment variables are defined in your Dockerfile. They can be overwritten with a runtime command, such as `docker run`.
 
-If you're running the Astronomer Certified Docker image with the Astronomer platform, there are a few ways you can configure environment variables. For more information, read [Environment Variables](enterprise/environment-variables).
+If you're running the Astronomer Certified Docker image with the Astronomer platform, there are a few ways you can configure environment variables. For more information, read [Environment Variables](environment-variables).
 
 Astronomer Certified supports the same environment variables as Apache Airflow. For a list of all configurable environment variables, read the [Apache Airflow documentation](https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html).
 

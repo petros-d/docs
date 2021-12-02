@@ -21,7 +21,7 @@ In this section, we'll walk through how to use Vault as a secrets backend both l
 To use this feature, you'll need the following:
 
 - "Admin" access to an Airflow Deployment on Astronomer
-- [The Astro CLI](enterprise/cli-quickstart)
+- [The Astro CLI](cli-quickstart)
 - A running Hashicorp Vault server
 - [The Vault CLI](https://www.vaultproject.io/docs/install)
 - Your Vault server's [Root Token](https://www.vaultproject.io/docs/concepts/tokens#root-tokens)
@@ -178,7 +178,7 @@ For the purpose of this doc, we'll assume you already have an SSM Parameter Stor
 To use this feature, you'll need the following:
 
 - "Admin" access to an Airflow Deployment on Astronomer
-- The [Astro CLI](enterprise/cli-quickstart)
+- The [Astro CLI](cli-quickstart)
 - A running AWS SSM Parameter Store instance
 - A valid AWS Access Key ID and Secret Access Key
 
@@ -238,7 +238,7 @@ This setup assumes that you already have a Google Cloud project with [Secret Man
 1. [Create a service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts) with the appropriate permissions on Google Cloud.
 2. Add the [Secret Manager Secret Accessor](https://cloud.google.com/secret-manager/docs/access-control) role to the service account.
 3. Create and download a [JSON service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys) for the service account.
-4. In the Astronomer UI, set the following [environment variables](enterprise/environment-variables) in your Airflow Deployment, making sure to paste the entire JSON key file in place of `<your-key-file>`:
+4. In the Astronomer UI, set the following [environment variables](environment-variables) in your Airflow Deployment, making sure to paste the entire JSON key file in place of `<your-key-file>`:
 
     ```sh
     AIRFLOW__SECRETS__BACKEND=airflow.providers.google.cloud.secrets.secret_manager.CloudSecretManagerBackend

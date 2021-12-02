@@ -19,7 +19,7 @@ This guide provides steps for creating and deleting Deployment API keys.
 
 :::tip
 
-Deployment API keys are an improved and more secure iteration of [Service Accounts](enterprise/ci-cd#step-1-create-a-service-account), which are available in other Astronomer products.
+Deployment API keys are an improved and more secure iteration of [Service Accounts](ci-cd#step-1-create-a-service-account), which are available in other Astronomer products.
 
 :::
 

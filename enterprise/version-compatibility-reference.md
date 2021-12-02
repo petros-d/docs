@@ -44,7 +44,7 @@ It's worth noting that while the tables below reference the minimum compatible v
 | 2.1.4                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 | Debian 10 (Buster)              | 0.18.6+  | 6.2.1 | 4.4.7  |
 | 2.2.0                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 | Debian 11 (Bullseye)       | 0.18.6+  | 6.2.1 | 4.4.7  |
 
-For more detail on each version of Astronomer Certified and instructions on how to upgrade, refer to [Upgrade Apache Airflow](enterprise/manage-airflow-versions/).
+For more detail on each version of Astronomer Certified and instructions on how to upgrade, refer to [Upgrade Apache Airflow](manage-airflow-versions/).
 
 > **Note:** While the Astronomer Certified Python Wheel supports Python versions 3.6, 3.7, and 3.8, Astronomer Certified Docker images have been tested and built only with Python 3.7. To run Astronomer Certified on Docker with Python versions 3.6 or 3.8, you can create a custom image with a different Python version specified. For more information, read [Change Python Versions](customize-image#build-with-a-different-python-version).
 
@@ -52,7 +52,7 @@ For more detail on each version of Astronomer Certified and instructions on how 
 
 ## Additional Resources
 
-The table above lists long-term support (LTS) versions of Astronomer and does not specify _patch_ versions that our engineering team releases on a regular basis. For more detail on changes between patches, refer to [Astronomer Enterprise Release Notes](https://www.astronomer.ioenterprise/release-notes).
+The table above lists long-term support (LTS) versions of Astronomer and does not specify _patch_ versions that our engineering team releases on a regular basis. For more detail on changes between patches, refer to [Astronomer Enterprise Release Notes](release-notes).
 
 > **Note:** If you're running on a legacy version of Astronomer (pre-v0.16), reach out to [Astronomer Support](https://support.astronomer.io) to schedule an upgrade with our team.
 

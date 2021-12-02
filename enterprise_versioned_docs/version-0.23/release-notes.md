@@ -6,7 +6,7 @@ id: release-notes
 
 ## Overview
 
-Astronomer v0.26 is the latest available minor version of Astronomer Enterprise. v0.26 is **not** part of Astronomer's long-term support (LTS) release model for Astronomer Enterprise, meaning that you do not need to run a script to upgrade from v0.25 to v0.26. For upgrade instructions, read [Upgrade to v0.26]. For instructions on how to upgrade to a patch version within the Astronomer v0.25 series, refer to [Upgrade to a Patch Version of Astronomer Enterprise](enterprise/upgrade-astronomer-stable).
+Astronomer v0.26 is the latest available minor version of Astronomer Enterprise. v0.26 is **not** part of Astronomer's long-term support (LTS) release model for Astronomer Enterprise, meaning that you do not need to run a script to upgrade from v0.25 to v0.26. For upgrade instructions, read [Upgrade to v0.26]. For instructions on how to upgrade to a patch version within the Astronomer v0.25 series, refer to [Upgrade to a Patch Version of Astronomer Enterprise](upgrade-astronomer-stable).
 
 We're committed to testing all Astronomer Enterprise versions for scale, reliability and security on Amazon EKS, Google GKE and Azure AKS. If you have any questions or an issue to report, don't hesitate to [reach out to us](https://support.astronomer.io).
 
@@ -28,7 +28,7 @@ For more information on using timetables, read the [Apache Airflow Documentation
 
 Deferrable operators are a new type of Airflow operator that promises improved performance and lower resource costs. While standard operators and sensors take up a Worker or Scheduler slot even when they are waiting for an external trigger, deferrable operators are designed to suspend themselves and free up that Worker or Scheduler slot while they wait. This is made possible by a new, lightweight Airflow component called the Triggerer.
 
-As part of supporting deferrable operators, you can provision multiple Triggerers on your Astronomer Deployments. By provisioning multiple Triggerers, you can ensure that tasks using Deferrable Operators are run even when one Triggerer goes down. For more information about configuring Triggerers and other resources, see [Configure a Deployment](enterprise/configure-deployment).
+As part of supporting deferrable operators, you can provision multiple Triggerers on your Astronomer Deployments. By provisioning multiple Triggerers, you can ensure that tasks using Deferrable Operators are run even when one Triggerer goes down. For more information about configuring Triggerers and other resources, see [Configure a Deployment](configure-deployment).
 
 ### Minor Improvements
 

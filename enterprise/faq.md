@@ -83,17 +83,17 @@ You may have special requirements of your infrastructure such that you want to s
 
 ### How can we integrate with LDAP?
 
-See [Integrate Auth System](enterprise/integrate-auth-system)
+See [Integrate Auth System](integrate-auth-system)
 
 ### How can we get multi-factor auth?
 
-Astronomer has a flexible [auth front end](enterprise/integrate-auth-system), with pre-built integrations for Google Auth, Okta, Auth0, and others.
+Astronomer has a flexible [auth front end](integrate-auth-system), with pre-built integrations for Google Auth, Okta, Auth0, and others.
 
-If you choose to use Google Auth, we have [documentation available](enterprise/integrate-auth-system).
+If you choose to use Google Auth, we have [documentation available](integrate-auth-system).
 
 ### How can implement RBAC with this solution?
 
-Astronomer has [built-in Airflow RBAC support](enterprise/workspace-permissions).
+Astronomer has [built-in Airflow RBAC support](workspace-permissions).
 
 
 ## Continuous Vulnerability Assessment and Remediation

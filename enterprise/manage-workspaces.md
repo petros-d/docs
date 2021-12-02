@@ -24,7 +24,7 @@ This guide walks through the best practices for creating and managing Workspaces
 
 The most important function of Workspaces is creating and managing access to one or more Airflow Deployments. An Airflow Deployment is an instance of Apache Airflow that consists of a Scheduler, Webserver, and one or more Workers if you're running the Celery or Kubernetes Executors.
 
-To create a new Deployment, click the **New Deployment** button in the **Deployments** tab or use the Astronomer CLI as described in [CLI Quickstart](enterprise/cli-quickstart). For more information on configuring Deployment settings and resources, read [Configure a Deployment](enterprise/configure-deployment).
+To create a new Deployment, click the **New Deployment** button in the **Deployments** tab or use the Astronomer CLI as described in [CLI Quickstart](cli-quickstart). For more information on configuring Deployment settings and resources, read [Configure a Deployment](configure-deployment).
 
 The **Deployments** tab also contains information on all of your existing Deployments, including name, Executor type, and Deployment status. A blue dot next to a Deployment's name indicates that the Deployment is still spinning up, while a green dot indicates that the Deployment is fully operational:
 
@@ -42,7 +42,7 @@ You can see who has access to the Workspace in the **Users** tab.
 
 If you'd like to share access to other members of your organization, invite them to a Workspace you're a part of. Once your team members are part of your Workspace, Deployment admins can grant them varying levels of access to Airflow Deployments within the Workspace. Likewise, Workspace admins can grant them varying levels of access to the entire Workspace.
 
-An exact breakdown of user roles and their respective levels of access can be found in [Manage User Permissions on an Astronomer Workspace](enterprise/workspace-permissions).
+An exact breakdown of user roles and their respective levels of access can be found in [Manage User Permissions on an Astronomer Workspace](workspace-permissions).
 
 In addition, Enterprise system admins can add or remove specific permissions for each type of user role. For more information on this feature, read [Customize Permissions](manage-platform-users#customize-permissions).
 
@@ -50,4 +50,4 @@ In addition, Enterprise system admins can add or remove specific permissions for
 
 Use the **Service Accounts** tab to create a Workspace-level Service Account. Service Accounts generate a permanent API key that you can use automate any action at the Workspace level, such as deploying to your Workspace's Airflow Deployments via a CI/CD tool of your choice.
 
-To automate actions at the Deployment level, create a Deployment Service Account. For more information on this feature, read [Deploy via CI/CD](enterprise/ci-cd).
+To automate actions at the Deployment level, create a Deployment Service Account. For more information on this feature, read [Deploy via CI/CD](ci-cd).

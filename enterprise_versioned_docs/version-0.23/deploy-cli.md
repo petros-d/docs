@@ -10,19 +10,19 @@ This guide provides the setup steps for deploying DAGs to Astronomer using the A
 
 If you've used the Astronomer CLI to develop locally, you'll find it similarly easy to deploy your DAGs to an Airflow Deployment on Astronomer. The Astronomer CLI builds your DAGs into a Docker image alongside all other files in your Airflow project directory, including your Python and OS-level packages, your Dockerfile, and your plugins. The resulting image is then used to generate a set of Docker containers for each of Airflow's core components.
 
-For guidance on automating this process, refer to [Deploy to Astronomer via CI/CD](enterprise/ci-cd). To learn how to add Python and OS-level packages or otherwise customize your Docker image, read [Customize your Image](enterprise/customize-image).
+For guidance on automating this process, refer to [Deploy to Astronomer via CI/CD](ci-cd). To learn how to add Python and OS-level packages or otherwise customize your Docker image, read [Customize your Image](customize-image).
 
-Alternatively, you can configure an external NFS volume for DAG deploys. For more information, read [Deploy DAGs to an NFS Volume](enterprise/deploy-nfs).
+Alternatively, you can configure an external NFS volume for DAG deploys. For more information, read [Deploy DAGs to an NFS Volume](deploy-nfs).
 
-> **Note:** We recommend that all users test their code locally via the Astronomer CLI before pushing it to an Airflow Deployment on Astronomer. For guidelines on developing locally, refer to [CLI Quickstart](enterprise/cli-quickstart).
+> **Note:** We recommend that all users test their code locally via the Astronomer CLI before pushing it to an Airflow Deployment on Astronomer. For guidelines on developing locally, refer to [CLI Quickstart](cli-quickstart).
 
 ## Prerequisites
 
 In order to push up DAGs to a Deployment on Astronomer, you must have:
 
-* [The Astronomer CLI](enterprise/cli-quickstart) installed.
+* [The Astronomer CLI](cli-quickstart) installed.
 * Access to an Astronomer platform at `https://app.BASEDOMAIN`.
-* An Astronomer [Workspace](enterprise/manage-workspaces) with at least one active [Airflow Deployment](enterprise/configure-deployment).
+* An Astronomer [Workspace](manage-workspaces) with at least one active [Airflow Deployment](configure-deployment).
 
 ## Step 1: Authenticate to Astronomer
 
@@ -34,7 +34,7 @@ astro auth login BASEDOMAIN
 
 ## Step 2: Confirm Your Workspace and Deployment
 
-From the Astronomer CLI, you're free to push code to any Airflow Deployment you have access to as long as you have the appropriate deployment-level permissions to do so. For more information on both Workspace and Deployment-level permissions on Astronomer, refer to [User Permissions](enterprise/workspace-permissions).
+From the Astronomer CLI, you're free to push code to any Airflow Deployment you have access to as long as you have the appropriate deployment-level permissions to do so. For more information on both Workspace and Deployment-level permissions on Astronomer, refer to [User Permissions](workspace-permissions).
 
 Before you deploy to Astronomer, make sure that the Airflow Deployment you'd like to deploy to is within the Workspace you're operating in.
 
@@ -56,7 +56,7 @@ To see the list of Deployments within a particular Workspace, run:
 astro deployment list
 ```
 
-For more specific CLI guidelines and commands, read [CLI Quickstart](enterprise/cli-quickstart).
+For more specific CLI guidelines and commands, read [CLI Quickstart](cli-quickstart).
 
 ## Step 3: Deploy to Astronomer
 
@@ -82,7 +82,7 @@ Everything in the project directory where you ran `$ astro dev init` is bundled 
 
 Astronomer exclusively deploys the code in your project and does not push any of the metadata associated with your local Airflow environment, including task history and Airflow Connections or variables set locally in the Airflow UI.
 
-For more information about what gets built into your image, read [Customize your Image](enterprise/customize-image).
+For more information about what gets built into your image, read [Customize your Image](customize-image).
 
 ## Next Steps: Organize Astronomer
 
@@ -90,6 +90,6 @@ While the specific needs of your organization might require a slightly different
 
 **Workspaces:** We recommend having 1 Workspace per team of Airflow users, so that anyone on this team has access to the same set of Deployments under that Workspace.
 
-**Deployments:** Most use cases will call for a "Production" and "Dev" Deployment, both of which exist within a single Workspace and are accessible to a shared set of users. From there, you can [set permissions](enterprise/workspace-permissions) to give users in the Workspace access to specific Deployments.
+**Deployments:** Most use cases will call for a "Production" and "Dev" Deployment, both of which exist within a single Workspace and are accessible to a shared set of users. From there, you can [set permissions](workspace-permissions) to give users in the Workspace access to specific Deployments.
 
 **Code:** As for the code itself, we’ve seen effective organization where external code is partitioned by function and/or business case, so one directly for SQL, one for data processing tasks, one for data validation, etc.

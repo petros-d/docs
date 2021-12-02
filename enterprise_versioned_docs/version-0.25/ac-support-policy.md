@@ -16,7 +16,7 @@ This document provides information on the following:
 - Which versions of Astronomer Certified are currently available
 - The support schedule and end-of-support date for all versions
 
-For guidelines on how to upgrade, read [Upgrade Apache Airflow on Astronomer](enterprise/manage-airflow-versions).
+For guidelines on how to upgrade, read [Upgrade Apache Airflow on Astronomer](manage-airflow-versions).
 
 ## Versioning Scheme
 
@@ -34,7 +34,7 @@ For example, the images for Astronomer Certified 2.1.0 would be:
 
 For the smoothest, out-of-the-box Airflow experience, we strongly recommend and default to `buster-onbuild` images in your project's `Dockerfile`. These images incorporate Docker ONBUILD commands to copy and scaffold your Airflow project directory so you can more easily pass those files to the containers running each core Airflow component.
 
-For complex use cases that require customizing AC base image, read [Customize your Airflow Image on Astronomer](https://www.astronomer.ioenterprise/customize-image).
+For complex use cases that require customizing AC base image, read [Customize your Airflow Image on Astronomer](customize-image).
 
 ### Hotfix Versions
 

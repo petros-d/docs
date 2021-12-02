@@ -20,10 +20,10 @@ A few clarifying notes:
 
 ## Prerequisites
 
-* [The Astronomer CLI](enterprise/cli-quickstart)
+* [The Astronomer CLI](cli-quickstart)
 * Admin access on an Astronomer Workspace
 * Direct access to your Kubernetes Cluster (e.g. permission to run `$ kubectl describe po`)
-* A compatible version of Kubernetes as described in Astronomer's [Version Compatibility Reference](enterprise/version-compatibility-reference)
+* A compatible version of Kubernetes as described in Astronomer's [Version Compatibility Reference](version-compatibility-reference)
 
 ## AWS
 
@@ -212,7 +212,7 @@ In order to apply your IAM role to any Airflow Deployment on Astronomer, you'll 
     ```
 
 
-2. Push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](enterprise/apply-platform-config).
+2. Push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config).
 
 ### Step 5: Create or update an Airflow Deployment with an attached IAM role
 
@@ -281,7 +281,7 @@ gcloud iam service-accounts create <gsa-name>
 
 ### Step 3: Configure Astronomer
 
-Add the following to your `config.yaml` file and push it to your platform as described in [Apply a Config Change](enterprise/apply-platform-config):
+Add the following to your `config.yaml` file and push it to your platform as described in [Apply a Config Change](apply-platform-config):
 
 ```yaml
 astronomer:

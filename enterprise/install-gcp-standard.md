@@ -13,7 +13,7 @@ To install Astronomer on GCP, you'll need access to the following tools and perm
 
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 * [Google Cloud SDK](https://cloud.google.com/sdk/install)
-* A compatible version of Kubernetes as described in Astronomer's [Version Compatibility Reference](enterprise/version-compatibility-reference)
+* A compatible version of Kubernetes as described in Astronomer's [Version Compatibility Reference](version-compatibility-reference)
 * [Kubernetes CLI (kubectl)](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 * [Helm v3.2.1](https://github.com/helm/helm/releases/tag/v3.2.1)
 * An SMTP Service & Credentials (e.g. Mailgun, Sendgrid, etc.)
@@ -221,7 +221,7 @@ kubectl create secret generic astronomer-bootstrap \
 
 ## Step 7: Configure Your Helm Chart
 
-> **Note:** If you want to use a third-party ingress controller for Astronomer, complete the setup steps in [Third-Party Ingress Controllers](enterprise/third-party-ingress-controllers) in addition to this configuration.
+> **Note:** If you want to use a third-party ingress controller for Astronomer, complete the setup steps in [Third-Party Ingress Controllers](third-party-ingress-controllers) in addition to this configuration.
 
 As a next step, create a file named `config.yaml` in an empty directory.
 
@@ -331,7 +331,7 @@ This will ensure that you pull the latest from our Helm repository. Finally, run
 helm install -f config.yaml --version=0.26 --namespace=<your-platform-namespace> <your-platform-release-name> astronomer/astronomer
 ```
 
-This command will install the latest available patch version of Astronomer Enterprise v0.26. To override latest and specify a patch, add it to the `--version=` flag in the format of `0.26.x`. To install Astronomer Enterprise v0.26.2, for example, specify `--version=0.26.2`. For information on all available patch versions, refer to [Enterprise Release Notes](enterprise/release-notes).
+This command will install the latest available patch version of Astronomer Enterprise v0.26. To override latest and specify a patch, add it to the `--version=` flag in the format of `0.26.x`. To install Astronomer Enterprise v0.26.2, for example, specify `--version=0.26.2`. For information on all available patch versions, refer to [Enterprise Release Notes](release-notes).
 
 Once you run the commands above, a set of Kubernetes pods will be generated in your namespace. These pods power the individual services required to run our platform, including the Astronomer UI and Houston API.
 
@@ -378,7 +378,7 @@ newbie-norse-prometheus-0                              1/1     Running     0    
 newbie-norse-registry-0                                1/1     Running     0          30m
 ```
 
-If you are seeing issues here, check out our [guide on debugging your installation](enterprise/debug-install)
+If you are seeing issues here, check out our [guide on debugging your installation](debug-install)
 
 ## Step 10: Configure DNS
 
@@ -471,16 +471,16 @@ $ astro deploy -f
 
 Check the Airflow namespace. If pods are changing at all, then the Houston API trusts the registry.
 
-If you have Airflow pods in the state "ImagePullBackoff", check the pod description. If you see an x509 error, ensure that you added the `privateCaCertsAddToHost` key-value pairs to your Helm chart. If you missed these during installation, follow the steps in [Apply a Platform Configuration Change on Astronomer](enterprise/apply-platform-config) to add them after installation.
+If you have Airflow pods in the state "ImagePullBackoff", check the pod description. If you see an x509 error, ensure that you added the `privateCaCertsAddToHost` key-value pairs to your Helm chart. If you missed these during installation, follow the steps in [Apply a Platform Configuration Change on Astronomer](apply-platform-config) to add them after installation.
 
 ## What's Next
 
 To help you make the most of Astronomer Enterprise, check out the following additional resources:
 
-* [Renew TLS Certificates on Astronomer Enterprise](enterprise/renew-tls-cert/)
-* [Integrating an Auth System](enterprise/integrate-auth-system)
-* [Configuring Platform Resources](enterprise/configure-platform-resources)
-* [Managing Users on Astronomer Enterprise](enterprise/manage-platform-users)
+* [Renew TLS Certificates on Astronomer Enterprise](renew-tls-cert/)
+* [Integrating an Auth System](integrate-auth-system)
+* [Configuring Platform Resources](configure-platform-resources)
+* [Managing Users on Astronomer Enterprise](manage-platform-users)
 
 ### Astronomer Support Team
 
@@ -489,4 +489,4 @@ If you have any feedback or need help during this process and aren't in touch wi
 * [Community Forum](https://forum.astronomer.io): General Airflow + Astronomer FAQs
 * [Astronomer Support Portal](https://support.astronomer.io/hc/en-us/): Platform or Airflow issues
 
-For detailed guidelines on reaching out to Astronomer Support, reference our guide [here](enterprise/support).
+For detailed guidelines on reaching out to Astronomer Support, reference our guide [here](support).

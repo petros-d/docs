@@ -17,29 +17,29 @@ Astronomer Enterprise makes it easy to run, monitor, and scale [Apache Airflow](
 
 We have created guides for installing Astronomer on a number of Kubernetes environments:
 
-* [Amazon Web Services EKS](enterprise/install-aws)
-* [Google Cloud Platform GKE](enterprise/install-gcp)
-* [Microsoft Azure AKS](enterprise/install-azure)
+* [Amazon Web Services EKS](install-aws)
+* [Google Cloud Platform GKE](install-gcp)
+* [Microsoft Azure AKS](install-azure)
 
 ## Customizing Your Installation
 
 Because the platform uses Helm throughout, it's very easy to customize your Astronomer installation. Below are some guides for most common customizations:
 
-* [Integrating Auth Systems](enterprise/integrate-auth-system)
-* [Configuring Resources with Helm](enterprise/manage-platform-users)
-* [Configuring a Registry Back End](enterprise/registry-backend)
-* [Built-in Alerts](enterprise/platform-alerts)
+* [Integrating Auth Systems](integrate-auth-system)
+* [Configuring Resources with Helm](manage-platform-users)
+* [Configuring a Registry Back End](registry-backend)
+* [Built-in Alerts](platform-alerts)
 
 ## Administration
 
 There are many tools at your disposal for administrating Astronomer:
 
-* [The Houston API Playground](enterprise/houston-api)
-* [Metrics](enterprise/grafana-metrics)
-* [Using Kibana](enterprise/kibana-logging)
-* [Using kubectl](enterprise/kubectl)
-* [Pulling Postgres Credentials](enterprise/access-airflow-database)
-* [Upgrade to a Patch Version of Astronomer Enterprise](enterprise/upgrade-astronomer-stable/)
+* [The Houston API Playground](houston-api)
+* [Metrics](grafana-metrics)
+* [Using Kibana](kibana-logging)
+* [Using kubectl](kubectl)
+* [Pulling Postgres Credentials](access-airflow-database)
+* [Upgrade to a Patch Version of Astronomer Enterprise](upgrade-astronomer-stable/)
 
 ## License
 
