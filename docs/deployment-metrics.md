@@ -73,6 +73,16 @@ The bolded value above the graph shows maximum CPU usage by a single worker at a
 
 **Worker Memory** records the peak memory usage by worker nodes over hour-long intervals.
 
-Each bar in the graph shows how much memory was being used by a single worker at the height of its usage for a given hour. This value is measured as a percentage of the total available memory usage per worker as defined in **Worker Resources**. Hovering over a single bar in the graph can help you answer, "Did any of my workers approach 100% usage of total available memory during this specific hour interval?" 
+Each bar in the graph shows how much memory was being used by a single worker at the height of its usage for a given hour. This value is measured as a percentage of the total available memory usage per worker as defined in **Worker Resources**. Hovering over a single bar in the graph can help you answer, "Did any of my workers approach 100% usage of total available memory during this specific hour interval?"
 
 The bolded value above the graph shows the maximum memory usage by a single worker at any point in time over the last 24 hours. This can help you answer, "Did any of my workers approach 100% usage of total available memory in the past 24 hours?"
+
+## Usage
+
+You can use the **Usage** tab in the Astronomer Cloud UI to review the number of successful task runs across Deployments and ensure that you are keeping operational costs to a minimum.
+
+![Usage tab in the Astronomer UI](/img/docs/usage.png)
+
+The tab includes bar charts showing your Organization's total task runs per day over the last 31 days, sorted by Deployment. Each color in the bar chart represents a different Deployment. A legend on the right side of the menu shows the colors used for each Deployment.
+
+To see each Deployment's number of successful task runs for a given day, you can hover over the bar chart for that day with your mouse. Additionally, the legend shows each Deployment's total number of successful task runs over the last 31 days.

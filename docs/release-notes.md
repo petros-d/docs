@@ -14,6 +14,42 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 **Latest CLI Version**: 1.0.3 ([Release notes](cli-release-notes.md))
 
+## December 2, 2021
+
+### Usage Metrics
+
+You can use the new **Usage** tab in the Astronomer Cloud UI to review the number of successful task runs across Deployments and ensure that you are keeping operational costs to a minimum.
+
+![Usage tab in the Astronomer UI](/img/docs/usage.png)
+
+The tab includes bar charts showing your Organization's total task runs per day over the last 31 days, sorted by Deployment. Each color in the bar chart represents a different Deployment. A legend on the right side of the menu shows the colors used for each Deployment.
+
+To see each Deployment's number of successful task runs for a given day, you can hover over the bar chart for that day with your mouse. Additionally, the legend shows each Deployment's total number of successful task runs over the last 31 days.
+
+### Minor Improvements
+
+- You can now see a Deployment's Kubernetes **Namespace** in the **Deployments** menu and on the Deployment information screen:
+
+    ![Deployment namespace available on a Deployment's information page](/img/docs/namespace.png)
+
+- The Astronomer UI now shows a warning if you attempt to exit Environment Variable configuration without saving.
+- A Deployment's health status is now based on the health of both the webserver and the scheduler.
+- You can now create new Clusters in:
+    - `ap-northeast-1 `
+    - `ap-southeast-1`
+    - `ap-northeast-2`
+    - `ap-southeast-2`
+    - `ap-south-1`
+    - `eu-central-1`
+    - `eu-west-1`
+    - `eu-west-2`
+    - `us-west-1`
+
+### Bug Fixes
+
+- The Astronomer UI now has error handling for accessing a non-existent Deployment.
+- When editing secret environment variables, the **Value** field is now blank instead of showing hidden characters.
+
 ## November 19, 2021
 
 ### Secret Environment Variables
