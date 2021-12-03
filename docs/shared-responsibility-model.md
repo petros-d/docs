@@ -32,3 +32,19 @@ The customer is responsible for managing certain security aspects of their Astro
 - Regularly [upgrading their Deployment(s)](upgrade-runtime) to the latest Astronomer Runtime version to take advantage of new functionality, as well as bug and security fixes.
 - [Configuring and managing Deployment resource settings](configure-deployment) for data pipeline workloads.
 - [Securing the network communications](install-aws#step-4-let-astronomer-complete-the-install) between their Data Plane and sensitive data resources.
+
+## Cloud Provider Security Responsibilities
+
+Physical and environmental security is handled entirely by our cloud service providers. Each of our cloud service providers provides an extensive list of compliance and regulatory assurances that they are rigorously tested against, including SOC 1/2-3, PCI-DSS, and ISO27001.
+
+### Azure
+
+See the Azure [compliance](https://azure.microsoft.com/en-ca/overview/trusted-cloud/compliance/), [security](https://azure.microsoft.com/en-ca/overview/security/), and [data center security](https://azure.microsoft.com/en-ca/global-infrastructure/) documentation for more detailed information.
+
+### Amazon
+
+See the AWS [compliance](https://aws.amazon.com/compliance/), [security](https://aws.amazon.com/security/), and [data center security](https://aws.amazon.com/compliance/data-center/controls/) documentation for more detailed information.
+
+### Google
+
+See the GCP [compliance](https://cloud.google.com/security/compliance), [security](https://cloud.google.com/security), and [data center security](https://cloud.google.com/security/infrastructure) documentation for more detailed information.

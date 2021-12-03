@@ -2,18 +2,21 @@
 sidebar_label: 'Data Protection'
 title: "Data Protection"
 id: data-protection
+description: Learn how Astronomer uses encryption to protect clusters and data.
 ---
 
-Astronomer Cloud uses both encryption in transit and encryption at rest to protect clusters and data across and within both planes.
+## Overview
 
-## Encryption In Transit
+Astronomer Cloud uses both encryption in transit and encryption at rest to protect clusters and data across the Data and Control planes. This document contains details about each type of encryption used in Astronomer Cloud processes.
 
-All communication between Control and Data planes is encrypted in transit using TLS 1.2, strong ciphers, and secure transfer (data layer). Likewise, internal service communication inside both Control plane and Data plane clusters passes through a mTLS mesh, enforcing TLS 1.2 and secure strong ciphers. 
+## Encryption in Transit
 
-Every Data plane cluster has its own certificates, generated when the cluster is created and signed by the Let’s Encrypt Certificate Authority (CA). In 2022, we will enhance the security posture of Data plane clusters by removing public IPs, and the need to sign their certificates with a public CA. 
+All communication between Control and Data planes is encrypted in transit using TLS 1.2, strong ciphers, and secure transfer (data layer). Likewise, internal service communication inside both Control plane and Data plane clusters passes through a mTLS mesh, enforcing TLS 1.2 and secure strong ciphers.
 
-## Encryption At Rest
+Each Cluster in your Data Plane has its own certificates which were generated when the Cluster was created and signed by the Let’s Encrypt Certificate Authority (CA). In 2022, Astronomer will enhance the security posture of Data plane clusters by removing public IPs and the need to sign certificates with a public CA.
 
-All data at rest across Control and Data planes is AES-256 encrypted, one of the strongest block ciphers available, using native could provider technologies. 
+## Encryption at Rest
 
-Specifically, Control plane data is encrypted on disk, including backups and the temporary files created while queries are running (for DB), with a platform-managed key. Likewise, Data plane data is server-side encrypted, and volume encrypted, leveraging encryption keys managed by the cloud provider and anchored by hardware security appliances. By early 2022, all resources provisioned across both planes will leverage cloud provider envelope encryption wherever possible, which is a critical practice as part of a [defense in depth security strategy](https://www.us-cert.gov/bsi/articles/knowledge/principles/defense-in-depth).
+All data at rest across Control and Data planes is encrypted with AES-256, which is one of the strongest block ciphers available, using native could provider technologies.
+
+Specifically, Control Plane data is encrypted on disk with a platform-managed key, including backups and the temporary files created while DB queries are running. Likewise, Data Plane data is server-side encrypted and volume encrypted, using encryption keys managed by the cloud provider and anchored by hardware security appliances. By early 2022, all resources provisioned across both planes will leverage cloud provider envelope encryption wherever possible in accordance with a [defense in depth security strategy](https://www.us-cert.gov/bsi/articles/knowledge/principles/defense-in-depth).

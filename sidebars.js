@@ -82,5 +82,15 @@ module.exports = {
         'shared-responsibility-model',
       ],
     },
+    {
+      type: 'category',
+      label: 'Resources',
+      items: [
+        'shared-responsibility-model',
+        'resilience',
+        'disaster-recovery',
+        'data-protection',
+      ],
+    },
   ],
 };

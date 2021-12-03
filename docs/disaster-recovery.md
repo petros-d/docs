@@ -2,32 +2,37 @@
 sidebar_label: 'Disaster Recovery'
 title: "Disaster Recovery"
 id: disaster-recovery
+description: Learn how Astronomer handles disaster recovery scenarios and how to best prepare your own Clusters for potential disasters.
 ---
 
-Astronomer Cloud Data plane is designed to withstand and survive in-region AZ degradations/outages as described in the Resilience doc.
+## Overview
 
-To withstand a full region outage and achieve near real-time recovery, Astronomer recommends provisioning (pre-disaster) and running a secondary cluster(s) in an alternate region. It is important, to deploy all changes and configurations to both primary and secondary cluster(s) to keep them in sync.
+Astronomer Cloud Data plane is designed to withstand and survive in-region Availability Zone (AZ) degradations and outages as described in [Resilience](resilience).
+
+To withstand a full region outage and achieve near real-time recovery, Astronomer recommends provisioning and running secondary clusters in an alternate region pre-disaster. From here, we recommend deploying all changes to both primary and secondary cluster(s) to keep them in sync.
 
 Astronomer plans to invest in cluster and deployment syncing strategies in 2022 to simplify and offload the responsibility from the customer. Please submit feedback to [Astronomer Support](https://support.astronomer.io/) if interested.
 
-In the case of a full region outage, Astronomer will re-provision your cluster(s) and all deployments in an alternate region (region pair), as configured via the Cloud UI/API. This is inclusive of:
+## Full-Region Outages
 
-- Cluster (nodes, worker queues)
-- VPC
-- VPC Peering (customer will need to re-accept peering request)
-- Deployments with Pipelines
-- Environment Variables
-- API Keys
-- Alert Emails
+In the case of a full region outage, Astronomer will re-provision your Cluster(s) and all Deployments in an alternate region. The re-provisioning includes:
+
+- Cluster (nodes, worker queues).
+- VPC.
+- VPC Peering (customer will need to re-accept peering request).
+- Deployments with Pipelines.
+- Environment Variables.
+- API Keys.
+- Alert Emails.
 
 Astronomer will not be able to restore:
 
-- VPC Routes (configured by customer via AWS console)
-- VPC Security Group rules (configured by customer via AWS console)
-- DAG history and Task logs
-- XComs
-- Airflow configurations (Variables, Connections, Pools) *— unless part of DAG image*
+- VPC Routes configured via AWS console.
+- VPC Security Group rules configured via AWS console.
+- DAG history and Task logs.
+- XComs.
+- Airflow configurations (Variables, Connections, Pools) *— unless they are part of a DAG image*.
 
-Please note, organization and workspace settings, and user/team management configured in the Control plane will be unaffected by a region failure of a Data plane.
+Please note that Organization settings, Workspace settings, and user/team management configured in the Control Plane will be unaffected by a region failure of a Data plane.
 
-Astronomer plans to address the gaps in restoration as part of our 2022 roadmap. Please submit feedback to [Astronomer Support](https://support.astronomer.io/) if interested.
+Astronomer plans to address gaps in restoration as part of our 2022 roadmap. Please submit feedback to [Astronomer Support](https://support.astronomer.io/) if you are interested in joining the conversation.
