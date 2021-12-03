@@ -13,14 +13,14 @@ module.exports = {
   projectName: 'cloud-docs', // Usually your repo name.
   themeConfig: {
     algolia: {
-      apiKey: '1821ae84c278294f722376cb52b520c0',
+      apiKey: 'b1b8f06044965d8aa7eb4f59f56b9bb9',
       indexName: 'beta',
 
       // Optional: see doc section below
       contextualSearch: true,
 
       // Optional: see doc section below
-      appId: 'N4IG87ZX4P',
+      appId: 'T0WML086OW',
 
       // Optional: Algolia search parameters
       searchParameters: {},
