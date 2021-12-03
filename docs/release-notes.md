@@ -40,15 +40,17 @@ To see each Deployment's number of successful task runs for a given day, you can
     - `ap-northeast-2`
     - `ap-southeast-2`
     - `ap-south-1`
-    - `eu-central-1`
-    - `eu-west-1`
-    - `eu-west-2`
-    - `us-west-1`
 
 ### Bug Fixes
 
 - The Astronomer UI now has error handling for accessing a non-existent Deployment.
 - When editing secret environment variables, the **Value** field is now blank instead of showing hidden characters.
+
+### Data Plane Improvements
+
+- EBS volumes have been upgraded from gp2 to [gp3](https://aws.amazon.com/about-aws/whats-new/2020/12/introducing-new-amazon-ebs-general-purpose-volumes-gp3/).
+- EBS volumes and S3 buckets are now encrypted by default.
+- Public access to S3 buckets is now disabled by default.
 
 ## November 19, 2021
 
