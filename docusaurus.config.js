@@ -144,7 +144,7 @@ module.exports = {
           customCss: require.resolve('./src/css/custom.css'),
         },
         sitemap: {
-          changefreq: 'weekly',
+          changefreq: 'hourly',
           priority: 0.5,
         },
       },
