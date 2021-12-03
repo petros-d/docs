@@ -24,7 +24,7 @@ module.exports = {
 
       // Optional: Algolia search parameters
       searchParameters: {
-        facetFilters: ['language:en', ["docusaurus_tag:docs-default-current","docusaurus_tag:docs-enterprise-current","docusaurus_tag:docs-enterprise-0.25"]],
+        facetFilters: `docusaurus_tag`
       },
 
       //... other Algolia params
