@@ -47,7 +47,6 @@ Astronomer Cloud supports the following AWS regions:
 - `ap-southeast-2`
 - `ap-south-1`
 
-
 Modifying the region of an existing Cluster on Astronomer is not supported. If you're interested in an AWS region that is not on this list, reach out to [Astronomer Support](https://support.astronomer.io).
 
 ### Node Instance Type
