@@ -3,23 +3,26 @@ sidebar_label: 'Overview'
 title: 'Astronomer Cloud Documentation'
 id: overview
 slug: /
-description: Learn how to run fully-managed Airflow instances in your cloud.
+description: Run Apache Airflow on Astronomer Cloud. Scale data pipelines in your network, no infrastructure management required.
 ---
 
 ## Overview
 
-Astronomer Cloud is a fully-managed Airflow instance in your cloud and the easiest way to deploy, manage, and monitor data pipelines.
+Astronomer Cloud is a next generation software service that offers a managed Apache Airflow experience in your network. Astronomer Cloud is the easiest way to deploy, manage, and monitor data pipelines.
 
-The Astronomer Cloud deployment model offers the self-service convenience of a fully managed Cloud service (the Control Plane) while respecting the need to keep data private, secure, and within corporate boundaries (the Data Plane). This model optimizes for security whilst relieving your team of operational overhead.
+The Astronomer Cloud deployment model offers the self-service convenience of a fully managed data orchestration service powered by a Control Plane, while respecting the need to keep data private and secure within a Data Plane that runs in your network and corporate boundaries. This model optimizes for security whilst relieving your team of operational overhead.
 
 ## Features
 
 Astronomer Cloud's architecture enables a few key features, available today:
 
-- A secure control plane managed by Astronomer
-- Support for a multi-tenant data plane hosted in your organization's network on AWS
+- Easy-to-create Deployments of Apache Airflow
 - Worker auto-scaling, powered by Airflow's Celery Executor + KEDA
-- Astronomer Runtime, a new collection of Docker images which provides a differentiated Apache Airflow experience. Astronomer Runtime includes timely support for the latest major, minor, and patch versions of Airflow, starting with Airflow 2.1.1
+- Support for a multi-tenant data plane hosted in your organization's network on AWS. Available in many regions
+- Astronomer Runtime, a collection of Docker images that provides a differentiated data orchestration experience. Astronomer Runtime includes timely support for the latest major, minor, and patch versions of Airflow
+- Role-based access control (RBAC) for configurable and secure user management
+- Single Sign-On (SSO) solution that integrates with a variety of identity providers, including Azure Active Directory (Azure AD) and Okta
+- An observability experience that gives you insight into the health and resource consumption of your tasks and pipelines in real-time
 
 The following diagram outlines how the control plane, data plane, and users are connected to enable these features:
 
