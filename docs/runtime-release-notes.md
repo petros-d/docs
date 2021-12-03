@@ -30,7 +30,7 @@ For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-ru
 
 ### Bug Fixes
 
-- Fixed an issue where a custom S3 logging hook prevented users from using S3 hooks to create a custom XCom backend
+- Fixed an issue where a custom S3 logging hook prevented users from creating a custom XCom backend with S3 hooks
 
 ## Astronomer Runtime 4.0.4
 
