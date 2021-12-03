@@ -79,10 +79,10 @@ The bolded value above the graph shows the maximum memory usage by a single work
 
 ## Usage
 
-You can use the **Usage** tab in the Astronomer Cloud UI to review the number of successful task runs across Deployments and ensure that you are keeping operational costs to a minimum.
+Use the **Usage** tab in the Astronomer Cloud UI to review the number of successful task runs across Deployments in your Organization. Astronomer Cloud is priced based on successful task runs, so this view can help you monitor both Astronomer cost as well as Airflow usage in aggregate.
 
 ![Usage tab in the Astronomer UI](/img/docs/usage.png)
 
-The tab includes bar charts showing your Organization's total task runs per day over the last 31 days, sorted by Deployment. Each color in the bar chart represents a different Deployment. A legend on the right side of the menu shows the colors used for each Deployment.
+The bar chart on the left shows your Organization's total task runs per day for the past 31 days, with each day's volume sorted by Deployment. Each color in the bar chart represents a different Deployment. To see each Deployment's number of successful task runs for a given day, you can hover over the bar chart for that day with your mouse.
 
-To see each Deployment's number of successful task runs for a given day, you can hover over the bar chart for that day with your mouse. Additionally, the legend shows each Deployment's total number of successful task runs over the last 31 days.
+The legend on the right side of the menu shows the colors used for each Deployment. This legend shows each Deployment's total sum of successful task runs over the last 31 days. The daily numbers on the left bar chart add up to the monthly total per Deployment on the right.
