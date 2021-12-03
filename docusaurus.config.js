@@ -69,10 +69,6 @@ module.exports = {
               label: '0.25',
               to: '/enterprise/0.25/overview-enterprise'
             },
-            {
-              label: '0.23',
-              to: '/enterprise/0.23/overview-enterprise'
-            },
           ],
         },
       ],
