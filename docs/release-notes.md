@@ -24,7 +24,7 @@ Total task volume for your Organization is now available in a new **Usage** tab 
 
 For more information about the **Usage** tab, read [Deployment Metrics](deployment-metrics.md#usage).
 
-### New Regions for Cluster Creation
+### New AWS Regions Available
 
 You can now create new Clusters in:
 
@@ -34,14 +34,15 @@ You can now create new Clusters in:
 - `ap-southeast-2`
 - `ap-south-1`
 
+For a full list of AWS regions supported on Astronomer Cloud, see [AWS Resource Reference](https://docs.astronomer.io/resource-reference-aws#aws-region).
 ### Minor Improvements
 
-- You can now see a Deployment's Kubernetes **Namespace** in the **Deployments** menu and on the Deployment information screen:
+- You can now see your Deployment's **Namespace** in the **Deployments** menu and on the Deployment information screen in the Astronomer UI. Namespace is a required argument to run tasks with the KubernetesPodOperator. It is also required to submit an issue to [Astronomer Support](https://support.astronomer.io).
 
     ![Deployment namespace available on a Deployment's information page](/img/docs/namespace.png)
 
 - The Astronomer UI now shows a warning if you attempt to exit Environment Variable configuration without saving your changes.
-- A Deployment's health status is now based on the health of both the webserver and the scheduler.
+- A Deployment's health status is now based on the health of both the Airflow Webserver and Scheduler. Previously, a Deployment's health status was only based on the health of the Webserver. Now, the Astronomer UI will show that your Deployment is "Healthy" only if both components are running as expected.
 
 ### Bug Fixes
 

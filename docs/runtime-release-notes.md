@@ -21,7 +21,7 @@ For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-ru
 
 ### Bug Fixes
 
-- Fixed an issue where the **Browse** menu was hidden in some environments
+- Fixed an issue where the **Browse** menu of the Airflow UI was hidden in some versions of Astronomer Runtime
 
 ## Astronomer Runtime 4.0.5
 
@@ -30,7 +30,7 @@ For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-ru
 
 ### Bug Fixes
 
-- Fixed an issue where a custom S3 logging hook prevented users from creating a custom XCom backend with S3 hooks
+- Fixed an issue where Astronomer Cloud's S3 logging hook prevented users from setting up S3 as a custom XCom backend
 
 ## Astronomer Runtime 4.0.4
 
