@@ -23,7 +23,9 @@ module.exports = {
       appId: '4E2UUYA7WA',
 
       // Optional: Algolia search parameters
-      searchParameters: {},
+      searchParameters: {
+        facetFilters: ['language:en', ["docusaurus_tag:docs-default-current","docusaurus_tag:docs-enterprise-current","docusaurus_tag:docs-enterprise-0.25"]],
+      },
 
       //... other Algolia params
     },
