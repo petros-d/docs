@@ -42,7 +42,7 @@ To get started with SendGrid:
 
 5. Verify your integration in SendGrid to confirm that the key was activated. If you get an error indicating that SendGrid can't find the test email, try rerunning the cURL code in your terminal before retrying the verification.
 
-6. In the Astronomer UI, open your Deployment and [set the following environment variables](environment-variables):
+6. In the Astronomer UI, open your Deployment and [set the following environment variables](environment-variables.md):
 
    ```
    AIRFLOW__SMTP__SMTP_HOST=smtp.sendgrid.net
@@ -76,7 +76,7 @@ This setup requires an AWS account and use of the [AWS Management Console](https
 
 4. Choose an Amazon EC2 region to use, then write down the code of this server for the next step. Refer to [Amazon's list of available regions and servers](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions) to determine which server best fits your needs.
 
-5. In the Astronomer UI, open your Deployment and [set the following environment variables](environment-variables):
+5. In the Astronomer UI, open your Deployment and [set the following environment variables](environment-variables.md):
 
    ```
    AIRFLOW__SMTP__SMTP_HOST=<your-smtp-host>

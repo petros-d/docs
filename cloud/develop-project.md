@@ -21,8 +21,8 @@ This document explains the various ways you can modify and build your Astronomer
 
 To develop an Astronomer project and test it locally, you need:
 
-- An existing [Astronomer project](create-project).
-- [The Astronomer CLI](install-cli)
+- An existing [Astronomer project](create-project.md).
+- [The Astronomer CLI](install-cli.md)
 - [Docker](https://www.docker.com/products/docker-desktop)
 
 ## Build and Run a Project Locally
@@ -49,7 +49,7 @@ The Astronomer CLI is a wrapper around [Docker Compose](https://docs.docker.com/
 
 :::tip
 
-If you see `Error: cannot start, project already running` when you run this command, it means your local Airflow environment is already running your project. If there are changes you'd like to apply to your project, see [restart your local environment](develop-project#make-changes-to-your-project).
+If you see `Error: cannot start, project already running` when you run this command, it means your local Airflow environment is already running your project. If there are changes you'd like to apply to your project, see [restart your local environment](develop-project.md#make-changes-to-your-project).
 
 :::
 
@@ -89,7 +89,7 @@ All changes made to the following files require rebuilding your image:
 - `requirements.txt`
 - `airflow_settings.yaml`
 
-To rebuild your project after making a change to any of these files, you must [restart your local environment](develop-project#restart-your-local-environment).
+To rebuild your project after making a change to any of these files, you must [restart your local environment](develop-project.md#restart-your-local-environment).
 
 ## Add Python and OS-level Packages
 
@@ -109,7 +109,7 @@ pymongo==3.7.2
 
 If you don't pin a package to a version, the latest version of the package that's publicly available is installed by default.
 
-Once you've saved these packages in your project files, [restart your local environment](develop-project#restart-your-local-environment).
+Once you've saved these packages in your project files, [restart your local environment](develop-project.md#restart-your-local-environment).
 
 ### Confirm your package was installed
 
@@ -150,7 +150,7 @@ To build additional helper functions for DAGs into your Astronomer project, we r
     └── requirements.txt
     ```
 
-2. [Restart Your Local Environment](develop-project#restart-your-local-environment).
+2. [Restart Your Local Environment](develop-project.md#restart-your-local-environment).
 
 To confirm that your helper functions were successfully installed:
 
@@ -209,7 +209,7 @@ variables:
     variable_value: value987
 ```
 
-Once you've saved these values in your `airflow_settings.yaml`, [restart your local environment](develop-project#restart-your-local-environment). When you access the Airflow UI for your project at `localhost:8080`, you should see these values in the **Connections**, **Pools**, and **Variables** tabs.
+Once you've saved these values in your `airflow_settings.yaml`, [restart your local environment](develop-project.md#restart-your-local-environment). When you access the Airflow UI for your project at `localhost:8080`, you should see these values in the **Connections**, **Pools**, and **Variables** tabs.
 
 ## Run Commands on Build
 
@@ -221,10 +221,43 @@ For example, if you want to run `ls` when your image builds, your `Dockerfile` w
 RUN ls
 `}</code></pre>
 
+## Override the CLI's Docker Compose File (Local Development Only)
+
+The Astronomer CLI is built on top of [Docker Compose](https://docs.docker.com/compose/), which is a tool for defining and running multi-container Docker applications. You can override the CLI's Docker Compose configurations by adding a `docker-compose.override.yml` file to your Astronomer project. Any values in this file override the CLI's default settings whenever you run `astro dev start`.
+
+To see what values you can override, reference the CLI's [Docker Compose file](https://github.com/astronomer/astro-cli/blob/main/airflow/include/composeyml.go). The linked file is for the original Astronomer CLI, but the values here are identical to those used in the Astronomer Cloud CLI. Common use cases for Docker Compose overrides include:
+
+- Modifying the ports at which the Airflow Webserver or Postgres database start on if another service is already running on those same ports (8080 and 5432, respectively). You can override this default and point your containers to a different port.
+- Adding extra containers to mimic services that your Airflow environment needs to interact with locally, such as an SFTP server.
+- Change the volumes mounted to any of your local containers.
+
+For example, to add another volume mount for a directory named `custom_dependencies`, add the following to your `docker-compose.override.yml` file:
+
+```yaml
+version: "2"
+services:
+  scheduler:
+    volumes:
+      - /home/astronomer_project/custom_dependencies:/usr/local/airflow/custom_dependencies:ro
+```
+
+Make sure to specify `version: "2"` and follow the format of the source code file linked above.
+
+To see your override file live in your local Airflow environment, run the following command for any container running Airflow:
+
+```sh
+docker exec -it <container-name> ls -al
+```
+
+:::info
+
+The Astronomer CLI does not support overrides to environment variables that are required globally. For the list of environment variables that Astronomer enforces, see [Global Environment Variables](global-variables.md). To learn more about environment variables, read [Environment Variables](environment-variables.md).
+
+:::
 
 ## Set Environment Variables via .env (Local Development Only)
 
-For Astronomer projects deployed on Astronomer Cloud, we generally recommend [setting environment variables via the Astronomer UI](environment-variables#set-environment-variables-via-the-astronomer-ui). For local development, you can use the [Astronomer CLI](install-cli) to set environment variables in your project's `.env` file.
+For Astronomer projects deployed on Astronomer Cloud, we generally recommend [setting environment variables via the Astronomer UI](environment-variables.md#set-environment-variables-via-the-astronomer-ui). For local development, you can use the [Astronomer CLI](install-cli.md) to set environment variables in your project's `.env` file.
 
 To add Environment Variables locally:
 

@@ -20,7 +20,7 @@ This guide provides instructions for provisioning additional Clusters within you
 
 To complete this setup, you need to have:
 
-- Completed the initial Astronomer Cloud install process as described in [Install on AWS](install-aws).
+- Completed the initial Astronomer Cloud install process as described in [Install on AWS](install-aws.md).
 - Permissions to edit trust policies in your AWS account for Astronomer.
 
 ## Step 1: Submit a Request to Astronomer
@@ -35,7 +35,7 @@ Your Astronomer representative will provide you with a unique `External ID` for 
 
 :::info
 
-Astronomer creates new Clusters with a [default AWS resource configuration](resource-reference-aws) unless otherwise specified. If you're interested in a particular EC2 instance type or have any other cluster requirements, let your Astronomer representative know.
+Astronomer creates new Clusters with a [default AWS resource configuration](resource-reference-aws.md) unless otherwise specified. If you're interested in a particular EC2 instance type or have any other cluster requirements, let your Astronomer representative know.
 
 :::
 
@@ -102,4 +102,4 @@ Once you have finished configuring the trust policy, notify Astronomer that you 
 
 Once your Cluster is available, you should be able to create a new Deployment within that cluster. To do so, go to your Workspace and select **Create Deployment** > **Deployment Location**.
 
-For more information, read [creating a new Deployment](configure-deployment).
+For more information, read [creating a new Deployment](configure-deployment.md).

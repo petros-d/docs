@@ -15,7 +15,7 @@ This guide provides steps for adding a user to an Astronomer Workspace.
 
 To add a user to a Workspace, you must have:
 
-- An [Organization on Astronomer Cloud](install-aws).
+- An [Organization on Astronomer Cloud](install-aws.md).
 - Workspace Admin permissions.
 
 ## Step 1: Invite the User to Astronomer
@@ -43,7 +43,7 @@ To add a user with an Astronomer Cloud account to your Workspace:
 4. Set a Workspace role for the user. The available roles are:
 
     - **Workspace Viewer**: Has permission to view anything in the Workspace, including users, Deployments, and DAG code in the Airflow UI
-    - **Workspace Editor**: Has Viewer permissions, plus permission to [deploy code](deploy-code) and [configure Deployments](configure-deployment)
+    - **Workspace Editor**: Has Viewer permissions, plus permission to [deploy code](deploy-code.md) and [configure Deployments](configure-deployment.md)
     - **Workspace Admin**: Has Editor permissions, plus permission to add users, remove users, and assign user roles
 
 5. Click **Add member**.

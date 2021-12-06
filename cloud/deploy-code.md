@@ -25,9 +25,9 @@ This guide explains how to deploy DAGs to a Deployment on Astronomer Cloud.
 
 To deploy DAGs to Astronomer, you must have:
 
-- The [Astronomer CLI](install-cli) installed in an empty directory.
-- An Astronomer Workspace with at least one [Deployment](configure-deployment).
-- An [Astronomer project](create-project).
+- The [Astronomer CLI](install-cli.md) installed in an empty directory.
+- An Astronomer Workspace with at least one [Deployment](configure-deployment.md).
+- An [Astronomer project](create-project.md).
 - [Docker](https://www.docker.com/products/docker-desktop).
 
 > **Note:** If you’re running the Astronomer CLI with [buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/) enabled in Docker, you may see an error (`buildkit not supported by daemon`). Learn more in [this forum post](https://forum.astronomer.io/t/buildkit-not-supported-by-daemon-error-command-docker-build-t-airflow-astro-bcb837-airflow-latest-failed-failed-to-execute-cmd-exit-status-1/857).
@@ -52,7 +52,7 @@ astro deploy
 
 This command returns a list of Airflow Deployments available in your Workspace and prompts you to pick one. Once this command is executed, all files in your Airflow project directory are built into a new Docker image. This includes system-level dependencies, Python-level dependencies, DAGs, and your `Dockerfile`. It does not include any of the metadata associated with your local Airflow environment, including task history and Airflow Connections or Variables that were set locally. This Docker image is then pushed to all containers running the Apache Airflow application on Astronomer Cloud, including Celery Workers.
 
-If a deploy is triggered while a Celery Worker is executing a task and **Worker Termination Grace Period** is set, the Worker will continue to process that task up to the specified number of minutes before restarting itself. By default, the grace period is 10 minutes. For more information, read [Configure a Deployment on Astronomer](configure-deployment).
+If a deploy is triggered while a Celery Worker is executing a task and **Worker Termination Grace Period** is set, the Worker will continue to process that task up to the specified number of minutes before restarting itself. By default, the grace period is 10 minutes. For more information, read [Configure a Deployment on Astronomer](configure-deployment.md).
 
 ## Step 3: Validate Your Changes
 
@@ -65,12 +65,17 @@ Once you log in, you should see the DAGs you just deployed.
 Now that you're familiar with deploying DAGs to Astronomer Cloud, consider reading:
 
 <<<<<<< HEAD:cloud/deploy-code.md
+<<<<<<< HEAD:cloud/deploy-code.md
 - [Develop Locally](develop-locally)
 =======
 - [Develop Project](develop-project)
 >>>>>>> 44ec2e1dc9b109b8711df782ea92b80580159ff8:docs/deploy-code.md
 - [Set Environment Variables](environment-variables)
+=======
+- [Develop Project](develop-project.md)
+- [Set Environment Variables](environment-variables.md)
+>>>>>>> 250ebdcc7465130f0c4bbb61bbb3cfb533a87374:docs/deploy-code.md
 
-For up-to-date information about product limitations, read [Known Limitations](known-limitations).
+For up-to-date information about product limitations, read [Known Limitations](known-limitations.md).
 
 If you have any questions, reach out to us. We're here to help.

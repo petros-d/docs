@@ -98,4 +98,4 @@ To run the CLI more easily, we recommend configuring your local machine to run A
 
 ## Next Steps
 
-Now that you've installed the Astronomer CLI, you're ready to create an Astronomer project and start developing locally. For instructions, read [Create an Astronomer Project](create-project).
+Now that you've installed the Astronomer CLI, you're ready to create an Astronomer project and start developing locally. For instructions, read [Create an Astronomer Project](create-project.md).
