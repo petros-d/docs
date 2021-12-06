@@ -12,24 +12,24 @@ Read the following document for a reference of our default resources as well as 
 
 ## Defaults
 
-| Resource                                                                                             | Description                                                                                                                                                                                                                     | Quantity / Default Size |
-| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
-| [EKS Cluster](https://aws.amazon.com/eks)                                                            | An EKS cluster is required to run the Astronomer Cloud Data Plane, which hosts the resources and data required to execute Airflow tasks.                                                                                        | 1x                      |
-| [EC2 Instances](https://aws.amazon.com/ec2/instance-types/)                                          | EC2 instances (nodes) power the system and Airflow components (Webserver, Scheduler, Workers). EC2 instances auto-scale for additional Airflow Deployments.                                            | 2x m5.xlarge          |
-| [RDS for PostgreSQL Instance](https://aws.amazon.com/rds/)                                           | The RDS instance is the primary database of the Astronomer Cloud Data Plane. It hosts a metadata database for each Airflow Deployment hosted on the EKS cluster.                                                       | 1x db.r5.large        |
-| [Elastic IPs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)     | Elastic IPs are required for connectivity with the Control Plane, and other public services.                                                                                                                                    | 2x                      |
-| [Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)                         | Subnets are provisioned in 2 different [Availability Zones (AZs)](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/) for redundancy, with 1 public and 1 private subnet per AZ. Public subnets are required for the NAT and Internet gateways, while private subnets are required for EC2 nodes.          | 2x /26 and 2x /22       |
-| [Internet Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)       | Required for connectivity with the Control Plane and other public services.                                                                                                                                                    | 1x                      |
-| [NAT Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)                | NAT Gateways translate outbound traffic from private subnets to public subnets.                                                                                                                                                 | 2x                      |
-| [Routes](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html#route-table-routes)  | Routes are necessary to direct network traffic from the subnets and gateways.                                                                                                                                                   | 2x                      |
-| [Route Tables](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html)               | Home for the routes.                                                                                                                                                                                                            | 2x                      |
-| [VPC](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)                      | Virtual network for launching and hosting AWS resources.                                                                                                                                                                        | 1x /19                  |
+| Resource                                                                                            | Description                                                                                                                                                                                                                                                                                                       | Quantity / Default Size |
+| --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
+| [EKS Cluster](https://aws.amazon.com/eks)                                                           | An EKS cluster is required to run the Astronomer Cloud Data Plane, which hosts the resources and data required to execute Airflow tasks.                                                                                                                                                                          | 1x                      |
+| [EC2 Instances](https://aws.amazon.com/ec2/instance-types/)                                         | EC2 instances (nodes) power the system and Airflow components (Webserver, Scheduler, Workers). EC2 instances auto-scale for additional Airflow Deployments.                                                                                                                                                       | 2x m5.xlarge            |
+| [RDS for PostgreSQL Instance](https://aws.amazon.com/rds/)                                          | The RDS instance is the primary database of the Astronomer Cloud Data Plane. It hosts a metadata database for each Airflow Deployment hosted on the EKS cluster.                                                                                                                                                  | 1x db.r5.large          |
+| [Elastic IPs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)    | Elastic IPs are required for connectivity with the Control Plane, and other public services.                                                                                                                                                                                                                      | 2x                      |
+| [Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)                        | Subnets are provisioned in 2 different [Availability Zones (AZs)](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/) for redundancy, with 1 public and 1 private subnet per AZ. Public subnets are required for the NAT and Internet gateways, while private subnets are required for EC2 nodes. | 2x /26 and 2x /22       |
+| [Internet Gateway](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)      | Required for connectivity with the Control Plane and other public services.                                                                                                                                                                                                                                       | 1x                      |
+| [NAT Gateways](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html)               | NAT Gateways translate outbound traffic from private subnets to public subnets.                                                                                                                                                                                                                                   | 2x                      |
+| [Routes](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html#route-table-routes) | Routes are necessary to direct network traffic from the subnets and gateways.                                                                                                                                                                                                                                     | 2x                      |
+| [Route Tables](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html)              | Home for the routes.                                                                                                                                                                                                                                                                                              | 2x                      |
+| [VPC](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)                     | Virtual network for launching and hosting AWS resources.                                                                                                                                                                                                                                                          | 1x /19                  |
 
 ## Supported Cluster Configurations
 
 Depending on the needs of your team, you may be interested in modifying certain configurations of a new or existing Cluster on Astronomer Cloud. This section provides a reference for which configuration options are supported during the install process.
 
-To create a new Cluster on Astronomer Cloud with a specified configuration, read [Install on AWS](install-aws-standard.md) or [Create a Cluster](create-cluster.md). For instructions on how to make a change to an existing Cluster, read [Modify a Cluster](modify-cluster.md).
+To create a new Cluster on Astronomer Cloud with a specified configuration, read [Install on AWS](install-aws.md) or [Create a Cluster](create-cluster.md). For instructions on how to make a change to an existing Cluster, read [Modify a Cluster](modify-cluster.md).
 
 ### AWS Region
 
@@ -41,7 +41,7 @@ Astronomer Cloud supports the following AWS regions:
 - `us-west-2`
 - `ca-central-1`
 - `sa-east-1`
-- `ap-northeast-1 `
+- `ap-northeast-1`
 - `ap-southeast-1`
 - `ap-northeast-2`
 - `ap-southeast-2`
@@ -56,37 +56,41 @@ Astronomer Cloud supports a variety of AWS EC2 instance types. Instance types co
 For detailed information on each instance type, reference [AWS documentation](https://aws.amazon.com/ec2/instance-types/). If you're interested in a node type that is not on this list, reach out to [Astronomer Support](https://support.astronomer.io). Not all instance types are supported in all AWS regions.
 
 **m5**
-   - m5.large
-   - m5.xlarge (*default*)
-   - m5.2xlarge
-   - m5.4xlarge
-   - m5.8xlarge
-   - m5.12xlarge
-   - m5.16xlarge
-   - m5.24xlarge
-   - m5.metal
+
+- m5.large
+- m5.xlarge (_default_)
+- m5.2xlarge
+- m5.4xlarge
+- m5.8xlarge
+- m5.12xlarge
+- m5.16xlarge
+- m5.24xlarge
+- m5.metal
 
 **m5d**
-   - m5d.large
-   - m5d.xlarge
-   - m5d.2xlarge
-   - m5d.4xlarge
-   - m5d.8xlarge
-   - m5d.12xlarge
-   - m5d.16xlarge
-   - m5d.24xlarge
-   - m5d.metal
+
+- m5d.large
+- m5d.xlarge
+- m5d.2xlarge
+- m5d.4xlarge
+- m5d.8xlarge
+- m5d.12xlarge
+- m5d.16xlarge
+- m5d.24xlarge
+- m5d.metal
 
 **t2**
-   - t2.xlarge
+
+- t2.xlarge
 
 **t3**
-   - t3.nano
-   - t3.micro
-   - t3.small
-   - t3.medium
-   - t3.large
-   - t3.2xlarge
+
+- t3.nano
+- t3.micro
+- t3.small
+- t3.medium
+- t3.large
+- t3.2xlarge
 
 :::info
 
