@@ -149,7 +149,6 @@ module.exports = {
     ],
   ],
   plugins: [
-    'docusaurus2-dotenv',
     [
       '@docusaurus/plugin-content-docs',
       {
