@@ -1,7 +1,7 @@
 ---
 sidebar_label: "AWS Resource Reference"
 title: "Resources Required for Astronomer Cloud on AWS"
-id: resource-reference-aws.md
+id: resource-reference-aws
 ---
 
 ## Overview
