@@ -20,7 +20,7 @@ This guide provides instructions for provisioning additional Clusters within you
 
 To complete this setup, you need to have:
 
-- Completed the initial Astronomer Cloud install process as described in [Install on AWS](install-aws-standard.md.md).
+- Completed the initial Astronomer Cloud install process as described in [Install on AWS](install-aws-standard.md).
 - Permissions to edit trust policies in your AWS account for Astronomer.
 
 ## Step 1: Submit a Request to Astronomer

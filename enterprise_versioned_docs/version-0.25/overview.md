@@ -38,7 +38,7 @@ There are many tools at your disposal for administrating Astronomer:
 * [Using Kibana](kibana-logging.md)
 * [Using kubectl](kubectl.md)
 * [Pulling Postgres Credentials](access-airflow-database.md)
-* [Upgrade to a Patch Version of Astronomer Enterprise](upgrade-astronomer-stable/)
+* [Upgrade to a Patch Version of Astronomer Enterprise](upgrade-astronomer-stable.md/)
 
 ## License
 

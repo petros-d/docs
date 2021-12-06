@@ -18,7 +18,7 @@ To complete this setup, you need to have:
 - A Cluster on Astronomer Cloud.
 - Permission from your team.
 
-If you don't have a Cluster on Astronomer Cloud, follow [Install Astronomer on AWS](install-aws-standard.md.md). If you have an existing Cluster and are interested in creating additional Clusters, read [Create a Cluster](create-cluster.md).
+If you don't have a Cluster on Astronomer Cloud, follow [Install Astronomer on AWS](install-aws-standard.md). If you have an existing Cluster and are interested in creating additional Clusters, read [Create a Cluster](create-cluster.md).
 
 ## Step 1: Submit a Request to Astronomer
 

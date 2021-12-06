@@ -264,7 +264,7 @@ If you do not specify `--desired-airflow-version`, this command will output a li
 ### Related documentation
 
 - [Upgrade Apache Airflow on Astronomer](manage-airflow-versions.md)
-- [Manage User Permissions on Astronomer](workspace-permissions)
+- [Manage User Permissions on Astronomer](workspace-permissions.md)
 
 ## astro deployment create
 
@@ -444,7 +444,7 @@ Gives an existing user in a Workspace access to an Airflow Deployment within tha
 
 ### Related documentation
 
-- [Manage User Permissions on Astronomer](workspace-permissions)
+- [Manage User Permissions on Astronomer](workspace-permissions.md)
 
 ## astro deployment user delete
 
@@ -462,7 +462,7 @@ Removes access to an Airflow Deployment for an existing Workspace user. To grant
 
 ### Related documentation
 
-- [Manage User Permissions on Astronomer](workspace-permissions)
+- [Manage User Permissions on Astronomer](workspace-permissions.md)
 
 ## astro deployment user list
 
@@ -483,7 +483,7 @@ Outputs a list of all Workspace users who have access to a given Deployment. Use
 
 ### Related documentation
 
-- [Manage User Permissions on Astronomer](workspace-permissions)
+- [Manage User Permissions on Astronomer](workspace-permissions.md)
 
 ## astro deployment user update
 
@@ -502,7 +502,7 @@ Updates a user's role in a given Deployment.
 
 ### Related documentation
 
-- [Manage User Permissions on Astronomer](workspace-permissions)
+- [Manage User Permissions on Astronomer](workspace-permissions.md)
 
 ## astro dev
 
@@ -658,7 +658,7 @@ Creates a new user on Astronomer. An invitation email will be sent to the email 
 
 ### Related documentation
 
-- [Manage Workspace Permissions on Astronomer](workspace-permissions)
+- [Manage Workspace Permissions on Astronomer](workspace-permissions.md)
 - [Manage Users on Astronomer Enterprise](manage-platform-users.md)
 
 ## astro version
@@ -833,7 +833,7 @@ Creates a new user in your current Workspace. If the user has already authentica
 ### Related documentation
 
 - [Manage Workspaces and Deployments on Astronomer](manage-workspaces.md)
-- [Manage User Permissions on Astronomer](workspace-permissions)
+- [Manage User Permissions on Astronomer](workspace-permissions.md)
 
 ## astro workspace user remove
 
@@ -846,7 +846,7 @@ Removes an existing user from your current Workspace.
 ### Related documentation
 
 - [Manage Workspaces and Deployments on Astronomer](manage-workspaces.md)
-- [Manage User Permissions on Astronomer](workspace-permissions)
+- [Manage User Permissions on Astronomer](workspace-permissions.md)
 
 ## astro workspace user list
 
@@ -868,7 +868,7 @@ Outputs a list of all users with access to your current Workspace.
 ### Related documentation
 
 - [Manage Workspaces and Deployments on Astronomer](manage-workspaces.md)
-- [Manage User Permissions on Astronomer](workspace-permissions)
+- [Manage User Permissions on Astronomer](workspace-permissions.md)
 
 ## astro workspace user update
 
@@ -887,4 +887,4 @@ Updates a user's role in your current Workspace.
 ### Related documentation
 
 - [Manage Workspaces and Deployments on Astronomer](manage-workspaces.md)
-- [Manage User Permissions on Astronomer](workspace-permissions)
+- [Manage User Permissions on Astronomer](workspace-permissions.md)

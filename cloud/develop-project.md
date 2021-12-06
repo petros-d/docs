@@ -251,13 +251,13 @@ docker exec -it <container-name> ls -al
 
 :::info
 
-The Astronomer CLI does not support overrides to environment variables that are required globally. For the list of environment variables that Astronomer enforces, see [Global Environment Variables](global-variables.md). To learn more about environment variables, read [Environment Variables](environment-variables.md.md).
+The Astronomer CLI does not support overrides to environment variables that are required globally. For the list of environment variables that Astronomer enforces, see [Global Environment Variables](global-variables.md). To learn more about environment variables, read [Environment Variables](environment-variables.md).
 
 :::
 
 ## Set Environment Variables via .env (Local Development Only)
 
-For Astronomer projects deployed on Astronomer Cloud, we generally recommend [setting environment variables via the Astronomer UI](environment-variables.md.md#set-environment-variables-via-the-astronomer-ui). For local development, you can use the [Astronomer CLI](install-cli.md) to set environment variables in your project's `.env` file.
+For Astronomer projects deployed on Astronomer Cloud, we generally recommend [setting environment variables via the Astronomer UI](environment-variables.md#set-environment-variables-via-the-astronomer-ui). For local development, you can use the [Astronomer CLI](install-cli.md) to set environment variables in your project's `.env` file.
 
 To add Environment Variables locally:
 

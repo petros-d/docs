@@ -51,7 +51,7 @@ These requirements are slightly different for running only the Python wheel. For
 - Database: PostgreSQL (9.6, 10, 11, 12, 13), MySQL (5.7, 8+), SQLite (3.15.0+)
 - System Distribution: Debian 10 (Buster)
 
- For more information on running a Python wheel installation of Astronomer Certified, read [Install on a Virtual Machine](single-node-install).
+ For more information on running a Python wheel installation of Astronomer Certified, read [Install on a Virtual Machine](single-node-install.md).
 
 ## Environment Variables
 

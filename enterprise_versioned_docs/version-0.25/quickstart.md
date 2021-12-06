@@ -206,6 +206,6 @@ Watch our video tutorial for a brief review of the workflows and concepts descri
 Once you've successfully installed your Astronomer platform, we recommend doing the following:
 
 * [Invite new users to Astronomer](manage-platform-users.md)
-* [Manage permissions](workspace-permissions) for your new users
+* [Manage permissions](workspace-permissions.md) for your new users
 * Integrate an [Auth System](integrate-auth-system.md)
 * Set up [CI/CD](ci-cd.md)
