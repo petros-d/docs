@@ -6,8 +6,8 @@ module.exports = {
   url: 'https://docs.astronomer.io/',
   baseUrl: '/',
   noIndex: true,
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'error',
+  onBrokenMarkdownLinks: 'error',
   favicon: 'img/favicon.svg',
   organizationName: 'astronomer', // Usually your GitHub org/user name.
   projectName: 'cloud-docs', // Usually your repo name.
