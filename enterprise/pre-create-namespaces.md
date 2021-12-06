@@ -60,7 +60,7 @@ To start using pre-created namespaces:
 
     > **Note:** If you want to add more namespaces in the future, you first need to ensure that those namespaces exist in Kubernetes before specifying their names in your `config.yaml` file.
 
-3. Save the changes in your `config.yaml` file and push them to Astronomer as described in [Apply a Config Change](apply-platform-config).
+3. Save the changes in your `config.yaml` file and push them to Astronomer as described in [Apply a Config Change](apply-platform-config.md).
 
 ## Using Pre-Created Namespaces
 
@@ -72,4 +72,4 @@ Alternatively, when you run `astro deployment create` command via the Astronomer
 
 If no namespaces are available, you will receive an error when creating a new Deployment in both the UI and the CLI. To reuse a pre-created namespace, you need to first delete the Deployment using it.
 
-> **Note:** Pre-created namespaces may take several days to become available again after deleting their associated Deployment. To immediately reuse a pre-created namespace, you need to hard-delete its associated Deployment as described in [Delete a Deployment](configure-deployment#delete-a-deployment).
+> **Note:** Pre-created namespaces may take several days to become available again after deleting their associated Deployment. To immediately reuse a pre-created namespace, you need to hard-delete its associated Deployment as described in [Delete a Deployment](configure-deployment.md#delete-a-deployment).

@@ -35,7 +35,7 @@ astronomer:
           enabled: true
 ```
 
-2. Push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config).
+2. Push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config.md).
 
 ## General OIDC Configuration
 
@@ -98,7 +98,7 @@ astronomer:
 
 Your Cognito pool ID can be found in the `General settings` tab of the Cognito portal. Your client ID is found in the `App clients` tab.
 
-Once you've saved your `config.yaml` file with these values, push it to your platform as described in [Apply a Config Change](apply-platform-config).
+Once you've saved your `config.yaml` file with these values, push it to your platform as described in [Apply a Config Change](apply-platform-config.md).
 
 ## Azure AD
 
@@ -140,7 +140,7 @@ astronomer:
         github:
           enabled: false
 ```
-Then, push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config).
+Then, push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config.md).
 
 ## Okta
 
@@ -178,7 +178,7 @@ astronomer:
             discoveryUrl: "https://<okta-base-domain>/.well-known/openid-configuration"
 ```
 
-Then, push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config).
+Then, push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config.md).
 
 >> **Note:** `okta-base-domain` will be different from the basedomain of your Astronomer installation. You can read [Okta's docs on finding your domain](https://developer.okta.com/docs/api/getting_started/finding_your_domain/) if you are unsure what this value should be.
 
@@ -242,7 +242,7 @@ astronomer:
             clientId: "<default-app-client-id>"
             discoveryUrl: https://<tenant-name>.auth0.com
 ```
-Then, push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config).
+Then, push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config.md).
 
 > **Note:** You can find your `clientID` value at `https://manage.auth0.com/dashboard/us/<tenant-name>/applications` listed next to 'Default App'.
 
@@ -275,4 +275,4 @@ astronomer:
         value: http://my-proxy:3129
 ```
 
-Then, push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config).
+Then, push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config.md).

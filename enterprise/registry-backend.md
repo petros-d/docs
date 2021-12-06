@@ -87,7 +87,7 @@ astronomer:
       bucket: my-gcs-bucket
 ```
 
-4. Push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config).
+4. Push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config.md).
 
 ## AWS S3
 
@@ -153,7 +153,7 @@ astronomer:
       bucket: my-s3-bucket
 ```
 
-4. Push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config).
+4. Push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config.md).
 
 ### Enable Encryption (_Optional_)
 
@@ -176,7 +176,7 @@ astronomer:
       keyid: my-kms-key-id
 ```
 
-3. Push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config).
+3. Push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config.md).
 
 ## Azure Blob Storage
 
@@ -208,4 +208,4 @@ astronomer:
       realm: core.windows.net
 ```
 
-2. Push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config).
+2. Push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config.md).

@@ -19,7 +19,7 @@ If you're an Astronomer Enterprise user, you might use the Astronomer CLI to do 
 - Create Astronomer Service Accounts, Users and Deployments
 - Append annotations to your Deployment's Pods
 
-This guide provides steps for installing the CLI, initializing an Astronomer project, and deploying to an Airflow instance on your local machine. For more information on specific CLI workflows and features, read the [Astronomer CLI Reference Guide](cli-reference).
+This guide provides steps for installing the CLI, initializing an Astronomer project, and deploying to an Airflow instance on your local machine. For more information on specific CLI workflows and features, read the [Astronomer CLI Reference Guide](cli-reference.md).
 
 ## Step 1: Install the Astronomer CLI
 
@@ -255,7 +255,7 @@ Then, restart the Docker containers by running:
 astro dev start
 ```
 
-> **Note:** As you develop locally, it may be necessary to reset your Docker containers and metadata DB for testing purposes. To do so, run [`astro dev kill`](cli-reference#astro-dev-kill) instead of [`astro dev stop`](cli-reference#astro-dev-stop) when rebuilding your image. This will delete all data associated with your local Postgres metadata database, including Airflow Connections, logs, and task history.
+> **Note:** As you develop locally, it may be necessary to reset your Docker containers and metadata DB for testing purposes. To do so, run [`astro dev kill`](cli-reference.md#astro-dev-kill) instead of [`astro dev stop`](cli-reference.md#astro-dev-stop) when rebuilding your image. This will delete all data associated with your local Postgres metadata database, including Airflow Connections, logs, and task history.
 
 ## Astronomer CLI and Platform Versioning
 
@@ -297,7 +297,7 @@ Watch our video tutorial for a brief review of the workflows and concepts descri
 
 After installing and trying out the Astronomer CLI, we recommend reading through the following guides:
 
-* [Astronomer CLI Reference Guide](cli-reference)
+* [Astronomer CLI Reference Guide](cli-reference.md)
 * [Deploy DAGs via the Astronomer CLI](/docs/enterprise/v0.26/deploy/deploy-cli/)
 * [Deploy DAGs via NFS Volume](/docs/enterprise/v0.26/deploy/deploy-nfs/)
 * [Customize Your Image](/docs/enterprise/v0.26/develop/customize-image/)

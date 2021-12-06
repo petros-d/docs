@@ -7,7 +7,7 @@ description: Install OS-level and Python-level packages for Airflow using Astron
 
 ## Overview
 
-By default, the Astronomer Certified Docker image is distributed with a collection of pre-installed Python and OS-level packages to help users integrate with popular applications. Python-level packages are dependencies that Airflow uses, while OS-level packages are dependencies required for the underlying Debian OS. For the full list of built-in packages, read [Image Architecture](image-architecture).
+By default, the Astronomer Certified Docker image is distributed with a collection of pre-installed Python and OS-level packages to help users integrate with popular applications. Python-level packages are dependencies that Airflow uses, while OS-level packages are dependencies required for the underlying Debian OS. For the full list of built-in packages, read [Image Architecture](image-architecture.md).
 
 Depending on your use case and distribution of Astronomer Certified, you might want to install additional packages to your environment. This guide provides steps for installing dependencies to both Astronomer's Docker image and Python wheel.
 
@@ -40,7 +40,7 @@ RUN pip install --no-cache-dir --user <your-python-package>
 
 To install a specific version of a Python-level package, include your package version in a pip [constraints file](https://pip-python3.readthedocs.io/en/latest/user_guide.html#constraints-files) and copy it into your Dockerfile. The base Docker image already has a pip constraints file which can be found [on GitHub](https://github.com/astronomer/ap-airflow/blob/master/2.1.0/buster/build-time-pip-constraints.txt).
 
-> **Note:** Installing dependencies will look different if you are deploying your Docker image to Astronomer via the Astronomer CLI. For an Astronomer platform-based setup, read [Install Packages via the Astronomer CLI](install-packages#install-packages-via-the-astronomer-cli).
+> **Note:** Installing dependencies will look different if you are deploying your Docker image to Astronomer via the Astronomer CLI. For an Astronomer platform-based setup, read [Install Packages via the Astronomer CLI](install-packages.md#install-packages-via-the-astronomer-cli).
 
 Once you rebuild your image with `docker-build`, the image will have access to any packages that you specified. To confirm that a package was installed:
 
@@ -70,4 +70,4 @@ You can also create your own Python packages and install them into your Airflow 
 
 ## Install Packages via Astronomer
 
-If you're deploying the Astronomer Certified Docker image via Astronomer CLI, there are alternative workflows for installing packages and other dependencies to your image. For more information, read [Customize Images](customize-image).
+If you're deploying the Astronomer Certified Docker image via Astronomer CLI, there are alternative workflows for installing packages and other dependencies to your image. For more information, read [Customize Images](customize-image.md).

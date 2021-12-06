@@ -139,7 +139,7 @@ To obtain a TLS certificate, complete one of the following setups:
 
 [Let's Encrypt](https://letsencrypt.org/) is a free and secure certificate authority (CA) service that provides TLS certificates that renew automatically every 90 days. Use this option if you are configuring Astronomer for a smaller organization without a dedicated security team.
 
-To set up TLS certificates this way, follow the guidelines in [Automatically Renew TLS Certificates Using Let's Encrypt](renew-tls-cert#automatically-renew-tls-certificates-using-lets-encrypt). Make note of the certificate you create in this setup for Step 5.
+To set up TLS certificates this way, follow the guidelines in [Automatically Renew TLS Certificates Using Let's Encrypt](renew-tls-cert.md#automatically-renew-tls-certificates-using-lets-encrypt). Make note of the certificate you create in this setup for Step 5.
 
 ### Option 2: Request a TLS certificate from your security team
 
@@ -331,7 +331,7 @@ This will ensure that you pull the latest from our Helm repository. Finally, run
 helm install -f config.yaml --version=0.26 --namespace=<your-platform-namespace> <your-platform-release-name> astronomer/astronomer
 ```
 
-This command will install the latest available patch version of Astronomer Enterprise v0.26. To override latest and specify a patch, add it to the `--version=` flag in the format of `0.26.x`. To install Astronomer Enterprise v0.26.2, for example, specify `--version=0.26.2`. For information on all available patch versions, refer to [Enterprise Release Notes](release-notes).
+This command will install the latest available patch version of Astronomer Enterprise v0.26. To override latest and specify a patch, add it to the `--version=` flag in the format of `0.26.x`. To install Astronomer Enterprise v0.26.2, for example, specify `--version=0.26.2`. For information on all available patch versions, refer to [Enterprise Release Notes](release-notes.md).
 
 Once you run the commands above, a set of Kubernetes pods will be generated in your namespace. These pods power the individual services required to run our platform, including the Astronomer UI and Houston API.
 
@@ -378,7 +378,7 @@ newbie-norse-prometheus-0                              1/1     Running     0    
 newbie-norse-registry-0                                1/1     Running     0          30m
 ```
 
-If you are seeing issues here, check out our [guide on debugging your installation](debug-install)
+If you are seeing issues here, check out our [guide on debugging your installation](debug-install.md)
 
 ## Step 10: Configure DNS
 
@@ -471,16 +471,16 @@ $ astro deploy -f
 
 Check the Airflow namespace. If pods are changing at all, then the Houston API trusts the registry.
 
-If you have Airflow pods in the state "ImagePullBackoff", check the pod description. If you see an x509 error, ensure that you added the `privateCaCertsAddToHost` key-value pairs to your Helm chart. If you missed these during installation, follow the steps in [Apply a Platform Configuration Change on Astronomer](apply-platform-config) to add them after installation.
+If you have Airflow pods in the state "ImagePullBackoff", check the pod description. If you see an x509 error, ensure that you added the `privateCaCertsAddToHost` key-value pairs to your Helm chart. If you missed these during installation, follow the steps in [Apply a Platform Configuration Change on Astronomer](apply-platform-config.md) to add them after installation.
 
 ## What's Next
 
 To help you make the most of Astronomer Enterprise, check out the following additional resources:
 
-* [Renew TLS Certificates on Astronomer Enterprise](renew-tls-cert/)
-* [Integrating an Auth System](integrate-auth-system)
-* [Configuring Platform Resources](configure-platform-resources)
-* [Managing Users on Astronomer Enterprise](manage-platform-users)
+* [Renew TLS Certificates on Astronomer Enterprise](renew-tls-cert.md/)
+* [Integrating an Auth System](integrate-auth-system.md)
+* [Configuring Platform Resources](configure-platform-resources.md)
+* [Managing Users on Astronomer Enterprise](manage-platform-users.md)
 
 ### Astronomer Support Team
 

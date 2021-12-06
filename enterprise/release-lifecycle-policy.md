@@ -15,9 +15,9 @@ This document offers guidelines on the version lifecycle of Astronomer Enterpris
 - Which versions of Astronomer Enterprise are currently available.
 - Release channels and the maintenance schedule for all versions.
 
-For information on the latest Astronomer Enterprise releases, see [release notes](release-notes). For the release and maintenance policy for Astronomer Certified, see the Certified [Versioning and Maintenance Policy](ac-support-policy).
+For information on the latest Astronomer Enterprise releases, see [release notes](release-notes.md). For the release and maintenance policy for Astronomer Certified, see the Certified [Versioning and Maintenance Policy](ac-support-policy.md).
 
-For information on compatibility between all versioned software, see [Enterprise Version Compatibility Reference](release-lifecycle-policy).
+For information on compatibility between all versioned software, see [Enterprise Version Compatibility Reference](release-lifecycle-policy.md).
 
 ## Release Channels
 

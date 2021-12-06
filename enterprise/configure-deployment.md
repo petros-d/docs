@@ -14,9 +14,9 @@ This guide walks you through the process of creating and configuring an Airflow 
 ## Prerequisites
 
 To create an Airflow Deployment, you'll need:
-* [The Astronomer CLI](cli-quickstart) installed.
+* [The Astronomer CLI](cli-quickstart.md) installed.
 * An Astronomer platform at `app.BASEDOMAIN`.
-* An Astronomer [Workspace](manage-workspaces).
+* An Astronomer [Workspace](manage-workspaces.md).
 
 ## Create a Deployment
 
@@ -84,7 +84,7 @@ The [Airflow Scheduler](https://airflow.apache.org/docs/apache-airflow/stable/sc
 
 If you experience delays in task execution, which you can track via the [Gantt Chart](https://airflow.apache.org/docs/apache-airflow/stable/ui.html#gantt-chart) view of the Airflow UI, we recommend increasing the AU allocated towards the Scheduler. The default resource allocation is 10 AU.
 
-> **Tip:** To set alerts that notify you via email when your Airflow Scheduler is underprovisioned, refer to [Airflow Alerts](airflow-alerts).
+> **Tip:** To set alerts that notify you via email when your Airflow Scheduler is underprovisioned, refer to [Airflow Alerts](airflow-alerts.md).
 
 #### Scheduler Count
 
@@ -134,11 +134,11 @@ astronomer:
               minAirflowVersion: "2.2.0"    
 ```
 
-After you save these changes, push your `config.yaml` file to your installation as described in [Apply a Config Change](apply-platform-config).
+After you save these changes, push your `config.yaml` file to your installation as described in [Apply a Config Change](apply-platform-config.md).
 
 ## Kubernetes Executor: Set Extra Capacity
 
-On Astronomer, resources required for the [KubernetesPodOperator](kubepodoperator) or the [Kubernetes Executor](kubernetes-executor) are set as **Extra Capacity**.
+On Astronomer, resources required for the [KubernetesPodOperator](kubepodoperator.md) or the [Kubernetes Executor](kubernetes-executor.md) are set as **Extra Capacity**.
 
 The Kubernetes Executor and KubernetesPodOperator each spin up an individual Kubernetes pod for each task that needs to be executed, then spin down the pod once that task is completed.
 
@@ -168,9 +168,9 @@ If a deploy is triggered while a Celery Worker is executing a task and **Worker 
 
 Environment Variables can be used to set [Airflow configurations](https://airflow.apache.org/docs/apache-airflow/stable/configurations-ref.html) and custom values, both of which can be applied to your Airflow Deployment either locally or on Astronomer.
 
-These can include setting Airflow Parallelism, an SMTP service for Alerts, or a [secrets backend](secrets-backend) to manage Airflow Connections and Variables.
+These can include setting Airflow Parallelism, an SMTP service for Alerts, or a [secrets backend](secrets-backend.md) to manage Airflow Connections and Variables.
 
-Environment Variables can be set for your Airflow Deployment either in the **Variables** tab of the Astronomer UI or in your `Dockerfile`. If you're developing locally, they can also be added to a local `.env` file. For more information on configuring Environment Variables, read [Environment Variables on Astronomer](environment-variables).
+Environment Variables can be set for your Airflow Deployment either in the **Variables** tab of the Astronomer UI or in your `Dockerfile`. If you're developing locally, they can also be added to a local `.env` file. For more information on configuring Environment Variables, read [Environment Variables on Astronomer](environment-variables.md).
 
 > **Note**: Environment Variables are distinct from [Airflow Variables](https://airflow.apache.org/docs/apache-airflow/stable/howto/variable.html?highlight=variables) and [XComs](https://airflow.apache.org/docs/apache-airflow/stable/concepts.html?highlight=xcom#concepts-xcom), which you can configure directly via the Airflow UI and are used for inter-task communication.
 
@@ -188,7 +188,7 @@ astronomer:
         manualReleaseNames: true # Allows you to set your release names
 ```
 
-Then, push the updated `config.yaml` file to your installation as described in [Apply a Config Change](apply-platform-config).
+Then, push the updated `config.yaml` file to your installation as described in [Apply a Config Change](apply-platform-config.md).
 
 After applying this change, the **Release Name** field in the Astronomer UI becomes configurable:
 
@@ -203,7 +203,7 @@ You can use two different DAG deploy mechanisms on Astronomer:
 
 ### Image-based deploys
 
-By default, you can deploy DAGs to an Airflow Deployment by building them into a Docker image and pushing that image to the Astronomer Registry via the CLI or API. This workflow is described in [Deploy DAGs via the CLI](deploy-cli).
+By default, you can deploy DAGs to an Airflow Deployment by building them into a Docker image and pushing that image to the Astronomer Registry via the CLI or API. This workflow is described in [Deploy DAGs via the CLI](deploy-cli.md).
 
 This mechanism builds your DAGs into a Docker image alongside all other files in your Airflow project directory, including your Python and OS-level packages, your Dockerfile, and your plugins.
 
@@ -217,7 +217,7 @@ For advanced teams who deploy DAG changes more frequently, Astronomer also suppo
 
 Using this mechanism, you can deploy DAGs to an Airflow Deployment on Astronomer by adding the corresponding Python files to a shared file system on your network. Compared to image-based deploys, NFS volume-based deploys limit downtime and enable continuous deployment.
 
-To deploy DAGs to a Deployment via an NFS volume, you must first enable the feature at the platform level. For more information, read [Deploy DAGs via NFS Volume](deploy-nfs).
+To deploy DAGs to a Deployment via an NFS volume, you must first enable the feature at the platform level. For more information, read [Deploy DAGs via NFS Volume](deploy-nfs.md).
 
 ## Delete a Deployment
 
@@ -229,7 +229,7 @@ In your Astronomer database, the corresponding `Deployment` record will be given
 
 ### Hard delete a Deployment
 
-> **Note:** This feature must first be enabled at the platform level before it can be used. To enable this feature, set `deployments.hardDeleteDeployment: true` in your `config.yaml` file and push the changes to your platform as described in [Apply a Config Change](apply-platform-config).
+> **Note:** This feature must first be enabled at the platform level before it can be used. To enable this feature, set `deployments.hardDeleteDeployment: true` in your `config.yaml` file and push the changes to your platform as described in [Apply a Config Change](apply-platform-config.md).
 
 To reuse a custom release name given to an existing Deployment, you need to first hard delete both the Deployment's metadata database and the Deployment's entry in your Astronomer database. To do so, select the **Hard Delete?** checkbox before clicking **Delete Deployment**. Alternatively, you can run `astro deployment delete --hard` via the Astronomer CLI.
 

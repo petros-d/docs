@@ -13,7 +13,7 @@ Environment Variables can be used to set any of the following (and much more):
 
 - SMTP to enable email alerts
 - Airflow Parallelism and DAG Concurrency
-- [A Secret Backend](secrets-backend) to manage your Airflow Connections and Variables
+- [A Secret Backend](secrets-backend.md) to manage your Airflow Connections and Variables
 - Store Airflow Connections and Variables
 - Customize your default DAG view in the Airflow UI (Tree, Graph, Gantt etc.)
 
@@ -37,7 +37,7 @@ Read below for instructions on how to configure them via all 3 methods.
 
 ### via `.env` (_Local Only_)
 
-The [Astronomer CLI](cli-quickstart) comes with the ability to bring in Environment Variables from a specified `.env` file, which was automatically generated when you initialized an Airflow project on Astronomer via `$ astro dev init`.
+The [Astronomer CLI](cli-quickstart.md) comes with the ability to bring in Environment Variables from a specified `.env` file, which was automatically generated when you initialized an Airflow project on Astronomer via `$ astro dev init`.
 
 To add Environment Variables locally,
 

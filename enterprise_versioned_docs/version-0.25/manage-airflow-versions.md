@@ -16,9 +16,9 @@ To upgrade your Airflow Deployment to a higher version of Airflow, there are thr
 2. Change the FROM statement in your project's `Dockerfile` to reference an AC image that corresponds to the Airflow version indicated in Step 1.
 3. Deploy to Astronomer.
 
-This guide provides more specific instructions for each of these steps. For information on Astronomer Certified versioning and support schedules, read [Astronomer Certified Versioning and Support Policy](ac-support-policy).
+This guide provides more specific instructions for each of these steps. For information on Astronomer Certified versioning and support schedules, read [Astronomer Certified Versioning and Support Policy](ac-support-policy.md).
 
-> **Note:** For more thorough guidelines on customizing your image, reference our ["Customize Your Image" doc](customize-image).
+> **Note:** For more thorough guidelines on customizing your image, reference our ["Customize Your Image" doc](customize-image.md).
 
 ## Available Astronomer Certified Versions
 
@@ -251,13 +251,13 @@ For help from our team, reach out to [Astronomer Support](https://support.astron
 
 If your image *does* build successfully, you're ready to push it to your Airflow Deployment Astronomer.
 
-To do so, trigger your [CI/CD process](ci-cd) or simply run:
+To do so, trigger your [CI/CD process](ci-cd.md) or simply run:
 
 ```bash
  astro deploy
  ```
 
- For more information on deploying to Astronomer, refer to [Deploy to Astronomer via the CLI](deploy-cli).
+ For more information on deploying to Astronomer, refer to [Deploy to Astronomer via the CLI](deploy-cli.md).
 
 ## Cancel Airflow Upgrade Initialization
 

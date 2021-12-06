@@ -64,7 +64,7 @@ You can now set secret environment variables via the Astronomer Cloud UI. The va
 
 ![Secrets checkbox available in the Astronomer UI](/img/docs/variable-checkmark.png)
 
-For more information, read [Set Environment Variables via the Astronomer UI](environment-variables.md#set-environment-variables-via-the-astronomer-ui).
+For more information, read [Set Environment Variables via the Astronomer UI](environment-variables.md.md#set-environment-variables-via-the-astronomer-ui).
 
 ### Minor Improvements
 

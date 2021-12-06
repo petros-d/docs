@@ -13,7 +13,7 @@ Whether you're just starting to use Apache Airflow or your team is running it at
 - Deployment-level alerts, which notify you when the health of an Airflow Deployment is low or if any of Airflow's underlying components are underperforming, including the Airflow Scheduler.
 - Platform-level alerts, which notify you when a component of your Astronomer platform is unhealthy, such as Elasticsearch, Astronomer's Houston API, or your Docker Registry.
 
-This guide focuses on configuring task and DAG-level alerts. For information on configuring platform and Deployment-level alerts, read [Alerting on Astronomer Enterprise](platform-alerts).
+This guide focuses on configuring task and DAG-level alerts. For information on configuring platform and Deployment-level alerts, read [Alerting on Astronomer Enterprise](platform-alerts.md).
 
 ## Subscribe to Task-Level Alerts
 
@@ -64,7 +64,7 @@ To get started with SendGrid:
 
 7. Click **Deploy Changes** to push your configuration to your Airflow Deployment.
 
-> **Note:** For more information on how to configure Environment Variables both locally and on Astronomer, refer to [Environment Variables](environment-variables).
+> **Note:** For more information on how to configure Environment Variables both locally and on Astronomer, refer to [Environment Variables](environment-variables.md).
 
 ### Integrate Amazon SES with Astronomer
 
@@ -98,7 +98,7 @@ This setup requires an AWS account and use of the [AWS Management Console](https
 
    To prevent unauthorized users in your Workspace from seeing sensitive information, we recommend selecting the **Secret?** checkbox for your email and password profile variables.
 
-    > **Note:** For more information on how to configure Environment Variables both locally and on Astronomer, refer to our ["Environment Variables" doc](environment-variables).
+    > **Note:** For more information on how to configure Environment Variables both locally and on Astronomer, refer to our ["Environment Variables" doc](environment-variables.md).
 
 6. Click **Deploy Changes** to push your configuration to your Airflow Deployment.
 

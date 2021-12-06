@@ -16,7 +16,7 @@ This document provides information on the following:
 - Which versions of Astronomer Certified are currently available
 - The support schedule and end-of-support date for all versions
 
-For guidelines on how to upgrade, read [Upgrade Apache Airflow on Astronomer](manage-airflow-versions).
+For guidelines on how to upgrade, read [Upgrade Apache Airflow on Astronomer](manage-airflow-versions.md).
 
 ## Versioning Scheme
 
@@ -34,7 +34,7 @@ For example, the images for Astronomer Certified 2.1.0 would be:
 
 For the smoothest, out-of-the-box Airflow experience, we strongly recommend and default to `buster-onbuild` images in your project's `Dockerfile`. These images incorporate Docker ONBUILD commands to copy and scaffold your Airflow project directory so you can more easily pass those files to the containers running each core Airflow component.
 
-For complex use cases that require customizing AC base image, read [Customize your Airflow Image on Astronomer](customize-image).
+For complex use cases that require customizing AC base image, read [Customize your Airflow Image on Astronomer](customize-image.md).
 
 ### Hotfix Versions
 
@@ -44,11 +44,11 @@ The format for AC hotfix versions is `<base-version>-<hotfix-version>`. For exam
 
 All hotfix releases have a [corresponding changelog](https://github.com/astronomer/ap-airflow/blob/master/2.1.0/CHANGELOG.md) which specifies the date the hotfix was released and all individual changes made to it. Bugs that are reported by the wider Airflow community are often fixed in Astronomer Certified before they are fixed in the subsequent open source release.
 
-For information on how to upgrade to the latest hotfix release, read [Upgrade to an AC Patch Version](manage-airflow-versions#patch-versions-of-astronomer-certified).
+For information on how to upgrade to the latest hotfix release, read [Upgrade to an AC Patch Version](manage-airflow-versions.md#patch-versions-of-astronomer-certified).
 
 ## Available Versions
 
-The following table contains all Astronomer Certified images supported on Astronomer Enterprise. For our platform's full collection of Docker images, reference [Astronomer on Quay.io](https://quay.io/repository/astronomer/ap-airflow?tab=tags). For more information on Alpine and Debian as distinct system distributions, read [Migrate from Alpine to Debian](manage-airflow-versions#migrate-from-alpine-to-debian).
+The following table contains all Astronomer Certified images supported on Astronomer Enterprise. For our platform's full collection of Docker images, reference [Astronomer on Quay.io](https://quay.io/repository/astronomer/ap-airflow?tab=tags). For more information on Alpine and Debian as distinct system distributions, read [Migrate from Alpine to Debian](manage-airflow-versions.md#migrate-from-alpine-to-debian).
 
 | Airflow Version                                                                      | Debian-based Image                                        | Alpine-based Image                                            |
 | -------------------------------------------------------------------------------------| ----------------------------------------------------------| --------------------------------------------------------------|

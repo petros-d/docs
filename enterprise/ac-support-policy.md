@@ -17,7 +17,7 @@ This document provides information on the following:
 - Which versions of AC are currently available
 - The maintenance schedule and end-of-maintenance date for all versions
 
-For guidelines on how to upgrade, read [Upgrade Apache Airflow on Astronomer](manage-airflow-versions).
+For guidelines on how to upgrade, read [Upgrade Apache Airflow on Astronomer](manage-airflow-versions.md).
 
 ## Release Channels
 
@@ -54,7 +54,7 @@ It is considered safe to upgrade to minor and patch versions within a major vers
 
 All hotfix releases of AC have a [corresponding changelog](https://github.com/astronomer/ap-airflow/blob/master/2.1.0/CHANGELOG.md) which specifies the date the hotfix was released and all individual changes made to it. Bugs that are reported by the wider Airflow community are often fixed in AC before they are fixed in the subsequent open source release.
 
-For information on how to upgrade to the latest hotfix release, read [Upgrade to an AC Patch Version](manage-airflow-versions#patch-versions-of-astronomer-certified).
+For information on how to upgrade to the latest hotfix release, read [Upgrade to an AC Patch Version](manage-airflow-versions.md#patch-versions-of-astronomer-certified).
 
 ### Distribution
 
@@ -70,7 +70,7 @@ For example, the images for Astronomer Certified 2.1.0 would be:
 
 For the smoothest, out-of-the-box Airflow experience, we strongly recommend and default to `buster-onbuild` images in your project's `Dockerfile`. These images incorporate Docker ONBUILD commands to copy and scaffold your Airflow project directory so you can more easily pass those files to the containers running each core Airflow component.
 
-For complex use cases that require customizing AC base image, read [Customize your Airflow Image on Astronomer](customize-image).
+For complex use cases that require customizing AC base image, read [Customize your Airflow Image on Astronomer](customize-image.md).
 
 ## Backport Policy for Bug and Security Fixes
 

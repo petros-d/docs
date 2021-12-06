@@ -22,7 +22,7 @@ On Astronomer, administrators have the option to either open the platform to pub
 
 > **Note:** New users appear under a System Admin's **Users** tab only after the new user has successfully logged in for the first time.
 
-> **Note:** You can bypass the email verification process for new users through a Houston API mutation. For the format of this mutation, see [Sample Mutations](houston-api#sample-mutations).
+> **Note:** You can bypass the email verification process for new users through a Houston API mutation. For the format of this mutation, see [Sample Mutations](houston-api.md#sample-mutations).
 
 ### Enable Public Signups
 
@@ -58,7 +58,7 @@ astronomer:
 
 ```
 
-Then, push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config).
+Then, push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config.md).
 
 ### User Roles on Astronomer
 
@@ -135,7 +135,7 @@ astronomer:
             deployment.images.push: true
 ```
 
-Then, push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config).
+Then, push the configuration change to your platform as described in [Apply a Platform Configuration Change on Astronomer](apply-platform-config.md).
 
 ## System Roles
 

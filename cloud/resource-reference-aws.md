@@ -30,7 +30,7 @@ Read the following document for a reference of our default resources as well as 
 
 Depending on the needs of your team, you may be interested in modifying certain configurations of a new or existing Cluster on Astronomer Cloud. This section provides a reference for which configuration options are supported during the install process.
 
-To create a new Cluster on Astronomer Cloud with a specified configuration, read [Install on AWS](install-aws.md) or [Create a Cluster](create-cluster.md). For instructions on how to make a change to an existing Cluster, read [Modify a Cluster](modify-cluster.md).
+To create a new Cluster on Astronomer Cloud with a specified configuration, read [Install on AWS](install-aws-standard.md.md) or [Create a Cluster](create-cluster.md). For instructions on how to make a change to an existing Cluster, read [Modify a Cluster](modify-cluster.md).
 
 ### AWS Region
 

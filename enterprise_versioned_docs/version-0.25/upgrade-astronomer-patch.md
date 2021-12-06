@@ -8,7 +8,7 @@ id: upgrade-astronomer-stable
 
 Astronomer releases are available to Enterprise customers on a quarterly basis as part of a long-term support (LTS) release model. Critical security and bug fixes will be regularly shipped as patch versions that follow LTS releases.
 
-Patch releases will be made available between quarterly LTS releases and require a simple upgrade process. If you're on Astronomer v0.25, follow the instructions below to upgrade to any v0.25 patch version as soon as it is made available. For information on all patch releases, refer to [Enterprise Release Notes](release-notes).
+Patch releases will be made available between quarterly LTS releases and require a simple upgrade process. If you're on Astronomer v0.25, follow the instructions below to upgrade to any v0.25 patch version as soon as it is made available. For information on all patch releases, refer to [Enterprise Release Notes](release-notes.md).
 
 A few notes before you get started:
 - The following guidelines are only for upgrading to the latest Astronomer v0.25 patch version. To determine whether the latest version of Astronomer is a minor or patch version, read the Astronomer Platform Versioning guidelines below.

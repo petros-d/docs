@@ -19,7 +19,7 @@ This guide provides steps for creating and deleting Deployment API keys.
 
 :::tip
 
-Deployment API keys are an improved and more secure iteration of [Service Accounts](ci-cd#step-1-create-a-service-account), which are available in other Astronomer products.
+Deployment API keys are an improved and more secure iteration of [Service Accounts](ci-cd.md#step-1-create-a-service-account), which are available in other Astronomer products.
 
 :::
 
@@ -64,7 +64,7 @@ curl --location --request POST "https://auth.astronomer.io/oauth/token" \
 
 Make sure to replace `api-key-id` and `api-key-secret` in this request with values that correspond to your own API key.
 
-To avoid manually fetching this token, we strongly recommend adding this API request to any CI/CD pipeline that uses Deployment API keys. That way, your access token is automatically refreshed every time your CI/CD pipeline needs it to complete the deploy code process. For examples of this implementation, see [CI/CD Templates](ci-cd#cicd-templates).
+To avoid manually fetching this token, we strongly recommend adding this API request to any CI/CD pipeline that uses Deployment API keys. That way, your access token is automatically refreshed every time your CI/CD pipeline needs it to complete the deploy code process. For examples of this implementation, see [CI/CD Templates](ci-cd.md#cicd-templates).
 
 ## Delete an API Key
 
