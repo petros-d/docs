@@ -6,7 +6,7 @@ id: modify-cluster
 
 ## Overview
 
-Unless otherwise specified, new Clusters on Astronomer Cloud are created with a set of [default configurations](resource-reference-aws#defaults). Depending on your use case, you may decide that you want to modify an existing Cluster to run a different configuration.
+Unless otherwise specified, new Clusters on Astronomer Cloud are created with a set of [default configurations](resource-reference-aws.md#defaults). Depending on your use case, you may decide that you want to modify an existing Cluster to run a different configuration.
 
 For example, if you have a new set of DAGs that require significantly more CPU and Memory than your existing workloads, you may be interested in modifying your Cluster from running `m5.4xlarge` nodes to running `m5.8xlarge` nodes.
 
@@ -21,7 +21,7 @@ If you don't have a Cluster on Astronomer Cloud, follow [Install Astronomer on A
 
 ## Step 1: Submit a Request to Astronomer
 
-To modify an existing Cluster in your Organization, first verify that the change you want to make is supported by reading [AWS Resource Reference](resource-reference-aws). Then, reach out to [Astronomer Support](https://support.astronomer.io).
+To modify an existing Cluster in your Organization, first verify that the change you want to make is supported by reading [AWS Resource Reference](resource-reference-aws.md). Then, reach out to [Astronomer Support](https://support.astronomer.io).
 
 ## Step 2: Confirm with Astronomer
 

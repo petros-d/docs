@@ -17,7 +17,7 @@ Astronomer is responsible for providing a secure and reliable managed service of
 - Managing the Control Plane and core services (Cloud UI, Cloud API, Deployment Access, and Cloud Image Repository).
 - Securing authentication and authorization to all interfaces (UI, API, and CLI).
 - Automating provisioning, scaling, and configuration management of Astronomer Cloud resources in the Data Plane.
-- Completing ongoing maintenance (currency, hardening, patching) and uptime monitoring of Astronomer Cloud [resources](resource-reference-aws) in the Data Plane.
+- Completing ongoing maintenance (currency, hardening, patching) and uptime monitoring of Astronomer Cloud [resources](resource-reference-aws.md) in the Data Plane.
 - Maintaining data encryption (at rest/in flight) of Astronomer managed components (Control and Data Planes).
 - Consistently releasing production-ready and supported distributions of [Astronomer Runtime](upgrade-runtime.md) for net-new and to-be-upgraded Deployments.
 

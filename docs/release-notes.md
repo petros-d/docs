@@ -34,7 +34,7 @@ You can now create new Clusters in:
 - `ap-southeast-2`
 - `ap-south-1`
 
-For a full list of AWS regions supported on Astronomer Cloud, see [AWS Resource Reference](https://docs.astronomer.io/resource-reference-aws#aws-region).
+For a full list of AWS regions supported on Astronomer Cloud, see [AWS Resource Reference](https://docs.astronomer.io/resource-reference-aws.md#aws-region).
 ### Minor Improvements
 
 - You can now see your Deployment's **Namespace** in the **Deployments** menu and on the Deployment information screen in the Astronomer UI. Namespace is a required argument to run tasks with the KubernetesPodOperator. It is also required to submit an issue to [Astronomer Support](https://support.astronomer.io).
@@ -126,7 +126,7 @@ All user configurations can be found by clicking your user profile picture in th
 
 - You can now create new Clusters in `us-east-2` and `ca-central-1`.
 - In the Deployment detail page, **Astronomer Runtime** now shows the version of Apache Airflow that the Deployment's Astronomer Runtime version is based on.
-- You can now create or modify an existing Astronomer Cluster to run any size of the `t2`,`t3`, `m5`, or `m5d` [AWS EC2 instances](resource-reference-aws).
+- You can now create or modify an existing Astronomer Cluster to run any size of the `t2`,`t3`, `m5`, or `m5d` [AWS EC2 instances](resource-reference-aws.md).
 
 ### Bug Fixes
 

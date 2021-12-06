@@ -34,7 +34,7 @@ Your Astronomer representative will provide you with a unique `External ID` for 
 
 :::info
 
-Astronomer creates new Clusters with a [default AWS resource configuration](resource-reference-aws) unless otherwise specified. If you're interested in a particular EC2 instance type or have any other cluster requirements, let your Astronomer representative know.
+Astronomer creates new Clusters with a [default AWS resource configuration](resource-reference-aws.md) unless otherwise specified. If you're interested in a particular EC2 instance type or have any other cluster requirements, let your Astronomer representative know.
 
 :::
 
