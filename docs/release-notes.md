@@ -28,6 +28,7 @@ For more information about the **Usage** tab, read [Deployment Metrics](deployme
 
 You can now create new Clusters in:
 
+- `us-west-1`
 - `ap-northeast-1 `
 - `ap-southeast-1`
 - `ap-northeast-2`
