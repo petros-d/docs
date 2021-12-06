@@ -32,4 +32,4 @@ The customer is responsible for managing certain security aspects of their Astro
 - Developing and maintaining data pipelines with security and quality coding best practices, inclusive of vulnerability management of plugins and dependencies.
 - Regularly [upgrading their Deployment(s)](upgrade-runtime.md) to the latest Astronomer Runtime version to take advantage of new functionality, as well as bug and security fixes.
 - [Configuring and managing Deployment resource settings](configure-deployment.md) for data pipeline workloads.
-- [Securing the network communications](install-aws-standard.md#step-4-let-astronomer-complete-the-install) between their Data Plane and sensitive data resources.
+- [Securing the network communications](install-aws.md#step-4-let-astronomer-complete-the-install) between their Data Plane and sensitive data resources.

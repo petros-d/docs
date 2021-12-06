@@ -28,7 +28,7 @@ There are two ways to install any version of the Astronomer CLI:
 - [Homebrew](https://brew.sh/)
 - cURL
 
-> **Note:** Both methods only work for Unix (Linux+Mac) based systems. If you're running on Windows 10, follow [this guide](/docs/enterprise/v0.26/develop/cli-install-windows-10/) to get set up with Docker for WSL.
+> **Note:** Both methods only work for Unix (Linux+Mac) based systems. If you're running on Windows 10, follow [this guide](cli-install-windows-10.md) to get set up with Docker for WSL.
 
 ### Prerequisites
 
@@ -198,7 +198,7 @@ You can now push your project to a local instance of Airflow. To do so:
 
 3. Access the Airflow UI for your local Airflow project. To do so, go to http://localhost:8080/ and log in with `admin` for both your Username and Password.
 
-   You should also be able to access your Postgres Database at: `localhost:5432/postgres`. For guidelines on accessing your Postgres database both locally and on Astronomer, refer to the [Access Airflow Database](/docs/enterprise/v0.26/customize-airflow/access-airflow-database/) guide.
+   You should also be able to access your Postgres Database at: `localhost:5432/postgres`. For guidelines on accessing your Postgres database both locally and on Astronomer, refer to the [Access Airflow Database](access-airflow-database.md) guide.
 
    > **Note**: Running `$ astro dev start` will start your project with the Airflow Webserver exposed at port 8080 and Postgres exposed at port 5432.
    >
@@ -285,7 +285,7 @@ Here, the listed versions of Astronomer and the Astronomer CLI are compatible be
 For more information on Astronomer and Astronomer CLI releases, refer to:
 
 * [CLI Release Changelog](https://github.com/astronomer/astro-cli/releases)
-* [Astronomer Release Notes](https://www.astronomer.io/docs/enterprise/v0.26/resources/release-notes)
+* [Astronomer Release Notes](release-notes.md)
 
 ## Video Tutorial
 
@@ -298,10 +298,10 @@ Watch our video tutorial for a brief review of the workflows and concepts descri
 After installing and trying out the Astronomer CLI, we recommend reading through the following guides:
 
 * [Astronomer CLI Reference Guide](cli-reference.md)
-* [Deploy DAGs via the Astronomer CLI](/docs/enterprise/v0.26/deploy/deploy-cli/)
-* [Deploy DAGs via NFS Volume](/docs/enterprise/v0.26/deploy/deploy-nfs/)
-* [Customize Your Image](/docs/enterprise/v0.26/develop/customize-image/)
-* [Upgrade Apache Airflow on Astronomer](/docs/enterprise/v0.26/customize-airflow/manage-airflow-versions/)
-* [Deploy to Astronomer via CI/CD](/docs/enterprise/v0.26/deploy/ci-cd/)
+* [Deploy DAGs via the Astronomer CLI](deploy-cli.md)
+* [Deploy DAGs via NFS Volume](deploy-nfs.md)
+* [Customize Your Image](customize-image.md)
+* [Upgrade Apache Airflow on Astronomer](manage-airflow-versions.md)
+* [Deploy to Astronomer via CI/CD](ci-cd.md)
 
 As always, don't hesitate to reach out to [Astronomer Support](https://support.astronomer.io/hc/en-us) or post in our [Astronomer Forum](https://forum.astronomer.io/) for additional questions.

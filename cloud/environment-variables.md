@@ -22,7 +22,7 @@ This guide covers:
 - How environment variables are stored on Astronomer.
 - How to store Airflow Connections and Variables as environment variables.
 
-> **Note:** Some environment variables on Astronomer Cloud are set globally and cannot be overridden for individual Deployments. For more information on these environment variables, read [Global Environment Variables](global-variables.md).
+> **Note:** Some environment variables on Astronomer Cloud are set globally and cannot be overridden for individual Deployments. For more information on these environment variables, read [Global Environment Variables](platform-variables.md).
 
 ## Set Environment Variables via the Astronomer UI
 

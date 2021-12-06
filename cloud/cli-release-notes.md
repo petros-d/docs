@@ -42,12 +42,12 @@ Release date: September 20, 2021
 
 <<<<<<< HEAD:cloud/cli-release-notes.md
 - Improvement: Bumped the default Astronomer Runtime version for new projects to [`3.0.2`](runtime-release-notes#astronomer-runtime-302)
-- Improvement: You can now use [`astro dev run`](cli-reference#astro-dev-run) to run Airflow CLI commands
-- Improvement: You can now use [`astro dev logs`](cli-reference#astro-dev-logs) to show logs for the Airflow Scheduler and Webserver when developing locally
+- Improvement: You can now use [`astro dev run`](enterprise/cli-reference.md#astro-dev-run) to run Airflow CLI commands
+- Improvement: You can now use [`astro dev logs`](enterprise/cli-reference.md#astro-dev-logs) to show logs for the Airflow Scheduler and Webserver when developing locally
 =======
 - Improvement: Bumped the default Astronomer Runtime version for new projects to [`3.0.2`](runtime-release-notes.md#astronomer-runtime-302)
-- Improvement: You can now use [`astro dev run`](https://www.astronomer.io/docs/cloud/stable/resources/cli-reference#astro-dev-run) to run Airflow CLI commands
-- Improvement: You can now use [`astro dev logs`](https://www.astronomer.io/docs/cloud/stable/resources/cli-reference#astro-dev-logs) to show logs for the Airflow Scheduler and Webserver when developing locally
+- Improvement: You can now use [`astro dev run`](enterprise/cli-reference.md#astro-dev-run) to run Airflow CLI commands
+- Improvement: You can now use [`astro dev logs`](enterprise/cli-reference.md#astro-dev-logs) to show logs for the Airflow Scheduler and Webserver when developing locally
 >>>>>>> 250ebdcc7465130f0c4bbb61bbb3cfb533a87374:docs/cli-release-notes.md
 
 ## v0.2.8-beta

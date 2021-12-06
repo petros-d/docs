@@ -64,17 +64,8 @@ Once you log in, you should see the DAGs you just deployed.
 
 Now that you're familiar with deploying DAGs to Astronomer Cloud, consider reading:
 
-<<<<<<< HEAD:cloud/deploy-code.md
-<<<<<<< HEAD:cloud/deploy-code.md
-- [Develop Locally](develop-locally)
-=======
-- [Develop Project](develop-project)
->>>>>>> 44ec2e1dc9b109b8711df782ea92b80580159ff8:docs/deploy-code.md
-- [Set Environment Variables](environment-variables)
-=======
 - [Develop Project](develop-project.md)
 - [Set Environment Variables](environment-variables.md)
->>>>>>> 250ebdcc7465130f0c4bbb61bbb3cfb533a87374:docs/deploy-code.md
 
 For up-to-date information about product limitations, read [Known Limitations](known-limitations.md).
 

@@ -9,7 +9,7 @@ description: Astronomer Enterprise release notes.
 
 This document includes all release notes for Astronomer Enterprise v0.26.
 
-Astronomer v0.26 is the latest Stable version of Astronomer Enterprise, while v0.25 remains the latest long-term support (LTS) version. To upgrade to Astronomer v0.26 from v0.25, read [Upgrade to v0.26](upgrade-to-0-2/). For more information about Enterprise release channels, read [Release and Lifecycle Policies](release-lifecycle-policy.md).
+Astronomer v0.26 is the latest Stable version of Astronomer Enterprise, while v0.25 remains the latest long-term support (LTS) version. To upgrade to Astronomer v0.26 from v0.25, read [Upgrade to v0.26](upgrade-to-0-26). For more information about Enterprise release channels, read [Release and Lifecycle Policies](release-lifecycle-policy.md).
 
 We're committed to testing all Astronomer Enterprise versions for scale, reliability and security on Amazon EKS, Google GKE and Azure AKS. If you have any questions or an issue to report, don't hesitate to [reach out to us](https://support.astronomer.io).
 

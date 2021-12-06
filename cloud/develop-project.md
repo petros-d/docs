@@ -251,7 +251,7 @@ docker exec -it <container-name> ls -al
 
 :::info
 
-The Astronomer CLI does not support overrides to environment variables that are required globally. For the list of environment variables that Astronomer enforces, see [Global Environment Variables](global-variables.md). To learn more about environment variables, read [Environment Variables](environment-variables.md).
+The Astronomer CLI does not support overrides to environment variables that are required globally. For the list of environment variables that Astronomer enforces, see [Global Environment Variables](platform-variables.md). To learn more about environment variables, read [Environment Variables](environment-variables.md).
 
 :::
 

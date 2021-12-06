@@ -15,7 +15,7 @@ This guide provides steps for adding a user to an Astronomer Workspace.
 
 To add a user to a Workspace, you must have:
 
-- An [Organization on Astronomer Cloud](install-aws-standard.md).
+- An [Organization on Astronomer Cloud](install-aws.md).
 - Workspace Admin permissions.
 
 ## Step 1: Invite the User to Astronomer
