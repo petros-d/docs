@@ -10,6 +10,28 @@ Astronomer Runtime is a Docker image built and published by Astronomer that exte
 
 For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runtime.md). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes.md). If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or [support@astronomer.io](mailto:support@astronomer.io).
 
+## Astronomer Runtime 4.0.6
+
+- Release date: December 2, 2021
+- Airflow version: 2.2.2
+
+### Minor Improvements
+
+- User-supplied `airflow.cfg` files are no longer valid in Astronomer projects. [Environment variables](environment-variables.md) are now the only valid method for setting Airflow configuration options.
+
+### Bug Fixes
+
+- Fixed an issue where the **Browse** menu of the Airflow UI was hidden in some versions of Astronomer Runtime
+
+## Astronomer Runtime 4.0.5
+
+- Release date: November 29, 2021
+- Airflow version: 2.2.2
+
+### Bug Fixes
+
+- Fixed an issue where Astronomer Cloud's S3 logging hook prevented users from setting up S3 as a custom XCom backend
+
 ## Astronomer Runtime 4.0.4
 
 - Release date: November 19, 2021

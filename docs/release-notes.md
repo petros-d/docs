@@ -10,9 +10,50 @@ Astronomer is committed to continuous development of Astronomer Cloud. As you gr
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
-**Latest Runtime Version**: 4.0.4 ([Release notes](runtime-release-notes.md))
+**Latest Runtime Version**: 4.0.6 ([Release notes](runtime-release-notes.md))
 
 **Latest CLI Version**: 1.0.3 ([Release notes](cli-release-notes.md))
+
+## December 2, 2021
+
+### "Usage" Tab in the Astronomer UI
+
+Total task volume for your Organization is now available in a new **Usage** tab in the Astronomer Cloud UI. Astronomer Cloud is priced based on successful task runs, so this view can help you monitor both Astronomer cost as well as Airflow usage in aggregate and between Deployments.
+
+![Usage tab in the Astronomer UI](/img/docs/usage.png)
+
+For more information about the **Usage** tab, read [Deployment Metrics](deployment-metrics.md#usage).
+
+### New AWS Regions Available
+
+You can now create new Clusters in:
+
+- `ap-northeast-1 `
+- `ap-southeast-1`
+- `ap-northeast-2`
+- `ap-southeast-2`
+- `ap-south-1`
+
+For a full list of AWS regions supported on Astronomer Cloud, see [AWS Resource Reference](https://docs.astronomer.io/resource-reference-aws#aws-region).
+### Minor Improvements
+
+- You can now see your Deployment's **Namespace** in the **Deployments** menu and on the Deployment information screen in the Astronomer UI. Namespace is a required argument to run tasks with the KubernetesPodOperator. It is also required to submit an issue to [Astronomer Support](https://support.astronomer.io).
+
+    ![Deployment namespace available on a Deployment's information page](/img/docs/namespace.png)
+
+- The Astronomer UI now shows a warning if you attempt to exit Environment Variable configuration without saving your changes.
+- A Deployment's health status is now based on the health of both the Airflow Webserver and Scheduler. Previously, a Deployment's health status was only based on the health of the Webserver. Now, the Astronomer UI will show that your Deployment is "Healthy" only if both components are running as expected.
+
+### Bug Fixes
+
+- The Astronomer UI now has error handling for attempts to access a Deployment that does not exist.
+- If you attempt to modify an existing secret environment variable, the **Value** field is now blank instead of showing hidden characters.
+
+### Data Plane Improvements
+
+- Amazon EBS volumes have been upgraded from gp2 to [gp3](https://aws.amazon.com/about-aws/whats-new/2020/12/introducing-new-amazon-ebs-general-purpose-volumes-gp3/) for improved scale and performance.
+- EBS volumes and S3 buckets are now encrypted by default.
+- The ability to enable public access to any Amazon S3 bucket on an Astronomer Cloud data plane is now blocked. Previously, public access was disabled by default but could be overriden by AWS account owners.
 
 ## November 19, 2021
 

@@ -37,9 +37,15 @@ Astronomer Cloud supports the following AWS regions:
 
 - `us-east-1`
 - `us-east-2`
+- `us-west-1`
 - `us-west-2`
 - `ca-central-1`
 - `sa-east-1`
+- `ap-northeast-1 `
+- `ap-southeast-1`
+- `ap-northeast-2`
+- `ap-southeast-2`
+- `ap-south-1`
 
 Modifying the region of an existing Cluster on Astronomer is not supported. If you're interested in an AWS region that is not on this list, reach out to [Astronomer Support](https://support.astronomer.io).
 
@@ -51,9 +57,9 @@ For detailed information on each instance type, reference [AWS documentation](ht
 
 **m5**
    - m5.large
-   - m5.xlarge
+   - m5.xlarge (*default*)
    - m5.2xlarge
-   - m5.4xlarge (*default*)
+   - m5.4xlarge
    - m5.8xlarge
    - m5.12xlarge
    - m5.16xlarge
@@ -90,8 +96,10 @@ Currently, a single Cluster on Astronomer Cloud cannot be configured with more t
 
 :::tip
 
-With the exception of `m5d` nodes, all suppported node types have a maximum of 20GB of storage per node. If you need more than 20GB of storage, we recommend modifying your cluster to run `m5d` nodes, which Astronomer provisions with NVMe SSDs out-of-the-box.
+With the exception of `m5d` nodes, all suppported node types have a maximum of 20GB of storage per node. If you need more than 20GB of storage, we recommend modifying your cluster to run `m5d` nodes, which Astronomer provisions with NVMe SSD volumes out-of-the-box.
 
-Keep in mind that passing significant ephemeral storage is not recommended and can be a risk to infrastructure resilience. If you need to pass significant data between Airflow tasks, we recommend using an [XCom backend](https://airflow.apache.org/docs/apache-airflow/stable/concepts/xcoms.html) such as AWS S3 or Google Cloud Storage (GCS). For more information and best practices, read our Airflow Guide on [Passing Data Between Airflow Tasks](https://www.astronomer.io/guides/airflow-passing-data-between-tasks).
+Astronomer plans to support optional ephemeral storage for all node instance types in the first half of 2022.
+
+Keep in mind that leveraging ephemeral storage is not recommended and can be a risk to task resilience. If you need to pass significant data between Airflow tasks, we recommend using an [XCom backend](https://airflow.apache.org/docs/apache-airflow/stable/concepts/xcoms.html) such as AWS S3 or Google Cloud Storage (GCS). For more information and best practices, read our Airflow Guide on [Passing Data Between Airflow Tasks](https://www.astronomer.io/guides/airflow-passing-data-between-tasks).
 
 :::
