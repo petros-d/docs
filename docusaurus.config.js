@@ -21,10 +21,10 @@ module.exports = {
 
       // Optional: see doc section below
       appId: '4E2UUYA7WA',
-
+      inputSelector:'.DocSearch',
       // Optional: Algolia search parameters
       searchParameters: {
-        facetFilters: `docusaurus_tag`
+        facetFilters: []
       },
 
       //... other Algolia params
@@ -149,6 +149,7 @@ module.exports = {
     ],
   ],
   plugins: [
+    'docusaurus2-dotenv',
     [
       '@docusaurus/plugin-content-docs',
       {
