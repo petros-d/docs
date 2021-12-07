@@ -2,7 +2,7 @@
 sidebar_label: 'Data Protection'
 title: "Data Protection"
 id: data-protection
-description: Learn how Astronomer uses encryption to protect Clusters and data.
+description: Learn how Astronomer uses encryption to protect clusters and data.
 ---
 
 ## Overview
@@ -11,9 +11,9 @@ Astronomer Cloud uses both encryption in transit and encryption at rest to prote
 
 ## Encryption in Transit
 
-All communication between Control and Data Planes is encrypted in transit using [TLS](https://www.acunetix.com/blog/articles/tls-security-what-is-tls-ssl-part-1/) 1.2, strong ciphers, and secure transfer (data layer). Likewise, internal service communication inside both Control Plane and Data Plane Clusters passes through a mTLS mesh, enforcing TLS 1.2 and secure strong ciphers.
+All communication between Control and Data Planes is encrypted in transit using [TLS](https://www.acunetix.com/blog/articles/tls-security-what-is-tls-ssl-part-1/) 1.2, strong ciphers, and secure transfer (data layer). Likewise, internal service communication inside both Control Plane and Data Plane clusters passes through a mTLS mesh, enforcing TLS 1.2 and secure strong ciphers.
 
-Each Cluster in your Data Plane has its own certificates which were generated when the Cluster was created and signed by the Let’s Encrypt Certificate Authority (CA). In 2022, Astronomer will enhance the security posture of Data Plane clusters by removing public IPs and the need to sign certificates with a public CA.
+Each cluster in your Data Plane has its own certificates which were generated when the cluster was created and signed by the Let’s Encrypt Certificate Authority (CA). In 2022, Astronomer will enhance the security posture of Data Plane clusters by removing public IPs and the need to sign certificates with a public CA.
 
 ## Encryption at Rest
 
