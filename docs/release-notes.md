@@ -14,7 +14,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 **Latest CLI Version**: 1.0.3 ([Release notes](cli-release-notes.md))
 
-## December 2, 2021
+## December 6, 2021
 
 ### "Usage" Tab in the Astronomer UI
 
@@ -33,6 +33,8 @@ You can now create new Clusters in:
 - `ap-northeast-2`
 - `ap-southeast-2`
 - `ap-south-1`
+- `us-west-1`
+- `us-west-2`
 
 For a full list of AWS regions supported on Astronomer Cloud, see [AWS Resource Reference](https://docs.astronomer.io/resource-reference-aws.md#aws-region).
 ### Minor Improvements
