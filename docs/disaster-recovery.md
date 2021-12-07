@@ -13,7 +13,7 @@ To withstand a full region outage and achieve near real-time recovery, Astronome
 
 To simplify the responsibility of maintaining two Clusters, Astronomer plans to invest in Cluster and Deployment syncing strategies in 2022. If you're interested in this functionality, please reach out and share feedback with [Astronomer Support](https://support.astronomer.io/).
 
-## Full-Region Outages
+## Full Region Outages
 
 In the case of a full region outage, Astronomer will re-provision your Cluster(s) and all Deployments in an alternate region. The re-provisioning includes:
 
