@@ -151,7 +151,7 @@ To do this:
     └── requirements.txt
     ```
 
-    In this example, the directory is named `helper-functions`. You can give it any name.
+    In this example, the directory is named `helper_functions`. You can give it any name.
 
 2. [Restart Your Local Environment](develop-project.md#restart-your-local-environment).
 
