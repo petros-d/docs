@@ -10,17 +10,66 @@ Astronomer is committed to continuous development of Astronomer Cloud. As you gr
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 
-**Latest Runtime Version**: 4.0.4 ([Release notes](runtime-release-notes))
+**Latest Runtime Version**: 4.0.6 ([Release notes](runtime-release-notes.md))
 
-**Latest CLI Version**: 1.0.3 ([Release notes](cli-release-notes))
+**Latest CLI Version**: 1.0.3 ([Release notes](cli-release-notes.md))
+
+## December 6, 2021
+
+### "Usage" Tab in the Astronomer UI
+
+Total task volume for your Organization is now available in a new **Usage** tab in the Astronomer Cloud UI. Astronomer Cloud is priced based on successful task runs, so this view can help you monitor both Astronomer cost as well as Airflow usage in aggregate and between Deployments.
+
+![Usage tab in the Astronomer UI](/img/docs/usage.png)
+
+For more information about the **Usage** tab, read [Deployment Metrics](deployment-metrics.md#usage).
+
+### New AWS Regions Available
+
+You can now create new Clusters in:
+
+- `us-west-1`
+- `ap-northeast-1 `
+- `ap-southeast-1`
+- `ap-northeast-2`
+- `ap-southeast-2`
+- `ap-south-1`
+- `us-west-1`
+- `us-west-2`
+
+For a full list of AWS regions supported on Astronomer Cloud, see [AWS Resource Reference](https://docs.astronomer.io/resource-reference-aws.md#aws-region).
+
+### Additional Improvements
+
+- You can now see your Deployment's **Namespace** in the **Deployments** menu and on the Deployment information screen in the Astronomer UI. Namespace is a required argument to run tasks with the KubernetesPodOperator. It is also required to submit an issue to [Astronomer Support](https://support.astronomer.io).
+
+    ![Deployment namespace available on a Deployment's information page](/img/docs/namespace.png)
+
+- The Astronomer UI now shows a warning if you attempt to exit Environment Variable configuration without saving your changes.
+- A Deployment's health status is now based on the health of both the Airflow Webserver and Scheduler. Previously, a Deployment's health status was only based on the health of the Webserver. Now, the Astronomer UI will show that your Deployment is "Healthy" only if both components are running as expected.
+
+### Bug Fixes
+
+- The Astronomer UI now has error handling for attempts to access a Deployment that does not exist.
+- If you attempt to modify an existing secret environment variable, the **Value** field is now blank instead of showing hidden characters.
+
+### Data Plane Improvements
+
+- Amazon EBS volumes have been upgraded from gp2 to [gp3](https://aws.amazon.com/about-aws/whats-new/2020/12/introducing-new-amazon-ebs-general-purpose-volumes-gp3/) for improved scale and performance.
+- EBS volumes and S3 buckets are now encrypted by default.
+- The ability to enable public access to any Amazon S3 bucket on an Astronomer Cloud data plane is now blocked. Previously, public access was disabled by default but could be overriden by AWS account owners.
 
 ## November 19, 2021
 
 ### Secret Environment Variables
 
-You can now set secret environment variables via the Astronomer Cloud UI. The values of secret environment variables are hidden from all users in your Workspace, making them ideal for storing sensitive information related to your Astronomer projects. For more information, read [Set Environment Variables via the Astronomer UI](environment-variables#set-environment-variables-via-the-astronomer-ui).
+You can now set secret environment variables via the Astronomer Cloud UI. The values of secret environment variables are hidden from all users in your Workspace, making them ideal for storing sensitive information related to your Astronomer projects.
 
-### Minor Improvements
+![Secrets checkbox available in the Astronomer UI](/img/release-notes/secrets-feature.png)
+
+For more information, read [Set Environment Variables via the Astronomer UI](environment-variables.md#set-environment-variables-via-the-astronomer-ui).
+
+### Additional Improvements
 
 - You can now create new Clusters in AWS `sa-east-1`.
 - Extra whitespace at the end of any environment variable that is set via the Astronomer UI is now automatically removed to ensure the variable is passed correctly.
@@ -35,7 +84,7 @@ In the Astronomer UI, your Deployment pages now show high-level metrics for Depl
   <img src="/img/docs/deployment-metrics.png" alt="New metrics in the Cloud UI" />
 </div>
 
-For more information on this feature, read [Deployment Metrics](deployment-metrics).
+For more information on this feature, read [Deployment Metrics](deployment-metrics.md).
 
 ### Bug Fixes
 
@@ -77,11 +126,11 @@ All user configurations can be found by clicking your user profile picture in th
   <img src="/img/docs/ui-release-note3.png" alt="New profile menu in the UI" />
 </div>
 
-### Minor Improvements
+### Additional Improvements
 
 - You can now create new Clusters in `us-east-2` and `ca-central-1`.
 - In the Deployment detail page, **Astronomer Runtime** now shows the version of Apache Airflow that the Deployment's Astronomer Runtime version is based on.
-- You can now create or modify an existing Astronomer Cluster to run any size of the `t2`,`t3`, `m5`, or `m5d` [AWS EC2 instances](resource-reference-aws).
+- You can now create or modify an existing Astronomer Cluster to run any size of the `t2`,`t3`, `m5`, or `m5d` [AWS EC2 instances](resource-reference-aws.md).
 
 ### Bug Fixes
 
@@ -96,7 +145,7 @@ All user configurations can be found by clicking your user profile picture in th
 
 ## October 25, 2021
 
-### Minor Improvements
+### Additional Improvements
 
 - When deleting a Deployment via the UI, you now have to type the name of the Deployment in order to confirm its deletion.
 
@@ -107,7 +156,7 @@ All user configurations can be found by clicking your user profile picture in th
 
 ## October 15, 2021
 
-### Minor Improvements
+### Additional Improvements
 
 - When creating a new Deployment, you can now select only the latest patch version for each major version of Astronomer Runtime.
 - When creating a new Deployment in the Astronomer UI, the cluster is pre-selected if there is only one cluster available.
@@ -128,7 +177,7 @@ All user configurations can be found by clicking your user profile picture in th
 
 ## October 1, 2021
 
-### Minor Improvements
+### Additional Improvements
 
 - In the Astronomer UI, the **Open Airflow** button is now disabled until the Airflow UI of the Deployment is available.
 - Workspace Admins can now edit user permissions and remove users within a given Workspace.
@@ -137,11 +186,11 @@ All user configurations can be found by clicking your user profile picture in th
 
 :::danger
 
-This release introduces a breaking change to code deploys via the Astronomer CLI. Starting on September 28, you must upgrade to v1.0.0 of the CLI to deploy code to Astronomer. [CI/CD processes](ci-cd) enabled by Deployment API keys will continue to work and will not be affected. For more information, read the [CLI release notes](cli-release-notes).
+This release introduces a breaking change to code deploys via the Astronomer CLI. Starting on September 28, you must upgrade to v1.0.0 of the CLI to deploy code to Astronomer. [CI/CD processes](ci-cd.md) enabled by Deployment API keys will continue to work and will not be affected. For more information, read the [CLI release notes](cli-release-notes.md).
 
 :::
 
-### Minor Improvements
+### Additional Improvements
 
 - In the Astronomer UI, a new element on the Deployment information screen shows the health status of a Deployment. Currently, a Deployment is considered unhealthy if the Airflow Webserver is not running and the Airflow UI is not available:
 
@@ -159,7 +208,7 @@ This release introduces a breaking change to code deploys via the Astronomer CLI
 
 ### Support for Deployment API Keys
 
-Astronomer Cloud now officially supports Deployment API keys, which you can use to automate code pushes to Astronomer and integrate your environment with a CI/CD tool such as GitHub Actions. For more information on creating and managing Deployment API keys, see [Deployment API keys](api-keys). For more information on using Deployment API keys to programmatically deploy code, see [CI/CD](ci-cd). Support making requests to Airflow's REST API using API keys is coming soon.
+Astronomer Cloud now officially supports Deployment API keys, which you can use to automate code pushes to Astronomer and integrate your environment with a CI/CD tool such as GitHub Actions. For more information on creating and managing Deployment API keys, see [Deployment API keys](api-keys.md). For more information on using Deployment API keys to programmatically deploy code, see [CI/CD](ci-cd.md). Support making requests to Airflow's REST API using API keys is coming soon.
 
 ## September 3, 2021
 
@@ -173,7 +222,7 @@ Astronomer Cloud now officially supports Deployment API keys, which you can use 
 
 ## August 27, 2021
 
-### Minor Improvements
+### Additional Improvements
 
 - You can now remain authenticated to Astronomer across multiple active browser tabs. For example, if your session expires and you re-authenticate to Astronomer Cloud on one tab, all other tabs running Astronomer Cloud will be automatically updated without refreshing.
 - If you try to access a given page on Astronomer Cloud while unauthenticated and reach the login screen, logging in now brings you to the original page you requested.
@@ -186,9 +235,9 @@ Astronomer Cloud now officially supports Deployment API keys, which you can use 
 
 ### Support for the Airflow REST API
 
-You can now programmatically trigger DAGs and update your Airflow Deployments on Astronomer by making requests to Airflow's [REST API](https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html). Currently this feature works only with temporary tokens, which are available at `cloud.astronomer.io/token`. Support for Deployment API keys is coming soon. For more information on using this feature, read [Airflow API](airflow-api).
+You can now programmatically trigger DAGs and update your Airflow Deployments on Astronomer by making requests to Airflow's [REST API](https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html). Currently this feature works only with temporary tokens, which are available at `cloud.astronomer.io/token`. Support for Deployment API keys is coming soon. For more information on using this feature, read [Airflow API](airflow-api.md).
 
-### Minor Improvements
+### Additional Improvements
 
 - Set `AIRFLOW_HOME = 'usr/local/airflow'` as a permanent global environment variable
 - In the Astronomer UI, long environment variable keys and values now wrap to fit the screen
@@ -209,7 +258,7 @@ You can now programmatically trigger DAGs and update your Airflow Deployments on
 
 ## August 6, 2021
 
-### Minor Improvements
+### Additional Improvements
 
 - Informational tooltips are now available on the **New Deployment** page.
 

@@ -78,7 +78,7 @@ module.exports = {
         },
         'known-limitations',
         'resource-reference-aws',
-        'global-variables',
+        'platform-variables',
       ],
     },
     {

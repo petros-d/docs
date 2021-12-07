@@ -15,7 +15,7 @@ At a high-level, we'll ask that you come prepared with a new AWS account. From t
 
 Astronomer will then create a Cluster within your AWS account that hosts the resources and Apache Airflow components necessary to deploy DAGs and execute tasks. If you'd like to support more than 1 Astronomer Cluster, [reach out to us](https://support.astronomer.io).
 
-For a complete list of the AWS resources that our team will provision in your AWS account, see [Resource Usage](resource-reference-aws).
+For a complete list of the AWS resources that our team will provision in your AWS account, see [Resource Usage](resource-reference-aws.md).
 
 ## Prerequisites
 
@@ -65,7 +65,7 @@ For the AWS account you created as a prerequisite, provide Astronomer with:
 - The AWS region that you want to host your Cluster in.
 - Your preferred node instance type.
 
-If not specified, we will create a Cluster with two `m5.xlarge` nodes in `us-east-1` by default. For information on all supported regions and configurations, see [AWS Resource Reference](resource-reference-aws).
+If not specified, we will create a Cluster with two `m5.xlarge` nodes in `us-east-1` by default. For information on all supported regions and configurations, see [AWS Resource Reference](resource-reference-aws.md).
 
 From here, our team will provision an Astronomer Cluster according to the specifications you provided.
 
@@ -129,7 +129,7 @@ The output of the last command is a YAML file containing information about the r
 }
 ```
 
-To provision additional Clusters, complete the setup in [Create a Cluster](create-cluster) after completing your initial installation.
+To provision additional Clusters, complete the setup in [Create a Cluster](create-cluster.md) after completing your initial installation.
 
 ## Step 4: Let Astronomer Complete the Install
 
@@ -152,7 +152,7 @@ This process can take some time. Wait for confirmation that the installation was
 
 ## Step 5: Create a Deployment
 
-Once our team confirms that your Astronomer Cluster has been created, you are ready to create a Deployment and start deploying DAGs. Log in to [the Astronomer UI](https://cloud.astronomer.io) again and [create a new Deployment](configure-deployment). If the installation was successful, your new Astronomer Cluster will be listed as an option under the **Cluster** menu:
+Once our team confirms that your Astronomer Cluster has been created, you are ready to create a Deployment and start deploying DAGs. Log in to [the Astronomer UI](https://cloud.astronomer.io) again and [create a new Deployment](configure-deployment.md). If the installation was successful, your new Astronomer Cluster will be listed as an option under the **Cluster** menu:
 
 <div class="text--center">
   <img src="/img/docs/cluster-menu.png" alt="Astronomer UI New Deployment screen" />
@@ -162,7 +162,7 @@ Once our team confirms that your Astronomer Cluster has been created, you are re
 
 Now that you have an Astronomer Cluster up and running, take a look at the docs below for information on how to start working in Astronomer:
 
-- [Install CLI](install-cli)
-- [Configure Deployments](configure-deployment)
-- [Deploy Code](deploy-code)
-- [Add Users](add-user)
+- [Install CLI](install-cli.md)
+- [Configure Deployments](configure-deployment.md)
+- [Deploy Code](deploy-code.md)
+- [Add Users](add-user.md)

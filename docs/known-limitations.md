@@ -21,10 +21,10 @@ If you have questions or thoughts about any item below, don't hesitate to reach 
 - We do not currently support PgBouncer, but the RDS instance provisioned in your Cluster will support around 1000 connections to your database, enough to support 10-12 Deployments.
 - Tasks longer than the worker termination grace period may become zombies.
 - If a user changes Workspace roles on Astronomer, it can take a maximum of 10 minutes for corresponding Airflow permission changes to take effect.
-- The usage of [Deployment API Keys](api-keys) in [CI/CD processes](ci-cd) currently requires fetching a short-lived authentication token and making requests directly to our Docker registry and the Astronomer API. Native support for Deployment API Keys in the Astronomer CLI is coming soon.
+- The usage of [Deployment API Keys](api-keys.md) in [CI/CD processes](ci-cd.md) currently requires fetching a short-lived authentication token and making requests directly to our Docker registry and the Astronomer API. Native support for Deployment API Keys in the Astronomer CLI is coming soon.
 - The Astronomer CLI is generally limited to `astro dev` commands, in addition to `astro deploy` and `astro auth`. Full functionality is coming soon.
-- Clicking on **Refresh DAG** in the Airflow UI will redirect you to `<org-name>.astronomer.run` (Astronomer Home Page) instead of the task instance URL. We recommend upgrading to [Runtime 4.0](runtime-release-notes#astronomer-runtime-400), as Airflow 2.2 no longer supports this refresh button in the Airflow UI.
-- [Deferrable operators](deferrable-operators) cannot be tested in local Airflow environments running via the Astronomer CLI. To use deferrable operators, you must have a Deployment running [Runtime 4.0+](runtime-release-notes#astronomer-runtime-400).
+- Clicking on **Refresh DAG** in the Airflow UI will redirect you to `<org-name>.astronomer.run` (Astronomer Home Page) instead of the task instance URL. We recommend upgrading to [Runtime 4.0](runtime-release-notes.md#astronomer-runtime-400), as Airflow 2.2 no longer supports this refresh button in the Airflow UI.
+- [Deferrable operators](deferrable-operators.md) cannot be tested in local Airflow environments running via the Astronomer CLI. To use deferrable operators, you must have a Deployment running [Runtime 4.0+](runtime-release-notes.md#astronomer-runtime-400).
 
 ## Coming Soon
 

@@ -8,7 +8,29 @@ id: runtime-release-notes
 
 Astronomer Runtime is a Docker image built and published by Astronomer that extends the Apache Airflow project to provide a differentiated experience. This document provides a summary of all changes made to each available version of Astronomer Runtime.
 
-For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runtime). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes). If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or [support@astronomer.io](mailto:support@astronomer.io).
+For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runtime.md). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes.md). If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or [support@astronomer.io](mailto:support@astronomer.io).
+
+## Astronomer Runtime 4.0.6
+
+- Release date: December 2, 2021
+- Airflow version: 2.2.2
+
+### Additional Improvements
+
+- User-supplied `airflow.cfg` files are no longer valid in Astronomer projects. [Environment variables](environment-variables.md) are now the only valid method for setting Airflow configuration options.
+
+### Bug Fixes
+
+- Fixed an issue where the **Browse** menu of the Airflow UI was hidden in some versions of Astronomer Runtime
+
+## Astronomer Runtime 4.0.5
+
+- Release date: November 29, 2021
+- Airflow version: 2.2.2
+
+### Bug Fixes
+
+- Fixed an issue where Astronomer Cloud's S3 logging hook prevented users from setting up S3 as a custom XCom backend
 
 ## Astronomer Runtime 4.0.4
 
@@ -24,7 +46,7 @@ For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-ru
 - Release date: November 15, 2021
 - Airflow version: 2.2.2
 
-### Minor Improvements
+### Additional Improvements
 
 - Added support for [Airflow 2.2.2](https://airflow.apache.org/docs/apache-airflow/stable/changelog.html#airflow-2-2-2-2021-11-15), which includes a series of bug fixes for timetables, DAG scheduling, and database migrations. Most notably, it resolves an issue where some DAG runs would be missing in the Airflow UI if `catchup=True` was set.
 
@@ -37,7 +59,7 @@ For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-ru
 - Release date: October 29, 2021
 - Airflow version: 2.2.1
 
-### Minor Improvements
+### Additional Improvements
 
 - Added support for [Airflow 2.2.1](https://airflow.apache.org/docs/apache-airflow/stable/changelog.html#airflow-2-2-1-2021-10-29), which includes a series of bug fixes that address intermittent problems with database migrations from Airflow 2.1 to Airflow 2.2
 
@@ -74,7 +96,7 @@ For more information on using timetables, read the [Apache Airflow Documentation
 
 Existing Airflow operators have to be re-written according to the deferrable operator framework. In addition to supporting those available in the open source project, Astronomer has built an exclusive collection of deferrable operators in Runtime 4.0.0. This collection includes the `DatabricksSubmitRunOperator`, the `DatabricksRunNowOperator`, and the `ExternalTaskSensor`. These are designed to be drop-in replacements for corresponding operators currently in use.
 
-As part of supporting deferrable operators, the Triggerer is now available as a fully managed component on Astronomer Cloud. This means that you can start using deferrable operators in your DAGs as soon as you're ready. For more general information on deferrable operators, as well as how to use Astronomer's exclusive deferrable operators, read [Deferrable Operators](deferrable-operators).
+As part of supporting deferrable operators, the Triggerer is now available as a fully managed component on Astronomer Cloud. This means that you can start using deferrable operators in your DAGs as soon as you're ready. For more general information on deferrable operators, as well as how to use Astronomer's exclusive deferrable operators, read [Deferrable Operators](deferrable-operators.md).
 
 ## Astronomer Runtime 3.0.4
 
@@ -109,7 +131,7 @@ As part of supporting deferrable operators, the Triggerer is now available as a 
 - Release date: September 1, 2021
 - Airflow version: 2.1.1
 
-### Minor improvements
+### Additional improvements
 
 - Upgraded the default Python version to `3.9.6`
 - Added a link to Astronomer Cloud documentation in the Airflow UI
@@ -124,7 +146,7 @@ As part of supporting deferrable operators, the Triggerer is now available as a 
 - Release date: August 12, 2021
 - Airflow version: 2.1.1
 
-### Minor improvements
+### Additional improvements
 
 - The Webserver is now the only Airflow component with access to logs, which reduces the risk of exposing sensitive information in logs ([commit](https://github.com/apache/airflow/pull/16754))
 - Added support for Python 3.9 ([commit](https://github.com/apache/airflow/pull/15515))

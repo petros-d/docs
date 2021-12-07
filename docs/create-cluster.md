@@ -19,25 +19,21 @@ This guide provides instructions for provisioning additional Clusters within you
 
 To complete this setup, you need to have:
 
-- Completed the initial Astronomer Cloud install process as described in [Install on AWS](install-aws).
+- Completed the initial Astronomer Cloud install process as described in [Install on AWS](install-aws.md).
 - Permissions to edit trust policies in your AWS account for Astronomer.
 
 ## Step 1: Submit a Request to Astronomer
 
 To create a new Cluster in your Organization, you must first reach out to your Astronomer representative. For each new Cluster that you want to provision, you'll need to provide our team with the following information:
 
-  - Your AWS Account ID
-  - Your preferred Cluster name
-  - The AWS region that you want to host the Cluster in (`us-east-1`, `us-east-2`, `us-west-2` or `ca-central-1`)
+- Your AWS Account ID.
+- Your preferred Astronomer Cluster name.
+- The AWS region that you want to host your Cluster in.
+- Your preferred node instance type.
 
-Your Astronomer representative will provide you with a unique `External ID` for each new Cluster. Make note of this value for the next step.
+If not specified, we will create a Cluster with two `m5.xlarge` nodes in `us-east-1` by default. For information on all supported regions, configurations, and defaults, see [AWS Resource Reference](resource-reference-aws.md).
 
-:::info
-
-Astronomer creates new Clusters with a [default AWS resource configuration](resource-reference-aws) unless otherwise specified. If you're interested in a particular EC2 instance type or have any other cluster requirements, let your Astronomer representative know.
-
-:::
-
+From there, your Astronomer representative will provide you with a unique `External ID` for each new Cluster. Make note of this value for the next step.
 
 ## Step 2: Edit Your AWS Trust Policy
 
@@ -101,4 +97,4 @@ Once you have finished configuring the trust policy, notify Astronomer that you 
 
 Once your Cluster is available, you should be able to create a new Deployment within that cluster. To do so, go to your Workspace and select **Create Deployment** > **Deployment Location**.
 
-For more information, read [creating a new Deployment](configure-deployment).
+For more information, read [creating a new Deployment](configure-deployment.md).

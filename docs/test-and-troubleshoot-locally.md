@@ -10,7 +10,7 @@ As you develop data pipelines on Astronomer, we strongly recommend running and t
 
 ## Run a Project Locally
 
-Whenever you want to test your code, the first step is always to start a local Airflow environment. To run your project in a local Airflow environment, follow the steps in [Build and Run a Project](develop-project#build-and-run-a-project-locally).
+Whenever you want to test your code, the first step is always to start a local Airflow environment. To run your project in a local Airflow environment, follow the steps in [Build and Run a Project](develop-project.md#build-and-run-a-project-locally).
 
 ## View Airflow Task Logs
 
@@ -73,7 +73,7 @@ For example, the Apache Airflow command for viewing your entire configuration is
 
 ## Hard Reset Your Local Environment
 
-In most cases, [restarting your local project](develop-project#restart-your-local-environment) is sufficient for testing and making changes to your project. However, it is sometimes necessary to kill your Docker containers and metadata DB for testing purposes. To do so, run the following command:
+In most cases, [restarting your local project](develop-project.md#restart-your-local-environment) is sufficient for testing and making changes to your project. However, it is sometimes necessary to kill your Docker containers and metadata DB for testing purposes. To do so, run the following command:
 
 ```sh
 astro dev kill
