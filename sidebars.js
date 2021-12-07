@@ -79,7 +79,6 @@ module.exports = {
         'known-limitations',
         'resource-reference-aws',
         'global-variables',
-        'shared-responsibility-model',
       ],
     },
     {
