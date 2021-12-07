@@ -15,7 +15,7 @@ export default function useAlgoliaContextualFacetFilters() {
   const languageFilter = `language:${locale}`;
 
   let tagsFilter = tags.map((tag) => `docusaurus_tag:${tag}`);
-  const currentPath = window.location.pathname;
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
   const currentEnterpriseTag = tags.find(tag => tag.includes('enterprise'));
   // limit search results to current docset
  if (currentPath.includes('enterprise')) {
