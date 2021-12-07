@@ -9,7 +9,7 @@ slug: /
 
 Welcome to Astronomer Cloud. We're thrilled to have you onboard as we launch the next generation of our product. This page will serve as a home for official product documentation for Astronomer Cloud.
 
-To start, Astronomer Cloud includes a game-changing deployment model that offers the self-service convenience of a fully managed Cloud service (the “control plane”) while respecting the need to keep data private, secure, and within corporate boundaries (the “data plane”).
+To start, Astronomer Cloud includes a game-changing deployment model that offers the self-service convenience of a fully managed Cloud service (the “Control Plane”) while respecting the need to keep data private, secure, and within corporate boundaries (the “Data Plane”).
 
 This model optimizes for security whilst relieving your team of operational overhead. We have a strong foundation available today and look forward to hearing your feedback as we build a robust set of differentiating features.
 
@@ -17,12 +17,12 @@ This model optimizes for security whilst relieving your team of operational over
 
 Astronomer Cloud's architecture enables a few key features, available today:
 
-- A secure control plane managed by Astronomer
-- Support for a multi-tenant data plane hosted in your organization's network on AWS
+- A secure Control Plane managed by Astronomer
+- Support for a multi-tenant Data Plane hosted in your organization's network on AWS
 - Worker auto-scaling, powered by Airflow's Celery Executor + KEDA
 - Astronomer Runtime, a new collection of Docker images which provides a differentiated Apache Airflow experience. Astronomer Runtime includes timely support for the latest major, minor, and patch versions of Airflow, starting with Airflow 2.1.1
 
-The following diagram outlines how the control plane, data plane, and users are connected to enable these features:
+The following diagram outlines how the Control Plane, Data Plane, and users are connected to enable these features:
 
 <div class="text--center">
   <img src="/img/docs/architecture-overview.png" alt="High level overview of Astronomer Cloud's architecture" />
