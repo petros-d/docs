@@ -15,7 +15,7 @@ For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-ru
 - Release date: December 2, 2021
 - Airflow version: 2.2.2
 
-### Minor Improvements
+### Additional Improvements
 
 - User-supplied `airflow.cfg` files are no longer valid in Astronomer projects. [Environment variables](environment-variables.md) are now the only valid method for setting Airflow configuration options.
 
@@ -46,7 +46,7 @@ For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-ru
 - Release date: November 15, 2021
 - Airflow version: 2.2.2
 
-### Minor Improvements
+### Additional Improvements
 
 - Added support for [Airflow 2.2.2](https://airflow.apache.org/docs/apache-airflow/stable/changelog.html#airflow-2-2-2-2021-11-15), which includes a series of bug fixes for timetables, DAG scheduling, and database migrations. Most notably, it resolves an issue where some DAG runs would be missing in the Airflow UI if `catchup=True` was set.
 
@@ -59,7 +59,7 @@ For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-ru
 - Release date: October 29, 2021
 - Airflow version: 2.2.1
 
-### Minor Improvements
+### Additional Improvements
 
 - Added support for [Airflow 2.2.1](https://airflow.apache.org/docs/apache-airflow/stable/changelog.html#airflow-2-2-1-2021-10-29), which includes a series of bug fixes that address intermittent problems with database migrations from Airflow 2.1 to Airflow 2.2
 
@@ -131,7 +131,7 @@ As part of supporting deferrable operators, the Triggerer is now available as a 
 - Release date: September 1, 2021
 - Airflow version: 2.1.1
 
-### Minor improvements
+### Additional improvements
 
 - Upgraded the default Python version to `3.9.6`
 - Added a link to Astronomer Cloud documentation in the Airflow UI
@@ -146,7 +146,7 @@ As part of supporting deferrable operators, the Triggerer is now available as a 
 - Release date: August 12, 2021
 - Airflow version: 2.1.1
 
-### Minor improvements
+### Additional improvements
 
 - The Webserver is now the only Airflow component with access to logs, which reduces the risk of exposing sensitive information in logs ([commit](https://github.com/apache/airflow/pull/16754))
 - Added support for Python 3.9 ([commit](https://github.com/apache/airflow/pull/15515))
