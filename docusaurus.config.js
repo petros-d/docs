@@ -24,7 +24,6 @@ module.exports = {
       inputSelector:'.DocSearch',
       // Optional: Algolia search parameters
       searchParameters: {
-        facetFilters: []
       },
 
       //... other Algolia params
