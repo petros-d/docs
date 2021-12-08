@@ -14,7 +14,15 @@ export default function useAlgoliaContextualFacetFilters() {
   // seems safe to convert locale->language, see AlgoliaSearchMetadatas comment
   const languageFilter = `language:${locale}`;
 
-  const tagsFilter = tags.map((tag) => `docusaurus_tag:${tag}`);
+  let tagsFilter = tags.map((tag) => `docusaurus_tag:${tag}`);
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
+  const currentEnterpriseTag = tags.find(tag => tag.includes('enterprise'));
+  // limit search results to current docset
+ if (currentPath.includes('enterprise')) {
+  tagsFilter = [`docusaurus_tag:${currentEnterpriseTag}`]
+ } else if (currentPath.includes('cloud')) {
+  tagsFilter = ['docusaurus_tag:docs-default-current']
+ }
 
   return [languageFilter, tagsFilter];
 }
