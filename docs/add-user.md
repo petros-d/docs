@@ -59,7 +59,7 @@ An error has occurred
 ```
 
 If you see this error:
-- Ask the user to sign up at https://cloud.astronomer.io. Once their account is created, add the user to your Workspace.
+- Complete Step 1 above. Ask the user to sign up at https://cloud.astronomer.io. Once their account is created, add the user to your Workspace.
 - Make sure that the user's email address is consistent with the email address you're using to add them to your Workspace. The emails must match.
 
 :::
