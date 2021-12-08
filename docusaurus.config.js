@@ -46,7 +46,7 @@ module.exports = {
       logo: {
         alt: 'Astronomer',
         src: 'img/LogoPrimaryDarkMode.svg',
-        href: '/cloud',
+        href: 'https://www.astronomer.io/',
       },
       items: [
         {
