@@ -24,6 +24,8 @@ Astronomer Cloud's architecture enables a few key features, available today:
 - Single Sign-On (SSO) solution that integrates with a variety of identity providers, including Azure Active Directory (Azure AD) and Okta
 - An observability experience that gives you insight into the health and resource consumption of your tasks and pipelines in real-time
 
+## Architecture
+
 The following diagram outlines how the control plane, data plane, and users are connected to enable these features:
 
 <div class="text--center">

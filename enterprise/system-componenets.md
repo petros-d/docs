@@ -1,61 +1,13 @@
 ---
-title: 'Astronomer Enterprise Documentation'
-sidebar_label: 'Overview'
-id: overview-enterprise
-description: 'Documentation for how to run Airflow at enterprise scale with Astronomer Enterprise.'
+title: 'Astronomer Enterprise System Components'
+sidebar_label: 'System Components'
+id: system-components
+description: Learn about the various tools and services that make up Astronomer Enterprise.
 ---
 
 ## Overview
 
-Astronomer Enterprise is the best way to run Apache Airflow in your private cloud. Using Astronomer's components as a starting point, you can have fine-grained control over every aspect of your Airflow experience.
-
-## Features
-
-Astronomer Enterprise's architecture enables a few key features that make it the best way for enterprise organizations to run Apache Airflow:
-
-- Push-button Deployments of Apache Airflow
-- Role-based access control (RBAC) for configurable and secure user management
-- Extensive cloud, network, third party provider, and system component configurations via Helm
-- System logging, monitoring, and alerts via Grafana and Kibana
-- Astronomer Certified, a collection of Docker images that provides a differentiated data orchestration experience. Astronomer Certified includes timely support for the latest major, minor, and patch versions of Airflow
-
-## Architecture
-
-The following diagram shows how you can run Airflow in your private cloud using Astronomer Enterprise:
-
-![Astronomer Enterprise Overview](https://assets2.astronomer.io/main/enterpriseArchitecture.svg)
-
-## Installation Guides
-
-If you are new to Astronomer Enterprise, use the following guides to install the system on your cloud service:
-
-* [Amazon Web Services EKS](install-aws-standard.md)
-* [Google Cloud Platform GKE](install-gcp-standard.md)
-* [Microsoft Azure AKS](install-azure-standard.md)
-
-## Customizing Your Installation
-
-Because the platform uses Helm, it's easy to customize your Astronomer installation. Below are some guides for most common customizations:
-
-* [Integrating Auth Systems](integrate-auth-system.md)
-* [Configuring Resources with Helm](manage-platform-users.md)
-* [Configuring a Registry Back End](registry-backend.md)
-* [Built-in Alerts](platform-alerts.md)
-
-## Administration
-
-There are many tools at your disposal for administrating Astronomer:
-
-* [The Houston API Playground](houston-api.md)
-* [Metrics](grafana-metrics.md)
-* [Using Kibana](kibana-logging.md)
-* [Using kubectl](kubectl.md)
-* [Pulling Postgres Credentials](access-airflow-database.md)
-* [Upgrade to a Patch Version of Astronomer Enterprise](upgrade-astronomer-stable.md/)
-
-## License
-
-Usage of Astronomer requires an [Astronomer Platform Enterprise Edition license](https://github.com/astronomer/astronomer/blob/master/LICENSE).
+Astronomer Enterprise utilizes a variety of tools to run Airflow securely and reliably in your private cloud. This guide contains names and descriptions of all system components required to run Astronomer Enterprise.
 
 ## Platform Components
 
@@ -90,7 +42,7 @@ When you create an Airflow deployment in Astronomer, the following components ar
   * [Flower](https://flower.readthedocs.io/en/latest/) - Web UI for Celery distributed task queue. Used to monitor your Airflow worker services
   * [Redis](https://redis.io/) - In memory data store used as the backend by the Celery task queue
 
-## Customer-Supplied Resources
+## Customer-Supplied Components
 
 To run Astronomer in your environment, you just need to bring a Kubernetes cluster and a Postgres database:
 
