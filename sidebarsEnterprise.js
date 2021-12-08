@@ -119,6 +119,7 @@ module.exports = {
       type: 'category',
       label: 'Resources',
       items: [
+      `system-components`,
       'release-notes',
       'support',
       'cli-reference',
