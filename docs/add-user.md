@@ -27,6 +27,21 @@ If the user you want to add doesn't already have an account on Astronomer Cloud,
 
 Make note of the user's account email for the next step.
 
+:::caution
+
+If you attempt to invite a user that does not yet have an account on Astronomer Cloud, you will see an error in the Astronomer UI that reads:
+
+```
+An error has occurred
+<user-email-address> is not a platform user.
+```
+
+If you see this error:
+- Ask the user to sign up at https://cloud.astronomer.io. Once they have done so, add the user to your Workspace.
+- Make sure that the user's email address is consistent with the email address you're using to add them to your Workspace. The emails must match.
+
+:::
+
 ## Step 2: Add the User
 
 To add a user with an Astronomer Cloud account to your Workspace:
