@@ -6,9 +6,9 @@ id: release-notes
 
 ## Overview
 
-Astronomer is committed to continuous development of Astronomer Cloud. As you grow with us, expect to see bug fixes and improved functionality on a regular basis. To keep your team updated, this document will provide a weekly summary of all changes made and released to Astronomer Cloud.
+Astronomer is committed to continuous delivery of both features and bug fixes to Astronomer Cloud. To keep your team up to date on what's new, this document will provide a regular summary of all changes officially released to Astronomer Cloud.
 
-If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
+If you have any questions or a bug to report, don't hesitate to reach out to [Astronomer Support](https://support.astronomer.io).
 
 **Latest Runtime Version**: 4.0.6 ([Release notes](runtime-release-notes.md))
 
@@ -16,7 +16,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ## December 6, 2021
 
-### "Usage" Tab in the Astronomer UI
+### New "Usage" Tab in the Astronomer UI
 
 Total task volume for your Organization is now available in a new **Usage** tab in the Astronomer Cloud UI. Astronomer Cloud is priced based on successful task runs, so this view can help you monitor both Astronomer cost as well as Airflow usage in aggregate and between Deployments.
 
