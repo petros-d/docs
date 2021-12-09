@@ -44,7 +44,7 @@ For Runtime `4.0.6`, for example:
 - Minor = `.0`
 - Patch = `.6`
 
-An Runtime Docker image will be published for every major and minor version of Apache Airflow. For example, Runtime images that correspond with Apache Airflow 2.0, 2.1, 2.2 etc. will be available on Astronomer as they're released in the open source project.
+A Runtime Docker image will be published for every major and minor version of Apache Airflow. For example, Runtime images that correspond with Apache Airflow 2.0, 2.1, 2.2 etc. will be available on Astronomer as they're released in the open source project.
 
 It is considered safe to upgrade to minor and patch versions within a major version. Upgrade guidance for major and LTS versions is provided with each release. There is no relation between a Runtime release's version number and its release channel.
 
