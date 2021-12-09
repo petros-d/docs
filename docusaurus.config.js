@@ -77,19 +77,36 @@ module.exports = {
     footer: {
       links: [
         {
-          title: 'Astronomer Cloud Docs',
+          title: 'Astronomer Cloud',
+          items: [
+            {
+              label: 'Install Astronomer Cloud',
+              to: 'cloud/install-aws.md',
+            },
+            {
+              label: 'Install CLI',
+              to: 'cloud/install-cli.md',
+            },
+            {
+              label: 'Create a Project',
+              to: 'cloud/create-project.md',
+            },
+            {
+              label: 'Deploy',
+              to: 'cloud/deploy-code.md',
+            },
+          ],
+        },
+        {
+          title: 'Astronomer Enterprise',
           items: [
             {
               label: 'Overview',
-              to: 'cloud',
+              to: 'enterprise/overview-enterprise.md',
             },
             {
-              label: 'Install on AWS',
-              to: 'cloud/install-aws',
-            },
-            {
-              label: 'Known Limitations',
-              to: 'cloud/known-limitations',
+              label: 'System Components',
+              to: 'enterprise/system-components.md',
             },
           ],
         },
@@ -112,6 +129,10 @@ module.exports = {
             {
               label: 'Astronomer Homepage',
               to: 'https://www.astronomer.io',
+            },
+            {
+              label: 'Airflow Guides',
+              href: 'https://www.astronomer.io/guides/',
             },
             {
               label: 'Docs on GitHub',
