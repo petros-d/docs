@@ -44,7 +44,7 @@ Because the platform uses Helm, it's easy to customize your Astronomer installat
 
 ## Administration
 
-There are many tools at your disposal for administrating Astronomer:
+There are many tools at your disposal for administering Astronomer:
 
 * [The Houston API Playground](houston-api.md)
 * [Metrics](grafana-metrics.md)
