@@ -14,6 +14,16 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 
 **Latest CLI Version**: 1.0.4 ([Release notes](cli-release-notes.md))
 
+## December 9, 2021
+
+### Additional Improvements
+
+- In the Astronomer Cloud UI, the **Open Airflow** button now shows more specific status messages when a Deployment's Airflow UI is inaccessible.
+
+### Bug Fixes
+
+- Fixed Deployment table scrolling and alignment issues in the UI
+
 ## December 6, 2021
 
 ### New "Usage" Tab in the Astronomer UI
