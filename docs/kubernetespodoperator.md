@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'KubernetesPodOperator'
-title: 'Run Airflow's KubernetesPodOperator on Astronomer Cloud'
+title: "Run Airflow's KubernetesPodOperator on Astronomer Cloud"
 id: kubernetespodoperator
 ---
 
