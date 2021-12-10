@@ -61,9 +61,9 @@ k = kubernetes_pod_operator.KubernetesPodOperator(
 
 For each instantiation of the KubernetesPodOperator, you must specify the following values:
 
-- `namespace = conf.get('kubernetes', 'NAMESPACE')`: Astronomer Cloud Deployments run on their own Kubernetes namespaces within a Cluster. The KubernetesPodOperator needs to know information about this namespace. Because the namespace variable is injected into your Deployment's `airflow.cfg` file, you can programmatically import this namespace information via environment variables using the statement `namespace = conf.get('kubernetes', 'NAMESPACE')`.
-- `image`: This is the image that the operator will use to run its defined task, commands, and arguments. By default, this value should be a publicly available image tag on Dockerhub. If you need to pull an image from a private registry, read [Pull Images from a Private Registry](kubernetespodoperator#pull-images-from-a-private-registry).
-- `in_cluster=True`: When this value is set, your task will look inside your Cluster for a Kubernetes configuration. This ensures that the workers running in the Pod are have the correct privileges within the Cluster.
+- `namespace = conf.get('kubernetes', 'NAMESPACE')`: Astronomer Cloud Deployments run on their own Kubernetes namespaces within a Cluster. The KubernetesPodOperator needs to know information about this namespace. Because the namespace variable is injected into your Deployment's `airflow.cfg` file, you can programmatically import this namespace information via environment variables using this setting.
+- `image`: This is the image that the operator will use to run its defined task, commands, and arguments. By default, this value should be a publicly available image tag on Dockerhub. To pull an image from a private registry, read [Pull Images from a Private Registry](kubernetespodoperator#pull-images-from-a-private-registry).
+- `in_cluster=True`: When this value is set, your task will look inside your Cluster for a Kubernetes configuration. This ensures that the workers running in the Pod have the correct privileges within the Cluster.
 - `is_delete_operator_pod=True`: This setting ensures that the Pods of completed tasks are deleted, which lowers resource usage on your Cluster.
 
 Once you push this code to a Deployment, your Cluster will automatically spin up and down Pods to run tasks that use the operator.
