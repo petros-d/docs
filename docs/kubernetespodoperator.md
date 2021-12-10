@@ -25,7 +25,7 @@ To use the KubernetesPodOperator, you need:
 - An Astronomer [Deployment](configure-deployment).
 - [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl).
 
-## Configure the KubernetesPodOperator
+## Set Up the KubernetesPodOperator
 
 To use the KubernetesPodOperator in a DAG, first add the following import statements to your DAG file:
 
