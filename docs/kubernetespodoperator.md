@@ -53,7 +53,7 @@ k = kubernetes_pod_operator.KubernetesPodOperator(
     arguments=["echo", "10", "echo pwd"],
     labels={"<pod-Label>": "<label-name>"},
     name="<pod-name>",
-    is_delete_operator_pod=True, 
+    is_delete_operator_pod=True,
     in_cluster=True,
     task_id="<task-name>",
     get_logs=True)
@@ -68,11 +68,11 @@ For each instantiation of the KubernetesPodOperator, you must specify the follow
 
 Once you push this code to a Deployment, your Cluster will automatically spin up and down Pods to run tasks that use the operator.
 
-## Manage KubernetesPodOperator Resources
+## Configure Task-Level Pod Resources
 
-Astronomer Cloud automatically allocates resources to Pods created by the KubernetesPodOperator, but you can additionally specify [compute resource requests and limits](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) on a per-task basis.
+Astronomer Cloud automatically allocates resources to Pods created by the KubernetesPodOperator. Resources used by the KubernetesPodOperator are not limited, meaning that the operator could theoretically provision all your Cluster's available remaining CPU and memory to complete a task. Because of this, we recommend managing the KubernetesPodOperator's resource usage by specifying [compute resource requests and limits](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/) on a per-task basis.
 
-To do so, define a dictionary of compute resources in your DAG. For example, the following dictionary would ensure that a Pod runs with exactly 800m of CPU and 3Gi of memory at all times:
+To do so, define a dictionary of compute resources in your DAG. For example, applying the following dictionary to a pod would ensure that the Pod runs with exactly 800m of CPU and 3Gi of memory at all times:
 
 ```python
 compute_resources = \
