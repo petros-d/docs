@@ -27,7 +27,7 @@ To use the KubernetesPodOperator, you need:
 
 ## Configure the KubernetesPodOperator
 
-To start using the KubernetesPodOperator in a DAG, add the following import statements to your DAG file:
+To use the KubernetesPodOperator in a DAG, first add the following import statements to your DAG file:
 
 ```python
 from airflow.contrib.operators.kubernetes_pod_operator import kubernetes_pod_operator
@@ -36,7 +36,7 @@ from airflow.contrib.operators.kubernetes_pod_operator import kubernetes_pod_ope
 from airflow import configuration as conf
 ```
 
-You can now instantiate the KubernetesPodOperator:
+Then, instantiate the KubernetesPodOperator:
 
 ```python
 from airflow.contrib.operators.kubernetes_pod_operator import kubernetes_pod_operator
@@ -48,14 +48,14 @@ from airflow import configuration as conf
 namespace = conf.get('kubernetes', 'NAMESPACE')
 k = kubernetes_pod_operator.KubernetesPodOperator(
     namespace=namespace,
-    image="ubuntu:16.04",
+    image="<your-docker-image>",
     cmds=["bash", "-cx"],
     arguments=["echo", "10", "echo pwd"],
-    labels={"foo": "bar"},
-    name="airflow-test-pod",
-    is_delete_operator_pod=True,
+    labels={"<pod-Label>": "<label-name>"},
+    name="<pod-name>",
+    is_delete_operator_pod=True, 
     in_cluster=True,
-    task_id="task-two",
+    task_id="<task-name>",
     get_logs=True)
 ```
 
