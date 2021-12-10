@@ -1,30 +1,31 @@
 ---
 sidebar_label: 'KubernetesPodOperator'
-title: 'Run the KubernetesPodOperator on Astronomer Cloud'
+title: 'Run Airflow's KubernetesPodOperator on Astronomer Cloud'
 id: kubernetespodoperator
 ---
 
 ## Overview
 
-The KubernetesPodOperator can run a task in an individual Kubernetes Pod. When the operator finishes running a task, it automatically terminates the Pod that the task was running in. The KubernetesPodOperator also enables task-level resource configuration, making it optimal for tasks that have custom Python dependencies.
+One of Airflow's most dynamic operators is the [KubernetesPodOperator](https://airflow.apache.org/docs/apache-airflow-providers-cncf-kubernetes/stable/operators.html), which can run a task in an individual Kubernetes pod. Similar to the Kubernetes Executor, this operator talks to the Kubernetes API to dynamically launch a pod for each task that needs to run and terminates each pod once the task is completed. This results in an isolated, containerized execution environment for each task that is separate from tasks otherwise being executed by Celery workers. Using the KubernetesPodOperator enables the following benefits:
+
+- Task-level resource configuration: If you know how much CPU and Memory your task consumes, you can specify it
+- Execute custom Docker images on at the task level, potentially with Python packages and dependencies that would otherwise conflict with the rest of your Deployment's dependencies
+- Flexibility to write task logic in a language other than Python
+- Horizontal scaling that is cost-effective, dynamic, and minimally dependent on Worker resources
+- Kubernetes-native configuration, including the ability to set volumes, secrets, and affinities in the form of a YAML file
+- Coupled with Astronomer Cloud's Kubernetes-based Data Plane, run Kubernetes pods without needing to manage any underlying infrastructure
 
 This guide provides steps for configuring and running the KubernetesPodOperator on DAGs deployed to Astronomer Cloud.
-
-:::info
-
-This setup applies only to Astronomer projects running on Deployments in Astronomer Cloud.
-
-:::
 
 ## Prerequisites
 
 To use the KubernetesPodOperator, you need:
 
-- An [Astronomer Cloud project](create-project).
-- A [Deployment hosting your project](deploy-code).
+- An [Astronomer project](create-project).
+- An Astronomer [Deployment](configure-deployment).
 - [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl).
 
-## Using the KubernetesPodOperator
+## Configure the KubernetesPodOperator
 
 To start using the KubernetesPodOperator in a DAG, add the following import statements to your DAG file:
 
