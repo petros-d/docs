@@ -1,6 +1,6 @@
 ---
-title: 'Version Compatibility Reference for Astronomer Enterprise'
-sidebar_label: 'Version Compatibility Reference'
+title: "Version Compatibility Reference for Astronomer Enterprise"
+sidebar_label: "Version Compatibility Reference"
 id: version-compatibility-reference
 description: A reference of all adjacent tooling required to run Astronomer Enterprise and corresponding version compatibility.
 ---
@@ -13,12 +13,13 @@ It's worth noting that while the tables below reference the minimum compatible v
 
 ## Astronomer Enterprise
 
-| Astronomer Platform | Kubernetes                   | Helm | Terraform    | Postgres | Python        | Astronomer CLI |
-| ------------------- | ---------------------------- | ---- | ------------ | -------- | ------------- | -------------- |
-| v0.16               | 1.16, 1.17, 1.18             | 3    | 0.12, 0.13.5 | 9.6+     | 3.6, 3.7, 3.8 | 0.16.x         |
-| v0.23               | 1.16, 1.17, 1.18             | 3    | 0.13.5       | 9.6+     | 3.6, 3.7, 3.8 | 0.23.x         |
-| v0.25               | 1.17, 1.18, 1.19, 1.20, 1.21 | 3.6  | 0.13.5       | 9.6+     | 3.6, 3.7, 3.8, 3.9 (_requires AC 2.2.0+_)  | 0.25.x         |
+| Astronomer Platform | Kubernetes                   | Helm | Terraform    | Postgres | Python                                    | Astronomer CLI |
+| ------------------- | ---------------------------- | ---- | ------------ | -------- | ----------------------------------------- | -------------- |
+| v0.16               | 1.16, 1.17, 1.18             | 3    | 0.12, 0.13.5 | 9.6+     | 3.6, 3.7, 3.8                             | 0.16.x         |
+| v0.23               | 1.16, 1.17, 1.18             | 3    | 0.13.5       | 9.6+     | 3.6, 3.7, 3.8                             | 0.23.x         |
+| v0.25               | 1.17, 1.18, 1.19, 1.20, 1.21 | 3.6  | 0.13.5       | 9.6+     | 3.6, 3.7, 3.8, 3.9 (_requires AC 2.2.0+_) | 0.25.x         |
 | v0.26               | 1.17, 1.18, 1.19, 1.20, 1.21 | 3.6  | 0.13.5       | 9.6+     | 3.6, 3.7, 3.8, 3.9 (_requires AC 2.2.0+_) | 0.26.x         |
+| v0.27               | 1.18, 1.19, 1.20, 1.21       | 3.6  | 0.13.5       | 9.6+     | 3.6, 3.7, 3.8, 3.9 (_requires AC 2.2.0+_) | 0.26.x         |
 
 > **Note:** On Astronomer v0.23+, new versions of Apache Airflow on Astronomer Certified are automatically made available in the Astronomer UI and CLI within 24 hours of their publication. For more information, refer to [Available Astronomer Certified Versions](manage-airflow-versions.md#available-astronomer-certified-versions).
 
@@ -36,13 +37,13 @@ It's worth noting that while the tables below reference the minimum compatible v
 | 1.10.12              | 9.6+     | 5.7, 8.0+ | 3.6, 3.7, 3.8      | Alpine 3.10, Debian 10 (Buster) | Any                | 6.2.1 | 4.4.7  |
 | 1.10.14              | 9.6+     | 5.7, 8.0+ | 3.6, 3.7, 3.8      | Debian 10 (Buster)              | Any                | 6.2.1 | 4.4.7  |
 | 1.10.15              | 9.6+     | 5.7, 8.0+ | 3.6, 3.7, 3.8      | Debian 10 (Buster)              | Any                | 6.2.1 | 4.4.7  |
-| 2.0.0                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8      | Debian 10 (Buster)              | 0.18.6+ | 6.2.1 | 4.4.7  |
-| 2.0.2                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8      | Debian 10 (Buster)              | 0.18.6+ | 6.2.1 | 4.4.7  |
-| 2.1.0                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8      | Debian 10 (Buster)              | 0.18.6+  | 6.2.1 | 4.4.7  |
-| 2.1.1                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 | Debian 10 (Buster)              | 0.18.6+  | 6.2.1 | 4.4.7  |
-| 2.1.3                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 | Debian 10 (Buster)              | 0.18.6+ | 6.2.1 | 4.4.7  |
-| 2.1.4                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 | Debian 10 (Buster)              | 0.18.6+  | 6.2.1 | 4.4.7  |
-| 2.2.0                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 | Debian 11 (Bullseye)       | 0.18.6+  | 6.2.1 | 4.4.7  |
+| 2.0.0                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8      | Debian 10 (Buster)              | 0.18.6+            | 6.2.1 | 4.4.7  |
+| 2.0.2                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8      | Debian 10 (Buster)              | 0.18.6+            | 6.2.1 | 4.4.7  |
+| 2.1.0                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8      | Debian 10 (Buster)              | 0.18.6+            | 6.2.1 | 4.4.7  |
+| 2.1.1                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 | Debian 10 (Buster)              | 0.18.6+            | 6.2.1 | 4.4.7  |
+| 2.1.3                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 | Debian 10 (Buster)              | 0.18.6+            | 6.2.1 | 4.4.7  |
+| 2.1.4                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 | Debian 10 (Buster)              | 0.18.6+            | 6.2.1 | 4.4.7  |
+| 2.2.0                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 | Debian 11 (Bullseye)            | 0.18.6+            | 6.2.1 | 4.4.7  |
 
 For more detail on each version of Astronomer Certified and instructions on how to upgrade, refer to [Upgrade Apache Airflow](manage-airflow-versions.md/).
 
