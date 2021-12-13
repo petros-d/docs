@@ -98,7 +98,7 @@ To set up Podman for an Astronomer project:
     #keep the session running
     ```
 
-    Copy the output of `pwd` for the step 7.
+    Copy the output of `pwd` for step 7.
 
 6. Open a new terminal window. In an empty directory, run the following commands to create a new Astronomer project and generate a `pod-config.yml` file:
 
