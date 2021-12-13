@@ -11,7 +11,7 @@ module.exports = {
   enterprise: [
     {
       type: 'doc',
-      id: 'overview-enterprise',
+      id: 'overview',
       label: 'Overview',
     },
     {

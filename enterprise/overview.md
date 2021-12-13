@@ -1,7 +1,7 @@
 ---
 title: 'Astronomer Enterprise Documentation'
 sidebar_label: 'Overview'
-id: overview-enterprise
+id: overview
 description: 'Documentation for how to run Airflow at enterprise scale with Astronomer Enterprise.'
 ---
 

@@ -57,18 +57,18 @@ module.exports = {
         {
           type: 'dropdown',
           label: 'Enterprise',
-          to: 'enterprise/overview-enterprise',
+          to: 'enterprise/overview',
           activeBaseRegex: 'enterprise',
           position: 'left',
           activeClassName: 'navbar__link--active',
           items: [
             {
               label: '0.26 (Latest)',
-              to: '/enterprise/overview-enterprise',
+              to: '/enterprise/overview',
             },
             {
               label: '0.25',
-              to: '/enterprise/0.25/overview-enterprise'
+              to: '/enterprise/0.25/overview'
             },
           ],
         },
@@ -102,7 +102,7 @@ module.exports = {
           items: [
             {
               label: 'Overview',
-              to: 'enterprise/overview-enterprise.md',
+              to: 'enterprise/overview.md',
             },
             {
               label: 'System Components',
