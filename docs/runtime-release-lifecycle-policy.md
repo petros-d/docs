@@ -1,15 +1,15 @@
 ---
-title: 'Astronomer Runtime Release and Lifecycle Policy'
-sidebar_label: 'Release and Lifecycle Policy'
-id: runtime-release-lifecycle-policy
-description: Learn how Astronomer releases and supports Astronomer Runtime, the production-ready distribution of Apache Airflow for Astronomer Cloud.
+title: 'Astronomer Runtime Versioning and Lifecycle Policy'
+sidebar_label: 'Versioning and Lifecycle Policy'
+id: runtime-version-lifecycle-policy
+description: Learn how Astronomer releases and maintains Astronomer Runtime, the core component that powers a differentiated Apache Airflow experience in Astronomer Cloud.
 ---
 
 ## Overview
 
 Astronomer Runtime is a Debian-based, production-ready distribution of Apache Airflow that extends the open source project to provide you with differentiated functionality that centers around reliability, efficiency, and performance.
 
-You can use a Runtime Docker image on [Astronomer's Docker Registry](https://quay.io/repository/astronomer/astro-runtime) to run Airflow on Astronomer Cloud. A Deployment on Astronomer runs one version of Runtime, but you can use different versions of Runtime on different Deployments within a given Workspace or Cluster. All Astronomer projects require that you specify an Astronomer Runtime image in your `Dockerfile`.
+Astronomer Runtime Docker images are hosted on [Astronomer's Docker registry](https://quay.io/repository/astronomer/astro-runtime) and enable Airflow on Astronomer Cloud. All Astronomer projects require that you specify an Astronomer Runtime image in your `Dockerfile`, and all Deployments on Astronomer Cloud must run one version of Runtime. Every version of Astronomer Runtime correlates to one version of Apache Airflow. Depending on the needs of your pipelines, you can run different versions of Runtime on different Deployments within a given Workspace or Cluster.
 
 This document provides information on the following:
 
@@ -23,10 +23,10 @@ For guidelines on how to upgrade, read [Upgrade Runtime](upgrade-runtime.md).
 
 To meet the unique needs of different operating environments, Astronomer Runtime versions fall into one of two release channels:
 
-- **Stable:** Includes the latest Astronomer and Airflow features
-- **Long-term Support (LTS):** Includes long-term testing, stability, and maintenance for a core set of features
+- **Stable:** Includes the latest Astronomer and Apache Airflow features
+- **Long-term Support (LTS):** Includes rigorous testing, long-term stability, and additional maintenance for a core set of features
 
-For users that want the newest features from Astronomer and Apache Airflow on an incremental basis, we recommend following the stable release channel and upgrading to new versions as soon as they are made generally available. New versions of Runtime are issued regularly.
+For users that want the newest features from Astronomer and Airflow on an incremental basis, we recommend following the stable release channel and upgrading to new versions as soon as they are made generally available. New versions of Runtime are issued regularly and include timely support for the latest major, minor, and patch versions of Airflow.
 
 For users that want to optimize for the highest level of reliability and stability, we recommend upgrading only to LTS versions as they're made available. Release channels are not binding, so you are free to upgrade to any available version of Runtime at any time.
 
@@ -44,7 +44,7 @@ For Runtime `4.0.6`, for example:
 - Minor = `.0`
 - Patch = `.6`
 
-A Runtime Docker image will be published for every major and minor version of Apache Airflow. For example, Runtime images that correspond with Apache Airflow 2.0, 2.1, 2.2 etc. will be available on Astronomer as they're released in the open source project.
+A Runtime Docker image will be published for most major and minor versions of Apache Airflow and often feature additional functionality. For Airflow 2.1 and 2.2, for example, Astronomer published a same-day release of a corresponding Runtime Docker image with a set of [Deferrable Operators](deferrable-operators) that are not available in the open source project.
 
 It is considered safe to upgrade to minor and patch versions within a major version. Upgrade guidance for major and LTS versions is provided with each release. There is no relation between a Runtime release's version number and its release channel.
 
@@ -60,13 +60,13 @@ For example, the images for Astronomer Runtime 4.0.6 would be:
 - `quay.io/astronomer/astro-runtime:4.0.6`
 - `quay.io/astronomer/astro-runtime:4.0.6-base`
 
-For the smoothest, out-of-the-box Airflow experience, we strongly recommend and default to `base` images in your project's `Dockerfile`. These images incorporate Docker ONBUILD commands to copy and scaffold your Airflow project directory so you can more easily pass those files to the containers running each core Airflow component.
+For the smoothest, out-of-the-box Airflow experience, we strongly recommend and default to non-`base` images in your project's `Dockerfile`. These images incorporate Docker ONBUILD commands to copy and scaffold your Airflow project directory so you can more easily pass those files to the containers running each core Airflow component. For complex use cases that require additional customization, a `base` Astronomer Runtime image might work best.
 
 ## Backport Policy for Bug and Security Fixes
 
 If a major stability bug in Astronomer Runtime is identified by Astronomer, a fix will be backported to all LTS versions and only the latest stable version. For users on a stable version that is not latest, our team will recommend that you upgrade. Major issues in this category may result in significant delays in task scheduling as well as potential data loss.
 
-If a major security issue is identified, a fix will be backported and made available as a new Runtime hotfix version for _all_ available stable and LTS releases. Major issues in this category are classified by a combination of impact and exploitability.
+If a major security issue is identified, a fix will be backported and made available as a new Runtime patch version for _all_ available stable and LTS releases. Major issues in this category are classified by a combination of impact and exploitability.
 
 In rare instances, the Astronomer team may make an exception and backport a bug or security fix to a release that is beyond the commitment stated above. To submit a request for consideration, please reach out to your customer success manager.
 
@@ -79,11 +79,11 @@ The maintenance period for an Astronomer Runtime version depends on its release 
 | Stable          | 6 Months             |
 | LTS             | 18 Months            |
 
-For each `major.minor` pair, only the latest patch is supported at any given time. If you report an issue with an Astronomer Runtime patch or hot-fix version that is not latest, the Astronomer Support team will always ask that you upgrade as a first step to resolution. For example, the Support team encourages any user who reports an issue with Astronomer Runtime 4.0.2 to first upgrade to the latest 4.0.x version as soon as it's generally available.
+For each `major.minor` pair, only the latest patch is supported at any given time. If you report an issue with an Astronomer Runtime patch version that is not latest, the Astronomer Support team will always ask that you upgrade as a first step to resolution. For example, the Support team encourages any user who reports an issue with Astronomer Runtime 4.0.2 to first upgrade to the latest 4.0.x version as soon as it's generally available.
 
 Within the maintenance window of each Astronomer Runtime version, the following is true:
 
-- A set of Docker images corresponding to that version are available for download via [Quay.io](http://quay.io), PyPi, and [Downloads](https://www.astronomer.io/downloads).
+- A set of Docker images corresponding to that version are available for download via [Quay.io](https://quay.io/repository/astronomer/astro-runtime?tab=tags) and PyPi.
 - Astronomer will regularly publish bug or security fixes identified as high priority.
 - The Astronomer Support team will offer support for paying customers running a supported version of Runtime via the [Astronomer Support Portal](https://support.astronomer.io).
 - A user can create a new Airflow Deployment via the Astronomer UI, CLI, or API with any supported version of Runtime.
@@ -91,10 +91,10 @@ Within the maintenance window of each Astronomer Runtime version, the following 
 When the maintenance window for a version of Runtime ends, the following is true:
 
 - The Astronomer Support team is not obligated to answer questions regarding an Airflow Deployment that is running that version.
-- New Airflow Deployments cannot be created with that version of Runtime. Unsupported versions will _not_ render as an option in the Deployment creation process from the Astronomer UI, API, or CLI.
+- New Deployments cannot be created on Astronomer Cloud with that version of Runtime. Unsupported versions will _not_ render as an option in the Deployment creation process from the Astronomer UI, API, or CLI.
 - The latest version of the Astronomer CLI will show a warning if a user pushes a Docker image to Astronomer that corresponds to that version.
 
-To ensure reliability, service will not be interrupted for Astronomer Deployments running a version of Runtime that is no longer supported. Unsupported versions will also continue to be available for local development and testing via the Astronomer CLI.
+To ensure reliability, service will not be interrupted for Deployments running a version of Runtime that is no longer supported. Unsupported versions will also continue to be available for local development and testing via the Astronomer CLI.
 
 ### End of Maintenance Date
 
