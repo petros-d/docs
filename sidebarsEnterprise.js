@@ -48,6 +48,7 @@ module.exports = {
       'configure-deployment',
       'deploy-cli',
       'deploy-nfs',
+      'deploy-git-sync',
       'deployment-logs',
       'environment-variables',
       'ci-cd',
@@ -82,6 +83,7 @@ module.exports = {
       'renew-tls-cert',
       'pre-create-namespaces',
       'third-party-ingress-controllers',
+      'custom-oauth',
       ],
     },
     {

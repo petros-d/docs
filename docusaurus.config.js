@@ -63,8 +63,12 @@ module.exports = {
           activeClassName: 'navbar__link--active',
           items: [
             {
-              label: '0.26 (Latest)',
+              label: '0.27 (Latest)',
               to: '/enterprise/overview',
+            },
+            {
+              label: '0.26',
+              to: '/enterprise/0.26/overview',
             },
             {
               label: '0.25',
