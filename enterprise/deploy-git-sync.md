@@ -64,7 +64,7 @@ Workspace editors can configure a new or existing Airflow Deployment to use a gi
     - **DAGs Directory:** The directory in your Git repository that hosts your DAGs. Specify the directory's path as relative to the repository's root directory. To use your root directory as your DAGs directory, specify this value as `./`
     - **Rev**: The commit reference of the branch that you want to sync with your Deployment
     - **Ssh Key**: The SSH private key for your Git repository
-    - **Known Hosts**: The known_hosts for your Git provider, formatted as: <host1>,<ip1> <public_key>
+    - **Known Hosts**: The known_hosts for your Git provider, formatted as: `<host1>,<ip1> <public_key>`
 
 5. Save your changes.
 
