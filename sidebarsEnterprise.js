@@ -27,6 +27,7 @@ module.exports = {
       label: 'Develop',
       items: [
       'cli-quickstart',
+      'cli-podman',
       'customize-image',
       'kubepodoperator-local',
       ],
