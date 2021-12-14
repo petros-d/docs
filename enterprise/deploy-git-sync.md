@@ -11,6 +11,10 @@ Starting with Astronomer v0.27, you can deploy DAGs to an Astronomer Deployment 
 
 This guide provides setup steps for configuring git-sync as a DAG deploy option.
 
+:::warning
+This is currently an experimental feature, meaning that we do not yet recommend using this feature with production-level or otherwise sensitive Deployments. Advanced use cases may not yet be supported. For more information, reach out to [Astronomer Support](astronomer.io/support).
+:::
+
 :::info
 You can configure NFS volumes only to deploy DAGs. To push dependencies or other requirements to your Airflow Deployment, you still need to update your `requirements.txt` and `packages.txt` files and deploy via either the [Astronomer CLI](deploy-cli.md) or [CI/CD](ci-cd.md). For more information on pushing code to your Airflow environment, read [Customize Images](customize-image.md).
 :::
