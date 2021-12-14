@@ -70,6 +70,10 @@ module.exports = {
               label: '0.25',
               to: '/enterprise/0.25/overview'
             },
+            {
+              label: '0.23',
+              to: '/enterprise/0.23/overview'
+            },
           ],
         },
       ],
@@ -81,19 +85,19 @@ module.exports = {
           items: [
             {
               label: 'Install Astronomer Cloud',
-              to: 'cloud/install-aws.md',
+              to: 'cloud/install-aws',
             },
             {
               label: 'Install CLI',
-              to: 'cloud/install-cli.md',
+              to: 'cloud/install-cli',
             },
             {
               label: 'Create a Project',
-              to: 'cloud/create-project.md',
+              to: 'cloud/create-project',
             },
             {
               label: 'Deploy',
-              to: 'cloud/deploy-code.md',
+              to: 'cloud/deploy-code',
             },
           ],
         },
@@ -102,11 +106,11 @@ module.exports = {
           items: [
             {
               label: 'Overview',
-              to: 'enterprise/overview.md',
+              to: 'enterprise/overview',
             },
             {
               label: 'System Components',
-              to: 'enterprise/system-components.md',
+              to: 'enterprise/system-components',
             },
           ],
         },
