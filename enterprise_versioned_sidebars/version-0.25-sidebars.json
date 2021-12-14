@@ -158,6 +158,10 @@
         },
         {
           "type": "doc",
+          "id": "version-0.25/upgrade-to-0-25"
+        },
+        {
+          "type": "doc",
           "id": "version-0.25/apply-platform-config"
         },
         {

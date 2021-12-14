@@ -1,8 +1,8 @@
 {
-  "version-0.25/enterprise": [
+  "version-0.23/enterprise": [
     {
       "type": "doc",
-      "id": "version-0.25/overview"
+      "id": "version-0.23/overview"
     },
     {
       "type": "category",
@@ -10,11 +10,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.25/quickstart"
+          "id": "version-0.23/quickstart"
         },
         {
           "type": "doc",
-          "id": "version-0.25/faq"
+          "id": "version-0.23/faq"
         }
       ],
       "collapsible": true,
@@ -26,11 +26,11 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.25/customize-image"
+          "id": "version-0.23/customize-image"
         },
         {
           "type": "doc",
-          "id": "version-0.25/kubepodoperator-local"
+          "id": "version-0.23/kubepodoperator-local"
         }
       ],
       "collapsible": true,
@@ -42,15 +42,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.25/install-aws"
+          "id": "version-0.23/install-aws"
         },
         {
           "type": "doc",
-          "id": "version-0.25/install-azure"
+          "id": "version-0.23/install-azure"
         },
         {
           "type": "doc",
-          "id": "version-0.25/install-gcp"
+          "id": "version-0.23/install-gcp"
         }
       ],
       "collapsible": true,
@@ -62,31 +62,31 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.25/manage-workspaces"
+          "id": "version-0.23/manage-workspaces"
         },
         {
           "type": "doc",
-          "id": "version-0.25/configure-deployment"
+          "id": "version-0.23/configure-deployment"
         },
         {
           "type": "doc",
-          "id": "version-0.25/deploy-cli"
+          "id": "version-0.23/deploy-cli"
         },
         {
           "type": "doc",
-          "id": "version-0.25/deploy-nfs"
+          "id": "version-0.23/deploy-nfs"
         },
         {
           "type": "doc",
-          "id": "version-0.25/deployment-logs"
+          "id": "version-0.23/deployment-logs"
         },
         {
           "type": "doc",
-          "id": "version-0.25/environment-variables"
+          "id": "version-0.23/environment-variables"
         },
         {
           "type": "doc",
-          "id": "version-0.25/ci-cd"
+          "id": "version-0.23/ci-cd"
         }
       ],
       "collapsible": true,
@@ -98,35 +98,35 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.25/manage-airflow-versions"
+          "id": "version-0.23/manage-airflow-versions"
         },
         {
           "type": "doc",
-          "id": "version-0.25/access-airflow-database"
+          "id": "version-0.23/access-airflow-database"
         },
         {
           "type": "doc",
-          "id": "version-0.25/kubepodoperator"
+          "id": "version-0.23/kubepodoperator"
         },
         {
           "type": "doc",
-          "id": "version-0.25/kubernetes-executor"
+          "id": "version-0.23/kubernetes-executor"
         },
         {
           "type": "doc",
-          "id": "version-0.25/airflow-alerts"
+          "id": "version-0.23/airflow-alerts"
         },
         {
           "type": "doc",
-          "id": "version-0.25/secrets-backend"
+          "id": "version-0.23/secrets-backend"
         },
         {
           "type": "doc",
-          "id": "version-0.25/integrate-iam"
+          "id": "version-0.23/integrate-iam"
         },
         {
           "type": "doc",
-          "id": "version-0.25/airflow-api"
+          "id": "version-0.23/airflow-api"
         }
       ],
       "collapsible": true,
@@ -138,48 +138,44 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.25/integrate-auth-system"
+          "id": "version-0.23/integrate-auth-system"
         },
         {
           "type": "doc",
-          "id": "version-0.25/workspace-permissions"
+          "id": "version-0.23/workspace-permissions"
         },
         {
           "type": "doc",
-          "id": "version-0.25/manage-platform-users"
+          "id": "version-0.23/manage-platform-users"
         },
         {
           "type": "doc",
-          "id": "version-0.25/houston-api"
+          "id": "version-0.23/houston-api"
         },
         {
           "type": "doc",
-          "id": "version-0.25/upgrade-astronomer-stable"
+          "id": "version-0.23/upgrade-astronomer-stable"
         },
         {
           "type": "doc",
-          "id": "version-0.25/apply-platform-config"
+          "id": "version-0.23/upgrade-to-0-23"
         },
         {
           "type": "doc",
-          "id": "version-0.25/registry-backend"
+          "id": "version-0.23/apply-platform-config"
         },
         {
           "type": "doc",
-          "id": "version-0.25/configure-platform-resources"
+          "id": "version-0.23/registry-backend"
         },
         {
           "type": "doc",
-          "id": "version-0.25/renew-tls-cert"
+          "id": "version-0.23/configure-platform-resources"
         },
         {
           "type": "doc",
-          "id": "version-0.25/pre-create-namespaces"
+          "id": "version-0.23/renew-tls-cert"
         },
-        {
-          "type": "doc",
-          "id": "version-0.25/third-party-ingress-controllers"
-        }
       ],
       "collapsible": true,
       "collapsed": true
@@ -190,19 +186,19 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.25/grafana-metrics"
+          "id": "version-0.23/grafana-metrics"
         },
         {
           "type": "doc",
-          "id": "version-0.25/kibana-logging"
+          "id": "version-0.23/kibana-logging"
         },
         {
           "type": "doc",
-          "id": "version-0.25/platform-alerts"
+          "id": "version-0.23/platform-alerts"
         },
         {
           "type": "doc",
-          "id": "version-0.25/logs-to-s3"
+          "id": "version-0.23/logs-to-s3"
         }
       ],
       "collapsible": true,
@@ -214,27 +210,27 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.25/image-architecture"
+          "id": "version-0.23/image-architecture"
         },
         {
           "type": "doc",
-          "id": "version-0.25/single-node-install"
+          "id": "version-0.23/single-node-install"
         },
         {
           "type": "doc",
-          "id": "version-0.25/logs-to-s3"
+          "id": "version-0.23/logs-to-s3"
         },
         {
           "type": "doc",
-          "id": "version-0.25/install-packages"
+          "id": "version-0.23/install-packages"
         },
         {
           "type": "doc",
-          "id": "version-0.25/upgrade-ac"
+          "id": "version-0.23/upgrade-ac"
         },
         {
           "type": "doc",
-          "id": "version-0.25/ac-support-policy"
+          "id": "version-0.23/ac-support-policy"
         }
       ],
       "collapsible": true,
@@ -246,15 +242,15 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.25/kubectl"
+          "id": "version-0.23/kubectl"
         },
         {
           "type": "doc",
-          "id": "version-0.25/debug-install"
+          "id": "version-0.23/debug-install"
         },
         {
           "type": "doc",
-          "id": "version-0.25/disaster-recovery"
+          "id": "version-0.23/disaster-recovery"
         }
       ],
       "collapsible": true,
@@ -266,19 +262,19 @@
       "items": [
         {
           "type": "doc",
-          "id": "version-0.25/release-notes"
+          "id": "version-0.23/release-notes"
         },
         {
           "type": "doc",
-          "id": "version-0.25/support"
+          "id": "version-0.23/support"
         },
         {
           "type": "doc",
-          "id": "version-0.25/cli-reference"
+          "id": "version-0.23/cli-reference"
         },
         {
           "type": "doc",
-          "id": "version-0.25/version-compatibility-reference"
+          "id": "version-0.23/version-compatibility-reference"
         }
       ],
       "collapsible": true,
