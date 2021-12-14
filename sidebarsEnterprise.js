@@ -84,7 +84,6 @@ module.exports = {
       'renew-tls-cert',
       'pre-create-namespaces',
       'third-party-ingress-controllers',
-      'custom-oauth',
       ],
     },
     {
