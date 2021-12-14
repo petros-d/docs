@@ -56,7 +56,7 @@ For each `major.minor` pair, only the latest patch is supported at any given tim
 For example, if Astronomer Enterprise v0.26 were a stable version first released in October 2021:
 
 - Support for Astronomer Enterprise v0.26 would end 6 months later in April 2022.
-- If a patch version for v0.26 came out in December 2021 (e.g. `v0.26.2`), it would not affect the maintenance duration. Maintenance for v0.26 would still end in April 2022.
+- If a patch version for v0.26 came out in December 2021 (e.g. `v0.26.4`), it would not affect the maintenance duration. Maintenance for v0.26 would still end in April 2022.
 - If a major bug was identified in v0.26, a fix would be backported by the Astronomer team and released as a patch to v0.26 as long as it remained the latest stable release.
 - If Astronomer Enterprise v0.27 came out as a new stable release, bug fixes would no longer be backported to Astronomer v0.26 and customers would be encouraged to upgrade.
 - If a major security issue was identified in v0.26, a fix would be backported and released as a patch at any time during its 6 month maintenance period. If v0.27 came out and succeeded v0.26 as the latest stable version of Astronomer Enterprise, a security fix would still be backported to v0.26.

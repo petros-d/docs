@@ -68,14 +68,12 @@ Kubernetes prevents accessing secrets from another namespace, so an individual K
 ```bash
 # namespace containing your custom ingress controller
 $ INGRESS_CONTROLLER_NAMESPACE=some-namespace
-# namespace containing the Astronomer Platform
-$ ASTRONOMER_PLATFORM_NAMESPACE=astronomer
 # name of the secret in the Astronomer Platform namespace
 $ SECRET_NAME=astronomer-tls
 # label the namespace containing your ingress controller
-$ kubectl label namespace/${INGRESS_CONTROLLER_NAMESPACE} "needs-astronomer-platform-tls-secret=true"
+$ kubectl label namespace/${INGRESS_CONTROLLER_NAMESPACE} "network.openshift.io/policy-group=ingress"
 # annotate the astronomer-tls secret with that as a sync target
-$ kubectl -n ${ASTRONOMER_PLATFORM_NAMESPACE} annotate  secret/${SECRET_NAME}  kubed.appscode.com/sync="needs-astronomer-platform-tls-secret=true"
+$ kubectl annotate secret/${SECRET_NAME} kubed.appscode.com/sync="platform-release=astronomer"
 # confirm secret replicated
 $ kubectl -n ${INGRESS_CONTROLLER_NAMESPACE} get secret ${SECRET_NAME}
 ```

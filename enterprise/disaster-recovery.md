@@ -53,7 +53,7 @@ The following instructions assume you have:
 
 * Velero installed in your cluster
 * The Velero CLI
-* `kubectl` accesss to your cluster
+* `kubectl` access to your cluster
 
 If you do not already have both, reference [Velero's documentation](https://velero.io/docs/v1.4/).
 

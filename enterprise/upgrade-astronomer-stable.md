@@ -63,12 +63,15 @@ helm3 repo update
 # upgradeDeployments false ensures that Airflow charts are not upgraded when this script is ran
 # If you deployed a config change that is intended to reconfigure something inside Airflow,
 # then you may set this value to "true" instead. When it is "true", then each Airflow chart will
-# restart. Note that some stable version upgrades require setting this value to true regardless of your own configuration.
+# restart.
+# To ensure that your Deployments update to the latest Airflow chart version (1.0.7),
+# set upgradeDeployments.enabled=true.
 helm3 upgrade --namespace $NAMESPACE \
             -f ./config.yaml \
             --reset-values \
             --version $ASTRO_VERSION \
             --set astronomer.houston.upgradeDeployments.enabled=false \
+            --set astronomer.houston.upgradeDeployments.enabled=true \
             $RELEASE_NAME \
             astronomer/astronomer
 ```
