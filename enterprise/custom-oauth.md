@@ -52,7 +52,7 @@ To use a custom Oauth authorization flow:
 
 :::info
 
-You can also pass your auth configurations as environment variables in the Houston section of your `config.yaml` file. If you choose to configure your installation this way, set the following variables in the `astronomer.houston.env` list instead of updating your `config.yaml` file:
+You can also pass your auth configurations as environment variables in the Houston section of your `config.yaml` file. If you choose to configure your installation this way, set the following variables in the `astronomer.houston.env` list instead of setting values in `astronomer.auth`:
 
 ```yaml
 # Replace <idp-provider> with OKTA, AUTH0, or CUSTOM
