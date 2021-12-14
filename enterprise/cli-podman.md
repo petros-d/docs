@@ -19,7 +19,7 @@ Alternatively, you can use Podman to execute these same commands.
 
 To complete this setup, you need:
 
-- Podman installed on your local machine.
+- Podman 3.1.0+ installed on your local machine.
 - The Astronomer CLI.
 
 ## Linux Setup
@@ -82,7 +82,7 @@ To set up Podman for an Astronomer project:
     # copy ssh command from above output for the next command, for example:
     # 49671 core@localhost
 
-    $ ssh -i /Users/neel/.ssh/podman-machine-default -R 10000:$(hostname):22 -p <ssh-command>
+    $ ssh -i /Users/user/.ssh/podman-machine-default -R 10000:$(hostname):22 -p <ssh-command>
     $ ssh-keygen -t rsa
     $ ssh-copy-id -p 10000 <user>@127.0.0.1
     $ sudo mkdir -p airflow-dir
@@ -126,3 +126,17 @@ To set up Podman for an Astronomer project:
     ```
 
 You can now run the Astronomer CLI in Podman containers for this Astronomer project.
+
+## Switch Between Using Docker and Podman
+
+Once you set up the Astronomer CLI to use Podman on your local machine, the CLI will automatically run Podman containers whenever you run a command that requires them. To revert back to default behavior and run CLI commands in Docker containers, run the following command:
+
+```sh
+astro config set container.engine docker
+```
+
+If you need to switch back to using Podman again, run the following command:
+
+```sh
+astro config set container.engine podman
+```
