@@ -226,6 +226,10 @@
         },
         {
           "type": "doc",
+          "id": "version-0.23/ac-cve"
+        },
+        {
+          "type": "doc",
           "id": "version-0.23/ac-support-policy"
         }
       ],
@@ -259,6 +263,10 @@
         {
           "type": "doc",
           "id": "version-0.23/release-notes"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.23/system-components"
         },
         {
           "type": "doc",

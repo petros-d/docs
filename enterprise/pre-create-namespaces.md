@@ -47,7 +47,6 @@ To start using pre-created namespaces:
               - name: <namespace-name2>
               - name: <namespace-etc>
 
-
             # Allows users to immediately reuse a pre-created namespace by hard deleting the associated Deployment
             hardDeleteDeployment: true
 

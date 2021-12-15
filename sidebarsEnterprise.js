@@ -103,6 +103,7 @@ module.exports = {
       'logs-to-s3',
       'install-packages',
       'upgrade-ac',
+      'ac-cve',
       'ac-support-policy',
       ],
     },
@@ -119,8 +120,8 @@ module.exports = {
       type: 'category',
       label: 'Resources',
       items: [
-      `system-components`,
       'release-notes',
+      'system-components',
       'support',
       'cli-reference',
       'version-compatibility-reference',

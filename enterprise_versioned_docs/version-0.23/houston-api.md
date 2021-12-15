@@ -287,36 +287,6 @@ mutation verifyEmail {
 
 > **Note:** To run this mutation, ensure that the user in question has already begun creating an account on the platform (i.e. the user has signed up and the platform has generated an "invite token" for that user).
 
-### Bypass User Email Verification
-
-If you don't need certain users to verify their email before joining a Workspace, you can configure a bypass when adding them to a Workspace. This can be useful for minimizing friction when programmatically inviting many users to your platform.
-
-To run this mutation, you'll need:
-
-- Workspace Admin permissions
-- A Workspace ID
-- The user's email address
-- The user's Workspace role
-
-```graphql
-mutation workspaceAddUser(
-    $workspaceUuid: Uuid = "<your-workspace-uuid>"
-    $email: String! = "<user-email-address>"
-    $role: Role! = <user-workspace-role>
-    $bypassInvite: Boolean! = true
-  ) {
-    workspaceAddUser(
-      workspaceUuid: $workspaceUuid
-      email: $email
-      role: $role
-      deploymentRoles: $deploymentRoles
-      bypassInvite: $bypassInvite
-    ) {
-      id
-    }
-  }
-```
-
 ### Add a SysAdmin (_Enterprise Only_)
 
 System Admins can be added either via the Astronomer UI ('System Admin' > 'User' > 'User Details') or via an API call to Houston. To run the mutation in the GraphQL Playground, you'll need:

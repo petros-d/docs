@@ -147,6 +147,8 @@ In this example:
 
 Once you are authenticated you can build, tag and push your Airflow image to the private registry, where a webhook will trigger an update to your Airflow Deployment on the platform.
 
+> **Note:** To deploy successfully to Astronomer, the version in the `FROM` statement of your project's Dockerfile must be the same as the version of Airflow specified in your Astronomer Deployment. For more information on upgrading, read [Upgrade Airflow](/docs/cloud/stable/customize-airflow/manage-airflow-versions).
+
 #### Registry Address
 
 *Registry Address* tells Docker where to push images to. On Astronomer Enterprise, your private registry is located at `registry.${BASE_DOMAIN}`.

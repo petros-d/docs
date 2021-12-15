@@ -155,7 +155,6 @@ Contour ships with support for websockets disabled by default. To use a Contour 
 >    ```sh
 >    $ kubectl -n <your-platform-namespace> delete ingress -l release=<your-platform-release-name>
 >    $ helm upgrade --install -f config.yaml --version=<your-platform-version> --namespace=<your-platform-namespace> <your-platform-release-name> astronomer/astronomer
->
 
 ## Step 3: Apply Changes With Helm
 
