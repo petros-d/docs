@@ -85,7 +85,7 @@ If your organization uses pre-created namespaces and you want to limit Astronome
 This setup assumes that you have:
 
 - An Astronomer installation.
-- A pre-created Kubernetes namespace [configured for Astronomer](/docs/enterprise/v0.26/manage-astronomer/pre-created-namespaces#enable-pre-created-namespaces).
+- A pre-created Kubernetes namespace [configured for Astronomer](pre-create-namespaces.md#enable-pre-created-namespaces).
 - [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl).
 
 ### Setup

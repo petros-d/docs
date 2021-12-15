@@ -2,6 +2,7 @@
 sidebar_label: 'Configure a Deployment'
 title: 'Configure a Deployment on Astronomer Enterprise'
 id: configure-deployment
+description: Configure your Airflow Deployment's resources on Astronomer Enterprise.
 ---
 
 ## Overview
@@ -26,7 +27,6 @@ To create an Airflow Deployment on Astronomer:
 
     - **Name**
     - **Description** (Optional)
-    - **Airflow Version**: We recommend using the latest version.
     - **Executor**: We recommend starting with Local.
 
 3. Click **Create Deployment** and give the Deployment a few moments to spin up. Within a few seconds, you'll have access to the **Settings** page of your new Deployment:
@@ -37,7 +37,6 @@ This tab is the best place to modify resources for your Deployment. Specifically
 
 - Select an Airflow Executor
 - Allocate resources to your Airflow Scheduler and Webserver
-- Set Scheduler Count (*Airflow 2.0+ only*)
 - Add Extra Capacity (*Kubernetes only*)
 - Set Worker Count (*Celery only*)
 - Adjust your Worker Termination Grace Period (*Celery only*)
@@ -84,14 +83,6 @@ The [Airflow Scheduler](https://airflow.apache.org/docs/apache-airflow/stable/sc
 If you experience delays in task execution, which you can track via the [Gantt Chart](https://airflow.apache.org/docs/apache-airflow/stable/ui.html#gantt-chart) view of the Airflow UI, we recommend increasing the AU allocated towards the Scheduler. The default resource allocation is 10 AU.
 
 > **Tip:** To set alerts that notify you via email when your Airflow Scheduler is underprovisioned, refer to [Airflow Alerts](airflow-alerts.md).
-
-#### Scheduler Count
-
-Airflow 2.0 comes with the ability for users to run multiple Schedulers concurrently to ensure high-availability, zero recovery time, and faster performance. By adjusting the **Scheduler Count** slider in the Astronomer UI, you can provision up to 4 Schedulers on any Deployment running Airflow 2.0+ on Astronomer.
-
-Each individual Scheduler will be provisioned with the AU specified in **Scheduler Resources**. For example, if you set **Scheduler Resources** to 10 AU and **Scheduler Count** to 2, your Airflow Deployment will run with 2 Airflow Schedulers using 10 AU each for a total of 20 AU.
-
-To increase the speed at which tasks are scheduled and ensure high-availability, we recommend provisioning 2 or more Airflow Schedulers for production environments. For more information on the Airflow 2.0 Scheduler, refer to Astronomer's ["The Airflow 2.0 Scheduler" blog post](https://www.astronomer.io/blog/airflow-2-scheduler).
 
 ## Kubernetes Executor: Set Extra Capacity
 
