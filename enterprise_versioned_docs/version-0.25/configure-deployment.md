@@ -93,48 +93,6 @@ Each individual Scheduler will be provisioned with the AU specified in **Schedul
 
 To increase the speed at which tasks are scheduled and ensure high-availability, we recommend provisioning 2 or more Airflow Schedulers for production environments. For more information on the Airflow 2.0 Scheduler, refer to Astronomer's ["The Airflow 2.0 Scheduler" blog post](https://www.astronomer.io/blog/airflow-2-scheduler).
 
-### Triggerer
-
-Airflow 2.2 introduces the Triggerer, which is a component for running tasks with [Deferrable Operators](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html). Like the Scheduler, the Triggerer is highly-available: If a Triggerer shuts down unexpectedly, the tasks it was deferring can be recovered and moved to another Triggerer.
-
-By adjusting the **Triggerer** slider in the Astronomer UI, you can provision up to 2 Triggerers on any Deployment running Airflow 2.2+. To take advantage of the Triggerer's high availability, we recommend provisioning 2 Triggerers for production Deployments.
-
-Note that this feature must first be enabled by a System Admin before it appears in your Deployments. To enable Triggerers, follow the steps in the following section.
-
-#### Enable Triggerers
-
-Triggerers are available only in Deployments running Airflow 2.2+. Additionally, the feature must be explicitly enabled on your platform by a user with System Admin permissions. To enable the feature, update your `config.yaml` file with the following values:
-
-```yaml
-astronomer:
-  houston:
-    deployments:
-      triggererEnabled: true
-```
-
-If you have overridden  `astronomer.houston.deployments.components`, you additionally need to add the following configuration:
-
-```yaml
-astronomer:
-  houston:
-    deployments:
-      components:
-        # add this block to the other components you've overridden
-        - name: triggerer
-          au:
-            default: 5
-            limit: 30
-            request: ~
-          extra:
-            - name: replicas
-              default: 0
-              minimum: 0
-              limit: 2
-              minAirflowVersion: "2.2.0"    
-```
-
-After you save these changes, push your `config.yaml` file to your installation as described in [Apply a Config Change](apply-platform-config.md).
-
 ## Kubernetes Executor: Set Extra Capacity
 
 On Astronomer, resources required for the [KubernetesPodOperator](kubepodoperator.md) or the [Kubernetes Executor](kubernetes-executor.md) are set as **Extra Capacity**.

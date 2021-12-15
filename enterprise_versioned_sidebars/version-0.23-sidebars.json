@@ -26,6 +26,10 @@
       "items": [
         {
           "type": "doc",
+          "id": "version-0.23/cli-quickstart"
+        },
+        {
+          "type": "doc",
           "id": "version-0.23/customize-image"
         },
         {

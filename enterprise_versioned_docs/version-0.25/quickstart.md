@@ -195,12 +195,6 @@ The **Metrics** tab only shows metrics for a given Deployment. If you are the fi
 
 These views show logs and metrics across all Deployments running on your Astronomer platform. To learn more about using Grafana, read [Metrics in Astronomer Enterprise](grafana-metrics.md). To learn more about using Kibana, read [Logging in Astronomer Enterprise](kibana-logging.md).
 
-## Video Tutorial
-
-Watch our video tutorial for a brief review of the workflows and concepts described in this quickstart:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OihokE8u9D0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 ## What's Next?
 
 Once you've successfully installed your Astronomer platform, we recommend doing the following:
