@@ -11,7 +11,7 @@ As of Astronomer v0.16, Astronomer releases will be made generally available to 
 
 For instructions on how to upgrade to the latest v0.16 patch version of Astronomer, read [Upgrade to a Stable Version of Astronomer](upgrade-astronomer-stable). If you're interested in upgrading from Astronomer v0.16.x to the latest minor version of the platform, read [Upgrade to Astronomer Enterprise v0.23](upgrade-to-0-23.md).
 
-We're committed to testing all quarterly Astronomer Enterprise versions for scale, reliability and security on EKS, GKE and AKS. If you have any questions or an issue to report, don't hesitate to [reach out to us](support.astronomer.io).
+We're committed to testing all quarterly Astronomer Enterprise versions for scale, reliability and security on EKS, GKE and AKS. If you have any questions or an issue to report, don't hesitate to [reach out to us]((https://support.astronomer.io).
 
 ## Astronomer v0.16
 
@@ -312,7 +312,7 @@ Release Date: June 8, 2020
 
 #### Support for Airflow 1.10.10
 
-As of v0.15, Astronomer users are free to run our [Astronomer Certified (AC) 1.10.10 image](/downloads/ac/v1-10-10/), which is based on the [Airflow 1.10.10](https://airflow.apache.org/blog/airflow-1.10.10/) open source version released in early April.
+As of v0.15, Astronomer users are free to run our [Astronomer Certified (AC) 1.10.10 image](https://www.astronomer.io/downloads/ac/v1-10-10), which is based on the [Airflow 1.10.10](https://airflow.apache.org/blog/airflow-1.10.10/) open source version released in early April.
 
 Airflow 1.10.10 notably includes the ability to choose a timezone in the Airflow UI, DAG Serialization functionality for improved Webserver performance, and the [ability to sync Airflow Connections and Variables](https://forum.astronomer.io/t/aws-parameter-store-as-secrets-backend-airflow-1-10-10/606) with a Secret Backend tool (e.g. AWS Secret Manager, Hashicorp Vault, etc.)
 
