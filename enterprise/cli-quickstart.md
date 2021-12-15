@@ -42,10 +42,10 @@ If you have Homebrew installed, run:
 brew install astronomer/tap/astro
 ```
 
-To install a specific version of the Astro CLI, you'll have to specify `@major.minor.patch`. To install v0.25.0, for example, run:
+To install a specific version of the Astro CLI, you'll have to specify `@major.minor.patch`. To install v0.27.0, for example, run:
 
 ```sh
-brew install astronomer/tap/astro@0.25.0
+brew install astronomer/tap/astro@0.27.0
 ```
 
 ### Install with cURL
@@ -56,10 +56,10 @@ To install the latest version of the Astronomer CLI, run:
 curl -sSL https://install.astronomer.io | sudo bash
 ```
 
-To install a specific version of the Astronomer CLI, specify `-s -- major.minor.patch` as a flag at the end of the cURL command. To install v0.25.0, for example, run:
+To install a specific version of the Astronomer CLI, specify `-s -- major.minor.patch` as a flag at the end of the cURL command. To install v0.27.0, for example, run:
 
 ```
-curl -sSL https://install.astronomer.io | sudo bash -s -- v0.25.0
+curl -sSL https://install.astronomer.io | sudo bash -s -- v0.27.0
 ```
 
 #### Install the CLI on macOS Catalina+:
@@ -286,12 +286,6 @@ For more information on Astronomer and Astronomer CLI releases, refer to:
 
 * [CLI Release Changelog](https://github.com/astronomer/astro-cli/releases)
 * [Astronomer Release Notes](release-notes.md)
-
-## Video Tutorial
-
-Watch our video tutorial for a brief review of the workflows and concepts described in this quickstart:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OihokE8u9D0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Next Steps
 

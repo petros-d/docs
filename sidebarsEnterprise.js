@@ -105,6 +105,7 @@ module.exports = {
       'logs-to-s3',
       'install-packages',
       'upgrade-ac',
+      'ac-cve',
       'ac-support-policy',
       ],
     },
