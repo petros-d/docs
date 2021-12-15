@@ -42,35 +42,42 @@ Alertmanager uses [receivers](https://prometheus.io/docs/alerting/latest/configu
 
 This Helm chart contains groups for each possible alert type based on `labels.tier` and `labels.severity`. Each receiver must be defined within at least one alert type in order to reveive notifications.
 
-For example, adding the following receiver to `receivers.platformCritical` would cause platform alerts with `critical` severity to appear in the `#astronomer_platform_alerts` Slack channel:
+For example, adding the following receiver to `receivers.platformCritical` would cause platform alerts with `critical` severity to appear in a specified Slack channel:
 
 ```yaml
 alertmanager:
   receivers:
     # Configs for platform alerts
     platform:
-
+      email_configs:
+      - smarthost: smtp.sendgrid.net:587
+        from: <your-astronomer-alert-email@company.com>
+        to: <your-email@company.com>
+        auth_username: apikey
+        auth_password: SG.myapikey1234567891234abcdef_bKY
+        send_resolved: true
     platformCritical:
-        slack_configs:
-        - api_url: https://hooks.slack.com/services/T02J89GPR/BDBSG6L1W/4Vm7zo542XYgvv3
-          channel: '#astronomer_platform_alerts'
-          text: |-
-            {{ range .Alerts }}{{ .Annotations.description }}
-            {{ end }}
-          title: '{{ .CommonAnnotations.summary }}'
+      slack_configs:
+      - api_url: https://hooks.slack.com/services/abc12345/abcXYZ/xyz67890
+        channel: '#<your-slack-channel-name>'
+        text: |-
+          {{ range .Alerts }}{{ .Annotations.description }}
+          {{ end }}
+        title: '{{ .CommonAnnotations.summary }}'
 ```
 
 By default, the Alertmanager Helm Chart includes alert objects for platform, critical platform, and Deployment alerts. To configure a receiver for a non-default alert type, such as Deployment alerts with high severity, add that receiver to the `customRoutes` list with the appropriate `match_re` and receiver configuration values. For example:
 
 ```yaml
 alertmanager:
-  customRoutes: {}
-    - name: deployment-high-receiver
-      match_re:
-        tier: airflow
-        severity: high
-      email-configs: # etc.
+  customRoutes:
+  - name: deployment-high-receiver
+    match_re:
+      tier: airflow
+      severity: high
 ```
+
+Note that if you have a `platform`, `platformCritical`, or `airflow` receiver defined in the prior section, you do not need a `customRoute` to route to them. They will automatically be routed to by the `tier` label.
 
 For more information on building and configuring receivers, refer to [Prometheus documentation](https://prometheus.io/docs/alerting/configuration/).
 

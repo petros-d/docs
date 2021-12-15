@@ -5,7 +5,7 @@ id: deployment-logs
 ---
 ## Overview
 
-As of Astronomer v0.8, the Astronomer UI allows you to look up and search Airflow logs emitted by your Webserver, Scheduler and Worker(s) for any deployment you have access to.
+The Astronomer UI allows you to look up and search Airflow logs emitted by your Webserver, Scheduler and Worker(s) for any deployment you have access to.
 
 ### Interpreting Logs
 

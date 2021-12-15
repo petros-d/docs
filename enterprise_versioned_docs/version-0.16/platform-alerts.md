@@ -39,6 +39,7 @@ You can configure [Alertmanager](https://prometheus.io/docs/alerting/configurati
 
 ### Create alert receivers
 
+
 Alertmanager uses [receivers](https://prometheus.io/docs/alerting/latest/configuration/#receiver) to integrate with different messaging platforms. To begin sending notifications for alerts, you first need to define `receivers` in YAML using the [Alertmanager Helm chart](https://github.com/astronomer/astronomer/blob/master/charts/alertmanager/values.yaml).
 
 This Helm chart contains groups for each possible alert type based on `labels.tier` and `labels.severity`. Each receiver must be defined within at least one alert type in order to reveive notifications.
