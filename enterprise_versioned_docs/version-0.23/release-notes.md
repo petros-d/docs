@@ -1,5 +1,5 @@
 ---
-title: 'Astronomer v0.26 Release Notes'
+title: 'Astronomer v0.23 Release Notes'
 sidebar_label: 'Release Notes'
 id: release-notes
 ---

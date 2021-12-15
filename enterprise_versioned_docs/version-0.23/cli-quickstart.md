@@ -42,10 +42,10 @@ If you have Homebrew installed, run:
 brew install astronomer/tap/astro
 ```
 
-To install a specific version of the Astro CLI, you'll have to specify `@major.minor.patch`. To install v0.25.0, for example, run:
+To install a specific version of the Astro CLI, you'll have to specify `@major.minor.patch`. To install v0.23.0, for example, run:
 
 ```sh
-brew install astronomer/tap/astro@0.25.0
+brew install astronomer/tap/astro@0.23.0
 ```
 
 ### Install with cURL
@@ -56,10 +56,10 @@ To install the latest version of the Astronomer CLI, run:
 curl -sSL https://install.astronomer.io | sudo bash
 ```
 
-To install a specific version of the Astronomer CLI, specify `-s -- major.minor.patch` as a flag at the end of the cURL command. To install v0.25.0, for example, run:
+To install a specific version of the Astronomer CLI, specify `-s -- major.minor.patch` as a flag at the end of the cURL command. To install v0.23.0, for example, run:
 
 ```
-curl -sSL https://install.astronomer.io | sudo bash -s -- v0.25.0
+curl -sSL https://install.astronomer.io | sudo bash -s -- v0.23.0
 ```
 
 #### Install the CLI on macOS Catalina+:
@@ -259,7 +259,7 @@ astro dev start
 
 ## Astronomer CLI and Platform Versioning
 
-For every minor version of Astronomer, a corresponding minor version of the Astronomer CLI is made available. To ensure that you can continue to develop locally and deploy successfully, you should always upgrade to the corresponding minor version of the Astronomer CLI when you upgrade to a new minor version of Astronomer. If you're on Astronomer v0.25+, for example, Astronomer CLI v0.25+ is required.
+For every minor version of Astronomer, a corresponding minor version of the Astronomer CLI is made available. To ensure that you can continue to develop locally and deploy successfully, you should always upgrade to the corresponding minor version of the Astronomer CLI when you upgrade to a new minor version of Astronomer. If you're on Astronomer v0.23+, for example, Astronomer CLI v0.23+ is required.
 
 While upgrading to a new minor version of Astronomer requires upgrading the Astronomer CLI, subsequent patch versions will remain compatible. For instance, consider a system where Astronomer is on v0.25.2 and the Astronomer CLI is on v0.25.0. While we encourage users to always run the latest available version of all components, these patch versions of Astronomer and the Astronomer CLI remain compatible because they're both in the v0.25 series.
 
