@@ -14,7 +14,7 @@ module.exports = {
   themeConfig: {
     algolia: {
       apiKey: '99354995bfad26ed950bdb701bc56b6b',
-      indexName: 'beta',
+      indexName: 'published-docs',
 
       // Optional: see doc section below
       contextualSearch: true,
