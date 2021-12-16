@@ -12,6 +12,10 @@ module.exports = {
   organizationName: 'astronomer', // Usually your GitHub org/user name.
   projectName: 'cloud-docs', // Usually your repo name.
   themeConfig: {
+    gtag: {
+          trackingID: 'UA-141789564-1',
+          anonymizeIP: true,
+        },
     algolia: {
       apiKey: '99354995bfad26ed950bdb701bc56b6b',
       indexName: 'published-docs',
