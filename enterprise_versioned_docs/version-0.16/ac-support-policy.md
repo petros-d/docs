@@ -2,7 +2,7 @@
 title: 'Astronomer Certified Versioning and Support'
 sidebar_label: 'Versioning and Support Policy'
 id: ac-support-policy
-description: Versioning and lifecycle policy for Astronomer Certified, Astronomer's Apache Airflow offering.
+description: Versioning and lifecycle policy for Astronomer Certified, our Apache Airflow offering for Astronomer Enterprise.
 ---
 
 ## Overview

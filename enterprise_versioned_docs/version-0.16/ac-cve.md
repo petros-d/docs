@@ -2,7 +2,7 @@
 title: "Astronomer Certified Security"
 sidebar_label: "CVEs"
 id: ac-cve
-description: "Common Vulnerabilities and Exposures identified within our Astronomer Certified Images."
+description: "Common Vulnerabilities and Exposures identified within our Astronomer Certified images."
 ---
 
 ## Overview

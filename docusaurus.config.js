@@ -112,10 +112,6 @@ module.exports = {
               label: 'Overview',
               to: 'enterprise/overview',
             },
-            {
-              label: 'System Components',
-              to: 'enterprise/system-components',
-            },
           ],
         },
         {

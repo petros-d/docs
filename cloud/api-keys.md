@@ -17,12 +17,6 @@ A Deployment API key has the following properties:
 
 This guide provides steps for creating and deleting Deployment API keys.
 
-:::tip
-
-Deployment API keys are an improved and more secure iteration of [Service Accounts](ci-cd.md#step-1-create-a-service-account), which are available in other Astronomer products.
-
-:::
-
 ## Create an API Key
 
 To create an API key for a Deployment:
