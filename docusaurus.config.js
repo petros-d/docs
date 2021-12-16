@@ -96,7 +96,7 @@ module.exports = {
               to: 'cloud/install-aws',
             },
             {
-              label: 'Install CLI',
+              label: 'Install the CLI',
               to: 'cloud/install-cli',
             },
             {
@@ -104,7 +104,7 @@ module.exports = {
               to: 'cloud/create-project',
             },
             {
-              label: 'Deploy',
+              label: 'Deploy Code',
               to: 'cloud/deploy-code',
             },
           ],
@@ -137,6 +137,10 @@ module.exports = {
               label: 'Status',
               href: 'https://cloud-status.astronomer.io',
             },
+            {
+              label: 'Astronomer Registry',
+              to: 'https://registry.astronomer.io/',
+            },
           ],
         },
         {
@@ -145,10 +149,6 @@ module.exports = {
             {
               label: 'Astronomer Homepage',
               to: 'https://www.astronomer.io',
-            },
-            {
-              label: 'Astronomer Registry',
-              to: 'https://registry.astronomer.io/',
             },
             {
               label: 'Airflow Guides',
