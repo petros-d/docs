@@ -195,7 +195,7 @@ module.exports = {
         id: 'enterprise',
         routeBasePath: 'enterprise',
         editUrl: ({ docPath }) =>
-            `https://github.com/astronomer/cloud-docs/blob/main/docs/enterprise/${docPath}`,
+            `https://github.com/astronomer/docs/blob/main/docs/enterprise/${docPath}`,
         editCurrentVersion: true,
         sidebarPath: require.resolve('./sidebarsEnterprise.js'),
         path: 'enterprise',
