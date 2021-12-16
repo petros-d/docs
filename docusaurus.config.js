@@ -10,7 +10,7 @@ module.exports = {
   onBrokenMarkdownLinks: 'error',
   favicon: 'img/favicon.svg',
   organizationName: 'astronomer', // Usually your GitHub org/user name.
-  projectName: 'cloud-docs', // Usually your repo name.
+  projectName: 'docs', // Usually your repo name.
   themeConfig: {
     gtag: {
           trackingID: 'UA-141789564-1',
@@ -156,7 +156,7 @@ module.exports = {
             },
             {
               label: 'Docs on GitHub',
-              href: 'https://github.com/astronomer/cloud-docs',
+              href: 'https://github.com/astronomer/docs',
             },
           ],
         },
@@ -171,7 +171,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebarsCloud.js'),
           editUrl: ({ docPath }) =>
-            `https://github.com/astronomer/cloud-docs/blob/main/docs/cloud/${docPath}`,
+            `https://github.com/astronomer/docs/blob/main/docs/cloud/${docPath}`,
           editLocalizedFiles: true,
           routeBasePath: 'cloud',
           path: 'cloud',
