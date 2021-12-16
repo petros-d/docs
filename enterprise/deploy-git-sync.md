@@ -1,8 +1,8 @@
 ---
-sidebar_label: 'Deploy DAGs via Git Sync'
-title: 'Deploy DAGs to Astronomer Enterprise via Git Sync'
+sidebar_label: 'Deploy DAGs via Git-Sync'
+title: 'Deploy DAGs to Astronomer Enterprise via Git-Sync'
 id: deploy-git-sync
-description: Push DAGs to your Airflow Deployment on Astronomer Enterprise using Git Sync.
+description: Push DAGs to your Airflow Deployment on Astronomer Enterprise using git-sync.
 ---
 
 ## Overview
@@ -42,7 +42,7 @@ astronomer:
       gitSyncDagDeployment: true
 ```
 
-## Configure a Git Repo for git-sync Deploys
+## Configure a Git Repo for Git-Sync Deploys
 
 The Git repo you want to sync should contain a directory of DAGs that you want to deploy to Astronomer. You can include additional files in the repo, such as your other Astronomer project files, but note that this might affect performance when deploying new changes to DAGs.
 
