@@ -131,9 +131,11 @@ DAGs are stored in the `dags` folder of your Astronomer project. To add a DAG to
 
 ### Add DAG Helper Functions
 
-To build additional helper functions for DAGs into your Astronomer project, we recommend adding a folder of `helper_functions` with a set of files that can be used by Airflow DAGs. To do this:
+To build additional helper functions for DAGs into your Astronomer project, we recommend adding a folder with a set of files that can be used by Airflow DAGs.
 
-1. Add a directory of `helper_functions` to your local project:
+To do this:
+
+1. Add your directory of helper functions to your local project:
 
     ```bash
     .
@@ -149,6 +151,8 @@ To build additional helper functions for DAGs into your Astronomer project, we r
     │   └── example-plugin.py
     └── requirements.txt
     ```
+
+    In this example, the directory is named `helper_functions`. You can give it any name.
 
 2. [Restart Your Local Environment](develop-project.md#restart-your-local-environment).
 
