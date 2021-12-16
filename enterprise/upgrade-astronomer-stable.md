@@ -55,7 +55,7 @@ set -xe
 
 RELEASE_NAME=<astronomer-platform-release-name>
 NAMESPACE=<astronomer-platform-namespace>
-ASTRO_VERSION=0.25.<astronomer-patch-version>
+ASTRO_VERSION=0.27.<astronomer-patch-version>
 
 helm3 repo add astronomer https://helm.astronomer.io
 helm3 repo update
@@ -73,4 +73,4 @@ helm3 upgrade --namespace $NAMESPACE \
             astronomer/astronomer
 ```
 
-> **Note:** If you do not specify a patch version above, the script will automatically pull the latest Astronomer Enterprise patch available in the [Astronomer Helm Chart](https://github.com/astronomer/astronomer/releases). If you set `ASTRO_VERSION=0.25` and `--version 0.25`, for example, Astronomer v0.25.9 will be installed if it is the latest v0.25 patch available.
+> **Note:** If you do not specify a patch version above, the script will automatically pull the latest Astronomer Enterprise patch available in the [Astronomer Helm Chart](https://github.com/astronomer/astronomer/releases). If you set `ASTRO_VERSION=0.27` and `--version 0.27`, for example, Astronomer v0.27.9 will be installed if it is the latest v0.27 patch available.

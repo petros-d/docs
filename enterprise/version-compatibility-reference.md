@@ -44,6 +44,7 @@ It's worth noting that while the tables below reference the minimum compatible v
 | 2.1.3                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 | Debian 10 (Buster)              | 0.18.6+            | 6.2.1 | 4.4.7  |
 | 2.1.4                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 | Debian 10 (Buster)              | 0.18.6+            | 6.2.1 | 4.4.7  |
 | 2.2.0                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 | Debian 11 (Bullseye)            | 0.18.6+            | 6.2.1 | 4.4.7  |
+| 2.2.2                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9(_Default_) | Debian 11 (Bullseye)            | 0.18.6+            |
 
 For more detail on each version of Astronomer Certified and instructions on how to upgrade, refer to [Upgrade Apache Airflow](manage-airflow-versions.md/).
 
