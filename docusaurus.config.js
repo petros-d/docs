@@ -209,12 +209,5 @@ module.exports = {
        },
       },
     ],
-    [
-    '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'GTM-PSLJPK9',
-        anonymizeIP: false,
-      },
-    ]
   ],
 };
