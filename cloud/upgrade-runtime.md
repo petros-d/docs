@@ -2,7 +2,7 @@
 sidebar_label: 'Upgrade Runtime'
 title: 'Upgrade Astronomer Runtime'
 id: upgrade-runtime
-description: Upgrade Astronomer Runtime in an Astronomer project.
+description: Upgrade your Deployment's version of Astronomer Runtime.
 ---
 
 ## Overview

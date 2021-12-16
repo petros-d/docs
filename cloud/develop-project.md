@@ -2,7 +2,7 @@
 sidebar_label: 'Develop a Project'
 title: 'Develop Your Astronomer Project'
 id: develop-project
-description: Learn how to work on Astronomer projects, including how to update, rebuild, and add dependencies.
+description: Learn how to add Airflow dependencies and customize an Astronomer project to fit your use case.
 ---
 
 import {siteVariables} from '@site/src/versions';

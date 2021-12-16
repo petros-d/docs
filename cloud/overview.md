@@ -3,7 +3,7 @@ sidebar_label: 'Overview'
 title: 'Astronomer Cloud Documentation'
 id: overview
 slug: /
-description: Run Apache Airflow on Astronomer Cloud. Scale data pipelines in your network, no infrastructure management required.
+description: Learn about Astronomer Cloud, the managed service that makes data pipelines easy to write, run, and monitor.
 ---
 
 ## Overview

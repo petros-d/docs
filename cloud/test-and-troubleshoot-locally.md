@@ -2,7 +2,7 @@
 sidebar_label: 'Test and Troubleshoot Locally'
 title: 'Test and Troubleshoot Locally'
 id: test-and-troubleshoot-locally
-description: Run Airflow locally to test your Astronomer project before deploying it to Astronomer Cloud.
+description: A guide to running an Astronomer project locally and diagnosing common problems.
 ---
 
 ## Overview

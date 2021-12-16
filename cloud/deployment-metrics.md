@@ -2,7 +2,7 @@
 sidebar_label: 'Deployment Metrics'
 title: 'Deployment Metrics'
 id: deployment-metrics
-description: Measure a Deployment's performance using metrics in the Astronomer Cloud UI.
+description: Monitor Deployment performance, health, and total task volume in the Astronomer UI.
 ---
 
 ## Overview

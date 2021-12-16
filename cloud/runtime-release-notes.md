@@ -2,7 +2,7 @@
 sidebar_label: 'Astronomer Runtime'
 title: 'Astronomer Runtime Release Notes'
 id: runtime-release-notes
-description: Release notes for the Astronomer Runtime, which is Astronomer's distribution of Apache Airflow.
+description: Release notes for Astronomer Runtime, the differentiated Apache Airflow experience and execution framework.
 ---
 
 ## Overview

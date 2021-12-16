@@ -2,7 +2,7 @@
 sidebar_label: 'Known Limitations'
 title: 'Known Limitations'
 id: known-limitations
-description: A list of known limitations and planned features for Astronomer Cloud.
+description: Reference a real-time view of known limitations and planned features for Astronomer Cloud.
 ---
 
 ## Overview

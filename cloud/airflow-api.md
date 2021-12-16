@@ -2,7 +2,7 @@
 title: 'Make Requests to the Apache Airflow API'
 sidebar_label: 'Airflow API'
 id: airflow-api
-description: Make requests to the Apache Airflow UI by creating a Deployment API key.
+description: Make requests to Apache Airflow's REST API with Deployment API Keys on Astronomer.
 ---
 
 ## Overview

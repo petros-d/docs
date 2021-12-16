@@ -2,7 +2,7 @@
 sidebar_label: 'Astronomer Cloud'
 title: 'Astronomer Cloud Release Notes'
 id: release-notes
-description: Release notes for Astronomer Cloud.
+description: A real-time reference of the latest features and bug fixes in Astronomer Cloud.
 ---
 
 ## Overview

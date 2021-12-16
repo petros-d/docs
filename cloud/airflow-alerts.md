@@ -2,7 +2,7 @@
 sidebar_label: 'Airflow Alerts'
 title: 'Configure Airflow Alerts on Astronomer'
 id: airflow-alerts
-description: Receive Airflow Alerts from Astronomer by configuring an SMTP service.
+description: Set up email alerts for Airflow task successes and failures.
 ---
 
 ## Overview
