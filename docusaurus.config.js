@@ -171,7 +171,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebarsCloud.js'),
           editUrl: ({ docPath }) =>
-            `https://github.com/astronomer/docs/blob/main/docs/cloud/${docPath}`,
+            `https://github.com/astronomer/docs/blob/main/cloud/${docPath}`,
           editLocalizedFiles: true,
           routeBasePath: 'cloud',
           path: 'cloud',
@@ -195,7 +195,7 @@ module.exports = {
         id: 'enterprise',
         routeBasePath: 'enterprise',
         editUrl: ({ docPath }) =>
-            `https://github.com/astronomer/docs/blob/main/docs/enterprise/${docPath}`,
+            `https://github.com/astronomer/docs/blob/main/enterprise/${docPath}`,
         editCurrentVersion: true,
         sidebarPath: require.resolve('./sidebarsEnterprise.js'),
         path: 'enterprise',
