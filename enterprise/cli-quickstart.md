@@ -111,7 +111,7 @@ astro version
 If the installation was successful, you should see the version of the CLI that you installed in the output:
 
 ```
-Astro CLI Version: 0.23.2
+Astro CLI Version: 0.27.2
 Git Commit: c4fdeda96501ac9b1f3526c97a1c5c9b3f890d71
 ```
 
@@ -259,9 +259,9 @@ astro dev start
 
 ## Astronomer CLI and Platform Versioning
 
-For every minor version of Astronomer, a corresponding minor version of the Astronomer CLI is made available. To ensure that you can continue to develop locally and deploy successfully, you should always upgrade to the corresponding minor version of the Astronomer CLI when you upgrade to a new minor version of Astronomer. If you're on Astronomer v0.25+, for example, Astronomer CLI v0.25+ is required.
+For every minor version of Astronomer, a corresponding minor version of the Astronomer CLI is made available. To ensure that you can continue to develop locally and deploy successfully, you should always upgrade to the corresponding minor version of the Astronomer CLI when you upgrade to a new minor version of Astronomer. If you're on Astronomer v0.27+, for example, Astronomer CLI v0.27+ is required.
 
-While upgrading to a new minor version of Astronomer requires upgrading the Astronomer CLI, subsequent patch versions will remain compatible. For instance, consider a system where Astronomer is on v0.25.2 and the Astronomer CLI is on v0.25.0. While we encourage users to always run the latest available version of all components, these patch versions of Astronomer and the Astronomer CLI remain compatible because they're both in the v0.25 series.
+While upgrading to a new minor version of Astronomer requires upgrading the Astronomer CLI, subsequent patch versions will remain compatible. For instance, consider a system where Astronomer is on v0.27.2 and the Astronomer CLI is on v0.27.0. While we encourage users to always run the latest available version of all components, these patch versions of Astronomer and the Astronomer CLI remain compatible because they're both in the v0.27 series.
 
 ### Check Running Versions of Astronomer and the Astronomer CLI
 
@@ -275,12 +275,12 @@ This command will output something like the following:
 
 ```sh
 $ astro version
-Astro CLI Version: 0.23.2
-Astro Server Version: 0.23.9
+Astro CLI Version: 0.27.1
+Astro Server Version: 0.27.3
 Git Commit: 748ca2e9de1e51e9f48f9d85eb8315b023debc2f
 ```
 
-Here, the listed versions of Astronomer and the Astronomer CLI are compatible because they're both in the v0.25 series. If the minor versions for the two components do not match, you'll receive an error message in your command line with instructions to either upgrade or downgrade the Astronomer CLI accordingly. If you're running v0.16.10 of Astronomer and v0.25.0 of the Astronomer CLI, for example, you'll be instructed to downgrade the CLI to the latest in the v0.16 series. If you have access to more than one Astronomer Enterprise installation, `Astro Server Version` will correspond to the `<base-domain>` that you're currently authenticated into.
+Here, the listed versions of Astronomer and the Astronomer CLI are compatible because they're both in the v0.27 series. If the minor versions for the two components do not match, you'll receive an error message in your command line with instructions to either upgrade or downgrade the Astronomer CLI accordingly. If you're running v0.16.10 of Astronomer and v0.27.0 of the Astronomer CLI, for example, you'll be instructed to downgrade the CLI to the latest in the v0.16 series. If you have access to more than one Astronomer Enterprise installation, `Astro Server Version` will correspond to the `<base-domain>` that you're currently authenticated into.
 
 For more information on Astronomer and Astronomer CLI releases, refer to:
 
