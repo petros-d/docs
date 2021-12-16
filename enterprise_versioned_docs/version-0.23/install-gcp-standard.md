@@ -306,7 +306,7 @@ astronomer:
 smtpUrl: smtps://USERNAME:PW@HOST/?pool=true
 ```
 
-These are the minimum values you need to configure for installing Astronomer. For information on additional configuration, read [What's Next](https://www.astronomer.io/docs/enterprise/next/install/gcp/install-gcp-standard#whats-next).
+These are the minimum values you need to configure for installing Astronomer. For information on additional configuration, read [What's Next](install-gcp-standard.md#whats-next).
 
 ## Step 8: Install Astronomer
 
