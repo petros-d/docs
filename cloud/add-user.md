@@ -43,7 +43,7 @@ To add a user with an Astronomer Cloud account to your Workspace:
 4. Set a Workspace role for the user. The available roles are:
 
     - **Workspace Viewer**: Has permission to view anything in the Workspace, including users, Deployments, and DAG code in the Airflow UI
-    - **Workspace Editor**: Has Viewer permissions, plus permission to [deploy code](deploy-code) and [configure Deployments](configure-deployment.md)
+    - **Workspace Editor**: Has Viewer permissions, plus permission to [deploy code](deploy-code.md) and [configure Deployments](configure-deployment.md)
     - **Workspace Admin**: Has Editor permissions, plus permission to add users, remove users, and assign user roles
 
 5. Click **Add member**.

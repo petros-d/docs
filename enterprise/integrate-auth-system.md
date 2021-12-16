@@ -328,7 +328,7 @@ To use a custom Oauth authorization flow:
             audience: "GYHWEYHTHR443fFEW"
     ```
 
-    3. Push your configuration changes to your platform as described in [Apply a Config Change](https://www.astronomer.io/docs/enterprise/v0.25/manage-astronomer/apply-platform-config).
+    3. Push your configuration changes to your platform as described in [Apply a Config Change](apply-platform-config.md).
 
 :::info
 
