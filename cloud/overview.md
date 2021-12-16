@@ -8,9 +8,11 @@ description: Learn about Astronomer Cloud, the managed service that makes data p
 
 ## Overview
 
-Astronomer Cloud is a next generation software service that offers a managed Apache Airflow experience in your network. Astronomer Cloud is the easiest way to deploy, manage, and monitor data pipelines.
+Astronomer Cloud is a managed software service that offers a next-generation Apache Airflow experience in your network. Astronomer Cloud is the easiest way to deploy, manage, and monitor data pipelines.
 
-The Astronomer Cloud deployment model offers the self-service convenience of a fully managed data orchestration service powered by a Control Plane, while respecting the need to keep data private and secure within a Data Plane that runs in your network and corporate boundaries. This model optimizes for security whilst relieving your team of operational overhead.
+To start, the Astronomer Cloud deployment model offers the self-service convenience of a fully managed data orchestration service powered by a Control Plane, while respecting the need to keep data private and secure within a Data Plane that runs in your corporate boundaries. This model optimizes for security whilst relieving your team of operational overhead.
+
+Beyond the deployment model, Astronomer Cloud offers a suite of first-class features that makes it easy to author data pipelines, deploy code, and maintain strong visibility into task execution.
 
 ## Features
 
