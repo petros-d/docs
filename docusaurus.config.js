@@ -1,29 +1,34 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
+
 module.exports = {
   title: 'Astronomer Cloud',
   tagline: 'Get Started with the Next Generation of Astronomer Cloud',
-  url: 'https://docs.astronomer.io',
+  url: 'https://docs.astronomer.io/',
   baseUrl: '/',
   noIndex: true,
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'error',
+  onBrokenMarkdownLinks: 'error',
   favicon: 'img/favicon.svg',
-  noIndex: true,
   organizationName: 'astronomer', // Usually your GitHub org/user name.
   projectName: 'cloud-docs', // Usually your repo name.
   themeConfig: {
+    gtag: {
+          trackingID: 'UA-141789564-1',
+          anonymizeIP: true,
+        },
     algolia: {
-      apiKey: '1821ae84c278294f722376cb52b520c0',
-      indexName: 'beta',
+      apiKey: '99354995bfad26ed950bdb701bc56b6b',
+      indexName: 'published-docs',
 
       // Optional: see doc section below
       contextualSearch: true,
 
       // Optional: see doc section below
-      appId: 'N4IG87ZX4P',
-
+      appId: 'TTRQ0VJY4D',
+      inputSelector:'.DocSearch',
       // Optional: Algolia search parameters
-      searchParameters: {},
+      searchParameters: {
+      },
 
       //... other Algolia params
     },
@@ -41,44 +46,88 @@ module.exports = {
       },
     },
     navbar: {
-      title: 'Cloud Docs',
+      title: 'Docs',
       logo: {
         alt: 'Astronomer',
         src: 'img/LogoPrimaryDarkMode.svg',
+        href: 'https://www.astronomer.io/',
       },
       items: [
         {
-          // Client-side routing, used for navigating within the website.
-          // The baseUrl will be automatically prepended to this value.
-          to: 'https://www.astronomer.io/docs',
-          // The string to be shown.
-          label: 'Go to Main Docs ↗',
-          // Left or right side of the navbar.
-          position: 'right', // or 'right'
+          to: 'cloud',
+          label: 'Cloud',
+          position: 'left',
+        },
+        {
+          type: 'dropdown',
+          label: 'Enterprise',
+          to: 'enterprise/overview',
+          activeBaseRegex: 'enterprise',
+          position: 'left',
+          activeClassName: 'navbar__link--active',
+          items: [
+            {
+              label: '0.26 (Latest)',
+              to: '/enterprise/overview',
+            },
+            {
+              label: '0.25',
+              to: '/enterprise/0.25/overview'
+            },
+            {
+              label: '0.23',
+              to: '/enterprise/0.23/overview'
+            },
+            {
+              label: '0.16',
+              to: '/enterprise/0.16/overview'
+            },
+          ],
         },
       ],
     },
     footer: {
       links: [
         {
-          title: 'Astronomer Cloud Docs',
+          title: 'Astronomer Cloud',
           items: [
             {
-              label: 'Overview',
-              to: '/',
+              label: 'Install Astronomer Cloud',
+              to: 'cloud/install-aws',
             },
             {
-              label: 'Install on AWS',
-              to: '/install-aws',
+              label: 'Install CLI',
+              to: 'cloud/install-cli',
             },
             {
-              label: 'Known Limitations',
-              to: '/known-limitations',
+              label: 'Create a Project',
+              to: 'cloud/create-project',
+            },
+            {
+              label: 'Deploy',
+              to: 'cloud/deploy-code',
             },
           ],
         },
         {
-          title: 'Resources',
+          title: 'Astronomer Enterprise',
+          items: [
+            {
+              label: 'Overview',
+              to: 'enterprise/overview',
+            },
+            {
+              label: 'Install on AWS',
+              to: 'enterprise/install-aws',
+            },
+            {
+              label: 'Release Notes',
+              to: 'enterprise/release-notes',
+            },
+          ],
+        },
+        {
+          title: 'Product Resources',
           items: [
             {
               label: 'Support',
@@ -86,7 +135,7 @@ module.exports = {
             },
             {
               label: 'Status',
-              href: 'https://beta-status.astronomer.io',
+              href: 'https://cloud-status.astronomer.io',
             },
           ],
         },
@@ -96,6 +145,14 @@ module.exports = {
             {
               label: 'Astronomer Homepage',
               to: 'https://www.astronomer.io',
+            },
+            {
+              label: 'Astronomer Registry',
+              to: 'https://registry.astronomer.io/',
+            },
+            {
+              label: 'Airflow Guides',
+              href: 'https://www.astronomer.io/guides/',
             },
             {
               label: 'Docs on GitHub',
@@ -112,25 +169,44 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: ({ versionDocsDirPath, docPath }) =>
-            `https://github.com/astronomer/cloud-docs/blob/main/docs/${docPath}`,
+          sidebarPath: require.resolve('./sidebarsCloud.js'),
+          editUrl: ({ docPath }) =>
+            `https://github.com/astronomer/cloud-docs/blob/main/docs/cloud/${docPath}`,
           editLocalizedFiles: true,
-          routeBasePath: '/',
+          routeBasePath: 'cloud',
+          path: 'cloud',
           admonitions: {
           },
-        },
-        blog: {
-          showReadingTime: true,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
         sitemap: {
-          changefreq: 'weekly',
+          changefreq: 'hourly',
           priority: 0.5,
-          trailingSlash: false,
         },
+      },
+    ],
+  ],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'enterprise',
+        routeBasePath: 'enterprise',
+        editUrl: ({ docPath }) =>
+            `https://github.com/astronomer/cloud-docs/blob/main/docs/enterprise/${docPath}`,
+        editCurrentVersion: true,
+        sidebarPath: require.resolve('./sidebarsEnterprise.js'),
+        path: 'enterprise',
+        lastVersion: 'current',
+        versions: {
+        current: {
+          label: '0.26',
+          path: '',
+          banner: 'none',
+         },
+       },
       },
     ],
   ],
