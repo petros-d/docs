@@ -40,7 +40,13 @@ To complete this setup, you need:
     astro dev init
     ```
 
-3. Run `astro dev start` to confirm that Podman is running the containers for your local Airflow environment.
+3. Run the following command to specify Podman as the CLI's primary container engine:
+
+    ```sh
+    astro config set container.engine podman
+    ```
+
+4. Run `astro dev start` to confirm that Podman is running the containers for your local Airflow environment.
 
 ## Mac Setup
 
@@ -100,10 +106,11 @@ To set up Podman for an Astronomer project:
 
     Copy the output of `pwd` for step 7.
 
-6. Open a new terminal window. In an empty directory, run the following commands to create a new Astronomer project and generate a `pod-config.yml` file:
+6. Open a new terminal window. In an empty directory, run the following commands to create a new Astronomer project, set Podman as your primary container engine, and generate a `pod-config.yml` file for your project:
 
     ```sh
     $ astro dev init
+    $ astro config set container.engine podman
     $ astro dev start
     ```
 
