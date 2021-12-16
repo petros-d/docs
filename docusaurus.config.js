@@ -112,10 +112,18 @@ module.exports = {
               label: 'Overview',
               to: 'enterprise/overview',
             },
+            {
+              label: 'Install on AWS',
+              to: 'enterprise/install-aws',
+            },
+            {
+              label: 'Release Notes',
+              to: 'enterprise/release-notes',
+            },
           ],
         },
         {
-          title: 'Resources',
+          title: 'Product Resources',
           items: [
             {
               label: 'Support',
@@ -123,7 +131,7 @@ module.exports = {
             },
             {
               label: 'Status',
-              href: 'https://beta-status.astronomer.io',
+              href: 'https://cloud-status.astronomer.io',
             },
           ],
         },
@@ -133,6 +141,10 @@ module.exports = {
             {
               label: 'Astronomer Homepage',
               to: 'https://www.astronomer.io',
+            },
+            {
+              label: 'Astronomer Registry',
+              to: 'https://registry.astronomer.io/',
             },
             {
               label: 'Airflow Guides',
