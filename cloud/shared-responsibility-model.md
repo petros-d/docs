@@ -2,7 +2,7 @@
 sidebar_label: 'Shared Responsibility Model'
 title: "Shared Responsibility Model"
 id: shared-responsibility-model
-description: Learn how Astronomer and customers work together to ensure security on Astronomer Cloud.
+description: Astronomer's policy on shared responsibilities between our team and our customers.
 ---
 
 ## Overview

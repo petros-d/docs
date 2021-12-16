@@ -2,7 +2,7 @@
 sidebar_label: 'Create a Cluster'
 title: "Create a New Cluster on Astronomer Cloud"
 id: create-cluster
-description: Add a new Astronomer Cluster to your cloud.
+description: Create a new Astronomer Cluster for your Organization.
 ---
 
 ## Overview

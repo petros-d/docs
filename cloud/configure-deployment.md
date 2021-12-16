@@ -2,7 +2,7 @@
 sidebar_label: 'Configure a Deployment'
 title: 'Configure a Deployment'
 id: configure-deployment
-description: Create and manage Airflow Deployments on Astronomer Cloud.
+description: Learn how to create and configure an Astronomer Deployment.
 ---
 
 ## Overview
