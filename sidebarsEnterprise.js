@@ -125,6 +125,7 @@ module.exports = {
       'support',
       'cli-reference',
       'version-compatibility-reference',
+      'release-lifecycle-policy',
       ],
     },
   ],
