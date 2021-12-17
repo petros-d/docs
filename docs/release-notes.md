@@ -30,7 +30,7 @@ You can also directly access logs for a given Deployment by clicking the new **L
 
 - Added new messages and handling for when non-admin users attempt to log in to an administrative page
 
-### Big Fixes
+### Bug Fixes
 
 - Fixed various UI bugs that occurred when a Deployment had 0 metrics.  
 
