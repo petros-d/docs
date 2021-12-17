@@ -73,12 +73,12 @@ This will generate the following files:
 ```py
 .
 ├── dags # Where your DAGs go
-│   ├── example-dag.py # An example dag that comes with the initialized project
+│   └── example-dag.py # An example dag that comes with the initialized project
 ├── Dockerfile # For Astronomer's Docker image and runtime overrides
 ├── include # For any other files you'd like to include
 ├── plugins # For any custom or community Airflow plugins
-├──airflow_settings.yaml #For your Airflow Connections, Variables and Pools (local only)
-├──packages.txt # For OS-level packages
+├── airflow_settings.yaml # For your Airflow Connections, Variables and Pools (local only)
+├── packages.txt # For OS-level packages
 └── requirements.txt # For any Python packages
 ```
 
