@@ -155,7 +155,7 @@ Once you are authenticated you can build, tag and push your Airflow image to the
 
 #### Release Name
 
-*Release Name* refers to the release name of your Airflow Deployment. It will follow the pattern of `spaceyword-spaceyword-4digits` (e.g. `$RELEASE_NAME`).
+*Release Name* refers to the release name of your Airflow Deployment. It will follow the pattern of `spaceyword-spaceyword-4digits` (e.g. `infrared-photon-7780`).
 
 #### Tag Name
 
