@@ -77,8 +77,8 @@ Here's an example DAG, where `postgres_conn_id` is set to `airflow_db`:
 
 ```py
 from airflow import DAG
-from airflow.hooks.postgres_hook import PostgresHook
-from airflow.operators.python_operator import PythonOperator
+from airflow.operators.python import PythonOperator
+from airflow.providers.postgres.hooks.postgres import PostgresHook
 from datetime import datetime, timedelta
 
 
@@ -89,7 +89,7 @@ def get_dag_ids():
 
 
 with DAG(
-    "example_dag",
+    "connect_dag",
     start_date=datetime(2019, 1, 1),
     max_active_runs=1,
     schedule_interval=None,
@@ -99,8 +99,6 @@ with DAG(
     t1 = PythonOperator(
         task_id="get_dag_nums",
         python_callable=get_dag_ids,
-        sql="select dag_id from dag",
-        postgres_conn_id="airflow_db",
     )
 ```
 
