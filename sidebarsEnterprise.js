@@ -38,6 +38,7 @@ module.exports = {
       'install-aws',
       'install-azure',
       'install-gcp',
+      'install-airgapped',
       ],
     },
     {
