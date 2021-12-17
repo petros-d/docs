@@ -12,8 +12,9 @@ module.exports = {
   organizationName: 'astronomer', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
   themeConfig: {
+    image: 'img/meta.png',
     gtag: {
-          trackingID: 'UA-141789564-1',
+          trackingID: 'G-W97HK48NPT',
           anonymizeIP: true,
         },
     algolia: {
