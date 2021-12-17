@@ -267,7 +267,7 @@ pipeline:
 version: 2
 jobs:
   build:
-    machine: true
+    machine: ubuntu-2004:202008-01
     steps:
       - checkout
       - restore_cache:
@@ -295,7 +295,7 @@ jobs:
             pycodestyle .
   deploy:
     docker:
-      - image:  quay.io/astronomer/ap-build:latest
+      - image:  docker:18.09-git
     steps:
       - checkout
       - setup_remote_docker:
