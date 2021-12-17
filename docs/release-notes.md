@@ -10,9 +10,29 @@ Astronomer is committed to continuous delivery of both features and bug fixes to
 
 If you have any questions or a bug to report, don't hesitate to reach out to [Astronomer Support](https://support.astronomer.io).
 
-**Latest Runtime Version**: 4.0.6 ([Release notes](runtime-release-notes.md))
+**Latest Runtime Version**: 4.0.7 ([Release notes](runtime-release-notes.md))
 
 **Latest CLI Version**: 1.0.4 ([Release notes](cli-release-notes.md))
+
+## December 16, 2021
+
+### View Scheduler Error Logs from the Astronomer UI
+
+The new **Logs** tab shows Scheduler logs for all of your Deployments. When you select a Deployment in this menu, all error logs generated over the last 30 minutes appear in the UI.
+
+![Logs page in the UI](/img/release-notes/logs-page.png)
+
+You can also directly access logs for a given Deployment by clicking the new **Logs** icon on the Deployment's page or in the **Deployments** table.
+
+![Logging direct access button](/img/release-notes/logs-button.png)
+
+### Additional Improvements
+
+- Added new messages and handling for when non-admin users attempt to log in to an administrative page
+
+### Big Fixes
+
+- Fixed various UI bugs that occurred when a Deployment had 0 metrics.  
 
 ## December 9, 2021
 

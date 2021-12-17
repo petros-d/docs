@@ -10,6 +10,17 @@ Astronomer Runtime is a Docker image built and published by Astronomer that exte
 
 For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runtime.md). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes.md). If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or [support@astronomer.io](mailto:support@astronomer.io).
 
+## Astronomer Runtime 4.0.7
+
+- Release date: December 15, 2021
+- Airflow version: 2.2.2
+
+### Heartbeat DAG
+
+Astronomer Runtime 4.0.7 includes a health monitoring DAG installed directly into the image itself. The `astronomer_monitoring_dag` emits a heartbeat every 5 minutes to check that your Deployment's schedulers and workers are healthy. If this heartbeat fails twice in a row, it sends an alert about the Deployment's health to the Astronomer UI.
+
+Because this DAG is an essential component of Astronomer's observability tooling, your organization will not be charged for its task runs. For the same reasons, this DAG cannot be modified or disabled via the Airflow UI. To change the frequency of the DAG's heartbeat, you can specify an alternative schedule as a cron job in the `AIRFLOW_MONITORING_DAG_SCHEDULE_INTERVAL` environment variable. 
+
 ## Astronomer Runtime 4.0.6
 
 - Release date: December 2, 2021
