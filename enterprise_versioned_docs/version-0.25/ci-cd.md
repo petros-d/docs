@@ -155,7 +155,7 @@ Once you are authenticated you can build, tag and push your Airflow image to the
 
 #### Release Name
 
-*Release Name* refers to the release name of your Airflow Deployment. It will follow the pattern of `spaceyword-spaceyword-4digits` (e.g. `infrared-photon-7780`).
+*Release Name* refers to the release name of your Airflow Deployment. It will follow the pattern of `spaceyword-spaceyword-4digits` (e.g. `$RELEASE_NAME`).
 
 #### Tag Name
 
@@ -235,7 +235,7 @@ pipeline:
   build:
     image: quay.io/astronomer/ap-build:latest
     commands:
-      - docker build -t registry.gcp0001.us-east4.astronomer.io/infrared-photon-7780/airflow:ci-${DRONE_BUILD_NUMBER} .
+      - docker build -t registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:ci-${DRONE_BUILD_NUMBER} .
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     when:
@@ -246,8 +246,8 @@ pipeline:
     image: quay.io/astronomer/ap-build:latest
     commands:
       - echo $${SERVICE_ACCOUNT_KEY}
-      - docker login registry.gcp0001.us-east4.astronomer.io -u _ -p $SERVICE_ACCOUNT_KEY
-      - docker push registry.gcp0001.us-east4.astronomer.io/infrared-photon-7780/airflow:ci-${DRONE_BUILD_NUMBER}
+      - docker login registry.$BASE_DOMAIN -u _ -p $SERVICE_ACCOUNT_KEY
+      - docker push registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:ci-${DRONE_BUILD_NUMBER}
     secrets: [ SERVICE_ACCOUNT_KEY ]
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -303,9 +303,9 @@ jobs:
           name: Push to Docker Hub
           command: |
             TAG=0.1.$CIRCLE_BUILD_NUM
-            docker build -t registry.gcp0001.us-east4.astronomer.io/infrared-photon-7780/airflow:ci-$TAG .
-            docker login registry.gcp0001.us-east4.astronomer.io -u _ -p $SERVICE_ACCOUNT_KEY
-            docker push registry.gcp0001.us-east4.astronomer.io/infrared-photon-7780/airflow:ci-$TAG
+            docker build -t registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:ci-$TAG .
+            docker login registry.$BASE_DOMAIN -u _ -p $SERVICE_ACCOUNT_KEY
+            docker push registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:ci-$TAG
 
 workflows:
   version: 2
@@ -331,9 +331,9 @@ pipeline {
        when { branch 'master' }
        steps {
          script {
-           sh 'docker build -t registry.gcp0001.us-east4.astronomer.io/infrared-photon-7780/airflow:ci-${BUILD_NUMBER} .'
-           sh 'docker login registry.gcp0001.us-east4.astronomer.io -u _ -p $SERVICE_ACCOUNT_KEY'
-           sh 'docker push registry.gcp0001.us-east4.astronomer.io/infrared-photon-7780/airflow:ci-${BUILD_NUMBER}'
+           sh 'docker build -t registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:ci-${BUILD_NUMBER} .'
+           sh 'docker login registry.$BASE_DOMAIN -u _ -p $SERVICE_ACCOUNT_KEY'
+           sh 'docker push registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:ci-${BUILD_NUMBER}'
          }
        }
      }
@@ -361,9 +361,9 @@ pipelines:
           deployment: production
           script:
             - echo ${SERVICE_ACCOUNT_KEY}
-            - docker build -t registry.gcp0001.us-east4.astronomer.io/infrared-photon-7780/airflow:ci-${BITBUCKET_BUILD_NUMBER}
-            - docker login registry.gcp0001.us-east4.astronomer.io -u _ -p $SERVICE_ACCOUNT_KEY
-            - docker push registry.gcp0001.us-east4.astronomer.io/infrared-photon-7780/airflow:ci-${BITBUCKET_BUILD_NUMBER}
+            - docker build -t registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:ci-${BITBUCKET_BUILD_NUMBER}
+            - docker login registry.$BASE_DOMAIN -u _ -p $SERVICE_ACCOUNT_KEY
+            - docker push registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:ci-${BITBUCKET_BUILD_NUMBER}
           services:
             - docker
           caches:
@@ -380,9 +380,9 @@ astro_deploy:
     - docker:dind
   script:
     - echo "Building container.."
-    - docker build -t registry.gcp0001.us-east4.astronomer.io/infrared-photon-7780/airflow:CI-$CI_PIPELINE_IID .
-    - docker login registry.gcp0001.us-east4.astronomer.io -u _ -p $SERVICE_ACCOUNT_KEY
-    - docker push registry.gcp0001.us-east4.astronomer.io/infrared-photon-7780/airflow:CI-$CI_PIPELINE_IID
+    - docker build -t registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:CI-$CI_PIPELINE_IID .
+    - docker login registry.$BASE_DOMAIN -u _ -p $SERVICE_ACCOUNT_KEY
+    - docker push registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:CI-$CI_PIPELINE_IID
   only:
     - master
 ```
@@ -429,13 +429,13 @@ jobs:
     - name: Publish to Astronomer.io
       uses: elgohr/Publish-Docker-Github-Action@2.6
       with:
-        name: infrared-photon-7780/airflow:ci-${{ github.sha }}
+        name: $RELEASE_NAME/airflow:ci-${{ github.sha }}
         username: _
         password: ${{ secrets.SERVICE_ACCOUNT_KEY }}
-        registry: registry.gcp0001.us-east4.astronomer.io
+        registry: registry.$BASE_DOMAIN
 ```
 
-> **Note:** Make sure to replace `infrared-photon-7780` in the example above with your deployment's release name and to store your Service Account Key in your GitHub repo's secrets according to [this GitHub guide]( https://help.github.com/en/articles/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables).
+> **Note:** Make sure to replace `$RELEASE_NAME` in the example above with your deployment's release name and to store your Service Account Key in your GitHub repo's secrets according to [this GitHub guide]( https://help.github.com/en/articles/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables).
 
 ## Azure DevOps
 
@@ -470,9 +470,9 @@ stages:
     steps:
     - script: |
     echo "Building container.."
-    docker build -t registry.gcp0001.us-east4.astronomer.io/extraterrestrial-aperature-9667/airflow:${Build.SourceVersion} .
-    docker login registry.gcp0001.us-east4.astronomer.io -u _ -p $DEPLOYMENT_SERVICE_ACCOUNT_KEY
-    docker push registry.gcp0001.us-east4.astronomer.io/extraterrestrial-aperature-9667/airflow:$(Build.SourceVersion)
+    docker build -t registry.$BASE_DOMAIN/extraterrestrial-aperature-9667/airflow:${Build.SourceVersion} .
+    docker login registry.$BASE_DOMAIN -u _ -p $DEPLOYMENT_SERVICE_ACCOUNT_KEY
+    docker push registry.$BASE_DOMAIN/extraterrestrial-aperature-9667/airflow:$(Build.SourceVersion)
 ```
 
 Replace the image tag details based on your registry and Airflow Deployment release name.
