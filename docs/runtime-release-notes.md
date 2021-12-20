@@ -17,7 +17,7 @@ For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-ru
 
 ### Heartbeat DAG
 
-Astronomer Runtime 4.0.7 includes a health monitoring DAG installed directly into the image itself. The `astronomer_monitoring_dag` runs a simple bash task every 5 minutes that is used by Astronomer's monitoring services as an additional health check for your Deployment's schedulers and workers. If this task fails twice in a row or is not scheduled in a 10-minute interval, an alert is sent about the Deployment's health to the Astronomer UI.
+Astronomer Runtime 4.0.7 includes a health monitoring DAG installed directly into the image itself. The `astronomer_monitoring_dag` runs a simple bash task every 5 minutes to ensure that your scheduler and workers are scheduling and executing tasks as expected. Astronomer's monitoring services use this task as an additional health check for your Deployment: If this task fails twice in a row or is not scheduled in a 10-minute interval, an alert is sent about the Deployment's health to the Astronomer UI.
 
 Because this DAG is an essential component of Astronomer's observability tooling, your organization will not be charged for its task runs. For the same reasons, this DAG cannot be modified or disabled via the Airflow UI. To change the frequency of the DAG's heartbeat, you can specify an alternative schedule as a cron job in the `AIRFLOW_MONITORING_DAG_SCHEDULE_INTERVAL` environment variable.
 
