@@ -1,12 +1,12 @@
 # Astronomer Cloud Documentation
 
-This repository contains all of the code and content that powers Astronomer Cloud [documentation](http://www.cloud-docs.astronomer.io). Documentation for other Astronomer product offerings is stored in the [`docs` repo](https://github.com/astronomer/docs).
+This repository contains all of the code and content that powers Astronomer Cloud [documentation](http://www.docs.astronomer.io). Documentation for other Astronomer product offerings is stored in the [`docs` repo](https://github.com/astronomer/docs).
 
 ## Suggest a Change
 
 If you notice something in our documentation that is wrong, misleading, or could use additional context, the easiest way to make an impact is to create a GitHub issue in this repository. To do so,
 
-1. Go to [Issues](https://github.com/astronomer/cloud-docs/issues)
+1. Go to [Issues](https://github.com/astronomer/docs/issues)
 2. Select **New Issue**
 3. Depending on the change you have in mind, select a GitHub issue template.
 4. Tell us what you think we can do better by answering the questions in the template.
