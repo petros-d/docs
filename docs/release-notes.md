@@ -18,21 +18,17 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 
 ### View Scheduler Error Logs from the Astronomer UI
 
-The new **Logs** tab shows Scheduler error and warning logs for all of your Deployments. When you select a Deployment in this menu, all error logs generated over the last 30 minutes appear in the UI.
+The new **Logs** tab in the Astronomer UI shows Scheduler error and warning logs for all Deployments in your Workspace. When you select a Deployment in this menu, all error logs generated over the last 30 minutes appear in the UI.
 
 ![Logs page in the UI](/img/release-notes/logs-page.png)
 
-You can also directly access logs for a given Deployment by clicking the new **Logs** icon on the Deployment's page or in the **Deployments** table.
+To access logs directly for a given Deployment, click the new **Logs** button on the Deployment's page or in the **Deployments** table.
 
 ![Logging direct access button](/img/release-notes/logs-button.png)
 
-### Additional Improvements
-
-- Added new messages and handling for when non-admin users attempt to log in to an administrative page
-
 ### Bug Fixes
 
-- Fixed various UI bugs that occurred when a Deployment had 0 metrics.  
+Fixed various bugs in the Astronomer UI to better handle nulls and unknowns in Deployment metrics
 
 ## December 9, 2021
 
