@@ -17,7 +17,7 @@ For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-ru
 
 ### Astronomer Monitoring DAG
 
-Astronomer Runtime 4.0.7 includes a monitoring DAG that is installed is enabled for all customers and installed directly into the image itself. In addition to existing Deployment health and metrics functionality, this DAG allows the Astronomer team to better monitor the health of your Data Plane by enabling real-time visibility into whether your workers are healthy and tasks are running.
+Astronomer Runtime 4.0.7 includes a monitoring DAG that is enabled for all customers and installed directly into the image itself. In addition to existing Deployment health and metrics functionality, this DAG allows the Astronomer team to better monitor the health of your Data Plane by enabling real-time visibility into whether your workers are healthy and tasks are running.
 
 The `astronomer_monitoring_dag` runs a simple bash task every 5 minutes to ensure that your scheduler and workers are healthy and functioning as expected. If the task fails twice in a row or is not scheduled within a 10-minute interval, Astronomer support receives an alert and will work with you to troubleshoot.
 
