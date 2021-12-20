@@ -199,14 +199,16 @@ If you received a certificate from a private CA, follow these steps instead:
 If you're connecting to an external database, you will need to create a secret named `astronomer-bootstrap` to hold your database connection string:
 
 ```sh
-kubectl create secret generic astronomer-bootstrap --from-literal connection="postgres://<USERNAME>:<PASSWORD>@<HOST>:5432/<DATABASE>?sslmode=<mode>" --namespace <your-namespace>
+kubectl create secret generic astronomer-bootstrap \
+  --from-literal connection="postgres://USERNAME:$PASSWORD@host:5432" \
+  --namespace astronomer
 ```
 
 > **Note:** You must URL encode any special characters in your Postgres password.
 
 A few additional configuration notes:
 - If you want to use Azure Database for PostgreSQL with Astronomer, you must use the [Flexible Server](https://docs.microsoft.com/en-us/azure/postgresql/flexible-server/) service.
-- If you provision Azure Database for PostgreSQL - Flexible Server, it enforces TLS/SSL and requires that you set `sslmode` to `require` in your `config.yaml`. Possible values for `sslmode` are: `disable`, `allow`, `prefer`, `require` (for Flexible Server), `verify-ca`, `verify-full`. More guidelines in Step 7.
+- If you provision Azure Database for PostgreSQL - Flexible Server, it enforces TLS/SSL and requires that you set `sslmode` to `prefer` in your `config.yaml`. Possible values for `sslmode` are: `disable`, `allow`, `prefer`, `require` (for Flexible Server), `verify-ca`, `verify-full`. More guidelines in Step 7.
 - If you provision an external database, `postgresqlEnabled` should be set to `false` in Step 7.
 
 ## Step 7: Configure Your Helm Chart
@@ -257,7 +259,7 @@ global:
 # SSL support for using SSL connections to encrypt client/server communication between database and Astronomer platform. Enable SSL if provisioning Azure Database for PostgreSQL - Flexible Server as it enforces SSL. Change the setting with respect to the database provisioned.
   ssl:
     enabled: true
-    mode: "require"
+    mode: "prefer"
 
 # Settings for database deployed on AKS cluster.
 # postgresql:
@@ -330,7 +332,7 @@ helm repo update
 This will ensure that you pull the latest from our Helm repository. Finally, run:
 
 ```sh
-helm install -f config.yaml --version=0.26 --namespace=<your-platform-namespace> <your-platform-release-name> astronomer/astronomer
+helm install -f config.yaml --version=0.26 --namespace=astronomer <your-platform-release-name> astronomer/astronomer
 ```
 
 This command will install the latest available patch version of Astronomer Enterprise v0.26. To override latest and specify a patch, add it to the `--version=` flag in the format of `0.26.x`. To install Astronomer Enterprise v0.26.4, for example, specify `--version=0.26.4`. For information on all available patch versions, refer to [Enterprise Release Notes](release-notes.md).
@@ -342,7 +344,7 @@ Once you run the commands above, a set of Kubernetes pods will be generated in y
 To verify all pods are up and running, run:
 
 ```
-kubectl get pods --namespace <my-namespace>
+kubectl get pods --namespace astronomer
 ```
 
 You should see something like this:
