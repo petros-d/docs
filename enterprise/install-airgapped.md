@@ -9,24 +9,30 @@ id: install-airgapped
 
 By default, Astronomer will reach out to public repositories to download various components:
 
-- Docker images from quay.io/astronomer, docker.io, and gcr.io
-- Astronomer Helm charts from helm.astronomer.io
-- Astronomer version information from updates.astronomer.io
+- Docker images from `quay.io/astronomer`, `docker.io`, and `gcr.io`
+- Astronomer Helm charts from `helm.astronomer.io`
+- Astronomer version information from `updates.astronomer.io`
 
 An airgapped environment is a locked-down environment, where traffic to and from the public internet is not possible. This page explains which additional infrastructure components you need and how to configure the Astronomer Helm chart in an airgapped environment.
 
 > **Note:** If you have some means to allow traffic to the public internet, e.g. a proxy that allows a list of accepted destinations/sources, that will make the airgapped installation much easier. This page assumes an environment without any possibility of accessing the public internet.
 
-Prerequisites for an airgapped installation are:
+## Prerequisites
 
-- A VPC
-- Private Kubernetes
-- A Postgres instance accessible from that environment
-- A VPN (or other means) set up to access *at least* Kubernetes and DNS from inside your VPC
+- A VPC.
+- Private Kubernetes.
+- A Postgres instance accessible from that environment.
+- A VPN (or other means) set up to access, at a minimum, Kubernetes and DNS from inside your VPC.
 
-## Fetching Docker images from a custom registry
+## Step 1: Configure a Private Docker Registry
 
-The Astronomer Docker images are hosted on a public registry, which isn't accessible from an airgapped network. The images must therefore be hosted in a Docker registry accessible from within the network. Every cloud platform provides a managed Docker registry service, i.e. AWS ECR, Azure Container Registry, or GCP Container Registry. Alternatively, you can set up your own registry, for example using JFrog Artifactory. How exactly to fetch or mirror the images often depends on security requirements and is therefore out of scope for this page.
+Astronomer's Docker images are hosted on a public registry which isn't accessible from an airgapped network. Therefore, these images must be hosted on a Docker registry accessible from within your own network. Every major cloud platform provides its own managed Docker registry service that can be used for this step:
+
+- AWS: [ECR](https://aws.amazon.com/ecr/)
+- Azure: [Azure Container Registry](https://azure.microsoft.com/en-us/services/container-registry/)
+- GCP: [Container Registry](https://cloud.google.com/container-registry)
+
+You can also set up your own registry using a dedicated registry service such as [JFrog Artifactory](https://jfrog.com/artifactory/). Regardless of which service you use, follow the product documentation to configure a private registry according to your organization's security requirements. 
 
 Which images and tags you require for your Astronomer installation depends on enabled components and versions in the Astronomer platform. Image tags are subject to change, even within existing versions, for example to resolve critical security issues, and therefore not listed here. To gather a list of exact images and tags required for your Astronomer Helm chart version and values.yaml, you can template the Helm charts and fetch the rendered image tags:
 
@@ -64,14 +70,16 @@ image: quay.io/astronomer/ap-registry:3.14.2-2
 
 Regardless of whether you choose to mirror or manually pull/push images to your private registry, the returned images and/or tags must be made accessible within your network.
 
-In the Helm chart values.yaml, you must refer to the private registry. There are two options:
+In your `values.yaml` file, you must refer to the private registry. There are two options for doing this:
 
-1. Configure only the private registry URL, leaving images and tags to the default values in the Helm chart
-2. Configure each image individually, which allows you to specify a different image/tag if desired
+- Configure only the private registry URL, leaving images and tags as their default values in the Helm chart.
+- Configure each image individually, which allows you to specify a different image/tag if desired.
 
-### Configuring a private registry
+Use the following topics to learn more about each of these options. 
 
-A private registry can be configured in the global section of values.yaml:
+### Option 1: Configure a private registry
+
+A private registry can be configured in the `global` section of `values.yaml`:
 
 ```yaml
 global:
@@ -84,7 +92,7 @@ global:
 
 This will set the repository for all Docker images.
 
-### Configuring images individually
+### Option 2: Configure images individually
 
 An alternative way is to configure each image (repository) and/or tag individually. For example, in case you have a convention to prefix all images in your repository with `myteam-`. Each image and/or tag must be overridden in the respective subchart.
 
