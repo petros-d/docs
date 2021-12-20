@@ -18,7 +18,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 
 ### View Scheduler Error Logs from the Astronomer UI
 
-The new **Logs** tab shows Scheduler logs for all of your Deployments. When you select a Deployment in this menu, all error logs generated over the last 30 minutes appear in the UI.
+The new **Logs** tab shows Scheduler error and warning logs for all of your Deployments. When you select a Deployment in this menu, all error logs generated over the last 30 minutes appear in the UI.
 
 ![Logs page in the UI](/img/release-notes/logs-page.png)
 
