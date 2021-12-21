@@ -230,7 +230,7 @@ kubectl create secret generic astronomer-bootstrap \
 
 A few additional configuration notes:
 - If you want to use Azure Database for PostgreSQL with Astronomer, you must use the [Flexible Server](https://docs.microsoft.com/en-us/azure/postgresql/flexible-server/) service.
-- If you provision Azure Database for PostgreSQL - Flexible Server, it enforces TLS/SSL and requires that you set `sslmode` to `prefer` in your `config.yaml`. 
+- If you provision Azure Database for PostgreSQL - Flexible Server, it enforces TLS/SSL and requires that you set `sslmode` to `prefer` in your `config.yaml`.
 - If you provision an external database, `postgresqlEnabled` should be set to `false` in Step 8.
 
 ## Step 8: Configure Your Helm Chart
@@ -354,10 +354,10 @@ helm repo update
 This will ensure that you pull the latest from our Helm repository. Finally, run:
 
 ```sh
-helm install -f config.yaml --version=0.26 --namespace=astronomer <your-platform-release-name> astronomer/astronomer
+helm install -f config.yaml --version=0.27 --namespace=<your-platform-namespace> <your-platform-release-name> astronomer/astronomer
 ```
 
-This command will install the latest available patch version of Astronomer Enterprise v0.26. To override latest and specify a patch, add it to the `--version=` flag in the format of `0.26.x`. To install Astronomer Enterprise v0.26.4, for example, specify `--version=0.26.4`. For information on all available patch versions, refer to [Enterprise Release Notes](release-notes.md).
+This command will install the latest available patch version of Astronomer Enterprise v0.27. To override latest and specify a patch, add it to the `--version=` flag in the format of `0.27.x`. To install Astronomer Enterprise v0.27.0, for example, specify `--version=0.27.0`. For information on all available patch versions, refer to [Enterprise Release Notes](release-notes.md).
 
 Once you run the commands above, a set of Kubernetes pods will be generated in your namespace. These pods power the individual services required to run our platform, including the Astronomer UI and Houston API.
 

@@ -28,7 +28,7 @@ To meet the unique needs of different operating environments, we offer all Astro
 
 For customers looking to access Astronomer's newest features on an incremental basis, we recommend following the stable release channel and upgrading to new versions as soon as they are made generally available. Stable releases are issued roughly once per month for Astronomer Enterprise and the Astronomer CLI.
 
-For customers looking for the highest level of stability, we recommend upgrading only to LTS versions as they're made available. Release channels are not binding, so you are free to upgrade to any available version of Astronomer Enterprise at any time.
+For customers looking for less frequent upgrades and functional changes, we recommend following the LTS release channel. Release channels are not binding, so you are free to upgrade to any available version of Astronomer Enterprise at any time.
 
 > **Note:** Release channels apply to Astronomer Enterprise and Astronomer Certified versions. We do not currently support a long-term release channel for the Astronomer CLI.
 
@@ -59,7 +59,7 @@ For example, if Astronomer Enterprise v0.26 were a stable version first released
 - If a patch version for v0.26 came out in December 2021 (e.g. `v0.26.4`), it would not affect the maintenance duration. Maintenance for v0.26 would still end in April 2022.
 - If a major bug was identified in v0.26, a fix would be backported by the Astronomer team and released as a patch to v0.26 as long as it remained the latest stable release.
 - If Astronomer Enterprise v0.27 came out as a new stable release, bug fixes would no longer be backported to Astronomer v0.26 and customers would be encouraged to upgrade.
-- If a major security issue was identified in v0.26, a fix would be backported and released as a patch at any time during its 6 month maintenance period. If v0.27 came out and succeeded v0.26 as the latest stable version of Astronomer Enterprise, a security fix would still be backported to v0.26.
+- If a major security issue was identified in v0.26, a fix would be backported and released as a patch at any time during its 6 month maintenance period. Even if v0.27 is the latest stable version of Astronomer Enterprise, a security fix would still be backported to v0.26.
 
 If you contact [Astronomer Support](https://support.astronomer.io) about an issue you are experiencing while running an unmaintained version, our team will invite you to upgrade as an initial mitigation step.
 
@@ -77,7 +77,7 @@ In rare instances, the Astronomer team may make an exception and backport a bug 
 
 ## Enterprise Lifecycle Schedule
 
-The following table contains the exact lifecycle for each published version of Astronomer Enterprise. These timelines are based on the LTS and Stable release channel maintenance policies.
+The following table contains the exact lifecycle for each published version of Astronomer Enterprise. These timelines are based on the LTS and stable release channel maintenance policies.
 
 | Enterprise Version | Release Date     | Release Channel | Maintenance Period | End of Maintenance Date |
 | ------------------ | ---------------- | --------------- | ------------------ | ----------------------- |

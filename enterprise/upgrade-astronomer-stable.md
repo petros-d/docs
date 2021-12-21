@@ -1,6 +1,6 @@
 ---
 title: 'Upgrade to a Stable or Patch Version of Astronomer Enterprise'
-sidebar_label: 'Upgrade to a Stable Version'
+sidebar_label: 'Upgrade to a Stable or Patch Version'
 id: upgrade-astronomer-stable
 description: Update your Astronomer Enterprise Platform to a new stable or patch version.
 ---
@@ -55,7 +55,11 @@ set -xe
 
 RELEASE_NAME=<astronomer-platform-release-name>
 NAMESPACE=<astronomer-platform-namespace>
+<<<<<<< HEAD
+ASTRO_VERSION=0.27.<astronomer-patch-version>
+=======
 ASTRO_VERSION=0.26.<astronomer-patch-version>
+>>>>>>> e49d8d0c7fcc7cdc0efda7866d0d79f8d473e2d4
 
 helm3 repo add astronomer https://helm.astronomer.io
 helm3 repo update
@@ -76,4 +80,8 @@ helm3 upgrade --namespace $NAMESPACE \
             astronomer/astronomer
 ```
 
+<<<<<<< HEAD
+> **Note:** If you do not specify a patch version above, the script will automatically pull the latest Astronomer Enterprise patch available in the [Astronomer Helm Chart](https://github.com/astronomer/astronomer/releases). If you set `ASTRO_VERSION=0.27` and `--version 0.27`, for example, Astronomer v0.27.9 will be installed if it is the latest v0.27 patch available.
+=======
 > **Note:** If you do not specify a patch version above, the script will automatically pull the latest Astronomer Enterprise patch available in the [Astronomer Helm Chart](https://github.com/astronomer/astronomer/releases). If you set `ASTRO_VERSION=0.26` and `--version 0.26`, for example, Astronomer v0.26.9 will be installed if it is the latest v0.26 patch available.
+>>>>>>> e49d8d0c7fcc7cdc0efda7866d0d79f8d473e2d4

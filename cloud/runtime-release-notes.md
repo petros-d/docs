@@ -11,6 +11,19 @@ Astronomer Runtime is a Docker image built and published by Astronomer that exte
 
 For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runtime.md). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes.md). If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or [support@astronomer.io](mailto:support@astronomer.io).
 
+## Astronomer Runtime 4.0.7
+
+- Release date: December 15, 2021
+- Airflow version: 2.2.2
+
+### Astronomer Monitoring DAG
+
+Astronomer Runtime 4.0.7 includes a monitoring DAG that is enabled for all customers and installed directly into the image itself. In addition to existing Deployment health and metrics functionality, this DAG allows the Astronomer team to better monitor the health of your Data Plane by enabling real-time visibility into whether your workers are healthy and tasks are running.
+
+The `astronomer_monitoring_dag` runs a simple bash task every 5 minutes to ensure that your scheduler and workers are healthy and functioning as expected. If the task fails twice in a row or is not scheduled within a 10-minute interval, Astronomer support receives an alert and will work with you to troubleshoot.
+
+Because this DAG is essential to Astronomer's managed service, your organization will not be charged for its task runs. For the same reasons, this DAG can't be modified or disabled via the Airflow UI. To modify how frequently this DAG runs, you can set an alternate schedule as a cron expression in the `AIRFLOW_MONITORING_DAG_SCHEDULE_INTERVAL` environment variable.
+
 ## Astronomer Runtime 4.0.6
 
 - Release date: December 2, 2021
