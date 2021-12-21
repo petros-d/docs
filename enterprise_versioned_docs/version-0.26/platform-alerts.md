@@ -2,6 +2,7 @@
 title: 'Alerting in Astronomer Enterprise'
 sidebar_label: 'Enterprise Alerts'
 id: platform-alerts
+description: Route common Airflow Deployment and platform alerts from Astronomer Enterprise via Prometheus Alertmanager.
 ---
 
 ## Overview
@@ -34,7 +35,7 @@ By default, Astronomer checks for all alerts defined in [the Prometheus configma
 
 Astronomer uses [Prometheus Alertmanager](https://prometheus.io/docs/alerting/configuration/) to manage alerts. This includes silencing, inhibiting, aggregating, and sending out notifications via methods such as email, on-call notification systems, and chat platforms.
 
-You can configure [Alertmanager](https://prometheus.io/docs/alerting/configuration/) to send Astronomer's built-in alerts to email, HipChat, PagerDuty, Pushover, Slack, OpsGenie, and more by defining alert receivers in the [Alertmanager Helm chart](https://github.com/astronomer/astronomer/blob/master/charts/alertmanager/values.yaml) and pushing them to the [Alertmanager ConfigMap](https://github.com/astronomer/astronomer/blob/release-0.23/charts/alertmanager/templates/alertmanager-configmap.yaml).
+You can configure [Alertmanager](https://prometheus.io/docs/alerting/configuration/) to send Astronomer's built-in alerts to email, HipChat, PagerDuty, Pushover, Slack, OpsGenie, and more by defining alert receivers in the [Alertmanager Helm chart](https://github.com/astronomer/astronomer/blob/master/charts/alertmanager/values.yaml) and pushing them to the [Alertmanager ConfigMap](#https://github.com/astronomer/astronomer/blob/release-0.23/charts/alertmanager/templates/alertmanager-configmap.yaml).
 
 ### Create alert receivers
 
@@ -42,48 +43,41 @@ Alertmanager uses [receivers](https://prometheus.io/docs/alerting/latest/configu
 
 This Helm chart contains groups for each possible alert type based on `labels.tier` and `labels.severity`. Each receiver must be defined within at least one alert type in order to reveive notifications.
 
-For example, adding the following receiver to `receivers.platformCritical` would cause platform alerts with `critical` severity to appear in a specified Slack channel:
+For example, adding the following receiver to `receivers.platformCritical` would cause platform alerts with `critical` severity to appear in the `#astronomer_platform_alerts` Slack channel:
 
 ```yaml
 alertmanager:
   receivers:
     # Configs for platform alerts
     platform:
-      email_configs:
-      - smarthost: smtp.sendgrid.net:587
-        from: <your-astronomer-alert-email@company.com>
-        to: <your-email@company.com>
-        auth_username: apikey
-        auth_password: SG.myapikey1234567891234abcdef_bKY
-        send_resolved: true
+
     platformCritical:
-      slack_configs:
-      - api_url: https://hooks.slack.com/services/abc12345/abcXYZ/xyz67890
-        channel: '#<your-slack-channel-name>'
-        text: |-
-          {{ range .Alerts }}{{ .Annotations.description }}
-          {{ end }}
-        title: '{{ .CommonAnnotations.summary }}'
+        slack_configs:
+        - api_url: https://hooks.slack.com/services/T02J89GPR/BDBSG6L1W/4Vm7zo542XYgvv3
+          channel: '#astronomer_platform_alerts'
+          text: |-
+            {{ range .Alerts }}{{ .Annotations.description }}
+            {{ end }}
+          title: '{{ .CommonAnnotations.summary }}'
 ```
 
 By default, the Alertmanager Helm Chart includes alert objects for platform, critical platform, and Deployment alerts. To configure a receiver for a non-default alert type, such as Deployment alerts with high severity, add that receiver to the `customRoutes` list with the appropriate `match_re` and receiver configuration values. For example:
 
 ```yaml
 alertmanager:
-  customRoutes:
-  - name: deployment-high-receiver
-    match_re:
-      tier: airflow
-      severity: high
+  customRoutes: {}
+    - name: deployment-high-receiver
+      match_re:
+        tier: airflow
+        severity: high
+      email-configs: # etc.
 ```
-
-Note that if you have a `platform`, `platformCritical`, or `airflow` receiver defined in the prior section, you do not need a `customRoute` to route to them. They will automatically be routed to by the `tier` label.
 
 For more information on building and configuring receivers, refer to [Prometheus documentation](https://prometheus.io/docs/alerting/configuration/).
 
 ### Push alert receivers to Astronomer
 
-To add a new receiver to Astronomer, add your receiver configuration to your `config.yaml` file and push the changes to your installation as described in [Apply a Config Change](apply-platform-config.md). The receivers you add must be specified in the same order and format as they appear in the Alertmanager Helm chart. Once you push the alerts to Astronomer, they are automatically added to the [Alertmanager ConfigMap](https://github.com/astronomer/astronomer/blob/release-0.23/charts/alertmanager/templates/alertmanager-configmap.yaml).
+To add a new receiver to Astronomer, add your receiver configuration to your `config.yaml` file and push the changes to your installation as described in [Apply a Config Change](apply-platform-config.md). The receivers you add must be specified in the same order and format as they appear in the Alertmanager Helm chart. Once you push the alerts to Astronomer, they are automatically added to the [Alertmanager ConfigMap](#https://github.com/astronomer/astronomer/blob/release-0.23/charts/alertmanager/templates/alertmanager-configmap.yaml).
 
 ## Create Custom Alerts
 
