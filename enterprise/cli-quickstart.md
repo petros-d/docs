@@ -111,7 +111,7 @@ astro version
 If the installation was successful, you should see the version of the CLI that you installed in the output:
 
 ```
-Astro CLI Version: 0.27.2
+Astro CLI Version: 0.27.0
 Git Commit: c4fdeda96501ac9b1f3526c97a1c5c9b3f890d71
 ```
 
@@ -275,8 +275,8 @@ This command will output something like the following:
 
 ```sh
 $ astro version
-Astro CLI Version: 0.27.1
-Astro Server Version: 0.27.3
+Astro CLI Version: 0.27.0
+Astro Server Version: 0.27.0
 Git Commit: 748ca2e9de1e51e9f48f9d85eb8315b023debc2f
 ```
 
