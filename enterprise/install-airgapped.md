@@ -13,7 +13,7 @@ By default, Astronomer will reach out to public repositories to download various
 - Astronomer Helm charts from `helm.astronomer.io`
 - Astronomer version information from `updates.astronomer.io`
 
-An airgapped environment is a locked-down environment, where traffic to and from the public internet is not possible. This page explains which additional infrastructure components you need and how to configure the Astronomer Helm chart in an airgapped environment.
+If you cannot rely on public repositories and networks for your installation, you can install Astronomer in an airgapped environment. An airgapped environment is a locked-down environment with no access to or from the public internet.
 
 > **Note:** If you have some means to allow traffic to the public internet, e.g. a proxy that allows a list of accepted destinations/sources, that will make the airgapped installation much easier. This page assumes an environment without any possibility of accessing the public internet.
 
@@ -37,7 +37,7 @@ You can also set up your own registry using a dedicated registry service such as
 Which images and tags you require for your Astronomer installation depends on enabled components and versions in the Astronomer platform. Image tags are subject to change, even within existing versions, for example to resolve critical security issues, and therefore not listed here. To gather a list of exact images and tags required for your Astronomer Helm chart version and values.yaml, you can template the Helm charts and fetch the rendered image tags:
 
 ```bash
-$ helm template astronomer/astronomer --version 0.26.5 -f values.yaml | grep "image: " | sed 's/^ *//g' | sort | uniq
+$ helm template astronomer/astronomer --version 0.26.5 | grep "image: " | sed 's/^ *//g' | sort | uniq
 
 image: "quay.io/prometheus/node-exporter:v1.2.2"
 image: docker.io/bitnami/minideb:stretch
@@ -90,11 +90,11 @@ global:
     # password: ~
 ```
 
-This will set the repository for all Docker images.
+This will set the repository for all Docker images specified in the Astronomer Helm chart. If you didn't change the default names or tags of any images uploaded to your private registry, this means that you don't have to do any further configuration to pull images from the correct location.
 
 ### Option 2: Configure images individually
 
-An alternative way is to configure each image (repository) and/or tag individually. For example, in case you have a convention to prefix all images in your repository with `myteam-`. Each image and/or tag must be overridden in the respective subchart.
+An alternative way is to configure each image (repository) and/or tag individually. Say your organization has a naming convention for image tags, such as prepending all tags with `myteam-`, you can configure each image and/or tag individually. Each image and/or tag must be overridden within its respective subchart in your `values.yaml` file. For example, your `values.yaml` file might look like the following:
 
 > **Note:** Images and tags are subject to change, even within existing versions. For example, to resolve critical security issues. The images and tags shown below only serve as an example. Refer to the Astronomer Helm chart for the latest version.
 
