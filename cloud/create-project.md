@@ -2,7 +2,7 @@
 sidebar_label: 'Create a Project'
 title: 'Create an Astronomer Project'
 id: 'create-project'
-description: Create an Astronomer project locally using the Astronomer CLI.
+description: Create an Astronomer project and run it locally with the Astronomer CLI.
 ---
 
 import {siteVariables} from '@site/src/versions';
@@ -46,7 +46,7 @@ This set of files will build into a Docker image that you can both run on your l
 
 ### Astronomer Runtime
 
-Your `Dockerfile` includes a reference to Astronomer Runtime. Packaged into a Debian-based Docker image, Astronomer Runtime extends the Apache Airflow open source project to provide you with differentiated functionality that centers around reliability, efficiency, and performance. For more information on what's included in Runtime and how it's versioned, see [Runtime Versioning](runtime-versioning.md).
+Your `Dockerfile` includes a reference to Astronomer Runtime. Packaged into a Debian-based Docker image, Astronomer Runtime extends the Apache Airflow open source project to provide you with differentiated functionality that centers around reliability, efficiency, and performance. For more information on what's included in Runtime and how it's versioned, see [Runtime Versioning](runtime-version-lifecycle-policy.md).
 
 By default, the Docker image in your Dockerfile is:
 
@@ -93,6 +93,12 @@ Airflow Webserver: http://localhost:8080
 Postgres Database: localhost:5432/postgres
 The default credentials are admin:admin
 `}</code></pre>
+
+:::caution
+
+If you’re running the Astronomer CLI with [buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/) enabled in Docker, you may see an error (`buildkit not supported by daemon`). Learn more in [this forum post](https://forum.astronomer.io/t/buildkit-not-supported-by-daemon-error-command-docker-build-t-airflow-astro-bcb837-airflow-latest-failed-failed-to-execute-cmd-exit-status-1/857).
+
+:::
 
 ## Step 3: Access the Airflow UI
 

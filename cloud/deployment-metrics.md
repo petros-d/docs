@@ -2,7 +2,7 @@
 sidebar_label: 'Deployment Metrics'
 title: 'Deployment Metrics'
 id: deployment-metrics
-description: Measure a Deployment's performance using metrics in the Astronomer Cloud UI.
+description: Monitor Deployment performance, health, and total task volume in the Astronomer UI.
 ---
 
 ## Overview
@@ -77,8 +77,6 @@ The bolded value above the graph shows maximum CPU usage by a single worker at a
 Each bar in the graph shows how much memory was being used by a single worker at the height of its usage for a given hour. This value is measured as a percentage of the total available memory usage per worker as defined in **Worker Resources**. Hovering over a single bar in the graph can help you answer, "Did any of my workers approach 100% usage of total available memory during this specific hour interval?"
 
 The bolded value above the graph shows the maximum memory usage by a single worker at any point in time over the last 24 hours. This can help you answer, "Did any of my workers approach 100% usage of total available memory in the past 24 hours?"
-<<<<<<< HEAD:cloud/deployment-metrics.md
-=======
 
 ## Usage
 
@@ -89,4 +87,3 @@ Use the **Usage** tab in the Astronomer Cloud UI to review the number of success
 The bar chart on the left shows your Organization's total task runs per day for the past 31 days, with each day's volume sorted by Deployment. Each color in the bar chart represents a different Deployment. To see each Deployment's number of successful task runs for a given day, you can hover over the bar chart for that day with your mouse.
 
 The legend on the right side of the menu shows the colors used for each Deployment. This legend shows each Deployment's total sum of successful task runs over the last 31 days. The daily numbers on the left bar chart add up to the monthly total per Deployment on the right.
->>>>>>> 250ebdcc7465130f0c4bbb61bbb3cfb533a87374:docs/deployment-metrics.md

@@ -2,7 +2,7 @@
 sidebar_label: 'Modify a Cluster'
 title: "Modify a Cluster on Astronomer Cloud"
 id: modify-cluster
-description: Make requests to update Astronomer Cloud resources at the Cluster level.
+description: Request changes to an existing Astronomer Cluster.
 ---
 
 ## Overview

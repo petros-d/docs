@@ -2,7 +2,7 @@
 sidebar_label: 'Astronomer Runtime'
 title: 'Astronomer Runtime Release Notes'
 id: runtime-release-notes
-description: Release notes for the Astronomer Runtime, which is Astronomer's distribution of Apache Airflow.
+description: Release notes for Astronomer Runtime, the differentiated Apache Airflow experience and execution framework.
 ---
 
 ## Overview
@@ -11,12 +11,25 @@ Astronomer Runtime is a Docker image built and published by Astronomer that exte
 
 For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runtime.md). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes.md). If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or [support@astronomer.io](mailto:support@astronomer.io).
 
+## Astronomer Runtime 4.0.7
+
+- Release date: December 15, 2021
+- Airflow version: 2.2.2
+
+### Astronomer Monitoring DAG
+
+Astronomer Runtime 4.0.7 includes a monitoring DAG that is enabled for all customers and installed directly into the image itself. In addition to existing Deployment health and metrics functionality, this DAG allows the Astronomer team to better monitor the health of your Data Plane by enabling real-time visibility into whether your workers are healthy and tasks are running.
+
+The `astronomer_monitoring_dag` runs a simple bash task every 5 minutes to ensure that your scheduler and workers are healthy and functioning as expected. If the task fails twice in a row or is not scheduled within a 10-minute interval, Astronomer support receives an alert and will work with you to troubleshoot.
+
+Because this DAG is essential to Astronomer's managed service, your organization will not be charged for its task runs. For the same reasons, this DAG can't be modified or disabled via the Airflow UI. To modify how frequently this DAG runs, you can set an alternate schedule as a cron expression in the `AIRFLOW_MONITORING_DAG_SCHEDULE_INTERVAL` environment variable.
+
 ## Astronomer Runtime 4.0.6
 
 - Release date: December 2, 2021
 - Airflow version: 2.2.2
 
-### Minor Improvements
+### Additional Improvements
 
 - User-supplied `airflow.cfg` files are no longer valid in Astronomer projects. [Environment variables](environment-variables.md) are now the only valid method for setting Airflow configuration options.
 
@@ -47,7 +60,7 @@ For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-ru
 - Release date: November 15, 2021
 - Airflow version: 2.2.2
 
-### Minor Improvements
+### Additional Improvements
 
 - Added support for [Airflow 2.2.2](https://airflow.apache.org/docs/apache-airflow/stable/changelog.html#airflow-2-2-2-2021-11-15), which includes a series of bug fixes for timetables, DAG scheduling, and database migrations. Most notably, it resolves an issue where some DAG runs would be missing in the Airflow UI if `catchup=True` was set.
 
@@ -60,7 +73,7 @@ For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-ru
 - Release date: October 29, 2021
 - Airflow version: 2.2.1
 
-### Minor Improvements
+### Additional Improvements
 
 - Added support for [Airflow 2.2.1](https://airflow.apache.org/docs/apache-airflow/stable/changelog.html#airflow-2-2-1-2021-10-29), which includes a series of bug fixes that address intermittent problems with database migrations from Airflow 2.1 to Airflow 2.2
 
@@ -132,7 +145,7 @@ As part of supporting deferrable operators, the Triggerer is now available as a 
 - Release date: September 1, 2021
 - Airflow version: 2.1.1
 
-### Minor improvements
+### Additional improvements
 
 - Upgraded the default Python version to `3.9.6`
 - Added a link to Astronomer Cloud documentation in the Airflow UI
@@ -147,7 +160,7 @@ As part of supporting deferrable operators, the Triggerer is now available as a 
 - Release date: August 12, 2021
 - Airflow version: 2.1.1
 
-### Minor improvements
+### Additional improvements
 
 - The Webserver is now the only Airflow component with access to logs, which reduces the risk of exposing sensitive information in logs ([commit](https://github.com/apache/airflow/pull/16754))
 - Added support for Python 3.9 ([commit](https://github.com/apache/airflow/pull/15515))

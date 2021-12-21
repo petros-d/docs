@@ -10,17 +10,22 @@ module.exports = {
   onBrokenMarkdownLinks: 'error',
   favicon: 'img/favicon.svg',
   organizationName: 'astronomer', // Usually your GitHub org/user name.
-  projectName: 'cloud-docs', // Usually your repo name.
+  projectName: 'docs', // Usually your repo name.
   themeConfig: {
+    image: 'img/meta.png',
+    gtag: {
+          trackingID: 'G-W97HK48NPT',
+          anonymizeIP: true,
+        },
     algolia: {
-      apiKey: '7b5498535d743f92516bb8c7da177b74',
-      indexName: 'beta',
+      apiKey: '99354995bfad26ed950bdb701bc56b6b',
+      indexName: 'published-docs',
 
       // Optional: see doc section below
       contextualSearch: true,
 
       // Optional: see doc section below
-      appId: '4E2UUYA7WA',
+      appId: 'TTRQ0VJY4D',
       inputSelector:'.DocSearch',
       // Optional: Algolia search parameters
       searchParameters: {
@@ -74,6 +79,14 @@ module.exports = {
               label: '0.25',
               to: '/enterprise/0.25/overview'
             },
+            {
+              label: '0.23',
+              to: '/enterprise/0.23/overview'
+            },
+            {
+              label: '0.16',
+              to: '/enterprise/0.16/overview'
+            },
           ],
         },
       ],
@@ -85,19 +98,19 @@ module.exports = {
           items: [
             {
               label: 'Install Astronomer Cloud',
-              to: 'cloud/install-aws.md',
+              to: 'cloud/install-aws',
             },
             {
-              label: 'Install CLI',
-              to: 'cloud/install-cli.md',
+              label: 'Install the CLI',
+              to: 'cloud/install-cli',
             },
             {
               label: 'Create a Project',
-              to: 'cloud/create-project.md',
+              to: 'cloud/create-project',
             },
             {
-              label: 'Deploy',
-              to: 'cloud/deploy-code.md',
+              label: 'Deploy Code',
+              to: 'cloud/deploy-code',
             },
           ],
         },
@@ -106,16 +119,20 @@ module.exports = {
           items: [
             {
               label: 'Overview',
-              to: 'enterprise/overview.md',
+              to: 'enterprise/overview',
             },
             {
-              label: 'System Components',
-              to: 'enterprise/system-components.md',
+              label: 'Install on AWS',
+              to: 'enterprise/install-aws',
+            },
+            {
+              label: 'Release Notes',
+              to: 'enterprise/release-notes',
             },
           ],
         },
         {
-          title: 'Resources',
+          title: 'Product Resources',
           items: [
             {
               label: 'Support',
@@ -123,7 +140,11 @@ module.exports = {
             },
             {
               label: 'Status',
-              href: 'https://beta-status.astronomer.io',
+              href: 'https://cloud-status.astronomer.io',
+            },
+            {
+              label: 'Astronomer Registry',
+              to: 'https://registry.astronomer.io/',
             },
           ],
         },
@@ -140,7 +161,7 @@ module.exports = {
             },
             {
               label: 'Docs on GitHub',
-              href: 'https://github.com/astronomer/cloud-docs',
+              href: 'https://github.com/astronomer/docs',
             },
           ],
         },
@@ -155,7 +176,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebarsCloud.js'),
           editUrl: ({ docPath }) =>
-            `https://github.com/astronomer/cloud-docs/blob/main/docs/cloud/${docPath}`,
+            `https://github.com/astronomer/docs/blob/main/cloud/${docPath}`,
           editLocalizedFiles: true,
           routeBasePath: 'cloud',
           path: 'cloud',
@@ -179,7 +200,7 @@ module.exports = {
         id: 'enterprise',
         routeBasePath: 'enterprise',
         editUrl: ({ docPath }) =>
-            `https://github.com/astronomer/cloud-docs/blob/main/docs/enterprise/${docPath}`,
+            `https://github.com/astronomer/docs/blob/main/enterprise/${docPath}`,
         editCurrentVersion: true,
         sidebarPath: require.resolve('./sidebarsEnterprise.js'),
         path: 'enterprise',

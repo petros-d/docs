@@ -60,7 +60,7 @@ module.exports = {
       label: 'Astronomer Runtime',
       items: [
         'upgrade-runtime',
-        'runtime-versioning',
+        'runtime-version-lifecycle-policy',
       ],
     },
     {
@@ -79,7 +79,16 @@ module.exports = {
         'known-limitations',
         'resource-reference-aws',
         'platform-variables',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Resources',
+      items: [
         'shared-responsibility-model',
+        'resilience',
+        'disaster-recovery',
+        'data-protection',
       ],
     },
   ],

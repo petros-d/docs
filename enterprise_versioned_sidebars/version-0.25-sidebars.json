@@ -26,6 +26,10 @@
       "items": [
         {
           "type": "doc",
+          "id": "version-0.25/cli-quickstart"
+        },
+        {
+          "type": "doc",
           "id": "version-0.25/customize-image"
         },
         {
@@ -158,6 +162,10 @@
         },
         {
           "type": "doc",
+          "id": "version-0.25/upgrade-to-0-25"
+        },
+        {
+          "type": "doc",
           "id": "version-0.25/apply-platform-config"
         },
         {
@@ -234,6 +242,10 @@
         },
         {
           "type": "doc",
+          "id": "version-0.25/ac-cve"
+        },
+        {
+          "type": "doc",
           "id": "version-0.25/ac-support-policy"
         }
       ],
@@ -267,6 +279,10 @@
         {
           "type": "doc",
           "id": "version-0.25/release-notes"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.25/system-components"
         },
         {
           "type": "doc",

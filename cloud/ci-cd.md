@@ -2,7 +2,7 @@
 sidebar_label: 'CI/CD'
 title: 'Automate Code Deploys with CI/CD'
 id: ci-cd
-description: Create a CI/CD pipeline to automatically redeploy your data pipelines on Astronomer Cloud.
+description: Create a CI/CD pipeline that triggers a deploy to Astronomer Cloud based on changes to your Airflow DAGs.
 ---
 
 ## Overview

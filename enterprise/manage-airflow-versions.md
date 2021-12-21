@@ -107,7 +107,7 @@ First, open the `Dockerfile` within your Astronomer directory. When you initiali
 ```
 .
 ├── dags # Where your DAGs go
-│   ├── example-dag.py # An example dag that comes with the initialized project
+│   └── example-dag.py # An example DAG that comes with the initialized project
 ├── Dockerfile # For Astronomer's Docker image and runtime overrides
 ├── include # For any other files you'd like to include
 ├── packages.txt # For OS-level packages

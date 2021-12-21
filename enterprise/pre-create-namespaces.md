@@ -41,7 +41,7 @@ To start using pre-created namespaces:
             # Enable manual namespace names
             manualNamespaceNames: true
 
-            # Precreated namespace names
+            # Pre-created namespace names
             preCreatedNamespaces:
               - name: <namespace-name1>
               - name: <namespace-name2>

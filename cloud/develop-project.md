@@ -2,7 +2,7 @@
 sidebar_label: 'Develop a Project'
 title: 'Develop Your Astronomer Project'
 id: develop-project
-description: Learn how to work on Astronomer projects, including how to update, rebuild, and add dependencies.
+description: Learn how to add Airflow dependencies and customize an Astronomer project to fit your use case.
 ---
 
 import {siteVariables} from '@site/src/versions';
@@ -131,9 +131,11 @@ DAGs are stored in the `dags` folder of your Astronomer project. To add a DAG to
 
 ### Add DAG Helper Functions
 
-To build additional helper functions for DAGs into your Astronomer project, we recommend adding a folder of `helper_functions` with a set of files that can be used by Airflow DAGs. To do this:
+To build additional helper functions for DAGs into your Astronomer project, we recommend adding a folder with a set of files that can be used by Airflow DAGs.
 
-1. Add a directory of `helper_functions` to your local project:
+To do this:
+
+1. Add your directory of helper functions to your local project:
 
     ```bash
     .
@@ -149,6 +151,8 @@ To build additional helper functions for DAGs into your Astronomer project, we r
     │   └── example-plugin.py
     └── requirements.txt
     ```
+
+    In this example, the directory is named `helper_functions`. You can give it any name.
 
 2. [Restart Your Local Environment](develop-project.md#restart-your-local-environment).
 
@@ -169,7 +173,7 @@ To confirm that your helper functions were successfully installed:
 
 When you first initialize a new Astronomer project, a file called `airflow_settings.yaml` is automatically generated. With this file, you can configure and programmatically generate Airflow [Connections](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html), [Pools](https://airflow.apache.org/docs/apache-airflow/stable/concepts/pools.html), and [Variables](https://airflow.apache.org/docs/apache-airflow/stable/howto/variable.html) so that you don't have to manually redefine these values in the Airflow UI every time you restart your project.
 
-As a security measure, `airflow_settings.yaml` works only in local environments. Once you deploy your project to a Deployment on Astronomer, the values in this file will not be included. To more easily manage Airflow secrets on Astronomer, we recommend [configuring a secrets backend](secrets-backend.md).
+As a security measure, `airflow_settings.yaml` works only in local environments. Once you deploy your project to a Deployment on Astronomer, the values in this file will not be included. To more easily manage Airflow secrets on Astronomer, we recommend [configuring a secrets backend](https://docs.astronomer.io/enterprise/secrets-backend).
 
 :::caution
 If you are storing your project in a public directory or version control tool, we recommend adding this file to your `.gitignore` or equivalent secret management service.

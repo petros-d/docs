@@ -2,7 +2,7 @@
 title: 'Manage Deployment API Keys'
 sidebar_label: 'Deployment API Keys'
 id: api-keys
-description: Create a Deployment API key for use with the Airflow API and CI/CD pipelines.
+description: Create Deployment API keys to make requests to Airflow's REST API and set up a CI/CD pipeline.
 ---
 
 ## Overview
@@ -16,12 +16,6 @@ A Deployment API key has the following properties:
 - It is deleted permanently if its corresponding Deployment is deleted.
 
 This guide provides steps for creating and deleting Deployment API keys.
-
-:::tip
-
-Deployment API keys are an improved and more secure iteration of [Service Accounts](ci-cd.md#step-1-create-a-service-account), which are available in other Astronomer products.
-
-:::
 
 ## Create an API Key
 

@@ -2,7 +2,7 @@
 sidebar_label: 'Install Astronomer on AWS'
 title: 'Install Astronomer Cloud on AWS'
 id: install-aws
-description: Install Astronomer Cloud and create your first Astronomer Cluster on AWS.
+description: Get started on Astronomer Cloud by installing your first Astronomer Cluster on AWS.
 ---
 
 ## Overview

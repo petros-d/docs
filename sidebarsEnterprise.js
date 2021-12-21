@@ -122,11 +122,12 @@ module.exports = {
       type: 'category',
       label: 'Resources',
       items: [
-      `system-components`,
       'release-notes',
+      'system-components',
       'support',
       'cli-reference',
       'version-compatibility-reference',
+      'release-lifecycle-policy',
       ],
     },
   ],
