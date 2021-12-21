@@ -298,14 +298,13 @@ To use a custom Oauth authorization code flow:
 1. In your `config.yaml` file, set the `astronomer.auth.openidConnect.flow` value to `"code"`:
 
     ```yaml
-    # Auth configuration.
     auth:
       # Local database (user/pass) configuration.
       local:
         enabled: true
 
       openidConnect:
-        # flow option is needed until we EOL impicit (valid values "code" and "impicit")
+        # valid values are "code" and "implicit"
         flow: "code"
     ```
 
