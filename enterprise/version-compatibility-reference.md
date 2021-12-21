@@ -19,7 +19,7 @@ It's worth noting that while the tables below reference the minimum compatible v
 | v0.23               | 1.16, 1.17, 1.18             | 3    | 0.13.5       | 9.6+     | 3.6, 3.7, 3.8                             | 0.23.x         |
 | v0.25               | 1.17, 1.18, 1.19, 1.20, 1.21 | 3.6  | 0.13.5       | 9.6+     | 3.6, 3.7, 3.8, 3.9 (_requires AC 2.2.0+_) | 0.25.x         |
 | v0.26               | 1.17, 1.18, 1.19, 1.20, 1.21 | 3.6  | 0.13.5       | 9.6+     | 3.6, 3.7, 3.8, 3.9 (_requires AC 2.2.0+_) | 0.26.x         |
-| v0.27               | 1.18, 1.19, 1.20, 1.21       | 3.6  | 0.13.5       | 9.6+     | 3.6, 3.7, 3.8, 3.9 (_requires AC 2.2.0+_) | 0.26.x         |
+| v0.27               | 1.18, 1.19, 1.20, 1.21       | 3.6  | 0.13.5       | 9.6+     | 3.6, 3.7, 3.8, 3.9 (_requires AC 2.2.0+_) | 0.27.x         |
 
 > **Note:** On Astronomer v0.23+, new versions of Apache Airflow on Astronomer Certified are automatically made available in the Astronomer UI and CLI within 24 hours of their publication. For more information, refer to [Available Astronomer Certified Versions](manage-airflow-versions.md#available-astronomer-certified-versions).
 

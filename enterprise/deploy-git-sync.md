@@ -68,4 +68,4 @@ Workspace editors can configure a new or existing Airflow Deployment to use a gi
 
 5. Save your changes.
 
-Once you configure your Deployment, any code pushes to your DAG directory of the specified  Git repo and branch will appear in your Deployment with zero downtime.
+Once you configure your Deployment, any code pushes to your DAG directory of the specified Git repo and branch will appear in your Deployment with zero downtime.

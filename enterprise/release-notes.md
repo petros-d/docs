@@ -15,7 +15,7 @@ We're committed to testing all Astronomer Enterprise versions for scale, reliabi
 
 ## 0.27.0
 
-Release date: December 16, 2021
+Release date: December 21, 2021
 
 ### Custom OAuth Flows
 
