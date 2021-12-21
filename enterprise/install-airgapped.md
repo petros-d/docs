@@ -1,6 +1,6 @@
 ---
 title: "Installing Astronomer in an airgapped environment"
-sidebar_label: "Airgapped Astronomer installation"
+sidebar_label: "Airgapped installation"
 description: "Infrastructure considerations and Helm configuration to install Astronomer in an airgapped environment"
 id: install-airgapped
 ---
