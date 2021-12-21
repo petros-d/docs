@@ -192,24 +192,48 @@ If you received a certificate from a private CA, follow these steps instead:
 
     > **Note:** The name of the secret file must be `cert.pem` for your certificate to be trusted properly.
 
-2. Note the value of `private-root-ca` for when you configure your Helm chart in Step 7. You'll need to additionally specify the `privateCaCerts` key-value pair with this value for that step.
+2. Note the value of `private-root-ca` for when you configure your Helm chart in Step 8. You'll need to additionally specify the `privateCaCerts` key-value pair with this value for that step.
 
-## Step 6: Configure the Database
+## Step 6: Retrieve Your SMTP URI
+
+An SMTP service is required so that users can send and accept email invites to and from Astronomer. To integrate your SMTP service with Astronomer, make note of your SMTP service's URI and add it to your Helm chart in Step 8. In general, an SMTP URI will take the following form:
+
+```text
+smtps://USERNAME:PASSWORD@HOST/?pool=true
+```
+
+The following table contains examples of what the URI will look like for some of the most popular SMTP services:
+
+| Provider          | Example SMTP URL                                                                               |
+| ----------------- | ---------------------------------------------------------------------------------------------- |
+| AWS SES           | `smtp://AWS_SMTP_Username:AWS_SMTP_Password@email-smtp.us-east-1.amazonaws.com/?requireTLS=true` |
+| SendGrid          | `smtps://apikey:SG.sometoken@smtp.sendgrid.net:465/?pool=true`                                   |
+| Mailgun           | `smtps://xyz%40example.com:password@smtp.mailgun.org/?pool=true`                               |
+| Office365         | `smtp://xyz%40example.com:password@smtp.office365.com:587/?requireTLS=true`                   |
+| Custom SMTP-relay | `smtp://smtp-relay.example.com:25/?ignoreTLS=true`                                      |
+
+If your SMTP provider is not listed, refer to the provider's documentation for information on creating an SMTP URI.
+
+> **Note:** If there are `/` or other escape characters in your username or password, you may need to [URL encode](https://www.urlencoder.org/) those characters.
+
+## Step 7: Configure the Database
 
 If you're connecting to an external database, you will need to create a secret named `astronomer-bootstrap` to hold your database connection string:
 
 ```sh
-kubectl create secret generic astronomer-bootstrap --from-literal connection="postgres://<USERNAME>:<PASSWORD>@<HOST>:5432/<DATABASE>?sslmode=<mode>" --namespace <your-namespace>
+kubectl create secret generic astronomer-bootstrap \
+  --from-literal connection="postgres://USERNAME:$PASSWORD@host:5432" \
+  --namespace astronomer
 ```
 
 > **Note:** You must URL encode any special characters in your Postgres password.
 
 A few additional configuration notes:
 - If you want to use Azure Database for PostgreSQL with Astronomer, you must use the [Flexible Server](https://docs.microsoft.com/en-us/azure/postgresql/flexible-server/) service.
-- If you provision Azure Database for PostgreSQL - Flexible Server, it enforces TLS/SSL and requires that you set `sslmode` to `require` in your `config.yaml`. Possible values for `sslmode` are: `disable`, `allow`, `prefer`, `require` (for Flexible Server), `verify-ca`, `verify-full`. More guidelines in Step 7.
-- If you provision an external database, `postgresqlEnabled` should be set to `false` in Step 7.
+- If you provision Azure Database for PostgreSQL - Flexible Server, it enforces TLS/SSL and requires that you set `sslmode` to `prefer` in your `config.yaml`.
+- If you provision an external database, `postgresqlEnabled` should be set to `false` in Step 8.
 
-## Step 7: Configure Your Helm Chart
+## Step 8: Configure Your Helm Chart
 
 > **Note:** If you want to use a third-party ingress controller for Astronomer, complete the setup steps in [Third-Party Ingress Controllers](third-party-ingress-controllers.md) in addition to this configuration.
 
@@ -257,7 +281,7 @@ global:
 # SSL support for using SSL connections to encrypt client/server communication between database and Astronomer platform. Enable SSL if provisioning Azure Database for PostgreSQL - Flexible Server as it enforces SSL. Change the setting with respect to the database provisioned.
   ssl:
     enabled: true
-    mode: "require"
+    mode: "prefer"
 
 # Settings for database deployed on AKS cluster.
 # postgresql:
@@ -311,7 +335,7 @@ smtpUrl: smtps://USERNAME:PW@HOST/?pool=true
 
 These are the minimum values you need to configure for installing Astronomer. For information on additional configuration, read [What's Next](install-azure-standard.md#whats-next).
 
-## Step 8: Install Astronomer
+## Step 9: Install Astronomer
 
 Now that you have an AKS cluster set up and your `config.yaml` defined, you're ready to deploy all components of our platform.
 
@@ -337,12 +361,12 @@ This command will install the latest available patch version of Astronomer Enter
 
 Once you run the commands above, a set of Kubernetes pods will be generated in your namespace. These pods power the individual services required to run our platform, including the Astronomer UI and Houston API.
 
-## Step 9: Verify all pods are up
+## Step 10: Verify all pods are up
 
 To verify all pods are up and running, run:
 
 ```
-kubectl get pods --namespace <my-namespace>
+kubectl get pods --namespace astronomer
 ```
 
 You should see something like this:
@@ -392,7 +416,7 @@ astronomer-registry-0                                      1/1     Running      
 
 If you are seeing issues here, check out our [guide on debugging your installation](debug-install.md).
 
-## Step 10: Configure DNS
+## Step 11: Configure DNS
 
 Now that you've successfully installed Astronomer, a new Load Balancer will have spun up in your Azure account. This Load Balancer routes incoming traffic to our NGINX ingress controller.
 
@@ -439,13 +463,13 @@ alertmanager.astro.mydomain.com
 prometheus.astro.mydomain.com
 ```
 
-## Step 11: Verify You Can Access the Astronomer UI
+## Step 12: Verify You Can Access the Astronomer UI
 
 Go to `app.BASEDOMAIN` to see the Astronomer UI.
 
 Consider this your new Airflow control plane. From the Astronomer UI, you'll be able to both invite and manage users as well as create and monitor Airflow Deployments on the platform.
 
-## Step 12: Verify Your TLS Setup
+## Step 13: Verify Your TLS Setup
 
 To check if your TLS certificates were accepted, log in to the Astronomer UI. Then, go to `app.BASEDOMAIN/token` and run:
 
