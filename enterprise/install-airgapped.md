@@ -241,9 +241,8 @@ stan:
 
 There are two Helm charts required for Astronomer:
 
-1. The [Astronomer Helm chart](https://github.com/astronomer/astronomer) for the Astronomer Platform
-2. The [Airflow Helm chart](https://github.com/astronomer/airflow-chart) for Airflow deployments in Astronomer Platform
-
+- The [Astronomer Helm chart](https://github.com/astronomer/astronomer) for the Astronomer Platform
+- The [Airflow Helm chart](https://github.com/astronomer/airflow-chart) for Airflow deployments in Astronomer Platform
 The Astronomer Helm chart can be downloaded using `helm pull` and applied locally if desired.
 
 The Airflow chart is used to create Airflow deployments by Commander, the provisioning component of the Astronomer Platform. It installs the Airflow Helm chart when you create a new deployment in the Astronomer UI. You have two options to make the Helm chart available to Commander:
