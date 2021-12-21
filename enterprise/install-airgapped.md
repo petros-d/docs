@@ -235,7 +235,7 @@ stan:
       tag: 0.22.0-2
 ```
 
-## Fetching Helm charts
+## Step 2: Fetch Airflow Helm charts
 
 There are two Helm charts required for Astronomer:
 
@@ -267,7 +267,7 @@ global:
 
 Note that enabling `astronomer.commander.airGapped.enabled` takes precedence over `global.helmRepo`.
 
-## Fetching Airflow updates
+## Step 3: Fetch Airflow updates
 
 By default, Astronomer checks for Airflow updates once a day at midnight from <https://updates.astronomer.io/astronomer-certified> (the check runs as a cronjob in Kubernetes). The URL returns a JSON with version details, but it is not accessible in an airgapped environment. There are several options to make the updates JSON accessible:
 
@@ -365,7 +365,7 @@ astronomer:
       url: http://astronomer-certified.astronomer.svc.cluster.local
 ```
 
-## Helm installation
+## Step 4: Helm installation
 
 With the Docker images, Airflow Helm chart, and updates JSON made accessible inside your network, you can now install the Astronomer Helm chart:
 
