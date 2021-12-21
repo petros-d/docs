@@ -53,5 +53,4 @@ By default, the Astronomer CLI uses Docker to execute a few specific commands. A
 - Fixed an issue where redeployments could clobber existing annotations for namespaces
 - Fixed an issue where new Deployments could potentially generate invalid usernames for Celery and the metadata DB
 - Fixed an issue where scheduler, webserver, and worker logs were not accessible via the Astronomer CLI
-- Added support for Airflow Deployments running Airflow 1.10.5 and 1.10.7 on custom images
 - Fixed an issue where where setting extra volumes via `config.yaml` did not work when NFS DAG deploys were enabled.

@@ -342,7 +342,7 @@ AUTH__OPENID_CONNECT__<idp-provider>__DISCOVERY_URL="<discovery-url>
 AUTH__OPENID_CONNECT__<idp-provider>__AUTH_URL_PARAMS__AUDIENCE="<audience>"
 AUTH__OPENID_CONNECT__FLOW="implicit" # or "code"
 AUTH__OPENID_CONNECT__<idp-provider>__BASE_DOMAIN="<base-domain>"
-AUTH__OPENID_CONNECT__CUSTOM__DISPLAY_NAME="Custom Oauth Provider" # Only used for custom flows
+AUTH__OPENID_CONNECT__CUSTOM__DISPLAY_NAME="Custom OAuth" # Only used for custom flows
 ```
 :::
 
@@ -357,7 +357,7 @@ To finalize your configuration, configure the following key values in your ident
 
 When you complete this setup, you should be able to see the differences in login flow when logging in at `<BASE_DOMAIN>.astronomer.io`.
 
-If you configured a fully custom OAuth flow, you should see a new **Log in with Custom Oauth Provider** button on the Astronomer login screen:
+If you configured a fully custom OAuth flow, you should see a new **Log in with Custom Oauth** button on the Astronomer login screen:
 
 ![Custom login button on the Astronomer login screen](/img/docs/custom-oauth.png)
 
