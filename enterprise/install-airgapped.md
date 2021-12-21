@@ -68,6 +68,8 @@ image: quay.io/astronomer/ap-prometheus:2.21.0
 image: quay.io/astronomer/ap-registry:3.14.2-2
 ```
 
+> **Note:** If you have already enabled/disabled Astronomer platform components in your `values.yaml`, you can pass `-f/--values values.yaml` to `helm template` to print a list specific to your `values.yaml` configuration.
+
 Regardless of whether you choose to mirror or manually pull/push images to your private registry, the returned images and/or tags must be made accessible within your network.
 
 In your `values.yaml` file, you must refer to the private registry. There are two options for doing this:
