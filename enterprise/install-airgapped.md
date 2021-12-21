@@ -34,7 +34,7 @@ Astronomer's Docker images are hosted on a public registry which isn't accessibl
 
 You can also set up your own registry using a dedicated registry service such as [JFrog Artifactory](https://jfrog.com/artifactory/). Regardless of which service you use, follow the product documentation to configure a private registry according to your organization's security requirements. 
 
-Which images and tags you require for your Astronomer installation depends on enabled components and versions in the Astronomer platform. Image tags are subject to change, even within existing versions, for example to resolve critical security issues, and therefore not listed here. To gather a list of exact images and tags required for your Astronomer Helm chart version and values.yaml, you can template the Helm charts and fetch the rendered image tags:
+Which images and tags are required for your Astronomer installation depends on the version of the Astronomer platform. Image tags are subject to change, even within existing versions, for example to resolve critical security issues, and therefore not listed here. To gather a list of exact images and tags required for your Astronomer Helm chart version, you can template the Helm chart and fetch the rendered image tags:
 
 ```bash
 $ helm template astronomer/astronomer --version 0.26.5 | grep "image: " | sed 's/^ *//g' | sort | uniq
