@@ -304,7 +304,7 @@ To use a custom Oauth authorization code flow:
         enabled: true
 
       openidConnect:
-        # valid values are "code" and "implicit"
+        # Valid values are "code" and "implicit"
         flow: "code"
     ```
 
