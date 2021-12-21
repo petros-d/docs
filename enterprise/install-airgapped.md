@@ -7,7 +7,7 @@ id: install-airgapped
 
 ## Overview
 
-By default, Astronomer will reach out to public repositories to download various components:
+By default, the Astronomer installation process requires accessing public repositories to download various components:
 
 - Docker images from `quay.io/astronomer`, `docker.io`, and `gcr.io`
 - Astronomer Helm charts from `helm.astronomer.io`
