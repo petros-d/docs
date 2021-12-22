@@ -251,7 +251,7 @@ The Airflow chart is used to create Airflow deployments by Commander, the provis
 - The Commander Docker image comes with an Airflow Helm chart built-in, only config.yaml configuration required.
 - Host the Airflow Helm chart within your network. Not every cloud provider has a managed Helm registry, so you might want to check out [JFrog Artifactory](https://jfrog.com/artifactory) or [ChartMuseum](https://github.com/helm/chartmuseum).
 
-To configure Commander to use the built-in Airflow Helm chart:
+To use the built-in Airflow Helm chart in the Commander Docker image, add the following configuration to your `config.yaml` file:
 
 ```yaml
 astronomer:
