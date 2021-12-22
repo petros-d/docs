@@ -250,11 +250,11 @@ Note that enabling `astronomer.commander.airGapped.enabled` takes precedence ove
 
 ## Step 3: Fetch Airflow updates
 
-By default, Astronomer checks for Airflow updates once a day at midnight from <https://updates.astronomer.io/astronomer-certified> (the check runs as a cronjob in Kubernetes). The URL returns a JSON with version details, but it is not accessible in an airgapped environment. There are several options to make the updates JSON accessible:
+By default, Astronomer checks for Airflow updates once a day at midnight by querying `https://updates.astronomer.io/astronomer-certified`, which returns a JSON file with version details. However, this URL is not accessible in an airgapped environment. There are several options for making these updates accessible in an airgapped environment:
 
-- You can download the JSON and host it in a location accessible within your airgapped environment, for example:
-    - AWS S3 (no example)
-    - Git (no example)
+- You can download the JSON and host it in a location that's accessible within your airgapped environment, for example:
+    - AWS S3
+    - Git
     - Nginx (example below)
 - You can disable the update checks (not advised)
 
@@ -262,14 +262,14 @@ Note that downloading/uploading the JSON is a manual process. This can of course
 
 ### Exposing Airflow updates via an Nginx endpoint
 
-To add an Nginx endpoint containing the updates information, you can host the updates JSON in a Kubernetes configmap:
+To add an Nginx endpoint containing the update information, you can host the update JSON in a Kubernetes configmap:
 
 ```bash
 curl -L https://updates.astronomer.io/astronomer-certified --output astronomer-certified.json
 kubectl create configmap astronomer-certified --from-file=astronomer-certified.json=./astronomer-certified.json -n astronomer
 ```
 
-Next, add an Nginx deployment and service:
+Next, add an Nginx deployment and service to a new file named `astronomer-certified-nginx.yaml`:
 
 ```yaml
 apiVersion: apps/v1
@@ -322,7 +322,7 @@ spec:
     targetPort: 80
 ```
 
-Note the Docker image in the deployment, ensure this is also accessible from within your environment. Save this in a file e.g. `nginx-astronomer-certified.yaml` and apply with `kubectl apply -f nginx-astronomer-certified.yaml`.
+Note the Docker image in the deployment and ensure this is also accessible from within your environment. Save this file and apply it to your cluster with `kubectl apply -f nginx-astronomer-certified.yaml`.
 
 The updates JSON will be accessible by the service name from pods in the Kubernetes cluster via `http://astronomer-certified.astronomer.svc.cluster.local/astronomer-certified.json`. To validate if the updates JSON is accessible, exec into a pod after the Nginx service was added, and curl the URL. The astro-ui pods are convenient for this because they include `bash` and `curl`:
 
