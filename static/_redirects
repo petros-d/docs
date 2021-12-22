@@ -2,3 +2,32 @@ https://beta-docs.astronomer.io/* https://docs.astronomer.io/:splat 301!
 / /cloud 301!
 https://docs.astronomer.io/runtime-versioning https://docs.astronomer.io/cloud/runtime-version-lifecycle-policy 301!
 https://docs.astronomer.io/enterprise https://docs.astronomer.io/enterprise/overview 301!
+https://docs.astronomer.io/enterprise https://docs.astronomer.io/enterprise/overview 301!
+/add-user /cloud/add-user
+/airflow-alerts /cloud/airflow-alerts
+/airflow-api /cloud/airflow-api
+/ci-cd /cloud/ci-cd
+/cli-release-notes /cloud/cli-release-notes
+/configure-deployment /cloud/configure-deployment
+/create-cluster /cloud/create-cluster
+/create-project /cloud/create-project
+/data-protection /cloud/data-protection
+/deferrable-operators /cloud/deferrable-operators
+/deploy-code /cloud/deploy-code
+/deployment-metrics /cloud/deployment-metrics
+/develop-project /cloud/develop-project
+/disaster-recovery /cloud/disaster-recovery
+/environment-variables /cloud/environment-variables
+/install-aws /cloud/install-aws
+/install-cli /cloud/install-cli
+/known-limitations /cloud/known-limitations
+/modify-cluster /cloud/modify-cluster
+/platform-variables /cloud/platform-variables
+/release-notes /cloud/release-notes
+/resilience /cloud/resilience
+/resource-reference-aws /cloud/resource-reference-aws
+/runtime-release-notes /cloud/runtime-release-notes
+/runtime-version-lifecycle-policy /cloud/runtime-version-lifecycle-policy
+/shared-responsibility-model /cloud/shared-responsibility-model
+/test-and-troubleshoot-locally /cloud/test-and-troubleshoot-locally
+/upgrade-runtime /cloud/upgrade-runtime
