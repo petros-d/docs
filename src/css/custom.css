@@ -259,6 +259,7 @@ html[data-theme="dark"] .DocSearch {
 /* Table Styling */
 table {
   border: solid 1px var(--ifm-table-border-color);
+  max-width: fit-content;
 }
 
 table tr th:first-child,
