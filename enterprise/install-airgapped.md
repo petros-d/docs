@@ -75,7 +75,7 @@ This will set the repository for all Docker images specified in the Astronomer H
 
 ### Option 2: Configure images individually
 
-An alternative way is to configure each image (repository) and/or tag individually. Say your organization has a naming convention for image tags, such as prepending all tags with `myteam-`, you can configure each image and/or tag individually. Each image and/or tag must be overridden within its respective subchart in your `config.yaml` file. For example, your `config.yaml` file might look like the following:
+Alternatively, you can configure each image (repository) and/or tag individually. This is useful in certain situations, for example where your image tags might vary from Astronomer's default tags, or if your organization has a naming convention of prepending image tags with `myteam-`. 
 
 > **Note:** Images and tags are subject to change, even within existing versions. For example, to resolve critical security issues. The images and tags shown below only serve as an example. Refer to the Astronomer Helm chart for the latest version.
 
