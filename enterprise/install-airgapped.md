@@ -44,28 +44,7 @@ image: docker.io/bitnami/minideb:stretch
 image: docker.io/bitnami/postgresql:11.11.0-debian-10-r30
 image: quay.io/astronomer/ap-alertmanager:0.23.0
 image: quay.io/astronomer/ap-astro-ui:0.26.8
-image: quay.io/astronomer/ap-base:3.14.2-1
-image: quay.io/astronomer/ap-cli-install:0.26.0
-image: quay.io/astronomer/ap-commander:0.26.5
-image: quay.io/astronomer/ap-configmap-reloader:0.5.0-1
-image: quay.io/astronomer/ap-curator:5.8.4-5
-image: quay.io/astronomer/ap-db-bootstrapper:0.26.1
-image: quay.io/astronomer/ap-default-backend:0.25.4
-image: quay.io/astronomer/ap-elasticsearch-exporter:1.2.1
-image: quay.io/astronomer/ap-elasticsearch:7.10.2-3
-image: quay.io/astronomer/ap-fluentd:1.14.0
-image: quay.io/astronomer/ap-grafana:7.5.10
-image: quay.io/astronomer/ap-houston-api:0.26.17
-image: quay.io/astronomer/ap-kibana:7.10.2-2
-image: quay.io/astronomer/ap-kube-state:1.7.2
-image: quay.io/astronomer/ap-kubed:0.12.0
-image: quay.io/astronomer/ap-nats-exporter:0.9.0
-image: quay.io/astronomer/ap-nats-server:2.3.2-3
-image: quay.io/astronomer/ap-nats-streaming:0.22.0-2
-image: quay.io/astronomer/ap-nginx-es:1.21.3
-image: quay.io/astronomer/ap-nginx:0.49.3
-image: quay.io/astronomer/ap-prometheus:2.21.0
-image: quay.io/astronomer/ap-registry:3.14.2-2
+...
 ```
 
 > **Note:** If you have already enabled/disabled Astronomer platform components in your `config.yaml`, you can pass `-f/--values config.yaml` to `helm template` to print a list specific to your `config.yaml` configuration.
