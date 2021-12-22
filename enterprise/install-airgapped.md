@@ -68,11 +68,11 @@ image: quay.io/astronomer/ap-prometheus:2.21.0
 image: quay.io/astronomer/ap-registry:3.14.2-2
 ```
 
-> **Note:** If you have already enabled/disabled Astronomer platform components in your `values.yaml`, you can pass `-f/--values values.yaml` to `helm template` to print a list specific to your `values.yaml` configuration.
+> **Note:** If you have already enabled/disabled Astronomer platform components in your `config.yaml`, you can pass `-f/--values config.yaml` to `helm template` to print a list specific to your `config.yaml` configuration.
 
 Regardless of whether you choose to mirror or manually pull/push images to your private registry, the returned images and/or tags must be made accessible within your network.
 
-In your `values.yaml` file, you must refer to the private registry. There are two options for doing this:
+In your `config.yaml` file, you must refer to the private registry. There are two options for doing this:
 
 - Configure only the private registry URL, leaving images and tags as their default values in the Helm chart.
 - Configure each image individually, which allows you to specify a different image/tag if desired.
@@ -81,7 +81,7 @@ Use the following topics to learn more about each of these options.
 
 ### Option 1: Configure a private registry
 
-A private registry can be configured in the `global` section of `values.yaml`:
+A private registry can be configured in the `global` section of `config.yaml`:
 
 ```yaml
 global:
@@ -96,7 +96,7 @@ This will set the repository for all Docker images specified in the Astronomer H
 
 ### Option 2: Configure images individually
 
-An alternative way is to configure each image (repository) and/or tag individually. Say your organization has a naming convention for image tags, such as prepending all tags with `myteam-`, you can configure each image and/or tag individually. Each image and/or tag must be overridden within its respective subchart in your `values.yaml` file. For example, your `values.yaml` file might look like the following:
+An alternative way is to configure each image (repository) and/or tag individually. Say your organization has a naming convention for image tags, such as prepending all tags with `myteam-`, you can configure each image and/or tag individually. Each image and/or tag must be overridden within its respective subchart in your `config.yaml` file. For example, your `config.yaml` file might look like the following:
 
 > **Note:** Images and tags are subject to change, even within existing versions. For example, to resolve critical security issues. The images and tags shown below only serve as an example. Refer to the Astronomer Helm chart for the latest version.
 
@@ -243,11 +243,12 @@ There are two Helm charts required for Astronomer:
 
 - The [Astronomer Helm chart](https://github.com/astronomer/astronomer) for the Astronomer Platform
 - The [Airflow Helm chart](https://github.com/astronomer/airflow-chart) for Airflow deployments in Astronomer Platform
+
 The Astronomer Helm chart can be downloaded using `helm pull` and applied locally if desired.
 
 The Airflow chart is used to create Airflow deployments by Commander, the provisioning component of the Astronomer Platform. It installs the Airflow Helm chart when you create a new deployment in the Astronomer UI. You have two options to make the Helm chart available to Commander:
 
-- The Commander Docker image comes with an Airflow Helm chart built-in, only values.yaml configuration required.
+- The Commander Docker image comes with an Airflow Helm chart built-in, only config.yaml configuration required.
 - Host the Airflow Helm chart within your network. Not every cloud provider has a managed Helm registry, so you might want to check out [JFrog Artifactory](https://jfrog.com/artifactory) or [ChartMuseum](https://github.com/helm/chartmuseum).
 
 To configure Commander to use the built-in Airflow Helm chart:
@@ -377,5 +378,5 @@ helm pull astronomer/astronomer --version 0.26.5
 
 # ... If necessary, copy to a place where you can access Kubernetes ...
 
-helm install astronomer -f values.yaml -n astronomer astronomer-0.26.5.tgz
+helm install astronomer -f config.yaml -n astronomer astronomer-0.26.5.tgz
 ```
