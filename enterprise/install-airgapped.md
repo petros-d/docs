@@ -345,7 +345,7 @@ spec:
 
 Note the Docker image in the deployment, ensure this is also accessible from within your environment. Save this in a file e.g. `nginx-astronomer-certified.yaml` and apply with `kubectl apply -f nginx-astronomer-certified.yaml`.
 
-The updates JSON will be accessible by the service name from pods in the Kubernetes cluster: <http://astronomer-certified.astronomer.svc.cluster.local/astronomer-certified.json>. To validate if the updates JSON is accessible, exec into a pod after the Nginx service was added, and curl the URL. The astro-ui pods are convenient for this because they include `bash` and `curl`:
+The updates JSON will be accessible by the service name from pods in the Kubernetes cluster via `http://astronomer-certified.astronomer.svc.cluster.local/astronomer-certified.json`. To validate if the updates JSON is accessible, exec into a pod after the Nginx service was added, and curl the URL. The astro-ui pods are convenient for this because they include `bash` and `curl`:
 
 ```bash
 kubectl exec -it astronomer-astro-ui-7cfbbb97fd-fv8kl -n=astronomer -- /bin/bash
