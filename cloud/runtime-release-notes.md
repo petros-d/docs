@@ -7,9 +7,29 @@ description: Release notes for Astronomer Runtime, the differentiated Apache Air
 
 ## Overview
 
-Astronomer Runtime is a Docker image built and published by Astronomer that extends the Apache Airflow project to provide a differentiated experience. This document provides a summary of all changes made to each available version of Astronomer Runtime.
+Astronomer Runtime is a Docker image built and published by Astronomer that extends the Apache Airflow project to provide a differentiated data orchestration experience. This document provides a summary of all changes made to each available version of Astronomer Runtime.
 
-For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runtime.md). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes.md). If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or [support@astronomer.io](mailto:support@astronomer.io).
+For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-runtime.md). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes.md). If you have any questions or a bug to report, reach out to [Astronomer Support](https://support.astronomer.io).
+
+## Astronomer Runtime 4.0.8
+
+- Release date: December 21, 2021
+- Airflow version: 2.2.3
+
+### Support for Airflow 2.2.3
+
+Astronomer Runtime 4.0.8 includes support for [Airflow 2.2.3](https://airflow.apache.org/docs/apache-airflow/stable/changelog.html#airflow-2-2-3-2021-12-20).
+
+Airflow 2.2.3 exclusively contains bug fixes, including:
+- Fix for a broken link to task logs in the Gantt view of the Airflow UI ([#20121](https://github.com/apache/airflow/pull/20121))
+- Replace references to "Execution Date" in the Task Instance and DAG Run tables of the Airflow UI with "Logical Date" ([#19063](https://github.com/apache/airflow/pull/19063))
+- Fix problem whereby requests to the `DAGRun` endpoint of Airflow's REST API would return a 500 error if DAG run is in state `skipped` ([#19898](https://github.com/apache/airflow/pull/19898))
+- Fix problem where task logs in Airflow UI showed incorrect timezone ([#19401](https://github.com/apache/airflow/pull/19401))
+- Fix problem where the **Connections** form in the Airflow UI showed incorrect field names ([#19411](https://github.com/apache/airflow/pull/19411))
+
+### Bug fixes
+
+- Disabled the **Pause** button for `astronomer_monitoring_dag`, which cannot be disabled and helps the Astronomer team monitor the health of your Deployment.
 
 ## Astronomer Runtime 4.0.7
 
@@ -18,11 +38,11 @@ For instructions on how to upgrade, read [Upgrade Astronomer Runtime](upgrade-ru
 
 ### Astronomer Monitoring DAG
 
-Astronomer Runtime 4.0.7 includes a monitoring DAG that is enabled for all customers and installed directly into the image itself. In addition to existing Deployment health and metrics functionality, this DAG allows the Astronomer team to better monitor the health of your Data Plane by enabling real-time visibility into whether your workers are healthy and tasks are running.
+Astronomer Runtime 4.0.7 includes a monitoring DAG that is pre-installed in the Docker image and enabled for all customers. In addition to existing Deployment health and metrics functionality, this DAG allows the Astronomer team to better monitor the health of your Data Plane by enabling real-time visibility into whether your Workers are healthy and tasks are running.
 
-The `astronomer_monitoring_dag` runs a simple bash task every 5 minutes to ensure that your scheduler and workers are healthy and functioning as expected. If the task fails twice in a row or is not scheduled within a 10-minute interval, Astronomer support receives an alert and will work with you to troubleshoot.
+The `astronomer_monitoring_dag` runs a simple bash task every 5 minutes to ensure that your Airflow Scheduler and Workers are functioning as expected. If the task fails twice in a row or is not scheduled within a 10-minute interval, Astronomer support receives an alert and will work with you to troubleshoot.
 
-Because this DAG is essential to Astronomer's managed service, your organization will not be charged for its task runs. For the same reasons, this DAG can't be modified or disabled via the Airflow UI. To modify how frequently this DAG runs, you can set an alternate schedule as a cron expression in the `AIRFLOW_MONITORING_DAG_SCHEDULE_INTERVAL` environment variable.
+Because this DAG is essential to Astronomer's managed service, your organization will not be charged for its task runs. For the same reasons, this DAG can't be modified or disabled via the Airflow UI. To modify how frequently this DAG runs, you can specify an alternate schedule as a cron expression by setting `AIRFLOW_MONITORING_DAG_SCHEDULE_INTERVAL` as an environment variable.
 
 ## Astronomer Runtime 4.0.6
 
