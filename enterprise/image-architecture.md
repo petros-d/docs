@@ -131,7 +131,7 @@ The Astronomer Certified Docker image includes a number of OS-level dependencies
 
 Astronomer Certified includes a few packages that don't have a corresponding provider. These packages are used for basic system functions or optional Airflow functionality. The following list contains all extra packages built into Astronomer Certified by default:
 
-- async: Provides asynchronous workers for Gunicorn
-- password: Adds support for user password hashing
-- statsd: Adds support for sending metrics to StatsD
-- virtualenv: Adds support for running Python tasks in local virtual environments
+- `async`: Provides asynchronous workers for Gunicorn
+- `password`: Adds support for user password hashing
+- `statsd`: Adds support for sending metrics to StatsD
+- `virtualenv`: Adds support for running Python tasks in local virtual environments
