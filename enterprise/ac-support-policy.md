@@ -123,6 +123,6 @@ The following table contains the exact lifecycle for each published version of A
 | [2.1.x](https://github.com/astronomer/ap-airflow/blob/master/2.1.4/CHANGELOG.md)     | May 21, 2021   | LTS             | 18 Months          | November 2022            |
 | [2.2.x](https://github.com/astronomer/ap-airflow/blob/master/2.2.0/CHANGELOG.md)     | Oct 12, 2021   | Stable          | 6 Months           | April 2022          |
 
-*This maintenance policy is in effect as of November, 2021. Given the wide usage of AC 1.10.14, 1.10.15, and 2.0, the Astronomer team has extended their maintenance period through January, 2022.
+*This maintenance policy is in effect as of November, 2021. Given the wide usage of AC 1.10.14, 1.10.15, and 2.0, the Astronomer team has extended the maintenance period for those versions through January, 2022.
 
 If you have any questions or concerns, reach out to [Astronomer Support](https://support.astronomer.io).
