@@ -75,7 +75,9 @@ Environment Variables that are set as secret can be modified, but the variable's
 
 ### How environment variables are stored on Astronomer
 
-All environment variables set from the Astronomer UI are stored in a database managed by Astronomer as part of the Control Plane. Values for secret environment variables are encrypted and stored in a managed secrets backend such that they cannot be viewed in plain text by anyone, including Astronomer staff.
+Environment variables that are set via the Astronomer UI or API and are not marked as secret are stored in a database managed by Astronomer.
+
+Environment variables that are set via the Astronomer UI or API and marked as secret are encrypted and stored in a secrets backend that is managed by Astronomer and hosted in the Control Plane. Values for secret environment variables are not available in plain-text in that secrets backend.
 
 ## Set Environment Variables via Dockerfile
 
