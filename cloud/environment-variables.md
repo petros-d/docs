@@ -43,7 +43,7 @@ Environment variables can be set directly in the Astronomer UI. To do so:
 
 :::caution
 
-Environment variables marked as secret are stored securely by Astronomer and will never be shown in the Astronomer UI, but it's possible for a user in your organization to proactively create or configure a DAG that exposes those values in Airflow task logs. Airflow task logs are visible to all team members in the Airflow UI and accessible in your Astronomer Cluster's Amazon S3 bucket.
+Environment variables marked as secret are stored securely by Astronomer and will never be shown in the Astronomer UI, but it's possible for a user in your organization to proactively create or configure a DAG that exposes those values in Airflow task logs. Airflow task logs are visible to all Workspace members in the Airflow UI and accessible in your Astronomer Cluster's Amazon S3 bucket.
 
 To avoid exposing secret values in task logs, instruct your team to not log environment variables in DAG code. At this time, there is no way for Astronomer to prohibit this.
 
@@ -77,7 +77,7 @@ Environment Variables that are set as secret can be modified, but the variable's
 
 Environment variables that are set via the Astronomer UI or API and are not marked as secret are stored in a database managed by Astronomer.
 
-Environment variables that are set via the Astronomer UI or API and marked as secret are encrypted and stored in a secrets backend that is managed by Astronomer and hosted in the Control Plane. Values for secret environment variables are not available in plain-text in that secrets backend.
+Environment variables that are set via the Astronomer UI or API and _are_ marked as secret are encrypted and stored in a secrets backend that is managed by Astronomer and hosted in the Control Plane.
 
 ## Set Environment Variables via Dockerfile
 
