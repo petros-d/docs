@@ -85,3 +85,5 @@ The following table contains the exact lifecycle for each published version of A
 | 0.23               | January 20, 2021 | LTS             | 12 months          | January 2022            |
 | 0.25               | May 11, 2021     | LTS             | 12 months          | May 2022                |
 | 0.26               | Nov 23, 2021     | Stable          | 6 months           | May 2022                |
+| 0.27               | Dec 21, 2021     | Stable          | 6 months           | June 2022               |
+

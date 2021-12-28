@@ -23,7 +23,7 @@ It's worth noting that while the tables below reference the minimum compatible v
 
 > **Note:** On Astronomer v0.23+, new versions of Apache Airflow on Astronomer Certified are automatically made available in the Astronomer UI and CLI within 24 hours of their publication. For more information, refer to [Available Astronomer Certified Versions](manage-airflow-versions.md#available-astronomer-certified-versions).
 
-> **Note:** Due to the [deprecation of Dockershim](https://kubernetes.io/blog/2020/12/02/dockershim-faq/), Azure does not support private CAs starting with Kubernetes 1.19. If you use a private CA, contact [Astronomer support](https://support.astronomer.io) before upgrading to Kubernetes 1.19 on AKS.
+> **Note:** Due to the [deprecation of Dockershim](https://kubernetes.io/blog/2020/12/02/dockershim-faq/), Azure does not support private CAs starting with Kubernetes 1.19. If you use a private CA, contact [Astronomer Support](https://support.astronomer.io) before upgrading to Kubernetes 1.19 on AKS.
 
 > **Note:** While Astronomer v0.25 is compatible with Astronomer Certified 2.2.0, support for the Airflow Triggerer is available only in Astronomer v0.26+. To use [Deferrable Operators](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html), which require the Airflow Triggerer, you must upgrade.
 
@@ -44,9 +44,9 @@ It's worth noting that while the tables below reference the minimum compatible v
 | 2.1.3                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9            | Debian 10 (Buster)              | 0.18.6+            |
 | 2.1.4                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9            | Debian 10 (Buster)              | 0.18.6+            |
 | 2.2.0                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9            | Debian 11 (Bullseye)            | 0.18.6+            |
-| 2.2.1                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9(_Default_) | Debian 11 (Bullseye)            | 0.18.6+            |
-| 2.2.2                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9(_Default_) | Debian 11 (Bullseye)            | 0.18.6+            |
-| 2.2.3                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9(_Default_) | Debian 11 (Bullseye)            | 0.18.6+            |
+| 2.2.1                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 (_Default_) | Debian 11 (Bullseye)            | 0.18.6+            |
+| 2.2.2                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 (_Default_) | Debian 11 (Bullseye)            | 0.18.6+            |
+| 2.2.3                | 9.6+     | 8.0+      | 3.6, 3.7, 3.8, 3.9 (_Default_) | Debian 11 (Bullseye)            | 0.18.6+            |
 
 For more detail on each version of Astronomer Certified and instructions on how to upgrade, refer to [Upgrade Apache Airflow](manage-airflow-versions.md).
 
