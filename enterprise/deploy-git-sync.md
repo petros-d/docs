@@ -28,7 +28,7 @@ To deploy DAGs to a Deployment using a git-sync deploy mechanism, you need permi
 
 ## Enable the Feature
 
-Git-sync deploys must be explicitly enabled on Astronomer by a System Admin. To enable it, update your `config.yaml` file with the following values:
+Git-sync deploys must be explicitly enabled on Astronomer by a System Admin. To enable it, update your `config.yaml` file with the following values:
 
 ```yaml
 astronomer:
@@ -49,8 +49,8 @@ If you want to deploy DAGs via a private Git repo, you additionally need to conf
 Workspace editors can configure a new or existing Airflow Deployment to use a git-sync mechanism for DAG deploys. From there, any member of your organization with write permissions to the Git repository can deploy DAGs to the Deployment. To configure a Deployment for git-sync deploys:
 
 1. In the Astronomer UI, create a new Airflow Deployment or open an existing one.
-2. Go to the **DAG Deployment** section of the Deployment's Settings page.
-3. For your **Mechanism**, select **Git Sync.**
+2. Go to the **DAG Deployment** section of the Deployment's Settings page.
+3. For your **Mechanism**, select **Git Sync.**
 4. Configure the following values:
 
     - **Repository URL**: The URL for the Git repository that hosts your Astronomer project
