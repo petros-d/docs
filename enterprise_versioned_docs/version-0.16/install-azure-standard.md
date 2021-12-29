@@ -149,7 +149,7 @@ If you're installing Astronomer for a large organization, you'll need to request
 To confirm that your enterprise security team generated the correct certificate, run the following command using the `openssl` CLI:
 
 ```sh
-openssl x509 -in  <your-certificate-filepath> -text -noout
+openssl x509 -in  <your-certificate-filepath> -text -noout
 ```
 
 This command will generate a report. If the `X509v3 Subject Alternative Name` section of this report includes either a single `*.BASEDOMAIN` wildcard domain or the subdomains listed at the beginning of Step 4, then the certificate creation was successful.
@@ -230,29 +230,29 @@ global:
     enabled: true
 
   # Base domain for all subdomains exposed through ingress
-  baseDomain: astro.mydomain.com
+  baseDomain: astro.mydomain.com
 
-  # Name of secret containing TLS certificate
-  tlsSecret: astronomer-tls
+  # Name of secret containing TLS certificate
+  tlsSecret: astronomer-tls
 
-  # Enable privateCaCerts only if your enterprise security team
-  # generated a certificate from a private certificate authority.
+  # Enable privateCaCerts only if your enterprise security team
+  # generated a certificate from a private certificate authority.
   # Create a generic secret for each cert, and add it to the list below.
   # Each secret must have a data entry for 'cert.pem'
   # Example command: `kubectl create secret generic private-root-ca --from-file=cert.pem=./<your-certificate-filepath>`
-  # privateCaCerts:
-  # - private-root-ca
+  # privateCaCerts:
+  # - private-root-ca
 
-  # Enable privateCaCertsAddToHost only when your nodes do not already
-  # include the private CA in their docker trust store.
-  # Most enterprises already have this configured,
-  # and in that case 'enabled' should be false.
-  # privateCaCertsAddToHost:
-  #   enabled: true
-  #   hostDirectory: /etc/docker/certs.d
+  # Enable privateCaCertsAddToHost only when your nodes do not already
+  # include the private CA in their docker trust store.
+  # Most enterprises already have this configured,
+  # and in that case 'enabled' should be false.
+  # privateCaCertsAddToHost:
+  #   enabled: true
+  #   hostDirectory: /etc/docker/certs.d
 
   # For development or proof-of-concept, you can use an in-cluster database
-  postgresqlEnabled: false # Keep True if deploying a database on your AKS cluster.
+  postgresqlEnabled: false # Keep True if deploying a database on your AKS cluster.
 
 # SSL support for using SSL connections to encrypt client/server communication between database and Astronomer platform. Enable SSL if provisioning Azure Database for PostgreSQL - Flexible Server as it enforces SSL. Change the setting with respect to the database provisioned.
   ssl:
@@ -271,8 +271,8 @@ global:
 ### Nginx configuration
 #################################
 nginx:
-  # IP address the nginx ingress should bind to
-  loadBalancerIP: ~
+  # IP address the nginx ingress should bind to
+  loadBalancerIP: ~
   # Dict of arbitrary annotations to add to the nginx ingress. For full configuration options, see https://docs.nginx.com/nginx-ingress-controller/configuration/ingress-resources/advanced-configuration-with-annotations/
   ingressAnnotations: {}
 
@@ -281,24 +281,24 @@ nginx:
 #################################
 
 astronomer:
-  houston:
-    config:
-      publicSignups: false # Users need to be invited to have access to Astronomer. Set to true otherwise
-      emailConfirmation: true # Users get an email verification before accessing Astronomer
-      deployments:
-        manualReleaseNames: true # Allows you to set your release names
-      email:
-        enabled: true
-        smtpUrl: YOUR_URI_HERE
-        reply: "noreply@astronomer.io" # Emails will be sent from this address
-      auth:
-        github:
-          enabled: true # Lets users authenticate with Github
-        local:
-          enabled: false # Disables logging in with just a username and password
-        openidConnect:
-          google:
-            enabled: true # Lets users authenticate with Google
+  houston:
+    config:
+      publicSignups: false # Users need to be invited to have access to Astronomer. Set to true otherwise
+      emailConfirmation: true # Users get an email verification before accessing Astronomer
+      deployments:
+        manualReleaseNames: true # Allows you to set your release names
+      email:
+        enabled: true
+        smtpUrl: YOUR_URI_HERE
+        reply: "noreply@astronomer.io" # Emails will be sent from this address
+      auth:
+        github:
+          enabled: true # Lets users authenticate with Github
+        local:
+          enabled: false # Disables logging in with just a username and password
+        openidConnect:
+          google:
+            enabled: true # Lets users authenticate with Google
 ```
 
 SMTP is required and will allow users to send and accept email invites to Astronomer. The SMTP URI will take the following form:
