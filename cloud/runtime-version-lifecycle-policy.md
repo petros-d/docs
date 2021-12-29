@@ -28,7 +28,7 @@ To meet the unique needs of different operating environments, Astronomer Runtime
 
 For users that want the newest features from Astronomer and Airflow on an incremental basis, we recommend following the stable release channel and upgrading to new versions as soon as they are made generally available. New versions of Runtime are issued regularly and include timely support for the latest major, minor, and patch versions of Airflow.
 
-For users that want to optimize for the highest level of reliability and stability, we recommend upgrading only to LTS versions as they're made available. Release channels are not binding, so you are free to upgrade to any available version of Runtime at any time.
+For customers looking for less frequent upgrades and functional changes, we recommend following the LTS release channel. Release channels are not binding, so you are free to upgrade to any available version of Runtime at any time.
 
 ## Versioning Scheme
 

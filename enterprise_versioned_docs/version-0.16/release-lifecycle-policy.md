@@ -28,7 +28,7 @@ To meet the unique needs of different operating environments, we offer all Astro
 
 For customers looking to access Astronomer's newest features on an incremental basis, we recommend following the stable release channel and upgrading to new versions as soon as they are made generally available. Stable releases are issued roughly once per month for Astronomer Enterprise and the Astronomer CLI.
 
-For customers looking for the highest level of stability, we recommend upgrading only to LTS versions as they're made available. Release channels are not binding, so you are free to upgrade to any available version of Astronomer Enterprise at any time.
+For customers looking for less frequent upgrades and functional changes, we recommend following the LTS release channel. Release channels are not binding, so you are free to upgrade to any available version of Astronomer Enterprise at any time.
 
 > **Note:** Release channels apply to Astronomer Enterprise and Astronomer Certified versions. We do not currently support a long-term release channel for the Astronomer CLI.
 

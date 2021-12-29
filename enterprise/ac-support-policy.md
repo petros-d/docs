@@ -28,7 +28,7 @@ To meet the unique needs of different operating environments, Astronomer Certifi
 
 For users that want the newest features from Astronomer and Apache Airflow on an incremental basis, we recommend following the stable release channel and upgrading to new versions as soon as they are made generally available. New versions of AC are issued regularly and depend on Apache Airflow's community release schedule.
 
-For users that want to optimize for the highest level of reliability and stability, we recommend upgrading only to LTS versions as they're made available. Release channels are not binding, so you are free to upgrade to any available version of AC at any time.
+For customers looking for less frequent upgrades and functional changes, we recommend following the LTS release channel. Release channels are not binding, so you are free to upgrade to any available version of AC at any time.
 
 ## Versioning Scheme
 
