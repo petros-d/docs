@@ -2,7 +2,7 @@
 title: 'Upgrade to a Stable or Patch Version of Astronomer Enterprise'
 sidebar_label: 'Upgrade Astronomer'
 id: upgrade-astronomer-stable
-description: Update your Astronomer Enterprise Platform to a new stable or patch version.
+description: Upgrade to a new stable or patch version of Astronomer Enterprise.
 ---
 
 ## Overview
