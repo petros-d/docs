@@ -75,9 +75,9 @@ helm3 upgrade --namespace $NAMESPACE \
 
 Make sure to substitute the following 3 variables with your own values:
 
-- `RELEASE_NAME`
-- `NAMESPACE`
-- `ASTRO_VERSION`
+- `<astronomer-platform-release-name>`
+- `<astronomer-platform-namespace>`
+- `<astronomer-patch-version>`
 
 To upgrade to Astronomer Enterprise v0.27.0, for example, set `ASTRO_VERSION=0.27.0`.
 
