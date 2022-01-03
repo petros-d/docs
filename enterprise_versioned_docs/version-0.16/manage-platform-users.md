@@ -78,7 +78,7 @@ Permissions are defined on Astronomer as `scope.entity.action`, where:
 - `entity`: The object or role being operated on
 - `action`: The verb describing the operation being performed on the `entity`
 
-For example, the `deployment.serviceAccounts.create` permission translates to the ability for a usr to create a Deployment-level Service Account. To view all available platform permissions, view the [default Houston API configuration](https://github.com/astronomer/docs/tree/main/enterprise_configs/0.23/default.yaml). Each permission is applied to the role under which it is listed.
+For example, the `deployment.serviceAccounts.create` permission translates to the ability for a usr to create a Deployment-level Service Account. To view all available platform permissions, view the [default Houston API configuration](https://github.com/astronomer/docs/tree/main/enterprise_configs/0.16/default.yaml). Each permission is applied to the role under which it is listed.
 
 > **Note:** Higher-level roles by default encompass permissions that are found and explicitly defined in lower-level roles, both at the Workspace and System levels. For example, a `SYSTEM_ADMIN` encompasses all permission listed under its role _as well as_ all permissions listed under the `SYSTEM_EDITOR` and `SYSTEM_VIEWER` roles.
 
@@ -86,7 +86,7 @@ To customize permissions, follow the steps below.
 
 ### Identify a Permission Change
 
-First, take a look at our default roles and permissions linked above and identify two things:
+First, take a look at the default roles and permissions in the [Houston API configuration](https://github.com/astronomer/docs/tree/main/enterprise_configs/0.16/default.yaml) and identify two things:
 
 1. What role do you want to configure? (e.g. `DEPLOYMENT_EDITOR`)
 2. What permission(s) would you like to add to or remove from that role? (e.g. `deployment.images.push`)
@@ -162,7 +162,7 @@ In addition to the commonly used System Admin role, the Astronomer platform also
 
 No user is assigned the System Editor or Viewer Roles by default, but they can be added by System Admins via our API. Once assigned, System Viewers, for example, can access both Grafana and Kibana but don't have permission to delete a Workspace they're not a part of.
 
-All three permission sets are entirely customizable on Astronomer Enterprise. For a full breakdown of the default configurations attached to the System Admin, Editor and Viewer Roles, refer to the [Houston API source code](https://github.com/astronomer/docs/tree/main/enterprise_configs/0.23/default.yaml).
+All three permission sets are entirely customizable on Astronomer Enterprise. For a full breakdown of the default configurations attached to the System Admin, Editor and Viewer Roles, refer to the [Houston API source code](https://github.com/astronomer/docs/tree/main/enterprise_configs/0.16/default.yaml).
 
 For guidelines on assigning users any System Level role, read below.
 

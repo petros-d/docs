@@ -86,7 +86,7 @@ To customize permissions, follow the steps below.
 
 ### Identify a Permission Change
 
-First, take a look at our [default roles and permissions](https://github.com/astronomer/docs/tree/main/enterprise_configs/0.26/default.yaml) and identify two things:
+First, take a look at the default roles and permissions in the [Houston API configuration](https://github.com/astronomer/docs/tree/main/enterprise_configs/0.26/default.yaml) and identify two things:
 
 1. What role do you want to configure? (e.g. `DEPLOYMENT_EDITOR`)
 2. What permission(s) would you like to add to or remove from that role? (e.g. `deployment.images.push`)
