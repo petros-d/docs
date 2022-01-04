@@ -30,7 +30,7 @@ Every update to the `main` branch of this repository will trigger a rebuild of o
 
 ### Docs Structure 
 
-There are two core documentation folders: `cloud` and `enterprise`. These folders contain the primary Astronomer docsets that you see by default on our website. More specifically, `enterprise`is equivalent **Latest** version of the Astronomer Enterprise docset, which is the docset that users see by default when accesssing `docs.astronomer.io`.
+There are two core documentation folders: `cloud` and `enterprise`. These folders contain the primary Astronomer docsets that you see by default on Astronomer's documentation site. More specifically, `enterprise `is equivalent **Latest** version of the Astronomer Enterprise docset, which is the docset that users see by default when accesssing `docs.astronomer.io/enterprise`.
 
 ![Screen Shot 2022-01-04 at 11 22 19 AM](https://user-images.githubusercontent.com/74574233/148051957-b739ba42-2fc7-4344-b0a0-4f78881fd68c.png)
 
