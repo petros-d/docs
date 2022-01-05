@@ -84,6 +84,7 @@ Alternatively, you can configure each image (repository) and/or tag individually
 > **Note:** Images and tags are subject to change, even within existing versions. For example, to resolve critical security issues. The images and tags shown below only serve as an example. Refer to the Astronomer Helm chart for the latest version.
 
 ```yaml
+# Example configuration only. To download the correct images, render Helm template for your Astronomer installation version.
 alertmanager:
   images:
     alertmanager:
@@ -246,6 +247,7 @@ astronomer:
 A self-hosted Helm chart can be configured as follows:
 
 ```yaml
+# Example URL - replace with your own repository destination
 global:
   helmRepo: "http://artifactory.company.com:32775/artifactory/astro-helm-chart"
 ```
