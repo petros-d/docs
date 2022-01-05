@@ -298,7 +298,7 @@ spec:
     spec:
       containers:
       - name: astronomer-certified
-        image: 012345678910.dkr.ecr.us-east-1.amazonaws.com/nginx:stable
+        image: 012345678910.dkr.ecr.us-east-1.amazonaws.com/nginx:stable # Replace with own image
         resources:
           requests:
             memory: "32Mi"
