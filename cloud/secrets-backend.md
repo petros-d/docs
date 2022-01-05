@@ -179,11 +179,9 @@ vault kv put airflow/variables/<secret-name> value=<secret-value>
 
 This syntax assumes that you set the `variables_path` in `AIRFLOW__SECRETS__BACKEND_KWARGS` to be `variables`. You can change this path name if you'd prefer to access variables from a different Vault directory.
 
-Now, if you print `Variables.get('hello')` in Airflow, it will print the value of that variable. In our case, that's `world`.
-
 ### Use Vault Secrets in your Airflow
 
-Once you've configured Airflow to use Vault as a secrets backend, you can use the `BaseHook.get_connection(kwargs['<connection-id>'])` `Variable.get(kwargs['<variable-id>'])` methods in your DAGs to access secret connections and variables respectively.
+Once you've configured Airflow to use Vault as a secrets backend, you can use the `BaseHook.get_connection(kwargs['<connection-id>'])` `Variables.get('<variable-id>')` methods in your DAGs to access secret connections and variables respectively.
 
 You can also pass the `conn_id` of your secret directly to most Airflow operators, which will take care of instantiating the connection using a pre-built hook.
 
@@ -207,49 +205,53 @@ To start, add an Airflow connection or variable added to Parameter Store for tes
 Those should live at `/airflow/connections` and `/airflow/variables`, respectively. For example, if you're using a secret with a connection id of `smtp_default`, it should exist at `/airflow/connections/smtp_default`.
 
 :::info
-If you add a connection, it must exist as a string representing an Airflow `connection_uri`. [Here is an example](https://godatadriven.com/blog/highlights-of-the-apache-airflow-1-10-10-release/) to help get you started. You can read about generating a `connection_uri` [in the Apache Airflow documentation](https://airflow.apache.org/docs/stable/howto/connection/index.html#generating-connection-uri).\
+If you add a connection, it must exist as a string representing an Airflow `connection_uri`. You can read more about generating a `connection_uri` in the [Apache Airflow documentation](https://airflow.apache.org/docs/stable/howto/connection/index.html#generating-connection-uri).
 :::
 
-### Step 2: Set your Connection Locally
+### Step 2: Set your Secrets Backend in a Local Environment
 
-Now that you have a Connection saved, the next step is to configure your `Dockerfile` on Astronomer to use this AWS SSM Parameter Store instance server as the default secrets backend for your local Airflow instance.
-
-To do so, follow the steps below.
+Now that you have a secret saved for testing, you can configure your Astronomer project to use your Parameter Store instance server as a secrets backend in a locally running Airflow environment:
 
 1. Add the following environment variables to the `.env` file in your project directory to be used in your _local_ Airflow instance:
 
-        AWS_ACCESS_KEY_ID="YOUR-AWS-KEY"
-        AWS_SECRET_ACCESS_KEY="YOUR-AWS-SECRET-KEY"
+    ```text
+    AWS_ACCESS_KEY_ID="YOUR-AWS-KEY"
+    AWS_SECRET_ACCESS_KEY="YOUR-AWS-SECRET-KEY"
+    ```
 
-   This will keep our connection to the SSM server secure, though make sure to keep your `.env` file in `.gitignore` when you deploy these changes to your project. We'll set these variables separately on Astronomer.
+   This will keep your connection to the Parameter Store server secure, though make sure to keep your `.env` file in `.gitignore` when you deploy these changes to your project. We'll set these variables separately on Astronomer.
 
-2. Add the following lines to your `Dockerfile` to instantiate those SSM-specific Environment Variables and use them in the context of Airflow's `AIRFLOW__SECRETS__BACKEND` configuration:
+2. Add the following lines to your `Dockerfile` to set Airflow's `AIRFLOW__SECRETS__BACKEND` configuration via environment variables:
 
-        ENV AWS_ACCESS_KEY_ID $AWS_ACCESS_KEY_ID
-        ENV AWS_SECRET_ACCESS_KEY $AWS_SECRET_ACCESS_KEY
-        ENV AIRFLOW__SECRETS__BACKEND="airflow.contrib.secrets.aws_systems_manager.SystemsManagerParameterStoreBackend"
-        ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "/airflow/connections", "variables_prefix": "/airflow/variables"}'
+    ```text
+    ENV AWS_ACCESS_KEY_ID $AWS_ACCESS_KEY_ID
+    ENV AWS_SECRET_ACCESS_KEY $AWS_SECRET_ACCESS_KEY
+    ENV AIRFLOW__SECRETS__BACKEND="airflow.contrib.secrets.aws_systems_manager.SystemsManagerParameterStoreBackend"
+    ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "/airflow/connections", "variables_prefix": "/airflow/variables"}'
+    ```
 
-This tells Airflow to look for connection information at the `airflow/connections/*` path in your SSM instance.
+    This tells Airflow to look for connection information at the `airflow/connections/*` path in your Parameter Store server.
 
-If you're interested in further customizing what the interaction between Airflow and your SSM server looks like, learn more by reading [the full list of available kwargs for this integration](https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/_api/airflow/providers/amazon/aws/secrets/systems_manager/index.html).
+To further customize what the interaction between Airflow and your SSM server looks like, reference the [full list of available kwargs for this integration](https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/_api/airflow/providers/amazon/aws/secrets/systems_manager/index.html).
 
 > **Note:** If you'd like to reference an AWS profile instead of connecting via Environment Variables, you can also [add the `profile` param to your kwargs](https://airflow.apache.org/docs/1.10.10/howto/use-alternative-secrets-backend.html).
 
-### Test Your Connection
+### Step 3: Test Your Connection
 
-Test the connection to AWS SSM Parameter Store by calling the `get_conn_uri` method and passing it the `conn_id` of the secret you uploaded to your parameter store. If you followed our example, this would be `smtp_default`.
+To test the connection to AWS SSM Parameter Store, call the `get_conn_uri` or `get_variable` method in your DAG and pass it the connection ID or variable ID, respectively, of the secret you uploaded to your Parameter Store server.
 
-### Deploy to Astronomer
+To test your changes run locally, run `astro dev stop` followed by `astro dev start` in your project directory.
 
-Once you've confirmed that your connections are being imported correctly locally, you're ready to set your Environment Variables on Astronomer.
+### Step 4: Deploy to Astronomer
 
-1. Navigate to `Deployment > Configure > Environment Variables` section of our UI
-2. Set your `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` as you did above in your `Dockerfile`
-3. Click "Deploy Changes" to save and publish your changes
-4. Deploy to Astronomer by running `$ astro deploy`.
+Once you've confirmed that your connections are being imported correctly locally, you're ready to set your deploy your project to Astronomer Cloud
 
-You now should be able to see your connection information being pulled from AWS SSM Parameter Store on Astronomer!
+1. In the Astronomer UI, open your Deployment **Deployment** and click **Add Variables**.
+2. Set your `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` to the same values as in your your `.env` file.
+3. Click **Save Variables** to save and publish your changes.
+4. Deploy to Astronomer by running `astro deploy`.
+
+You should now be able to see your connection information being pulled from AWS SSM Parameter Store on Astronomer.
 
 ## Google Cloud Secret Manager
 
@@ -265,4 +267,6 @@ This setup assumes that you already have a Google Cloud project with [Secret Man
     AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "airflow-connections", "variables_prefix": "airflow-variables", "gcp_keyfile_dict": <your-key-file>}'
     ```
 
-    We recommend marking the `AIRFLOW__SECRETS__BACKEND_KWARGS` environment variable as "Secret" because it contains sensitive information about Secrets Manager.
+    We recommend marking the `AIRFLOW__SECRETS__BACKEND_KWARGS` environment variable as **Secret** because it contains sensitive information about Secrets Manager.
+
+5. Click **Save Variables** to save and publish your changes.
