@@ -355,11 +355,11 @@ astronomer:
 With the Docker images, Airflow Helm chart, and updates JSON made accessible inside your network, you can now install the Astronomer Helm chart:
 
 ```bash
-curl -L https://github.com/astronomer/astronomer/archive/v0.26.5.tar.gz -o astronomer-0.26.5.tgz
+curl -L https://github.com/astronomer/astronomer/archive/v0.27.0.tar.gz -o astronomer-0.27.0.tgz
 # Alternatively, use helm pull
-helm pull astronomer/astronomer --version 0.26.5
+helm pull astronomer/astronomer --version 0.27.0
 
 # ... If necessary, copy to a place where you can access Kubernetes ...
 
-helm install astronomer -f config.yaml -n astronomer astronomer-0.26.5.tgz
+helm install astronomer -f config.yaml -n astronomer astronomer-0.27.0.tgz
 ```
