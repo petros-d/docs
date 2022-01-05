@@ -91,6 +91,18 @@ All changes made to the following files require rebuilding your image:
 
 To rebuild your project after making a change to any of these files, you must [restart your local environment](develop-project.md#restart-your-local-environment).
 
+## Explore Airflow Providers and Modules
+
+As you customize your Astronomer Project and expand your use case for Airflow, we recommend exploring the [Astronomer Registry](https://registry.astronomer.io/), a central library of Airflow modules, providers and DAGs that become the building blocks for your DAGs.
+
+The Astronomer Registry includes:
+
+- Example DAGs for many data sources and destinations. For instance, an example DAG that [showcases a data quality use case with Snowflake and Great Expectations](https://registry.astronomer.io/dags/simple-great-expectations-snowflake-el).
+- Documentation for Airflow providers, such as [Databricks](https://registry.astronomer.io/providers/databricks), [Snowflake](https://registry.astronomer.io/providers/snowflake), and [Postgres](https://registry.astronomer.io/providers/postgres). This documentation is comprehensive and based on Airflow source code.
+- Documentation for Airflow modules, such as the [PythonOperator](https://registry.astronomer.io/providers/apache-airflow/modules/pythonoperator), [BashOperator](https://registry.astronomer.io/providers/apache-airflow/modules/bashoperator), or [S3ToRedshiftOperator](https://registry.astronomer.io/providers/amazon/modules/s3toredshiftoperator). These modules include guidance on how to set Airflow Connections and parameters for them.
+
+As you browse the Astronomer Registry, follow this document for instructions on how to install providers as Python packages and make other changes to your Astronomer Project.
+
 ## Add Python and OS-level Packages
 
 To build Python and OS-level packages into your Astronomer project, add them to your `requirements.txt` and `packages.txt` files. Add Python packages to your `requirements.txt` and OS-level packages to your `packages.txt` file.
