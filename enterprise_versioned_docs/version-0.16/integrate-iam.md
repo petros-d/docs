@@ -254,22 +254,22 @@ In order to apply your IAM role to any Airflow Deployment on Astronomer, you'll 
 
     ```bash
     gcloud container clusters create <cluster-name> \
-      --workload-pool=<project-id>.svc.id.goog
+      --workload-pool=<project-id>.svc.id.goog
     ```
 
     Alternatively, run the following to enable Workload Identity on an existing cluster:
 
     ```bash
     gcloud container clusters update <cluster-name> \
-      --workload-pool=<project-id>.svc.id.goog
+      --workload-pool=<project-id>.svc.id.goog
     ```
 
 2. Configure your node pool to use Workload Identity by running the following command:
 
     ```bash
     gcloud container node-pools update <nodepool-name> \
-      --cluster=<cluster-name> \
-      --workload-metadata=GKE_METADATA
+      --cluster=<cluster-name> \
+      --workload-metadata=GKE_METADATA
     ```
 
 ### Step 2: Create a GCP service account

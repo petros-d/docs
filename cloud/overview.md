@@ -19,11 +19,11 @@ Beyond architecture, Astronomer Cloud offers a suite of first-class features tha
 Astronomer Cloud's architecture enables a few key features, available today:
 
 - Worker auto-scaling, powered by Airflow's Celery Executor + KEDA
-- The ability to run multiple clusters in your organizations's network on AWS
+- The ability to run multiple clusters in your organization's network on AWS
 - Astronomer Runtime, a collection of Docker images that provides a differentiated data orchestration experience
-- Timely support for the latest major, minor, and patch versions of Airflow
-- Support for role-based access control (RBAC) and single sign-On (SSO) for custom user management and authentication
-- An observability experience that gives you insight into the health and resource consumption of your tasks and pipelines in real-time
+- Timely support for the latest major, minor, and patch versions of the Apache Airflow open source project
+- Support for role-based access control (RBAC) and single sign-on (SSO) for secure user management and authentication
+- An observability experience that gives you insight into the health and resource consumption of your tasks and pipelines in real time
 
 ## Architecture
 

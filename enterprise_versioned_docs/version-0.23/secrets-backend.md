@@ -10,6 +10,7 @@ This guide will walk you through how to leverage Airflow's latest feature on Ast
 
 - Hashicorp Vault
 - AWS SSM Parameter Store
+- Google Cloud Secret Manager
 
 ## Hashicorp Vault
 
