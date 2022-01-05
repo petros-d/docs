@@ -230,7 +230,7 @@ There are two Helm charts required for Astronomer:
 
 The Astronomer Helm chart can be downloaded using `helm pull` and applied locally if desired.
 
-The Airflow chart is used to create Airflow deployments by Commander, the provisioning component of the Astronomer Platform. It installs the Airflow Helm chart when you create a new deployment in the Astronomer UI. You have two options to make the Helm chart available to Commander:
+Commander, which is Astronomer's provisioning component, uses the Airflow Helm chart to create Airflow deployments. You have two options to make the Helm chart available to Commander:
 
 - The Commander Docker image comes with an Airflow Helm chart built-in, only config.yaml configuration required.
 - Host the Airflow Helm chart within your network. Not every cloud provider has a managed Helm registry, so you might want to check out [JFrog Artifactory](https://jfrog.com/artifactory) or [ChartMuseum](https://github.com/helm/chartmuseum).
