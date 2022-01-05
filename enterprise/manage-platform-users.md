@@ -259,6 +259,8 @@ For a given Workspace, the Workspace Editor has all of the same default permissi
 - `workspace.config.delete`: Delete the Workspace
 - `workspace.iam.update`: Update [IAM](integrate-iam.md) for the Workspace
 
+In addition, Workspace admins have Deployment Editor permissions for all Deployments within the Workspace.
+
 ### Deployment Viewer
 
 For a given Deployment, a Deployment Viewer has the following permissions:
