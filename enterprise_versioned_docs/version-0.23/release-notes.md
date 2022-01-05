@@ -225,7 +225,7 @@ If you're calling either of those mutations in your current workflow, Astronomer
 
 As we strive to polish and standardize the schema more generally, our API will undergo rapid and potentially breaking changes over the next few releases. The Astronomer CLI and UI will continue to stay in sync with API changes and is our recommended way to interact with the platform.
 
-If calling our API programmatically is critical to your use case, reference our [Houston API Documentation](houston-api.md) for details and stay in close touch with our team.
+If calling our API programmatically is critical to your use case, reference the [Houston API Documentation](houston-api.md) for details and stay in close touch with our team.
 
 ### Support for v0.23 of the Astronomer CLI
 
