@@ -198,9 +198,9 @@ To use this feature, you need:
 
 ### Step 1: Add Secrets to Parameter Store
 
-To start, add an Airflow connection or variable added to Parameter Store for testing.
+To start, add an Airflow connection or variable as a secret to Parameter Store for testing. For more information on adding secrets to Parameter Store, read the [AWS documentation](https://docs.aws.amazon.com/systems-manager/latest/userguide/param-create-cli.html).
 
-Those should live at `/airflow/connections` and `/airflow/variables`, respectively. For example, if you're using a secret with a connection id of `smtp_default`, it should exist at `/airflow/connections/smtp_default`.
+Connections and variables should live at `/airflow/connections` and `/airflow/variables`, respectively. For example, if you're using a secret with a connection id of `smtp_default`, it should exist at `/airflow/connections/smtp_default`.
 
 :::info
 If you add a connection, it must exist as a string representing an Airflow `connection_uri`. You can read more about generating a `connection_uri` in the [Apache Airflow documentation](https://airflow.apache.org/docs/stable/howto/connection/index.html#generating-connection-uri).
