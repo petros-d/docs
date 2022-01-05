@@ -81,10 +81,8 @@ This will set the repository for all Docker images specified in the Astronomer H
 
 Alternatively, you can configure each image (repository) and/or tag individually. This is useful in certain situations, for example where your image tags might vary from Astronomer's default tags, or if your organization has a naming convention of prepending image tags with `myteam-`. 
 
-> **Note:** Images and tags are subject to change, even within existing versions. For example, to resolve critical security issues. The images and tags shown below only serve as an example. Refer to the Astronomer Helm chart for the latest version.
-
 ```yaml
-# Example configuration only. To download the correct images, render Helm template for your Astronomer installation version.
+# Example configuration only. To determine the necessary images, render Helm template for your Astronomer installation version.
 alertmanager:
   images:
     alertmanager:
