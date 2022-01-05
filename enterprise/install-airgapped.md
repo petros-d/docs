@@ -250,7 +250,11 @@ global:
   helmRepo: "http://artifactory.company.com:32775/artifactory/astro-helm-chart"
 ```
 
-Note that enabling `astronomer.commander.airGapped.enabled` takes precedence over `global.helmRepo`.
+:::info
+
+If you configure both options in your `config.yaml` file, then `astronomer.commander.airGapped.enabled` takes precedence over `global.helmRepo`.
+
+:::
 
 ## Step 5: Fetch Airflow updates
 
