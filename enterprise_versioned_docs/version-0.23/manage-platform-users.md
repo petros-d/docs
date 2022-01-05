@@ -9,7 +9,7 @@ description: Add and customize user permissions on Astronomer Enterprise.
 
 In addition to Workspace-level [role-based access control (RBAC) functionality](workspace-permissions.md) core to our platform, Astronomer Enterprise allows teams to customize *how* they want users to create accounts on Astronomer and what they're able to do on the platform - both on Astronomer and Airflow.
 
-Read below for a high-level overview of user management and guidelines around public signups, role customization and adding System Admins.
+Read below for a high-level overview of user management and guidelines around public signups, role customization and adding System Admins. For a list of each role's specific permissions, read [Reference: Platform Permissions](manage-platform-users.md#reference-platform-permissions).
 
 ## Add Users to Astronomer
 
@@ -78,7 +78,7 @@ Permissions are defined on Astronomer as `scope.entity.action`, where:
 - `entity`: The object or role being operated on
 - `action`: The verb describing the operation being performed on the `entity`
 
-For example, the `deployment.serviceAccounts.create` permission translates to the ability for a usr to create a Deployment-level Service Account. To view all available platform permissions, view our [default Houston API configuration](https://github.com/astronomer/docs/tree/main/enterprise_configs/0.23/default.yaml). Each permission is applied to the role under which it is listed.
+For example, the `deployment.serviceAccounts.create` permission translates to the ability for a user to create a Deployment-level Service Account. To view all available platform permissions and default role configurations, see [Reference: Platform Permissions](manage-platform-users.md#reference-platform-permissions).
 
 > **Note:** Higher-level roles by default encompass permissions that are found and explicitly defined in lower-level roles, both at the Workspace and System levels. For example, a `SYSTEM_ADMIN` encompasses all permission listed under its role _as well as_ all permissions listed under the `SYSTEM_EDITOR` and `SYSTEM_VIEWER` roles.
 
@@ -86,7 +86,7 @@ To customize permissions, follow the steps below.
 
 ### Identify a Permission Change
 
-First, take a look at the default roles and permissions in the [default Houston API configuration](https://github.com/astronomer/docs/tree/main/enterprise_configs/0.23/default.yaml) and identify two things:
+First, take a look at the default roles and permissions in the [Houston API configuration](https://github.com/astronomer/docs/tree/main/enterprise_configs/0.23/default.yaml) and identify two things:
 
 1. What role do you want to configure? (e.g. `DEPLOYMENT_EDITOR`)
 2. What permission(s) would you like to add to or remove from that role? (e.g. `deployment.images.push`)
@@ -162,7 +162,7 @@ In addition to the commonly used System Admin role, the Astronomer platform also
 
 No user is assigned the System Editor or Viewer Roles by default, but they can be added by System Admins via our API. Once assigned, System Viewers, for example, can access both Grafana and Kibana but don't have permission to delete a Workspace they're not a part of.
 
-All three permission sets are entirely customizable on Astronomer Enterprise. For a full breakdown of the default configurations attached to the System Admin, Editor and Viewer Roles, refer to our [Houston API source code](https://github.com/astronomer/docs/tree/main/enterprise_configs/0.23/default.yaml).
+All three permission sets are entirely customizable on Astronomer Enterprise. For a full breakdown of the default configurations attached to the System Admin, Editor and Viewer Roles, refer to the [Houston API source code](https://github.com/astronomer/docs/tree/main/enterprise_configs/0.23/default.yaml).
 
 For guidelines on assigning users any System Level role, read below.
 
@@ -183,3 +183,125 @@ To verify a user was successfully granted the SysAdmin role, ensure they can do 
 - Navigate to `grafana.BASEDOMAIN`
 - Navigate to `kibana.BASEDOMAIN`
 - Access the 'System Admin' tab from the top left menu of the Astronomer UI
+
+## Reference: System Permissions
+
+This section contains the specific default permissions for each System user role on Astronomer. System roles apply to all Workspaces, users, and Deployments within a single Astronomer Enterprise installation.
+
+### System Viewer
+
+The System Viewer has the following permissions by default:
+
+- `system.airflow.get`: View the Airflow UI for any Deployment
+- `system.deployment.variables.get`: View [environment variables](environment-variables.md) for any Deployment
+- `system.deployments.get`: View any setting for any Deployment in the Astronomer UI
+- `system.invites.get`: View all pending user invites in the **System Admin** tab of the Astronomer UI
+- `system.invite.get`: View information for any pending user invite
+- `system.monitoring.get`: Access to [Grafana](grafana-metrics.md) and [Kibana](kibana-logging.md) for system-level monitoring
+- `system.serviceAccounts.get`: View [service accounts](ci-cd.md#step-1-create-a-service-account) for any Deployment or Workspace
+- `system.updates.get`: View the newest platform release version number
+- `system.users.get`: View information for any user on the platform, including their email address, the list of Workspaces that user has access to, and their user role
+- `system.workspace.get`: View information for any Workspace
+
+### System Editor
+
+The System Editor has all of the same default permissions as the System Viewer, plus:
+
+- `system.deployment.variables.update`: Modify [environment variables](environment-variables.md) for any Deployment
+- `system.iam.update`: Modify [IAM](integrate-iam.md) roles for any Deployment
+- `system.serviceAccounts.update`: Modify [service accounts](ci-cd.md#step-1-create-a-service-account) for any Workspace or Deployment
+- `deployment.airflow.user`: Airflow [user permissions](https://airflow.apache.org/docs/apache-airflow/stable/security/access-control.html#user) for all Deployments
+- `system.registryBaseImages.push`: Modify base layer Docker images for Airflow
+
+### System Admin
+
+The System Admin has all of the same default permissions as the System Viewer and System Editor for a given cluster, plus:
+
+- `system.deployments.create`: Create a Deployment on any Workspace
+- `system.deployments.update`: Modify any Deployment
+- `system.deployments.delete`: Delete any Deployment
+- `system.deployments.logs`: View logging and metrics for any Deployment
+- `system.user.invite`: Invite a user
+- `system.user.delete`: Delete any user
+- `system.user.verifyEmail`: Bypass email verification for any user
+- `system.workspace.delete`: Delete any Workspace
+- `system.airflow.admin`: Airflow admin permissions on any Deployment, including permission to configure:
+
+    - Pools
+    - Configuration
+    - Users
+    - Connections
+    - Variables
+    - XComs
+
+### Workspace Viewer
+
+The Workspace Viewer has the following default permissions for a given Workspace:
+
+- `workspace.config.get`: View the Workspace
+- `system.deployments.get`: View all settings and configuration pages of any Deployment
+- `workspace.serviceAccounts.get`: View any Deployment or Workspace-level [service account](ci-cd.md#step-1-create-a-service-account)
+- `workspace.users.get`: View information for all users with access to the Workspace
+
+### Workspace Editor
+
+For a given Workspace, the Workspace Editor has all of the same default permissions as the Workspace Viewer, plus:
+
+- `workspace.config.update`: Modify the Workspace, including Workspace Name, Description, and user access
+- `workspace.deployments.create`: Create a Deployment in the Workspace
+- `workspace.serviceAccounts.create`: Create a Workspace-level service account
+- `workspace.serviceAccounts.update`: Modify a Workspace-level service account
+- `workspace.serviceAccounts.delete`: Delete a Workspace-level service account
+
+### Workspace Admin
+
+For a given Workspace, the Workspace Editor has all of the same default permissions as the Workspace Viewer and Workspace Editor, plus:
+
+- `workspace.invites.get`: View pending user invites for the Workspace
+- `workspace.config.delete`: Delete the Workspace
+- `workspace.iam.update`: Update [IAM](integrate-iam.md) for the Workspace
+
+### Deployment Viewer
+
+For a given Deployment, a Deployment Viewer has the following permissions:
+
+- `deployment.airflow.get`: View the Airflow UI
+- `deployment.config.get`: View the Deployment's settings
+- `deployment.logs.get`: View the Deployment's logs
+- `deployment.images.pull`: Access the Deployment's running Docker image
+- `deployment.metrics.get`: View the Deployment's **Metrics** tab in the Astronomer UI
+- `deployment.serviceAccounts.get`: View any [service account](ci-cd.md#step-1-create-a-service-account) for the Deployment
+- `deployment.variables.get`: View the Deployment's [environment variables](environment-variables.md)
+- `deployment.users.get`: View the list of users with access to the Deployment
+
+Note that a Deployment Viewer cannot cannot push code to a Deployment or modify Deployment configurations. These actions can be completed only by a Deployment Editor or a Deployment Admin.
+
+### Deployment Editor
+
+For a given Deployment, the Deployment Editor has all of the same default permissions as the Deployment Viewer, plus:
+
+- `deployment.airflow.user`: Airflow [user permissions](https://airflow.apache.org/docs/apache-airflow/stable/security/access-control.html#user) for all Deployments, including modifying task runs and DAG runs
+- `deployment.config.update`: Modify the Deployment's settings
+- `deployment.images.push`: Push code to the Deployment via the Astronomer CLI
+- `deployment.serviceAccounts.create`: Create a Deployment-level service account
+- `deployment.serviceAccounts.update`: Modify a Deployment-level service account
+- `deployment.serviceAccounts.delete`: Delete a Deployment-level service account
+- `deployment.variables.update`: Update the Deployment's [environment variables](environment-variables.md)
+
+Note that a Deployment Editor cannot make changes to certain configurations in the Airflow UI, such as connections and variables. These actions can be completed only by a Deployment Admin.
+
+### Deployment Admin
+
+For a given Deployment, the Deployment Admin has all of the same default permissions as the Deployment Viewer and the Deployment Editor, plus:
+
+- `deployment.airflow.admin`: Airflow [admin permissions](https://airflow.apache.org/docs/apache-airflow/stable/security/access-control.html#admin), including permission to configure:
+
+    - Pools
+    - Configuration
+    - Users
+    - Connections
+    - Variables
+    - XComs
+
+- `deployment.config.delete`: Delete the Deployment
+- `deployment.userRoles.update`: Update Deployment-level permissions for users within the Deployment
