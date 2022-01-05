@@ -272,21 +272,25 @@ For a given Deployment, a Deployment Viewer has the following permissions:
 - `deployment.variables.get`: View the Deployment's [environment variables](environment-variables.md)
 - `deployment.users.get`: View the list of users with access to the Deployment
 
+Note that a Deployment Viewer cannot cannot push code to a Deployment or modify Deployment configurations. These actions can be completed only by a Deployment Editor or a Deployment Admin.
+
 ### Deployment Editor
 
 For a given Deployment, the Deployment Editor has all of the same default permissions as the Deployment Viewer, plus:
 
 - `deployment.airflow.user`: Airflow [user permissions](https://airflow.apache.org/docs/apache-airflow/stable/security/access-control.html#user) for all Deployments, including modifying task runs and DAG runs
 - `deployment.config.update`: Modify the Deployment's settings
-- `deployment.images.push`: Push code to the Deployment
+- `deployment.images.push`: Push code to the Deployment via the Astronomer CLI
 - `deployment.serviceAccounts.create`: Create a Deployment-level service account
 - `deployment.serviceAccounts.update`: Modify a Deployment-level service account
 - `deployment.serviceAccounts.delete`: Delete a Deployment-level service account
 - `deployment.variables.update`: Update the Deployment's [environment variables](environment-variables.md)
 
+Note that a Deployment Editor cannot make changes to certain configurations in the Airflow UI, such as connections and variables. These actions can be completed only by a Deployment Admin.
+
 ### Deployment Admin
 
-For a given Deployment, the Deployment Editor has all of the same default permissions as the Deployment Viewer and the Deployment Admin, plus:
+For a given Deployment, the Deployment Admin has all of the same default permissions as the Deployment Viewer and the Deployment Editor, plus:
 
 - `deployment.airflow.admin`: Airflow [admin permissions](https://airflow.apache.org/docs/apache-airflow/stable/security/access-control.html#admin), including permission to configure:
 
