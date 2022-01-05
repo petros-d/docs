@@ -78,7 +78,7 @@ Each bar in the graph shows how much memory was being used by a single worker at
 
 The bolded value above the graph shows the maximum memory usage by a single worker at any point in time over the last 24 hours. This can help you answer, "Did any of my workers approach 100% usage of total available memory in the past 24 hours?"
 
-## Usage
+## Astronomer Usage
 
 Use the **Usage** tab in the Astronomer Cloud UI to review the number of successful task runs across Deployments in your Organization. Astronomer Cloud is priced based on successful task runs, so this view can help you monitor both Astronomer cost as well as Airflow usage in aggregate.
 
