@@ -5,7 +5,7 @@ id: secrets-backend
 description: Configure a secret backend tool on Astronomer Cloud to store Airflow connections and variables.
 ---
 
-You can manage and sync Airflow connections and variables from a variety of external secrets backend tools, including [Hashicorp Vault](https://www.vaultproject.io/), [AWS SSM Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html), and [GCP Secret Manager](https://cloud.google.com/secret-manager). Storing connections and variables as secrets makes Airflow more secure and reliable: DAG authors can focus on authoring data pipelines without the risk of touching sensitive code that's essential to running your Deployments.
+You can manage and sync Airflow connections and variables as [secrets](https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/secrets/index.html) from a variety of external secrets backend tools, including [Hashicorp Vault](https://www.vaultproject.io/), [AWS SSM Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html), and [GCP Secret Manager](https://cloud.google.com/secret-manager). Storing connections and variables as secrets makes Airflow more secure and reliable: DAG authors can focus on authoring data pipelines without the risk of touching sensitive code that's essential to running your Deployments.
 
 This guide provides setup steps for configuring the following tools as secrets backends on Astronomer:
 
@@ -140,13 +140,15 @@ Once you've added this DAG to your project:
 
 This works because we set the `connections_path` in our `AIRFLOW__SECRETS__BACKEND_KWARGS` to be `connections`. You can change this path name if you'd prefer to access variables from a different Vault directory.
 
-> **Note:** If you've written other secrets to your Vault server's `/connections` path, you should be able to test those here as well just by changing the `my_conn_id` value in the DAG code above.
+:::tip
+If you've written other secrets to your Vault server's `/connections` path, you should be able to test those here as well just by changing the `my_conn_id` value in the DAG code above.
+:::
 
 ### Step 4: Deploy to Astronomer
 
 Once you've confirmed that your connections are being imported correctly in a local environment, you're ready to set configure the same feature in a Deployment on Astronomer Cloud.
 
-1. In the Astronomer UI, open your Deployment **Deployment** and click **Add Variables**.
+1. In the Astronomer UI, open your **Deployment** and click **Add Variables**.
 2. Set `VAULT__ROOT_TOKEN` and `VAULT__URL` to the same values as in your `.env` file.
 3. Click **Save Variables** to save and publish your changes.
 4. Deploy your project to Astronomer by running `astro deploy` in your project directory.
@@ -167,7 +169,9 @@ This syntax applies to all connections. For example, to make an SMTP connection 
 vault kv put secret/connections/smtp_default conn_uri=smtps://user:host@relay.example.com:465
 ```
 
-> **Note:** We recommend setting the path to `secret/connections/<your-connection>` to keep all of your Airflow connections organized in the `connections` directory of the mount point.
+:::info
+We recommend setting the path to `secret/connections/<your-connection>` to keep all of your Airflow connections organized in the `connections` directory of the mount point.
+:::
 
 ### Set Airflow Variables as Secrets in Vault
 
@@ -178,12 +182,6 @@ vault kv put airflow/variables/<secret-name> value=<secret-value>
 ```
 
 This syntax assumes that you set the `variables_path` in `AIRFLOW__SECRETS__BACKEND_KWARGS` to be `variables`. You can change this path name if you'd prefer to access variables from a different Vault directory.
-
-### Use Vault Secrets in your Airflow
-
-Once you've configured Airflow to use Vault as a secrets backend, you can use the `BaseHook.get_connection(kwargs['<connection-id>'])` `Variables.get('<variable-id>')` methods in your DAGs to access secret connections and variables respectively.
-
-You can also pass the `conn_id` of your secret directly to most Airflow operators, which will take care of instantiating the connection using a pre-built hook.
 
 ## AWS SSM Parameter Store
 
@@ -255,18 +253,46 @@ You should now be able to see your connection information being pulled from AWS 
 
 ## Google Cloud Secret Manager
 
-This setup assumes that you already have a Google Cloud project with [Secret Manager configured](https://cloud.google.com/secret-manager/docs/configuring-secret-manager). To use Google Cloud Secrets Manager as your secrets backend for an Airflow Deployment on Astronomer:
+This topic provides setup steps for configuring Google Cloud project [Secret Manager](https://cloud.google.com/secret-manager/docs/configuring-secret-manager) as your Airflow secrets backend.
+
+### Prerequisites
+
+To use Google Cloud Secret Manager as your Airflow secrets backend, you need:
+
+- A [Deployment](configure-deployment.md).
+- The [Astro CLI](install-cli.md).
+- A Google Cloud environment with [Secret Manager](https://cloud.google.com/secret-manager/docs/configuring-secret-manager) configured.
+
+### Step 1: Configure Secret Manager
+
+To configure Secret Manager for use with Airflow:
 
 1. [Create a service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts) with the appropriate permissions on Google Cloud.
 2. Add the [Secret Manager Secret Accessor](https://cloud.google.com/secret-manager/docs/access-control) role to the service account.
 3. Create and download a [JSON service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys) for the service account.
-4. In the Astronomer UI, set the following [environment variables](environment-variables.md) in your Airflow Deployment, making sure to paste the entire JSON key file in place of `<your-key-file>`:
+
+### Step 2: Test Your Secrets Backend in a Local Environment
+
+1. In your Astronomer project folder, set the following environment variables in your `.env` file, making sure to paste your entire JSON service account key in place of `<your-key-file>`:
 
     ```sh
     AIRFLOW__SECRETS__BACKEND=airflow.providers.google.cloud.secrets.secret_manager.CloudSecretManagerBackend
     AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "airflow-connections", "variables_prefix": "airflow-variables", "gcp_keyfile_dict": <your-key-file>}'
     ```
 
-    We recommend marking the `AIRFLOW__SECRETS__BACKEND_KWARGS` environment variable as **Secret** because it contains sensitive information about Secrets Manager.
+2. Using the gcloud CLI, [create a secret](https://cloud.google.com/secret-manager/docs/creating-and-accessing-secrets#create) containing either an Airflow connection or variable.
+3. Write a simple DAG that prints the contents of your secret to your task logs. This should look similar to the example in the [Hashicorp Vault setup](secrets-backend.md#hashicorp-vault). Add this DAG to your project's `dags` folder.
+4. Run `astro dev stop` followed by `astro dev start` to push your changes to your local Airflow environment.
+5. In the Airflow UI (`http://localhost:8080/admin/`), trigger your new DAG.
+6. Click on `test-task` > **View Logs**. If the configuration was successful, you should should see the contents of your secret in the task logs.
 
-5. Click **Save Variables** to save and publish your changes.
+### Step 3: Deploy to Astronomer
+
+Once you've confirmed that your secrets are being imported correctly to your local environment, you're ready to set configure the same feature in a Deployment on Astronomer Cloud.
+
+1. In the Astronomer UI, open your Deployment and click **Add Variables**.
+2. Set `AIRFLOW__SECRETS__BACKEND` and `AIRFLOW__SECRETS__BACKEND_KWARGS` to the same values as in your `.env` file. Mark these variables as **Secret**.
+3. Click **Save Variables** to save and publish your changes.
+4. Deploy your project to Astronomer by running `astro deploy` in your project directory.
+
+You now should be able to see your connection information being pulled from Secret Manager on Astronomer. From here, you can store any Airflow connections or variables as secrets on Secret Manager and use them in your project.
