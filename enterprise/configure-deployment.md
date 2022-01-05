@@ -219,6 +219,12 @@ Using this mechanism, you can deploy DAGs to an Airflow Deployment on Astronomer
 
 To deploy DAGs to a Deployment via an NFS volume, you must first enable the feature at the platform level. For more information, read [Deploy DAGs via NFS Volume](deploy-nfs.md).
 
+### Git-sync deploys
+
+For teams using a Git-based workflow for DAG development, Astronomer supports a [git-sync](https://github.com/kubernetes/git-sync) deploy mechanism.
+
+To deploy DAGs via git-sync, you add DAGs to a repository that has been configured to sync with your Astronomer Deployment. Once the Deployment detects a change in the repository, your DAG code will automatically sync to your Deployment with no downtime. For more information on configuring this feature, read [Deploy DAGs via Git-Sync](deploy-git-sync.md).
+
 ## Delete a Deployment
 
 You can delete an Airflow Deployment using the **Delete Deployment** button at the bottom of the Deployment's **Settings** tab.

@@ -15,7 +15,7 @@ Astronomer Cloud makes it easy for your team to test Airflow DAGs locally and pu
 
 :::info
 
-The process for deploying an Astronomer project via CI/CD varies slightly from this diagram. For more information, refer to [CI/CD: Workflow Overview](ci-cd#workflow-overview).
+The process for deploying an Astronomer project via CI/CD varies slightly from this diagram. For more information, refer to [CI/CD: Workflow Overview](ci-cd.md#workflow-overview).
 
 :::
 

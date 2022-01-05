@@ -254,7 +254,7 @@ For detailed instructions, refer to [CLI Quickstart](cli-quickstart.md). For a f
 - Ability to search Deployment users by role via Houston API
 - Updated documentation links in Astronomer UI
 - Display toast message in Astronomer UI following Deployment deletion
-- Platform Upgrade to [Prisma 2](https://www.prisma.io/) (Database Toolkit for our Houston API)
+- Platform Upgrade to [Prisma 2](https://www.prisma.io/) (Database Toolkit for our Houston API)
 - Replace `workspaceUuid` with `deploymentUuid` in arg for `deploymentVariables` Houston API mutation
 - Houston and Commander Images now created with a non-root user
 - Support for new configuration options in Fluentd S3 Plugin (S3 path where Airflow logs are stored and server side encryption)
