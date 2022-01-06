@@ -1,7 +1,7 @@
 ---
 title: 'View Scheduler Logs'
 sidebar_label: 'Scheduler Logs'
-id: deployment-logs
+id: scheduler-logs
 description: View your Deployments' scheduler logs in the Astronomer Cloud UI.
 ---
 
