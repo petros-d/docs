@@ -17,9 +17,9 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 
 ## January 6, 2021
 
-### Logging Improvements
+### Improvements to "Scheduler Logs" in the Astronomer UI
 
-The **Logs** tab has been updated to make it easier to read and organize. Specifically:
+The **Scheduler Logs** page has been updated to make it easier to read and organize. Specifically:
 
 - You can now filter logs by type (`DEBUG`, `INFO`, `WARN`, and `ERROR`).
 - The console now shows logs for the past 24 hours.
