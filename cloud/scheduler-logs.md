@@ -21,7 +21,7 @@ You can also directly access logs for a given Deployment by clicking the **Logs*
 
 ![Logs icon in the Deployments table](/img/docs/deployment-log-button.png)
 
-## Manage Scheduler Logs
+## Filter Scheduler Logs
 
 The **Scheduler Logs** page shows all of a given Deployment's recorded Scheduler logs from the last 24 hours. Each log is color-coded based on its information type.
 
