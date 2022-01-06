@@ -13,7 +13,7 @@ This guide explains how to access your Deployments' Scheduler logs via the Astro
 
 ## Access Scheduler Logs
 
-You can access the **Scheduler Logs** page clicking on the the Logs icon in the Astronomer UI sidebar:
+You can access the **Scheduler Logs** page by clicking on the Logs icon in the Astronomer UI sidebar:
 
 ![Logs icon and button](/img/docs/log-location.png)
 

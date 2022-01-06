@@ -22,9 +22,9 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 The **Scheduler Logs** page has been updated to make it easier to read and organize. Specifically:
 
 - You can now filter logs by type (`DEBUG`, `INFO`, `WARN`, and `ERROR`).
-- The console now shows logs for the past 24 hours.
-- The console can now show a maximum of 500 logs.
-- When looking at a Deployment's logs, you can jump back to the Deployment using the **Deployment Details** button.
+- The page now shows logs for the past 24 hours instead of the past 30 minutes.
+- The page now shows a maximum of 500 logs instead of a lower maximum.
+- When looking at a Deployment's logs, you can return to the Deployment's information using the **Deployment Details** button.
 
 ![Logs page in the UI](/img/release-notes/log-improvements.png)
 
