@@ -7,12 +7,12 @@ description: Push DAGs to your Airflow Deployment on Astronomer Enterprise using
 
 ## Overview
 
-Starting with Astronomer v0.27, you can deploy DAGs to an Astronomer Deployment using [git-sync](https://github.com/kubernetes/git-sync). After setting up this feature, you can deploy DAGs from a Git repository without any additional CI/CD GitHub actions. DAGs deployed via git-sync automatically appear in the Airflow UI without requiring additional action or causing downtime.
+Starting with Astronomer v0.27, you can deploy DAGs to an Astronomer Deployment using [git-sync](https://github.com/kubernetes/git-sync). After setting up this feature, you can deploy DAGs from a Git repository without any additional CI/CD. DAGs deployed via git-sync automatically appear in the Airflow UI without requiring additional action or causing downtime.
 
 This guide provides setup steps for configuring git-sync as a DAG deploy option.
 
 :::warning
-This is currently an experimental feature because it relies on very frequent syncs with remote GitHub servers. If you have conservative rate limits on your Git repos, then we do not recommend using this feature until a more stable git-sync architecture has been implemented. For more information, reach out to [Astronomer Support](https://support.astronomer.io/).
+This is currently an experimental feature because it relies on very frequent syncs with remote Git servers. If you have conservative rate limits on your Git repos, then we do not recommend using this feature until a more stable git-sync architecture has been implemented. For more information, reach out to [Astronomer Support](https://support.astronomer.io/).
 :::
 
 ## Prerequisites:
@@ -26,7 +26,7 @@ To configure a git-sync deploy mechanism for a Deployment on Astronomer, you nee
 
 To deploy DAGs to a Deployment using a git-sync deploy mechanism, you need permission to push code to a Git repository configured for git-sync deploys.
 
-## Enable the Feature
+## Enable Git-Sync
 
 Git-sync deploys must be explicitly enabled on Astronomer by a System Admin. To enable it, update your `config.yaml` file with the following values:
 
@@ -42,7 +42,7 @@ astronomer:
 
 The Git repo you want to sync should contain a directory of DAGs that you want to deploy to Astronomer. You can include additional files in the repo, such as your other Astronomer project files, but note that this might affect performance when deploying new changes to DAGs.
 
-If you want to deploy DAGs via a private Git repo, you additionally need to configure SSH so that your Astronomer Deployment can access the contents of the repo. This process varies slightly between Git repository management tools. For an example of this configuration, read Github's [SSH Key](https://docs.gitlab.com/ee/ssh/) documentation.
+If you want to deploy DAGs via a private Git repo, you additionally need to configure SSH so that your Astronomer Deployment can access the contents of the repo. This process varies slightly between Git repository management tools. For an example of this configuration, read GitLab's [SSH Key](https://docs.gitlab.com/ee/ssh/) documentation.
 
 ## Configure Your Astronomer Deployment
 
@@ -55,7 +55,7 @@ Workspace editors can configure a new or existing Airflow Deployment to use a gi
 
     - **Repository URL**: The URL for the Git repository that hosts your Astronomer project
     - **Branch Name**: The name of the Git branch that you want to sync with your Deployment
-    - **Sync Interval**: The time interval between syncs of your DAG folder and your Deployment, in seconds. We recommend a 1 second interval.
+    - **Sync Interval**: The time interval between checks for updates in your Git repository, in seconds. A sync is only performed when an update is detected. We recommend a 1 second interval.
 
       :::tip
       Your DAGs might take up to five minutes from syncing to appear in the Airflow UI. To shorten this delay, we recommend that you host only your DAG files in your Git repository. Any other changes to your Deployment should be completed through `astro deploy`.
