@@ -253,7 +253,7 @@ You should now be able to see your connection information being pulled from AWS 
 
 ## Google Cloud Secret Manager
 
-This topic provides setup steps for configuring Google Cloud project [Secret Manager](https://cloud.google.com/secret-manager/docs/configuring-secret-manager) as your Airflow secrets backend.
+This topic provides setup steps for configuring Google Cloud [Secret Manager](https://cloud.google.com/secret-manager/docs/configuring-secret-manager) as your Airflow secrets backend.
 
 ### Prerequisites
 
@@ -271,7 +271,7 @@ To configure Secret Manager for use with Airflow:
 2. Add the [Secret Manager Secret Accessor](https://cloud.google.com/secret-manager/docs/access-control) role to the service account.
 3. Create and download a [JSON service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys) for the service account.
 
-### Step 2: Test Your Secrets Backend in a Local Environment
+### Step 2: Test Secret Manager in a Local Airflow Environment
 
 1. In your Astronomer project folder, set the following environment variables in your `.env` file, making sure to paste your entire JSON service account key in place of `<your-key-file>`:
 
@@ -281,10 +281,25 @@ To configure Secret Manager for use with Airflow:
     ```
 
 2. Using the gcloud CLI, [create a secret](https://cloud.google.com/secret-manager/docs/creating-and-accessing-secrets#create) containing either an Airflow connection or variable.
-3. Write a simple DAG that prints the contents of your secret to your task logs. This should look similar to the example in the [Hashicorp Vault setup](secrets-backend.md#hashicorp-vault). Add this DAG to your project's `dags` folder.
+3. Write a simple DAG that prints the contents of your secret to your task logs. For example, your DAG might include the following logic:
+
+    ```py
+    from airflow.models import Variable
+
+    def print_var():
+        my_var = Variable.get("test")
+        print(f'My variable is: {my_var}')
+    ```
+
+    Add this DAG to your project's `dags` folder.
+
 4. Run `astro dev stop` followed by `astro dev start` to push your changes to your local Airflow environment.
 5. In the Airflow UI (`http://localhost:8080/admin/`), trigger your new DAG.
-6. Click on `test-task` > **View Logs**. If the configuration was successful, you should should see the contents of your secret in the task logs.
+6. Click on `test-task` > **View Logs**. If the configuration was successful, you should should see the contents of your secret in the task logs:
+
+    ```text
+    {logging_mixin.py:109} INFO - My variable is: my-test-variable
+    ```
 
 ### Step 3: Deploy to Astronomer
 
@@ -296,3 +311,87 @@ Once you've confirmed that your secrets are being imported correctly to your loc
 4. Deploy your project to Astronomer by running `astro deploy` in your project directory.
 
 You now should be able to see your connection information being pulled from Secret Manager on Astronomer. From here, you can store any Airflow connections or variables as secrets on Secret Manager and use them in your project.
+
+## Use Azure Key Vault as a Secrets Backend
+
+This topic provides setup steps for configuring Azure [Key Vault](https://cloud.google.com/secret-manager/docs/configuring-secret-manager) as your Airflow secrets backend.
+
+### Prerequisites
+
+To use Key Vault as a secrets backend, you need:
+
+- A [Deployment](configure-deployment.md).
+- The [Astro CLI](install-cli.md).
+- A locally hosted Astronomer project.
+- An existing Key Vault linked to a resource group ([Guide](https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-portal))
+
+### Step 1: Register Astronomer as an App on Azure
+
+Follow the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-credentials) to register a new application for Astronomer. At a minimum, you need to add a [secret](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-credentials) that Astronomer can use to authenticate to Key Vault. Note the value of the application's client ID and secret for Step 3.
+
+### Step 2: Create an Access Policy
+
+Follow the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-credentials) to create a new access policy for the app that you just registered. The settings you need to configure for your policy are:
+
+- **Configure from template**: Select `Key, Secret, & Certificate Management`
+- **Select principal**: Select the name of the app that you registered in Step 1.
+
+### Step 3: Test Key Vault in a Local Airflow Environment
+
+In your locally hosted Astronomer project, add the following line to your `requirements.txt` file:
+
+```text
+apache-airflow-providers-microsoft-azure
+```
+
+In your `Dockerfile`, add the following environment variables:
+
+```yaml
+ENV AZURE_CLIENT_ID="<your-client-id>" # Found on App page >> Application (Client) ID
+ENV AZURE_TENANT_ID="<your-tenant-id>" # Found on Properties >> Tenant ID
+ENV AZURE_CLIENT_SECRET="<your-client-secret>" # Found in App Registration Page >> Certificates and Secrets >> Client Secrets >> 'Value'
+
+ENV AIRFLOW__SECRETS__BACKEND="airflow.providers.microsoft.azure.secrets.azure_key_vault.AzureKeyVaultBackend"
+
+# Using prefixes and default '-' separator:
+ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "airflow-connections", "variables_prefix": "airflow-variables", "vault_url": "<your-vault-url>"}'
+
+# Using no prefixes and no separator:
+# ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "", "sep":"", "variables_prefix": "", "sep":"", "vault_url": "<your-vault-url>"}'
+```
+
+These variables connect Airflow to your Key Vault and define how you call secrets in your Airflow code. By default, this setup requires that you prefix any secret names in Key Vault with `airflow-connections` or `airflow-variables`.
+
+To test this functionality:
+
+1. [Create a new secret](https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-portal#add-a-secret-to-key-vault) in Key Vault containing either a connection or a variable. For this example, we'll use `airflow-variables-test: my-test-value`.
+
+2. In your `dags` directory, write a DAG which calls the secret. For example, you might use the following logic to print the variable to your task logs:
+
+    ```py
+    from airflow.models import Variable
+
+    def print_var():
+        my_var = Variable.get("test")
+        print(f'My variable is: {my_var}')
+    ```
+
+3. Run `astro dev stop` followed by `astro dev start` to restart your local Airflow environment with these new changes.
+4. In the Airflow UI (`http://localhost:8080/admin/`), trigger your new DAG.
+5. Click on `test-task` > **View Logs**. If the configuration was successful, you should should see the contents of your secret in the task logs:
+
+    ```text
+    {logging_mixin.py:109} INFO - My variable is: my-test-variable
+    ```
+
+## Step 4: Push Changes to Astronomer
+
+Once you've confirmed that your secrets are being imported correctly to your local environment, you're ready to set configure the same feature in a Deployment on Astronomer Cloud.
+
+1. In the Astronomer UI, open your Deployment and click **Add Variables**.
+2. Set the same environment variables as you have in your `Dockerfile`. Mark these variables as **Secret**.
+3. Click **Save Variables** to save and publish your changes.
+4. In your Astronomer project, remove the environment variables from your `Dockerfile`.
+5. Deploy your project to Astronomer by running `astro deploy` in your project directory.
+
+You now should be able to see your connection information being pulled from Key Vault on Astronomer. From here, you can store any Airflow connections or variables as secrets on Key Vault and use them in your project.
