@@ -15,6 +15,23 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 
 **Latest CLI Version**: 1.0.4 ([Release notes](cli-release-notes.md))
 
+## January 6, 2021
+
+### Logging Improvements
+
+The **Logs** tab has been updated to make it easier to read and organize. Specifically:
+
+- You can now filter logs by type (`DEBUG`, `INFO`, `WARN`, and `ERROR`).
+- The console now shows logs for the past 24 hours.
+- The console can now show a maximum of 500 logs.
+- When looking at a Deployment's logs, you can jump back to the Deployment using the **Deployment Details** button.
+
+![Logs page in the UI](/img/release-notes/log-improvements.png)
+
+### Additional Improvements
+
+- Removed inaccurate _Kubernetes Version_ column from the **Clusters** table.
+
 ## December 16, 2021
 
 ### View Scheduler Error Logs from the Astronomer UI
