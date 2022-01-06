@@ -15,6 +15,23 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 
 **Latest CLI Version**: 1.0.4 ([Release notes](cli-release-notes.md))
 
+## January 6, 2021
+
+### Improvements to "Scheduler Logs" in the Astronomer UI
+
+The **Scheduler Logs** page has been updated to make it easier to read and organize. Specifically:
+
+- You can now filter logs by type (`DEBUG`, `INFO`, `WARN`, and `ERROR`).
+- The page now shows logs for the past 24 hours instead of the past 30 minutes.
+- The page now shows a maximum of 500 logs instead of a lower maximum.
+- When looking at a Deployment's logs, you can return to the Deployment's information using the **Deployment Details** button.
+
+![Logs page in the UI](/img/release-notes/log-improvements.png)
+
+### Additional Improvements
+
+- Removed _Kubernetes Version_ column from the **Clusters** table. This value was previously inaccurate, and is not needed. The Kubernetes version of any particular Astronomer Cluster is set and modified exclusively by Astronomer as part of our managed service.
+
 ## December 16, 2021
 
 ### View Scheduler Error Logs from the Astronomer UI
@@ -26,6 +43,8 @@ The new **Logs** tab in the Astronomer UI shows Scheduler error and warning logs
 To access logs directly for a given Deployment, click the new **Logs** button on the Deployment's page or in the **Deployments** table.
 
 ![Logging direct access button](/img/release-notes/logs-button.png)
+
+For more information on how to view logs, read [Deployment Logs](scheduler-logs.md).
 
 ### Bug Fixes
 
