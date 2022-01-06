@@ -80,7 +80,7 @@ To configure Airflow to use the secrets backend:
     ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"url":$VAULT__URL,"token": $VAULT__ROOT_TOKEN,"connections_path": "connections","variables_path": "variables","kv_engine_version":1}'
     ```
 
-    This tells Airflow to look for connection information at the `secret/connections/*` path in your Vault server.
+    This tells Airflow to look for connection and variable information at the `secret/connections/*` `secret/variables/*` paths in your Vault server, respectively.
 
 :::info
 By default, Airflow uses `"kv_engine_version": 2`, but we've written this secret using v1. You can change this to accommodate how you write and read your secrets.
@@ -138,34 +138,6 @@ Once you've confirmed that your connections are being imported correctly in a lo
 4. Deploy your project to Astronomer by running `astro deploy` in your project directory.
 
 You now should be able to see your connection information being pulled from Vault on Astronomer. From here, you can store any Airflow connections or variables as secrets on Vault and use them in your project. Read the following topics about how to do this with Vault.
-
-### Set Airflow Connections as Secrets in Vault
-
-To write an Airflow connection to your Vault server as a secret key/value pair, run:
-
-```sh
-vault kv put secret/connections/<your-connection> conn_uri=<connection-type>://<connection-login>:<connection-password>@<connection-host>:5432
-```
-
-This syntax applies to all connections. For example, to make an SMTP connection secret you would run something like the following:
-
-```sh
-vault kv put secret/connections/smtp_default conn_uri=smtps://user:host@relay.example.com:465
-```
-
-:::info
-We recommend setting the path to `secret/connections/<your-connection>` to keep all of your Airflow connections organized in the `connections` directory of the mount point.
-:::
-
-### Set Airflow Variables as Secrets in Vault
-
-While this setup used an Airflow connection as an example secret, you can also pull Airflow variables from Vault. To do so, add your variable to vault using the following syntax:
-
-```sh
-vault kv put airflow/variables/<secret-name> value=<secret-value>
-```
-
-This syntax assumes that you set the `variables_path` in `AIRFLOW__SECRETS__BACKEND_KWARGS` to be `variables`. You can change this path name if you'd prefer to access variables from a different Vault directory.
 
 ## AWS SSM Parameter Store
 
