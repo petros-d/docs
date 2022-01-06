@@ -1,5 +1,4 @@
 https://beta-docs.astronomer.io/* https://docs.astronomer.io/:splat 301!
-https://cloud-docs.astronomer.io/ https://docs.astronomer.io/:splat 301!
 / /cloud 301!
 https://docs.astronomer.io/runtime-versioning https://docs.astronomer.io/cloud/runtime-version-lifecycle-policy 301!
 https://docs.astronomer.io/enterprise https://docs.astronomer.io/enterprise/overview 301!
