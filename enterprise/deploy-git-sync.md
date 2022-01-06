@@ -56,12 +56,7 @@ Workspace editors can configure a new or existing Airflow Deployment to use a gi
     - **Repository URL**: The URL for the Git repository that hosts your Astronomer project
     - **Branch Name**: The name of the Git branch that you want to sync with your Deployment
     - **Sync Interval**: The time interval between checks for updates in your Git repository, in seconds. A sync is only performed when an update is detected. We recommend a 1 second interval.
-
-      :::tip
-      Your DAGs might take up to five minutes from syncing to appear in the Airflow UI. To shorten this delay, we recommend that you host only your DAG files in your Git repository. Any other changes to your Deployment should be completed through `astro deploy`.
-      :::
-
-    - **DAGs Directory:** The directory in your Git repository that hosts your DAGs. Specify the directory's path as relative to the repository's root directory. To use your root directory as your DAGs directory, specify this value as `./`
+    - **DAGs Directory:** The directory in your Git repository that hosts your DAGs. Specify the directory's path as relative to the repository's root directory. To use your root directory as your DAGs directory, specify this value as `./`. Other changes outside the DAGs directory in your Git repository must be deployed using `astro deploy`.
     - **Rev**: The commit reference of the branch that you want to sync with your Deployment
     - **Ssh Key**: The SSH private key for your Git repository
     - **Known Hosts**: The known_hosts for your Git provider, formatted as: `<host1>,<ip1> <public_key>`
@@ -69,3 +64,7 @@ Workspace editors can configure a new or existing Airflow Deployment to use a gi
 5. Save your changes.
 
 Once you configure your Deployment, any code pushes to your DAG directory of the specified Git repo and branch will appear in your Deployment with zero downtime.
+
+:::tip
+Newly created DAG files can take up to five minutes (default configuration) from syncing to appear in the Airflow UI. To shorten this delay, we recommend tuning `AIRFLOW__SCHEDULER__DAG_DIR_LIST_INTERVAL` in your Airflow deployment.
+:::
