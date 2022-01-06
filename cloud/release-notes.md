@@ -15,7 +15,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 
 **Latest CLI Version**: 1.0.4 ([Release notes](cli-release-notes.md))
 
-## January 6, 2021
+## January 6, 2022
 
 ### Improvements to "Scheduler Logs" in the Astronomer UI
 
