@@ -44,6 +44,7 @@ module.exports = {
         'ci-cd',
         'deployment-metrics',
         'environment-variables',
+        'secrets-backend',
       ],
     },
     {
