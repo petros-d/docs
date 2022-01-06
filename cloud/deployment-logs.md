@@ -17,7 +17,7 @@ You can access logs for all of your Deployments through the Logs icon in the Ast
 
 You can also access logs for a specific Deployment by clicking the Logs icon in the Deployments table or on a Deployment's information screen.
 
-![Logs icon in the Deployments table](/img/docs/deployments-log-button.png)
+![Logs icon in the Deployments table](/img/docs/deployment-log-button.png)
 
 ## Manage Deployment Logs
 
