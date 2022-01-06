@@ -5,13 +5,14 @@ id: secrets-backend
 description: Configure a secret backend tool on Astronomer Cloud to store Airflow connections and variables.
 ---
 
-You can manage and sync Airflow connections and variables as [secrets](https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/secrets/index.html) from a variety of external secrets backend tools, including [Hashicorp Vault](https://www.vaultproject.io/), [AWS SSM Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html), and [GCP Secret Manager](https://cloud.google.com/secret-manager). Storing connections and variables as secrets makes Airflow more secure and reliable: DAG authors can focus on authoring data pipelines without the risk of touching sensitive code that's essential to running your Deployments.
+You can manage and sync Airflow connections and variables as [secrets](https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/secrets/index.html) from a variety of external secrets backend tools. Storing connections and variables as secrets makes Airflow more secure and reliable: DAG authors can focus on authoring data pipelines without the risk of touching sensitive code that's essential to running your Deployments.
 
 This guide provides setup steps for configuring the following tools as secrets backends on Astronomer:
 
 - Hashicorp Vault
 - AWS SSM Parameter Store
 - Google Cloud Secret Manager
+- Azure Key Vault
 
 ## Use Hashicorp Vault as a Secrets Backend
 
@@ -49,28 +50,10 @@ To write the connection to your Vault server as a secret key/value pair, run:
 vault kv put secret/connections/<your-connection> conn_uri=<connection-type>://<connection-login>:<connection-password>@<connection-host>:5432
 ```
 
-To confirm that the secret was written successfully, run the following command:
+To confirm that the secret was written successfully, you can run the following command:
 
 ```
 vault kv gt secret/connections/<your-connection>
-```
-
-For example, if you set an SMTP connection, the output of this command would look like the following:
-
-```
-    sh vault kv get secret/connections/smtp_default
-    ====== Metadata ======
-    Key              Value
-    ---              -----
-    created_time     2020-03-26T14:43:50.819791Z
-    deletion_time    n/a
-    destroyed        false
-    version          1
-
-    ====== Data ======
-    Key         Value
-    ---         -----
-    conn_uri    smtps://user:host@relay.example.com:465
 ```
 
 ### Step 2: Set Connection Locally
@@ -208,15 +191,15 @@ Connections and variables should live at `/airflow/connections` and `/airflow/va
 If you add a connection, it must exist as a string representing an Airflow `connection_uri`. You can read more about generating a `connection_uri` in the [Apache Airflow documentation](https://airflow.apache.org/docs/stable/howto/connection/index.html#generating-connection-uri).
 :::
 
-### Step 2: Set your Secrets Backend in a Local Environment
+### Step 2: Test Parameter Store in a Local Airflow Environment
 
 Now that you have a secret saved for testing, you can configure your Astronomer project to use your Parameter Store instance server as a secrets backend in a locally running Airflow environment:
 
 1. Add the following environment variables to the `.env` file in your project directory to be used in your _local_ Airflow instance:
 
     ```text
-    AWS_ACCESS_KEY_ID="YOUR-AWS-KEY"
-    AWS_SECRET_ACCESS_KEY="YOUR-AWS-SECRET-KEY"
+    AWS_ACCESS_KEY_ID="<your-aws-key>"
+    AWS_SECRET_ACCESS_KEY="<your-aws-secret-key>"
     ```
 
    This will keep your connection to the Parameter Store server secure, though make sure to keep your `.env` file in `.gitignore` when you deploy these changes to your project. We'll set these variables separately on Astronomer.
@@ -238,7 +221,15 @@ To further customize what the interaction between Airflow and your SSM server lo
 
 ### Step 3: Test Your Connection
 
-To test the connection to AWS SSM Parameter Store, call the `get_conn_uri` or `get_variable` method in your DAG and pass it the connection ID or variable ID, respectively, of the secret you uploaded to your Parameter Store server.
+To test the connection to AWS SSM Parameter Store, write a simple DAG which calls the secret. For example, you might use the following logic to print a secret Airflow variable to your task logs:
+
+    ```py
+    from airflow.models import Variable
+
+    def print_var():
+        my_var = Variable.get("test")
+        print(f'My variable is: {my_var}')
+    ```
 
 To test your changes run locally, run `astro dev stop` followed by `astro dev start` in your project directory.
 
@@ -358,12 +349,9 @@ ENV AIRFLOW__SECRETS__BACKEND="airflow.providers.microsoft.azure.secrets.azure_k
 
 # Using prefixes and default '-' separator:
 ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "airflow-connections", "variables_prefix": "airflow-variables", "vault_url": "<your-vault-url>"}'
-
-# Using no prefixes and no separator:
-# ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "", "sep":"", "variables_prefix": "", "sep":"", "vault_url": "<your-vault-url>"}'
 ```
 
-These variables connect Airflow to your Key Vault and define how you call secrets in your Airflow code. By default, this setup requires that you prefix any secret names in Key Vault with `airflow-connections` or `airflow-variables`.
+These variables connect Airflow to your Key Vault and define how you call secrets in your Airflow code. By default, this setup requires that you prefix any secret names in Key Vault with `airflow-connections` or `airflow-variables`. If you don't want to use prefixes in your Key Vault secret names, replace the values for `"connections_prefix"` and `"connections_prefix"` with `""`.
 
 To test this functionality:
 
