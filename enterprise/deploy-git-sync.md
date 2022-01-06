@@ -57,9 +57,9 @@ Workspace editors can configure a new or existing Airflow Deployment to use a gi
     - **Branch Name**: The name of the Git branch that you want to sync with your Deployment
     - **Sync Interval**: The time interval between syncs of your DAG folder and your Deployment, in seconds. We recommend a 1 second interval.
 
-        :::tip
-        Your DAGs might take up to five minutes from syncing to appear in the Airflow UI. To shorten this delay, we recommend that you host only your DAG files in your Git repository. Any other changes to your Deployment should be completed through `astro deploy`.
-        :::
+    :::tip
+    Your DAGs might take up to five minutes from syncing to appear in the Airflow UI. To shorten this delay, we recommend that you host only your DAG files in your Git repository. Any other changes to your Deployment should be completed through `astro deploy`.
+    :::
 
     - **DAGs Directory:** The directory in your Git repository that hosts your DAGs. Specify the directory's path as relative to the repository's root directory. To use your root directory as your DAGs directory, specify this value as `./`
     - **Rev**: The commit reference of the branch that you want to sync with your Deployment
