@@ -103,7 +103,7 @@ For a full list of AWS regions supported on Astronomer Cloud, see [AWS Resource 
 
 - Amazon EBS volumes have been upgraded from gp2 to [gp3](https://aws.amazon.com/about-aws/whats-new/2020/12/introducing-new-amazon-ebs-general-purpose-volumes-gp3/) for improved scale and performance.
 - EBS volumes and S3 buckets are now encrypted by default.
-- The ability to enable public access to any Amazon S3 bucket on an Astronomer Cloud data plane is now blocked. Previously, public access was disabled by default but could be overriden by AWS account owners.
+- The ability to enable public access to any Amazon S3 bucket on an Astronomer Cloud data plane is now blocked per a new AWS account policy. Previously, public access was disabled by default but could be overridden by a user creating a new S3 bucket with public access enabled. This AWS account policy could be overriden by AWS account owners, but Astronomer strongly recommends against doing so.
 
 ## November 19, 2021
 
