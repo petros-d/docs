@@ -44,6 +44,8 @@ To access logs directly for a given Deployment, click the new **Logs** button on
 
 ![Logging direct access button](/img/release-notes/logs-button.png)
 
+For more information on how to view logs, read [Deployment Logs](deployment-logs.md).
+
 ### Bug Fixes
 
 Fixed various bugs in the Astronomer UI to better handle nulls and unknowns in Deployment metrics
