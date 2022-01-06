@@ -30,7 +30,7 @@ The **Scheduler Logs** page has been updated to make it easier to read and organ
 
 ### Additional Improvements
 
-- Removed inaccurate _Kubernetes Version_ column from the **Clusters** table.
+- Removed _Kubernetes Version_ column from the **Clusters** table. This value was previously inaccurate, and is not needed. The Kubernetes version of any particular Astronomer Cluster is set and modified exclusively by Astronomer as part of our managed service.
 
 ## December 16, 2021
 
