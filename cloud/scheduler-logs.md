@@ -25,7 +25,7 @@ You can also directly access logs for a given Deployment by clicking the Logs ic
 
 The **Scheduler Logs** page shows all of a given Deployment's recorded Scheduler logs from the last 24 hours. Each log is color-coded based on its information type.
 
-At the top of the **Scheduler Logs** page, you can filter the types of logs which appear by selecting specific log types from the dropdown log type menu:
+At the top of the page, you can filter the types of logs which appear by selecting specific log types (`DEBUG`, `INFO`, `WARN`, or `ERROR`) from the dropdown log type menu:
 
 ![Log filtering menu in Scheduler Logs page](/img/docs/filter-logs.png)
 
