@@ -19,7 +19,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 
 ### Improvements to "Scheduler Logs" in the Astronomer UI
 
-The **Scheduler Logs** page has been updated to make it easier to read and organize. Specifically:
+The **Scheduler Logs** tab in the Astronomer UI has been updated to make logs easier to read, separate, and parse. Specifically:
 
 - You can now filter logs by type (`DEBUG`, `INFO`, `WARN`, and `ERROR`).
 - The page now shows logs for the past 24 hours instead of the past 30 minutes.
@@ -30,7 +30,7 @@ The **Scheduler Logs** page has been updated to make it easier to read and organ
 
 ### Additional Improvements
 
-- Removed _Kubernetes Version_ column from the **Clusters** table. This value was previously inaccurate, and is not needed. The Kubernetes version of any particular Astronomer Cluster is set and modified exclusively by Astronomer as part of our managed service.
+- Removed _Kubernetes Version_ column from the **Clusters** table. This value was previously inaccurate and is not needed. The Kubernetes version of any particular Astronomer Cluster is set and modified exclusively by Astronomer as part of our managed service.
 
 ## December 16, 2021
 
