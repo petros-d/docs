@@ -14,6 +14,12 @@ This guide provides setup steps for configuring the following tools as secrets b
 - Google Cloud Secret Manager
 - Azure Key Vault
 
+:::info
+You can continue storing Airflow connections and variables in environment variables and your metadata DB even after you enable a secrets database.
+
+When Airflow checks for the value of a connection or environment variable, it first checks your secrets backend (if configured), then your environment variables, and lastly your metadata DB.
+:::
+
 ## Use Hashicorp Vault as a Secrets Backend
 
 This topic provides steps for how to use Vault as a secrets backend for both local development and on Astronomer Cloud. To do this, you'll:
@@ -189,7 +195,9 @@ Now that you have a secret saved for testing, you can configure your Astronomer 
 
 To further customize what the interaction between Airflow and your SSM server looks like, reference the [full list of available kwargs for this integration](https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/_api/airflow/providers/amazon/aws/secrets/systems_manager/index.html).
 
-> **Note:** If you'd like to reference an AWS profile instead of connecting via Environment Variables, you can also [add the `profile` param to your kwargs](https://airflow.apache.org/docs/1.10.10/howto/use-alternative-secrets-backend.html).
+:::info
+If you'd like to reference an AWS profile instead of connecting via Environment Variables, you can also [add the `profile` param to your kwargs](https://airflow.apache.org/docs/1.10.10/howto/use-alternative-secrets-backend.html).
+:::
 
 ### Step 3: Test Your Connection
 
