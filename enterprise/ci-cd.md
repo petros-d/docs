@@ -362,7 +362,7 @@ pipelines:
           deployment: production
           script:
             - echo ${SERVICE_ACCOUNT_KEY}
-            - docker build -t registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:ci-${BITBUCKET_BUILD_NUMBER}
+            - docker build -t registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:ci-${BITBUCKET_BUILD_NUMBER} .
             - docker login registry.$BASE_DOMAIN -u _ -p $SERVICE_ACCOUNT_KEY
             - docker push registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:ci-${BITBUCKET_BUILD_NUMBER}
           services:
