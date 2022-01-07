@@ -360,7 +360,7 @@ pipelines:
           deployment: production
           script:
             - echo ${SERVICE_ACCOUNT_KEY}
-            - docker build -t registry.gcp0001.us-east4.astronomer.io/infrared-photon-7780/airflow:ci-${BITBUCKET_BUILD_NUMBER}
+            - docker build -t registry.gcp0001.us-east4.astronomer.io/infrared-photon-7780/airflow:ci-${BITBUCKET_BUILD_NUMBER} .
             - docker login registry.gcp0001.us-east4.astronomer.io -u _ -p $SERVICE_ACCOUNT_KEY
             - docker push registry.gcp0001.us-east4.astronomer.io/infrared-photon-7780/airflow:ci-${BITBUCKET_BUILD_NUMBER}
           services:
