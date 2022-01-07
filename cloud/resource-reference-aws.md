@@ -25,7 +25,7 @@ Read the following document for a reference of our default resources as well as 
 | [Routes](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html#route-table-routes) | Routes are necessary to direct network traffic from the subnets and gateways.                                                                                                                                                                                                                                     | 2x                      |
 | [Route Tables](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html)              | Home for the routes.                                                                                                                                                                                                                                                                                              | 2x                      |
 | [VPC](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)                     | Virtual network for launching and hosting AWS resources.                                                                                                                                                                                                                                                          | 1x /19                  |
-| [S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide//Welcome.html)                           | S3 bucket for storage of Airflow Task logs.                                                                                                                                                                                                                                                                       | 1x                      |
+| [S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide//Welcome.html)                           | S3 bucket for storage of Airflow task logs.                                                                                                                                                                                                                                                                       | 1x                      |
 
 ## Supported Cluster Configurations
 
@@ -112,9 +112,9 @@ Keep in mind that leveraging ephemeral storage is not recommended and can be a r
 
 ### RDS Instance Type
 
-Astronomer Cloud supports a variety of AWS RDS instance types. Instance types comprise of varying combinations of CPU, memory, storage, and networking capacity. The databases from all Deployments running on a single Cluster are powered by the RDS instance specified during the Cluster creation or modification process.
+Every Astronomer Cluster on AWS is created with and requires an [RDS instance](https://aws.amazon.com/rds/). RDS serves as a primary relational database for the Data Plane and powers the metadata database of each Airflow Deployment within a single Cluster. During the Cluster creation process, you'll be asked to specify an RDS instance type according to your use case and expected workload, but it can be modified at any time.
 
-For detailed information on each instance type, reference [AWS documentation](https://aws.amazon.com/ec2/instance-types/). If you're interested in a node type that is not on this list, reach out to [Astronomer Support](https://support.astronomer.io). Not all instance types are supported in all AWS regions.
+Astronomer Cloud supports a variety of AWS RDS instance types. Instance types comprise of varying combinations of CPU, memory, storage, and networking capacity. For detailed information on each instance type, reference [AWS documentation](https://aws.amazon.com/rds/instance-types/). If you're interested in an RDS instance type that is not on this list, reach out to [Astronomer Support](https://support.astronomer.io).
 
 **db.r5**
 
