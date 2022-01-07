@@ -66,27 +66,20 @@ vault kv gt secret/connections/<your-connection>
 
 To use Vault with Airflow, you first need to configure your `Dockerfile` to use the Vault server as the default secrets backend for your local Airflow project. Following this section, we'll set these variables on a Deployment.
 
-To configure Airflow to use the secrets backend:
+To configure Airflow to use the secrets backend, add the following lines to your `Dockerfile` to set Airflow's `AIRFLOW__SECRETS__BACKEND` configuration via environment variables:
 
-1. Add the following environment variables to the `.env` file in your project directory:
+```sh
+ENV VAULT__ROOT_TOKEN="<your-root-token>"
+ENV VAULT__URL="<your-vault-url>"
+ENV AIRFLOW__SECRETS__BACKEND="airflow.contrib.secrets.hashicorp_vault.VaultBackend"
+ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"url":$VAULT__URL,"token": $VAULT__ROOT_TOKEN,"connections_path": "connections","variables_path": "variables","kv_engine_version":1}'
+```
 
-    ```sh
-    VAULT__ROOT_TOKEN="<your-root-token>"
-    VAULT__URL="<your-vault-url>"
-    ```
+This tells Airflow to look for connection and variable information at the `secret/connections/*` `secret/variables/*` paths in your Vault server, respectively. Note that these files are not
 
-   This keeps your connection to the Vault server secure. Be sure to keep your `.env` in your `.gitignore` when you deploy these changes to your project if they contain sensitive credentials.
-
-2. Add the following lines to your `Dockerfile` to set Airflow's `AIRFLOW__SECRETS__BACKEND` configuration via environment variables:
-
-    ```sh
-    ENV VAULT__ROOT_TOKEN=$VAULT__ROOT_TOKEN
-    ENV VAULT__URL=$VAULT__URL
-    ENV AIRFLOW__SECRETS__BACKEND="airflow.contrib.secrets.hashicorp_vault.VaultBackend"
-    ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"url":$VAULT__URL,"token": $VAULT__ROOT_TOKEN,"connections_path": "connections","variables_path": "variables","kv_engine_version":1}'
-    ```
-
-    This tells Airflow to look for connection and variable information at the `secret/connections/*` `secret/variables/*` paths in your Vault server, respectively.
+:::warning
+If you want to deploy your project to a hosted Git repository before deploying to Astronomer, be sure to save `<your-root-token>` and `<your-vault-url>` in a secure manner. When you deploy to Astronomer, you should set these values as secrets via the Astronomer UI.
+:::
 
 :::info
 By default, Airflow uses `"kv_engine_version": 2`, but we've written this secret using v1. You can change this to accommodate how you write and read your secrets.
@@ -139,9 +132,10 @@ If you've written other secrets to your Vault server's `/connections` path, you 
 Once you've confirmed that your connections are being imported correctly in a local environment, you're ready to set configure the same feature in a Deployment on Astronomer Cloud.
 
 1. In the Astronomer UI, open your **Deployment** and click **Add Variables**.
-2. Set `VAULT__ROOT_TOKEN` and `VAULT__URL` to the same values as in your `.env` file.
+2. Copy the environment variables from your Dockerfile into new environment variables on Astronomer. Set both `VAULT__ROOT_TOKEN` and `VAULT__URL` as **secret**.
 3. Click **Save Variables** to save and publish your changes.
-4. Deploy your project to Astronomer by running `astro deploy` in your project directory.
+4. In your Astronomer project, delete the environment variables from your `Dockerfile`.
+5. Deploy your project to Astronomer by running `astro deploy` in your project directory.
 
 You now should be able to see your connection information being pulled from Vault on Astronomer. From here, you can store any Airflow connections or variables as secrets on Vault and use them in your project. Read the following topics about how to do this with Vault.
 
@@ -173,27 +167,22 @@ If you add a connection, it must exist as a string representing an Airflow `conn
 
 Now that you have a secret saved for testing, you can configure your Astronomer project to use your Parameter Store instance server as a secrets backend in a locally running Airflow environment:
 
-1. Add the following environment variables to the `.env` file in your project directory to be used in your _local_ Airflow instance:
+To do so, add the following lines to your `Dockerfile` to set Airflow's `AIRFLOW__SECRETS__BACKEND` configuration via environment variables:
 
-    ```text
-    AWS_ACCESS_KEY_ID="<your-aws-key>"
-    AWS_SECRET_ACCESS_KEY="<your-aws-secret-key>"
-    ```
+```text
+ENV AWS_ACCESS_KEY_ID="<your-aws-key>"
+ENV AWS_SECRET_ACCESS_KEY="<your-aws-secret-key>"
+ENV AIRFLOW__SECRETS__BACKEND="airflow.contrib.secrets.aws_systems_manager.SystemsManagerParameterStoreBackend"
+ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "/airflow/connections", "variables_prefix": "/airflow/variables"}'
+```
 
-   This will keep your connection to the Parameter Store server secure, though make sure to keep your `.env` file in `.gitignore` when you deploy these changes to your project. We'll set these variables separately on Astronomer.
-
-2. Add the following lines to your `Dockerfile` to set Airflow's `AIRFLOW__SECRETS__BACKEND` configuration via environment variables:
-
-    ```text
-    ENV AWS_ACCESS_KEY_ID $AWS_ACCESS_KEY_ID
-    ENV AWS_SECRET_ACCESS_KEY $AWS_SECRET_ACCESS_KEY
-    ENV AIRFLOW__SECRETS__BACKEND="airflow.contrib.secrets.aws_systems_manager.SystemsManagerParameterStoreBackend"
-    ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "/airflow/connections", "variables_prefix": "/airflow/variables"}'
-    ```
-
-    This tells Airflow to look for connection information at the `airflow/connections/*` path in your Parameter Store server.
+This tells Airflow to look for connection information at the `airflow/connections/*` path in your Parameter Store server.
 
 To further customize what the interaction between Airflow and your SSM server looks like, reference the [full list of available kwargs for this integration](https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/_api/airflow/providers/amazon/aws/secrets/systems_manager/index.html).
+
+:::warning
+If you want to deploy your project to a hosted Git repository before deploying to Astronomer, be sure to save `<your-aws-key>` and `<your-aws-secret-key>` in a secure manner. When you deploy to Astronomer, you should set these values as secrets via the Astronomer UI.
+:::
 
 :::info
 If you'd like to reference an AWS profile instead of connecting via Environment Variables, you can also [add the `profile` param to your kwargs](https://airflow.apache.org/docs/1.10.10/howto/use-alternative-secrets-backend.html).
@@ -217,10 +206,11 @@ To test your changes run locally, run `astro dev stop` followed by `astro dev st
 
 Once you've confirmed that your connections are being imported correctly locally, you're ready to set your deploy your project to Astronomer Cloud
 
-1. In the Astronomer UI, open your Deployment **Deployment** and click **Add Variables**.
-2. Set your `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` to the same values as in your your `.env` file.
+1. In the Astronomer UI, open your **Deployment** and click **Add Variables**.
+2. Copy the environment variables from your Dockerfile into new environment variables on Astronomer. Set both `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` as **secret**.
 3. Click **Save Variables** to save and publish your changes.
-4. Deploy to Astronomer by running `astro deploy`.
+4. In your Astronomer project, delete the environment variables from your `Dockerfile`.
+5. Deploy your project to Astronomer by running `astro deploy` in your project directory.
 
 You should now be able to see your connection information being pulled from AWS SSM Parameter Store on Astronomer.
 
@@ -247,12 +237,16 @@ To configure Secret Manager for use with Airflow:
 
 ### Step 2: Test Secret Manager in a Local Airflow Environment
 
-1. In your Astronomer project folder, set the following environment variables in your `.env` file, making sure to paste your entire JSON service account key in place of `<your-key-file>`:
+1. In your Astronomer project folder, add the following lines to your `Dockerfile`, making sure to paste your entire JSON service account key in place of `<your-key-file>`:
 
     ```sh
-    AIRFLOW__SECRETS__BACKEND=airflow.providers.google.cloud.secrets.secret_manager.CloudSecretManagerBackend
-    AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "airflow-connections", "variables_prefix": "airflow-variables", "gcp_keyfile_dict": <your-key-file>}'
+    ENV AIRFLOW__SECRETS__BACKEND=airflow.providers.google.cloud.secrets.secret_manager.CloudSecretManagerBackend
+    ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "airflow-connections", "variables_prefix": "airflow-variables", "gcp_keyfile_dict": <your-key-file>}'
     ```
+
+    :::warning
+    If you want to deploy your project to a hosted Git repository before deploying to Astronomer, be sure to save these variables in a secure manner. When you deploy to Astronomer, you should set these values as secrets via the Astronomer UI.
+    :::
 
 2. Using the gcloud CLI, [create a secret](https://cloud.google.com/secret-manager/docs/creating-and-accessing-secrets#create) containing either an Airflow connection or variable.
 3. Write a simple DAG that prints the contents of your secret to your task logs. For example, your DAG might include the following logic:
@@ -280,9 +274,10 @@ To configure Secret Manager for use with Airflow:
 Once you've confirmed that your secrets are being imported correctly to your local environment, you're ready to set configure the same feature in a Deployment on Astronomer Cloud.
 
 1. In the Astronomer UI, open your Deployment and click **Add Variables**.
-2. Set `AIRFLOW__SECRETS__BACKEND` and `AIRFLOW__SECRETS__BACKEND_KWARGS` to the same values as in your `.env` file. Mark these variables as **Secret**.
+2. Set `AIRFLOW__SECRETS__BACKEND` and `AIRFLOW__SECRETS__BACKEND_KWARGS` to the same values as in your `Dockerfile`. Mark these variables as **Secret**.
 3. Click **Save Variables** to save and publish your changes.
-4. Deploy your project to Astronomer by running `astro deploy` in your project directory.
+4. In your Astronomer project, delete the environment variables from your `Dockerfile`.
+5. Deploy your project to Astronomer by running `astro deploy` in your project directory.
 
 You now should be able to see your connection information being pulled from Secret Manager on Astronomer. From here, you can store any Airflow connections or variables as secrets on Secret Manager and use them in your project.
 
@@ -331,6 +326,10 @@ ENV AIRFLOW__SECRETS__BACKEND="airflow.providers.microsoft.azure.secrets.azure_k
 ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "airflow-connections", "variables_prefix": "airflow-variables", "vault_url": "<your-vault-url>"}'
 ```
 
+:::warning
+If you want to deploy your project to a hosted Git repository before deploying to Astronomer, be sure to save `<your-client-id>`, `<your-tenant-id>`, and `<your-client-secret>`  in a secure manner. When you deploy to Astronomer, you should set these values as secrets via the Astronomer UI.
+:::
+
 These variables connect Airflow to your Key Vault and define how you call secrets in your Airflow code. By default, this setup requires that you prefix any secret names in Key Vault with `airflow-connections` or `airflow-variables`. If you don't want to use prefixes in your Key Vault secret names, replace the values for `"connections_prefix"` and `"connections_prefix"` with `""`.
 
 To test this functionality:
@@ -360,7 +359,7 @@ To test this functionality:
 Once you've confirmed that your secrets are being imported correctly to your local environment, you're ready to set configure the same feature in a Deployment on Astronomer Cloud.
 
 1. In the Astronomer UI, open your Deployment and click **Add Variables**.
-2. Set the same environment variables as you have in your `Dockerfile`. Mark these variables as **Secret**.
+2. Set the same environment variables as you have in your `Dockerfile`. Mark `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, and `AZURE_CLIENT_SECRET` variables as **Secret**.
 3. Click **Save Variables** to save and publish your changes.
 4. In your Astronomer project, remove the environment variables from your `Dockerfile`.
 5. Deploy your project to Astronomer by running `astro deploy` in your project directory.
