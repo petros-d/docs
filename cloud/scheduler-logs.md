@@ -13,7 +13,7 @@ This guide explains how to access your Deployments' Scheduler logs via the Astro
 
 ## Access Scheduler Logs
 
-You can access the **Scheduler Logs** page by clicking on the Logs icon in the Astronomer UI sidebar:
+You can access the **Scheduler Logs** page clicking the Logs icon in the Astronomer UI sidebar:
 
 ![Logs icon and button](/img/docs/log-location.png)
 
@@ -23,9 +23,9 @@ You can also directly access logs for a given Deployment by clicking the Logs ic
 
 ## Filter Scheduler Logs
 
-The **Scheduler Logs** page shows all of a given Deployment's recorded Scheduler logs from the last 24 hours. Each log is color-coded based on its information type.
+The **Scheduler Logs** page shows all of a given Deployment's recorded Scheduler logs from the last 24 hours. If the Deployment generated more than 500 logs in the last 24 hours, then the UI shows only the most recent 500 logs. Each log is color-coded based on its log level.
 
-At the top of the page, you can filter the types of logs which appear by selecting specific log types (`Debug`, `Info`, `Warn`, or `Error`) from the dropdown log type menu:
+At the top of the page, you can filter the types of logs which appear by selecting specific log levels (`Debug`, `Info`, `Warn`, or `Error`) from the dropdown log level menu:
 
 ![Log filtering menu in Scheduler Logs page](/img/docs/filter-logs.png)
 
