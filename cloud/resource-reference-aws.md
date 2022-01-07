@@ -25,6 +25,7 @@ Read the following document for a reference of our default resources as well as 
 | [Routes](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html#route-table-routes) | Routes are necessary to direct network traffic from the subnets and gateways.                                                                                                                                                                                                                                     | 2x                      |
 | [Route Tables](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html)              | Home for the routes.                                                                                                                                                                                                                                                                                              | 2x                      |
 | [VPC](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)                     | Virtual network for launching and hosting AWS resources.                                                                                                                                                                                                                                                          | 1x /19                  |
+| [S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide//Welcome.html)                           | S3 bucket for storage of Airflow Task logs.                                                                                                                                                                                                                                                                       | 1x                      |
 
 ## Supported Cluster Configurations
 
@@ -108,3 +109,31 @@ Astronomer plans to support optional ephemeral storage for all node instance typ
 Keep in mind that leveraging ephemeral storage is not recommended and can be a risk to task resilience. If you need to pass significant data between Airflow tasks, we recommend using an [XCom backend](https://airflow.apache.org/docs/apache-airflow/stable/concepts/xcoms.html) such as AWS S3 or Google Cloud Storage (GCS). For more information and best practices, read our Airflow Guide on [Passing Data Between Airflow Tasks](https://www.astronomer.io/guides/airflow-passing-data-between-tasks).
 
 :::
+
+### RDS Instance Type
+
+Astronomer Cloud supports a variety of AWS RDS instance types. Instance types comprise of varying combinations of CPU, memory, storage, and networking capacity. The databases from all Deployments running on a single Cluster are powered by the RDS instance specified during the Cluster creation or modification process.
+
+For detailed information on each instance type, reference [AWS documentation](https://aws.amazon.com/ec2/instance-types/). If you're interested in a node type that is not on this list, reach out to [Astronomer Support](https://support.astronomer.io). Not all instance types are supported in all AWS regions.
+
+**db.r5**
+
+- db.r5.large
+- db.r5.xlarge (_default_)
+- db.r5.2xlarge
+- db.r5.4xlarge
+- db.r5.8xlarge
+- db.r5.12xlarge
+- db.r5.16xlarge
+- db.r5.24xlarge
+
+**db.m5**
+
+- db.m5.large
+- db.m5.xlarge
+- db.m5.2xlarge
+- db.m5.4xlarge
+- db.m5.8xlarge
+- db.m5.12xlarge
+- db.m5.16xlarge
+- db.m5.24xlarge
