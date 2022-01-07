@@ -31,16 +31,16 @@ Custom ElasticSearch logging tools are now supported via new values in your `con
 
 ```yaml
 # External ES logging
- customLogging:
-   enabled: false
-   scheme: https
-   host: ""
-   port: ""
-   secret: ""
-   #secretName: ~
-   #awsSecretName: ~
-   #awsIAMRole: ~
-   #awsServiceAccountAnnotation: ~
+customLogging:
+  enabled: true
+  scheme: https
+  host: ""
+  port: ""
+  secret: ""
+  #secretName: ~
+  #awsSecretName: ~
+  #awsIAMRole: ~
+  #awsServiceAccountAnnotation: ~
 ```
 
 ### CLI Support for Podman
