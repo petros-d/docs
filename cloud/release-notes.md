@@ -31,7 +31,7 @@ The **Scheduler Logs** tab in the Astronomer UI has been updated to make logs ea
 ### Additional Improvements
 
 - Removed _Kubernetes Version_ column from the **Clusters** table. This value was previously inaccurate and is not needed. The Kubernetes version of any particular Astronomer Cluster is set and modified exclusively by Astronomer as part of our managed service.
-- Removed the **Worker Termination Grace Period** Deployment setting to better manage and upgrade customer infrastructure. For most tasks, this results in no change in behavior because old worker pods can continue to execute tasks while new workers spin up to execute any newly deployed code. By default, a worker can run a task for a maximum 24 hours before it is automatically terminated. Thus, the only tasks affected by this change are any tasks you run that might run for longer than 24 hours.
+- Removed the **Worker Termination Grace Period** setting so that Astronomer can more consistently upgrade and maintain your Airflow infrastructure. For most tasks, this results in no change in behavior because old worker pods can continue to execute tasks while new workers spin up to execute any newly deployed code. By default, a worker can run a task for a maximum 24 hours before it's automatically terminated. Thus, the only tasks affected by this change are those that might run for longer than 24 hours. For more information about worker termination, read [What Happens During a Code Deploy](deploy-code.md#what-happens-during-a-code-deploy).
 
 ## December 16, 2021
 
