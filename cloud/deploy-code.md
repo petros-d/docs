@@ -76,7 +76,6 @@ If you want to run a task for longer than 24 hours, you must specify an [`execut
 
 :::
 
-
 ## Next Steps
 
 Now that you're familiar with deploying DAGs to Astronomer Cloud, consider reading:
