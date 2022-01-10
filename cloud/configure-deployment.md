@@ -52,12 +52,6 @@ All Celery Workers assume the same resources. If you set Worker Resources to 10 
 
 The ability to set minimum and/or maximum number of Workers is coming soon.
 
-### Worker Grace Period
-
-Celery Workers are forced to restart upon every change to Environment Variables and every code deploy to your Deployment. This is to make sure that Workers are executing with the most up-to-date code. To minimize disruption to task execution, however, Astronomer supports the ability to set a **Worker Grace Period**.
-
-If a deploy is triggered while a Celery Worker is executing a task and Worker Grace Period is set, the Worker will continue to process that task up to a certain number of minutes before restarting itself. By default, the grace period is 10 minutes.
-
 ### Scheduler
 
 The [Airflow Scheduler](https://airflow.apache.org/docs/apache-airflow/stable/concepts/scheduler.html) is responsible for monitoring task execution and triggering downstream tasks once dependencies have been met. By adjusting the **Scheduler Count** slider in the Astronomer UI, you can configure up to 4 Schedulers, each of which will be provisioned with the AU specified in **Scheduler Resources**.

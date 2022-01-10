@@ -11,8 +11,6 @@ import {siteVariables} from '@site/src/versions';
 
 Astronomer Cloud makes it easy for your team to test Airflow DAGs locally and push them to a Deployment in a Production or Development environment. The following diagram shows how your Astronomer project can be packaged and deployed to Astronomer Cloud via the Astronomer CLI.
 
-![Deploy Code](/img/docs/deploy-architecture.png)
-
 :::info
 
 The process for deploying an Astronomer project via CI/CD varies slightly from this diagram. For more information, refer to [CI/CD: Workflow Overview](ci-cd.md#workflow-overview).
@@ -50,7 +48,7 @@ To deploy your DAGs, run:
 astro deploy
 ```
 
-This command returns a list of Airflow Deployments available in your Workspace and prompts you to pick one. Once this command is executed, all files in your Airflow project directory are built into a new Docker image and pushed to Astronomer.
+This command returns a list of Airflow Deployments available in your Workspace and prompts you to pick one. Once this command is executed, all files in your Astronomer project directory are built into a new Docker image and pushed to Astronomer.
 
 ## Step 3: Validate Your Changes
 
@@ -60,19 +58,20 @@ Once you log in, you should see the DAGs you just deployed.
 
 ## What Happens During a Code Deploy
 
-When you deploy code to Astronomer Cloud, your entire Astronomer project is built into a Docker image. This includes system-level dependencies, Python-level dependencies, DAGs, and your `Dockerfile`. It does not include any of the metadata associated with your local Airflow environment, including task history and Airflow Connections or Variables that were set locally. This Docker image is then pushed to all containers running the Apache Airflow application on Astronomer Cloud, including Celery Workers.
+When you deploy code to Astronomer Cloud, your Astronomer project is built into a Docker image. This includes system-level dependencies, Python-level dependencies, DAGs, and your `Dockerfile`. It does not include any of the metadata associated with your local Airflow environment, including task history and Airflow Connections or Variables that were set locally. This Docker image is then pushed to all containers running the Apache Airflow application on Astronomer Cloud, including the Airflow Scheduler, Webserver, and Celery Workers.
 
-If you deploy code to a Deployment that is already running code from a previous version of your project, then the following happens:
+![Deploy Code](/img/docs/deploy-architecture.png)
 
-1. Existing workers running your old project continue executing their current tasks.
-2. New workers automatically spin up using KEDA to execute code from your new project.
-3. Once the workers running your old project finish their current tasks, they are terminated. Workers running your new project are spun up to take their place.
+If you deploy code to a Deployment that is already running a previous version of your code, then the following happens:
 
-:::info
+1. Tasks that are `running` will continue to execute on existing Celery Workers and will not be interrupted, unless the task does not complete within 24 hours of the code deploy.
+2. One or more autoscaling Workers will spin up to immediately start executing new tasks based on your latest code. These Celery Workers do not wait for your previous Workers to terminate.
 
-By default, the maximum amount of time that a worker can run a task is 24 hours. After 24 hours, the worker running your task is automatically terminated to ensure that Astronomer can consistently upgrade and maintain your Airflow infrastructure. A worker running for longer than 24 hours will terminate regardless of its task status or any related code deploys.
+If a task does not complete within 24 hours, its Worker will be terminated. Airflow will mark it as a [zombie]((https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html#zombie-undead-tasks)) and it will retry according to the task's retry policy. This is to ensure that Astronomer can reliably upgrade and maintain Astronomer as a service. 
 
-If you want to run a task for longer than 24 hours, you must specify an [`execution_timeout`](https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html#timeouts) of more than 24 hours in the code for your task.
+:::tip
+
+If you want to force long-running tasks to terminate prior to 24 hours, you must specify an [`execution_timeout`](https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html#timeouts) of less than 24 hours in your DAG's task definition.
 
 :::
 
