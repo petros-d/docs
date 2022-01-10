@@ -62,7 +62,7 @@ Once you log in, you should see the DAGs you just deployed.
 
 When you deploy code to Astronomer Cloud, your entire Astronomer project is built into a Docker image. This includes system-level dependencies, Python-level dependencies, DAGs, and your `Dockerfile`. It does not include any of the metadata associated with your local Airflow environment, including task history and Airflow Connections or Variables that were set locally. This Docker image is then pushed to all containers running the Apache Airflow application on Astronomer Cloud, including Celery Workers.
 
-If you are deploying code to a Deployment that is already running code from a previous version of your project, the following happens:
+If you deploy code to a Deployment that is already running code from a previous version of your project, then the following happens:
 
 1. Existing workers running your old project continue executing their current tasks.
 2. New workers automatically spin up using KEDA to execute code from your new project.
