@@ -11,7 +11,7 @@ Astronomer's highest priority is the security and reliability of your tasks. As 
 
 Astronomer Cloud operates on a model of shared responsibility, which means that both the Astronomer team and Astronomer customers are responsible for the security of the platform. This document specifies areas of security ownership for both Astronomer customers and the Astronomer team.
 
-## Astronomer's Security Responsibilities
+## Astronomer's Responsibilities
 
 Astronomer is responsible for providing a secure and reliable managed service offering, including:
 
@@ -22,7 +22,7 @@ Astronomer is responsible for providing a secure and reliable managed service of
 - Maintaining data encryption (at rest/in flight) of Astronomer managed components (Control and Data Planes).
 - Consistently releasing production-ready and supported distributions of [Astronomer Runtime](upgrade-runtime.md) for net-new and to-be-upgraded Deployments.
 
-## Customer's Security Responsibilities  
+## Customer's Responsibilities  
 
 The customer is responsible for managing certain security aspects of their Astronomer Cloud Organization and Deployments, including:
 
