@@ -71,7 +71,7 @@ If a task does not complete within 24 hours, its Worker will be terminated. Airf
 
 :::tip
 
-If you want to force long-running tasks to terminate prior to 24 hours, you must specify an [`execution_timeout`](https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html#timeouts) of less than 24 hours in your DAG's task definition.
+If you want to force long-running tasks to terminate prior to 24 hours, you must specify an [`execution_timeout`](https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html#timeouts) in your DAG's task definition.
 
 :::
 
