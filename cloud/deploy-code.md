@@ -70,9 +70,9 @@ If you are deploying code to a Deployment that is already running code from a pr
 
 :::info
 
-By default, the maximum amount of time that a task can run on a worker is 24 hours. After 24 hours, the worker running your task is automatically terminated to ensure that Astronomer can consistently upgrade and maintain your Airflow infrastructure. A worker running for longer than 24 hours will terminate regardless of its task status or any related code deploys.
+By default, the maximum amount of time that a worker can run a task is 24 hours. After 24 hours, the worker running your task is automatically terminated to ensure that Astronomer can consistently upgrade and maintain your Airflow infrastructure. A worker running for longer than 24 hours will terminate regardless of its task status or any related code deploys.
 
-If you want to run a task for longer than 24 hours, you must specify a [`execution_timeout`](https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html#timeouts) of more than 24 hours in the code for your task.
+If you want to run a task for longer than 24 hours, you must specify an [`execution_timeout`](https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html#timeouts) of more than 24 hours in the code for your task.
 
 :::
 
