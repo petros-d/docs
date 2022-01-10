@@ -20,7 +20,6 @@ If you have questions or thoughts about any item below, don't hesitate to reach 
 - During the install process, your team will be added to 1 Astronomer Workspace that supports multiple users and Deployments. To create additional Workspaces in your Organization, assistance from our team is required.
 - If you're running Astronomer Runtime `2.1.1`, `3.0.0`, or `3.0.1`, the Astronomer Runtime field in the Astronomer UI shows `Unknown`. Once you upgrade to Runtime 3.0.2+, your Deployment's version of Runtime is correctly listed.
 - We do not currently support PgBouncer, but the RDS instance provisioned in your Cluster will support around 1000 connections to your database, enough to support 10-12 Deployments.
-- Tasks longer than the worker termination grace period may become zombies.
 - If a user changes Workspace roles on Astronomer, it can take a maximum of 10 minutes for corresponding Airflow permission changes to take effect.
 - The usage of [Deployment API Keys](api-keys.md) in [CI/CD processes](ci-cd.md) currently requires fetching a short-lived authentication token and making requests directly to our Docker registry and the Astronomer API. Native support for Deployment API Keys in the Astronomer CLI is coming soon.
 - The Astronomer CLI is generally limited to `astro dev` commands, in addition to `astro deploy` and `astro auth`. Full functionality is coming soon.
