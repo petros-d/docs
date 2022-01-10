@@ -50,15 +50,32 @@ To deploy your DAGs, run:
 astro deploy
 ```
 
-This command returns a list of Airflow Deployments available in your Workspace and prompts you to pick one. Once this command is executed, all files in your Airflow project directory are built into a new Docker image. This includes system-level dependencies, Python-level dependencies, DAGs, and your `Dockerfile`. It does not include any of the metadata associated with your local Airflow environment, including task history and Airflow Connections or Variables that were set locally. This Docker image is then pushed to all containers running the Apache Airflow application on Astronomer Cloud, including Celery Workers.
-
-If a deploy is triggered while a Celery Worker is executing a task and **Worker Termination Grace Period** is set, the Worker will continue to process that task up to the specified number of minutes before restarting itself. By default, the grace period is 10 minutes. For more information, read [Configure a Deployment on Astronomer](configure-deployment.md).
+This command returns a list of Airflow Deployments available in your Workspace and prompts you to pick one. Once this command is executed, all files in your Airflow project directory are built into a new Docker image and pushed to Astronomer.
 
 ## Step 3: Validate Your Changes
 
 If it's your first time deploying, expect to wait a few minutes for the Docker image to build. To confirm that your deploy was successful, open your Deployment in the Astronomer UI and click **Open Airflow** to access the Airflow UI.
 
 Once you log in, you should see the DAGs you just deployed.
+
+## What Happens During a Code Deploy
+
+When you deploy code to Astronomer Cloud, your entire Astronomer project is built into a Docker image and pushed to Astronomer. This includes system-level dependencies, Python-level dependencies, DAGs, and your `Dockerfile`. It does not include any of the metadata associated with your local Airflow environment, including task history and Airflow Connections or Variables that were set locally. This Docker image is then pushed to all containers running the Apache Airflow application on Astronomer Cloud, including Celery Workers.
+
+If you are deploying code to a Deployment that is already running code from a previous version of your project, the following happens:
+
+1. Existing workers running your old project continue executing their current tasks.
+2. New workers automatically spin up using KEDA to execute code from your new project.
+3. Once the workers running your old project finish their current tasks, they are terminated. Workers running your new project are spun up to take their place.
+
+:::info
+
+By default, the maximum amount of time that a task can run on a worker is 24 hours. After 24 hours, the worker running your task is automatically terminated to ensure that Astronomer can consistently upgrade and maintain your Airflow infrastructure. A worker running for longer than 24 hours will terminate regardless of its task status or any related code deploys.
+
+If you want to run a task for longer than 24 hours, you must specify a [`execution_timeout`](https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html#timeouts) of more than 24 hours in the code for your task.
+
+:::
+
 
 ## Next Steps
 
