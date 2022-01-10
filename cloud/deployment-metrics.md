@@ -11,11 +11,11 @@ The Astronomer UI contains a suite of metrics that show real-time data related t
 
 ## Deployment Health
 
-The **Deployment Health** status is a metric that appears on the top of your Deployment's information page. Your Deployment's health is based on whether its Airflow components are running as expected.
+The Deployment health status is a metric that appears on the top of your Deployment's information page. Your Deployment's health is based on whether its Airflow components are running as expected.
 
 ![Deployment Health status](/img/docs/deployment-health.png)
 
-**Deployment Health** can have one of two values:
+Deployment health can have one of two statuses:
 
 - **Healthy**: The Deployment's webserver and scheduler are running as expected.
 - **Unhealthy**: This status can mean one of two things:
