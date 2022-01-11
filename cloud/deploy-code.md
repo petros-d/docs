@@ -58,21 +58,20 @@ Once you log in, you should see the DAGs you just deployed.
 
 ## What Happens During a Code Deploy
 
-When you deploy code to Astronomer Cloud, your Astronomer project is built into a Docker image. This includes system-level dependencies, Python-level dependencies, DAGs, and your `Dockerfile`. It does not include any of the metadata associated with your local Airflow environment, including task history and Airflow Connections or Variables that were set locally. This Docker image is then pushed to all containers running the Apache Airflow application on Astronomer Cloud, including the Airflow Scheduler, Webserver, and Celery Workers.
+When you deploy code to Astronomer Cloud, your Astronomer project is built into a Docker image. This includes system-level dependencies, Python-level dependencies, DAGs, and your `Dockerfile`. It does not include any of the metadata associated with your local Airflow environment, including task history and Airflow Connections or Variables that were set locally. This Docker image is then pushed to all containers running the Apache Airflow application on Astronomer Cloud. With the exception of the Airflow Webserver and some Celery Workers, Kubernetes gracefully terminates all containers during this process. This forces them to restart and begin running your latest code.
 
 ![Deploy Code](/img/docs/deploy-architecture.png)
 
-If you deploy code to a Deployment that is already running a previous version of your code, then the following happens:
+If you deploy code to a Deployment that is running a previous version of your code, then the following happens:
 
-1. Tasks that are `running` will continue to execute on existing Celery Workers and will not be interrupted unless the task does not complete within 24 hours of your deploy.
+1. Tasks that are `running` will continue to execute on existing Celery Workers and will not be interrupted unless the task does not complete within 24 hours of the code deploy.
 2. One or more autoscaling Workers will spin up to immediately start executing new tasks based on your latest code. These Celery Workers do not wait for your previous Workers to terminate.
-3. Kubernetes pods for all other Airflow components, including the Scheduler and Webserver, are restarted.
 
-When you push code to Astronomer, Kubernetes sends a SIGTERM signal to all containers running on your Deployment. While this triggers most containers to restart immediately, Astronomer sets a grace period of 24 hours for Celery Workers to ease the impact on your tasks. If a task does not complete within 24 hours, its Worker will be terminated. Airflow will mark the task as a [zombie]((https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html#zombie-undead-tasks)) and it will retry according to the task's retry policy. This is to ensure that Astronomer can reliably upgrade and maintain Astronomer as a service. 
+Astronomer sets a grace period of 24 hours for all Celery Workers to allow running tasks to continue executing. This grace period is not configurable. If a task does not complete within 24 hours, its Worker will be terminated. Airflow will mark the task as a [zombie](https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html#zombie-undead-tasks) and it will retry according to the task's retry policy. This is to ensure that our team can reliably upgrade and maintain Astronomer as a service.
 
 :::tip
 
-If you want to force long-running tasks to terminate prior to 24 hours, you must specify an [`execution_timeout`](https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html#timeouts) in your DAG's task definition.
+If you want to force long-running tasks to terminate sooner than 24 hours, specify an [`execution_timeout`](https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html#timeouts) in your DAG's task definition.
 
 :::
 
@@ -80,7 +79,7 @@ If you want to force long-running tasks to terminate prior to 24 hours, you must
 
 Now that you're familiar with deploying DAGs to Astronomer Cloud, consider reading:
 
-- [Develop Project](develop-project.md)
+- [Develop your Project](develop-project.md)
 - [Set Environment Variables](environment-variables.md)
 
 For up-to-date information about product limitations, read [Known Limitations](known-limitations.md).
