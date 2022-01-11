@@ -149,9 +149,15 @@ If you received a certificate from a private CA, follow these steps instead:
 
 2. Note the value of `private-root-ca` for when you configure your Helm chart in Step 8. You'll need to additionally specify the `privateCaCerts` key-value pair with this value for that step.
 
-## Step 6: Retrieve Your SMTP URI
+## Step 6: Configure Your SMTP URI
 
-An SMTP service is required so that users can send and accept email invites to and from Astronomer. To integrate your SMTP service with Astronomer, make note of your SMTP service's URI and add it to your Helm chart in Step 8. In general, an SMTP URI will take the following form:
+An SMTP service is required for sending and accepting email invites from Astronomer. If you're running Astronomer Enterprise with `publicSignups` disabled (which is the default), you'll need to configure SMTP as a way for your users to receive and accept invites to the platform via email. To integrate your SMTP service with Astronomer, fetch your SMTP service's URI and store it in a Kubernetes secret:
+
+```sh
+kubectl create secret generic astronomer-smtp --from-literal=connection=smtp://USERNAME:PASSWORD@HOST/?requireTLS=true -n astronomer
+```
+
+In general, an SMTP URI will take the following form:
 
 ```text
 smtps://USERNAME:PASSWORD@HOST/?pool=true
@@ -267,7 +273,6 @@ astronomer:
         serviceAccountAnnotationKey: eks.amazonaws.com/role-arn # Flag to enable using IAM roles (don't enter a specific role)
       email:
         enabled: true
-        smtpUrl: YOUR_URI_HERE
         reply: "noreply@astronomer.io" # Emails will be sent from this address
       auth:
         github:
@@ -277,6 +282,10 @@ astronomer:
         openidConnect:
           google:
             enabled: true # Lets users authenticate with Google
+    secret:
+    - envName: "EMAIL__SMTP_URL"  # Reference to the Kubernetes secret for SMTP credentials. Can be removed if email is not used.
+      secretName: "astronomer-smtp"
+      secretKey: "connection"
 ```
 
 These are the minimum values you need to configure for installing Astronomer. For information on additional configuration, read [What's Next](install-aws-standard.md#whats-next).
