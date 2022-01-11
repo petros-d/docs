@@ -28,10 +28,20 @@ The **Scheduler Logs** tab in the Astronomer UI has been updated to make logs ea
 
 ![Logs page in the UI](/img/release-notes/log-improvements.png)
 
+### Removal of Worker Termination Grace Period
+
+The **Worker Termination Grace Period** setting is no longer available in the Astronomer UI or API. Previously, users could set this to anywhere between 1 minute and 24 hours per Deployment. This was to prevent running tasks from being interrupted by a code push. Today, however, existing Celery Workers don't have to terminate in order for new Workers to spin up and start executing tasks. Instead, existing Workers will continue to execute running tasks while a new set of Workers gets spun up concurrently to start executing most recent code.
+
+To simplify Deployment configuration and reflect current functionality:
+
+- The Worker Termination Grace Period was removed from the Astronomer UI
+- This value was permanently set to 24 hours for all Deployments on Astronomer Cloud
+
+This does not change or affect execution behavior for new or existing Deployments. For more information, read [What Happens During a Code Deploy](deploy-code.md#what-happens-during-a-code-deploy).
+
 ### Additional Improvements
 
 - Removed _Kubernetes Version_ column from the **Clusters** table. This value was previously inaccurate and is not needed. The Kubernetes version of any particular Astronomer Cluster is set and modified exclusively by Astronomer as part of our managed service.
-- Removed the **Worker Termination Grace Period** setting so that Astronomer can more consistently upgrade and maintain your Airflow infrastructure. For most tasks, this results in no change in behavior because old worker pods can continue to execute tasks while new workers spin up to execute any newly deployed code. By default, a worker can run a task for a maximum 24 hours before it's automatically terminated. Thus, the only tasks affected by this change are those that might run for longer than 24 hours. For more information about worker termination, read [What Happens During a Code Deploy](deploy-code.md#what-happens-during-a-code-deploy).
 
 ## December 16, 2021
 
