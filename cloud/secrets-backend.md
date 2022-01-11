@@ -373,7 +373,7 @@ If you want to deploy your project to a hosted Git repository before deploying t
 
 These variables connect Airflow to your Key Vault and define how you call secrets in your Airflow code. By default, this setup requires that you prefix any secret names in Key Vault with `airflow-connections` or `airflow-variables`. If you don't want to use prefixes in your Key Vault secret names, replace the values for `"connections_prefix"` and `"connections_prefix"` with `""`.
 
-## Step 4: Test Key Vault Locally
+### Step 4: Test Key Vault Locally
 
 To test your Key Vault steup, [create a new secret](https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-portal#add-a-secret-to-key-vault) in Key Vault containing either a connection or a variable.
 
@@ -409,7 +409,7 @@ To test your changes:
 
 Once you confirm that the setup was successful, you can delete this DAG.
 
-## Step 5: Push Changes to Astronomer
+### Step 5: Push Changes to Astronomer
 
 Once you've confirmed that your secrets are being imported correctly to your local environment, you're ready to set configure the same feature in a Deployment on Astronomer Cloud.
 
