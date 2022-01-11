@@ -7,22 +7,23 @@ description: Monitor Deployment performance, health, and total task volume in th
 
 ## Overview
 
-The Astronomer UI contains a suite of metrics that show real-time data related to the performance and health of your Deployments. Viewing metrics is a useful first step for troubleshooting or rethinking the code you run on your Deployments. This document explains each available metric and where to find them.
+The Astronomer UI exposes a suite of observability metrics that show real-time data related to the performance and health of your Deployments. These metrics are a useful reference as you troubleshoot issues and can inform how you allocate resources. They can also help you estimate the cost of your Deployments. This document explains each available metric and where to find them.
 
 ## Deployment Health
 
-The Deployment health status is a metric that appears on the top of your Deployment's information page. Your Deployment's health is based on whether its Airflow components are running as expected.
+Deployment health appears as a real-time status at the top of your Deployment's information page. Deployment health is meant to show whether or not the most important components within your Deployment are running as expected.
 
 ![Deployment Health status](/img/docs/deployment-health.png)
 
 Deployment health can have one of two statuses:
 
-- **Healthy**: The Deployment's webserver and scheduler are running as expected.
-- **Unhealthy**: This status can mean one of two things:
+- **Healthy** (Green): The Airflow Webserver and Scheduler are both healthy and running as expected.
+- **Unhealthy** (Red): This status can mean one of two things:
 
-    - The Deployment's webserver and/or scheduler are restarting or having issues that require further investigation.
-    - Your Deployment was recently created, and its webserver and scheduler are still spinning up in your cluster.
+    - Your Deployment was recently created and the Airflow Webserver and Scheduler are still spinning up.
+    - Your Deployment's Webserver and/or Scheduler are restarting or otherwise not in a healthy, running state.
 
+If your Deployment is unhealthy, we recommend checking the status of your tasks and waiting for a few minutes. If your Deployment is unhealthy for more than 5 minutes, we recommend [reviewing Scheduler logs](scheduler-logs.md) in the Astronomer UI or reaching out to [Astronomer Support](https://support.astronomer.io).
 ## Deployment Performance
 
 Each Deployment includes four high-level performance charts which you can view from both the **Deployments** menu and individual Deployment pages. They include:
