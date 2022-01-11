@@ -13,6 +13,14 @@ Astronomer v0.27 is the latest Stable version of Astronomer Enterprise, while v0
 
 We're committed to testing all Astronomer Enterprise versions for scale, reliability and security on Amazon EKS, Google GKE and Azure AKS. If you have any questions or an issue to report, don't hesitate to [reach out to us](https://support.astronomer.io).
 
+## 0.27.1
+
+Release date: January 10, 2022
+
+### Bug Fixes
+
+- Fixed an issue where users would be occasionally unable to create Deployments via an IAM role
+
 ## 0.27.0
 
 Release date: December 21, 2021
