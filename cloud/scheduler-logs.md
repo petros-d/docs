@@ -25,11 +25,11 @@ You can also directly access logs for a given Deployment by clicking the Logs ic
 
 The **Scheduler Logs** page shows all of a given Deployment's recorded Scheduler logs from the last 24 hours. If the Deployment generated more than 500 logs in the last 24 hours, then the UI shows only the most recent 500 logs. Each log is color-coded based on its log level.
 
-At the top of the page, you can filter the types of logs which appear by selecting specific log levels from the dropdown log level menu. The log levels you can filter by are:
+At the top of the page, you can filter the types of logs which appear by selecting them from the dropdown log level menu. The log levels you can filter by are:
 
-- `ERROR`: Emitted when a process fails and does not complete. These logs often indicate task or DAG failures.
-- `WARN`: Emitted when Airflow detects a deprecated package or function in your code. For example, this log is emitted when your code calls the deprecated command `airflow initdb` instead of `airflow db init`. 
-- `INFO`: Emitted frequently by Airflow to show that a standard process has started, such as task execution and DAG parsing. These logs are frequent, but can contain useful information such as DAG parsing time for dynamically generated DAGs.
+- `ERROR`: Emitted when a process fails or does not complete. For example, these logs might indicate a missing DAG file, an issue with your Scheduler's connection to the Airflow database, or an irregularity with your Scheduler's heartbeat.
+- `WARN`: Emitted when Airflow detects an issue that may or may not be of concern but does not require immediate action. This often includes deprecation notices marked as `DeprecationWarning`. For example, Airflow might recommend that you upgrade your Deployment if there was a change to the Airflow database or task execution logic.
+- `INFO`: Emitted frequently by Airflow to show that a standard Scheduler process, such as DAG parsing, has started. These logs are frequent but can contain useful information. If you run dynamically generated DAGs, for example, these logs will show how many DAGs were created per DAG file and how long it took the Scheduler to parse each of them.
 
 ![Log filtering menu in Scheduler Logs page](/img/docs/filter-logs.png)
 
