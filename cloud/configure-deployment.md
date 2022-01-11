@@ -31,7 +31,7 @@ To create an Airflow Deployment on Astronomer Cloud:
 
     ![Astronomer UI Deployment Configuration](/img/docs/deployment-configuration.png)
 
-    All Deployments show an initial health status of `UNHEALTHY` after their creation. This indicates that the Deployment's Webserver and Scheduler are still spinning up in your cloud. Wait a few minutes for this status to update to `HEALTHY` before proceeding to the next step.
+    All Deployments show an initial health status of `UNHEALTHY` after their creation. This indicates that the Deployment's Webserver and Scheduler are still spinning up in your cloud. Wait a few minutes for this status to become `HEALTHY` before proceeding to the next step.
 
 4. To access the Airflow UI, select **Open Airflow** on the top right. This page may take a few minutes to load.
 
