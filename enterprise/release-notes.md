@@ -19,7 +19,7 @@ Release date: January 10, 2022
 
 ### Bug Fixes
 
-- Fixed an issue where users would be occasionally unable to create Deployments via an IAM role
+- Fixed an issue where users were occasionally unable to create Deployments via an IAM role
 
 ## 0.27.0
 
