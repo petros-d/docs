@@ -33,7 +33,7 @@ To create an Airflow Deployment on Astronomer Cloud:
 
     All Deployments show an initial health status of `UNHEALTHY` after their creation. This indicates that the Deployment's Webserver and Scheduler are still spinning up in your cloud. Wait a few minutes for this status to become `HEALTHY` before proceeding to the next step.
 
-4. To access the Airflow UI, select **Open Airflow** on the top right. 
+4. To access the Airflow UI, select **Open Airflow** on the top right.
 
 ## Configure Resource Settings
 
@@ -46,11 +46,20 @@ Over time, these units are subject to change. Read below for guidelines on how t
 
 ### Worker Resources
 
-Task execution on Astronomer Cloud is powered by [Airflow's Celery Executor](https://airflow.apache.org/docs/apache-airflow/stable/executor/celery.html) with [KEDA](https://www.astronomer.io/blog/the-keda-autoscaler), which enables Workers to auto-scale between 0 and 10 depending on real-time workload.
+Task execution on Astronomer Cloud is powered by [Airflow's Celery Executor](https://airflow.apache.org/docs/apache-airflow/stable/executor/celery.html) with [KEDA](https://www.astronomer.io/blog/the-keda-autoscaler), which enables worker count to auto-scale between 1 and 10 depending on real-time workload.
 
-All Celery Workers assume the same resources. If you set Worker Resources to 10 AU, for example, your Deployment may scale up to 3 Celery Workers at any given time using 10 AU each for a total of 30 AU (3 CPU, 11.25 GB Memory). We recommend 10 AU as the default.
+All Celery Workers assume the same resources. If you set **Worker Resources** to 10 AU, for example, your Deployment might scale up to 3 workers using 10 AU each for a total of 30 AU (3 CPU, 11.25 GB Memory). By default, the minimum AU allocated towards workers is 10.
 
-The ability to set minimum and/or maximum number of Workers is coming soon.
+The ability to set minimum and/or maximum number of workers is coming soon.
+
+:::info Worker Autoscaling Logic
+
+While the **Worker Resources** setting affects the amount of computing power allocated to each worker, the number of workers running on your Deployment is based solely on the number of tasks in a queued or running state.
+
+The maximum number of tasks that a worker can execute at once is 16. If there are more than 16 tasks queued or running at once, then a new worker is spun up to begin executing additional tasks. In general, the number of workers running for a Deployment at any given time can be calculated with the following expression:
+
+`[Number of Workers]= ([Queued tasks]+[Running tasks])/16`
+:::
 
 ### Scheduler
 
