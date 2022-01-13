@@ -20,8 +20,8 @@ astrocloud dev init
 | Option              | Description                                                                                                        | Possible Values             |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------- |
 | `--follow` | Continue streaming most recent log output to your terminal. | ``|
-| `--scheduler`            | Show only scheduler logs                                                                                  | Any string                  |
-| `--webserver`            | Show only webserver logs                                                                                  | Any string                  |
+| `--scheduler`            | Show only scheduler logs                                                                                  | ``                  |
+| `--webserver`            | Show only webserver logs                                                                                  | ``                 |
 
 
 ## Examples
