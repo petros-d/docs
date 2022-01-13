@@ -46,7 +46,7 @@ Over time, these units are subject to change. Read below for guidelines on how t
 
 ### Worker Resources
 
-Task execution on Astronomer Cloud is powered by [Airflow's Celery Executor](https://airflow.apache.org/docs/apache-airflow/stable/executor/celery.html) with [KEDA](https://www.astronomer.io/blog/the-keda-autoscaler), which enables worker count to auto-scale between 1 and 10 depending on real-time workload.
+Task execution on Astronomer Cloud is powered by [Airflow's Celery Executor](https://airflow.apache.org/docs/apache-airflow/stable/executor/celery.html) with [KEDA](https://www.astronomer.io/blog/the-keda-autoscaler), which enables a Deployment's worker count to auto-scale between 1 and 10 depending on real-time workload.
 
 All Celery Workers assume the same resources. If you set **Worker Resources** to 10 AU, for example, your Deployment might scale up to 3 workers using 10 AU each for a total of 30 AU (3 CPU, 11.25 GB Memory). By default, the minimum AU allocated towards workers is 10.
 
