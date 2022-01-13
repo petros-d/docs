@@ -56,7 +56,7 @@ The ability to set minimum and/or maximum number of workers is coming soon.
 
 While the **Worker Resources** setting affects the amount of computing power allocated to each worker, the number of workers running on your Deployment is based solely on the number of tasks in a queued or running state.
 
-The maximum number of tasks that a worker can execute at once is 16. If there are more than 16 tasks queued or running at once, then a new worker is spun up to begin executing additional tasks. In general, the number of workers running for a Deployment at any given time can be calculated with the following expression:
+The maximum number of tasks that a worker can execute at once is 16. If there are more than 16 tasks queued or running at once, then a new worker is spun up to execute the additional tasks. In general, the number of workers running for a Deployment at any given time can be calculated with the following expression:
 
 `[Number of Workers]= ([Queued tasks]+[Running tasks])/16`
 :::
