@@ -21,11 +21,11 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 
 Astronomer Cloud now utilizes an identity-based login flow for all users. When you first log in via the Astronomer UI, you now only need to enter the email address for your account. Astronomer assumes your Organization and brings you directly to your Astronomer Organization's login screen.
 
-This change is a foundation for future SSO and authentication features. In upcoming releases, users will utilize identity-based logins to authenticate via their own SSO platform and remain logged in to Astronomer through authentication tokens.
+This change serves as a foundation for future SSO and authentication features. In upcoming releases, users will utilize identity-based logins to authenticate via their own SSO platform and remain logged in to Astronomer through authentication tokens.
 
 ### Additional Improvements
 
-- Greatly improved load times for various UI pages and elements. 
+- Greatly improved load times for various UI pages and elements.
 - In the UI, the **Resource Settings** section of a Deployment's page now shows the equivalent CPU and memory usage alongside your AU usage.
 - Removed `DEBUG`-level logs from Deployment logs.
 - The minimum amount of AU that you can allocate to **Worker Resources** is now 10 AU.
