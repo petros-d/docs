@@ -15,6 +15,21 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 
 **Latest CLI Version**: 1.0.4 ([Release notes](cli-release-notes.md))
 
+## January 13, 2022
+
+### Identity-Based Login Flow
+
+Astronomer Cloud now utilizes an identity-based login flow for all users. When you first log in via the Astronomer UI, you now only need to enter the email address for your account. Astronomer assumes your Organization and brings you directly to your Astronomer Organization's login screen.
+
+This change serves as a foundation for future SSO and authentication features. In upcoming releases, users will be able to authenticate via custom identity providers like Okta and Azure Active Directory.
+
+### Additional Improvements
+
+- Significant improvements to the load times of various Astronomer UI pages and and elements.
+- In the Astronomer UI, the tooltips in the **Resource Settings** section of a Deployment's page now show the definition of 1 AU. This should make it easier to translate AU to CPU and Memory.
+- Scheduler logs in the Astronomer UI no longer show `DEBUG`-level logs.
+- To ensure that all Workers have enough resources to run basic workloads, you can no longer allocate less than 10 AU to **Worker Resources**.
+
 ## January 6, 2022
 
 ### Improvements to "Scheduler Logs" in the Astronomer UI
