@@ -12,6 +12,7 @@ import {useActivePlugin, useDocVersionSuggestions} from '@theme/hooks/useDocs';
 import {
   ThemeClassNames,
   useDocsPreferredVersion,
+  useDocsVersion,
 } from '@docusaurus/theme-common';
 import clsx from 'clsx';
 
@@ -19,7 +20,7 @@ function UnreleasedVersionLabel({siteTitle, versionMetadata}) {
   return (
     <Translate
       id="theme.docs.versions.unreleasedVersionLabel"
-      description="The label used to tell the user that he's browsing an unreleased doc version"
+      description="The label used to tell the user that they're browsing an unreleased doc version"
       values={{
         siteTitle,
         versionLabel: <b>{versionMetadata.label}</b>,
@@ -35,7 +36,7 @@ function UnmaintainedVersionLabel({siteTitle, versionMetadata}) {
   return (
     <Translate
       id="theme.docs.versions.unmaintainedVersionLabel"
-      description="The label used to tell the user that he's browsing an unmaintained doc version"
+      description="The label used to tell the user that they're browsing an unmaintained doc version"
       values={{
         siteTitle,
         versionLabel: <b>{versionMetadata.label}</b>,
@@ -84,7 +85,7 @@ function LatestVersionSuggestionLabel({versionLabel, to, onClick}) {
   );
 }
 
-function DocVersionBannerEnabled({versionMetadata}) {
+function DocVersionBannerEnabled({className, versionMetadata}) {
   const {
     siteConfig: {title: siteTitle},
   } = useDocusaurusContext();
@@ -105,6 +106,7 @@ function DocVersionBannerEnabled({versionMetadata}) {
   return (
     <div
       className={clsx(
+        className,
         ThemeClassNames.docs.docVersionBanner,
         'alert alert--warning margin-bottom--md',
       )}
@@ -123,12 +125,17 @@ function DocVersionBannerEnabled({versionMetadata}) {
   );
 }
 
-function DocVersionBanner({versionMetadata}) {
+export default function DocVersionBanner({className}) {
+  const versionMetadata = useDocsVersion();
+
   if (versionMetadata.banner) {
-    return <DocVersionBannerEnabled versionMetadata={versionMetadata} />;
+    return (
+      <DocVersionBannerEnabled
+        className={className}
+        versionMetadata={versionMetadata}
+      />
+    );
   }
 
-  return <></>;
+  return null;
 }
-
-export default DocVersionBanner;
