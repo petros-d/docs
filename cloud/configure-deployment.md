@@ -29,11 +29,11 @@ To create an Airflow Deployment on Astronomer Cloud:
 
 3. Click **Create Deployment** and give it a few moments to spin up. Within a few seconds, you should see the following:
 
-    <div class="text--center">
-    <img src="/img/docs/deployment-configuration.png" alt="Astronomer UI Deployment Configuration" />
-    </div>
+    ![Astronomer UI Deployment Configuration](/img/docs/deployment-configuration.png)
 
-4. To access the Airflow UI, select **Open Airflow** on the top right. This page may take a few minutes to load.
+    All Deployments show an initial health status of `UNHEALTHY` after their creation. This indicates that the Deployment's Webserver and Scheduler are still spinning up in your cloud. Wait a few minutes for this status to become `HEALTHY` before proceeding to the next step.
+
+4. To access the Airflow UI, select **Open Airflow** on the top right. 
 
 ## Configure Resource Settings
 
@@ -51,12 +51,6 @@ Task execution on Astronomer Cloud is powered by [Airflow's Celery Executor](htt
 All Celery Workers assume the same resources. If you set Worker Resources to 10 AU, for example, your Deployment may scale up to 3 Celery Workers at any given time using 10 AU each for a total of 30 AU (3 CPU, 11.25 GB Memory). We recommend 10 AU as the default.
 
 The ability to set minimum and/or maximum number of Workers is coming soon.
-
-### Worker Grace Period
-
-Celery Workers are forced to restart upon every change to Environment Variables and every code deploy to your Deployment. This is to make sure that Workers are executing with the most up-to-date code. To minimize disruption to task execution, however, Astronomer supports the ability to set a **Worker Grace Period**.
-
-If a deploy is triggered while a Celery Worker is executing a task and Worker Grace Period is set, the Worker will continue to process that task up to a certain number of minutes before restarting itself. By default, the grace period is 10 minutes.
 
 ### Scheduler
 
