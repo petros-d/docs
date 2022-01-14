@@ -7,7 +7,7 @@ description: Reference documentation for astrocloud dev run.
 
 ## Overview
 
-Run Airflow commands in your local Airflow environment.
+Run [Airflow CLI commands](https://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.html) in your local Airflow environment.
 
 ## Usage
 
@@ -21,3 +21,8 @@ astrocloud dev run <airflow-command>
 $ astrocloud dev run create_user -r Admin -u admin -e admin@example.com -f admin -l user -p admin
 # Run OSS `create_user` command
 ```
+
+## Related Commands
+
+- [`astrocloud dev logs`](cli-reference/astrocloud-dev-logs.md)
+- [`astrocloud dev ps`](cli-reference/astrocloud-dev-ps.md)

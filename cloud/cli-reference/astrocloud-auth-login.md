@@ -22,3 +22,6 @@ astrocloud auth login mycompany.astronomer.io
 ```
 
 ## Related Commands
+
+- [`astrocloud auth logout`](cli-reference/astrocloud-auth-logout.md)
+- [`astrocloud deploy`](cli-reference/astrocloud-deploy.md)

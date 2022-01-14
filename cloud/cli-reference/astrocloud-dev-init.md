@@ -7,7 +7,7 @@ description: Reference documentation for astrocloud dev init.
 
 ## Description
 
-Initialize an Astronomer project in an empty local directory. This skeleton project can be either run locally with `astro dev start` or pushed to Astronomer via `astro deploy`.
+Initialize an [Astronomer project](create-project.md) in an empty local directory. This skeleton project can be either run locally with `astro dev start` or pushed to Astronomer via `astro deploy`.
 
 ## Usage
 
@@ -34,3 +34,5 @@ $ astrocloud deploy --name=MyProject
 ```
 
 ## Related Commands
+
+- [`astrocloud dev start`](cli-reference/astrocloud-dev-start.md)

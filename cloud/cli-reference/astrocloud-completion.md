@@ -19,7 +19,7 @@ astrocloud completion <shell>
 
 | Option  | Description                                          | Possible Values                   |
 | ------- | ---------------------------------------------------- | --------------------------------- |
-| <shell> | The type of shell to generate completion scripts for | `bash`,`fish`, `powershell`,`zsh` |
+| `<shell>` | The type of shell to generate completion scripts for | `bash`,`fish`, `powershell`,`zsh` |
 
 ## Example
 

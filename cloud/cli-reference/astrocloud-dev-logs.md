@@ -36,3 +36,6 @@ $ astrocloud dev logs --folow --scheduler
 ```
 
 ## Related Commands
+
+- [`astrocloud dev ps`](cli-reference/astrocloud-dev-ps.md)
+- [`astrocloud dev run`](cli-reference/astrocloud-dev-run.md)

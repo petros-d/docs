@@ -29,3 +29,7 @@ $ astrocloud dev start --env=/users/username/documents/myfile.env
 ```
 
 ## Related Commands
+
+- [`astrocloud dev stop`](cli-reference/astrocloud-dev-stop.md)
+- [`astrocloud dev kill`](cli-reference/astrocloud-dev-kill.md)
+- [`astrocloud dev init`](cli-reference/astrocloud-dev-init.md)

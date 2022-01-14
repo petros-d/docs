@@ -30,3 +30,13 @@ If the installation was successful, you should see your version of the AstroClou
 ```sh
 AstroCloud CLI Version: 0.0.1-alpha%
 ```
+
+## Core Commands
+
+We expect that you'll use these commands most often when managing your Astronomer projects and Deployments:
+
+- [`astrocloud auth login`](cli-reference/astrocloud-auth-login.md)
+- [`astrocloud dev init`](cli-reference/astrocloud-dev-init.md)
+- [`astrocloud dev start`](cli-reference/astrocloud-dev-start.md)
+- [`astrocloud dev stop`](cli-reference/astrocloud-dev-stop.md)
+- [`astrocloud deploy`](cli-reference/astrocloud-deploy.md)

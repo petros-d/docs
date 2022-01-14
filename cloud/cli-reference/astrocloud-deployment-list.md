@@ -1,39 +1,34 @@
 ---
-sidebar_label: 'astrocloud deploy'
-title: 'astrocloud deploy'
-id: astrocloud-deploy
-description: Reference documentation for astrocloud deploy.
+sidebar_label: 'astrocloud deployment list'
+title: 'astrocloud deployment list'
+id: astrocloud-deployment-list
+description: Reference documentation for astrocloud deployment list.
 ---
 
 ## Description
 
-Deploy your Astronomer project to a Deployment on Astronomer Cloud. Specify a Deployment's release name in the command, or leave the command options blank to select from a list of all Deployments that you have access to.
+List all Deployments that you have access to.  
 
 ## Usage
 
 ```sh
-astrocloud deploy <deployment-release-name>
+astrocloud deployment list
 ```
 
 ## Options
 
 | Option  | Description                                          | Possible Values                   |
 | ------- | ---------------------------------------------------- | --------------------------------- |
-| `--force` | Force the deploy even if uncommitted changes exist | `` |
-| `--prompt` | Force the prompt for selecting deployments to appear even if a Deployment is specified | `` |
-| `--save` | Save the current directory/Deployment combination for future deploys | `` |
-| `--workspace-id <string> `| Save the current directory/Deployment combination for future deploys | Any valud|
-
+| `--all` | Show deployments across all Workspaces. | `` |
 
 ## Examples
 
 ```sh
-$ astrocloud deploy
-# List of Deployments appears
-$ astrocloud deploy asteroidic-vacuum-4865
-# Deploy directly to a specific Deployment
-$ astrocloud deploy asteroidic-vacuum-4865 --save
-# Running `astrocloud deploy` will now automatically select this Deployment for your Astronomer project
+$ astrocloud deployment list --all
+# Shows Deployments from all Workspaces that you're authenticated to
 ```
 
 ## Related Commands
+
+- [`astrocloud auth login`](cli-reference/astrocloud-auth-login.md)
+- [`astrocloud deploy`](cli-reference/astrocloud-deploy.md)

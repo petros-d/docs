@@ -7,7 +7,9 @@ description: Reference documentation for astrocloud deploy.
 
 ## Description
 
-Deploy your Astronomer project to a Deployment on Astronomer Cloud. Specify a Deployment's release name in the command, or leave the command options blank to select from a list of all Deployments that you have access to.
+Deploy your Astronomer project to a Deployment on Astronomer Cloud.
+
+You can specify a Deployment's release name in the command, or leave the command options blank to select from a list of all Deployments that you have access to. To retrieve a Deployment's release name, go to the Deployment's information page in the UI and copy the value under **Namespace**.
 
 ## Usage
 
@@ -37,3 +39,6 @@ $ astrocloud deploy asteroidic-vacuum-4865 --save
 ```
 
 ## Related Commands
+
+- [`astrocloud auth login`](cli-reference/astrocloud-auth-login.md)
+- [`astrocloud deployment list`](cli-reference/astrocloud-deployment-list.md)

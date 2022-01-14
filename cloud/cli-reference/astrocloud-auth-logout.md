@@ -7,7 +7,7 @@ description: Reference documentation for astrocloud auth logout.
 
 ## Description
 
-Authenticate to Astronomer Cloud by specifying your organization's URL for accessing Astronomer. After you run this command, the CLI redirects you to a web browser where you can log in to Astronomer. Once you are logged in via the web browser, the CLI automatically recognizes this and authenticates to your account.
+Unauthenticate from the AstroCloud CLI. Note that this command does not affect your current login session in the Astronomer UI. 
 
 ## Usage
 
@@ -16,3 +16,5 @@ astrocloud auth logout
 ```
 
 ## Related Commands
+
+- [`astrocloud auth login`](cli-reference/astrocloud-auth-login.md)
