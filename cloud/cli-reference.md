@@ -13,7 +13,7 @@ This document contains information about all commands and settings available in 
 
 ## Installation
 
-To install the Astrocloud CLI, run the following command:
+To install the AstroCloud CLI, run the following command:
 
 ```sh
 brew install astronomer/cloud/astrocloud@0.0.1-alpha
