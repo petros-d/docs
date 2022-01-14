@@ -4,9 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-
-import useContextualSearchFilters from '@theme/hooks/useContextualSearchFilters';
-
+import { useContextualSearchFilters } from '@docusaurus/theme-common';
 // Translate search-engine agnostic search filters to Algolia search filters
 export default function useAlgoliaContextualFacetFilters() {
   const {locale, tags} = useContextualSearchFilters();
