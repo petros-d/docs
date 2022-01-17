@@ -109,12 +109,12 @@ Once you set up a TLS certificate for Astronomer, you'll need to establish a pro
     Then, create the certificate by running the following command and waiting a few minutes:
 
     ```sh
-    kubectl apply -f certificate.yaml
+    kubectl apply -f certificate.yaml -n <your-namespace>
     ```
 
 5. Ensure that the certificate was created by running:
    ```sh
-   kubectl get certificates
+   kubectl get certificates -n <your-namespace>
    ```
 
 6. Note your certificate name for when you create a Kubernetes TLS secret and push it to your Enterprise configuration as described in the Enterprise installation guide ([AWS](install-aws-standard.md#step-5-create-a-kubernetes-tls-secret)/[GCP](install-gcp-standard.md#step-5-create-a-kubernetes-tls-secret)/[AKS](install-azure-standard.md/#step-5-create-a-kubernetes-tls-secret)).
@@ -125,7 +125,7 @@ Larger organizations with dedicated security teams will likely have their own pr
 
 1. Delete your current TLS certificate by running the following command:
    ```sh
-   kubectl delete secret astronomer-tls
+   kubectl delete secret astronomer-tls -n <your-namespace>
    ```
 
 2. Follow the instructions for requesting a TLS certificate from your organization's security team as described in [Step 4: Configure TLS](install-aws-standard.md#step-4-configure-tls). The linked guide is written for users installing Astronomer on AWS, but this step is the same regardless of which service you use.
