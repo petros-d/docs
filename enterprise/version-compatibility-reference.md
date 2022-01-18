@@ -13,6 +13,8 @@ It's worth noting that while the tables below reference the minimum compatible v
 
 ## Astronomer Enterprise
 
+<!--- Version-specific -->
+
 | Astronomer Platform | Kubernetes                   | Helm | Terraform    | Postgres | Python                                    | Astronomer CLI |
 | ------------------- | ---------------------------- | ---- | ------------ | -------- | ----------------------------------------- | -------------- |
 | v0.16               | 1.16, 1.17, 1.18             | 3    | 0.12, 0.13.5 | 9.6+     | 3.6, 3.7, 3.8                             | 0.16.x         |

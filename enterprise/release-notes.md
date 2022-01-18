@@ -7,6 +7,8 @@ description: Astronomer Enterprise release notes.
 
 ## Overview
 
+<!--- Version-specific -->
+
 This document includes all release notes for Astronomer Enterprise v0.27.
 
 Astronomer v0.27 is the latest Stable version of Astronomer Enterprise, while v0.25 remains the latest long-term support (LTS) version. To upgrade to Astronomer v0.27 from v0.26, read [Upgrade to a Stable Version](upgrade-astronomer-stable.md). For more information about Enterprise release channels, read [Release and Lifecycle Policies](release-lifecycle-policy.md).

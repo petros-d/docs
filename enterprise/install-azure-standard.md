@@ -346,6 +346,8 @@ These are the minimum values you need to configure for installing Astronomer. Fo
 
 ## Step 9: Install Astronomer
 
+<!--- Version-specific -->
+
 Now that you have an AKS cluster set up and your `config.yaml` defined, you're ready to deploy all components of our platform.
 
 First, run:

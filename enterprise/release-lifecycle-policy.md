@@ -77,6 +77,8 @@ In rare instances, the Astronomer team may make an exception and backport a bug 
 
 ## Enterprise Lifecycle Schedule
 
+<!--- Version-specific -->
+
 The following table contains the exact lifecycle for each published version of Astronomer Enterprise. These timelines are based on the LTS and stable release channel maintenance policies.
 
 | Enterprise Version | Release Date     | Release Channel | Maintenance Period | End of Maintenance Date |
@@ -86,4 +88,3 @@ The following table contains the exact lifecycle for each published version of A
 | 0.25               | May 11, 2021     | LTS             | 12 months          | May 2022                |
 | 0.26               | Nov 23, 2021     | Stable          | 6 months           | May 2022                |
 | 0.27               | Dec 21, 2021     | Stable          | 6 months           | June 2022               |
-

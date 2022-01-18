@@ -84,6 +84,8 @@ To customize permissions, follow the steps below.
 
 ### Identify a Permission Change
 
+<!--- Version-specific -->
+
 First, take a look at our default roles and permissions in the [default Houston API configuration](https://github.com/astronomer/docs/tree/main/enterprise_configs/0.27/default.yaml) and identify two things:
 
 1. What role do you want to configure? (e.g. `DEPLOYMENT_EDITOR`)
@@ -155,6 +157,8 @@ On Astronomer, System Admins specifically can:
 By default, the first user to log into an Astronomer Enterprise installation is granted the System Admin permission set.
 
 ### System Editor, Viewer
+
+<!--- Version-specific -->
 
 In addition to the commonly used System Admin role, the Astronomer platform also supports both a System Editor and System Viewer permission set.
 
