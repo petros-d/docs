@@ -81,7 +81,7 @@ Environment variables that are set via the Astronomer UI or API and _are_ marked
 
 ## Set Environment Variables via Dockerfile
 
-If you want to store environment variables using an external version control tool, we recommend setting them in your `Dockerfile`. This file is automatically created when you first initialize an Airflow project on Astronomer via `astro dev init`.
+If you want to store environment variables using an external version control tool, we recommend setting them in your `Dockerfile`. This file is automatically created when you first initialize an Airflow project on Astronomer via `astrocloud dev init`.
 
 :::caution
 
@@ -100,10 +100,10 @@ ENV AIRFLOW__CORE__PARALLELISM=25
 
 Once your environment variables are added:
 
-1. Run `astro dev stop` and `astro dev start` to rebuild your image and apply your changes locally OR
-2. Run `astro deploy` to apply your changes to your running Airflow Deployment on Astronomer
+1. Run `astrocloud dev stop` and `astrocloud dev start` to rebuild your image and apply your changes locally OR
+2. Run `astrocloud deploy` to apply your changes to your running Airflow Deployment on Astronomer
 
-> **Note:** Environment variables injected via the `Dockerfile` are mounted at build time and can be referenced in any other processes run during the Docker build process that immediately follows `astro deploy` or `astro dev start`.
+> **Note:** Environment variables injected via the `Dockerfile` are mounted at build time and can be referenced in any other processes run during the Docker build process that immediately follows `astrocloud deploy` or `astrocloud dev start`.
 >
 > Environment variables applied via the Astronomer UI only become available once the Docker build process has been completed.
 

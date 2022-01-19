@@ -30,7 +30,7 @@ To develop an Astronomer project and test it locally, you need:
 To run your Astronomer project locally, run the following command:
 
 ```sh
-astro dev start
+astrocloud dev start
 ```
 
 This command builds your project and spins up 3 Docker containers on your machine, each for a different Airflow component:
@@ -43,7 +43,7 @@ Once the project builds, you can access the Airflow UI by going to `http://local
 
 :::info
 
-The Astronomer CLI is a wrapper around [Docker Compose](https://docs.docker.com/compose/), a tool for defining and running multi-container Docker applications. If you're familiar with Docker Compose, you'll recognize that the `astro dev start` command, for example, is functionally equivalent to `docker compose start`.
+The Astronomer CLI is a wrapper around [Docker Compose](https://docs.docker.com/compose/), a tool for defining and running multi-container Docker applications. If you're familiar with Docker Compose, you'll recognize that the `astrocloud dev start` command, for example, is functionally equivalent to `docker compose start`.
 
 :::
 
@@ -58,11 +58,11 @@ If you see `Error: cannot start, project already running` when you run this comm
 To restart your local Airflow environment, run the following two commands:
 
 ```sh
-$ astro dev stop
-$ astro dev start
+$ astrocloud dev stop
+$ astrocloud dev start
 ```
 
-These commands rebuild your image and restart the Docker containers running on your local machine with that new image. Alternatively, you can run just `astro dev stop` to stop your Docker containers without restarting or rebuilding your project.
+These commands rebuild your image and restart the Docker containers running on your local machine with that new image. Alternatively, you can run just `astrocloud dev stop` to stop your Docker containers without restarting or rebuilding your project.
 
 ## Make Changes to Your Project
 
@@ -99,7 +99,7 @@ The Astronomer Registry includes:
 
 - Example DAGs for many data sources and destinations. For example, you can build out a data quality use case with Snowflake and Great Expectations based on the [Great Expectations Snowflake Example DAG](https://registry.astronomer.io/dags/simple-great-expectations-snowflake-el).
 - Documentation for Airflow providers, such as [Databricks](https://registry.astronomer.io/providers/databricks), [Snowflake](https://registry.astronomer.io/providers/snowflake), and [Postgres](https://registry.astronomer.io/providers/postgres). This documentation is comprehensive and based on Airflow source code.
-- Documentation for Airflow modules, such as the [PythonOperator](https://registry.astronomer.io/providers/apache-airflow/modules/pythonoperator), [BashOperator](https://registry.astronomer.io/providers/apache-airflow/modules/bashoperator), and [S3ToRedshiftOperator](https://registry.astronomer.io/providers/amazon/modules/s3toredshiftoperator). These modules include guidance on how to set Airflow connections and their parameters. 
+- Documentation for Airflow modules, such as the [PythonOperator](https://registry.astronomer.io/providers/apache-airflow/modules/pythonoperator), [BashOperator](https://registry.astronomer.io/providers/apache-airflow/modules/bashoperator), and [S3ToRedshiftOperator](https://registry.astronomer.io/providers/amazon/modules/s3toredshiftoperator). These modules include guidance on how to set Airflow connections and their parameters.
 
 As you browse the Astronomer Registry, follow this document for instructions on how to install providers as Python packages and make other changes to your Astronomer Project.
 
@@ -239,7 +239,7 @@ RUN ls
 
 ## Override the CLI's Docker Compose File (Local Development Only)
 
-The Astronomer CLI is built on top of [Docker Compose](https://docs.docker.com/compose/), which is a tool for defining and running multi-container Docker applications. You can override the CLI's Docker Compose configurations by adding a `docker-compose.override.yml` file to your Astronomer project. Any values in this file override the CLI's default settings whenever you run `astro dev start`.
+The Astronomer CLI is built on top of [Docker Compose](https://docs.docker.com/compose/), which is a tool for defining and running multi-container Docker applications. You can override the CLI's Docker Compose configurations by adding a `docker-compose.override.yml` file to your Astronomer project. Any values in this file override the CLI's default settings whenever you run `astrocloud dev start`.
 
 To see what values you can override, reference the CLI's [Docker Compose file](https://github.com/astronomer/astro-cli/blob/main/airflow/include/composeyml.go). The linked file is for the original Astronomer CLI, but the values here are identical to those used in the Astronomer Cloud CLI. Common use cases for Docker Compose overrides include:
 
@@ -279,7 +279,7 @@ To add Environment Variables locally:
 
 1. Open the `.env` file in your Astronomer project directory.
 2. Add your environment variables to the `.env` file.
-3. Rebuild your image by running `astro dev start --env .env`.
+3. Rebuild your image by running `astrocloud dev start --env .env`.
 
 When setting environment variables in your `.env` file, use the following format:
 

@@ -35,7 +35,7 @@ To deploy DAGs to Astronomer, you must have:
 Once you've tested your DAGs locally, you're ready to push them to Astronomer. To start, authenticate to Astronomer Cloud by running:
 
 ```
-astro auth login
+astrocloud auth login
 ```
 
 If you created your account with a username and password, you'll be prompted to enter them directly in your terminal. If you did so via GitHub or Google OAuth, you'll be prompted to grab a temporary token from https://cloud.astronomer.io/token.
@@ -45,7 +45,7 @@ If you created your account with a username and password, you'll be prompted to 
 To deploy your DAGs, run:
 
 ```
-astro deploy
+astrocloud deploy
 ```
 
 This command returns a list of Airflow Deployments available in your Workspace and prompts you to pick one. Once this command is executed, all files in your Astronomer project directory are built into a new Docker image and pushed to Astronomer.

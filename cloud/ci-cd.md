@@ -52,7 +52,7 @@ DEPLOYMENT_ID=$4
 
 TAG=deploy-`date "+%Y-%m-%d-%HT%M-%S"`
 
-# Step 1. Authenticate to Astronomer's Docker registry with your Deployment API key ID and secret. This is equivalent to running `$ astro auth login` via the Astronomer CLI.
+# Step 1. Authenticate to Astronomer's Docker registry with your Deployment API key ID and secret. This is equivalent to running `$ astrocloud auth login` via the Astronomer CLI.
 
 docker login images.astronomer.cloud -u $ASTRONOMER_KEY_ID -p $ASTRONOMER_KEY_SECRET
 
@@ -124,7 +124,7 @@ The following section provides basic templates for configuring individual CI pip
 
 ### GitHub Actions
 
-Use this GitHub Action in a repository that hosts a single Astronomer project created via the Astronomer CLI on `astro dev init`. To start using the template:
+Use this GitHub Action in a repository that hosts a single Astronomer project created via the Astronomer CLI on `astrocloud dev init`. To start using the template:
 
 1. Set the following as [GitHub secrets](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository):
 

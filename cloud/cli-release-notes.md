@@ -1,13 +1,13 @@
 ---
-sidebar_label: 'Astronomer CLI'
-title: 'Astronomer CLI Release Notes'
+sidebar_label: 'Astronomer Cloud CLI'
+title: 'Astronomer Cloud CLI Release Notes'
 id: cli-release-notes
 description: Release notes for the Astronomer Cloud CLI.
 ---
 
 ## Overview
 
-This document provides a summary of all changes made to the [Astronomer CLI](install-cli.md). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes.md).
+This document provides a summary of all changes made to the [Astronomer Cloud CLI](install-cli.md). For general product release notes, go to [Astronomer Cloud Release Notes](release-notes.md).
 
 If you have any questions or a bug to report, don't hesitate to reach out to us via Slack or Intercom. We're here to help.
 

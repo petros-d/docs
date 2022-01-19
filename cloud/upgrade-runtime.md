@@ -25,10 +25,10 @@ Follow this guide to upgrade a Deployment's Airflow environment using the Astron
 To test your upgrade locally:
 
 1. Save the changes to your Dockerfile.
-2. In your project directory, run `astro dev stop` followed by `astro dev start`. This restarts the Docker containers for the Airflow Webserver, Scheduler, and Postgres Metadata DB.
+2. In your project directory, run `astrocloud dev stop` followed by `astrocloud dev start`. This restarts the Docker containers for the Airflow Webserver, Scheduler, and Postgres Metadata DB.
 3. Access your locally-running Airflow environment at `http://localhost:8080`.
 
-To push your upgrade to Astronomer, run `astro deploy` and select the Deployment you want to upgrade. This will bundle your updated directory, re-build your image and push it to your hosted Deployment on Astronomer Cloud.
+To push your upgrade to Astronomer, run `astrocloud deploy` and select the Deployment you want to upgrade. This will bundle your updated directory, re-build your image and push it to your hosted Deployment on Astronomer Cloud.
 
 ## Step 3: Confirm Your Upgrade
 

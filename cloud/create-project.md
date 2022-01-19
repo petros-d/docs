@@ -25,7 +25,7 @@ To create an Astronomer project, you need:
 To create a new Astronomer project folder, open the directory where you installed the CLI and run:
 
 ```sh
-astro dev init
+astrocloud dev init
 ```
 
 This command generates the following files in the directory:
@@ -58,7 +58,7 @@ By default, the Docker image in your Dockerfile is:
 To confirm that you successfully initialized an Astronomer project, run the following command from your project directory:
 
 ```sh
-astro dev start
+astrocloud dev start
 ```
 
 This command builds your project and spins up 3 Docker containers on your machine, each for a different Airflow component:
@@ -69,7 +69,7 @@ This command builds your project and spins up 3 Docker containers on your machin
 
 As your project builds locally, you should see the following output:
 
-<pre><code parentName="pre">{`% astro dev start
+<pre><code parentName="pre">{`% astrocloud dev start
 Env file ".env" found. Loading...
 Sending build context to Docker daemon  10.75kB
 Step 1/1 : FROM quay.io/astronomer/astro-runtime:${siteVariables.runtimeVersion}
