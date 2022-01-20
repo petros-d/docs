@@ -77,6 +77,8 @@ In rare instances, the Astronomer team may make an exception and backport a bug 
 
 ## Enterprise Lifecycle Schedule
 
+<!--- Version-specific -->
+
 The following table contains the exact lifecycle for each published version of Astronomer Enterprise. These timelines are based on the LTS and stable release channel maintenance policies.
 
 | Enterprise Version | Release Date     | End of Maintenance Date |
