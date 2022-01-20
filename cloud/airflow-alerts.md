@@ -53,6 +53,13 @@ To get started with SendGrid:
 
 7. Click **Save** to finalize your configuration.
 
+To begin receiving emails about Airflow alerts from a given DAG, configure the following values in the DAG's `default_args`:
+
+```text
+'email_on_failure': True,
+'email': ['<recipient-address>'],
+```
+
 ### Integrate with Amazon SES
 
 This setup requires an AWS account and use of the [AWS Management Console](https://aws.amazon.com/console/).
@@ -77,3 +84,10 @@ This setup requires an AWS account and use of the [AWS Management Console](https
    - **Port**: `587`
 
 6. Click **Save** to finalize your configuration.
+
+To begin receiving emails about Airflow alerts from a given DAG, configure the following values in the DAG's `default_args`:
+
+```text
+'email_on_failure': True,
+'email': ['<recipient-address>'],
+```
