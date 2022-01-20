@@ -99,7 +99,7 @@ Starting in version 2.0.0, the Astronomer Certified image includes provider pack
 
 ## System Dependencies
 
-The Astronomer Certified Docker image includes a number of OS-level dependencies for running basic system processes. These dependencies can be installed in the Python Wheel as described in [Install Dependencies].
+The Astronomer Certified Docker image includes a number of OS-level dependencies for running basic system processes. These dependencies can be installed in the Python Wheel as described in [Install Packages](install-packages.md).
 
 - [apt-utils](https://packages.debian.org/buster/apt-utils)
 - [build-essential](https://packages.debian.org/buster/build-essential)
