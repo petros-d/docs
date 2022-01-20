@@ -322,7 +322,7 @@ astronomer:
     ```bash
       kubectl run -it \
       --image google/cloud-sdk:slim \
-      --serviceaccount <worker-serviceaccount> \
+      --serviceaccount <airflow-worker> \
       --namespace <your-airflow-namespace> \
       workload-identity-test
     ```

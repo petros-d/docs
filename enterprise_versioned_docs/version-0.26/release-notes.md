@@ -53,6 +53,7 @@ The flag prints out different levels of logs depending on the value that you pas
 - In the `astronomer.houston.config` section of your `config.yaml` file, you can now configure a list of `allowedSystemLevelDomains []`. If you configure this list, only users with emails from domains specified in the list (for example, `<company>.com`) can be granted System Admin privileges.
 - Greatly improved load times for the **System Admin** page in the UI.
 - You can now specify a node port for 3rd party ingress controllers with a service type of `nodePort`.
+- The naming format of service account pods has been changed from `<release-name>-dags-prod-worker-serviceaccount` to `release_name-dags-prod-airflow-worker`.
 
 ### Bug Fixes
 
