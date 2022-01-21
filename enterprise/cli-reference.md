@@ -559,7 +559,7 @@ Shows logs for the Scheduler or Webserver in your local Airflow environment.
 
 ### Usage
 
-Run `astro dev logs [flags]` to start tracking logs for your Scheduler or Webserver in your CLI terminal window.
+Run `astro dev logs [flags]` to start tracking logs for your Scheduler, Webserver, or Triggerer in your CLI terminal window.
 
 ### Flags
 
@@ -568,6 +568,7 @@ Run `astro dev logs [flags]` to start tracking logs for your Scheduler or Webser
 | `--follow`    | None       | Continues to show the latest outputs from the log. |
 | `--scheduler` | None       | Outputs only Scheduler logs.                       |
 | `--webserver` | None       | Outputs only Webserver logs.                       |
+| `--triggerer` | None       | Outputs only Triggerer logs.                       |
 
 ## astro dev ps
 

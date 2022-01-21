@@ -21,6 +21,13 @@ If you're an Astronomer Enterprise user, you might use the Astronomer CLI to do 
 
 This guide provides steps for installing the CLI, initializing an Astronomer project, and deploying to an Airflow instance on your local machine. For more information on specific CLI workflows and features, read the [Astronomer CLI Reference Guide](cli-reference.md).
 
+## Prerequisites
+
+The Astronomer CLI requires:
+
+- [Docker](https://www.docker.com/) (v18.09 or higher).
+- [Docker Engine](https://docs.docker.com/engine/) (v0.13.1 or higher).
+
 ## Step 1: Install the Astronomer CLI
 
 There are two ways to install any version of the Astronomer CLI:
@@ -29,10 +36,6 @@ There are two ways to install any version of the Astronomer CLI:
 - cURL
 
 > **Note:** Both methods only work for Unix (Linux+Mac) based systems. If you're running on Windows 10, follow [this guide](cli-install-windows-10.md) to get set up with Docker for WSL.
-
-### Prerequisites
-
-The Astronomer CLI installation process requires [Docker](https://www.docker.com/) (v18.09 or higher).
 
 ### Install with Homebrew
 
@@ -74,25 +77,6 @@ If you're running macOS Catalina and beyond, do the following:
 ```
 curl -sSL https://install.astronomer.io | sudo bash -s < /dev/null
 ```
-
-#### Install the CLI on Apple M1 Machines
-
-To install the Astronomer CLI on a machine with an [Apple M1 chip](https://www.apple.com/newsroom/2020/11/apple-unleashes-m1/), you must use Homebrew. Because the Astronomer CLI does not yet have an ARM64 build, installing it via Homebrew on a machine with an Apple M1 chip requires a few additional steps:
-
-1. Run the following command to install the x86_64 version of Homebrew:
-
-    ```sh
-    arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    ```
-
-2. Confirm that the script successfully installed Homebrew on `/usr/local`.
-3. Run the following command to install the Astronomer CLI:
-
-    ```sh
-    arch -x86_64 /usr/local/Homebrew/bin/brew install astronomer/tap/astro
-    ```
-
-If you still have issues during installation, ensure that [Rosetta 2](https://support.apple.com/en-us/HT211861) is installed on your machine and try again.
 
 ## Step 2: Confirm the Install
 
