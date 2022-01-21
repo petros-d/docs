@@ -44,7 +44,7 @@ To get started with SendGrid:
 
 6. Open the Airflow UI for your Deployment and [create a connection](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html#creating-a-connection-with-the-ui) with the following values:
 
-    - **Connection ID**: `sendgrid_default`
+    - **Connection ID**: `smtp_default`
     - **Connection Type:**: `Email`
     - **Host**: `smtp.sendgrid.net`
     - **Login**: `apikey`
@@ -76,8 +76,8 @@ This setup requires an AWS account and use of the [AWS Management Console](https
 
 5. Open the Airflow UI for your Deployment and [create a connection](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html#creating-a-connection-with-the-ui) with the following values:
 
-   - **Connection ID**: `aws_default`
-   - **Connection Type:**: `Amazon Web Services`
+   - **Connection ID**: `smtp_default`
+   - **Connection Type:**: `Email`
    - **Host**: `<your-smtp-host>`
    - **Login**: `<your-aws-username>`
    - **Password**: `<your-aws-password>`
