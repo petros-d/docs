@@ -13,7 +13,7 @@ Astronomer Teams function similarly to users. Just like with an individual user,
 
 - Assign Teams to both Workspaces and Deployments.
 - Assign Viewer, Editor, or Admin roles to a Team.
-- View information about users and permissions form the Astronomer UI.
+- View information about users and permissions from the Astronomer UI.
 
 This guide provides setup steps for importing IDP groups as Teams on Astronomer. Before completing this setup, keep in mind the following about Teams:
 
