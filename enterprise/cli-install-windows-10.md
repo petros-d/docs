@@ -29,7 +29,7 @@ Find the full WSL installation guide here: [Install WSL](https://docs.microsoft.
 
 Follow the [Docker for Windows Install Guide](https://docs.docker.com/docker-for-windows/install/).
 
-Open a new WSL session, using the distro shell or Windows Terminal. You can now run `docker run hello-world` through your WSL instance to ensure everything works as expected.
+Once you finish this installation, open a new WSL session, using the distro shell or Windows Terminal. You can now run `docker run hello-world` through your WSL instance to ensure everything works as expected.
 
 **Last thing**: Whenever you run Docker-compose up, you'll want to make sure you navigate to the `/c/Users/name/dev/myapplication` first, otherwise your volume won't work. In other words, never access `/mnt/c` directly.
 
@@ -48,7 +48,7 @@ Make sure you have the following installed:
 - Windows 10
 - [Docker](https://docs.docker.com/docker-for-windows/install/)
 
-### Step 2. Enable Hyper-V or WSL-2 Based Docker Engine (legacy)
+### Step 2. Enable WSL-2 Based Docker Engine or Hyper-V (legacy)
 
 Make sure that the WSL 2 based engine is enabled in Docker Settings (preferred). If this is not possible, enable Hyper-V (legacy). This is required to run Docker and Linux Containers.
 
