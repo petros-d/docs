@@ -13,10 +13,6 @@ module.exports = {
   projectName: 'docs', // Usually your repo name.
   themeConfig: {
     image: 'img/meta.png',
-    gtag: {
-          trackingID: 'G-W97HK48NPT',
-          anonymizeIP: true,
-        },
     algolia: {
       apiKey: '99354995bfad26ed950bdb701bc56b6b',
       indexName: 'published-docs',
@@ -183,6 +179,10 @@ module.exports = {
           admonitions: {
           },
         },
+        gtag: {
+          trackingID: 'G-W97HK48NPT',
+          anonymizeIP: true,
+          },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
