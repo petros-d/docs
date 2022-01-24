@@ -9,7 +9,7 @@ description: A reference of all adjacent tooling required to run Astronomer Ente
 
 The Astronomer Platform ships with and requires a number of adjacent technologies that support it, including Kubernetes, Helm and Apache Airflow itself. For users looking to install or upgrade Astronomer, we've provided a reference of all required tooling with corresponding versions that are compatible with each version of Astronomer Enterprise. For those running Astronomer Certified (our distribution of Apache Airflow) _without_ our platform, we've included a reference table below as well.
 
-In general, Astronomer Enterprise will support a version of Kubernetes (upstream and cloud-managed variants) through its End of Life. When it reaches End of Life, support for a given version of Kubernetes will be removed in the next major or minor release of Astronomer Enterprise.
+In general, Astronomer Enterprise will support a given version of Kubernetes (upstream and cloud-managed variants) through its End of Life. When that version of Kubernetes reaches its End of Life, support will be removed in the next major or minor release of Astronomer Enterprise.
 
 It's worth noting that while the tables below reference the minimum compatible versions, we typically recommend running the _latest_ of all tooling if possible.
 
