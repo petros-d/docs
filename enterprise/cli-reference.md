@@ -592,11 +592,12 @@ Runs a single [Airflow CLI command](https://airflow.apache.org/docs/apache-airfl
 
 ## astro dev start
 
-Initializes a local Airflow environment on your machine by creating a Docker container for each of Airflow's 3 core components:
+Initializes a local Airflow environment on your machine by creating a Docker container for each of Airflow's core components:
 
 - Postgres
 - Scheduler
 - Webserver
+- Triggerer (only when using deferrable operators)
 
 ### Usage
 

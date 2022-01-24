@@ -74,7 +74,6 @@ module.exports = {
       label: 'Manage Astronomer',
       items: [
       'integrate-auth-system',
-      'import-idp-groups',
       'workspace-permissions',
       'manage-platform-users',
       'houston-api',
