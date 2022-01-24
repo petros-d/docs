@@ -440,7 +440,13 @@ jobs:
 
 ## Azure DevOps
 
-In this example configuration, you automatically deploy deploy your Astronomer project from a GitHub repository using an [Azure Devops](https://azure.microsoft.com/en-us/services/devops/) pipeline connected to the GitHub repository.
+In this example configuration, you can automatically deploy your Astronomer project from a GitHub repository using an [Azure Devops](https://azure.microsoft.com/en-us/services/devops/) pipeline connected to the GitHub repository.
+
+:::tip
+
+To see an example GitHub project that utilizes this configuration, visit [Astronomer's GitHub](https://github.com/astronomer/cs-tutorial-azuredevops)
+
+:::
 
 To set up this workflow, make sure you have:
 
