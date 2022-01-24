@@ -5,9 +5,9 @@ id: secrets-backend
 description: Configure a secret backend tool on Astronomer Cloud to store Airflow connections and variables.
 ---
 
-Airflow [connections](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html#) and [variables](https://airflow.apache.org/docs/apache-airflow/stable/howto/variable.html) often contain sensitive information about your external systems, such as API keys and system logins, that should be kept [secret](https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/secrets/index.html) according to your organization's security practices. To better integrate Airflow with your existing secrets management practices, you can manage and sync Airflow connections and variables as secrets from your organization's existing secrets backend tool.
+Airflow [connections](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html#) and [variables](https://airflow.apache.org/docs/apache-airflow/stable/howto/variable.html) often contain sensitive information about your external systems, such as API keys, that should be kept [secret](https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/secrets/index.html) in a secure, centralized location according to your organization's security requirements.
 
-This guide provides setup steps for configuring the following tools as secrets backends on Astronomer:
+To meet these requirements, Astronomer Cloud supports integration with a variety of secret backend tools. This guide provides setup steps for configuring the following tools as secrets backends on Astronomer:
 
 - Hashicorp Vault
 - AWS SSM Parameter Store
@@ -15,21 +15,27 @@ This guide provides setup steps for configuring the following tools as secrets b
 - Azure Key Vault
 
 :::info
-If you enable a secrets backend on Astronomer, you can continue to define Airflow connections and variables either as environment variables or in the Airflow UI as needed. If set via the Airflow UI, connections and secrets are stored as encrypted values in Airflow's metadata database.
+If you enable a secrets backend on Astronomer, you can continue to define Airflow connections and variables either as environment variables or in the Airflow UI as needed. If set via the Airflow UI, connections and variables are stored as encrypted values in Airflow's metadata database.
 
-When Airflow checks for the value of an Airflow Connection or Variable, it does so in the following order of precedence:
+When Airflow checks for the value of an Airflow connection or variable, it does so in the following order of precedence:
 
-1. Secrets Backend
-2. Environment Variable
-3. Set via the Airflow UI, stored in Airflow Metadata Database
+1. Secrets backend
+2. Environment variable
+3. Set via the Airflow UI
+:::
+
+:::info
+
+Setting Airflow connections via secrets requires knowledge of how to generate Airflow connection URIs. If you plan to store Airflow connections on your secrets backend, read the [Apache Airflow documentation](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html#connection-uri-format) for guidance on how to generate a connection URI.
+
 :::
 
 ## Hashicorp Vault
 
-This topic provides steps for how to use [Vault](https://www.vaultproject.io/) as a secrets backend for both local development and on Astronomer Cloud. To do this, you'll:
+This topic provides steps for how to use [Vault](https://www.vaultproject.io/) as a secrets backend for both local development and on Astronomer Cloud. To do this, you will:
 
-1. Write a test Airflow connection as a secret to your Vault.
-2. Configure Airflow to pull the Airflow connection from your Vault instance.
+1. Write a test Airflow connection as a secret to your Vault instance.
+2. Configure Airflow to pull the Airflow connection from Vault.
 3. Test the connection in a local environment.
 4. Deploy your changes to Astronomer Cloud.
 
@@ -39,7 +45,7 @@ To use this feature, you need:
 
 - A [Deployment](configure-deployment.md) on Astronomer.
 - [The Astronomer CLI](install-cli.md).
-- A Hashicorp Vault server.
+- A [Hashicorp Vault server](https://learn.hashicorp.com/tutorials/vault/getting-started-dev-server?in=vault/getting-started).
 - An [Astronomer project](create-project.md).
 - [The Vault CLI](https://www.vaultproject.io/docs/install).
 - Your Vault server's [Root Token](https://www.vaultproject.io/docs/concepts/tokens#root-tokens).
@@ -50,31 +56,27 @@ If you do not already have a Vault server deployed but would like to test this f
 - Deploying a light-weight server using [this Heroku Element](https://elements.heroku.com/buttons/pallavkothari/vault)
 - Deploying a local server via the instructions in [our Airflow and Vault guide](https://www.astronomer.io/guides/airflow-and-hashicorp-vault)
 
-### Step 1: Write a Secret to Vault
+### Step 1: Write an Airflow Connection or Variable to Vault
 
-To test your Vault connection, create an Airflow connection or variable to store as a secret on Vault.
+To test that your Vault instance is set up properly, create a test Airflow connection or variable to store as a secret.
 
-To store a connection in Vault, run the following Vault CLI command:
+To store a connection in Vault as a secret, run the following Vault CLI command:
 
 ```sh
 vault kv put secret/connections/<your-connection> conn_uri=<connection-type>://<connection-login>:<connection-password>@<connection-host>:5432
 ```
 
-To store a secret in Vault, run the following Vault CLI command:
+To store an Airflow variable in Vault as a secret, run the following Vault CLI command:
 
 ```sh
 vault kv put secret/variables/<your-variable-key> value=<your-variable-value>
 ```
 
-To confirm that the secret was written successfully, you can run the following command:
+To confirm that your secret was written to Vault successfully, run:
 
 ```sh
 vault kv get secret/connections/<your-connection>
 ```
-
-:::tip
-If you've written other secrets to your Vault server's `/connections` path, you should be able to test those here as well just by changing the `my_conn_id` value in the DAG code above.
-:::
 
 ### Step 2: Set Up Vault in a Local Airflow Environment
 
