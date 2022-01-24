@@ -77,7 +77,7 @@ curl -sSL https://install.astronomer.io | sudo bash -s < /dev/null
 
 #### Install the CLI on Apple M1 Machines
 
-To install the Astronomer CLI on a machine with an [Apple M1 chip](https://www.apple.com/newsroom/2020/11/apple-unleashes-m1/), you can use either cURL or Homebrew. To install using cURL, run the following command:
+To install the Astronomer CLI on a machine with an [Apple M1 chip](https://www.apple.com/newsroom/2020/11/apple-unleashes-m1/), you must use Homebrew. Because the Astronomer CLI does not yet have an ARM64 build, installing it via Homebrew on a machine with an Apple M1 chip requires a few additional steps:
 
 ```sh
 sudo curl -sSL https://install.astronomer.io | sudo bash -s

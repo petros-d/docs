@@ -6,9 +6,9 @@ id: release-notes
 
 ## Overview
 
-Astronomer v0.23 is the latest available minor version in our long-term support (LTS) release model for Astronomer Enterprise.
+This document includes all release notes for Astronomer Enterprise v0.23.
 
-If you're looking to upgrade to Astronomer v0.23 from Astronomer v0.16, refer to [Upgrade to Astronomer v0.23](upgrade-to-0-23.md). For instructions on how to upgrade to a patch version within the Astronomer v0.23 series, refer to [Upgrade to a Patch Version of Astronomer Enterprise](upgrade-astronomer-stable.md).
+If you're looking to upgrade to Astronomer v0.23 from Astronomer v0.16, refer to [Upgrade to Astronomer v0.23](upgrade-to-0-23.md). For instructions on how to upgrade to a patch version within the Astronomer v0.23 series, refer to [Upgrade to a Patch Version of Astronomer Enterprise](upgrade-astronomer-patch.md).
 
 We're committed to testing all Astronomer Enterprise versions for scale, reliability and security on Amazon EKS, Google GKE and Azure AKS. If you have any questions or an issue to report, don't hesitate to [reach out to us](https://support.astronomer.io).
 
@@ -225,7 +225,7 @@ If you're calling either of those mutations in your current workflow, Astronomer
 
 As we strive to polish and standardize the schema more generally, our API will undergo rapid and potentially breaking changes over the next few releases. The Astronomer CLI and UI will continue to stay in sync with API changes and is our recommended way to interact with the platform.
 
-If calling our API programmatically is critical to your use case, reference our [Houston API Documentation](houston-api.md) for details and stay in close touch with our team.
+If calling our API programmatically is critical to your use case, reference the [Houston API Documentation](houston-api.md) for details and stay in close touch with our team.
 
 ### Support for v0.23 of the Astronomer CLI
 

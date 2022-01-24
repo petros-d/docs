@@ -7,11 +7,21 @@ description: Astronomer Enterprise release notes.
 
 ## Overview
 
+<!--- Version-specific -->
+
 This document includes all release notes for Astronomer Enterprise v0.27.
 
 Astronomer v0.27 is the latest Stable version of Astronomer Enterprise, while v0.25 remains the latest long-term support (LTS) version. To upgrade to Astronomer v0.27 from v0.26, read [Upgrade to a Stable Version](upgrade-astronomer-stable.md). For more information about Enterprise release channels, read [Release and Lifecycle Policies](release-lifecycle-policy.md).
 
 We're committed to testing all Astronomer Enterprise versions for scale, reliability and security on Amazon EKS, Google GKE and Azure AKS. If you have any questions or an issue to report, don't hesitate to [reach out to us](https://support.astronomer.io).
+
+## 0.27.1
+
+Release date: January 10, 2022
+
+### Bug Fixes
+
+- Fixed an issue where users could not create Deployments via an IAM role
 
 ## 0.27.0
 
@@ -31,16 +41,17 @@ Custom ElasticSearch logging tools are now supported via new values in your `con
 
 ```yaml
 # External ES logging
- customLogging:
-   enabled: false
-   scheme: https
-   host: ""
-   port: ""
-   secret: ""
-   #secretName: ~
-   #awsSecretName: ~
-   #awsIAMRole: ~
-   #awsServiceAccountAnnotation: ~
+global:
+  customLogging:
+    enabled: true
+    scheme: https
+    host: ""
+    port: ""
+    secret: ""
+    #secretName: ~
+    #awsSecretName: ~
+    #awsIAMRole: ~
+    #awsServiceAccountAnnotation: ~
 ```
 
 ### CLI Support for Podman

@@ -277,7 +277,7 @@ geocentric-instrument-2346-pgbouncer-stats                        Opaque        
 geocentric-instrument-2346-redis-password                         Opaque                                1      93d
 geocentric-instrument-2346-registry                               kubernetes.io/dockerconfigjson        1      93d
 geocentric-instrument-2346-scheduler-serviceaccount-token-w29bn   kubernetes.io/service-account-token   3      93d
-geocentric-instrument-2346-worker-serviceaccount-token-gqr4w      kubernetes.io/service-account-token   3      93d
+geocentric-instrument-2346-airflow-worker-token-gqr4w      kubernetes.io/service-account-token   3      93d
 ```
 
 The secret we're looking for lives in that "airflow-metadata" pod (for Airflow's Metadata database).

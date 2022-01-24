@@ -7,9 +7,11 @@ description: Update your Astronomer Enterprise Platform to a new stable or patch
 
 ## Overview
 
-Stable releases of Astronomer Enterprise are available to Enterprise customers on a monthly basis as part of the release model described in [Release and Lifecycle Policy](release-lifecycle-policy.md). Patch release of Astronomer Enterprise follow up on stable releases with additional bug and security fixes.
+For Astronomer Enterprise customers, new product features are regularly made available in stable and long-term support (LTS) releases as described in [Release and Lifecycle Policy](release-lifecycle-policy.md). Patch versions of Astronomer Enterprise with additional bug and security fixes are also released on a regular basis.
 
-Stable and patch releases require a simple upgrade process. Follow this guide to upgrade to any stable or patch version before the next available LTS release. For information on all stable and patch releases, refer to [Enterprise Release Notes](release-notes.md).
+All stable and patch releases of Astronomer Enterprise require a simple upgrade process. When an [LTS version](release-lifecycle-policy.md#release-channels) is released, additional upgrade guidance specific to that version will be made available.
+
+Follow this guide to upgrade to any stable or patch version of Astronomer Enterprise. For information on new features and changes, refer to [Enterprise Release Notes](release-notes.md).
 
 A few notes before you get started:
 - The patch upgrade process will not affect running Airflow tasks as long as `upgradeDeployments.enabled=false` is set in the script below.

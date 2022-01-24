@@ -82,7 +82,7 @@ In terms of resource allocation, we recommend starting with **10AU** in `Extra C
 ```
 ERROR - Exception when attempting to create Namespace Pod.
 Reason: Forbidden
-"Failure","message":"pods is forbidden: User \"system:serviceaccount:astronomer-cloud-solar-orbit-4143:solar-orbit-4143-worker-serviceaccount\" cannot create pods in the namespace \"datarouter\"","reason":"Forbidden","details":{"kind":"pods"},"code":403}
+"Failure","message":"pods is forbidden: User \"system:serviceaccount:astronomer-cloud-solar-orbit-4143:solar-orbit-4143-airflow-worker" cannot create pods in the namespace \"datarouter\"","reason":"Forbidden","details":{"kind":"pods"},"code":403}
 ```
 
 On Astronomer Enterprise, the largest node a single pod can occupy is dependent on the size of your underlying node pool.

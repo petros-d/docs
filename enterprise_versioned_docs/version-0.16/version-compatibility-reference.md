@@ -7,7 +7,7 @@ description: A reference of all adjacent tooling required to run Astronomer Ente
 
 ## Overview
 
-The Astronomer Platform ships with and requires a number of adjacent technologies that support it, including Kubernetes, Helm and Apache Airflow itself. For users looking to install or upgrade Astronomer, we've provided a reference of all required tooling with corresponding versions that are compatible with each long-term support (LTS) version of Astronomer Enterprise. For those running Astronomer Certified (our distribution of Apache Airflow) _without_ our platform, we've included a reference table below as well.
+The Astronomer Platform ships with and requires a number of adjacent technologies that support it, including Kubernetes, Helm and Apache Airflow itself. For users looking to install or upgrade Astronomer, we've provided a reference of all required tooling with corresponding versions that are compatible with each version of Astronomer Enterprise. For those running Astronomer Certified (our distribution of Apache Airflow) _without_ our platform, we've included a reference table below as well.
 
 It's worth noting that while the tables below reference the minimum compatible versions, we typically recommend running the _latest_ of all tooling if possible.
 
@@ -19,6 +19,8 @@ It's worth noting that while the tables below reference the minimum compatible v
 | v0.23               | 1.16, 1.17, 1.18             | 3    | 0.13.5       | 9.6+     | 3.6, 3.7, 3.8 | 0.23.x         |
 | v0.25               | 1.17, 1.18, 1.19, 1.20, 1.21 | 3.6  | 0.13.5       | 9.6+     | 3.6, 3.7, 3.8, 3.9 (_requires AC 2.2.0+_)  | 0.25.x         |
 | v0.26               | 1.17, 1.18, 1.19, 1.20, 1.21 | 3.6  | 0.13.5       | 9.6+     | 3.6, 3.7, 3.8, 3.9 (_requires AC 2.2.0+_) | 0.26.x         |
+
+For more detail on changes between Enterprise versions, refer to [Astronomer Enterprise Release Notes](release-notes.md).
 
 > **Note:** On Astronomer v0.23+, new versions of Apache Airflow on Astronomer Certified are automatically made available in the Astronomer UI and CLI within 24 hours of their publication. For more information, refer to [Available Astronomer Certified Versions](manage-airflow-versions.md#available-astronomer-certified-versions).
 
@@ -52,13 +54,7 @@ For more detail on each version of Astronomer Certified and instructions on how 
 
 > **Note:** MySQL 5.7 is compatible with Airflow and Astronomer Certified 2.0 but it does NOT support the ability to run more than 1 Scheduler and is not recommended. If you'd like to leverage Airflow's new Highly-Available Scheduler, make sure you're running MySQL 8.0+.
 
-## Additional Resources
-
-The table above lists long-term support (LTS) versions of Astronomer and does not specify _patch_ versions that our engineering team releases on a regular basis. For more detail on changes between patches, refer to [Astronomer Enterprise Release Notes](release-notes.md).
-
-> **Note:** If you're running on a legacy version of Astronomer (pre-v0.16), reach out to [Astronomer Support](https://support.astronomer.io) to schedule an upgrade with our team.
-
-### Kubernetes Upgrade Guides
+## Kubernetes Upgrade Guides
 
 If you're looking to upgrade Kubernetes versions, make sure to follow the guidelines offered by your managed offering provider.
 

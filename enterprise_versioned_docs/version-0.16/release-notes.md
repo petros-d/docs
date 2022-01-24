@@ -7,9 +7,9 @@ description: Astronomer Enterprise release notes.
 
 ## Notice on Astronomer Enterprise Releases
 
-As of Astronomer v0.16, Astronomer releases will be made generally available to Enterprise customers on a quarterly basis as part of a long-term support (LTS) release model. Critical security and bug fixes will be regularly shipped as patch versions that follow LTS releases. Patch releases will be made available between quarterly LTS releases and require a simple upgrade process. For more information, read [Release and Lifecycle Policy](release-lifecycle-policy.md)
+This document includes all release notes for Astronomer Enterprise v0.16.
 
-For instructions on how to upgrade to the latest v0.16 patch version of Astronomer, read [Upgrade to a Stable Version of Astronomer](upgrade-astronomer-stable). If you're interested in upgrading from Astronomer v0.16.x to the latest minor version of the platform, read [Upgrade to Astronomer Enterprise v0.23](upgrade-to-0-23.md).
+For instructions on how to upgrade to the latest v0.16 patch version of Astronomer, read [Upgrade to a Stable Version of Astronomer](upgrade-astronomer-stable.md). If you're interested in upgrading from Astronomer v0.16.x to the latest LTS version of the platform, read [Upgrade to Astronomer Enterprise v0.23](upgrade-to-0-23.md).
 
 We're committed to testing all quarterly Astronomer Enterprise versions for scale, reliability and security on EKS, GKE and AKS. If you have any questions or an issue to report, don't hesitate to [reach out to us]((https://support.astronomer.io).
 
@@ -239,7 +239,7 @@ Historically, upgrades to Astronomer (major, minor or patch) that have included 
 
 This change allows for Airflow Deployments to remain unaffected through the upgrade and for Airflow Chart changes to take effect _only_ when another restart event is triggered by a user (e.g. a code push, Environment Variable change, resource or executor adjustment, etc).
 
-More specifically, this changes the behavior of our API's `updateDeployment` mutation to perform the Airflow Helm Chart version upgrade only if/when a Houston config is updated. [Source Code here](https://github.com/astronomer/docs/blob/9cd8da9a4382bc89d7b8c07f5585ad1daa64a250/enterprise/v0.16/reference/update-deployment-index.js#L86).
+More specifically, this changes the behavior of our API's `updateDeployment` mutation to perform the Airflow Helm Chart version upgrade only if/when a Houston config is updated.
 
 #### Bug Fixes and Improvements
 

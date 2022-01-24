@@ -43,6 +43,7 @@ module.exports = {
         'api-keys',
         'ci-cd',
         'deployment-metrics',
+        'scheduler-logs',
         'environment-variables',
         'secrets-backend',
       ],
