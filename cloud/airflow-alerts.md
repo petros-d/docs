@@ -42,25 +42,23 @@ To get started with SendGrid:
 
 5. Verify your integration in SendGrid to confirm that the key was activated. If you get an error indicating that SendGrid can't find the test email, try rerunning the cURL code in your terminal before retrying the verification.
 
-6. In the Astronomer UI, open your Deployment and [set the following environment variables](environment-variables.md):
+6. Open the Airflow UI for your Deployment and [create a connection](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html#creating-a-connection-with-the-ui) with the following values:
 
-   ```
-   AIRFLOW__SMTP__SMTP_HOST=smtp.sendgrid.net
-   AIRFLOW__SMTP__SMTP_STARTTLS=True
-   AIRFLOW__SMTP__SMTP_SSL=False
-   AIRFLOW__SMTP__SMTP_USER=apikey
-   AIRFLOW__SMTP__SMTP_PASSWORD=<your-api-key>   
-   AIRFLOW__SMTP__SMTP_PORT=587
-   AIRFLOW__SMTP__SMTP_MAIL_FROM=<your-sendgrid-email>
-   ```
+    - **Connection ID**: `smtp_default`
+    - **Connection Type:**: `Email`
+    - **Host**: `smtp.sendgrid.net`
+    - **Login**: `apikey`
+    - **Password**: `<your-api-key>`
+    - **Port**: `587`
 
-   :::tip
+7. Click **Save** to finalize your configuration.
 
-   To prevent unauthorized users in your Workspace from seeing sensitive information, we recommend storing your `SMTP_PASSWORD` environment variable using an external secrets service.
+To begin receiving emails about Airflow alerts from a given DAG, configure the following values in the DAG's `default_args`:
 
-   :::
-
-7. Click **Update Variables** to push your configuration to your Deployment.
+```text
+'email_on_failure': True,
+'email': ['<recipient-address>'],
+```
 
 ### Integrate with Amazon SES
 
@@ -76,18 +74,20 @@ This setup requires an AWS account and use of the [AWS Management Console](https
 
 4. Choose an Amazon EC2 region to use, then write down the code of this server for the next step. Refer to [Amazon's list of available regions and servers](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions) to determine which server best fits your needs.
 
-5. In the Astronomer UI, open your Deployment and [set the following environment variables](environment-variables.md):
+5. Open the Airflow UI for your Deployment and [create a connection](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html#creating-a-connection-with-the-ui) with the following values:
 
-   ```
-   AIRFLOW__SMTP__SMTP_HOST=<your-smtp-host>
-   AIRFLOW__SMTP__SMTP_PORT=587
-   AIRFLOW__SMTP__SMTP_STARTTLS=True
-   AIRFLOW__SMTP__SMTP_SSL=False
-   AIRFLOW__SMTP__SMTP_USER=<your-aws-username>
-   AIRFLOW__SMTP__SMTP_PASSWORD=<your-aws-password>
-   AIRFLOW__SMTP__SMTP_MAIL_FROM=<your-email-address>
-   ```
+   - **Connection ID**: `smtp_default`
+   - **Connection Type:**: `Email`
+   - **Host**: `<your-smtp-host>`
+   - **Login**: `<your-aws-username>`
+   - **Password**: `<your-aws-password>`
+   - **Port**: `587`
 
-   >**Note:** To prevent unauthorized users in your Workspace from seeing sensitive information, we recommend storing your `SMTP_PASSWORD` environment variable using an external secrets service.
+6. Click **Save** to finalize your configuration.
 
-6. Click **Update Variables** to push your configuration to your Deployment.
+To begin receiving emails about Airflow alerts from a given DAG, configure the following values in the DAG's `default_args`:
+
+```text
+'email_on_failure': True,
+'email': ['<recipient-address>'],
+```
