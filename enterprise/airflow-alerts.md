@@ -76,7 +76,7 @@ This setup requires an AWS account and use of the [AWS Management Console](https
 
 4. Choose an Amazon EC2 region to use, then write down the code of this server for the next step. Refer to [Amazon's list of available regions and servers](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions) to determine which server best fits your needs.
 
-6. Open the Airflow UI for your Deployment and [create a connection](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html#creating-a-connection-with-the-ui) with the following values:
+5. Open the Airflow UI for your Deployment and [create a connection](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html#creating-a-connection-with-the-ui) with the following values:
 
     - **Connection ID**: `smtp_default`
     - **Connection Type:**: `Email`
@@ -85,7 +85,7 @@ This setup requires an AWS account and use of the [AWS Management Console](https
     - **Password**: `<your-api-key>`
     - **Port**: `587`
 
-7. Click **Save** to finalize your configuration.
+6. Click **Save** to finalize your configuration.
 
 To begin receiving emails about Airflow alerts from a given DAG, configure the following values in the DAG's `default_args`:
 
