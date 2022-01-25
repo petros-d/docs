@@ -29,8 +29,8 @@ The latest version of the Astronomer CLI uses Docker engine `1.13.1` to run Airf
 
 Astronomer CLI v0.27.2 includes several improvements to the local development experience:
 
-- You can now run `astro dev start` with Docker Buildkit enabled.
-- You can now run the Triggerer in a local Airflow environment, meaning that you can test DAGs that include [deferrable operators](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html) before pushing them to a Deployment. Triggerer logs appear alongside Webserver and Scheduler logs when you run `astro dev logs`.
+- You can now run `astro dev start` with Docker Buildkit enabled. This resolves a [common issue](https://forum.astronomer.io/t/buildkit-not-supported-by-daemon-error-command-docker-build-t-airflow-astro-bcb837-airflow-latest-failed-failed-to-execute-cmd-exit-status-1/857) where users with Docker Buildkit enabled experienced an error that prevented them from running this command.
+- You can now run a Triggerer in a local Airflow environment. This means that you can test DAGs that use [deferrable operators](https://airflow.apache.org/docs/apache-airflow/stable/concepts/deferring.html) locally before pushing them to a Deployment on Astronomer. Triggerer logs appear alongside Webserver and Scheduler logs when you run `astro dev logs`. Note that the Triggerer can run only in environments running Astronomer Certified 2.2.0+.
 - The Docker containers for the Scheduler, Webserver, and Triggerer now have standard names that persist after restarting your environment. You can check the names of these containers in your local Airflow environment by running `astro dev ps`:
 
     ```sh
@@ -47,7 +47,7 @@ Astronomer CLI v0.27.2 includes several improvements to the local development ex
 
 ### Additional Improvements
 
-- The Astronomer CLI can now be installed on machines with an [Apple M1 chip](https://www.apple.com/newsroom/2020/11/apple-unleashes-m1/) via both curl and HomeBrew.
+- The Astronomer CLI can now be [installed](cli-quickstart.md) on machines with an [Apple M1 chip](https://www.apple.com/newsroom/2020/11/apple-unleashes-m1/) via both curl and Homebrew.
 
 ### Bug Fixes
 
