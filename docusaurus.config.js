@@ -5,7 +5,7 @@ module.exports = {
   tagline: 'Get Started with the Next Generation of Astronomer Cloud',
   url: 'https://docs.astronomer.io/',
   baseUrl: '/',
-  noIndex: true,
+  noIndex: false,
   onBrokenLinks: 'error',
   onBrokenMarkdownLinks: 'error',
   favicon: 'img/favicon.svg',
