@@ -48,7 +48,7 @@ This section includes all terms related to organizing and managing users and cod
 
 ### Organization
 
-### Cluster
+The organization is the highest level user-based entity on the Astronomer platform. An organization includes all users, clusters, and Workspaces under the same billing account. All Astronomer users must belong to at least one organization.
 
 ### Workspace
 
@@ -59,6 +59,16 @@ This section includes all terms related to organizing and managing users and cod
 ## Development Concepts
 
 This section includes all terms related to writing and deploying code.
+
+### Cluster
+
+A cluster is the highest level structure in the Data Plane. Each cluster:
+
+- Exists in a specific region on your cloud.
+- Contains a set of resources and configurations for running Airflow.
+- Contains and runs Airflow code from Deployments that are hosted on the cluster.
+
+When you create a new Deployment, you must choose a cluster to run the Deployment on.
 
 ### Local Project/ Environment
 
