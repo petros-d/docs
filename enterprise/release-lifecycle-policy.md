@@ -67,6 +67,12 @@ If you contact [Astronomer Support](https://support.astronomer.io) about an issu
 
 Maintenance is discontinued the last day of the month for a given version. For example, if a version of Astronomer Enterprise were supported between January - June of a given year, that version would be maintained by Astronomer until the last day of June.
 
+### Kubernetes Version Support Policy
+
+In general, Astronomer Enterprise will support a given version of Kubernetes through its End of Life. This includes Kubernetes upstream and cloud-managed variants like GKE, AKS, and EKS. When a version of Kubernetes reaches End of Life, support will be removed in the next major or minor release of Astronomer Enterprise.
+
+For more information on Kubernetes policies, refer to Kubernetes Release History or your cloud provider.
+
 ## Backport Policy for Bug and Security Fixes
 
 If a major stability bug is identified by our team, a fix will be backported to all LTS versions and only the latest stable version. For users on a stable version that is not latest, our team will recommend that you upgrade. Major issues in this category may result in significant delays in task scheduling as well as potential data loss.
@@ -85,6 +91,8 @@ The following table contains the exact lifecycle for each published version of A
 | ------------------ | ---------------- | ----------------------- |
 | 0.16 (LTS)         | June 29, 2020    | June 2021               |
 | 0.23 (LTS)         | January 20, 2021 | January 2022            |
-| 0.25 (LTS)         | May 11, 2021     | May 2022                |
+| 0.25 (LTS)         | May 11, 2021     | December 2022*          |
 | 0.26               | Nov 23, 2021     | May 2022                |
 | 0.27               | Dec 21, 2021     | June 2022               |
+
+> *Given the wide usage of Enterprise 0.25, Astronomer has extended the maintenance period for this version through December 2022.

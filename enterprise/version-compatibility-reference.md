@@ -7,9 +7,9 @@ description: A reference of all adjacent tooling required to run Astronomer Ente
 
 ## Overview
 
-The Astronomer Platform ships with and requires a number of adjacent technologies that support it, including Kubernetes, Helm and Apache Airflow itself. For users looking to install or upgrade Astronomer, we've provided a reference of all required tooling with corresponding versions that are compatible with each version of Astronomer Enterprise. For those running Astronomer Certified (our distribution of Apache Airflow) _without_ our platform, we've included a reference table below as well.
+Astronomer Enterprise ships with and requires a number of adjacent technologies that support it, including Kubernetes, Helm, and Apache Airflow itself. This guide provides a reference of all required tools and versions for running Astronomer Enterprise. This guide also includes a version compatibility reference table for running [Astronomer Certified](image-architecture.md) outside of the context of the Astronomer platform.
 
-In general, Astronomer Enterprise will support a given version of Kubernetes (upstream and cloud-managed variants) through its End of Life. When that version of Kubernetes reaches its End of Life, support will be removed in the next major or minor release of Astronomer Enterprise.
+It's worth noting that while the tables below reference the minimum compatible versions, we typically recommend running the _latest_ of all tooling if possible.
 
 It's worth noting that while the tables below reference the minimum compatible versions, we typically recommend running the _latest_ of all tooling if possible.
 
@@ -27,7 +27,7 @@ It's worth noting that while the tables below reference the minimum compatible v
 
 For more detail on changes between Enterprise versions, refer to [Astronomer Enterprise Release Notes](release-notes.md).
 
-> **Note:** On Astronomer v0.23+, new versions of Apache Airflow on Astronomer Certified are automatically made available in the Astronomer UI and CLI within 24 hours of their publication. For more information, refer to [Available Astronomer Certified Versions](manage-airflow-versions.md#available-astronomer-certified-versions).
+> **Note:** On Astronomer v0.23+, new versions of Apache Airflow on Astronomer Certified are automatically made available in the Astronomer UI and CLI within 24 hours of their publication. For more information, refer to [Available Astronomer Certified Versions](ac-support-policy.md#astronomer-certified-lifecycle-schedule).
 
 > **Note:** Due to the [deprecation of Dockershim](https://kubernetes.io/blog/2020/12/02/dockershim-faq/), Azure does not support private CAs starting with Kubernetes 1.19. If you use a private CA, contact [Astronomer Support](https://support.astronomer.io) before upgrading to Kubernetes 1.19 on AKS.
 
