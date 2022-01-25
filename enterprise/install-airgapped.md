@@ -221,7 +221,7 @@ stan:
       tag: 0.22.0-2
 ```
 
-## Step 4: Fetch Airflow Helm charts
+## Step 4: Fetch Airflow Helm Charts
 
 There are two Helm charts required for Astronomer:
 
@@ -258,7 +258,7 @@ If you configure both options in your `config.yaml` file, then `astronomer.comma
 
 :::
 
-## Step 5: Fetch Airflow updates
+## Step 5: Fetch Airflow Updates
 
 By default, Astronomer checks for Airflow updates once a day at midnight by querying `https://updates.astronomer.io/astronomer-certified`, which returns a JSON file with version details. However, this URL is not accessible in an airgapped environment. There are several options for making these updates accessible in an airgapped environment:
 
@@ -274,91 +274,103 @@ This setup assumes that the updates JSON will be manually downloaded and added t
 
 The following topic provides an example implementation of hosting the Airflow updates JSON in your airgapped environment and accessing it via an Nginx endpoint. Depending on your organization's platform and use cases, your own installation might vary from this setup.
 
-To add an Nginx endpoint containing the update information, you can host the update JSON in a Kubernetes configmap:
+To complete this setup:
 
-```bash
-curl -L https://updates.astronomer.io/astronomer-certified --output astronomer-certified.json
-kubectl create configmap astronomer-certified --from-file=astronomer-certified.json=./astronomer-certified.json -n astronomer
-```
+1. Host an updates JSON in a Kubernetes configmap by running the following commands:
 
-Next, add an Nginx deployment and service to a new file named `astronomer-certified-nginx.yaml`:
+    ```bash
+    $ curl -L https://updates.astronomer.io/astronomer-certified --output astronomer-certified.json
+    $ kubectl create configmap astronomer-certified --from-file=astronomer-certified.json=./astronomer-certified.json -n astronomer
+    ```
 
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: astronomer-certified
-  namespace: astronomer
-spec:
-  strategy:
-    type: Recreate
-  selector:
-    matchLabels:
-      app: astronomer-certified
-  template:
+2. Add an Nginx deployment and service to a new file named `astronomer-certified-nginx.yaml`:
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
     metadata:
-      labels:
-        app: astronomer-certified
+      name: astronomer-certified
+      namespace: astronomer
     spec:
-      containers:
-      - name: astronomer-certified
-        image: 012345678910.dkr.ecr.us-east-1.amazonaws.com/nginx:stable # Replace with own image
-        resources:
-          requests:
-            memory: "32Mi"
-            cpu: "100m"
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-        ports:
-        - containerPort: 80
-        volumeMounts:
-        - name: astronomer-certified
-          mountPath: /usr/share/nginx/html
-      volumes:
-      - name: astronomer-certified
-        configMap:
-          name: astronomer-certified
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: astronomer-certified
-  namespace: astronomer
-spec:
-  type: ClusterIP
-  selector:
-    app: astronomer-certified
-  ports:
-  - port: 80
-    targetPort: 80
-```
+      strategy:
+        type: Recreate
+      selector:
+        matchLabels:
+          app: astronomer-certified
+      template:
+        metadata:
+          labels:
+            app: astronomer-certified
+        spec:
+          containers:
+          - name: astronomer-certified
+            image: 012345678910.dkr.ecr.us-east-1.amazonaws.com/nginx:stable # Replace with own image
+            resources:
+              requests:
+                memory: "32Mi"
+                cpu: "100m"
+              limits:
+                memory: "128Mi"
+                cpu: "500m"
+            ports:
+            - containerPort: 80
+            volumeMounts:
+            - name: astronomer-certified
+              mountPath: /usr/share/nginx/html
+          volumes:
+          - name: astronomer-certified
+            configMap:
+              name: astronomer-certified
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: astronomer-certified
+      namespace: astronomer
+    spec:
+      type: ClusterIP
+      selector:
+        app: astronomer-certified
+      ports:
+      - port: 80
+        targetPort: 80
+    ```
 
-Note the Docker image in the deployment and ensure this is also accessible from within your environment. Save this file and apply it to your cluster with `kubectl apply -f nginx-astronomer-certified.yaml`. The updates JSON will be accessible by the service name from pods in the Kubernetes cluster via `http://astronomer-certified.astronomer.svc.cluster.local/astronomer-certified.json`.
+    Note the Docker image in the deployment and ensure that this is also accessible from within your environment.
 
-To validate if the updates JSON is accessible you have several options. If an image with `curl` is available in your network:
+3. Save this file and apply it to your cluster by running the following command:
 
-```bash
-kubectl run --rm -it [container name] --image=[image] --restart=Never -- /bin/sh
-curl http://astronomer-certified.astronomer.svc.cluster.local/astronomer-certified.json
-```
+    ```sh
+    kubectl apply -f nginx-astronomer-certified.yaml
+    ```
 
-Alternatively, if you have `curl` installed on your client machine:
+    The updates JSON will be accessible by the service name from pods in the Kubernetes cluster via `http://astronomer-certified.astronomer.svc.cluster.local/astronomer-certified.json`.
 
-```bash
-kubectl proxy
-# open a second window...
-curl http://localhost:8001/api/v1/namespaces/astronomer/services/astronomer-certified/astronomer-certified.json
-```
+To validate if the updates JSON is accessible you have several options:
 
-Or, first complete the Astronomer installation and after that use one of the `astro-ui` pods which include `bash` and `curl`:
+- If an image with `curl` is available in your network, you can run:
 
-```bash
-kubectl exec -it astronomer-astro-ui-7cfbbb97fd-fv8kl -n=astronomer -- /bin/bash
-curl http://astronomer-certified.astronomer.svc.cluster.local/astronomer-certified.json
-```
+    ```bash
+    $ kubectl run --rm -it [container name] --image=[image] --restart=Never -- /bin/sh
+    $ curl http://astronomer-certified.astronomer.svc.cluster.local/astronomer-certified.json
+    ```
 
-The service is set up correctly if the updates JSON is returned.
+- If you have `curl` installed on your client machine:
+
+    ```bash
+    $ kubectl proxy
+    # In a separate terminal window:
+    $ curl http://localhost:8001/api/v1/namespaces/astronomer/services/astronomer-certified/astronomer-certified.json
+    ```
+
+- Complete the entire Astronomer installation, then use one of the `astro-ui` pods which include `bash` and `curl`:
+
+    ```bash
+    $ kubectl exec -it astronomer-astro-ui-7cfbbb97fd-fv8kl -n=astronomer -- /bin/bash
+    $ curl http://astronomer-certified.astronomer.svc.cluster.local/astronomer-certified.json
+    ```
+
+No matter what option you choose, the commands that you run should return the updates JSON if the service was configured correctly.
 
 ### Configuring a custom updates JSON URL
 
