@@ -395,7 +395,7 @@ phases:
   install:
     runtime-versions:
       python: latest
-​
+
   pre_build:
     commands:
       - echo Logging in to dockerhub ...
@@ -403,7 +403,7 @@ phases:
       - export GIT_VERSION="$(git rev-parse --short HEAD)"
       - echo "GIT_VERSION = $GIT_VERSION"
       - pip install -r requirements.txt
-​
+
   build:
     commands:
       - docker build -t "registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:ci-$GIT_VERSION" .
