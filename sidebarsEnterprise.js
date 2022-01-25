@@ -27,6 +27,7 @@ module.exports = {
       label: 'Develop',
       items: [
       'cli-quickstart',
+      'cli-podman',
       'customize-image',
       'kubepodoperator-local',
       ],
@@ -49,6 +50,7 @@ module.exports = {
       'configure-deployment',
       'deploy-cli',
       'deploy-nfs',
+      'deploy-git-sync',
       'deployment-logs',
       'environment-variables',
       'ci-cd',
@@ -126,6 +128,7 @@ module.exports = {
       'support',
       'cli-reference',
       'version-compatibility-reference',
+      'release-lifecycle-policy',
       ],
     },
   ],

@@ -225,7 +225,7 @@ If you're calling either of those mutations in your current workflow, Astronomer
 
 As we strive to polish and standardize the schema more generally, our API will undergo rapid and potentially breaking changes over the next few releases. The Astronomer CLI and UI will continue to stay in sync with API changes and is our recommended way to interact with the platform.
 
-If calling our API programmatically is critical to your use case, reference our [Houston API Documentation](houston-api.md) for details and stay in close touch with our team.
+If calling our API programmatically is critical to your use case, reference the [Houston API Documentation](houston-api.md) for details and stay in close touch with our team.
 
 ### Support for v0.23 of the Astronomer CLI
 
@@ -254,7 +254,7 @@ For detailed instructions, refer to [CLI Quickstart](cli-quickstart.md). For a f
 - Ability to search Deployment users by role via Houston API
 - Updated documentation links in Astronomer UI
 - Display toast message in Astronomer UI following Deployment deletion
-- Platform Upgrade to [Prisma 2](https://www.prisma.io/) (Database Toolkit for our Houston API)
+- Platform Upgrade to [Prisma 2](https://www.prisma.io/) (Database Toolkit for our Houston API)
 - Replace `workspaceUuid` with `deploymentUuid` in arg for `deploymentVariables` Houston API mutation
 - Houston and Commander Images now created with a non-root user
 - Support for new configuration options in Fluentd S3 Plugin (S3 path where Airflow logs are stored and server side encryption)

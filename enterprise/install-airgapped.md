@@ -1,77 +1,72 @@
 ---
-title: "Installing Astronomer in an airgapped environment"
-sidebar_label: "Airgapped Astronomer installation"
+title: "Install Astronomer Enterprise in an Airgapped Environment"
+sidebar_label: "Install in an Airgapped Environment"
 description: "Infrastructure considerations and Helm configuration to install Astronomer in an airgapped environment"
 id: install-airgapped
 ---
 
 ## Overview
 
-By default, Astronomer will reach out to public repositories to download various components:
+By default, the Astronomer installation process requires accessing public repositories to download various components:
 
-- Docker images from quay.io/astronomer, docker.io, and gcr.io
-- Astronomer Helm charts from helm.astronomer.io
-- Astronomer version information from updates.astronomer.io
+- Docker images from `quay.io/astronomer`, `docker.io`, and `gcr.io`
+- Astronomer Helm charts from `helm.astronomer.io`
+- Astronomer version information from `updates.astronomer.io`
 
-An airgapped environment is a locked-down environment, where traffic to and from the public internet is not possible. This page explains which additional infrastructure components you need and how to configure the Astronomer Helm chart in an airgapped environment.
+If you cannot rely on public repositories and networks for your installation, you can install Astronomer in an airgapped environment. An airgapped environment is a locked-down environment with no access to or from the public internet.
+
+This guide explains how to configure your system to install Astronomer without access to the public internet. The steps in this guide should be followed in addition to Steps 1 to 8 in the [AWS](install-aws-standard.md), [Azure](install-azure-standard.md), or [GCP](install-gcp-standard.md) installation guide.
 
 > **Note:** If you have some means to allow traffic to the public internet, e.g. a proxy that allows a list of accepted destinations/sources, that will make the airgapped installation much easier. This page assumes an environment without any possibility of accessing the public internet.
 
-Prerequisites for an airgapped installation are:
+## Prerequisites
 
-- A VPC
-- Private Kubernetes
-- A Postgres instance accessible from that environment
-- A VPN (or other means) set up to access *at least* Kubernetes and DNS from inside your VPC
+- A VPC.
+- Private Kubernetes.
+- A Postgres instance accessible from that environment.
+- A VPN (or other means) set up to access, at a minimum, Kubernetes and DNS from inside your VPC.
 
-## Fetching Docker images from a custom registry
+## Step 1: Configure a Private Docker Registry
 
-The Astronomer Docker images are hosted on a public registry, which isn't accessible from an airgapped network. The images must therefore be hosted in a Docker registry accessible from within the network. Every cloud platform provides a managed Docker registry service, i.e. AWS ECR, Azure Container Registry, or GCP Container Registry. Alternatively, you can set up your own registry, for example using JFrog Artifactory. How exactly to fetch or mirror the images often depends on security requirements and is therefore out of scope for this page.
+Astronomer's Docker images are hosted on a public registry which isn't accessible from an airgapped network. Therefore, these images must be hosted on a Docker registry accessible from within your own network. Every major cloud platform provides its own managed Docker registry service that can be used for this step:
 
-Which images and tags you require for your Astronomer installation depends on enabled components and versions in the Astronomer platform. Image tags are subject to change, even within existing versions, for example to resolve critical security issues, and therefore not listed here. To gather a list of exact images and tags required for your Astronomer Helm chart version and values.yaml, you can template the Helm charts and fetch the rendered image tags:
+- AWS: [ECR](https://aws.amazon.com/ecr/)
+- Azure: [Azure Container Registry](https://azure.microsoft.com/en-us/services/container-registry/)
+- GCP: [Container Registry](https://cloud.google.com/container-registry)
+
+You can also set up your own registry using a dedicated registry service such as [JFrog Artifactory](https://jfrog.com/artifactory/). Regardless of which service you use, follow the product documentation to configure a private registry according to your organization's security requirements.
+
+## Step 2: Fetch Images from Astronomer's Helm Template
+
+Which images and tags are required for your Astronomer installation depends on the version of the Astronomer platform. Image tags are subject to change, even within existing versions, for example to resolve critical security issues, and therefore not listed here. To gather a list of exact images and tags required for your Astronomer Helm chart version, you can template the Helm chart and fetch the rendered image tags:
 
 ```bash
-$ helm template astronomer/astronomer --version 0.26.5 -f values.yaml | grep "image: " | sed 's/^ *//g' | sort | uniq
+$ helm template astronomer/astronomer --version 0.27 | grep "image: " | sed 's/^ *//g' | sort | uniq
 
-image: "quay.io/prometheus/node-exporter:v1.2.2"
-image: docker.io/bitnami/minideb:stretch
-image: docker.io/bitnami/postgresql:11.11.0-debian-10-r30
+image: "quay.io/prometheus/node-exporter:v1.3.0"
 image: quay.io/astronomer/ap-alertmanager:0.23.0
-image: quay.io/astronomer/ap-astro-ui:0.26.8
-image: quay.io/astronomer/ap-base:3.14.2-1
-image: quay.io/astronomer/ap-cli-install:0.26.0
-image: quay.io/astronomer/ap-commander:0.26.5
-image: quay.io/astronomer/ap-configmap-reloader:0.5.0-1
-image: quay.io/astronomer/ap-curator:5.8.4-5
-image: quay.io/astronomer/ap-db-bootstrapper:0.26.1
-image: quay.io/astronomer/ap-default-backend:0.25.4
-image: quay.io/astronomer/ap-elasticsearch-exporter:1.2.1
-image: quay.io/astronomer/ap-elasticsearch:7.10.2-3
-image: quay.io/astronomer/ap-fluentd:1.14.0
-image: quay.io/astronomer/ap-grafana:7.5.10
-image: quay.io/astronomer/ap-houston-api:0.26.17
-image: quay.io/astronomer/ap-kibana:7.10.2-2
-image: quay.io/astronomer/ap-kube-state:1.7.2
-image: quay.io/astronomer/ap-kubed:0.12.0
-image: quay.io/astronomer/ap-nats-exporter:0.9.0
-image: quay.io/astronomer/ap-nats-server:2.3.2-3
-image: quay.io/astronomer/ap-nats-streaming:0.22.0-2
-image: quay.io/astronomer/ap-nginx-es:1.21.3
-image: quay.io/astronomer/ap-nginx:0.49.3
-image: quay.io/astronomer/ap-prometheus:2.21.0
-image: quay.io/astronomer/ap-registry:3.14.2-2
+image: quay.io/astronomer/ap-astro-ui:0.27.5
+image: quay.io/astronomer/ap-base:3.15.0
+image: quay.io/astronomer/ap-cli-install:0.26.1
+...
 ```
+
+> **Note:** If you have already enabled/disabled Astronomer platform components in your `config.yaml`, you can pass `-f/--values config.yaml` to `helm template` to print a list specific to your `config.yaml` configuration.
+
+## Step 3: Add Images to Your config.yaml File
 
 Regardless of whether you choose to mirror or manually pull/push images to your private registry, the returned images and/or tags must be made accessible within your network.
 
-In the Helm chart values.yaml, you must refer to the private registry. There are two options:
+In your `config.yaml` file, you must refer to the private registry. There are two options for doing this:
 
-1. Configure only the private registry URL, leaving images and tags to the default values in the Helm chart
-2. Configure each image individually, which allows you to specify a different image/tag if desired
+- Configure only the private registry URL, leaving images and tags as their default values in the Helm chart.
+- Configure each image individually, which allows you to specify a different image/tag if desired.
 
-### Configuring a private registry
+Use the following topics to learn more about each of these options.
 
-A private registry can be configured in the global section of values.yaml:
+### Option 1: Configure a private registry
+
+A private registry can be configured in the `global` section of `config.yaml`:
 
 ```yaml
 global:
@@ -82,15 +77,14 @@ global:
     # password: ~
 ```
 
-This will set the repository for all Docker images.
+This will set the repository for all Docker images specified in the Astronomer Helm chart. If you didn't change the default names or tags of any images uploaded to your private registry, this means that you don't have to do any further configuration to pull images from the correct location.
 
-### Configuring images individually
+### Option 2: Configure images individually
 
-An alternative way is to configure each image (repository) and/or tag individually. For example, in case you have a convention to prefix all images in your repository with `myteam-`. Each image and/or tag must be overridden in the respective subchart.
-
-> **Note:** Images and tags are subject to change, even within existing versions. For example, to resolve critical security issues. The images and tags shown below only serve as an example. Refer to the Astronomer Helm chart for the latest version.
+Alternatively, you can configure each image (repository) and/or tag individually. This is useful in certain situations, for example where your image tags might vary from Astronomer's default tags, or if your organization has a naming convention of prepending image tags with `myteam-`.
 
 ```yaml
+# Example configuration only. To determine the necessary images, render Helm template for your Astronomer installation version.
 alertmanager:
   images:
     alertmanager:
@@ -227,21 +221,21 @@ stan:
       tag: 0.22.0-2
 ```
 
-## Fetching Helm charts
+## Step 4: Fetch Airflow Helm charts
 
 There are two Helm charts required for Astronomer:
 
-1. The [Astronomer Helm chart](https://github.com/astronomer/astronomer) for the Astronomer Platform
-2. The [Airflow Helm chart](https://github.com/astronomer/airflow-chart) for Airflow deployments in Astronomer Platform
+- The [Astronomer Helm chart](https://github.com/astronomer/astronomer) for the Astronomer Platform
+- The [Airflow Helm chart](https://github.com/astronomer/airflow-chart) for Airflow deployments in Astronomer Platform
 
 The Astronomer Helm chart can be downloaded using `helm pull` and applied locally if desired.
 
-The Airflow chart is used to create Airflow deployments by Commander, the provisioning component of the Astronomer Platform. It installs the Airflow Helm chart when you create a new deployment in the Astronomer UI. You have two options to make the Helm chart available to Commander:
+Commander, which is Astronomer's provisioning component, uses the Airflow Helm chart to create Airflow deployments. You have two options to make the Helm chart available to Commander:
 
-- The Commander Docker image comes with an Airflow Helm chart built-in, only values.yaml configuration required.
+- Use the built-in Airflow Helm chart in the Commander Docker image.
 - Host the Airflow Helm chart within your network. Not every cloud provider has a managed Helm registry, so you might want to check out [JFrog Artifactory](https://jfrog.com/artifactory) or [ChartMuseum](https://github.com/helm/chartmuseum).
 
-To configure Commander to use the built-in Airflow Helm chart:
+To use the built-in Airflow Helm chart in the Commander Docker image, add the following configuration to your `config.yaml` file:
 
 ```yaml
 astronomer:
@@ -250,37 +244,44 @@ astronomer:
       enabled: true
 ```
 
-A self-hosted Helm chart can be configured as follows:
+To configure a self-hosted Helm chart, add the following configuration to your `config.yaml` file:
 
 ```yaml
+# Example URL - replace with your own repository destination
 global:
   helmRepo: "http://artifactory.company.com:32775/artifactory/astro-helm-chart"
 ```
 
-Note that enabling `astronomer.commander.airGapped.enabled` takes precedence over `global.helmRepo`.
+:::info
 
-## Fetching Airflow updates
+If you configure both options in your `config.yaml` file, then `astronomer.commander.airGapped.enabled` takes precedence over `global.helmRepo`.
 
-By default, Astronomer checks for Airflow updates once a day at midnight from <https://updates.astronomer.io/astronomer-certified> (the check runs as a cronjob in Kubernetes). The URL returns a JSON with version details, but it is not accessible in an airgapped environment. There are several options to make the updates JSON accessible:
+:::
 
-- You can download the JSON and host it in a location accessible within your airgapped environment, for example:
-    - AWS S3 (no example)
-    - Git (no example)
+## Step 5: Fetch Airflow updates
+
+By default, Astronomer checks for Airflow updates once a day at midnight by querying `https://updates.astronomer.io/astronomer-certified`, which returns a JSON file with version details. However, this URL is not accessible in an airgapped environment. There are several options for making these updates accessible in an airgapped environment:
+
+- You can download the JSON and host it in a location that's accessible within your airgapped environment, for example:
+    - AWS S3
+    - Git
     - Nginx (example below)
 - You can disable the update checks (not advised)
 
-Note that downloading/uploading the JSON is a manual process. This can of course be automated, but is out of scope for this page.
+This setup assumes that the updates JSON will be manually downloaded and added to your environment. For guidance on how to automate this process, reach out to your Astronomer contact.
 
 ### Exposing Airflow updates via an Nginx endpoint
 
-To add an Nginx endpoint containing the updates information, you can host the updates JSON in a Kubernetes configmap:
+The following topic provides an example implementation of hosting the Airflow updates JSON in your airgapped environment and accessing it via an Nginx endpoint. Depending on your organization's platform and use cases, your own installation might vary from this setup.
+
+To add an Nginx endpoint containing the update information, you can host the update JSON in a Kubernetes configmap:
 
 ```bash
 curl -L https://updates.astronomer.io/astronomer-certified --output astronomer-certified.json
 kubectl create configmap astronomer-certified --from-file=astronomer-certified.json=./astronomer-certified.json -n astronomer
 ```
 
-Next, add an Nginx deployment and service:
+Next, add an Nginx deployment and service to a new file named `astronomer-certified-nginx.yaml`:
 
 ```yaml
 apiVersion: apps/v1
@@ -301,7 +302,7 @@ spec:
     spec:
       containers:
       - name: astronomer-certified
-        image: 012345678910.dkr.ecr.us-east-1.amazonaws.com/nginx:stable
+        image: 012345678910.dkr.ecr.us-east-1.amazonaws.com/nginx:stable # Replace with own image
         resources:
           requests:
             memory: "32Mi"
@@ -333,9 +334,24 @@ spec:
     targetPort: 80
 ```
 
-Note the Docker image in the deployment, ensure this is also accessible from within your environment. Save this in a file e.g. `nginx-astronomer-certified.yaml` and apply with `kubectl apply -f nginx-astronomer-certified.yaml`.
+Note the Docker image in the deployment and ensure this is also accessible from within your environment. Save this file and apply it to your cluster with `kubectl apply -f nginx-astronomer-certified.yaml`. The updates JSON will be accessible by the service name from pods in the Kubernetes cluster via `http://astronomer-certified.astronomer.svc.cluster.local/astronomer-certified.json`.
 
-The updates JSON will be accessible by the service name from pods in the Kubernetes cluster: <http://astronomer-certified.astronomer.svc.cluster.local/astronomer-certified.json>. To validate if the updates JSON is accessible, exec into a pod and curl the URL. The astro-ui pods are convenient for this because they include `bash` and `curl`:
+To validate if the updates JSON is accessible you have several options. If an image with `curl` is available in your network:
+
+```bash
+kubectl run --rm -it [container name] --image=[image] --restart=Never -- /bin/sh
+curl http://astronomer-certified.astronomer.svc.cluster.local/astronomer-certified.json
+```
+
+Alternatively, if you have `curl` installed on your client machine:
+
+```bash
+kubectl proxy
+# open a second window...
+curl http://localhost:8001/api/v1/namespaces/astronomer/services/astronomer-certified/astronomer-certified.json
+```
+
+Or, first complete the Astronomer installation and after that use one of the `astro-ui` pods which include `bash` and `curl`:
 
 ```bash
 kubectl exec -it astronomer-astro-ui-7cfbbb97fd-fv8kl -n=astronomer -- /bin/bash
@@ -357,16 +373,23 @@ astronomer:
       url: http://astronomer-certified.astronomer.svc.cluster.local
 ```
 
-## Helm installation
+## Step 6: Install Astronomer via Helm
 
-With the Docker images, Airflow Helm chart, and updates JSON made accessible inside your network, you can now install the Astronomer Helm chart:
+Before completing this step, double-check that the following statements are true:
+
+- You made Astronomer's Docker images, Airflow Helm chart, and updates JSON accessible inside your network.
+- You completed Steps 1 through 8 in the [AWS](install-aws-standard.md), [Azure](install-azure-standard.md), or [GCP](install-gcp-standard.md) install guide.
+
+After this check, you can install the Astronomer Helm chart by running the following commands:
 
 ```bash
-curl -L https://github.com/astronomer/astronomer/archive/v0.26.5.tar.gz -o astronomer-0.26.5.tgz
+curl -L https://github.com/astronomer/astronomer/archive/v0.27.1.tar.gz -o astronomer-0.27.1.tgz
 # Alternatively, use helm pull
-helm pull astronomer/astronomer --version 0.26.5
+helm pull astronomer/astronomer --version 0.27.1
 
 # ... If necessary, copy to a place where you can access Kubernetes ...
 
-helm install astronomer -f values.yaml -n astronomer astronomer-0.26.5.tgz
+helm install astronomer -f config.yaml -n astronomer astronomer-0.27.1.tgz
 ```
+
+After these commands are finished running, continue your installation with Step 10 (Verify pods are up) in the [AWS](install-aws-standard.md#step-10-verify-pods-are-up), [Azure](install-azure-standard.md#step-10-verify-all-pods-are-up), or [GCP](install-gcp-standard.md#step-10-verify-that-all-pods-are-up) installation guide.

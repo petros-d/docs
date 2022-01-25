@@ -68,8 +68,12 @@ module.exports = {
           activeClassName: 'navbar__link--active',
           items: [
             {
-              label: '0.26 (Latest)',
+              label: '0.27 (Latest)',
               to: '/enterprise/overview',
+            },
+            {
+              label: '0.26',
+              to: '/enterprise/0.26/overview',
             },
             {
               label: '0.25',
@@ -203,7 +207,7 @@ module.exports = {
         lastVersion: 'current',
         versions: {
         current: {
-          label: '0.26',
+          label: '0.27',
           path: '',
           banner: 'none',
          },

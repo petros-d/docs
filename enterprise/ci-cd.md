@@ -267,7 +267,7 @@ pipeline:
 version: 2
 jobs:
   build:
-    machine: true
+    machine: ubuntu-2004:202008-01
     steps:
       - checkout
       - restore_cache:
@@ -295,7 +295,7 @@ jobs:
             pycodestyle .
   deploy:
     docker:
-      - image:  quay.io/astronomer/ap-build:latest
+      - image:  docker:18.09-git
     steps:
       - checkout
       - setup_remote_docker:
@@ -362,7 +362,7 @@ pipelines:
           deployment: production
           script:
             - echo ${SERVICE_ACCOUNT_KEY}
-            - docker build -t registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:ci-${BITBUCKET_BUILD_NUMBER}
+            - docker build -t registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:ci-${BITBUCKET_BUILD_NUMBER} .
             - docker login registry.$BASE_DOMAIN -u _ -p $SERVICE_ACCOUNT_KEY
             - docker push registry.$BASE_DOMAIN/$RELEASE_NAME/airflow:ci-${BITBUCKET_BUILD_NUMBER}
           services:

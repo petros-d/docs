@@ -57,7 +57,7 @@ Then, for each machine running Airflow:
     pip install --extra-index-url=https://pip.astronomer.io/simple/ 'astronomer-certified[postgres]==2.1.0.*' --upgrade
     ```
 
-2. Upgrade your metadata DB using the following command:
+2. Upgrade your metadata DB using the following command:
 
     ```sh
     airflow upgradedb

@@ -11,9 +11,70 @@ Astronomer is committed to continuous delivery of both features and bug fixes to
 
 If you have any questions or a bug to report, don't hesitate to reach out to [Astronomer Support](https://support.astronomer.io).
 
-**Latest Runtime Version**: 4.0.6 ([Release notes](runtime-release-notes.md))
+**Latest Runtime Version**: 4.0.8 ([Release notes](runtime-release-notes.md))
 
 **Latest CLI Version**: 1.0.4 ([Release notes](cli-release-notes.md))
+
+## January 13, 2022
+
+### Identity-Based Login Flow
+
+Astronomer Cloud now utilizes an identity-based login flow for all users. When you first log in via the Astronomer UI, you now only need to enter the email address for your account. Astronomer assumes your Organization and brings you directly to your Astronomer Organization's login screen.
+
+This change serves as a foundation for future SSO and authentication features. In upcoming releases, users will be able to authenticate via custom identity providers like Okta and Azure Active Directory.
+
+### Additional Improvements
+
+- Significant improvements to the load times of various Astronomer UI pages and and elements.
+- In the Astronomer UI, the tooltips in the **Resource Settings** section of a Deployment's page now show the definition of 1 AU. This should make it easier to translate AU to CPU and Memory.
+- Scheduler logs in the Astronomer UI no longer show `DEBUG`-level logs.
+- To ensure that all Workers have enough resources to run basic workloads, you can no longer allocate less than 10 AU to **Worker Resources**.
+
+## January 6, 2022
+
+### Improvements to "Scheduler Logs" in the Astronomer UI
+
+The **Scheduler Logs** tab in the Astronomer UI has been updated to make logs easier to read, separate, and parse. Specifically:
+
+- You can now filter logs by type (`DEBUG`, `INFO`, `WARN`, and `ERROR`).
+- The page now shows logs for the past 24 hours instead of the past 30 minutes.
+- The page now shows a maximum of 500 logs instead of a lower maximum.
+- When looking at a Deployment's logs, you can return to the Deployment's information using the **Deployment Details** button.
+
+![Logs page in the UI](/img/release-notes/log-improvements.png)
+
+### Removal of Worker Termination Grace Period
+
+The **Worker Termination Grace Period** setting is no longer available in the Astronomer UI or API. Previously, users could set this to anywhere between 1 minute and 24 hours per Deployment. This was to prevent running tasks from being interrupted by a code push. Today, however, existing Celery Workers don't have to terminate in order for new Workers to spin up and start executing tasks. Instead, existing Workers will continue to execute running tasks while a new set of Workers gets spun up concurrently to start executing most recent code.
+
+To simplify Deployment configuration and reflect current functionality:
+
+- The Worker Termination Grace Period was removed from the Astronomer UI
+- This value was permanently set to 24 hours for all Deployments on Astronomer Cloud
+
+This does not change or affect execution behavior for new or existing Deployments. For more information, read [What Happens During a Code Deploy](deploy-code.md#what-happens-during-a-code-deploy).
+
+### Additional Improvements
+
+- Removed _Kubernetes Version_ column from the **Clusters** table. This value was previously inaccurate and is not needed. The Kubernetes version of any particular Astronomer Cluster is set and modified exclusively by Astronomer as part of our managed service.
+
+## December 16, 2021
+
+### View Scheduler Error Logs from the Astronomer UI
+
+The new **Logs** tab in the Astronomer UI shows Scheduler error and warning logs for all Deployments in your Workspace. When you select a Deployment in this menu, all error logs generated over the last 30 minutes appear in the UI.
+
+![Logs page in the UI](/img/release-notes/logs-page.png)
+
+To access logs directly for a given Deployment, click the new **Logs** button on the Deployment's page or in the **Deployments** table.
+
+![Logging direct access button](/img/release-notes/logs-button.png)
+
+For more information on how to view logs, read [Deployment Logs](scheduler-logs.md).
+
+### Bug Fixes
+
+Fixed various bugs in the Astronomer UI to better handle nulls and unknowns in Deployment metrics
 
 ## December 9, 2021
 
@@ -68,7 +129,7 @@ For a full list of AWS regions supported on Astronomer Cloud, see [AWS Resource 
 
 - Amazon EBS volumes have been upgraded from gp2 to [gp3](https://aws.amazon.com/about-aws/whats-new/2020/12/introducing-new-amazon-ebs-general-purpose-volumes-gp3/) for improved scale and performance.
 - EBS volumes and S3 buckets are now encrypted by default.
-- The ability to enable public access to any Amazon S3 bucket on an Astronomer Cloud data plane is now blocked. Previously, public access was disabled by default but could be overriden by AWS account owners.
+- The ability to enable public access to any Amazon S3 bucket on an Astronomer Cloud data plane is now blocked per a new AWS account policy. Previously, public access was disabled by default but could be overridden by a user creating a new S3 bucket with public access enabled. This AWS account policy could be overriden by AWS account owners, but Astronomer strongly recommends against doing so.
 
 ## November 19, 2021
 

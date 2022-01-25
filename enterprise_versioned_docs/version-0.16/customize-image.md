@@ -86,14 +86,14 @@ virajparekh@orbiter:~/cli_tutorial$ tree
 .
 ├── airflow_settings.yaml
 ├── dags
-│   └── example-dag.py
+│   └── example-dag.py
 ├── Dockerfile
 ├── helper_functions
-│   └── helper.py
+│   └── helper.py
 ├── include
 ├── packages.txt
 ├── plugins
-│   └── example-plugin.py
+│   └── example-plugin.py
 └── requirements.txt
 ```
 

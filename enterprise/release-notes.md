@@ -1,5 +1,5 @@
 ---
-title: 'Astronomer v0.26 Release Notes'
+title: 'Astronomer v0.27 Release Notes'
 sidebar_label: 'Release Notes'
 id: release-notes
 description: Astronomer Enterprise release notes.
@@ -7,47 +7,59 @@ description: Astronomer Enterprise release notes.
 
 ## Overview
 
-This document includes all release notes for Astronomer Enterprise v0.26.
+This document includes all release notes for Astronomer Enterprise v0.27.
 
-Astronomer v0.26 is the latest Stable version of Astronomer Enterprise, while v0.25 remains the latest long-term support (LTS) version. To upgrade to Astronomer v0.26 from v0.25, read [Upgrade to v0.26](upgrade-astronomer-stable.md). For more information about Enterprise release channels, read [Release and Lifecycle Policies](release-lifecycle-policy.md).
+Astronomer v0.27 is the latest Stable version of Astronomer Enterprise, while v0.25 remains the latest long-term support (LTS) version. To upgrade to Astronomer v0.27 from v0.26, read [Upgrade to a Stable Version](upgrade-astronomer-stable.md). For more information about Enterprise release channels, read [Release and Lifecycle Policies](release-lifecycle-policy.md).
 
 We're committed to testing all Astronomer Enterprise versions for scale, reliability and security on Amazon EKS, Google GKE and Azure AKS. If you have any questions or an issue to report, don't hesitate to [reach out to us](https://support.astronomer.io).
 
-## 0.26.4
+## 0.27.1
 
-Release date: November 22, 2021
-
-### Support for Airflow 2.2.0
-
-[Apache Airflow 2.2.0](https://airflow.apache.org/blog/airflow-2.2.0/) is an exciting milestone in the open source project. Most notably, this release introduces custom timetables and deferrable operators.
-
-#### Custom Timetables
-
-Timetables are a powerful new framework that you can use to create custom schedules using Python. In an effort to provide more flexibility and address known limitations imposed by cron, timetables use an intuitive `data_interval` that, for example, allows you to schedule a DAG to run daily on Monday through Friday, but not on the weekend. Timetables can be easily plugged into existing DAGs, which means that it's easy to create your own or use community-developed timetables in your project.
-
-For more information on using timetables, read the [Apache Airflow Documentation](https://airflow.apache.org/docs/apache-airflow/stable/howto/timetable.html).
-
-#### Deferrable Operators
-
-Deferrable operators are a new type of Airflow operator that promises improved performance and lower resource costs. While standard operators and sensors take up a Worker or Scheduler slot even when they are waiting for an external trigger, deferrable operators are designed to suspend themselves and free up that Worker or Scheduler slot while they wait. This is made possible by a new, lightweight Airflow component called the Triggerer.
-
-As part of supporting deferrable operators, you can provision multiple Triggerers on your Astronomer Deployments. By provisioning multiple Triggerers, you can ensure that tasks using Deferrable Operators are run even when one Triggerer goes down. For more information about configuring Triggerers and other resources, see [Configure a Deployment](configure-deployment.md).
-
-### CLI Verbosity Flag
-
-You can now specify a `--verbosity` flag for all Astronomer CLI commands. When you specify this flag with a CLI command, the CLI prints out [Logrus](https://github.com/sirupsen/logrus) logs as the command runs. This is useful for debugging any errors that might result from a CLI command.
-
-The flag prints out different levels of logs depending on the value that you pass it. Each possible value (`debug`, `info`, `warn`, `error`, `fatal`, and `panic`) maps to a different Logrus logging level. For more information about these logging levels, read the [Logrus documentation](https://github.com/sirupsen/logrus#level-logging).
-
-### Minor Improvements
-
-- You can now create a custom set of cluster-level permissions for the Astronomer Commander service by setting `astronomer.global.clusterRoles: false` in your `config.yaml` file and pushing a new [RoleBinding](https://kubernetes.io/docs/reference/access-authn-authz/rbac/) to a pre-created Kubernetes namespace. For more information, read [Customize Permissions for Namespaces](pre-create-namespaces.md#customize-permissions-for-namespaces).
-- In the `astronomer.houston.config` section of your `config.yaml` file, you can now configure a list of `allowedSystemLevelDomains []`. If you configure this list, only users with emails from domains specified in the list (for example, `<company>.com`) can be granted System Admin privileges.
-- You can now specify a node port for 3rd party ingress controllers with a service type of `nodePort`.
+Release date: January 10, 2022
 
 ### Bug Fixes
 
-- Fixed an issue where you could not update an existing Deployment's IAM role via the Astronomer CLI
-- Fixed an issue where Deployments would not work on clusters with custom domains
-- Fixed error handling when interacting with a Deployment that wasn't fully spun up
-- Added a new validation step for Airflow Helm chart values configured in the `astronomer.houston.config.deployments.helm.airflow` section of `config.yaml`
+- Fixed an issue where users could not create Deployments via an IAM role
+
+## 0.27.0
+
+Release date: December 21, 2021
+
+### Custom OAuth Flows
+
+You can now configure a custom OAuth flow as an alternative to Astronomer's default implicit flow. You can customize Astronomer's existing Okta, Google, and GitHub OAuth flows, or you can import an entirely custom OAuth flow. For more information, read [Configure a Custom OAuth Flow](integrate-auth-system.md#configure-a-custom-oauth-flow).
+
+### Deploy DAGs via Git Sync
+
+You can now configure a Git repo to continually push DAGs to an Astronomer Deployment via git-sync. DAGs deployed via git-sync automatically appear in the Airflow UI without requiring additional action or causing downtime. For more information, read [Deploy DAGs via Git Sync](deploy-git-sync.md).
+
+### External ElasticSearch Logging
+
+Custom ElasticSearch logging tools are now supported via new values in your `config.yaml` file:
+
+```yaml
+# External ES logging
+global:
+  customLogging:
+    enabled: true
+    scheme: https
+    host: ""
+    port: ""
+    secret: ""
+    #secretName: ~
+    #awsSecretName: ~
+    #awsIAMRole: ~
+    #awsServiceAccountAnnotation: ~
+```
+
+### CLI Support for Podman
+
+By default, the Astronomer CLI uses Docker to execute a few specific commands. As an alternative, you can now configure the Astronomer CLI to use Podman instead. For more information, read [Run the CLI with Podman](cli-podman.md).
+
+### Bug Fixes
+
+- Dropped support for Kubernetes 1.17
+- Fixed an issue where redeployments could clobber existing annotations for namespaces
+- Fixed an issue where new Deployments could potentially generate invalid usernames for Celery and the metadata DB
+- Fixed an issue where scheduler, webserver, and worker logs were not accessible via the Astronomer CLI
+- Fixed an issue where where setting extra volumes via `config.yaml` did not work when NFS DAG deploys were enabled.

@@ -2,6 +2,7 @@
 sidebar_label: 'GCP'
 title: 'Install Astronomer Enterprise on GCP GKE'
 id: install-gcp
+description: Install Astronomer Enterprise on Google Cloud Platform (GCP).
 ---
 
 This guide describes the steps to install Astronomer on Google Cloud Platform (GCP), which allows you to deploy and scale any number of [Apache Airflow](https://airflow.apache.org/) deployments within an [GCP Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine/) cluster.
@@ -150,7 +151,7 @@ If you're installing Astronomer for a large organization, you'll need to request
 To confirm that your enterprise security team generated the correct certificate, run the following command using the `openssl` CLI:
 
 ```sh
-openssl x509 -in  <your-certificate-filepath> -text -noout
+openssl x509 -in  <your-certificate-filepath> -text -noout
 ```
 
 This command will generate a report. If the `X509v3 Subject Alternative Name` section of this report includes either a single `*.BASEDOMAIN` wildcard domain or the subdomains listed at the beginning of Step 4, then the certificate creation was successful.
@@ -194,9 +195,31 @@ If you received a certificate from a private CA, follow these steps instead:
     > **Note:** The name of the secret file must be `cert.pem` for your certificate to be trusted properly.
 
 
-2. Note the value of `private-root-ca` for when you configure your Helm chart in Step 7. You'll need to additionally specify the `privateCaCerts` key-value pair with this value for that step.
+2. Note the value of `private-root-ca` for when you configure your Helm chart in Step 8. You'll need to additionally specify the `privateCaCerts` key-value pair with this value for that step.
 
-## Step 6: Configure the Database
+## Step 6: Retrieve Your SMTP URI
+
+An SMTP service is required so that users can send and accept email invites to and from Astronomer. To integrate your SMTP service with Astronomer, make note of your SMTP service's URI and add it to your Helm chart in Step 8. In general, an SMTP URI will take the following form:
+
+```text
+smtps://USERNAME:PASSWORD@HOST/?pool=true
+```
+
+The following table contains examples of what the URI will look like for some of the most popular SMTP services:
+
+| Provider          | Example SMTP URL                                                                               |
+| ----------------- | ---------------------------------------------------------------------------------------------- |
+| AWS SES           | `smtp://AWS_SMTP_Username:AWS_SMTP_Password@email-smtp.us-east-1.amazonaws.com/?requireTLS=true` |
+| SendGrid          | `smtps://apikey:SG.sometoken@smtp.sendgrid.net:465/?pool=true`                                   |
+| Mailgun           | `smtps://xyz%40example.com:password@smtp.mailgun.org/?pool=true`                               |
+| Office365         | `smtp://xyz%40example.com:password@smtp.office365.com:587/?requireTLS=true`                   |
+| Custom SMTP-relay | `smtp://smtp-relay.example.com:25/?ignoreTLS=true`                                      |
+
+If your SMTP provider is not listed, refer to the provider's documentation for information on creating an SMTP URI.
+
+> **Note:** If there are `/` or other escape characters in your username or password, you may need to [URL encode](https://www.urlencoder.org/) those characters.
+
+## Step 7: Configure the Database
 
 Astronomer by default requires a central Postgres database that will act as the backend for Astronomer's Houston API and will host individual Metadata Databases for all Airflow Deployments spun up on the platform.
 
@@ -218,7 +241,7 @@ kubectl create secret generic astronomer-bootstrap \
 
 > **Note:** You must URL encode any special characters in your Postgres password.
 
-## Step 7: Configure Your Helm Chart
+## Step 8: Configure Your Helm Chart
 
 > **Note:** If you want to use a third-party ingress controller for Astronomer, complete the setup steps in [Third-Party Ingress Controllers](third-party-ingress-controllers.md) in addition to this configuration.
 
@@ -234,29 +257,29 @@ In the newly created file, copy the example below and replace `baseDomain`, `pri
 ### Astronomer global configuration
 #################################
 global:
-  # Base domain for all subdomains exposed through ingress
-  baseDomain: astro.mydomain.com
+  # Base domain for all subdomains exposed through ingress
+  baseDomain: astro.mydomain.com
 
-  # Name of secret containing TLS certificate
-  tlsSecret: astronomer-tls
+  # Name of secret containing TLS certificate
+  tlsSecret: astronomer-tls
 
-  # Enable privateCaCerts only if your enterprise security team
-  # generated a certificate from a private certificate authority.
+  # Enable privateCaCerts only if your enterprise security team
+  # generated a certificate from a private certificate authority.
   # Create a generic secret for each cert, and add it to the list below.
   # Each secret must have a data entry for 'cert.pem'
   # Example command: `kubectl create secret generic private-root-ca --from-file=cert.pem=./<your-certificate-filepath>`
-  privateCaCerts:
-  - private-root-ca
+  privateCaCerts:
+  - private-root-ca
 
-  # Enable privateCaCertsAddToHost only when your nodes do not already
-  # include the private CA in their docker trust store.
-  # Most enterprises already have this configured,
-  # and in that case 'enabled' should be false.
-  privateCaCertsAddToHost:
-    enabled: true
-    hostDirectory: /etc/docker/certs.d
+  # Enable privateCaCertsAddToHost only when your nodes do not already
+  # include the private CA in their docker trust store.
+  # Most enterprises already have this configured,
+  # and in that case 'enabled' should be false.
+  privateCaCertsAddToHost:
+    enabled: true
+    hostDirectory: /etc/docker/certs.d
   # For development or proof-of-concept, you can use an in-cluster database
-  postgresqlEnabled: false
+  postgresqlEnabled: false
 
   # Enables using SSL connections to
   # encrypt client/server communication
@@ -269,8 +292,8 @@ global:
 ### Nginx configuration
 #################################
 nginx:
-  # IP address the nginx ingress should bind to
-  loadBalancerIP: ~
+  # IP address the nginx ingress should bind to
+  loadBalancerIP: ~
   # Dict of arbitrary annotations to add to the nginx ingress. For full configuration options, see https://docs.nginx.com/nginx-ingress-controller/configuration/ingress-resources/advanced-configuration-with-annotations/
   ingressAnnotations: {}
 
@@ -279,25 +302,25 @@ nginx:
 #################################
 
 astronomer:
-  houston:
-    config:
-      publicSignups: false # Users need to be invited to have access to Astronomer. Set to true otherwise
-      emailConfirmation: true # Users get an email verification before accessing Astronomer
-      deployments:
-        manualReleaseNames: true # Allows you to set your release names
-        serviceAccountAnnotationKey: iam.gke.io/gcp-service-account  # Flag to enable using IAM roles (don't enter a specific role)
-      email:
-        enabled: true
-        smtpUrl: YOUR_URI_HERE
-        reply: "noreply@astronomer.io" # Emails will be sent from this address
-      auth:
-        github:
-          enabled: true # Lets users authenticate with Github
-        local:
-          enabled: false # Disables logging in with just a username and password
-        openidConnect:
-          google:
-            enabled: true # Lets users authenticate with Google
+  houston:
+    config:
+      publicSignups: false # Users need to be invited to have access to Astronomer. Set to true otherwise
+      emailConfirmation: true # Users get an email verification before accessing Astronomer
+      deployments:
+        manualReleaseNames: true # Allows you to set your release names
+        serviceAccountAnnotationKey: iam.gke.io/gcp-service-account  # Flag to enable using IAM roles (don't enter a specific role)
+      email:
+        enabled: true
+        smtpUrl: YOUR_URI_HERE
+        reply: "noreply@astronomer.io" # Emails will be sent from this address
+      auth:
+        github:
+          enabled: true # Lets users authenticate with Github
+        local:
+          enabled: false # Disables logging in with just a username and password
+        openidConnect:
+          google:
+            enabled: true # Lets users authenticate with Google
 ```
 
  SMTP is required and will allow users to send and accept email invites to Astronomer. The SMTP URI will take the following form:
@@ -308,7 +331,7 @@ smtpUrl: smtps://USERNAME:PW@HOST/?pool=true
 
 These are the minimum values you need to configure for installing Astronomer. For information on additional configuration, read [What's Next](install-gcp-standard.md#whats-next).
 
-## Step 8: Install Astronomer
+## Step 9: Install Astronomer
 
 Now that you have a GCP cluster set up and your `config.yaml` defined, you're ready to deploy all components of our platform.
 
@@ -327,14 +350,14 @@ helm repo update
 This will ensure that you pull the latest from our Helm repository. Finally, run:
 
 ```sh
-helm install -f config.yaml --version=0.25 --namespace=<your-platform-namespace> <your-platform-release-name> astronomer/astronomer
+helm install -f config.yaml --version=0.25 --namespace=astronomer <your-platform-release-name> astronomer/astronomer
 ```
 
-This command will install the latest available patch version of Astronomer Enterprise v0.25. To override latest and specify a patch, add it to the `--version=` flag in the format of `0.25.x`. To install Astronomer Enterprise v0.25.4, for example, specify `--version=0.25.4`. For information on all available patch versions, refer to [Enterprise Release Notes](release-notes.md).
+This command will install the latest available patch version of Astronomer Enterprise v0.25. To override latest and specify a patch, add it to the `--version=` flag in the format of `0.25.x`. To install Astronomer Enterprise v0.25.0, for example, specify `--version=0.25.0`. For information on all available patch versions, refer to [Enterprise Release Notes](release-notes.md).
 
 Once you run the commands above, a set of Kubernetes pods will be generated in your namespace. These pods power the individual services required to run our platform, including the Astronomer UI and Houston API.
 
-## Step 9: Verify That All Pods Are Up
+## Step 10: Verify That All Pods Are Up
 
 To verify all pods are up and running, run:
 
@@ -379,7 +402,7 @@ newbie-norse-registry-0                                1/1     Running     0    
 
 If you are seeing issues here, check out our [guide on debugging your installation](debug-install.md)
 
-## Step 10: Configure DNS
+## Step 11: Configure DNS
 
 Now that you've successfully installed Astronomer, a new Elastic Load Balancer (ELB) will have spun up in your GCP account. This ELB routes incoming traffic to our NGINX ingress controller.
 
@@ -426,13 +449,13 @@ alertmanager.astro.mydomain.com
 prometheus.astro.mydomain.com
 ```
 
-## Step 11: Verify You Can Access the Astronomer UI
+## Step 12: Verify You Can Access the Astronomer UI
 
 Go to `app.BASEDOMAIN` to see the Astronomer UI.
 
 Consider this your new Airflow control plane. From the Astronomer UI, you'll be able to both invite and manage users as well as create and monitor Airflow Deployments on the platform.
 
-## Step 12: Verify Your TLS Setup
+## Step 13: Verify Your TLS Setup
 
 To check if your TLS certificates were accepted, log in to the Astronomer UI. Then, go to `app.BASEDOMAIN/token` and run:
 
