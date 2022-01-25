@@ -292,7 +292,7 @@ These are the minimum values you need to configure for installing Astronomer. Fo
 
 :::info 
 
-If you are installing Astronomer in an airgapped environment without access to the public internet, complete all of the setup in [Install in and Airgapped Environment](install-airgapped.md) and then skip directly to Step 10 in this document.
+If you are installing Astronomer in an airgapped environment without access to the public internet, complete all of the setup in [Install in an Airgapped Environment](install-airgapped.md) and then skip directly to Step 10 in this document.
 
 :::
 

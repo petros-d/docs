@@ -1,6 +1,6 @@
 ---
-title: "Installing Astronomer in an airgapped environment"
-sidebar_label: "Airgapped installation"
+title: "Install Astronomer Enterprise in an Airgapped Environment"
+sidebar_label: "Install in an Airgapped Environment"
 description: "Infrastructure considerations and Helm configuration to install Astronomer in an airgapped environment"
 id: install-airgapped
 ---
@@ -14,6 +14,8 @@ By default, the Astronomer installation process requires accessing public reposi
 - Astronomer version information from `updates.astronomer.io`
 
 If you cannot rely on public repositories and networks for your installation, you can install Astronomer in an airgapped environment. An airgapped environment is a locked-down environment with no access to or from the public internet.
+
+This guide explains how to configure your system to install Astronomer without access to the public internet. The steps in this guide should be followed in addition to Steps 1 to 8 in the [AWS](install-aws-standard.md), [Azure](install-azure-standard.md), or [GCP](install-gcp-standard.md) installation guide.
 
 > **Note:** If you have some means to allow traffic to the public internet, e.g. a proxy that allows a list of accepted destinations/sources, that will make the airgapped installation much easier. This page assumes an environment without any possibility of accessing the public internet.
 
@@ -242,7 +244,7 @@ astronomer:
       enabled: true
 ```
 
-A self-hosted Helm chart can be configured as follows:
+To configure a self-hosted Helm chart, add the following configuration to your `config.yaml` file:
 
 ```yaml
 # Example URL - replace with your own repository destination
@@ -266,9 +268,11 @@ By default, Astronomer checks for Airflow updates once a day at midnight by quer
     - Nginx (example below)
 - You can disable the update checks (not advised)
 
-Note that downloading/uploading the JSON is a manual process. This can of course be automated, but is out of scope for this page.
+This setup assumes that the updates JSON will be manually downloaded and added to your environment. For guidance on how to automate this process, reach out to your Astronomer contact.
 
 ### Exposing Airflow updates via an Nginx endpoint
+
+The following topic provides an example implementation of hosting the Airflow updates JSON in your airgapped environment and accessing it via an Nginx endpoint. Depending on your organization's platform and use cases, your own installation might vary from this setup.
 
 To add an Nginx endpoint containing the update information, you can host the update JSON in a Kubernetes configmap:
 
@@ -356,7 +360,12 @@ astronomer:
 
 ## Step 6: Install Astronomer via Helm
 
-With the Docker images, Airflow Helm chart, and updates JSON made accessible inside your network, you can now continue the Astronomer installation. Check if Steps 1 to 8 in the [AWS](install-aws-standard.md), [Azure](install-azure-standard.md), or [GCP](install-gcp-standard.md) install guide are completed and install the Astronomer Helm chart:
+Before completing this step, double-check that the following statements are true:
+
+- You made Astronomer's Docker images, Airflow Helm chart, and updates JSON accessible inside your network.
+- You completed Steps 1 through 8 in the [AWS](install-aws-standard.md), [Azure](install-azure-standard.md), or [GCP](install-gcp-standard.md) install guide. 
+
+After this check, you can install the Astronomer Helm chart by running the following commands:
 
 ```bash
 curl -L https://github.com/astronomer/astronomer/archive/v0.27.1.tar.gz -o astronomer-0.27.1.tgz
@@ -368,4 +377,4 @@ helm pull astronomer/astronomer --version 0.27.1
 helm install astronomer -f config.yaml -n astronomer astronomer-0.27.1.tgz
 ```
 
-And continue with Step 10 (Verify pods are up) in the [AWS](install-aws-standard.md#step-10-verify-pods-are-up), [Azure](install-azure-standard.md#step-10-verify-all-pods-are-up), or [GCP](install-gcp-standard.md#step-10-verify-that-all-pods-are-up) guide.
+After these commands are finished running, continue your installation with Step 10 (Verify pods are up) in the [AWS](install-aws-standard.md#step-10-verify-pods-are-up), [Azure](install-azure-standard.md#step-10-verify-all-pods-are-up), or [GCP](install-gcp-standard.md#step-10-verify-that-all-pods-are-up) installation guide.
