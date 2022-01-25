@@ -285,7 +285,7 @@ To complete this setup:
     $ kubectl create configmap astronomer-certified --from-file=astronomer-certified.json=./astronomer-certified.json -n astronomer
     ```
 
-2. Add an Nginx deployment and service to a new file named `astronomer-certified-nginx.yaml`:
+2. Add an Nginx deployment and service to a new file named `nginx-astronomer-certified.yaml`:
 
     ```yaml
     apiVersion: apps/v1
