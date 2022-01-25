@@ -351,7 +351,7 @@ kubectl proxy
 curl http://localhost:8001/api/v1/namespaces/astronomer/services/astronomer-certified/astronomer-certified.json
 ```
 
-Or, first continue the Astronomer installation and afterwards use one of the `astro-ui` pods which include `bash` and `curl`:
+Or, first complete the Astronomer installation and after that use one of the `astro-ui` pods which include `bash` and `curl`:
 
 ```bash
 kubectl exec -it astronomer-astro-ui-7cfbbb97fd-fv8kl -n=astronomer -- /bin/bash
