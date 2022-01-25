@@ -52,9 +52,15 @@ The organization is the highest level user-based entity on the Astronomer platfo
 
 ### Workspace
 
+A Workspace is a collection of Deployments belonging to a specific subset of users in an organization. User members of the Workspace can create new Deployments or view existing Deployments within the Workspace.
+
 ### Deployment
 
+A Deployment is a Control Plane-based interface for managing a single Astronomer project on the Data Plane.
+
 ### User
+
+The user is the most specific entity in Astronomer Cloud. User accounts can complete actions on Astronomer Cloud depending on their individual permissions.
 
 ## Development Concepts
 
@@ -70,10 +76,20 @@ A cluster is the highest level structure in the Data Plane. Each cluster:
 
 When you create a new Deployment, you must choose a cluster to run the Deployment on.
 
-### Local Project/ Environment
-
 ### Astronomer Project
+
+An Astronomer project is a collection of files that are required to run Airflow both locally and on Astronomer Cloud. This set of files is generated when you run `astro dev init` via the AstroCloud CLI. 
+
+### Locally Hosted Astronomer Project/ Environment
+
+When a document refers to a "locally hosted Astronomer project", it is referring to a version of an Astronomer project that is hosted somewhere other than a Deployment. This local project can be deployed to Astronomer Cloud, or it can be run in a local environment.
+
+A local Airflow environment is an instance of Airflow that runs outside of Astronomer Cloud. You can create a local environment by running `astro dev start` in the directory of a locally hosted Astronomer project.
 
 ### Airflow UI
 
+The Airflow UI is the primary interface for managing a Deployment's DAG runs and task runs. Each Deployment has its own Airflow UI, which can be accessed via an **Open Airflow** button in the Astronomer UI.
+
 ### Deploy Code
+
+Deploying code is the process of bundling a locally hosted Astronomer project into an image and pushing that image to a Deployment on Astronomer Cloud.
