@@ -33,9 +33,14 @@ For more detail on changes between Enterprise versions, refer to [Astronomer Ent
 
 ### Kubernetes Version Support Policy
 
-In general, Astronomer Enterprise will support a given version of Kubernetes through its End of Life. This includes Kubernetes upstream and cloud-managed variants like GKE, AKS, and EKS. When a version of Kubernetes reaches End of Life, support will be removed in the next major or minor release of Astronomer Enterprise.
+In general, Astronomer Enterprise will support a given version of Kubernetes through its End of Life. This includes Kubernetes upstream and cloud-managed variants like GKE, AKS, and EKS. When a version of Kubernetes reaches End of Life, support will be removed in the next major or minor release of Astronomer Enterprise. For more information on Kubernetes versioning and release policies, refer to [Kubernetes Release History](https://kubernetes.io/releases/) or your cloud provider.
 
-For more information on Kubernetes policies, refer to [Kubernetes Release History](https://kubernetes.io/releases/) or your cloud provider.
+For more information on upgrading Kubernetes versions, follow the guidelines offered by your cloud provider.
+
+- [Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html)
+- [Azure AKS](https://docs.microsoft.com/en-us/azure/aks/upgrade-cluster)
+- [Google GKE](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-upgrades)
+- [RedHat OpenShift](https://docs.openshift.com/container-platform/4.6/updating/updating-cluster-between-minor.html)
 
 ## Astronomer Certified
 
@@ -63,12 +68,3 @@ For more detail on each version of Astronomer Certified and instructions on how 
 > **Note:** While the Astronomer Certified Python Wheel supports Python versions 3.6, 3.7, and 3.8, Astronomer Certified Docker images have been tested and built only with Python 3.7. To run Astronomer Certified on Docker with Python versions 3.6 or 3.8, you can create a custom image with a different Python version specified. For more information, read [Change Python Versions](customize-image.md#build-with-a-different-python-version).
 
 > **Note:** MySQL 5.7 is compatible with Airflow and Astronomer Certified 2.0 but it does NOT support the ability to run more than 1 Scheduler and is not recommended. If you'd like to leverage Airflow's new Highly-Available Scheduler, make sure you're running MySQL 8.0+.
-
-## Kubernetes Upgrade Guides
-
-If you're looking to upgrade Kubernetes versions, make sure to follow the guidelines offered by your managed offering provider.
-
-- [Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html)
-- [Azure AKS](https://docs.microsoft.com/en-us/azure/aks/upgrade-cluster)
-- [Google GKE](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-upgrades)
-- [RedHat OpenShift](https://docs.openshift.com/container-platform/4.6/updating/updating-cluster-between-minor.html)
