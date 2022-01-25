@@ -21,6 +21,8 @@ This guide explains how to configure your system to install Astronomer without a
 
 ## Prerequisites
 
+To complete this setup, you need:
+
 - A VPC.
 - Private Kubernetes.
 - A Postgres instance accessible from that environment.
