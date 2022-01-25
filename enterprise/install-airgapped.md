@@ -38,7 +38,7 @@ You can also set up your own registry using a dedicated registry service such as
 
 ## Step 2: Fetch Images from Astronomer's Helm Template
 
-Which images and tags are required for your Astronomer installation depends on the version of the Astronomer platform. Image tags are subject to change, even within existing versions, for example to resolve critical security issues, and therefore not listed here. To gather a list of exact images and tags required for your Astronomer Helm chart version, you can template the Helm chart and fetch the rendered image tags:
+The images and tags which are required for your Astronomer installation depend on the version of Astronomer you're installing. Image tags are subject to change, even within existing versions, for example to resolve critical security issues, and therefore not listed here. To gather a list of exact images and tags required for your Astronomer Helm chart version, you can template the Helm chart and fetch the rendered image tags:
 
 ```bash
 $ helm template astronomer/astronomer --version 0.27 | grep "image: " | sed 's/^ *//g' | sort | uniq
