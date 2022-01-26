@@ -31,6 +31,8 @@ Astronomer Runtime includes provider packages that are utilized in some backgrou
 - [postgres](https://airflow.apache.org/docs/apache-airflow-providers-postgres/stable/index.html)
 - [redis](https://airflow.apache.org/docs/apache-airflow-providers-redis/stable/index.html)
 
+Runtime uses the same version constraints for these packages as the open source Apache Airflow image.
+
 ## System Dependencies
 
 Astronomer Runtime includes a number of OS-level dependencies for running basic system processes:
