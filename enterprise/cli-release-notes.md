@@ -48,4 +48,3 @@ Astronomer CLI v0.27.2 includes several improvements to the local development ex
 ### Bug Fixes
 
 - Fixed an issue where you could not run an Astronomer project via `astro dev init/ astro dev start` in a directory with certain characters in the directory name
-- Deploying DAGs via Git Sync now works only in Deployments running Airflow 2.0+
