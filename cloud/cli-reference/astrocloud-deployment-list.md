@@ -1,13 +1,13 @@
 ---
-sidebar_label: 'astrocloud deployment list'
-title: 'astrocloud deployment list'
+sidebar_label: "astrocloud deployment list"
+title: "astrocloud deployment list"
 id: astrocloud-deployment-list
 description: Reference documentation for astrocloud deployment list.
 ---
 
 ## Description
 
-List all Deployments that you have access to.  
+List all Deployments within your current Workspace that you have access to.
 
 ## Usage
 
@@ -17,9 +17,9 @@ astrocloud deployment list
 
 ## Options
 
-| Option  | Description                                          | Possible Values                   |
-| ------- | ---------------------------------------------------- | --------------------------------- |
-| `--all` | Show deployments across all Workspaces. | `` |
+| Option  | Description                             | Possible Values |
+| ------- | --------------------------------------- | --------------- |
+| `--all` | Show deployments across all Workspaces. | ``              |
 
 ## Examples
 

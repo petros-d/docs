@@ -7,12 +7,12 @@ description: Reference documentation for astrocloud dev logs.
 
 ## Description
 
-Show webserver and scheduler logs from your local Airflow environment.
+Show Webserver, Scheduler, and Celery worker logs from your local Airflow environment.
 
 ## Usage
 
 ```sh
-astrocloud dev init
+astrocloud dev logs
 ```
 
 ## Options
@@ -20,19 +20,19 @@ astrocloud dev init
 | Option              | Description                                                                                                        | Possible Values             |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------- |
 | `--follow` | Continue streaming most recent log output to your terminal. | ``|
-| `--scheduler`            | Show only scheduler logs                                                                                  | ``                  |
-| `--webserver`            | Show only webserver logs                                                                                  | ``                 |
+| `--scheduler`            | Show only Scheduler logs                                                                                  | ``                  |
+| `--webserver`            | Show only Webserver logs                                                                                  | ``                 |
 
 
 ## Examples
 
 ```sh
 $ astrocloud dev logs
-# Show most recent logs
-$ astrocloud dev logs --folow
-# Stream any new logs to the terminal
-$ astrocloud dev logs --folow --scheduler
-# Stream only new scheduler logs to the terminal
+# Show the most recent logs from both the Airflow Webserver and Scheduler
+$ astrocloud dev logs --follow
+# Stream all new Webserver and Scheduler logs to the terminal
+$ astrocloud dev logs --follow --scheduler
+# Stream only new Scheduler logs to the terminal
 ```
 
 ## Related Commands

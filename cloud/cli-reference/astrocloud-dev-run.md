@@ -7,7 +7,7 @@ description: Reference documentation for astrocloud dev run.
 
 ## Overview
 
-Run [Airflow CLI commands](https://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.html) in your local Airflow environment.
+Run [Airflow CLI commands](https://airflow.apache.org/docs/apache-airflow/stable/cli-and-env-variables-ref.html) in your local Airflow environment. This command is for local development only and cannot be applied to Deployments running on Astronomer Cloud.
 
 ## Usage
 
@@ -19,7 +19,7 @@ astrocloud dev run <airflow-command>
 
 ```sh
 $ astrocloud dev run create_user -r Admin -u admin -e admin@example.com -f admin -l user -p admin
-# Run OSS `create_user` command
+# Run the Airflow CLI's `create_user` command in your local Airflow environment
 ```
 
 ## Related Commands

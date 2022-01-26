@@ -7,7 +7,7 @@ description: Reference documentation for astrocloud completion.
 
 ## Description
 
-Generate completion scripts for AstroCloud commands. You can modify the generated scripts and add them to the appropriate directory to customize your shell autocompletion behavior.
+Generate completion scripts for Astronomer Cloud commands. You can modify the generated scripts and add them to the appropriate directory to customize your command line autocompletion behavior.
 
 ## Usage
 

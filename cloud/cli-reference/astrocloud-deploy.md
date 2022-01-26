@@ -9,12 +9,12 @@ description: Reference documentation for astrocloud deploy.
 
 Deploy your Astronomer project to a Deployment on Astronomer Cloud.
 
-You can specify a Deployment's release name in the command, or leave the command options blank to select from a list of all Deployments that you have access to. To retrieve a Deployment's release name, go to the Deployment's information page in the UI and copy the value under **Namespace**.
+You can specify a Deployment's namespace in the command, or leave the command options blank to select from a list of all Deployments that you have access to. To retrieve a Deployment's namespace, go to the Deployment's information page in the UI and copy the value under **Namespace**.
 
 ## Usage
 
 ```sh
-astrocloud deploy <deployment-release-name>
+astrocloud deploy <deployment-namespace>
 ```
 
 ## Options

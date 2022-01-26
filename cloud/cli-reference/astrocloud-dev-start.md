@@ -7,7 +7,9 @@ description: Reference documentation for astrocloud dev start.
 
 ## Description
 
-Build your Astronomer project into a Docker image, spin up Airflow containers on your local machine, and run your project in a local Airflow environment.  
+Build your Astronomer project into a Docker image and spin up local a local Docker container for each Airflow component.
+
+This command can be used regularly to start and run any Astronomer project locally. For more information, read [Develop and Run a Project Locally](develop-project.md#build-and-run-a-project-locally).
 
 ## Usage
 
