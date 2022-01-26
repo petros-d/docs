@@ -271,6 +271,7 @@ For more information on Astronomer and Astronomer CLI releases, refer to:
 
 After installing and trying out the Astronomer CLI, we recommend reading through the following guides:
 
+* [CLI Release Notes](cli-release-notes.md)
 * [Astronomer CLI Reference Guide](cli-reference.md)
 * [Deploy DAGs via the Astronomer CLI](deploy-cli.md)
 * [Deploy DAGs via NFS Volume](deploy-nfs.md)
