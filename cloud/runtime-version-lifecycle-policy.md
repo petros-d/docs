@@ -100,13 +100,6 @@ To ensure reliability, service will not be interrupted for Deployments running a
 
 Maintenance is discontinued the last day of the month for a given version. For example, if the maintenance window for a version of Astronomer Runtime is January - June of a given year, that version will be maintained by Astronomer until the last day of June.
 
-## Astronomer Runtime Lifecycle Schedule
+All patch versions within the same minor series share the same maintenance end of maintenance date. For example, the maintenance duration for the Astronomer Runtime `4.0.x` series started on October 12, 2021 and ends in April 2022. The maintenance window for Astronomer Runtime `4.0.8`, which was released on December 21, 2021, also ends in April 2022.
 
-The following table contains the exact lifecycle for each published version of Astronomer Runtime. These timelines are based on the LTS and Stable release channel maintenance policies.
-
-| Runtime Version                                          | Release Date    |     End of Maintenance Date |
-| -------------------------------------------------------- | --------------- ------------------ | ----------------------- |
-| [3.0.x](runtime-release-notes.md#astronomer-runtime-300) | August 12, 2021 |  February 2022      |
-| [4.0.x](runtime-release-notes.md#astronomer-runtime-400) | Oct 12, 2021    |  April 2022         |
-
-If you have any questions or concerns, reach out to [Astronomer Support](https://support.astronomer.io).
+For a table of currently supported Runtime versions and their maintenance durations, see [Version Compatibility Reference](runtime-overview.md#version-compatibility-reference).

@@ -60,6 +60,7 @@ module.exports = {
       type: 'category',
       label: 'Astronomer Runtime',
       items: [
+        'runtime-overview',
         'upgrade-runtime',
         'runtime-version-lifecycle-policy',
       ],
