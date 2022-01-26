@@ -7,7 +7,7 @@ description: Reference documentation for astrocloud dev start.
 
 ## Description
 
-Pause all Docker containers running your local Airflow environment. Unlike `astro dev kill`, this command does not prune mounted volumes and delete data associated with your local Postgres Metadata Database. If you run this command, Airflow connections and task history will be preserved.
+Pause all Docker containers running your local Airflow environment. Unlike `astro dev kill`, this command does not prune mounted volumes and delete data associated with your local Postgres database. If you run this command, Airflow connections and task history will be preserved.
 
 ## Usage
 
