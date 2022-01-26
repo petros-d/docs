@@ -7,7 +7,7 @@ description: Learn about the various components that make up Astronomer Runtime.
 
 ## Overview
 
-The Astronomer Runtime Docker image for Apache Airflow extends the community-developed Airflow image in a way that makes running Airflow more secure, reliable, and extensible. It is the base image for all Airflow Deployments on Astronomer Cloud.
+Astronomer Runtime is a Docker image built and published by Astronomer that extends the Apache Airflow project to provide a differentiated data orchestration experience. It is the base image for all Airflow Deployments on Astronomer Cloud.
 
 This guide provides reference information for the building blocks of Astronomer Runtime, as well as information on its release and distribution.
 
