@@ -22,6 +22,7 @@ To create an Airflow Deployment on Astronomer Cloud:
 1. Log in to the [Astronomer UI](https://cloud.astronomer.io) and go to the **Deployments** tab on the left navigation bar.
 2. On the top right-hand side of the Deployments page, click **New Deployment**.
 3. Set the following:
+
     - **Name**
     - **Description**
     - **Astronomer Runtime**: By default, the latest version of Astronomer Runtime is selected
@@ -34,6 +35,12 @@ To create an Airflow Deployment on Astronomer Cloud:
     All Deployments show an initial health status of `UNHEALTHY` after their creation. This indicates that the Deployment's Webserver and Scheduler are still spinning up in your cloud. Wait a few minutes for this status to become `HEALTHY` before proceeding to the next step.
 
 4. To access the Airflow UI, select **Open Airflow** on the top right.
+
+### Available Runtime Versions
+
+Only the latest patch version of a given major/minor Runtime version will be available for selection when configuring a Deployment. If a Runtime version has reached the end of its maintenance window, it will no longer be available for new Deployments.
+
+Once you select and save a Deployment's Runtime version, you can change that version only by upgrading via your Dockerfile. For more information on upgrading Runtime, read [Upgrade Runtime](upgrade-runtime.md)
 
 ## Configure Resource Settings
 
