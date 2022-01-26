@@ -7,7 +7,7 @@ description: Lear about the concepts and components that comprise Astronomer Clo
 
 ## Overview
 
-Astronomer Cloud enables companies to run Airflow at scale through additional functionality and infrastructure. This reference guide explains various concepts and components which are essential for understanding and managing the Astronomer platform.
+This reference guide explains various concepts and components which are essential for understanding and managing the Astronomer platform.
 
 ## General Concepts
 
