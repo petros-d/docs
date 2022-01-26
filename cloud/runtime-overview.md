@@ -55,9 +55,9 @@ Astronomer Runtime includes a number of Airflow functions available exclusively 
 
 Astronomer maintains a number of deferrable operators available exclusively through Runtime. For a full list of these operators and guidance on how to use them, read [Astronomer's Deferrable Operators](deferrable-operators.md#astronomers-deferrable-operators).
 
-### Custom Timetables
+### Timetables
 
-Astronomer maintains a `TradingHoursTimetable` available out of the box in Runtime. You can use this timetable to run a DAG based on whether or not a particular global market is open for trade.
+Astronomer maintains a custom [timetable](https://airflow.apache.org/docs/apache-airflow/stable/howto/timetable.html) called `TradingHoursTimetable` available out of the box in Runtime. You can use this timetable to run a DAG based on whether or not a particular global market is open for trade. More custom timetables will be made available in future releases of Runtime.
 
 ### Monitoring DAG
 
@@ -75,7 +75,7 @@ Astronomer Runtime includes a few packages that don't have a corresponding provi
 
 ## Version Compatibility Reference
 
-Astronomer Runtime is compatible with specific versions for key system components. Additionally, Astronomer Runtime versions follow a lifecycle as described in the [Runtime Versioning and Lifecycle Policy](runtime-version-lifecycle-policy.md).
+Astronomer Runtime is compatible with specific versions of key system components. Additionally, each version of Astronomer Runtime has a lifecycle as described in [Runtime Versioning and Lifecycle Policy](runtime-version-lifecycle-policy.md).
 
 The following table lists all version compatibility requirements and key lifecycle dates for each major version of Astronomer Runtime:
 
