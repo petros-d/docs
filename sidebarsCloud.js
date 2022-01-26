@@ -77,6 +77,7 @@ module.exports = {
             'runtime-release-notes',
           ],
         },
+        'concepts',
         'known-limitations',
         'resource-reference-aws',
         'platform-variables',
