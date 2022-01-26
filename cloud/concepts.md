@@ -17,20 +17,25 @@ This section includes the highest level concepts and terms that comprise the Ast
 
 Astronomer Cloud is a managed Apache Airflow service. It is based on a hybrid deployment model where a Control Plane is hosted by Astronomer and a Data Plane is hosted in your cloud environment. Both of these planes are fully managed by Astronomer.
 
-### Control Plane
-
-The Control Plane is a component of Astronomer Cloud that's hosted and managed by the Astronomer team. It is comprised of all features and dashboards accessible from the Astronomer UI, including:
-
-- User management.
-- Workspace/ Deployment management.
-- Metrics.
-- Authentication.
-
 ### Data Plane
 
-The Data Plane is a component of Astronomer Cloud that's hosted in your cloud and managed by the Astronomer team. It is responsible for running Airflow environments and executing DAGs in your Deployments.
+The Data Plane is a high level component of Astronomer Cloud that's hosted in your cloud and managed by the Astronomer team. It is responsible for running Airflow environments and executing DAGs in your Deployments.
+
+### Control Plane
+
+The Control Plane is a high level component of Astronomer Cloud that's hosted and managed by the Astronomer team. It includes all features and dashboards accessible from the Astronomer UI, including:
+
+- User management.
+- Workspace management.
+- [Deployment management](configure-deployment.md).
+- [Metrics](deployment-metrics.md).
+- Authentication.
+
+Some settings in the Control Plane are used to manage the Data Plane. For example, adjusting resource usage for a Deployment will adjust the resource usage of its associated Airflow environment in the Data Plane.
 
 ### Astronomer UI
+
+The Astronomer UI is the primary interface for accessing and managing the Control Plane. It is accessible via `cloud.astronomer.io`.
 
 ### AstroCloud CLI
 
@@ -64,7 +69,25 @@ The user is the most specific entity in Astronomer Cloud. User accounts can comp
 
 ## Development Concepts
 
-This section includes all terms related to writing and deploying code.
+This section includes all terms related to developing and deploying an Astronomer project.
+
+### Astronomer Project
+
+An Astronomer project is a collection of files that are required to run Airflow both locally and on Astronomer Cloud. This set of files is generated when you run `astro dev init` via the AstroCloud CLI.
+
+### Locally Hosted Astronomer Project/ Environment
+
+When a document refers to a "locally hosted Astronomer project", it is referring to a version of an Astronomer project that is hosted somewhere other than a Deployment. This local project can be deployed to Astronomer Cloud, or it can be run in a local environment.
+
+A local Airflow environment is an instance of Airflow that runs outside of Astronomer Cloud. You can create a local environment by running `astro dev start` in the directory of a locally hosted Astronomer project.
+
+### Airflow UI
+
+The Airflow UI is the primary interface for managing an Astronomer project's DAG runs and task runs. The Airflow UI for a locally running Airflow environment is accessible via `http://localhost:8080/`. The Airflow UI for a Deployment on Astronomer Cloud is accessible via the Deployment's **Open Airflow** button in the Astronomer UI.
+
+### Deploy Code
+
+[Deploying code](deploy-code.md) is the process of bundling a locally hosted Astronomer project into an image and pushing that image to a Deployment on Astronomer Cloud.
 
 ### Cluster
 
@@ -75,21 +98,3 @@ A cluster is the highest level structure in the Data Plane. Each cluster:
 - Contains and runs Airflow code from Deployments that are hosted on the cluster.
 
 When you create a new Deployment, you must choose a cluster to run the Deployment on.
-
-### Astronomer Project
-
-An Astronomer project is a collection of files that are required to run Airflow both locally and on Astronomer Cloud. This set of files is generated when you run `astro dev init` via the AstroCloud CLI. 
-
-### Locally Hosted Astronomer Project/ Environment
-
-When a document refers to a "locally hosted Astronomer project", it is referring to a version of an Astronomer project that is hosted somewhere other than a Deployment. This local project can be deployed to Astronomer Cloud, or it can be run in a local environment.
-
-A local Airflow environment is an instance of Airflow that runs outside of Astronomer Cloud. You can create a local environment by running `astro dev start` in the directory of a locally hosted Astronomer project.
-
-### Airflow UI
-
-The Airflow UI is the primary interface for managing a Deployment's DAG runs and task runs. Each Deployment has its own Airflow UI, which can be accessed via an **Open Airflow** button in the Astronomer UI.
-
-### Deploy Code
-
-Deploying code is the process of bundling a locally hosted Astronomer project into an image and pushing that image to a Deployment on Astronomer Cloud.
