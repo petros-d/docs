@@ -12,7 +12,7 @@ Authenticate to Astronomer Cloud by specifying your organization's URL for acces
 ## Usage
 
 ```sh
-astrocloud auth login <basedomain> <flags>
+astrocloud auth login <basedomain>
 ```
 
 ## Examples
