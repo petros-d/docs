@@ -28,8 +28,6 @@ To deploy DAGs to Astronomer, you must have:
 - An [Astronomer project](create-project.md).
 - [Docker](https://www.docker.com/products/docker-desktop).
 
-> **Note:** If you’re running the Astronomer Cloud CLI with [buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/) enabled in Docker, you may see an error (`buildkit not supported by daemon`). Learn more in [this forum post](https://forum.astronomer.io/t/buildkit-not-supported-by-daemon-error-command-docker-build-t-airflow-astro-bcb837-airflow-latest-failed-failed-to-execute-cmd-exit-status-1/857).
-
 ## Step 1: Authenticate to Astronomer
 
 Once you've tested your DAGs locally, you're ready to push them to Astronomer. To start, authenticate to Astronomer Cloud by running:
