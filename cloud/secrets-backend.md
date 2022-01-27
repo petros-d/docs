@@ -122,7 +122,7 @@ For more information on the Airflow provider for Hashicorp Vault and how to furt
 
 ### Step 3: Test Vault in a Local Airflow Environment
 
-To test Vault, write a simple DAG which calls your test secret and add this DAG your project's `dags` directory. For example, you can use the following DAG to print the value of a variable to your task logs:
+To test Vault, write a simple DAG which calls your test secret and add this DAG to your project's `dags` directory. For example, you can use the following DAG to print the value of a variable to your task logs:
 
 ```py
 from airflow import DAG
@@ -217,9 +217,9 @@ If you'd like to reference an AWS profile, you can also [add the `profile` param
 
 :::
 
-### Step 3: Run an Example DAG to Test AWS Paramater Store Locally
+### Step 3: Run an Example DAG to Test AWS Parameter Store Locally
 
-To test Parameter Store, write a simple DAG which calls your secret and add this DAG your project's `dags` directory. For example, you can use the following DAG to print the value of a variable to your task logs:
+To test Parameter Store, write a simple DAG which calls your secret and add this DAG to your project's `dags` directory. For example, you can use the following DAG to print the value of a variable to your task logs:
 
 ```py
 from airflow import DAG
@@ -311,7 +311,7 @@ If you want to deploy your project to a hosted Git repository before deploying t
 
 To test Secret Manager, [create a secret](https://cloud.google.com/secret-manager/docs/creating-and-accessing-secrets#create) containing either an Airflow variable or connection for testing.
 
-Once you create a test secret, write a simple DAG which calls the secret and add this DAG your project's `dags` directory. For example, you can use the following DAG to print the value of a variable to your task logs:
+Once you create a test secret, write a simple DAG which calls the secret and add this DAG to your project's `dags` directory. For example, you can use the following DAG to print the value of a variable to your task logs:
 
 ```py
 from airflow import DAG
@@ -425,7 +425,7 @@ If you want to deploy your project to a hosted Git repository before deploying t
 
 To test your Key Vault setup on Astronomer locally, [create a new secret](https://docs.microsoft.com/en-us/azure/key-vault/secrets/quick-create-portal#add-a-secret-to-key-vault) in Key Vault containing either a variable or a connection.
 
-Once you create a test secret, write a simple DAG which calls the secret and add this DAG your project's `dags` directory. For example, you can use the following DAG to print the value of a variable to your task logs:
+Once you create a test secret, write a simple DAG which calls the secret and add this DAG to your project's `dags` directory. For example, you can use the following DAG to print the value of a variable to your task logs:
 
 ```py
 from airflow import DAG
@@ -459,7 +459,7 @@ Once you confirm that the setup was successful, you can delete this DAG.
 
 ### Step 5: Push Changes to Astronomer
 
-Once you've confirmed that your secrets are being imported correctly to your local environment, you're ready to set configure the same feature in a Deployment on Astronomer Cloud.
+Once you've confirmed that your secrets are being imported correctly to your local environment, you're ready to configure the same feature in a Deployment on Astronomer Cloud.
 
 1. In the Astronomer UI, add the same environment variables found in your `Dockerfile` to your Deployment-level [environment variables](https://docs.astronomer.io/cloud/environment-variables). Specify the `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, and `AZURE_CLIENT_SECRET` variables as **Secret** to ensure that your credentials are stored securely.
 
