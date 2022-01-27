@@ -81,3 +81,39 @@ astrocloud dev kill
 ```
 
 This command forces your running containers to stop and deletes all data associated with your local Postgres metadata database, including Airflow Connections, logs, and task history.
+
+## Common Issues
+
+You might experience one of the following common issues when testing your Astronomer project in a local environment. This section contains information about how to approach each of these issues.
+
+### New DAGs aren't visible in the Airflow UI
+
+By default, the Airflow Scheduler parses the DAGbag every 30 seconds. For this reason, it might take a minute or two to see new DAGs appear in the Airflow UI. This is dependent on how much CPU is available to the Scheduler: the more CPU is available, the faster the Scheduler can parse your DAGs.
+
+To have the Scheduler check for DAGs more frequently than every 30 seconds, you can set the `min_file_process_interval` to any number of seconds less than 30.
+
+### DAGs are running slowly
+
+If your Astronomer project contains many DAGs or tasks, then you might experience performance issues in your local Airflow environment. To improve your environment's performance, you can scale both CPUs and memory in your Docker resources configuration. Note that increasing Docker's resource usage might decrease the overall performance of your machine.
+
+If your DAGs are still running slowly and you cannot scale Docker any further, then we recommend creating a Deployment on Astronomer Cloud that's dedicated to testing.
+
+### Astronomer project won't load after `astrocloud dev start`
+
+If your Astronomer project fails to run in an Airflow environment more than 5 minutes after running `astrocloud dev start`, it might be because your Webserver or Scheduler is unhealthy. In this case, you might need to debug your containers. To do so:
+
+1. After running `astrocloud dev start`, retrieve a list of running containers by running `astrocloud dev ps`.
+2. If the Webserver and Scheduler containers exist but are unhealthy, check their logs by running:
+
+    ```sh
+    $ astrocloud dev logs --webserver
+    $ astrocloud dev logs --scheduler
+    ```
+
+These logs should help you understand why your Webserver or Scheduler is unhealthy. Possible reasons why these containers might be unhealthy include:
+
+    - Not enough Docker resources
+    - Broken Postgres database
+    - DAG code errors
+    - Misconfigured Dockerfile or Docker override file
+    - Misconfigured Airflow settings
