@@ -45,6 +45,7 @@ module.exports = {
         'deployment-metrics',
         'scheduler-logs',
         'environment-variables',
+        'secrets-backend',
       ],
     },
     {
