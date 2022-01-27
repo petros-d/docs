@@ -40,7 +40,7 @@ To use deferrable operators available exclusively on Astronomer Runtime, you mus
 
 :::info
 
-Support for the Triggerer in local Airflow environments running via the Astronomer CLI is coming soon. In the meantime, this means that you cannot test deferrable operator functionally locally. If you run a DAG locally that imports a deferrable operator, the DAG falls back to using the non-deferrable version of that operator.
+Support for the Triggerer in local Airflow environments running via the Astronomer Cloud CLI is coming soon. In the meantime, this means that you cannot test deferrable operator functionally locally. If you run a DAG locally that imports a deferrable operator, the DAG falls back to using the non-deferrable version of that operator.
 
 :::
 

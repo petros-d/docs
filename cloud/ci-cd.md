@@ -23,7 +23,7 @@ To set up CI/CD for a given Deployment, you need:
 - An Organization ID. To find this, go to [**Organization Settings** in the Astronomer UI](https://cloud.astronomer.io/settings) and copy the Organization ID displayed there.
 - A Deployment ID. To find this, open your Deployment in the Astronomer UI and copy the unique string at the end of the URL (e.g. `cktogz2eg847343yzo9pru1b0d` is the ID in `https://cloud.astronomer.io/<workspaceId>/deployments/cktogz2eg847343yzo9pru1b0d`)
 - A CI/CD management tool, such as [GitHub Actions](https://docs.github.com/en/actions)
-- An Astronomer project directory that was [initialized via the Astronomer CLI](deploy-code.md) and is hosted in a place that your CI/CD tool can access
+- An Astronomer project directory that was [initialized via the Astronomer Cloud CLI](deploy-code.md) and is hosted in a place that your CI/CD tool can access
 - [Docker](https://docs.docker.com/get-docker/)
 - curl
 
@@ -52,7 +52,7 @@ DEPLOYMENT_ID=$4
 
 TAG=deploy-`date "+%Y-%m-%d-%HT%M-%S"`
 
-# Step 1. Authenticate to Astronomer's Docker registry with your Deployment API key ID and secret. This is equivalent to running `$ astrocloud auth login` via the Astronomer CLI.
+# Step 1. Authenticate to Astronomer's Docker registry with your Deployment API key ID and secret. This is equivalent to running `$ astrocloud auth login` via the Astronomer Cloud CLI.
 
 docker login images.astronomer.cloud -u $ASTRONOMER_KEY_ID -p $ASTRONOMER_KEY_SECRET
 
@@ -124,7 +124,7 @@ The following section provides basic templates for configuring individual CI pip
 
 ### GitHub Actions
 
-Use this GitHub Action in a repository that hosts a single Astronomer project created via the Astronomer CLI on `astrocloud dev init`. To start using the template:
+Use this GitHub Action in a repository that hosts a single Astronomer project created via the Astronomer Cloud CLI on `astrocloud dev init`. To start using the template:
 
 1. Set the following as [GitHub secrets](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository):
 

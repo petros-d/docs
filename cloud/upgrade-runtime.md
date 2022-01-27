@@ -9,7 +9,7 @@ description: Upgrade your Deployment's version of Astronomer Runtime.
 
 New versions of Astronomer Runtime are released regularly to support new features from both Astronomer and Apache Airflow. To take advantage of new functionality, as well as bug and security fixes, we recommend regularly upgrading your Deployment's Runtime version.
 
-Follow this guide to upgrade a Deployment's Airflow environment using the Astronomer CLI. You can use these steps to upgrade to any major, minor, or patch version of Runtime.
+Follow this guide to upgrade a Deployment's Airflow environment using the Astronomer Cloud CLI. You can use these steps to upgrade to any major, minor, or patch version of Runtime.
 
 ## Step 1: Update Your Dockerfile
 

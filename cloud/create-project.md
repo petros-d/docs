@@ -2,7 +2,7 @@
 sidebar_label: 'Create a Project'
 title: 'Create an Astronomer Project'
 id: 'create-project'
-description: Create an Astronomer project and run it locally with the Astronomer CLI.
+description: Create an Astronomer project and run it locally with the Astronomer CloudCLI.
 ---
 
 import {siteVariables} from '@site/src/versions';
@@ -17,7 +17,7 @@ This guide provides instructions for creating a new Astronomer project, as well 
 
 To create an Astronomer project, you need:
 
-- [The Astronomer CLI](install-cli.md)
+- [The Astronomer Cloud CLI](install-cli.md)
 - [Docker](https://www.docker.com/products/docker-desktop)
 
 ## Step 1: Create an Astronomer Project
@@ -96,7 +96,7 @@ The default credentials are admin:admin
 
 :::caution
 
-If you’re running the Astronomer CLI with [buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/) enabled in Docker, you may see an error (`buildkit not supported by daemon`). Learn more in [this forum post](https://forum.astronomer.io/t/buildkit-not-supported-by-daemon-error-command-docker-build-t-airflow-astro-bcb837-airflow-latest-failed-failed-to-execute-cmd-exit-status-1/857).
+If you’re running the Astronomer Cloud CLI with [buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/) enabled in Docker, you may see an error (`buildkit not supported by daemon`). Learn more in [this forum post](https://forum.astronomer.io/t/buildkit-not-supported-by-daemon-error-command-docker-build-t-airflow-astro-bcb837-airflow-latest-failed-failed-to-execute-cmd-exit-status-1/857).
 
 :::
 

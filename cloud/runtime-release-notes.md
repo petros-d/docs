@@ -149,7 +149,7 @@ As part of supporting deferrable operators, the Triggerer is now available as a 
 ### Bug fixes
 
 - Fixed an issue where requests to Airflow's REST API with a temporary authentication token failed
-- Fixed an issue introduced in Runtime 3.0.2 where `astro dev` commands in the Astronomer CLI did not execute correctly
+- Fixed an issue introduced in Runtime 3.0.2 where `astro dev` commands in the Astronomer Cloud CLI did not execute correctly
 
 ## Astronomer Runtime 3.0.2
 

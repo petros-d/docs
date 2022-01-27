@@ -9,7 +9,7 @@ import {siteVariables} from '@site/src/versions';
 
 ## Overview
 
-Astronomer Cloud makes it easy for your team to test Airflow DAGs locally and push them to a Deployment in a Production or Development environment. The following diagram shows how your Astronomer project can be packaged and deployed to Astronomer Cloud via the Astronomer CLI.
+Astronomer Cloud makes it easy for your team to test Airflow DAGs locally and push them to a Deployment in a Production or Development environment. The following diagram shows how your Astronomer project can be packaged and deployed to Astronomer Cloud via the Astronomer Cloud CLI.
 
 :::info
 
@@ -23,12 +23,12 @@ This guide explains how to deploy DAGs to a Deployment on Astronomer Cloud.
 
 To deploy DAGs to Astronomer, you must have:
 
-- The [Astronomer CLI](install-cli.md) installed in an empty directory.
+- The [Astronomer Cloud CLI](install-cli.md) installed in an empty directory.
 - An Astronomer Workspace with at least one [Deployment](configure-deployment.md).
 - An [Astronomer project](create-project.md).
 - [Docker](https://www.docker.com/products/docker-desktop).
 
-> **Note:** If you’re running the Astronomer CLI with [buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/) enabled in Docker, you may see an error (`buildkit not supported by daemon`). Learn more in [this forum post](https://forum.astronomer.io/t/buildkit-not-supported-by-daemon-error-command-docker-build-t-airflow-astro-bcb837-airflow-latest-failed-failed-to-execute-cmd-exit-status-1/857).
+> **Note:** If you’re running the Astronomer Cloud CLI with [buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/) enabled in Docker, you may see an error (`buildkit not supported by daemon`). Learn more in [this forum post](https://forum.astronomer.io/t/buildkit-not-supported-by-daemon-error-command-docker-build-t-airflow-astro-bcb837-airflow-latest-failed-failed-to-execute-cmd-exit-status-1/857).
 
 ## Step 1: Authenticate to Astronomer
 
