@@ -2,19 +2,19 @@
 title: 'Configure an External Secrets Backend on Astronomer Cloud'
 sidebar_label: 'Configure a Secrets Backend'
 id: secrets-backend
-description: Configure a secrets backend tool on Astronomer Cloud to store Airflow variables and connections in a centralized place.
+description: Configure a secrets backend on Astronomer Cloud to store Airflow variables and connections in a centralized place.
 ---
 
 ## Overview
 
-Airflow [variables](https://airflow.apache.org/docs/apache-airflow/stable/howto/variable.html) and [connections](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html#) often contain sensitive information about your external systems, such as API keys, that should be kept [secret](https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/secrets/index.html) in a secure, centralized location according to your organization's security requirements.
+Apache Airflow [variables](https://airflow.apache.org/docs/apache-airflow/stable/howto/variable.html) and [connections](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html#) often contain sensitive information about your external systems that should be kept [secret](https://airflow.apache.org/docs/apache-airflow/stable/_api/airflow/secrets/index.html) in a secure, centralized location that complies with your organization's security requirements. While secret values of Airflow variables and connections are encrypted in the Airflow metadata database of every Deployment, Astronomer recommends integrating with a secrets backend tool.
 
-While secret values of Airflow variables and connections are encrypted in the Airflow Metadata Database of every Deployment, Astronomer Cloud supports and recommends an integration with a variety of secret backend tools. Integrating a secrets backend tool on Astronomer has important benefits:
+Integrating a secrets backend tool on Astronomer Cloud allows you to:
 
-- Stores Airflow variables and connections in a centralized location alongside secrets from other tools and systems used by your team, including Kubernetes secrets and AWS IAM
-- Compliance with internal security postures and policies that protect your organization
-- Ease of recovery in the case of an incident
-- Automatically pull Airflow variables and connections that are already stored in your secrets backend instead when you create a new Deployment
+- Store Airflow variables and connections in a centralized location alongside secrets from other tools and systems used by your team, including Kubernetes secrets, SSL certificates, and more.
+- Comply with internal security postures and policies that protect your organization.
+- Recover in the case of an incident.
+- Automatically pull Airflow variables and connections that are already stored in your secrets backend when you create a new Deployment instead of having to set them manually in the Airflow UI.
 
 To meet these requirements, Astronomer Cloud supports integration with a variety of secret backend tools. This guide provides setup steps for configuring the following tools as secrets backends on Astronomer:
 
@@ -23,9 +23,11 @@ To meet these requirements, Astronomer Cloud supports integration with a variety
 - Google Cloud Secret Manager
 - Azure Key Vault
 
+All secrets backend integrations are set per Deployment on Astronomer Cloud.
+
 :::info
 
-If you enable a secrets backend on Astronomer, you can continue to define Airflow variables and connections either as environment variables or in the Airflow UI as needed. If set via the Airflow UI, variables and connections are stored as encrypted values in Airflow's metadata database.
+If you enable a secrets backend on Astronomer, you can continue to define Airflow variables and connections either [as environment variables](environment-variables.md#add-airflow-connections-and-variables-via-environment-variables) or in the Airflow UI as needed. If set via the Airflow UI, variables and connections are stored as encrypted values in Airflow's metadata database.
 
 When Airflow checks for the value of an Airflow variable or connection, it does so in the following order of precedence:
 
@@ -43,7 +45,7 @@ Setting Airflow connections via secrets requires knowledge of how to generate Ai
 
 ## Hashicorp Vault
 
-This topic provides steps for how to use [Vault](https://www.vaultproject.io/) as a secrets backend for both local development and on Astronomer Cloud. To do this, you will:
+This topic provides steps for how to use [Hashicorp Vault](https://www.vaultproject.io/) as a secrets backend for both local development and on Astronomer Cloud. To do this, you will:
 
 1. Write a test Airflow variable or connection as a secret to your Vault server.
 2. Configure your Astronomer project to pull the secret from Vault.
@@ -57,15 +59,15 @@ To use this feature, you need:
 - A [Deployment](configure-deployment.md) on Astronomer.
 - [The Astronomer CLI](install-cli.md).
 - A [Hashicorp Vault server](https://learn.hashicorp.com/tutorials/vault/getting-started-dev-server?in=vault/getting-started).
-- An [Astronomer project](create-project.md) with the [Hashicorp Airflow provider](https://airflow.apache.org/docs/apache-airflow-providers-hashicorp/stable/index.html) installed.
+- An [Astronomer project](create-project.md).
 - [The Vault CLI](https://www.vaultproject.io/docs/install).
 - Your Vault server's [Root Token](https://www.vaultproject.io/docs/concepts/tokens#root-tokens).
 - Your Vault Server's URL. If you're using a local server, this should be `http://127.0.0.1:8200/`.
 
 If you do not already have a Vault server deployed but would like to test this feature, we recommend that you either:
 
-- Sign up for a Vault trial on [Hashicorp Cloud Platform (HCP)](https://cloud.hashicorp.com/products/vault).
-- Deploy a local Vault server via the instructions in [our Airflow Guide](https://www.astronomer.io/guides/airflow-and-hashicorp-vault)
+- Sign up for a Vault trial on [Hashicorp Cloud Platform (HCP)](https://cloud.hashicorp.com/products/vault) or
+- Deploy a local Vault server via the instructions in [our Airflow Guide](https://www.astronomer.io/guides/airflow-and-hashicorp-vault).
 
 ### Step 1: Write an Airflow Variable or Connection to Vault
 
@@ -92,12 +94,18 @@ $ vault kv get secret/variables/<your-variable-key>
 $ vault kv get secret/connections/<your-connection-id>
 ```
 
-### Step 2: Set Up Vault for Local Testing
+### Step 2: Set Up Vault Locally
 
-To test Vault before deploying to Astronomer, configure it as a secrets backend in your Astronomer project by adding the following lines to your `Dockerfile`:
+In your Astronomer project, add the [Hashicorp Airflow provider](https://airflow.apache.org/docs/apache-airflow-providers-hashicorp/stable/index.html) to your project by adding the following to your `requirements.txt` file:
+
+```
+apache-airflow-providers-hashicorp
+```
+
+Then, add the following environment variables to your `Dockerfile`:
 
 ```text
-# Make sure to replace `<your-aws-key>` and `<your-aws-secret-key>` with your own values.
+# Make sure to replace `<your-root-token>` and `<your-vault-url>` with your own values.
 ENV VAULT__ROOT_TOKEN="<your-root-token>"
 ENV VAULT__URL="<your-vault-url>"
 ENV AIRFLOW__SECRETS__BACKEND="airflow.contrib.secrets.hashicorp_vault.VaultBackend"
@@ -154,11 +162,11 @@ Once you've added this DAG to your project:
 
 Once you confirm that the setup was successful, you can delete this example DAG.
 
-### Step 4: Set Up Vault on Astronomer Cloud
+### Step 4: Deploy on Astronomer Cloud
 
 Once you've confirmed that the integration with Vault works locally, you can complete a similar set up with a Deployment on Astronomer Cloud.
 
-1. In the Astronomer UI, add the same environment variables found in your `Dockerfile` to your Deployment-level [environment variables](https://docs.astronomer.io/cloud/environment-variables). Specify both `VAULT__ROOT_TOKEN` and `VAULT__URL` as **secret** to ensure that your Vault credentials are stored securely.
+1. In the Astronomer UI, add the same environment variables found in your `Dockerfile` to your Deployment [environment variables](https://docs.astronomer.io/cloud/environment-variables). Specify both `VAULT__ROOT_TOKEN` and `VAULT__URL` as **secret** to ensure that your Vault credentials are stored securely.
 
   :::warning
 
@@ -191,9 +199,17 @@ To start, add an Airflow variable or connection as a secret to Parameter Store f
 
 Variables and connections should live at `/airflow/variables` and `/airflow/connections`, respectively. For example, if you're setting a secret variable with the key `my_secret`, it should exist at `/airflow/connections/my_secret`.
 
-### Step 2: Set Up AWS Parameter Store to Test Locally
+### Step 2: Set Up AWS Parameter Store Locally
 
-To test Parameter Store before deploying to Astronomer, configure it as a secrets backend in your Astronomer project by adding the following lines to your `Dockerfile`:
+To test AWS Parameter Store locally, configure it as a secrets backend in your Astronomer project.
+
+First, install the [Airflow provider for Amazon](https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/index.html) by adding the following to your project's `requirements.txt` file:
+
+```
+apache-airflow-providers-amazon
+```
+
+Then, add the following environment variables to your project's `Dockerfile`:
 
 ```text
 # Make sure to replace `<your-aws-key>` and `<your-aws-secret-key>` with your own values.
@@ -203,23 +219,27 @@ ENV AIRFLOW__SECRETS__BACKEND="airflow.contrib.secrets.aws_systems_manager.Syste
 ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "/airflow/connections", "variables_prefix": "/airflow/variables"}'
 ```
 
-In the next step, you'll test this configuration in a local Airflow environment.
-
-To further customize the integration between Airflow and AWS SSM, reference Airflow documentation with the [full list of available kwargs](https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/_api/airflow/providers/amazon/aws/secrets/systems_manager/index.html).
+In the next step, you'll test that this configuration is valid locally.
 
 :::warning
+
 If you want to deploy your project to a hosted Git repository before deploying to Astronomer, be sure to save `<your-aws-key>` and `<your-aws-secret-key>` in a secure manner. When you deploy to Astronomer, you should set these values as secrets via the Astronomer UI.
+
 :::
 
-:::info
+:::tip
 
-If you'd like to reference an AWS profile, you can also [add the `profile` param to `ENV AIRFLOW__SECRETS__BACKEND_KWARGS`](https://airflow.apache.org/docs/apache-airflow/2.2.3/security/secrets/secrets-backend/index.html).
+If you'd like to reference an AWS profile, you can also add the `profile` param to `ENV AIRFLOW__SECRETS__BACKEND_KWARGS`.
+
+To further customize the integration between Airflow and AWS SSM Parameter Store, reference Airflow documentation with the [full list of available kwargs](https://airflow.apache.org/docs/apache-airflow-providers-amazon/stable/_api/airflow/providers/amazon/aws/secrets/systems_manager/index.html).
 
 :::
 
 ### Step 3: Run an Example DAG to Test AWS Parameter Store Locally
 
-To test Parameter Store, write a simple DAG which calls your secret and add this DAG to your project's `dags` directory. For example, you can use the following DAG to print the value of a variable to your task logs:
+To test Parameter Store, write a simple DAG which calls your secret and add this DAG to your Astronomer project's `dags` directory.
+
+For example, you can use the following DAG to print the value of an Airflow variable to your task logs:
 
 ```py
 from airflow import DAG
@@ -239,6 +259,8 @@ with DAG('example_secrets_dags', start_date=datetime(2022, 1, 1), schedule_inter
 )
 ```
 
+You can do the same for any Airflow connection.
+
 To test your changes:
 
 1. Run `astro dev stop` followed by `astro dev start` to push your changes to your local Airflow environment.
@@ -253,7 +275,7 @@ To test your changes:
 
 Once you've confirmed that the integration with AWS SSM Parameter Store works locally, you can complete a similar set up with a Deployment on Astronomer Cloud.
 
-1. In the Astronomer UI, add the same environment variables found in your `Dockerfile` to your Deployment-level [environment variables](https://docs.astronomer.io/cloud/environment-variables). Specify both `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` as **secret** ensure that your credentials are stored securely.
+1. In the Astronomer UI, add the same environment variables found in your `Dockerfile` to your Deployment [environment variables](https://docs.astronomer.io/cloud/environment-variables). Specify both `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` as **secret** ensure that your credentials are stored securely.
 
   :::warning
 
@@ -282,25 +304,41 @@ To use Google Cloud Secret Manager as your Airflow secrets backend, you need:
 - A [service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts) with the [Secret Manager Secret Accessor](https://cloud.google.com/secret-manager/docs/access-control) role on Google Cloud.
 - A [JSON service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys) for the service account.
 
-### Step 1: Configure Secret Manager
+### Step 1: Write an Airflow Variable or Connection to Google Cloud Secret Manager
 
-To start, add an Airflow variable or connection as a secret to Parameter Store for testing. Airflow variables and connection IDs should be prefixed with `airflow-variables` and `airflow-connections` respectively. For example, to add an Airflow variable with the ID `my-secret`, you would run the following in the gcloud CLI:
+To start, add an Airflow variable or connection as a secret to Google Cloud Secret Manager. You can do so via the Cloud Console or the gcloud CLI.
+
+Secrets must be formatted such that:
+- Airflow variables are set as `airflow-variables-<variable-key>`.
+- Airflow connections are set as `airflow-connections-<connection-id>`.
+
+For example, to add an Airflow variable with a key `my-secret-variable`, you would run the following gcloud CLI command:
 
 ```sh
-gcloud secrets create secret-id \
+gcloud secrets create airflow-variables-<my-secret-variable> \
     --replication-policy="automatic"
 ```
 
-For more information on creating secrets, read the [Google Cloud documentation](https://cloud.google.com/secret-manager/docs/creating-and-accessing-secrets#create).
+For more information on creating secrets in Google Cloud Secret Manager, read the [Google Cloud documentation](https://cloud.google.com/secret-manager/docs/creating-and-accessing-secrets#create).
 
-### Step 2: Set Up Secret Manager in a Local Airflow Environment
+### Step 2: Set Up Secret Manager Locally
 
-To test Secret Manager before deploying to Astronomer, add the following lines to your Astronomer project's `Dockerfile`, making sure to paste your entire JSON service account key in place of `<your-key-file>`:
+To test Google Secret Manager locally, configure it as a secrets backend in your Astronomer project.
+
+First, install the [Airflow provider for Google](https://airflow.apache.org/docs/apache-airflow-providers-google/stable/index.html) by adding the following to your project's `requirements.txt` file:
+
+```
+apache-airflow-providers-google
+```
+
+Then, add the following environment variables to your project's Dockerfile:
 
 ```sh
 ENV AIRFLOW__SECRETS__BACKEND=airflow.providers.google.cloud.secrets.secret_manager.CloudSecretManagerBackend
 ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "airflow-connections", "variables_prefix": "airflow-variables", "gcp_keyfile_dict": <your-key-file>}'
 ```
+
+Make sure to paste your entire JSON service account key in place of `<your-key-file>`. In the next step, you'll test that this configuration is valid locally.
 
 :::warning
 
@@ -345,11 +383,11 @@ To test your changes:
 
 Once you confirm that the setup was successful, you can delete this DAG.
 
-### Step 4: Deploy to Astronomer
+### Step 4: Deploy to Astronomer Cloud
 
 Once you've confirmed that the integration with Google Cloud Secret Manager works locally, you can complete a similar set up with a Deployment on Astronomer Cloud.
 
-1. In the Astronomer UI, add the same environment variables found in your `Dockerfile` to your Deployment-level [environment variables](https://docs.astronomer.io/cloud/environment-variables). Specify both `AIRFLOW__SECRETS__BACKEND` and `AIRFLOW__SECRETS__BACKEND_KWARGS` as **Secret** to ensure that your credentials are stored securely.
+1. In the Astronomer UI, add the same environment variables found in your `Dockerfile` to your Deployment [environment variables](https://docs.astronomer.io/cloud/environment-variables). Specify both `AIRFLOW__SECRETS__BACKEND` and `AIRFLOW__SECRETS__BACKEND_KWARGS` as **Secret** to ensure that your credentials are stored securely.
 
   :::warning
 
@@ -368,12 +406,13 @@ This topic provides setup steps for configuring [Azure Key Vault](https://cloud.
 
 ### Prerequisites
 
-To use Key Vault as a secrets backend, you need:
+To use Azure Key Vault as a secrets backend, you need:
 
 - A [Deployment](configure-deployment.md).
 - The [Astronomer CLI](install-cli.md).
 - An [Astronomer project](create-project.md).
-- An existing Key Vault linked to a resource group.
+- An existing Azure Key Vault linked to a resource group.
+- Your Key Vault URL. To find this, go to your Key Vault overview page > **Vault URI**.
 
 If you do not already have Key Vault configured, read [Microsoft Azure documentation](https://docs.microsoft.com/en-us/azure/key-vault/general/quick-create-portal).
 
@@ -392,7 +431,7 @@ Follow the [Microsoft documentation](https://docs.microsoft.com/en-us/azure/acti
 - **Configure from template**: Select `Key, Secret, & Certificate Management`.
 - **Select principal**: Select the name of the application that you registered in Step 1.
 
-### Step 3: Set Up Key Vault in a Local Airflow Environment
+### Step 3: Set Up Key Vault Locally
 
 In your Astronomer project, add the following line to your `requirements.txt` file:
 
@@ -400,14 +439,14 @@ In your Astronomer project, add the following line to your `requirements.txt` fi
 apache-airflow-providers-microsoft-azure
 ```
 
-In your `Dockerfile`, add the following environment variables:
+In your `Dockerfile`, add the following environment variables with your own values:
 
 ```yaml
 ENV AZURE_CLIENT_ID="<your-client-id>" # Found on App page > 'Application (Client) ID'
 ENV AZURE_TENANT_ID="<your-tenant-id>" # Found on Properties > 'Tenant ID'
 ENV AZURE_CLIENT_SECRET="<your-client-secret>" # Found on App Registration Page > Certificates and Secrets > Client Secrets > 'Value'
 ENV AIRFLOW__SECRETS__BACKEND="airflow.providers.microsoft.azure.secrets.azure_key_vault.AzureKeyVaultBackend"
-ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "airflow-connections", "variables_prefix": "airflow-variables", "vault_url": "<your-vault-url>"}' # <your-vault-url> found on Key Vault overview page > 'Vault URI'
+ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_prefix": "airflow-connections", "variables_prefix": "airflow-variables", "vault_url": "<your-vault-url>"}'
 ```
 
 This tells Airflow to look for variable information at the `airflow/variables/*` path in Azure Key Vault and connection information at the `airflow/connections/*` path. In the next step, you'll run an example DAG to test this configuration locally.
@@ -462,7 +501,7 @@ Once you confirm that the setup was successful, you can delete this DAG.
 
 Once you've confirmed that your secrets are being imported correctly to your local environment, you're ready to configure the same feature in a Deployment on Astronomer Cloud.
 
-1. In the Astronomer UI, add the same environment variables found in your `Dockerfile` to your Deployment-level [environment variables](https://docs.astronomer.io/cloud/environment-variables). Specify the `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, and `AZURE_CLIENT_SECRET` variables as **Secret** to ensure that your credentials are stored securely.
+1. In the Astronomer UI, add the same environment variables found in your `Dockerfile` to your Deployment [environment variables](https://docs.astronomer.io/cloud/environment-variables). Specify the `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, and `AZURE_CLIENT_SECRET` variables as **Secret** to ensure that your credentials are stored securely.
 
   :::warning
 
