@@ -52,7 +52,15 @@ To complete this setup, you need:
 
 To set up Podman for an Astronomer project:
 
-1. Run the following command to pick up the Identity and connection URI for your `podman-machine-default`:
+
+1. Run the following commands to start Podman:
+
+    ```sh
+    $ podman machine init
+    $ podman machine start
+    ```
+
+2. Run the following command to pick up the Identity and connection URI for your `podman-machine-default`:
 
     ```sh
     podman system connection ls
