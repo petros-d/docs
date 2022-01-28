@@ -36,6 +36,8 @@ For implementation details on deferrable operators, read the [Apache Airflow doc
 
 To use deferrable operators on Astronomer Cloud, you must deploy your code to a Deployment running [Astronomer Runtime 4.0+](runtime-release-notes.md#astronomer-runtime-400). For more information on upgrading your Deployment's Runtime version, read [Upgrade Runtime](upgrade-runtime.md).
 
+To use deferrable operators available exclusively on Astronomer Runtime, you must additionally add the `astronomer-operator-wrappers` package to the `packages.txt` file of your Astronomer project.
+
 :::info
 
 Support for the Triggerer in local Airflow environments running via the Astronomer CLI is coming soon. In the meantime, this means that you cannot test deferrable operator functionally locally. If you run a DAG locally that imports a deferrable operator, the DAG falls back to using the non-deferrable version of that operator.
@@ -84,7 +86,7 @@ Tasks using these operators remain in a deferred state while waiting for their r
 To run Astronomer's Databricks operators, use the following import statement:
 
 ```python
-from astronomer_operators.databricks DatabricksSubmitRunOperator, DatabricksRunNowOperator
+from astronomer.operators import DatabricksSubmitRunOperator, DatabricksRunNowOperator
 ```
 
 ### ExternalTaskSensor
@@ -98,5 +100,5 @@ This is a drop-in replacement for [Airflow's `ExternalTaskSensor`](https://airfl
 To run Astronomer's deferrable version of the ExternalTaskSensor, use the following import statement:
 
 ```python
-from astronomer_operators.external_task import ExternalTaskSensor
+from astronomer.operators import ExternalTaskSensor
 ```
