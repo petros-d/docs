@@ -131,7 +131,6 @@ module.exports = {
           'cli-release-notes',
         ],
       },
-      'cli-release-notes',
       'system-components',
       'support',
       'cli-reference',
