@@ -19,7 +19,7 @@ For information on the latest Astronomer Enterprise releases, see [release notes
 
 :::info
 
-This policy applies only to the Astronomer Enterprise platform. For release and lifecycle policies related to Astronomer Certified, see [Astronomer Certified Versioning and Support](ac-support-policy.md).
+These policies apply only to the Astronomer Enterprise platform. For release and lifecycle policies related to Astronomer Certified, see [Astronomer Certified Versioning and Support](ac-support-policy.md).
 
 :::
 
