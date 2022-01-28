@@ -11,19 +11,19 @@ import {siteVariables} from '@site/src/versions';
 
 Astronomer Cloud makes it easy for your team to test Airflow DAGs locally and push them to a Deployment in a Production or Development environment. The following diagram shows how your Astronomer project can be packaged and deployed to Astronomer Cloud via the Astronomer CLI.
 
+This guide explains how to deploy code to a Deployment on Astronomer Cloud.
+
 :::info
 
-The process for deploying an Astronomer project via CI/CD varies slightly from this diagram. For more information, refer to [CI/CD: Workflow Overview](ci-cd.md#workflow-overview).
+The process for deploying code to Astronomer Cloud via CI/CD varies slightly from the process described below. For more information, refer to [CI/CD: Workflow Overview](ci-cd.md#workflow-overview).
 
 :::
-
-This guide explains how to deploy DAGs to a Deployment on Astronomer Cloud.
 
 ## Prerequisites
 
 To deploy DAGs to Astronomer, you must have:
 
-- The [Astronomer CLI](install-cli.md) installed in an empty directory.
+- The [Astronomer CLI](install-cli.md).
 - An Astronomer Workspace with at least one [Deployment](configure-deployment.md).
 - An [Astronomer project](create-project.md).
 - [Docker](https://www.docker.com/products/docker-desktop).
@@ -40,9 +40,9 @@ astro auth login
 
 If you created your account with a username and password, you'll be prompted to enter them directly in your terminal. If you did so via GitHub or Google OAuth, you'll be prompted to grab a temporary token from https://cloud.astronomer.io/token.
 
-## Step 2: Push DAGs to an Astronomer Deployment
+## Step 2: Deploy Code to an Astronomer Deployment
 
-To deploy your DAGs, run:
+To deploy to Astronomer Cloud, run:
 
 ```
 astro deploy
@@ -58,7 +58,7 @@ Once you log in, you should see the DAGs you just deployed.
 
 ## What Happens During a Code Deploy
 
-When you deploy code to Astronomer Cloud, your Astronomer project is built into a Docker image. This includes system-level dependencies, Python-level dependencies, DAGs, and your `Dockerfile`. It does not include any of the metadata associated with your local Airflow environment, including task history and Airflow Connections or Variables that were set locally. This Docker image is then pushed to all containers running the Apache Airflow application on Astronomer Cloud. With the exception of the Airflow Webserver and some Celery Workers, Kubernetes gracefully terminates all containers during this process. This forces them to restart and begin running your latest code.
+When you deploy code to Astronomer Cloud, your Astronomer project is built into a Docker image. This includes system-level dependencies, Python-level dependencies, DAGs, and your `Dockerfile`. It does not include any of the metadata associated with your local Airflow environment, including task history and Airflow connections or variables that were set locally. This Docker image is then pushed to all containers running the Apache Airflow application on Astronomer Cloud. With the exception of the Airflow Webserver and some Celery Workers, Kubernetes gracefully terminates all containers during this process. This forces them to restart and begin running your latest code.
 
 ![Deploy Code](/img/docs/deploy-architecture.png)
 
