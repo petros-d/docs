@@ -312,7 +312,7 @@ Secrets must be formatted such that:
 - Airflow variables are set as `airflow-variables-<variable-key>`.
 - Airflow connections are set as `airflow-connections-<connection-id>`.
 
-For example, to add an Airflow variable whose key is `my-secret-variable`, you would run the following gcloud CLI command -
+For example, to add an Airflow variable with a key `my-secret-variable`, you would run the following gcloud CLI command:
 
 ```sh
 gcloud secrets create airflow-variables-<my-secret-variable> \
