@@ -7,12 +7,6 @@ description: Create a CI/CD pipeline that triggers a deploy to Astronomer Cloud 
 
 ## Overview
 
-There are many benefits to deploying DAGs and other changes to Airflow via a CI/CD workflow. Specifically, you can:
-
-- Deploy new and updated DAGs in a way that streamlines the development process amongst team members.
-- Decrease the maintenance cost of integrating changes, allowing your team to quickly respond in case of an error or failure.
-- Enforce continuous, automating testing, which increases code quality and protects your DAGs in production.
-
 This guide provides setup steps for configuring a CI/CD pipeline to deploy DAGs on Astronomer Cloud.
 
 ## Prerequisites
