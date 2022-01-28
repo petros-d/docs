@@ -123,7 +123,15 @@ module.exports = {
       type: 'category',
       label: 'Resources',
       items: [
-      'release-notes',
+        {
+        type: 'category',
+        label: 'Release Notes',
+        items: [
+          'release-notes',
+          'cli-release-notes',
+        ],
+      },
+      'cli-release-notes',
       'system-components',
       'support',
       'cli-reference',
