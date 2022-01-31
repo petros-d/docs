@@ -145,7 +145,7 @@ Use this GitHub Action in a repository that hosts a single Astronomer project cr
         runs-on: ubuntu-latest
         env:
           ORGANIZATION_ID: <organization-id> # Found in `Organization Settings` in the Astronomer UI
-          DEPLOYMENT_ID: <deployment-id> # The unique string at the end of your Deployment's URL from the Astronomer UI (e.g. `cktogz2eg847343yzo9pru1b0d` is the ID in `https://cloud.astronomer.io/<workspaceId>/deployments/cktogz2eg847343yzo9pru1b0d`)
+          DEPLOYMENT_ID: <deployment-id> # Found at the end of your Deployment's URL from the Astronomer UI
         steps:
         - uses: actions/checkout@v2
         - name: Get current date
