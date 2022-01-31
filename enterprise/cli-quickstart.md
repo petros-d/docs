@@ -21,6 +21,15 @@ If you're an Astronomer Enterprise user, you might use the Astronomer CLI to do 
 
 This guide provides steps for installing the CLI, initializing an Astronomer project, and deploying to an Airflow instance on your local machine. For more information on specific CLI workflows and features, read the [Astronomer CLI Reference Guide](cli-reference.md).
 
+## Prerequisites
+
+The Astronomer CLI requires:
+
+- [Docker](https://www.docker.com/) (v18.09 or higher).
+- [Docker Engine](https://docs.docker.com/engine/) (v0.13.1 or higher).
+
+Alternatively, you can run the CLI with Podman 3.1.0+. For more information, read [Run the CLI with Podman](cli-podman.md).
+
 ## Step 1: Install the Astronomer CLI
 
 There are two ways to install any version of the Astronomer CLI:
@@ -29,10 +38,6 @@ There are two ways to install any version of the Astronomer CLI:
 - cURL
 
 > **Note:** Both methods only work for Unix (Linux+Mac) based systems. If you're running on Windows 10, follow [this guide](cli-install-windows-10.md) to get set up with Docker for WSL.
-
-### Prerequisites
-
-The Astronomer CLI installation process requires [Docker](https://www.docker.com/) (v18.09 or higher).
 
 ### Install with Homebrew
 
@@ -74,25 +79,6 @@ If you're running macOS Catalina and beyond, do the following:
 ```
 curl -sSL https://install.astronomer.io | sudo bash -s < /dev/null
 ```
-
-#### Install the CLI on Apple M1 Machines
-
-To install the Astronomer CLI on a machine with an [Apple M1 chip](https://www.apple.com/newsroom/2020/11/apple-unleashes-m1/), you must use Homebrew. Because the Astronomer CLI does not yet have an ARM64 build, installing it via Homebrew on a machine with an Apple M1 chip requires a few additional steps:
-
-1. Run the following command to install the x86_64 version of Homebrew:
-
-    ```sh
-    arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    ```
-
-2. Confirm that the script successfully installed Homebrew on `/usr/local`.
-3. Run the following command to install the Astronomer CLI:
-
-    ```sh
-    arch -x86_64 /usr/local/Homebrew/bin/brew install astronomer/tap/astro
-    ```
-
-If you still have issues during installation, ensure that [Rosetta 2](https://support.apple.com/en-us/HT211861) is installed on your machine and try again.
 
 ## Step 2: Confirm the Install
 
@@ -253,7 +239,7 @@ astro dev start
 
 ## Astronomer CLI and Platform Versioning
 
-For every minor version of Astronomer, a corresponding minor version of the Astronomer CLI is made available. To ensure that you can continue to develop locally and deploy successfully, you should always upgrade to the corresponding minor version of the Astronomer CLI when you upgrade to a new minor version of Astronomer. If you're on Astronomer v0.27+, for example, Astronomer CLI v0.27+ is required.
+To ensure that you can continue to develop locally and deploy successfully, you should always upgrade to the latest minor version of the Astronomer CLI when you upgrade to the latest version of Astronomer. If you're on Astronomer v0.27+, for example, Astronomer CLI v0.27+ is required.
 
 While upgrading to a new minor version of Astronomer requires upgrading the Astronomer CLI, subsequent patch versions will remain compatible. For instance, consider a system where Astronomer is on v0.27.2 and the Astronomer CLI is on v0.27.0. While we encourage users to always run the latest available version of all components, these patch versions of Astronomer and the Astronomer CLI remain compatible because they're both in the v0.27 series.
 
@@ -285,6 +271,7 @@ For more information on Astronomer and Astronomer CLI releases, refer to:
 
 After installing and trying out the Astronomer CLI, we recommend reading through the following guides:
 
+* [CLI Release Notes](cli-release-notes.md)
 * [Astronomer CLI Reference Guide](cli-reference.md)
 * [Deploy DAGs via the Astronomer CLI](deploy-cli.md)
 * [Deploy DAGs via NFS Volume](deploy-nfs.md)

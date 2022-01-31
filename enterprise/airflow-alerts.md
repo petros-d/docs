@@ -44,27 +44,23 @@ To get started with SendGrid:
 
 5. Verify your integration in SendGrid to confirm that the key was activated. If you get an error indicating that SendGrid can't find the test email, try rerunning the cURL code in your terminal before retrying the verification.
 
-6. In the Astronomer UI, go to the **Variables** tab of your Deployment and add the following Environment Variables using the **+Add** button:
+6. Open the Airflow UI for your Deployment and [create a connection](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html#creating-a-connection-with-the-ui) with the following values:
 
-   ```
-   AIRFLOW__SMTP__SMTP_HOST=smtp.sendgrid.net
-   AIRFLOW__SMTP__SMTP_STARTTLS=True
-   AIRFLOW__SMTP__SMTP_SSL=False
-   AIRFLOW__SMTP__SMTP_USER=apikey
-   AIRFLOW__SMTP__SMTP_PASSWORD=<your-api-key>   
-   AIRFLOW__SMTP__SMTP_PORT=587
-   AIRFLOW__SMTP__SMTP_MAIL_FROM=<your-sendgrid-email>
-   ```
+    - **Connection ID**: `smtp_default`
+    - **Connection Type:**: `Email`
+    - **Host**: `smtp.sendgrid.net`
+    - **Login**: `apikey`
+    - **Password**: `<your-api-key>`
+    - **Port**: `587`
 
-   Your Environment Variables should look something like this:
+7. Click **Save** to finalize your configuration.
 
-   ![Astronomer Deployment Email Settings](https://assets2.astronomer.io/main/docs/emails/astro_env_variables.png)
+To begin receiving emails about Airflow alerts from a given DAG, configure the following values in the DAG's `default_args`:
 
-   To prevent unauthorized users in your Workspace from seeing sensitive information, we recommend selecting the **Secret?** checkbox for your email and password profile variables.
-
-7. Click **Deploy Changes** to push your configuration to your Airflow Deployment.
-
-> **Note:** For more information on how to configure Environment Variables both locally and on Astronomer, refer to [Environment Variables](environment-variables.md).
+```text
+'email_on_failure': True,
+'email': ['<recipient-address>'],
+```
 
 ### Integrate Amazon SES with Astronomer
 
@@ -80,27 +76,23 @@ This setup requires an AWS account and use of the [AWS Management Console](https
 
 4. Choose an Amazon EC2 region to use, then write down the code of this server for the next step. Refer to [Amazon's list of available regions and servers](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions) to determine which server best fits your needs.
 
-5. Open your Airflow Deployment in the Astronomer UI and go to the **Variables** tab. Then, add the following Environment Variables using the **+Add** button:
+5. Open the Airflow UI for your Deployment and [create a connection](https://airflow.apache.org/docs/apache-airflow/stable/howto/connection.html#creating-a-connection-with-the-ui) with the following values:
 
-   ```
-   AIRFLOW__SMTP__SMTP_HOST=<your-smtp-host>
-   AIRFLOW__SMTP__SMTP_PORT=587
-   AIRFLOW__SMTP__SMTP_STARTTLS=True
-   AIRFLOW__SMTP__SMTP_SSL=False
-   AIRFLOW__SMTP__SMTP_USER=<your-aws-username>
-   AIRFLOW__SMTP__SMTP_PASSWORD=<your-aws-password>
-   AIRFLOW__SMTP__SMTP_MAIL_FROM=<your-email-address>
-   ```
+    - **Connection ID**: `smtp_default`
+    - **Connection Type:**: `Email`
+    - **Host**: `smtp.sendgrid.net`
+    - **Login**: `apikey`
+    - **Password**: `<your-api-key>`
+    - **Port**: `587`
 
-   Your Environment Variables should look something like this:
+6. Click **Save** to finalize your configuration.
 
-   ![Astronomer Deployment Email Settings](https://assets2.astronomer.io/main/docs/emails/astro_env_variables.png)
+To begin receiving emails about Airflow alerts from a given DAG, configure the following values in the DAG's `default_args`:
 
-   To prevent unauthorized users in your Workspace from seeing sensitive information, we recommend selecting the **Secret?** checkbox for your email and password profile variables.
-
-    > **Note:** For more information on how to configure Environment Variables both locally and on Astronomer, refer to our ["Environment Variables" doc](environment-variables.md).
-
-6. Click **Deploy Changes** to push your configuration to your Airflow Deployment.
+```text
+'email_on_failure': True,
+'email': ['<recipient-address>'],
+```
 
 ## Limit Alerts to the DAG Level
 

@@ -9,17 +9,25 @@ description: Astronomer Enterprise release notes.
 
 This document includes all release notes for Astronomer Enterprise v0.26.
 
-Astronomer v0.26 is the latest Stable version of Astronomer Enterprise, while v0.25 remains the latest long-term support (LTS) version. To upgrade to Astronomer v0.26 from v0.25, read [Upgrade to v0.26](upgrade-astronomer-stable.md). For more information about Enterprise release channels, read [Release and Lifecycle Policies](release-lifecycle-policy.md).
+Astronomer v0.27 is the latest Stable version of Astronomer Enterprise, while v0.25 remains the latest long-term support (LTS) version. To upgrade to Astronomer v0.26 from v0.25, read [Upgrade to v0.26](upgrade-astronomer-stable.md). For more information about Enterprise release channels, read [Release and Lifecycle Policies](release-lifecycle-policy.md).
 
 We're committed to testing all Astronomer Enterprise versions for scale, reliability and security on Amazon EKS, Google GKE and Azure AKS. If you have any questions or an issue to report, don't hesitate to [reach out to us](https://support.astronomer.io).
 
-## 0.27.6
+## 0.26.6
 
 Release date: January 10, 2022
 
 ### Bug Fixes
 
 - Fixed an issue where users could not create Deployments via an IAM role
+
+## 0.26.5
+
+Release date: December 11, 2021
+
+### Bug Fixes
+
+- Remediated [CVE-2021-44228](https://github.com/advisories/GHSA-jfh8-c2jp-5v3q) related to Log4J by setting ES_JAVA_OPTS=-Dlog4j2.formatMsgNoLookups=true at runtime for all ElasticSearch containers
 
 ## 0.26.4
 
@@ -53,6 +61,7 @@ The flag prints out different levels of logs depending on the value that you pas
 - In the `astronomer.houston.config` section of your `config.yaml` file, you can now configure a list of `allowedSystemLevelDomains []`. If you configure this list, only users with emails from domains specified in the list (for example, `<company>.com`) can be granted System Admin privileges.
 - Greatly improved load times for the **System Admin** page in the UI.
 - You can now specify a node port for 3rd party ingress controllers with a service type of `nodePort`.
+- The naming format of service account pods has been changed from `<release-name>-dags-prod-worker-serviceaccount` to `release_name-dags-prod-airflow-worker`.
 
 ### Bug Fixes
 

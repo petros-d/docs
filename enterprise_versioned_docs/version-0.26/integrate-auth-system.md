@@ -108,7 +108,7 @@ To start, register the application. As you do so, make sure to specify the Redir
 
 Replace `BASEDOMAIN` with your own. For example, if your basedomain were `astronomer-development.com`, your registration would look like the following:
 
-![application](https://assets2.astronomer.io/main/docs/auth/application.png)
+![application](/img/docs/azure-application.png)
 
 ### Enable Access and ID Tokens
 
@@ -119,7 +119,7 @@ From there, head over to 'Authentication' to:
 
 Example:
 
-![authentication.png](https://assets2.astronomer.io/main/docs/auth/authentication.png)
+![authentication.png](/img/docs/azure-authentication.png)
 
 ### Enable Azure AD in your config.yaml file
 

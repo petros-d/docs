@@ -87,10 +87,6 @@ For detailed information on each instance type, reference [AWS documentation](ht
 
 **t3**
 
-- t3.nano
-- t3.micro
-- t3.small
-- t3.medium
 - t3.large
 - t3.2xlarge
 

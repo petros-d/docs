@@ -1,6 +1,6 @@
 ---
-title: 'Astronomer Runtime Versioning and Lifecycle Policy'
-sidebar_label: 'Versioning and Lifecycle Policy'
+title: "Astronomer Runtime Versioning and Lifecycle Policy"
+sidebar_label: "Versioning and Lifecycle Policy"
 id: runtime-version-lifecycle-policy
 description: Learn how Astronomer releases and maintains Astronomer Runtime, the core component that powers a differentiated Apache Airflow experience in Astronomer Cloud.
 ---
@@ -104,9 +104,9 @@ Maintenance is discontinued the last day of the month for a given version. For e
 
 The following table contains the exact lifecycle for each published version of Astronomer Runtime. These timelines are based on the LTS and Stable release channel maintenance policies.
 
-| Runtime Version                                                                           | Release Date   | Release Channel | Maintenance Period | End of Maintenance Date |
-| ------------------------------------------------------------------------------------ | -------------- | --------------- | ------------------ | ----------------------- |
-| [3.0.x](runtime-release-notes.md#astronomer-runtime-300)   | August 12, 2021   | Stable             | 6 Months          | February 2022            |
-| [4.0.x](runtime-release-notes.md#astronomer-runtime-400)     | Oct 12, 2021   | Stable          | 6 Months           | April 2022          |
+| Runtime Version                                          | Release Date    |     End of Maintenance Date |
+| -------------------------------------------------------- | --------------- ------------------ | ----------------------- |
+| [3.0.x](runtime-release-notes.md#astronomer-runtime-300) | August 12, 2021 |  February 2022      |
+| [4.0.x](runtime-release-notes.md#astronomer-runtime-400) | Oct 12, 2021    |  April 2022         |
 
 If you have any questions or concerns, reach out to [Astronomer Support](https://support.astronomer.io).

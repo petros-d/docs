@@ -238,6 +238,10 @@
         },
         {
           "type": "doc",
+          "id": "version-0.26/ac-cve"
+        },
+        {
+          "type": "doc",
           "id": "version-0.26/ac-support-policy"
         }
       ],
