@@ -235,7 +235,7 @@ In your Astronomer database, the corresponding `Deployment` record will be given
 
 ### Hard delete a Deployment
 
-> **Note:** This feature must first be enabled at the platform level before it can be used. To enable this feature, set `deployments.hardDeleteDeployment: true` in your `config.yaml` file and push the changes to your platform as described in [Apply a Config Change](apply-platform-config.md).
+> **Note:** This feature must first be enabled at the platform level before it can be used. To enable this feature, set `astronomer.houston.config.deployments.hardDeleteDeployment: true` in your `config.yaml` file and push the changes to your platform as described in [Apply a Config Change](apply-platform-config.md).
 
 To reuse a custom release name given to an existing Deployment, you need to first hard delete both the Deployment's metadata database and the Deployment's entry in your Astronomer database. To do so, select the **Hard Delete?** checkbox before clicking **Delete Deployment**. Alternatively, you can run `astro deployment delete --hard` via the Astronomer CLI.
 
