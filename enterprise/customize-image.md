@@ -180,14 +180,14 @@ The Astronomer CLI is built on top of [Docker Compose](https://docs.docker.com/c
 To add another volume mount for a directory named `custom_dependencies`, for example, add the following to your `docker-compose.override.yml`:
 
 ```
-version: "2"
+version: "3.1"
 services:
   scheduler:
     volumes:
       - /home/astronomer_project/custom_dependencies:/usr/local/airflow/custom_dependencies:ro
 ```
 
-Make sure to specify `version: "2"` and mimic the format of the source code file linked above.
+Make sure to specify `version: "3.1"` and mimic the format of the source code file linked above.
 
 When your image builds on `$ astro dev start`, any changes made within the `custom_dependencies` directory will be picked up automatically the same way they are with files in your `dags` directory:
 
