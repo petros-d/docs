@@ -22,8 +22,8 @@ For a complete list of the AWS resources that our team will provision in your AW
 
 Before completing this setup, make sure that you have:
 
-- A dedicated AWS account with minimum EC2 service quotas
-- A user that has `CreateRole` permissions on that account
+- A dedicated AWS account with minimum EC2 service quotas.
+- A user that has `CreateRole` permissions on that account.
 - Subscribed to the [Astronomer Cloud Status Page](https://cloud-status.astronomer.io/). This will ensure that you're alerted in the case of an incident or scheduled maintenance.
 
 Astronomer Cloud requires a dedicated AWS account with a minimum set of EC2 service quotas. For security reasons, the install process is not currently supported on an AWS account that has other tooling running in it. For instructions on creating a new AWS account, follow [AWS documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/). 
