@@ -128,8 +128,8 @@ Use this GitHub Action in a repository that hosts a single Astronomer project cr
 
 1. Set the following as [GitHub secrets](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository):
 
-   - `secrets.ASTRONOMER_KEY_ID` = `<your-key-id>`
-   - `secrets.ASTRONOMER_KEY_SECRET` = `<your-key-secret>`
+   - `ASTRONOMER_KEY_ID` = `<your-key-id>`
+   - `ASTRONOMER_KEY_SECRET` = `<your-key-secret>`
 
 2. Add the following to a new file in `.github/workflows`, making sure to replace `<organization-id>` and `<deployment-id>` with the values for your Deployment:
 
@@ -144,8 +144,8 @@ Use this GitHub Action in a repository that hosts a single Astronomer project cr
       build:
         runs-on: ubuntu-latest
         env:
-          ORGANIZATION_ID: <organization-id>
-          DEPLOYMENT_ID: <deployment-id>
+          ORGANIZATION_ID: <organization-id> # Found in `Organization Settings` in the Astronomer UI
+          DEPLOYMENT_ID: <deployment-id> # The unique string at the end of your Deployment's URL from the Astronomer UI (e.g. `cktogz2eg847343yzo9pru1b0d` is the ID in `https://cloud.astronomer.io/<workspaceId>/deployments/cktogz2eg847343yzo9pru1b0d`)
         steps:
         - uses: actions/checkout@v2
         - name: Get current date
