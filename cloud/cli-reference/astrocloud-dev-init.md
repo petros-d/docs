@@ -19,7 +19,6 @@ astrocloud dev init
 
 | Option              | Description                                                                                                        | Possible Values             |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------- |
-| `--airflow-version` | The Airflow version for your project. By default, the project is initialized with the most recent Airflow version. | All Airflow versions (2.0+) |
 | `--name`            | Name of your Astronomer project                                                                                    | Any string                  |
 
 ## Examples
