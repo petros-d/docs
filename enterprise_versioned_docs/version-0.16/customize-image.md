@@ -175,19 +175,19 @@ RUN ls
 
 ## Docker Compose Override
 
-The Astronomer CLI is built on top of [Docker Compose](https://docs.docker.com/compose/), a tool for defining and running multi-container Docker applications. If you're interested in overriding any of our CLI's default configurations ([found here](https://github.com/astronomer/astro-cli/blob/main/airflow/include/composeyml.go)), you're free to do so by adding a `docker-compose.override.yml` file to your Astronomer project directory. Any values in this file will override default settings run upon every `$ astro dev start`.
+The Astronomer CLI is built on top of [Docker Compose](https://docs.docker.com/compose/), a tool for defining and running multi-container Docker applications. If you're interested in overriding any of our CLI's default configurations ([found here](https://github.com/astronomer/astro-cli/blob/v0.16.5/airflow/include/composeyml.go)), you're free to do so by adding a `docker-compose.override.yml` file to your Astronomer project directory. Any values in this file will override default settings run upon every `$ astro dev start`.
 
 To add another volume mount for a directory named `custom_dependencies`, for example, add the following to your `docker-compose.override.yml`:
 
 ```
-version: "2"
+version: "3.1"
 services:
   scheduler:
     volumes:
       - /home/astronomer_project/custom_dependencies:/usr/local/airflow/custom_dependencies:ro
 ```
 
-Make sure to specify `version: "2"` and mimic the format of the source code file linked above.
+Make sure to specify `version: "3.1"` and mimic the format of the source code file linked above.
 
 When your image builds on `$ astro dev start`, any changes made within the `custom_dependencies` directory will be picked up automatically the same way they are with files in your `dags` directory:
 

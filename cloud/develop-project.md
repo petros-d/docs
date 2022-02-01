@@ -99,7 +99,7 @@ The Astronomer Registry includes:
 
 - Example DAGs for many data sources and destinations. For example, you can build out a data quality use case with Snowflake and Great Expectations based on the [Great Expectations Snowflake Example DAG](https://registry.astronomer.io/dags/simple-great-expectations-snowflake-el).
 - Documentation for Airflow providers, such as [Databricks](https://registry.astronomer.io/providers/databricks), [Snowflake](https://registry.astronomer.io/providers/snowflake), and [Postgres](https://registry.astronomer.io/providers/postgres). This documentation is comprehensive and based on Airflow source code.
-- Documentation for Airflow modules, such as the [PythonOperator](https://registry.astronomer.io/providers/apache-airflow/modules/pythonoperator), [BashOperator](https://registry.astronomer.io/providers/apache-airflow/modules/bashoperator), and [S3ToRedshiftOperator](https://registry.astronomer.io/providers/amazon/modules/s3toredshiftoperator). These modules include guidance on how to set Airflow connections and their parameters. 
+- Documentation for Airflow modules, such as the [PythonOperator](https://registry.astronomer.io/providers/apache-airflow/modules/pythonoperator), [BashOperator](https://registry.astronomer.io/providers/apache-airflow/modules/bashoperator), and [S3ToRedshiftOperator](https://registry.astronomer.io/providers/amazon/modules/s3toredshiftoperator). These modules include guidance on how to set Airflow connections and their parameters.
 
 As you browse the Astronomer Registry, follow this document for instructions on how to install providers as Python packages and make other changes to your Astronomer Project.
 
@@ -250,14 +250,14 @@ To see what values you can override, reference the CLI's [Docker Compose file](h
 For example, to add another volume mount for a directory named `custom_dependencies`, add the following to your `docker-compose.override.yml` file:
 
 ```yaml
-version: "2"
+version: "3.1"
 services:
   scheduler:
     volumes:
       - /home/astronomer_project/custom_dependencies:/usr/local/airflow/custom_dependencies:ro
 ```
 
-Make sure to specify `version: "2"` and follow the format of the source code file linked above.
+Make sure to specify `version: "3.1"` and follow the format of the source code file linked above.
 
 To see your override file live in your local Airflow environment, run the following command for any container running Airflow:
 
