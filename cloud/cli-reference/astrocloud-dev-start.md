@@ -9,7 +9,7 @@ description: Reference documentation for astrocloud dev start.
 
 Build your Astronomer project into a Docker image and spin up local a local Docker container for each Airflow component.
 
-This command can be used regularly to start and run any Astronomer project locally. For more information, read [Develop and Run a Project Locally](develop-project.md#build-and-run-a-project-locally).
+This command can be used to rebuild an Astronomer project and run it locally. For more information, read [Develop and Run a Project Locally](develop-project.md#build-and-run-a-project-locally).
 
 ## Usage
 
@@ -21,7 +21,7 @@ astrocloud dev start
 
 | Option              | Description                                                                                                        | Possible Values             |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------- |
-| `--env` | Path to your environment variable file. Default is `.env` | Valid filepaths |
+| `-e`,`--env` | Path to your environment variable file. Default is `.env` | Valid filepaths |
 
 
 ## Examples

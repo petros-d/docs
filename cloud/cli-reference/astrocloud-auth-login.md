@@ -12,7 +12,7 @@ Authenticate to Astronomer Cloud. After you run this command, the CLI redirects 
 ## Usage
 
 ```sh
-astrocloud auth login cloud.astronomer.io
+astrocloud auth login
 ```
 
 ## Related Commands

@@ -7,7 +7,7 @@ description: Reference documentation for astrocloud deployment list.
 
 ## Description
 
-List all Deployments within your current Workspace that you have access to.
+List all Deployments within your current Workspace.
 
 ## Usage
 
@@ -19,7 +19,7 @@ astrocloud deployment list
 
 | Option  | Description                             | Possible Values |
 | ------- | --------------------------------------- | --------------- |
-| `--all` | Show deployments across all Workspaces. | ``              |
+| `-a`,`--all` | Show Deployments across all Workspaces that you have access to. | ``              |
 
 ## Examples
 

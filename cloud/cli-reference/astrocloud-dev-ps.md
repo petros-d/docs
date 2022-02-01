@@ -7,7 +7,9 @@ description: Reference documentation for astrocloud dev logs.
 
 ## Description
 
-List all Docker containers running in your local Airflow environment, including the Airflow Webserver, Scheduler, and Postgres database. This command works similarly to [`docker ps`](https://docs.docker.com/engine/reference/commandline/ps/) and can only be run from a directory that is running an Astronomer Project.
+List all Docker containers running in your local Airflow environment, including the Airflow Webserver, Scheduler, and Postgres database. It outputs metadata for each running container, including `Container ID`, `Created`, `Status`, and `Ports`.
+
+This command works similarly to [`docker ps`](https://docs.docker.com/engine/reference/commandline/ps/) and can only be run from a directory that is running an Astronomer Project.
 
 ## Usage
 

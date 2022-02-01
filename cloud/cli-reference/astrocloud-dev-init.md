@@ -19,7 +19,7 @@ astrocloud dev init
 
 | Option              | Description                                                                                                        | Possible Values             |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------- |
-| `--name`            | Name of your Astronomer project                                                                                    | Any string                  |
+| `-n`,`--name`            | Name of your Astronomer project                                                                                    | Any string                  |
 
 ## Examples
 

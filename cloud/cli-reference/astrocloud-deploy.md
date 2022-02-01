@@ -1,6 +1,6 @@
 ---
-sidebar_label: 'astrocloud deploy'
-title: 'astrocloud deploy'
+sidebar_label: "astrocloud deploy"
+title: "astrocloud deploy"
 id: astrocloud-deploy
 description: Reference documentation for astrocloud deploy.
 ---
@@ -9,23 +9,23 @@ description: Reference documentation for astrocloud deploy.
 
 Deploy your Astronomer project to a Deployment on Astronomer Cloud.
 
-You can specify a Deployment's namespace in the command, or leave the command options blank to select from a list of all Deployments that you have access to. To retrieve a Deployment's namespace, go to the Deployment's information page in the UI and copy the value under **Namespace**.
+If you run `astrocloud deploy`, you'll be prompted to select from a list of all Deployments that you have access to across Workspaces. Alternatively, you can bypass this prompt and specify a Deployment's namespace in the command. To retrieve a Deployment's namespace, go to the Deployment's information page in the Astronomer UI and copy the value under **Namespace**.
 
 ## Usage
 
 ```sh
-astrocloud deploy <deployment-namespace>
+astrocloud deploy <options>
 ```
 
 ## Options
 
-| Option  | Description                                          | Possible Values                   |
-| ------- | ---------------------------------------------------- | --------------------------------- |
-| `--force` | Force the deploy even if uncommitted changes exist | `` |
-| `--prompt` | Force the prompt for selecting deployments to appear even if a Deployment is specified | `` |
-| `--save` | Save the current directory/Deployment combination for future deploys | `` |
-| `--workspace-id <string> `| Save the current directory/Deployment combination for future deploys | Any value |
-
+| Option                    | Description                                                                            | Possible Values                |
+| ------------------------- | -------------------------------------------------------------------------------------- | ------------------------------ |
+| `<deployment-namespace>`  | Specify the Deployment to deploy to.                                                   | Any valid Deployment namespace |
+| `-f`,`--force`               | Force the deploy even if uncommitted changes exist                                     | ``                             |
+| `p`,`--prompt`                | Force the prompt for selecting deployments to appear even if a Deployment is specified | ``                             |
+| `s`,`--save`                  | Save the current directory/Deployment combination for future deploys                   | ``                             |
+| `--workspace-id <string>` |Workspace assigned to the Deployment                  | Any value                      |
 
 ## Examples
 

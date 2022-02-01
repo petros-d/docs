@@ -19,9 +19,9 @@ astrocloud dev logs
 
 | Option              | Description                                                                                                        | Possible Values             |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------- |
-| `--follow` | Continue streaming most recent log output to your terminal. | ``|
-| `--scheduler`            | Show only Scheduler logs                                                                                  | ``                  |
-| `--webserver`            | Show only Webserver logs                                                                                  | ``                 |
+| `-f`,`--follow` | Continue streaming most recent log output to your terminal. | ``|
+| `-s`,`--scheduler`            | Show only Scheduler logs                                                                                  | ``                  |
+| `-w`,`--webserver`            | Show only Webserver logs                                                                                  | ``                 |
 
 
 ## Examples

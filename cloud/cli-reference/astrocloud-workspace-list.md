@@ -17,4 +17,5 @@ astrocloud workspace list
 
 ## Related Commands
 
+- [`astrocloud auth login`](cli-reference/astrocloud-auth-login.md)
 - [`astrocloud workspace switch`](cli-reference/astrocloud-workspace-switch.md)

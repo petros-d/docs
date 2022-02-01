@@ -23,14 +23,14 @@ astrocloud completion <shell>
 
 ## Example
 
-To generate a shell completion script for zsh, you can run:
+To generate a shell completion script for zsh, for example, you can run:
 
 ```sh
 $ astrocloud completion zsh > /usr/local/share/zsh/site-functions/_astrocloud
 # Completion script saved in your local directory
 ```
 
-To enable autocompletion, ensure that the following lines are present in your `~/.zshrc` file:
+Then, to enable autocompletion, ensure that the following lines are present in your `~/.zshrc` file:
 
 ```sh
 autoload -U compinit
