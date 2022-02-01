@@ -25,10 +25,20 @@ This guide provides instructions for how to install the Astronomer Cloud CLI.
 
 ## Prerequisites
 
-To install and use the Astronomer Cloud CLI, you must have:
+To install and use the Astronomer Cloud CLI on Mac, you must have:
 
-- [Homebrew](https://brew.sh/) (_Mac only_)
-- [Docker](https://docs.docker.com/get-docker/)
+- [Homebrew](https://brew.sh/)
+- [Docker Desktop](https://docs.docker.com/get-docker/) (v18.09 or higher).
+
+To install and use the Astronomer Cloud CLI on Windows, you must have:
+
+- [Docker Engine](https://docs.docker.com/engine/install/) (v0.13.1 or higher).
+
+:::warning
+
+If you previously used the `astro` executable file to run CLI commands, you must delete this file and any related system environment variables or symbolic links before installing the Astronomer Cloud CLI.
+
+:::
 
 ## Install the Astronomer Cloud CLI
 

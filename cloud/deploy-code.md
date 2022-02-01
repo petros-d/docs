@@ -30,13 +30,13 @@ To deploy DAGs to Astronomer, you must have:
 
 ## Step 1: Authenticate to Astronomer
 
-Once you've tested your DAGs locally, you're ready to push them to Astronomer. To start, authenticate to Astronomer Cloud by running:
+Once you've tested your DAGs locally, you're ready to push them to Astronomer. To start, authenticate via the Astronomer Cloud CLI by running:
 
 ```
 astrocloud auth login
 ```
 
-If you created your account with a username and password, you'll be prompted to enter them directly in your terminal. If you did so via GitHub or Google OAuth, you'll be prompted to grab a temporary token from https://cloud.astronomer.io/token.
+After running this command, you will be prompted to open your web browser and log in via the Astronomer UI. Once you complete this login, you will be automatically authenticated to the CLI.
 
 ## Step 2: Push DAGs to an Astronomer Deployment
 

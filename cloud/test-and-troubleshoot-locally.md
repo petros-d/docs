@@ -88,15 +88,19 @@ You might experience one of the following common issues when testing your Astron
 
 ### New DAGs aren't visible in the Airflow UI
 
-By default, the Airflow Scheduler parses the DAGbag every 30 seconds. For this reason, it might take a minute or two to see new DAGs appear in the Airflow UI. This is dependent on how much CPU is available to the Scheduler: the more CPU is available, the faster the Scheduler can parse your DAGs.
+By default, the Airflow Scheduler scans the DAGs directory for new files every 300 seconds (5 minutes). For this reason, it might take a minute or two to see new DAGs appear in the Airflow UI. This is dependent on how much CPU is available to the Scheduler: the more CPU is available, the faster the Scheduler can parse your DAGs.
 
-To have the Scheduler check for DAGs more frequently than every 30 seconds, you can set the `min_file_process_interval` to any number of seconds less than 30.
+To have the Scheduler check for DAGs more frequently, you can set the `AIRFLOW__SCHEDULER__DAG_DIR_LIST_INTERVAL` environment variable to less than 300 seconds.
 
 ### DAGs are running slowly
 
-If your Astronomer project contains many DAGs or tasks, then you might experience performance issues in your local Airflow environment. To improve your environment's performance, you can scale both CPUs and memory in your Docker resources configuration. Note that increasing Docker's resource usage might decrease the overall performance of your machine.
+If your Astronomer project contains many DAGs or tasks, then you might experience performance issues in your local Airflow environment.
 
-If your DAGs are still running slowly and you cannot scale Docker any further, then we recommend creating a Deployment on Astronomer Cloud that's dedicated to testing.
+To improve your environment's performance, you can scale both CPUs and memory in your Docker resources configuration. Note that increasing Docker's resource usage might decrease the overall performance of your machine.
+
+You can also modify Airflow-level settings to improve your project's performance. For more information, read Astronomer's guide to [Scaling out Airflow](https://www.astronomer.io/guides/airflow-scaling-workers).
+
+If your DAGs are still running slowly and you cannot scale Docker or Airflow any further, then we recommend creating a Deployment on Astronomer Cloud that's dedicated to testing.
 
 ### Astronomer project won't load after `astrocloud dev start`
 
