@@ -34,9 +34,9 @@ To install and use the Astronomer Cloud CLI on Windows, you must have:
 
 - [Docker Engine](https://docs.docker.com/engine/install/) (v0.13.1 or higher).
 
-:::warning
+:::caution
 
-If you previously used the `astro` executable file to run CLI commands, you must delete this file and any related system environment variables or symbolic links before installing the Astronomer Cloud CLI.
+If you currently use the `astro` executable file to run CLI commands, you must delete this file and any related system environment variables or symbolic links before installing the Astronomer Cloud CLI.
 
 :::
 
@@ -93,7 +93,7 @@ brew install astronomer/cloud/astrocloud
 
 ## Confirm the Install
 
-To confirm the CLI was installed properly, run the following:
+To confirm the CLI was installed properly, run the following CLI command:
 
 ```
 astrocloud version
