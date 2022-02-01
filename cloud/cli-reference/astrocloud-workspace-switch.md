@@ -7,14 +7,12 @@ description: Reference documentation for astrocloud workspace switch.
 
 ## Description
 
-Switch to another Workspace by specifying the Workspace ID.
-
-You can find a Workspace's ID in your browser when accessing the Workspace via the UI. The Workspace ID is the first string of characters following `cloud.astronomer.io` in your URL. For example, the Workspace ID in `https://cloud.astronomer.io/ckmzk0cqu392527yujdjvq0se/deployments` is `ckmzk0cqu392527yujdjvq0se`.
+Switch to another Workspace. After running the command, you are presented with a list of all Workspaces that you have access to. Then, to switch to a given Workspace, enter the number next to the Workspace's name in the list.
 
 ## Usage
 
 ```sh
-astrocloud workspace switch <workspace-id>
+astrocloud workspace switch
 ```
 
 ## Related Commands

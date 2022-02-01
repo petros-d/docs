@@ -36,3 +36,7 @@ $ astrocloud deploy --name=MyProject
 ## Related Commands
 
 - [`astrocloud dev start`](cli-reference/astrocloud-dev-start.md)
+- [`astrocloud dev stop`](cli-reference/astrocloud-dev-stop.md)
+- [`astrocloud dev init`](cli-reference/astrocloud-dev-init.md)
+- [`astrocloud dev run`](cli-reference/astrocloud-dev-run.md)
+- [`astrocloud dev logs`](cli-reference/astrocloud-dev-logs.md)

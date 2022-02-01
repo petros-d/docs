@@ -1,8 +1,8 @@
 ---
-sidebar_label: "astrocloud dev start"
-title: "astrocloud dev start"
-id: astrocloud-dev-start
-description: Reference documentation for astrocloud dev start.
+sidebar_label: "astrocloud dev stop"
+title: "astrocloud dev stop"
+id: astrocloud-dev-stop
+description: Reference documentation for astrocloud dev stop.
 ---
 
 ## Description

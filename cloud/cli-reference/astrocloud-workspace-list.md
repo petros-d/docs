@@ -7,7 +7,7 @@ description: Reference documentation for astrocloud workspace list.
 
 ## Description
 
-Show a list of all Workspaces in your Organization that you have access to.
+Show the names and IDs of all Workspaces in your Organization that you have access to.
 
 ## Usage
 
