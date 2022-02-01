@@ -26,8 +26,6 @@ astrocloud dev init
 ```sh
 $ astrocloud dev init
 # Generate default project
-$ astrocloud dev init 2.2.0
-# Generate default project based on Airflow 2.2.0
 $ astrocloud deploy --name=MyProject
 # Generated `config.yaml` file with `name=MyProject`
 ```
