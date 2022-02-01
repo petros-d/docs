@@ -11,27 +11,7 @@ import {siteVariables} from '@site/src/versions';
 
 The Astronomer Cloud CLI is the easiest way to run Apache Airflow on your local machine. From the CLI, you can run a local Apache Airflow environment with a dedicated Webserver, Scheduler and Postgres Database. If you're an Astronomer Cloud user, you can also create and manage users, Workspaces, Deployments, and more.
 
-This document contains information about all commands and settings available in the Astronomer Cloud CLI, including examples and flags.
-
-## Installation
-
-To install the Astronomer Cloud CLI, run the following command:
-
-```sh
-brew install astronomer/cloud/astrocloud
-```
-
-To confirm that the installation was successful, run the following command:
-
-```sh
-astrocloud version
-```
-
-If the installation was successful, you should see your version of the AstroCloud CLI in the terminal:
-
-```sh
-<pre><code parentName="pre">{`AstroCloud CLI Version: ${siteVariables.cliVersion}`}</code></pre>
-```
+This document contains information about all commands and settings available in the Astronomer Cloud CLI, including examples and flags. To install the Astronomer Cloud CLI, see [Install the CLI](install-cli.md).
 
 ## Core Commands
 
@@ -44,3 +24,9 @@ We expect that you'll use these commands most often when managing your Astronome
 - [`astrocloud deploy`](cli-reference/astrocloud-deploy.md)
 
 Each of these commands has a dedicated documentation page with additional notes and examples. As we expand functionality for the Astronomer Cloud CLI, new commands will be listed here.
+
+## Global Options
+
+The Astronomer Cloud CLI has one global flag that can be used with any command:
+
+- `-h`, `--help`: Output more information about a given command to the CLI.
