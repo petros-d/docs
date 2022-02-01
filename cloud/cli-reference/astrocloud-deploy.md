@@ -7,7 +7,7 @@ description: Reference documentation for astrocloud deploy.
 
 ## Description
 
-Deploy your Astronomer project to a Deployment on Astronomer Cloud. For more information about this workflow, read [Deploy Code](deploy-code.md).
+[Deploy your Astronomer project](deploy-code.md) to a Deployment on Astronomer Cloud.
 
 If you run `astrocloud deploy`, you'll be prompted to select from a list of all Deployments that you have access to across Workspaces. Alternatively, you can bypass this prompt and specify a Deployment's namespace in the command. To retrieve a Deployment's namespace, go to the Deployment's information page in the Astronomer UI and copy the value under **Namespace**.
 
