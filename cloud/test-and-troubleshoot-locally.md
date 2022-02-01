@@ -82,7 +82,7 @@ astrocloud dev kill
 
 This command forces your running containers to stop and deletes all data associated with your local Postgres metadata database, including Airflow Connections, logs, and task history.
 
-## Common Issues
+## Troubleshooting Common Issues
 
 You might experience one of the following common issues when testing your Astronomer project in a local environment. This section contains information about how to approach each of these issues.
 

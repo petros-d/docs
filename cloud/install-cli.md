@@ -27,8 +27,8 @@ This guide provides instructions for how to install the Astronomer Cloud CLI.
 
 To install and use the Astronomer Cloud CLI, you must have:
 
-- Homebrew (_Mac only_)
-- Docker
+- [Homebrew](https://brew.sh/) (_Mac only_)
+- [Docker](https://docs.docker.com/get-docker/)
 
 ## Install the Astronomer Cloud CLI
 
@@ -50,13 +50,13 @@ brew install astronomer/cloud/astrocloud
 
 <TabItem value="windows">
 
-1. In a PowerShell terminal, an Astronomer project directory and open it:
+1. In a PowerShell terminal, create a new directory for your Astronomer project and set it as your current directory:
 
     ```powershell
     md my-project && cd my-project
     ```
 
-2. Based on your CPU, run one of the following commands to download the Astronomer Cloud CLI executable into your project folder.
+2. Based on your CPU, run one of the following commands to download the Astronomer Cloud CLI executable into your project directory.
 
     - AMD64:
 
