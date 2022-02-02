@@ -27,7 +27,7 @@ The Astronomer Cloud CLI can be installed via Homebrew. Commands take the form o
 astrocloud <command> # E.g. `astrocloud dev start`
 ```
 
-We strongly recommend that all users [install the Astronomer Cloud CLI](install-cli.md) and delete the `astro` executable as soon as possible. As of February 2022, the executable will no longer be maintained by our team in the context of Astronomer Cloud. With that said, the release of the Astronomer Cloud CLI does not have any automatic impact on your existing Deployments or DAGs.
+We strongly recommend that all users [install the Astronomer Cloud CLI](install-cli.md) and [migrate from the `./astro` executable](install-cli.md#migrate-from-the-astro-executable-to-the-astronomer-cloud-cli) as soon as possible. As of February 2022, the executable will no longer be maintained by our team in the context of Astronomer Cloud. With that said, the release of the Astronomer Cloud CLI does not have any automatic impact on your existing Deployments or DAGs.
 
 ### Improved Authentication Flow
 
