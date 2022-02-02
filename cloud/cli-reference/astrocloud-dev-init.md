@@ -19,15 +19,18 @@ astrocloud dev init
 
 | Option              | Description                                                                                                        | Possible Values             |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------ | --------------------------- |
+| `-v`, `runtime-version` | Initialize a project with a specific Runtime version | Any supported Runtime version |
 | `-n`,`--name`            | Name of your Astronomer project                                                                                    | Any string                  |
 
 ## Examples
 
 ```sh
 $ astrocloud dev init
-# Generate default project
-$ astrocloud deploy --name=MyProject
+# Initialized default project
+$ astrocloud dev init --name=MyProject
 # Generated `config.yaml` file with `name=MyProject`
+$ astrocloud dev init --runtime-version=4.0.7
+## Initialized project with Runtime 4.0.7
 ```
 
 ## Related Commands
