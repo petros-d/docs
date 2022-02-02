@@ -11,7 +11,7 @@ This guide provides setup steps for integrating various third party identity pro
 
 After integrating your identity provider with Astronomer Cloud, a user in your organization will be automatically logged in to Astronomer Cloud if they're already logged in via your IDP. You can also add existing IDP accounts as new Astronomer users through your IDP application.
 
-## Okta
+## Configure Okta as Your IDP
 
 This section provides setup steps for setting up Okta as your IDP on Astronomer Cloud. After completing this setup, your organization's users can use Okta to log in to Astronomer.
 
@@ -66,7 +66,7 @@ On the page for your Okta app integration, click **View Setup Instructions**. Co
 
 On the page for your Okta app integration, open the **Assignments** tab. Ensure that all users who will use Astronomer are assigned to the integration. For more information, read [Okta Documentation](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-assign-apps.htm).
 
-## Azure
+## Configure Azure AD as Your IDP
 
 This section provides setup steps for setting up Okta as your IDP on Astronomer Cloud. After completing this setup, your organization's users can use Okta to log in to Astronomer.
 
