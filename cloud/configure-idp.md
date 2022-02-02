@@ -41,7 +41,7 @@ In the **Advanced Settings** section of your configuration, set the following va
 - **Digest Algorithm**: `SHA256`
 - **Assertion Encryption**: `Unencrypted`
 
-In the **Attribute Statements** section of your configuration, create the following four attribute statements, making sure to use the exact capitalization as shown here:
+In the **Attribute Statements** section of your configuration, create the following four attribute statements, making sure to use the exact capitalization as shown:
 
 | Name      | Name Format | Value            |
 | --------- | ----------- | ---------------- |
@@ -52,7 +52,7 @@ In the **Attribute Statements** section of your configuration, create the follow
 
 :::info
 
-These values may be different if Okta is connected to an Active Directory. In this case, replace each `Value` with the equivalent Active Directory values for a user's first name, last name, and full email address.
+These values might be different if Okta is connected to an Active Directory. In this case, replace each `Value` with the equivalent Active Directory values for a user's first name, last name, and full email address.
 
 :::
 
@@ -60,11 +60,11 @@ Complete the remainder of the setup as documented in Okta until you finish creat
 
 ### Step 3: Provide Astronomer with Your Integration Information
 
-On the page for your Okta App Integration, click **View Setup Instructions**. Copy the values for `Single Sign-on URL` and `X.509 Certificate` that appear and send these to Astronomer Support. From here, Astronomer will finalize the integration with Okta.
+On the page for your Okta app integration, click **View Setup Instructions**. Copy the values for `Single Sign-on URL` and `X.509 Certificate` that appear and send these to Astronomer Support. From here, Astronomer will finalize the integration with Okta.
 
 ### Step 4: Assign users to your Okta application
 
-On the page for your Okta app integration, open the **Assignments** tab. Ensure that all users who will use Astronomer are assigned to the integration. For more information, read [Okta Documentation])(https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-assign-apps.htm).
+On the page for your Okta app integration, open the **Assignments** tab. Ensure that all users who will use Astronomer are assigned to the integration. For more information, read [Okta Documentation](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-assign-apps.htm).
 
 ## Azure
 
@@ -79,7 +79,7 @@ To integrate Azure as your IDP for Astronomer you must have:
 
 ### Step 1: Register Your App for Astronomer
 
-Follow Microsoft's [Quickstart for registering a new application](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app). When configuring the application, set the **Name** and **Supported account types** according to your organization's needs. For the **Redirect URI**, select **Web** and specify `https://auth.astronomer.io/login/callback`.
+Follow [Microsoft Documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) to register a new app. When configuring the application, set the **Name** and **Supported account types** according to your organization's needs. For the **Redirect URI**, select **Web** and specify `https://auth.astronomer.io/login/callback`.
 
 ### Step 2: Create a Client Secret
 
@@ -87,7 +87,7 @@ Follow [Microsoft' documentation](https://docs.microsoft.com/en-us/azure/active-
 
 :::caution
 
-If you configure an expiring secret, make sure to record the expiration date; you will need to renew the key before that day to avoid a service interruption.
+If you configure an expiring secret, make sure to record the expiration date and renew the key before this date to avoid interruptions to your service.
 
 :::
 
