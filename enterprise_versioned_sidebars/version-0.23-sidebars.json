@@ -283,6 +283,10 @@
         {
           "type": "doc",
           "id": "version-0.23/version-compatibility-reference"
+        },
+        {
+          "type": "doc",
+          "id": "version-0.23/release-lifecycle-policy"
         }
       ],
       "collapsible": true,
