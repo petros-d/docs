@@ -19,7 +19,7 @@ This section provides setup steps for setting up Okta as your IDP on Astronomer 
 
 To integrate Okta as your IDP for Astronomer Cloud, you must have an [Okta account](https://www.okta.com/)
 
-### Step 1: Work With Astronomer to Configure SAML
+### Step 1: Work with Astronomer to configure SAML
 
 Reach out to [Astronomer Support](support.astronomer.io) with a request to integrate Okta as an IDP on Astronomer. From here, an Astronomer Representative will provide you with a connection name. Save this connection name for use in Step 2.
 
@@ -58,7 +58,7 @@ These values might be different if Okta is connected to an Active Directory. In 
 
 Complete the remainder of the setup as documented in Okta until you finish creating your integration.
 
-### Step 3: Provide Astronomer with Your Integration Information
+### Step 3: Provide Astronomer with your integration information
 
 On the page for your Okta app integration, click **View Setup Instructions**. Copy the values for `Single Sign-on URL` and `X.509 Certificate` that appear and send these to Astronomer Support. From here, Astronomer will finalize the integration with Okta.
 
@@ -66,7 +66,7 @@ On the page for your Okta app integration, click **View Setup Instructions**. Co
 
 On the page for your Okta app integration, open the **Assignments** tab. Ensure that all users who will use Astronomer are assigned to the integration. For more information, read [Okta Documentation](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-assign-apps.htm).
 
-## Configure Azure AD as Your IDP
+## Configure Azure AD as your IDP
 
 This section provides setup steps for setting up Okta as your IDP on Astronomer Cloud. After completing this setup, your organization's users can use Okta to log in to Astronomer.
 
@@ -77,11 +77,11 @@ To integrate Azure as your IDP for Astronomer you must have:
 - An Azure subscription.
 - An [Azure AD tenant](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant) with `Global Administrator` privileges.
 
-### Step 1: Register Your App for Astronomer
+### Step 1: Register your app for Astronomer
 
 Follow [Microsoft Documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) to register a new app. When configuring the application, set the **Name** and **Supported account types** according to your organization's needs. For the **Redirect URI**, select **Web** and specify `https://auth.astronomer.io/login/callback`.
 
-### Step 2: Create a Client Secret
+### Step 2: Create a client secret
 
 Follow [Microsoft' documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-credentials) to create a client secret for your new application. Make note of the secret value for Step 4.
 
@@ -91,7 +91,7 @@ If you configure an expiring secret, make sure to record the expiration date and
 
 :::
 
-### Step 3: Configure API Permissions
+### Step 3: Configure API permissions
 
 Follow [Microsoft's documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-access-web-apis#add-permissions-to-access-web-apis) to add the following **Delegated** permissions to **Microsoft Graph**:
 
@@ -106,7 +106,7 @@ If your Azure Active Directory is configured to require admin approval on API pe
 
 :::
 
-### Step 4: Provide Astronomer With Your Azure AD App Information
+### Step 4: Provide Astronomer with your Azure AD app information
 
 Reach out to Astronomer support and provide the following information from your Azure AD app:
 
