@@ -68,7 +68,7 @@ On the page for your Okta app integration, open the **Assignments** tab. Ensure 
 
 ## Configure Azure AD as your IDP
 
-This section provides setup steps for setting up Okta as your IDP on Astronomer Cloud. After completing this setup, your organization's users can use Okta to log in to Astronomer.
+This section provides setup steps for setting up Azure AD as your IDP on Astronomer Cloud. After completing this setup, your organization's users can use Azure AD to log in to Astronomer.
 
 ### Prerequisites
 
