@@ -87,7 +87,7 @@ Follow [Microsoft' documentation](https://docs.microsoft.com/en-us/azure/active-
 
 :::caution
 
-If you configure an expiring secret, make sure to record the expiration date and renew the key before this date to avoid interruptions to your service.
+If you configure an expiring secret, make sure to record the expiration date and renew the secret before this date to avoid interruptions to your service.
 
 :::
 
