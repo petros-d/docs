@@ -13,7 +13,7 @@ After integrating your identity provider with Astronomer Cloud, a user in your o
 
 ## Okta
 
-This section provides setup steps for setting up Okta as your IDP on Astronomer Cloud.
+This section provides setup steps for setting up Okta as your IDP on Astronomer Cloud. After completing this setup, your organization's users can use Okta to log in to Astronomer.
 
 ### Prerequisites
 
@@ -25,21 +25,21 @@ Reach out to [Astronomer Support](support.astronomer.io) with a request to integ
 
 ### Step 2: Configure Okta
 
-Follow the [Okta documentation](https://help.okta.com/en/prod/Content/Topics/Apps/Apps_App_Integration_Wizard_SAML.htm) create an SAML App Integration with the following SAML settings:
+Follow the [Okta documentation](https://help.okta.com/en/prod/Content/Topics/Apps/Apps_App_Integration_Wizard_SAML.htm) to create an SAML App Integration with the following SAML settings:
 
-- Single sign on URL: `https://auth.astronomer.io/login/callback?connection=<your-connection-name>`
-- Audience URI (SP Entity ID): `urn:auth0:astronomer-prod:<your-connection-name>`
-- Name ID format: `Unspecified`
-- Application username: `Email`
-- Update application username on: `Create and update`
+- **Single sign on URL**: `https://auth.astronomer.io/login/callback?connection=<your-connection-name>`
+- **Audience URI (SP Entity ID)**: `urn:auth0:astronomer-prod:<your-connection-name>`
+- **Name ID format**: `Unspecified`
+- **Application username**: `Email`
+- **Update application username on**: `Create and update`
 
 In the **Advanced Settings** section of your configuration, set the following values:
 
-- Response: `Signed`
-- Assertion Signature: `Signed`
-- Signature Algorithm `RSA-SHA256`
-- Digest Algorithm: `SHA256`
-- Assertion Encryption: `Unencrypted`
+- **Response**: `Signed`
+- **Assertion Signature**: `Signed`
+- **Signature Algorithm**: `RSA-SHA256`
+- **Digest Algorithm**: `SHA256`
+- **Assertion Encryption**: `Unencrypted`
 
 In the **Attribute Statements** section of your configuration, create the following four attribute statements, making sure to use the exact capitalization as shown here:
 
@@ -68,7 +68,7 @@ On the page for your Okta app integration, open the **Assignments** tab. Ensure 
 
 ## Azure
 
-This section provides setup steps for setting up Okta as your IDP on Astronomer Cloud.
+This section provides setup steps for setting up Okta as your IDP on Astronomer Cloud. After completing this setup, your organization's users can use Okta to log in to Astronomer.
 
 ### Prerequisites
 
