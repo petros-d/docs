@@ -112,10 +112,10 @@ Every Astronomer Cluster on AWS is created with and requires an [RDS instance](h
 
 Astronomer Cloud supports a variety of AWS RDS instance types. Instance types comprise of varying combinations of CPU, memory, storage, and networking capacity. For detailed information on each instance type, reference [AWS documentation](https://aws.amazon.com/rds/instance-types/). If you're interested in an RDS instance type that is not on this list, reach out to [Astronomer Support](https://support.astronomer.io).
 
-**db.r5**
+#### db.r5
 
-- db.r5.large
-- db.r5.xlarge (_default_)
+- db.r5.large (_default_)
+- db.r5.xlarge
 - db.r5.2xlarge
 - db.r5.4xlarge
 - db.r5.8xlarge
@@ -123,7 +123,7 @@ Astronomer Cloud supports a variety of AWS RDS instance types. Instance types co
 - db.r5.16xlarge
 - db.r5.24xlarge
 
-**db.m5**
+#### db.m5
 
 - db.m5.large
 - db.m5.xlarge
