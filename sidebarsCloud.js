@@ -79,7 +79,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'CLI Reference Guide',
+          label: 'CLI Command Reference',
           link: {type: 'doc', id: 'cli-reference'},
           items: [
             'cli-reference/astrocloud-auth-login',

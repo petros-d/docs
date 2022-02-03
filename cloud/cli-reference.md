@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'CLI Reference'
+sidebar_label: 'CLI Command Reference'
 title: 'Astronomer Cloud CLI Command Reference'
 id: cli-reference
 description: Learn about every command that you can run with the Astronomer Cloud CLI.
