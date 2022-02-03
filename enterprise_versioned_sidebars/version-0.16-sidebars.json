@@ -214,10 +214,6 @@
         },
         {
           "type": "doc",
-          "id": "version-0.16/logs-to-s3"
-        },
-        {
-          "type": "doc",
           "id": "version-0.16/install-packages"
         },
         {

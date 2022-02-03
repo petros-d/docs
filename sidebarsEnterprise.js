@@ -103,7 +103,6 @@ module.exports = {
       items: [
       'image-architecture',
       'single-node-install',
-      'logs-to-s3',
       'install-packages',
       'upgrade-ac',
       'ac-cve',
