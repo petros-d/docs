@@ -17,11 +17,15 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 
 ## February 3, 2022
 
+### Support for Third-Party Identity Providers
 
+You can now integrate both Azure AD and Okta as identity providers (IDPs) for federated authentication on Astronomer Cloud. By setting up a third-party identity provider, a user in your organization will be automatically logged in to Astronomer Cloud if they're already logged in via your IDP. By adding new Astronomer users through your IDP's own user management system, Workspace admins can automatically add new users to their Workspace without those users needing to individually sign up for Astronomer.
+
+For more information about this feature read [Set Up an Identity Provider](configure-idp.md).
 
 ### Additional Improvements
 
-- Changed the default RDS instance type for new Clusters from `db.r5.xlarge` to `db.r5.large``
+- Changed the default RDS instance type for new Clusters from `db.r5.xlarge` to `db.r5.large`
 
 ## January 13, 2022
 
