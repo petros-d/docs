@@ -15,6 +15,14 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 
 **Latest CLI Version**: 1.0.4 ([Release notes](cli-release-notes.md))
 
+## February 3, 2022
+
+
+
+### Additional Improvements
+
+- Changed the default RDS instance type for new Clusters from `db.r5.xlarge` to `db.r5.large``
+
 ## January 13, 2022
 
 ### Identity-Based Login Flow
