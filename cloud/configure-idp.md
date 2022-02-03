@@ -79,7 +79,10 @@ To integrate Azure as your IDP for Astronomer you must have:
 
 ### Step 1: Register your app for Astronomer
 
-Follow [Microsoft Documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) to register a new app. When configuring the application, set the **Name** and **Supported account types** according to your organization's needs. For the **Redirect URI**, select **Web** and specify `https://auth.astronomer.io/login/callback`.
+Follow [Microsoft Documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) to register a new app. When configuring the application, set the following values:
+
+- **Name** and **Supported account types**: Set these according to your organization's needs.
+- **Redirect URI**: Select **Web** and specify `https://auth.astronomer.io/login/callback`.
 
 ### Step 2: Create a client secret
 
@@ -110,8 +113,8 @@ If your Azure Active Directory is configured to require admin approval on API pe
 
 Reach out to Astronomer support and provide the following information from your Azure AD app:
 
-- **Microsoft Azure AD Domain**: Retrieve this from your Azure AD directory's overview page in the Microsoft Azure portal
-- **Application (client) ID**: Retrieve this from the **Overview** page of your application
-- **Client secret**: The value of your client secret from Step 2
+- **Microsoft Azure AD Domain**: Retrieve this from your Azure AD directory's overview page in the Microsoft Azure portal.
+- **Application (client) ID**: Retrieve this from the **Overview** page of your application.
+- **Client secret**: Use the value of your client secret from Step 2.
 
 From here, Astronomer will complete the integration and add Azure as your organization's IDP.
