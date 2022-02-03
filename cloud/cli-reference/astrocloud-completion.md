@@ -7,7 +7,11 @@ description: Reference documentation for astrocloud completion.
 
 ## Description
 
-Generate completion scripts for Astronomer Cloud commands. You can modify the generated scripts and add them to the appropriate directory to customize your command line autocompletion behavior.
+Generate completion scripts for Astronomer Cloud CLI commands. You can modify the generated scripts and add them to the appropriate directory to customize your command line autocompletion behavior.
+
+For example, you could set automation such that typing `astrocloud au` autocompletes to `astrocloud auth` if you press **TAB** on your keyboard and `astrocloud auth login` or `astrocloud auth logout` if you press **TAB** again.
+
+This command is helpful for users interacting with the CLI on a regular basis.
 
 ## Usage
 
