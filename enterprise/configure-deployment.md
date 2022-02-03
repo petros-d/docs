@@ -114,7 +114,7 @@ astronomer:
         triggererEnabled: true
 ```
 
-If you have overridden  `astronomer.houston.deployments.components`, you additionally need to add the following configuration:
+If you have overridden  `astronomer.houston.config.deployments.components`, you additionally need to add the following configuration:
 
 ```yaml
 astronomer:
