@@ -2,7 +2,7 @@
 sidebar_label: 'Create a Project'
 title: 'Create an Astronomer Project'
 id: 'create-project'
-description: Create an Astronomer project and run it locally with the Astronomer CLI.
+description: Create an Astronomer project and run it locally with the Astronomer Cloud CLI.
 ---
 
 import {siteVariables} from '@site/src/versions';
@@ -17,7 +17,7 @@ This guide provides instructions for creating a new Astronomer project, as well 
 
 To create an Astronomer project, you need:
 
-- [The Astronomer CLI](install-cli.md)
+- [The Astronomer Cloud CLI](install-cli.md)
 - [Docker](https://www.docker.com/products/docker-desktop)
 
 ## Step 1: Create an Astronomer Project
@@ -25,7 +25,7 @@ To create an Astronomer project, you need:
 To create a new Astronomer project folder, open the directory where you installed the CLI and run:
 
 ```sh
-astro dev init
+astrocloud dev init
 ```
 
 This command generates the following files in the directory:
@@ -58,7 +58,7 @@ By default, the Docker image in your Dockerfile is:
 To confirm that you successfully initialized an Astronomer project, run the following command from your project directory:
 
 ```sh
-astro dev start
+astrocloud dev start
 ```
 
 This command builds your project and spins up 3 Docker containers on your machine, each for a different Airflow component:
@@ -69,7 +69,7 @@ This command builds your project and spins up 3 Docker containers on your machin
 
 As your project builds locally, you should see the following output:
 
-<pre><code parentName="pre">{`% astro dev start
+<pre><code parentName="pre">{`% astrocloud dev start
 Env file ".env" found. Loading...
 Sending build context to Docker daemon  10.75kB
 Step 1/1 : FROM quay.io/astronomer/astro-runtime:${siteVariables.runtimeVersion}
@@ -93,12 +93,6 @@ Airflow Webserver: http://localhost:8080
 Postgres Database: localhost:5432/postgres
 The default credentials are admin:admin
 `}</code></pre>
-
-:::caution
-
-If you’re running the Astronomer CLI with [buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/) enabled in Docker, you may see an error (`buildkit not supported by daemon`). Learn more in [this forum post](https://forum.astronomer.io/t/buildkit-not-supported-by-daemon-error-command-docker-build-t-airflow-astro-bcb837-airflow-latest-failed-failed-to-execute-cmd-exit-status-1/857).
-
-:::
 
 ## Step 3: Access the Airflow UI
 

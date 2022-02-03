@@ -1,15 +1,17 @@
 ---
 sidebar_label: 'Install the CLI'
-title: 'Install the Astronomer CLI'
+title: 'Install the Astronomer Cloud CLI'
 id: install-cli
-description: Install the Astronomer CLI, the best way to run Apache Airflow and test data pipelines on your local machine.
+description: Install the Astronomer Cloud CLI, the best way to run Apache Airflow and test data pipelines on your local machine.
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import {siteVariables} from '@site/src/versions';
 
 ## Overview
 
-The Astronomer CLI is the easiest way to run Apache Airflow on your machine.
+The Astronomer Cloud CLI is the easiest way to run Apache Airflow on your machine.
 
 From the CLI, you can run a local Apache Airflow environment with a dedicated Webserver, Scheduler and Postgres Database. Once you create an Astronomer project, you can easily customize it (e.g. add Python or OS-level packages, plugins etc.) and test it on your local machine.
 
@@ -19,86 +21,91 @@ You can also use the CLI to:
 - List the Astronomer Workspace and Deployments you have access to.
 - Deploy a project to Astronomer Cloud.
 
-This guide provides instructions for how to install the Astronomer CLI.
+This guide provides instructions for how to install the Astronomer Cloud CLI.
 
-## Step 1. Create a Directory for your Astronomer Project
+## Prerequisites
 
-For Astronomer Cloud, the Astronomer CLI is installed as a local `astro` executable instead of globally on your machine. To start, create a new directory for your Astronomer project by running:
+To install and use the Astronomer Cloud CLI on Mac, you must have:
 
-```
-mkdir <new-directory-name>
-```
+- [Homebrew](https://brew.sh/)
+- [Docker Desktop](https://docs.docker.com/get-docker/) (v18.09 or higher).
 
-Then, run:
+To install and use the Astronomer Cloud CLI on Windows, you must have:
 
-```
-cd <new-directory-name>
-```
+- [Docker Engine](https://docs.docker.com/engine/install/) (v0.13.1 or higher).
 
-Next, we'll install the CLI binary in this directory.
+## Install the Astronomer Cloud CLI
 
-## Step 2. Install the Astronomer CLI
+<Tabs
+    defaultValue="mac"
+    values={[
+        {label: 'Mac', value: 'mac'},
+        {label: 'Windows', value: 'windows'},
+    ]}>
+<TabItem value="mac">
 
-Now, run the appropriate command for your OS in the directory you created in Step 1 to install the CLI.
+Install the Astronomer Cloud CLI by running the following command:
 
-### MacOS
-
-<pre><code parentName="pre">{`curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_${siteVariables.cliVersion}_darwin_amd64/astro -o astro && chmod +x astro`}</code></pre>
-
-### Windows (PowerShell)
-
-<pre><code parentName="pre">{`Invoke-WebRequest -Uri https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_${siteVariables.cliVersion}_windows_amd64/astro.exe -OutFile astro.exe`}</code></pre>
-
-### Linux
-
-<pre><code parentName="pre">{`curl https://astrohubclistorage.blob.core.windows.net/astrohub-cli/astro_${siteVariables.cliVersion}_linux_amd64/astro -o astro && chmod +x astro`}</code></pre>
-
-## Step 3. Confirm the Install
-
-Once you run any of the CLI install commands above, you should see the following output:
-
-```
-% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   215  100   215    0     0    486      0 --:--:-- --:--:-- --:--:--   486
+```sh
+brew install astronomer/cloud/astrocloud
 ```
 
-To confirm the CLI was installed properly, run the following from the directory you just created:
+</TabItem>
+
+<TabItem value="windows">
+
+1. In a PowerShell terminal, create a new directory for your Astronomer project and set it as your current directory:
+
+    ```powershell
+    md my-project && cd my-project
+    ```
+
+2. Based on your CPU, run one of the following commands to download the Astronomer Cloud CLI executable into your project directory.
+
+    - AMD64:
+
+        ```powershell
+        Invoke-WebRequest -Uri https://goreleaserdev.blob.core.windows.net/goreleaser-test-container/releases/v0.0.2-alpha/cloud-cli_0.0.2-alpha_Windows_x86_64.tar.gz -o astrocloudcli.tar.gz
+        ```
+
+    - ARM64:
+
+        ```powershell
+        Invoke-WebRequest -Uri https://goreleaserdev.blob.core.windows.net/goreleaser-test-container/releases/v0.0.2-alpha/cloud-cli_0.0.2-alpha_Windows_arm64.tar.gz -OutFile astrocloudcli.tar.gz
+        ```
+
+3. Run the following command to unzip the executable:
+
+    ```sh
+    tar -xvzf .\astrocloudcli.tar.gz
+    ```
+
+4. To run the executable without specifying its file path, save `astrocloud.exe` in a secure location on your machine and add its filepath in the Windows PATH environment variable. For more information about configuring the PATH environment variable, read [Java documentation](https://www.java.com/en/download/help/path.html).
+
+</TabItem>
+</Tabs>
+
+## Confirm the Install
+
+To confirm the CLI was installed properly, run the following CLI command:
 
 ```
-./astro version
+astrocloud version
 ```
 
-You should see the following:
+If the installation was successful, you should see the following output:
 
-<pre><code parentName="pre">{`% astro version
+<pre><code parentName="pre">{`% astrocloud version
 Astro CLI Version: ${siteVariables.cliVersion}`}</code></pre>
 
-## Step 4. Run CLI Commands
+## Migrate from the `./astro` Executable to the Astronomer Cloud CLI
 
-The Astronomer Cloud CLI is installed as a local executable. For that reason, commands must be run from the directory in which you installed the CLI and explicitly reference the binary (`astro`).
+If you currently use the `astro` executable file to run CLI commands, we strongly recommend that you upgrade to the Astronomer Cloud CLI. To do this:
 
-For the equivalent of `astro dev init`, for example, you'd have to run:
-
-```
-./astro dev init
-```
-
-:::tip
-
-To avoid having to run `./astro version` instead of just `astro version`, we recommend configuring your local machine to run Astronomer CLI commands without needing to specify the absolute path to the executable file. You can do so in one of two ways:
-
-- Add the directory you created for your Astronomer project to your `$PATH` variable. For more information, see [Linux instructions](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/#adding-a-directory-to-your-path).
-- Create a symbolic link in your `bin` directory using a command similar to the following:
-
-   ```sh
-   sudo ln -s /source/path/to/astro /usr/local/bin/astro
-   ```
-
-   If you're an existing user of the original [Astronomer CLI](https://github.com/astronomer/astro-cli), we recommend changing the name of this symbolic link and creating an alias to something other than `astro` (for example, `astrocloud`).
-
-:::
+1. Delete the `./astro` executable file and any related system environment variables or symbolic links from your machine.
+2. In any existing Astronomer project directories, delete the `.astro` subdirectory previously generated by the `./astro` executable. This subdirectory might be hidden in graphical file browsers. You can show hidden files using `⌘ + Shift + .` on Mac or by selecting **View** > **Hidden items** in Windows file explorer.
+3. Run `astrocloud dev init` in your project directories. This command will populate a directory with the appropriate `.astrocloud` folder without touching or replacing your existing project files.
 
 ## Next Steps
 
-Now that you've installed the Astronomer CLI, you're ready to create an Astronomer project and start developing locally. For instructions, read [Create an Astronomer Project](create-project.md).
+Now that you've installed the Astronomer Cloud CLI, you're ready to create an Astronomer project and start developing locally. For instructions, read [Create an Astronomer Project](create-project.md).

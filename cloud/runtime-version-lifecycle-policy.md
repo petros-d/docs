@@ -92,9 +92,9 @@ When the maintenance window for a version of Runtime ends, the following is true
 
 - The Astronomer Support team is not obligated to answer questions regarding an Airflow Deployment that is running that version.
 - New Deployments cannot be created on Astronomer Cloud with that version of Runtime. Unsupported versions will _not_ render as an option in the Deployment creation process from the Astronomer UI, API, or CLI.
-- The latest version of the Astronomer CLI will show a warning if a user pushes a Docker image to Astronomer that corresponds to that version.
+- The latest version of the Astronomer Cloud CLI will show a warning if a user pushes a Docker image to Astronomer that corresponds to that version.
 
-To ensure reliability, service will not be interrupted for Deployments running a version of Runtime that is no longer supported. Unsupported versions will also continue to be available for local development and testing via the Astronomer CLI.
+To ensure reliability, service will not be interrupted for Deployments running a version of Runtime that is no longer supported. Unsupported versions will also continue to be available for local development and testing via the Astronomer Cloud CLI.
 
 ### End of Maintenance Date
 
