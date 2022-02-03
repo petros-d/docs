@@ -13,7 +13,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to us 
 
 ## Astronomer Cloud CLI v1.0.0
 
-Release date: February 1, 2022
+Release date: February 3, 2022
 
 ### Introducing the Astronomer Cloud CLI
 
