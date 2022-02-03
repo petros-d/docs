@@ -111,7 +111,7 @@ If your Azure Active Directory is configured to require admin approval on API pe
 Reach out to Astronomer support and provide the following information from your Azure AD app:
 
 - **Microsoft Azure AD Domain**: Retrieve this from your Azure AD directory's overview page in the Microsoft Azure portal
-- **Application (client) ID**: Retrieve this from the **Overview page** of your application
-- The value of your client secret from Step 2
+- **Application (client) ID**: Retrieve this from the **Overview** page of your application
+- **Client secret**: The value of your client secret from Step 2
 
 From here, Astronomer will complete the integration and add Azure as your organization's IDP.
