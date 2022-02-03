@@ -109,8 +109,9 @@ Triggerers are available only in Deployments running Airflow 2.2+. Additionally,
 ```yaml
 astronomer:
   houston:
-    deployments:
-      triggererEnabled: true
+    config:
+      deployments:
+        triggererEnabled: true
 ```
 
 If you have overridden  `astronomer.houston.deployments.components`, you additionally need to add the following configuration:
@@ -118,20 +119,21 @@ If you have overridden  `astronomer.houston.deployments.components`, you additio
 ```yaml
 astronomer:
   houston:
-    deployments:
-      components:
-        # add this block to the other components you've overridden
-        - name: triggerer
-          au:
-            default: 5
-            limit: 30
-            request: ~
-          extra:
-            - name: replicas
-              default: 0
-              minimum: 0
-              limit: 2
-              minAirflowVersion: "2.2.0"    
+    config:
+      deployments:
+        components:
+          # add this block to the other components you've overridden
+          - name: triggerer
+            au:
+              default: 5
+              limit: 30
+              request: ~
+            extra:
+              - name: replicas
+                default: 0
+                minimum: 0
+                limit: 2
+                minAirflowVersion: "2.2.0"    
 ```
 
 After you save these changes, push your `config.yaml` file to your installation as described in [Apply a Config Change](apply-platform-config.md).
