@@ -27,13 +27,11 @@ The Astronomer Cloud CLI can be installed via Homebrew. Commands take the form o
 astrocloud <command> # E.g. `astrocloud dev start`
 ```
 
-We strongly recommend that all users [install the Astronomer Cloud CLI](install-cli.md) and [migrate from the `./astro` executable](install-cli.md#migrate-from-the-astro-executable-to-the-astronomer-cloud-cli) as soon as possible. As of February 2022, the executable will no longer be maintained by our team in the context of Astronomer Cloud. With that said, the release of the Astronomer Cloud CLI does not have any automatic impact on your existing Deployments or DAGs.
+We strongly recommend that all users [install the Astronomer Cloud CLI](install-cli.md) and delete the `astro` executable from local directories as soon as possible. As of February 2022, `astro` will no longer be maintained by our team in the context of Astronomer Cloud. With that said, the release of the Astronomer Cloud CLI does not have any impact on your existing Deployments or DAGs.
 
 ### Improved Authentication Flow
 
-Authenticating to Astronomer Cloud via CLI consists solely of a single login via the Astronomer UI. When you run `astrocloud auth login`, your web browser now automatically opens to an Astronomer UI login screen. After confirming that the login process was triggered from your CLI, you can log in. If you're already logged in via the web browser, then you are automatically authenticated via the CLI.
-
-When you run `astrocloud auth login`, your web browser automatically opens to an Astronomer UI login screen. Once you confirm that the login process was triggered from your command line, you can log in. If you're already logged in via the web browser, then you are automatically authenticated via the CLI.
+Authenticating to Astronomer Cloud via the CLI no longer requires manually passing authentication tokens and instead consists of a simple, browser-based login process.
 
 Notably, the Astronomer CLI is built with refresh tokens and does not require users to re-authenticate every 24 hours. As long as you remain authenticated via the Astronomer UI, your session via the Astronomer CLI will remain valid. Expect that you will be asked to authenticate to the Astronomer CLI only once every few months instead of on a daily basis.
 
@@ -41,12 +39,12 @@ Notably, the Astronomer CLI is built with refresh tokens and does not require us
 
 Astronomer Cloud CLI v1.0.0 includes several improvements to the local development experience:
 
-- You can now run `astrocloud dev start` with Docker Buildkit enabled. This resolves a [common issue](https://forum.astronomer.io/t/buildkit-not-supported-by-daemon-error-command-docker-build-t-airflow-astro-bcb837-airflow-latest-failed-failed-to-execute-cmd-exit-status-1/857) where users with Docker Buildkit enabled could not run this command.
-- After running `astrocloud dev start`, the CLI now shows you the status of all Airflow Docker containers as they are created on your local machine.
+- You can now run `astrocloud dev start` with [Docker Buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/) enabled. This resolves a [common issue](https://forum.astronomer.io/t/buildkit-not-supported-by-daemon-error-command-docker-build-t-airflow-astro-bcb837-airflow-latest-failed-failed-to-execute-cmd-exit-status-1/857) where users with Docker Buildkit enabled could not run this command.
+- After running `astrocloud dev start`, the CLI shows you the status of your Webserver  Docker container as it spuns up on your local machine. Now, it's easier to know whether the Airflow UI is unavailable because the Airflow Webserver container is still spinning up.
 
 ### Additional Improvements
 
-- `astrocloud deploy` now shows a list of your Deployments organized by when each Deployment was created.
+- `astrocloud deploy` now shows a list of your Deployments in the order by which they were created.
 
 ## v1.0.4 (`astro`)
 
