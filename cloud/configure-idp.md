@@ -25,42 +25,42 @@ Reach out to [Astronomer Support](support.astronomer.io) with a request to integ
 
 ### Step 2: Configure Okta
 
-Follow the [Okta documentation](https://help.okta.com/en/prod/Content/Topics/Apps/Apps_App_Integration_Wizard_SAML.htm) to create an SAML App Integration with the following SAML settings:
+1. Follow the [Okta documentation](https://help.okta.com/en/prod/Content/Topics/Apps/Apps_App_Integration_Wizard_SAML.htm) to create an SAML App Integration with the following SAML settings:
 
-- **Single sign on URL**: `<your-sso-url>`
-- **Audience URI (SP Entity ID)**: `<your-audience-uri>`
-- **Name ID format**: `Unspecified`
-- **Application username**: `Email`
-- **Update application username on**: `Create and update`
+    - **Single sign on URL**: `<your-sso-url>`
+    - **Audience URI (SP Entity ID)**: `<your-audience-uri>`
+    - **Name ID format**: `Unspecified`
+    - **Application username**: `Email`
+    - **Update application username on**: `Create and update`
 
-In the **Advanced Settings** section of your configuration, set the following values:
+2. In the **Advanced Settings** section of your configuration, set the following values:
 
-- **Response**: `Signed`
-- **Assertion Signature**: `Signed`
-- **Signature Algorithm**: `RSA-SHA256`
-- **Digest Algorithm**: `SHA256`
-- **Assertion Encryption**: `Unencrypted`
+    - **Response**: `Signed`
+    - **Assertion Signature**: `Signed`
+    - **Signature Algorithm**: `RSA-SHA256`
+    - **Digest Algorithm**: `SHA256`
+    - **Assertion Encryption**: `Unencrypted`
 
-In the **Attribute Statements** section of your configuration, create the following four attribute statements, making sure to use the exact capitalization as shown:
+3. In the **Attribute Statements** section of your configuration, create the following four attribute statements, making sure to use the exact capitalization as shown:
 
-| Name      | Name Format | Value            |
-| --------- | ----------- | ---------------- |
-| email     | Unspecified | user.email       |
-| firstName | Unspecified | user.firstName   |
-| lastName  | Unspecified | user.lastName    |
-| name      | Unspecified | user.displayName |
+    | Name      | Name Format | Value            |
+    | --------- | ----------- | ---------------- |
+    | email     | Unspecified | user.email       |
+    | firstName | Unspecified | user.firstName   |
+    | lastName  | Unspecified | user.lastName    |
+    | name      | Unspecified | user.displayName |
 
-:::info
+  :::info
 
-These values might be different if Okta is connected to an Active Directory. In this case, replace each `Value` with the equivalent Active Directory values for a user's first name, last name, and full email address.
+  These values might be different if Okta is connected to an Active Directory. In this case, replace each `Value` with the equivalent Active Directory values for a user's first name, last name, and full email address.
 
-:::
+  :::
 
-Complete the remainder of the setup as documented in Okta until you finish creating your integration.
+4. Complete the remainder of the setup as documented in Okta until you finish creating your integration.
 
 ### Step 3: Provide Astronomer with your integration information
 
-On the page for your Okta app integration, click **View Setup Instructions**. Copy the values for `Single Sign-on URL` and `X.509 Certificate` that appear and send these to Astronomer Support. From here, Astronomer will finalize the integration with Okta.
+On the page for your Okta app integration, click **View Setup Instructions**. Copy the values for `Single Sign-on URL` and `X.509 Certificate` that appear and send them to Astronomer Support. From here, Astronomer will finalize the integration with Okta.
 
 ### Step 4: Assign users to your Okta application
 
