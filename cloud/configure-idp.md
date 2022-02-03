@@ -9,7 +9,7 @@ description: Configure federated authentication from a variety of third party id
 
 This guide provides setup steps for integrating various third party identity providers (IDP) with Astronomer Cloud.
 
-After integrating your identity provider with Astronomer Cloud, a user in your organization will be automatically logged in to Astronomer Cloud if they're already logged in via your IDP. You can also add existing IDP accounts as new Astronomer users through your IDP application.
+After integrating your identity provider with Astronomer Cloud, a user in your organization will be automatically logged in to Astronomer Cloud if they're already logged in via your IDP. By adding new Astronomer users through your IDP's own user management system, Workspace admins can automatically add new users to their Workspace without those users needing to individually sign up for Astronomer.
 
 ## Configure Okta as Your IDP
 
@@ -21,14 +21,14 @@ To integrate Okta as your IDP for Astronomer Cloud, you must have an [Okta accou
 
 ### Step 1: Work with Astronomer to configure SAML
 
-Reach out to [Astronomer Support](support.astronomer.io) with a request to integrate Okta as an IDP on Astronomer. From here, an Astronomer Representative will provide you with a connection name. Save this connection name for use in Step 2.
+Reach out to [Astronomer Support](support.astronomer.io) with a request to integrate Okta as an IDP on Astronomer. From here, an Astronomer Representative will provide you with an SSO URL and an Audience URI. Save these values for Step 2.
 
 ### Step 2: Configure Okta
 
 Follow the [Okta documentation](https://help.okta.com/en/prod/Content/Topics/Apps/Apps_App_Integration_Wizard_SAML.htm) to create an SAML App Integration with the following SAML settings:
 
-- **Single sign on URL**: `https://auth.astronomer.io/login/callback?connection=<your-connection-name>`
-- **Audience URI (SP Entity ID)**: `urn:auth0:astronomer-prod:<your-connection-name>`
+- **Single sign on URL**: `<your-sso-url>`
+- **Audience URI (SP Entity ID)**: `<your-audience-uri>`
 - **Name ID format**: `Unspecified`
 - **Application username**: `Email`
 - **Update application username on**: `Create and update`
