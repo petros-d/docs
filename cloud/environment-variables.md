@@ -35,7 +35,7 @@ Environment variables can be set directly in the Astronomer UI. To do so:
 
 3. Specify an environment variable key and value in the table. For sensitive credentials that should be treated with an additional layer of security, select the **Secret** checkbox. This will permanently hide the variable's value from all users in your Workspace.
 
-    When you finish configuring the environment variable, click **Add**.
+    When you're finished configuring the environment variable, click **Add**.
 
     ![Add Variables button highlighted in the Environment Variables configuration table](/img/docs/add-variable.png)
 
