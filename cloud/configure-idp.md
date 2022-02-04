@@ -1,6 +1,6 @@
 ---
-sidebar_label: "Set Up an Identity Provider for Astronomer Cloud"
-title: "Set Up an Identity Provider"
+sidebar_label: "Set Up an Identity Provider"
+title: "Set Up an Identity Provider for Astronomer Cloud"
 id: configure-idp
 description: Configure federated authentication from a variety of third party identity providers on Astronomer Cloud.
 ---
