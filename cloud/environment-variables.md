@@ -39,7 +39,7 @@ Environment variables can be set directly in the Astronomer UI. To do so:
 
     ![Add Variables button highlighted in the Environment Variables configuration table](/img/docs/add-variable.png)
 
-4. Click **Update Variables** to save your changes. This action restarts your Airflow Scheduler, Webserver, and Workers. After saving, it can take up to two minutes before the updated variables are live in your Deployment.
+4. Click **Update Variables** to save your changes. This action restarts your Airflow Scheduler, Webserver, and Workers. After saving, it can take up to two minutes before the new variables are live in your Deployment.
 
 :::caution
 
