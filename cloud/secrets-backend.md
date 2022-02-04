@@ -47,10 +47,11 @@ Setting Airflow connections via secrets requires knowledge of how to generate Ai
 
 This topic provides steps for how to use [Hashicorp Vault](https://www.vaultproject.io/) as a secrets backend for both local development and on Astronomer Cloud. To do this, you will:
 
-1. Write a test Airflow variable or connection as a secret to your Vault server.
-2. Configure your Astronomer project to pull the secret from Vault.
-3. Test the backend in a local environment.
-4. Deploy your changes to Astronomer Cloud.
+1. Create an AppRole which grants Astronomer minimal required permissions.
+2. Write a test Airflow variable or connection as a secret to your Vault server.
+3. Configure your Astronomer project to pull the secret from Vault.
+4. Test the backend in a local environment.
+5. Deploy your changes to Astronomer Cloud.
 
 ### Prerequisites
 
@@ -61,7 +62,6 @@ To use this feature, you need:
 - A [Hashicorp Vault server](https://learn.hashicorp.com/tutorials/vault/getting-started-dev-server?in=vault/getting-started).
 - An [Astronomer project](create-project.md).
 - [The Vault CLI](https://www.vaultproject.io/docs/install).
-- Your Vault server's [Root Token](https://www.vaultproject.io/docs/concepts/tokens#root-tokens).
 - Your Vault Server's URL. If you're using a local server, this should be `http://127.0.0.1:8200/`.
 
 If you do not already have a Vault server deployed but would like to test this feature, we recommend that you either:
@@ -69,7 +69,33 @@ If you do not already have a Vault server deployed but would like to test this f
 - Sign up for a Vault trial on [Hashicorp Cloud Platform (HCP)](https://cloud.hashicorp.com/products/vault) or
 - Deploy a local Vault server via the instructions in [our Airflow Guide](https://www.astronomer.io/guides/airflow-and-hashicorp-vault).
 
-### Step 1: Write an Airflow Variable or Connection to Vault
+### Step 1: Configure Vault
+
+To use Vault as a secrets backend, we recommend configuring a Vault role with a policy that grants only the minimum necessary permissions for Astronomer. To do this:
+
+1. [Create a Vault policy](https://www.vaultproject.io/docs/concepts/policies) with the following permissions:
+
+    ```hcl
+    path "secret/variables/*" {
+      capabilities = ["read", "list"]
+    }
+
+    path "secret/connections/*" {
+      capabilities = ["read", "list"]
+    }
+    ```
+
+2. [Create a Vault AppRole](https://www.vaultproject.io/docs/auth/approle) and attach the policy you just created to it.
+3. Retrieve the `role-id` and `secret-id` for your AppRole by running the following commands:
+
+    ```sh
+    vault read auth/approle/role/<your-approle>/role-id
+    vault write -f auth/approle/role/<your-approle>/secret-id
+    ```
+
+    Save these values for Step 3.
+
+### Step 2: Write an Airflow Variable or Connection to Vault
 
 To test whether your Vault server is set up properly, create a test Airflow variable or connection to store as a secret.
 
@@ -94,7 +120,7 @@ $ vault kv get secret/variables/<your-variable-key>
 $ vault kv get secret/connections/<your-connection-id>
 ```
 
-### Step 2: Set Up Vault Locally
+### Step 3: Set Up Vault Locally
 
 In your Astronomer project, add the [Hashicorp Airflow provider](https://airflow.apache.org/docs/apache-airflow-providers-hashicorp/stable/index.html) to your project by adding the following to your `requirements.txt` file:
 
@@ -105,18 +131,16 @@ apache-airflow-providers-hashicorp
 Then, add the following environment variables to your `Dockerfile`:
 
 ```text
-# Make sure to replace `<your-root-token>` and `<your-vault-url>` with your own values.
-ENV VAULT__ROOT_TOKEN="<your-root-token>"
-ENV VAULT__URL="<your-vault-url>"
+# Make sure to replace `<your-approle-id>` and `<your-approle-secret>` with your own values.
 ENV AIRFLOW__SECRETS__BACKEND="airflow.contrib.secrets.hashicorp_vault.VaultBackend"
-ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"url":$VAULT__URL,"token": $VAULT__ROOT_TOKEN,"connections_path": "connections","variables_path": "variables","kv_engine_version":1}'
+ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_path": "airflow/connections", "variables_path": null, "config_path": null, "url": "https://vault.vault.svc.cluster.local:8200", "auth_type": "approle", "role_id":"<your-approle-id>", "secret_id":"<your-approle-secret>"}'
 ```
 
 This tells Airflow to look for variable and connection information at the `secret/variables/*` and `secret/connections/*` paths in your Vault server. In the next step, you'll test this configuration in a local Airflow environment.
 
 :::warning
 
-If you want to deploy your project to a hosted Git repository before deploying to Astronomer, be sure to save `<your-root-token>` and `<your-vault-url>` securely. We recommend adding them to your project's [`.env` file](develop-project.md#set-environment-variables-via-env-local-development-only) and specifying this file in `.gitignore`.
+If you want to deploy your project to a hosted Git repository before deploying to Astronomer, be sure to save `<your-approle-id>` and `<your-approle-secret>` securely. We recommend adding them to your project's [`.env` file](develop-project.md#set-environment-variables-via-env-local-development-only) and specifying this file in `.gitignore`.
 
 When you deploy to Astronomer Cloud in Step 4, you can set these values as secrets via the Astronomer UI.
 
@@ -128,7 +152,7 @@ By default, Airflow uses `"kv_engine_version": 2`, but we've written this secret
 
 For more information on the Airflow provider for Hashicorp Vault and how to further customize your integration, read the [Apache Airflow documentation](https://airflow.apache.org/docs/apache-airflow-providers-hashicorp/stable/_api/airflow/providers/hashicorp/hooks/vault/index.html).
 
-### Step 3: Run an Example DAG to Test Vault Locally
+### Step 4: Run an Example DAG to Test Vault Locally
 
 To test Vault, write a simple DAG which calls your test secret and add this DAG to your project's `dags` directory. For example, you can use the following DAG to print the value of a variable to your task logs:
 
@@ -162,11 +186,11 @@ Once you've added this DAG to your project:
 
 Once you confirm that the setup was successful, you can delete this example DAG.
 
-### Step 4: Deploy on Astronomer Cloud
+### Step 5: Deploy on Astronomer Cloud
 
 Once you've confirmed that the integration with Vault works locally, you can complete a similar set up with a Deployment on Astronomer Cloud.
 
-1. In the Astronomer UI, add the same environment variables found in your `Dockerfile` to your Deployment [environment variables](https://docs.astronomer.io/cloud/environment-variables). Specify both `VAULT__ROOT_TOKEN` and `VAULT__URL` as **secret** to ensure that your Vault credentials are stored securely.
+1. In the Astronomer UI, add the same environment variables found in your `Dockerfile` to your Deployment [environment variables](environment-variables.md). Specify `AIRFLOW__SECRETS__BACKEND_KWARGS` as **secret** to ensure that your Vault credentials are stored securely.
 
   :::warning
 
@@ -175,7 +199,7 @@ Once you've confirmed that the integration with Vault works locally, you can com
   :::
 
 2. In your Astronomer project, delete the environment variables from your `Dockerfile`.
-3. [Deploy your changes](https://docs.astronomer.io/cloud/deploy-code) to Astronomer Cloud.
+3. [Deploy your changes](deploy-cli.md) to Astronomer Cloud.
 
 Now, any Airflow variable or connection that you write to your Vault server can be successfully accessed and pulled by any DAG in your Deployment on Astronomer Cloud.
 
