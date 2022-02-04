@@ -63,7 +63,7 @@ If you want to make changes to an existing environment variable, you can modify 
 
     ![Green checkmark icon next to an updated value in the Environment Variables configuration table](/img/docs/variable-checkmark.png)
 
-5. Click **Update Variables** to apply your changes. This action restarts your Airflow Scheduler, Webserver, and Workers. After saving, it can take up to two minutes before the updated variables are live in your Deployment.
+5. Click **Update Variables** to save your changes. This action restarts your Airflow Scheduler, Webserver, and Workers. After saving, it can take up to two minutes before the updated variables are live in your Deployment.
 
 Once an environment variable key has been set, it cannot be changed. Only an environment variable's value can be modified.
 
