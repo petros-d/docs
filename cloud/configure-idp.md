@@ -7,25 +7,41 @@ description: Configure federated authentication from a variety of third party id
 
 ## Overview
 
-This guide provides setup steps for integrating various third party identity providers (IDP) with Astronomer Cloud.
+This guide provides setup steps for integrating various third party identity providers (IdP) with Astronomer Cloud.
 
-After integrating your identity provider with Astronomer Cloud, a user in your organization will be automatically logged in to Astronomer Cloud if they're already logged in via your IDP. By adding new Astronomer users through your IDP's own user management system, Workspace admins can automatically add new users to their Workspace without those users needing to individually sign up for Astronomer.
+Identity Providers (IdPs) are services that manage user accounts. As organizations grow, it's common for teams to integrate internal tooling with a third-party IdP. This allows administrators to monitor application access, user permissions, and security policies from a single place. It also makes it easy for individual users to access the tools they need.
 
-## Configure Okta as Your IDP
+Astronomer Cloud supports integrations with the following IdPs:
 
-This section provides setup steps for setting up Okta as your IDP on Astronomer Cloud. After completing this setup, your organization's users can use Okta to log in to Astronomer.
+- [Okta](https://www.okta.com/)
+- [Azure Active Directory (AD)](https://azure.microsoft.com/en-us/services/active-directory/)
+
+This guide provides setup steps for integrating both of these identity providers on Astronomer. Once you complete the integration for your organization:
+
+- Astronomer will be listed in your IdP's set of supported applications.
+- Workspace Admins can invite a user to a Workspace directly without that user having to separately sign up for an account first.
+- Users will automatically be authenticated to Astronomer if they're already logged in to your IdP.
+
+## Configure Okta as Your Identity Provider
+
+This section provides setup steps for setting up Okta as your IDP on Astronomer Cloud. After completing this setup, all users in your organization can use Okta to log in to Astronomer.
 
 ### Prerequisites
 
-To integrate Okta as your IDP for Astronomer Cloud, you must have an [Okta account](https://www.okta.com/)
+To integrate Okta as your IdP for Astronomer Cloud, you must have an [Okta account](https://www.okta.com/) with administrative access.
 
-### Step 1: Work with Astronomer to configure SAML
+### Step 1: Reach out to Astronomer
 
-Reach out to [Astronomer Support](support.astronomer.io) with a request to integrate Okta as an IDP on Astronomer. From here, an Astronomer Representative will provide you with an SSO URL and an Audience URI. Save these values for Step 2.
+Reach out to [Astronomer Support](https://support.astronomer.io) with a request to integrate Okta as an IdP on Astronomer. From here, an Astronomer Representative will provide you with two things:
+
+- A Single Sign-On (SSO) URL
+- An Audience URI
+
+Save these values for Step 2.
 
 ### Step 2: Configure Okta
 
-1. Follow the [Okta documentation](https://help.okta.com/en/prod/Content/Topics/Apps/Apps_App_Integration_Wizard_SAML.htm) to create an SAML App Integration with the following SAML settings:
+1. Follow the [Okta documentation](https://help.okta.com/en/prod/Content/Topics/Apps/Apps_App_Integration_Wizard_SAML.htm) to create a SAML App Integration via Okta's Admin Console. Configure the following SAML settings:
 
     - **Single sign on URL**: `<your-sso-url>`
     - **Audience URI (SP Entity ID)**: `<your-audience-uri>`
@@ -60,24 +76,28 @@ Reach out to [Astronomer Support](support.astronomer.io) with a request to integ
 
 ### Step 3: Provide Astronomer with your integration information
 
-On the page for your Okta app integration, click **View Setup Instructions**. Copy the values for `Single Sign-on URL` and `X.509 Certificate` that appear and send them to Astronomer Support. From here, Astronomer will finalize the integration with Okta.
+On the page for your Okta app integration, click **View Setup Instructions**. Copy the values for `Single Sign-on URL` and `X.509 Certificate` that appear and send them to Astronomer Support.
+
+From here, Astronomer will finalize your organization's integration with Okta.
 
 ### Step 4: Assign users to your Okta application
 
 On the page for your Okta app integration, open the **Assignments** tab. Ensure that all users who will use Astronomer are assigned to the integration. For more information, read [Okta Documentation](https://help.okta.com/en/prod/Content/Topics/users-groups-profiles/usgp-assign-apps.htm).
 
-## Configure Azure AD as your IDP
+When a user assigned to the integration accesses Astronomer, they will be brought automatically to Okta after entering their email in the Astronomer UI.
 
-This section provides setup steps for setting up Azure AD as your IDP on Astronomer Cloud. After completing this setup, your organization's users can use Azure AD to log in to Astronomer.
+## Configure Azure AD as your Identity Provider
+
+This section provides setup steps for setting up Azure AD as your IdP on Astronomer Cloud. After completing this setup, your organization's users can use Azure AD to log in to Astronomer.
 
 ### Prerequisites
 
-To integrate Azure as your IDP for Astronomer you must have:
+To integrate Azure as your IdP for Astronomer you must have:
 
 - An Azure subscription.
 - An [Azure AD tenant](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant) with `Global Administrator` privileges.
 
-### Step 1: Register your app for Astronomer
+### Step 1: Register Astronomer as an application on Azure
 
 Follow [Microsoft Documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) to register a new app. When configuring the application, set the following values:
 
@@ -105,16 +125,22 @@ Follow [Microsoft's documentation](https://docs.microsoft.com/en-us/azure/active
 
 :::info
 
-If your Azure Active Directory is configured to require admin approval on API permissions, you need additionally click the **Grant admin consent** button at the top of your permissions list.
+If your Azure Active Directory is configured to require admin approval on API permissions, make sure to also click the **Grant admin consent** button at the top of your permissions list.
 
 :::
 
 ### Step 4: Provide Astronomer with your Azure AD app information
 
-Reach out to Astronomer support and provide the following information from your Azure AD app:
+Reach out to [Astronomer Support](https://support.astronomer.io) and provide the following information from your Azure AD application:
 
 - **Microsoft Azure AD Domain**: Retrieve this from your Azure AD directory's overview page in the Microsoft Azure portal.
 - **Application (client) ID**: Retrieve this from the **Overview** page of your application.
 - **Client secret**: Use the value of your client secret from Step 2.
 
 From here, Astronomer will complete the integration and add Azure as your organization's IDP.
+
+### Assign users to your Azure AD application
+
+Follow [Microsoft documentation](https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/assign-user-or-group-access-portal) to assign users from your organization to your new application.
+
+When a user assigned to the application accesses Astronomer, they will be brought automatically to Azure AD after entering their email in the Astronomer UI.
