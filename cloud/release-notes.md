@@ -19,7 +19,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 
 ### Support for Third-Party Identity Providers
 
-You can now integrate both Azure AD and Okta as identity providers (IDPs) for federated authentication on Astronomer Cloud. By setting up a third-party identity provider, a user in your organization will be automatically logged in to Astronomer Cloud if they're already logged in via your IDP. By adding new Astronomer users through your IDP's own user management system, Workspace admins can automatically add new users to their Workspace without those users needing to individually sign up for Astronomer.
+You can now integrate both Azure AD and Okta as identity providers (IdPs) for federated authentication on Astronomer Cloud. By setting up a third-party identity provider, a user in your organization will be automatically logged in to Astronomer Cloud if they're already logged in via your IdP. By adding new Astronomer users through your IdP's own user management system, Workspace admins can automatically add new users to their Workspace without those users needing to individually sign up for Astronomer.
 
 For more information about this feature read [Set Up an Identity Provider](configure-idp.md).
 
