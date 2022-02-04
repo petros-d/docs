@@ -53,6 +53,7 @@ module.exports = {
       label: 'Administration',
       items: [
         'create-cluster',
+        'configure-idp',
         'add-user',
         'modify-cluster',
       ],

@@ -20,6 +20,12 @@ To add a user to a Workspace, you must have:
 
 ## Step 1: Invite the User to Astronomer
 
+:::info
+
+If your organization integrated an [external Identity Provider (IdP)](configure-idp.md) such as Okta or Azure AD, skip this step and instead invite your user to Astronomer via your IDP's own user management system.
+
+:::
+
 If the user you want to add doesn't already have an account on Astronomer Cloud, tell them to go to https://cloud.astronomer.io and sign up. Once they create an account, they will see the following screen:
 
 <div class="text--center">
