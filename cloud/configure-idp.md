@@ -24,7 +24,7 @@ This guide provides setup steps for integrating both of these identity providers
 
 ## Configure Okta as Your Identity Provider
 
-This section provides setup steps for setting up Okta as your IDP on Astronomer Cloud. After completing this setup, all users in your organization can use Okta to log in to Astronomer.
+This section provides setup steps for setting up Okta as your IdP on Astronomer Cloud. After completing this setup, all users in your organization can use Okta to log in to Astronomer.
 
 ### Prerequisites
 
