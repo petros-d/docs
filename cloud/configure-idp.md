@@ -139,7 +139,7 @@ Reach out to [Astronomer Support](https://support.astronomer.io) and provide the
 
 From here, Astronomer will complete the integration and add Azure as your organization's IDP.
 
-### Assign users to your Azure AD application
+### Step 5: Assign users to your Azure AD application
 
 Follow [Microsoft documentation](https://docs.microsoft.com/en-us/azure/active-directory/manage-apps/assign-user-or-group-access-portal) to assign users from your organization to your new application.
 
