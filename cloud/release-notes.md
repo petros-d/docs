@@ -13,7 +13,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 
 **Latest Runtime Version**: 4.0.8 ([Release notes](runtime-release-notes.md))
 
-**Latest CLI Version**: 1.0.4 ([Release notes](cli-release-notes.md))
+**Latest CLI Version**: 1.0.0 ([Release notes](cli-release-notes.md))
 
 ## February 3, 2022
 
@@ -22,6 +22,12 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 You can now integrate both Azure AD and Okta as identity providers (IdPs) for federated authentication on Astronomer Cloud. By setting up a third-party identity provider, a user in your organization will be automatically logged in to Astronomer Cloud if they're already logged in via your IdP. By adding new Astronomer users through your IdP's own user management system, Workspace admins can automatically add new users to their Workspace without those users needing to individually sign up for Astronomer.
 
 For more information about this feature read [Set Up an Identity Provider](configure-idp.md).
+
+### Support for the Astronomer Cloud CLI
+
+The Astronomer Cloud CLI (`astrocloud`) is now generally available as the official command-line tool for Astronomer Cloud. It is a direct replacement of the previously released `astro` executable and comes with various significant improvements. We encourage all customers to upgrade.
+
+For more information on the Astronomer Cloud CLI, see [CLI Release Notes](cli-release-notes.md). For install instructions, read [Install the CLI](install-cli.md).
 
 ### Additional Improvements
 
