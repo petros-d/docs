@@ -79,6 +79,12 @@ To add a Team to a Workspace:
 
 5. Click **Add**.
 
+:::caution
+
+If a user already exists on a Workspace before being invited via a Team, the user context with the most permissive role will be applied to the Workspace. For more information, read [Import IDP Groups](import-idp-group.md),
+
+:::
+
 ### Invite to Deployment
 
 The ability to invite Workspace users to an Airflow Deployment within it is limited to Deployment _Admins_, who can also grant the _Admin_ role to other users. Deployment _Editors_ and _Viewers_ cannot invite or otherwise manage users. A user who creates a Deployment is automatically granted the _Admin_ role within it.
@@ -132,6 +138,12 @@ To add a team to a Deployment:
 3. When your Team appears, select a Deployment-level role for the Team and click the **+** button:
 
     ![Screen for adding a Team to a Deployment](/img/docs/add-team-deployment.png)
+
+:::caution
+
+If a user already exists on a Deployment before being invited via a Team, the user context with the most permissive role will be applied to the Deployment. For more information, read [Import IDP Groups](import-idp-group.md),
+
+:::
 
 ## View and Edit User Roles
 
