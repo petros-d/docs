@@ -47,7 +47,7 @@ Setting Airflow connections via secrets requires knowledge of how to generate Ai
 
 This topic provides steps for how to use [Hashicorp Vault](https://www.vaultproject.io/) as a secrets backend for both local development and on Astronomer Cloud. To do this, you will:
 
-1. Create an AppRole which grants Astronomer minimal required permissions.
+1. Create an AppRole in Vault which grants Astronomer minimal required permissions.
 2. Write a test Airflow variable or connection as a secret to your Vault server.
 3. Configure your Astronomer project to pull the secret from Vault.
 4. Test the backend in a local environment.
@@ -69,18 +69,18 @@ If you do not already have a Vault server deployed but would like to test this f
 - Sign up for a Vault trial on [Hashicorp Cloud Platform (HCP)](https://cloud.hashicorp.com/products/vault) or
 - Deploy a local Vault server via the instructions in [our Airflow Guide](https://www.astronomer.io/guides/airflow-and-hashicorp-vault).
 
-### Step 1: Configure Vault
+### Step 1: Create a Policy and AppRole in Vault
 
-To use Vault as a secrets backend, we recommend configuring a Vault role with a policy that grants only the minimum necessary permissions for Astronomer. To do this:
+To use Vault as a secrets backend, we recommend configuring a Vault AppRole with a policy that grants only the minimum necessary permissions for Astronomer. To do this:
 
 1. [Create a Vault policy](https://www.vaultproject.io/docs/concepts/policies) with the following permissions:
 
     ```hcl
-    path "secret/variables/*" {
+    path "secret/data/variables/*" {
       capabilities = ["read", "list"]
     }
 
-    path "secret/connections/*" {
+    path "secret/data/connections/*" {
       capabilities = ["read", "list"]
     }
     ```
