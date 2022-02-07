@@ -47,11 +47,11 @@ Setting Airflow connections via secrets requires knowledge of how to generate Ai
 
 This topic provides steps for how to use [Hashicorp Vault](https://www.vaultproject.io/) as a secrets backend for both local development and on Astronomer Enterprise. To do this, you will:
 
-1. Create an AppRole which grants Astronomer minimal required permissions.
+1. Create an AppRole in Vault which grants Astronomer minimal required permissions.
 2. Write a test Airflow variable or connection as a secret to your Vault server.
 3. Configure your Astronomer project to pull the secret from Vault.
 4. Test the backend in a local environment.
-5. Deploy your changes to Astronomer Cloud.
+5. Deploy your changes to Astronomer Enterprise.
 
 ### Prerequisites
 
@@ -60,7 +60,7 @@ To use this feature, you need:
 - A [Deployment](configure-deployment.md) on Astronomer.
 - [The Astronomer CLI](cli-quickstart.md).
 - A [Hashicorp Vault server](https://learn.hashicorp.com/tutorials/vault/getting-started-dev-server?in=vault/getting-started).
-- An [Astronomer project](create-project.md).
+- An Astronomer project initialized via `astro dev init`.
 - [The Vault CLI](https://www.vaultproject.io/docs/install).
 - Your Vault Server's URL. If you're using a local server, this should be `http://127.0.0.1:8200/`.
 
@@ -69,18 +69,18 @@ If you do not already have a Vault server deployed but would like to test this f
 - Sign up for a Vault trial on [Hashicorp Cloud Platform (HCP)](https://cloud.hashicorp.com/products/vault) or
 - Deploy a local Vault server via the instructions in [our Airflow Guide](https://www.astronomer.io/guides/airflow-and-hashicorp-vault).
 
-### Step 1: Configure Vault
+### Step 1: Create a Policy and AppRole in Vault
 
-To use Vault as a secrets backend, we recommend configuring a Vault role with a policy that grants only the minimum necessary permissions for Astronomer. To do this:
+To use Vault as a secrets backend, we recommend configuring a Vault AppRole with a policy that grants only the minimum necessary permissions for Astronomer. To do this:
 
 1. [Create a Vault policy](https://www.vaultproject.io/docs/concepts/policies) with the following permissions:
 
     ```hcl
-    path "secret/variables/*" {
+    path "secret/data/variables/*" {
       capabilities = ["read", "list"]
     }
 
-    path "secret/connections/*" {
+    path "secret/data/connections/*" {
       capabilities = ["read", "list"]
     }
     ```
@@ -133,7 +133,7 @@ Then, add the following environment variables to your `Dockerfile`:
 ```text
 # Make sure to replace `<your-approle-id>` and `<your-approle-secret>` with your own values.
 ENV AIRFLOW__SECRETS__BACKEND="airflow.contrib.secrets.hashicorp_vault.VaultBackend"
-ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_path": "airflow/connections", "variables_path": null, "config_path": null, "url": "https://vault.vault.svc.cluster.local:8200", "auth_type": "approle", "role_id":"<your-approle-id>", "secret_id":"<your-approle-secret>"}'
+ENV AIRFLOW__SECRETS__BACKEND_KWARGS='{"connections_path": "onnections", "variables_path": variables, "config_path": null, "url": "https://vault.vault.svc.cluster.local:8200", "auth_type": "approle", "role_id":"<your-approle-id>", "secret_id":"<your-approle-secret>"}'
 ```
 
 This tells Airflow to look for variable and connection information at the `secret/variables/*` and `secret/connections/*` paths in your Vault server. In the next step, you'll test this configuration in a local Airflow environment.
@@ -213,7 +213,7 @@ To use this feature, you need:
 
 - A [Deployment](configure-deployment.md).
 - The [Astronomer CLI](cli-quickstart.md).
-- An [Astronomer project](create-project.md).
+- An Astronomer project initialized via `astro dev init`.
 - Access to AWS SSM Parameter Store.
 - A valid AWS Access Key ID and Secret Access Key.
 
@@ -322,7 +322,7 @@ To use Google Cloud Secret Manager as your Airflow secrets backend, you need:
 
 - A [Deployment](configure-deployment.md).
 - The [Astronomer CLI](cli-quickstart.md).
-- An [Astronomer project](create-project.md).
+- An Astronomer project initialized via `astro dev init`.
 - [Cloud SDK](https://cloud.google.com/sdk/gcloud).
 - A Google Cloud environment with [Secret Manager](https://cloud.google.com/secret-manager/docs/configuring-secret-manager) configured.
 - A [service account](https://cloud.google.com/iam/docs/creating-managing-service-accounts) with the [Secret Manager Secret Accessor](https://cloud.google.com/secret-manager/docs/access-control) role on Google Cloud.
@@ -434,7 +434,7 @@ To use Azure Key Vault as a secrets backend, you need:
 
 - A [Deployment](configure-deployment.md).
 - The [Astronomer CLI](cli-quickstart.md).
-- An [Astronomer project](create-project.md).
+- An Astronomer project initialized via `astro dev init`.
 - An existing Azure Key Vault linked to a resource group.
 - Your Key Vault URL. To find this, go to your Key Vault overview page > **Vault URI**.
 
