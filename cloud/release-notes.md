@@ -29,6 +29,10 @@ The Astronomer Cloud CLI (`astrocloud`) is now generally available as the offici
 
 For more information on the Astronomer Cloud CLI, see [CLI Release Notes](cli-release-notes.md). For install instructions, read [Install the CLI](install-cli.md).
 
+### Greater Flexibility with User Login
+
+You can now log into your Astronomer Cloud organization using the same email address across GitHub, Google, and Username / Password authentication types, as well as a third-party identity provider (if configured). Regardless of the authentication type used to login, you will only have one user record and associated roles. Previously we only supported one authentication type per email address per organization.
+
 ### Additional Improvements
 
 - Changed the default RDS instance type for new Clusters from `db.r5.xlarge` to `db.r5.large`
