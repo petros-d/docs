@@ -72,7 +72,7 @@ If you're the first person from your team to authenticate, the Astronomer team w
 
 :::tip
 
-After completing your initial installation, we recommend [setting up an identity provider (IdP)](configure-idp.md) so that users can log in to Astronomer directly from your IdP.
+After completing your initial installation, we recommend [setting up an identity provider (IdP)](configure-idp.md) so that users can log in to Astronomer through your IdP.
 
 :::
 
