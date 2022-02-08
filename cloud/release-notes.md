@@ -35,7 +35,7 @@ You can now log in to your Astronomer Cloud account with your email across all a
 
 ### Additional Improvements
 
-- Changed the default RDS instance type for new Clusters from `db.r5.xlarge` to `db.r5.large`, which represents a monthly cost reduction of ~50%
+- Changed the default RDS instance type for new Clusters from `db.r5.xlarge` to `db.r5.large`, which represents a monthly cost reduction of ~50% for newly provisioned clusters. Customers with existing clusters will need to request a downscale via (Astronomer Support)[https://support.astronomer.io/]
 
 ## January 13, 2022
 
