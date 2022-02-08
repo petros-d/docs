@@ -31,7 +31,7 @@ For more information on the Astronomer Cloud CLI, see [CLI Release Notes](cli-re
 
 ### Greater Flexibility with User Login
 
-You can now log into your Astronomer Cloud organization using the same email address across GitHub, Google, and Username / Password authentication types, as well as a third-party identity provider (if configured). Regardless of the authentication type used to login, you will only have one user record and associated roles. With this release, we will be enabling GitHub, Google, and Username / Password authentication types for all organizations.
+You can now log in to your Astronomer Cloud account with your email across all authentication methods, including GitHub, Google, username/password, and third-party IDP authentication (if configured). Regardless of the authentication type you use to log in, you will have a single user record associated with a single email address. This also means that all organizations now have GitHub, Google, and username/password authentication methods enabled by default for all users. 
 
 ### Additional Improvements
 
