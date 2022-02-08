@@ -26,7 +26,7 @@ Before completing this setup, make sure that you have:
 - A user that has `CreateRole` permissions on that account.
 - Subscribed to the [Astronomer Cloud Status Page](https://cloud-status.astronomer.io/). This will ensure that you're alerted in the case of an incident or scheduled maintenance.
 
-Astronomer Cloud requires a dedicated AWS account with a minimum set of EC2 service quotas. For security reasons, the install process is not currently supported on an AWS account that has other tooling running in it. For instructions on creating a new AWS account, follow [AWS documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/). 
+Astronomer Cloud requires a dedicated AWS account with a minimum set of EC2 service quotas. For security reasons, the install process is not currently supported on an AWS account that has other tooling running in it. For instructions on creating a new AWS account, follow [AWS documentation](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/).
 
 The required [EC2 service quotas](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html) are:
 
@@ -36,7 +36,7 @@ The required [EC2 service quotas](https://docs.aws.amazon.com/AWSEC2/latest/User
 | L-43DA4232 | Running On-Demand High Memory instances                          | 40                      |
 | L-34B43A08 | All Standard (A, C, D, H, I, M, R, T, Z) Spot Instance Requests  | 40                      |
 
-These are required to mitigate near term capacity risks and ensure a smooth onboarding experience on Astronomer Cloud. If you need to modify or increase a specific quota, see Amazon’s documentation on [requesting a quota increase](https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html). 
+These are required to mitigate near term capacity risks and ensure a smooth onboarding experience on Astronomer Cloud. If you need to modify or increase a specific quota, see Amazon’s documentation on [requesting a quota increase](https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html).
 
 Once your AWS account is created, proceed to Step 1.
 
@@ -62,7 +62,7 @@ If you want to continue with the second option, you'll additionally need:
 
 To begin the Astronomer Cloud install process, first create an account at https://cloud.astronomer.io/.
 
-When you first authenticate to Astronomer Cloud, you can sign in with a Google account, a GitHub account, or an email and password. Once you create an account, your authentication method cannot be changed.
+When you first authenticate to Astronomer Cloud, you can sign in with a Google account, a GitHub account, or an email and password.
 
 <div class="text--center">
   <img src="/img/docs/login.png" alt="Astronomer Cloud login screen" />
