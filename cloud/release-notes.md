@@ -29,9 +29,15 @@ The Astronomer Cloud CLI (`astrocloud`) is now generally available as the offici
 
 For more information on the Astronomer Cloud CLI, see [CLI Release Notes](cli-release-notes.md). For install instructions, read [Install the CLI](install-cli.md).
 
+### Multiple Authentication Methods for a Single User Account
+
+Astronomer now supports multiple authentication methods for a single user account. This means that as long as you're using a consistent email address, you now have the flexibility to authenticate with GitHub, Google, username/password, and/or [an external identity provider (idP)](configure-idp.md) at any time. Previously, a single user account could only be associated with one authentication method, which could not be changed after the account was created.
+
+This also means that all Organizations now have GitHub, Google, and username/password authentication methods enabled by default for all users.
+
 ### Additional Improvements
 
-- Changed the default RDS instance type for new Clusters from `db.r5.xlarge` to `db.r5.large`
+- Changed the default RDS instance type for new Clusters from `db.r5.xlarge` to `db.r5.large`, which represents a monthly cost reduction of ~50% for newly provisioned clusters. Customers with existing clusters will need to request a downscale via [Astronomer Support](https://support.astronomer.io)
 
 ## January 13, 2022
 
