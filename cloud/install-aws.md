@@ -70,6 +70,12 @@ When you first authenticate to Astronomer Cloud, you can sign in with a Google a
 
 If you're the first person from your team to authenticate, the Astronomer team will add you as a Workspace Admin to a new Workspace named after your Organization. From there, you'll be able to add other team members to that Workspace without Astronomer's assistance.
 
+:::tip
+
+After completing your initial installation, we recommend [setting up an identity provider (IdP)](configure-idp.md) so that users can log in to Astronomer directly from your IdP.
+
+:::
+
 ## Step 2: Share Information with Astronomer
 
 For the AWS account you created as a prerequisite, provide Astronomer with:
@@ -176,6 +182,7 @@ Once our team confirms that your Astronomer Cluster has been created, you are re
 
 Now that you have an Astronomer Cluster up and running, take a look at the docs below for information on how to start working in Astronomer:
 
+- [Set Up an Identity Provider](configure-idp.md)
 - [Install CLI](install-cli.md)
 - [Configure Deployments](configure-deployment.md)
 - [Deploy Code](deploy-code.md)
