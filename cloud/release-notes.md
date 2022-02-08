@@ -29,7 +29,7 @@ The Astronomer Cloud CLI (`astrocloud`) is now generally available as the offici
 
 For more information on the Astronomer Cloud CLI, see [CLI Release Notes](cli-release-notes.md). For install instructions, read [Install the CLI](install-cli.md).
 
-### Greater Flexibility with User Login
+### Multiple Authentication Methods for a Single User Account
 
 You can now log in to your Astronomer Cloud account with your email across all authentication methods, including GitHub, Google, username/password, and third-party IDP authentication (if configured). Regardless of the authentication type you use to log in, you will have a single user record associated with a single email address. This also means that all organizations now have GitHub, Google, and username/password authentication methods enabled by default for all users. 
 
