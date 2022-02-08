@@ -116,6 +116,7 @@
 
   --ifm-code-font-size: 95%;
   --ifm-font-family-base: Inter, sans-serif;
+  --ifm-font-family-monospace: Menlo, Monaco, Consolas,"Liberation Mono", "Courier New", monospace;
   --ifm-heading-font-weight: 600;
   --ifm-font-weight-bold: 600;
 }
