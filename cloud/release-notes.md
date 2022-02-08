@@ -31,7 +31,9 @@ For more information on the Astronomer Cloud CLI, see [CLI Release Notes](cli-re
 
 ### Multiple Authentication Methods for a Single User Account
 
-You can now log in to your Astronomer Cloud account with your email across all authentication methods, including GitHub, Google, username/password, and third-party IDP authentication (if configured). Regardless of the authentication type you use to log in, you will have a single user record associated with a single email address. This also means that all organizations now have GitHub, Google, and username/password authentication methods enabled by default for all users. 
+Astronomer now supports multiple authentication methods for a single user account. This means that as long as you're using a consistent email address, you now have the flexibility to authenticate with GitHub, Google, username/password, and/or [an external identity provider (idP)](configure-idp.md) at any time. Previously, a single user account could only be associated with one authentication method, which could not be changed after the account was created.
+
+This also means that all Organizations now have GitHub, Google, and username/password authentication methods enabled by default for all users.
 
 ### Additional Improvements
 
