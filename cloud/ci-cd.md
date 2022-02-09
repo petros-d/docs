@@ -185,11 +185,11 @@ To automate code deploys to a single Deployment using [GitHub Actions](https://g
     ```
 
 
-### Jenkins Script
+### Jenkins
 
-You can use the provided [Jenkins](https://www.jenkins.io/) script in any Git-based repository that hosts a single Astronomer project created via `astrocloud dev init`.  To do so:
+To automate code deploys to a single Deployment using [Jenkins](https://www.jenkins.io/), complete the following setup in a Git-based repository hosting an Astronomer project:
 
-1. At the root of your repository, add a file names `Jenkinsfile` that includes the following script:
+1. At the root of your repository, add a file named `Jenkinsfile` that includes the following script:
 
     ```jenkins
     pipeline {
@@ -217,24 +217,31 @@ You can use the provided [Jenkins](https://www.jenkins.io/) script in any Git-ba
     }
     ```
 
-2. At the root of your repository, create a file called `build.sh` and add the following to it:
+    Specifically, this Jenkinsfile deploys to Astronomer every time there is a merge to the `main` branch of your repository.
+
+2. Add the following environment variables in your repository:
+
+    - `ASTRONOMER_KEY_ID`: Your Deployment API key ID
+    - `ASTRONOMER_KEY_SECRET`: Your Deployment API key secret
+    - `ORGANIZATION_ID`: Your Organization ID
+    - `DEPLOYMENT_ID`: Your Deployment ID
+
+3. At the root of your repository, create a file called `build.sh` and add the following to it:
 
     ```sh
     # Create time stamp
     TAG=deploy-`date "+%Y-%m-%d-%HT%M-%S"`
 
-    # Step 1. Use the Access token in the `astro auth login` command
+    # Step 1. Authenticate to Astronomer's Docker registry with your Deployment API key ID and secret. This is equivalent to running `$ astrocloud auth login` via the Astronomer Cloud CLI.
     docker login images.astronomer.cloud -u $ASTRONOMER_KEY_ID -p $ASTRONOMER_KEY_SECRET
 
-    # Step 2. Request the Organization Id
-
-    # Step 3. Build the image
+    # Step 2. Build your Astronomer project into a tagged Docker image.
     docker build . -t images.astronomer.cloud/$ORGANIZATION_ID/$DEPLOYMENT_ID:$TAG
 
-    # Step 4. Push the image
+    # Step 3. Push that Docker image to Astronomer's Docker registry.
     docker push images.astronomer.cloud/$ORGANIZATION_ID/$DEPLOYMENT_ID:$TAG
 
-    # Step 5. Get the access token
+    # Step 4. Fetch an API access token with your Deployment API key ID and secret.
     echo "get token"
     TOKEN=$( curl --location --request POST "https://auth.astronomer.io/oauth/token" \
             --header "content-type: application/json" \
@@ -243,7 +250,7 @@ You can use the provided [Jenkins](https://www.jenkins.io/) script in any Git-ba
                 \"client_secret\": \"$ASTRONOMER_KEY_SECRET\",
                 \"audience\": \"astronomer-ee\",
                 \"grant_type\": \"client_credentials\"}" | jq -r '.access_token' )
-    # Step 6. Create the Image
+    # Step 5. Make a request to the Astronomer API that passes metadata from your new Docker image and creates a record for it.
     echo "get image id"
     IMAGE=$( curl --location --request POST "https://api.astronomer.io/hub/v1" \
             --header "Authorization: Bearer $TOKEN" \
@@ -257,7 +264,7 @@ You can use the provided [Jenkins](https://www.jenkins.io/) script in any Git-ba
                         }
                     }
                 }" | jq -r '.data.imageCreate.id')
-    # Step 7. Deploy the Image
+    # Step 6. Pass the repository URL for the Docker image to your Astronomer Deployment. This completes the deploy process and triggers your Scheduler and Workers to restart.
     echo "deploy image"
     curl --location --request POST "https://api.astronomer.io/hub/v1" \
             --header "Authorization: Bearer $TOKEN" \
@@ -273,10 +280,3 @@ You can use the provided [Jenkins](https://www.jenkins.io/) script in any Git-ba
                     }
                 }"
     ```
-
-3. Add the following environment variables in your repository:
-
-    - `ASTRONOMER_KEY_ID`: Your Deployment API key ID
-    - `ASTRONOMER_KEY_SECRET`: Your Deployment API key secret
-    - `ORGANIZATION_ID`: Your organization
-    - `DEPLOYMENT_ID`: Your Deployment ID
