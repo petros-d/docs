@@ -61,4 +61,4 @@ For example, a validation webhook can reject Deployment creation for any of the 
 - Fixed some confusing behavior the Git-Sync **SSH Key** field in the UI  
 - Fixed an issue where the Astronomer platform and Airflow could not communicate in environments where inter-namespace communication is disabled
 - Fixed an issue where users would frequently get 502 errors when logging in to the Astronomer UI
-- Fixed an issue users would get timeout issues when attempting to log in to an Astronomer installation on OpenShift
+- Fixed an issue where users would get timeout issues when attempting to log in to an Astronomer installation on OpenShift
