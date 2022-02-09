@@ -15,7 +15,7 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 
 **Latest CLI Version**: 1.0.0 ([Release notes](cli-release-notes.md))
 
-## February 10, 2022
+## February 11, 2022
 
 ### Monitor DAG Runs Across All Deployments in a Workspace
 
