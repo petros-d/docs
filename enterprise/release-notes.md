@@ -39,7 +39,7 @@ houston:
     preDeploymentValidationHookTimeout: 30000 # 30 sec
 ```
 
-For example, you can a validation webhook can reject Deployment creation for any of the following reasons:
+For example, a validation webhook can reject Deployment creation for any of the following reasons:
 
 - The namespace for the a Deployment is already in use.
 - The namespace for the a Deployment is in an incorrect format.
