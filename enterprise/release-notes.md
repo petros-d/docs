@@ -43,7 +43,7 @@ For example, a validation webhook can reject Deployment creation for any of the 
 
 - The namespace for a Deployment is already in use.
 - The namespace for a Deployment is in an incorrect format.
-- The user creating the Deployment is unauthorized to complete this action.
+- The user creating a Deployment is unauthorized to complete this action.
 
 ### Additional Improvements
 
