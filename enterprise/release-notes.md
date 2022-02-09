@@ -41,8 +41,8 @@ houston:
 
 For example, a validation webhook can reject Deployment creation for any of the following reasons:
 
-- The namespace for the a Deployment is already in use.
-- The namespace for the a Deployment is in an incorrect format.
+- The namespace for a Deployment is already in use.
+- The namespace for a Deployment is in an incorrect format.
 - The user creating the Deployment is unauthorized to complete this action.
 
 ### Additional Improvements
