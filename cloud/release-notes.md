@@ -15,6 +15,27 @@ If you have any questions or a bug to report, don't hesitate to reach out to [As
 
 **Latest CLI Version**: 1.0.0 ([Release notes](cli-release-notes.md))
 
+## February 10, 2022
+
+### Monitor DAG Runs Across All Deployments in a Workspace
+
+You can view key metrics about recent DAG runs through the new **DAGs** page in the Astronomer Cloud UI. Use this page to view DAG runs, including successes and failures, across all of your Deployments at a glance, or drill down to a specific DAG and see metrics about its recent runs.
+
+![DAGs page](/img/docs/dags-page.png)
+
+For more information about the **DAGs** page, see [Deployment Metrics](deployment-metrics#dag-runs).
+
+### Additional Improvements
+
+- Added more ways to sort pages with card views, such as the **Deployments** page
+- Added user avatars next to usernames in several places across the UI
+- A banner now appears in the UI if you are running an unsupported version of Astronomer Runtime on a Deployment
+- Equivalent CPU/GB usage now appears next to all AU sliders when configuring a Deployment's resource settings
+
+### Bug Fixes
+
+- Removed a non-functional **Environment** field from a Deployment's information page
+
 ## February 3, 2022
 
 ### Support for Third-Party Identity Providers
