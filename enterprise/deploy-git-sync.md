@@ -60,6 +60,8 @@ Workspace editors can configure a new or existing Airflow Deployment to use a gi
     - **Rev**: The commit reference of the branch that you want to sync with your Deployment
     - **Ssh Key**: The SSH private key for your Git repository
     - **Known Hosts**: The known_hosts for your Git provider, formatted as: `<host1>,<ip1> <public_key>`
+    - **Ephemeral Storage Overwrite Gigabytes**: The storage limit for your Git repository. If your Git repo is larger than 2GB, we recommend setting this slider to your repo size + 1 Gi.
+    - **Sync Timeout**: The maximum amount of seconds allowed for a sync. We recommend increasing this value if your repo is larger than 1GB.
 
 5. Save your changes.
 
