@@ -66,4 +66,4 @@ Once you configure this claim, your IDP group will be automatically imported to 
 
 ## Step 3: Add Teams to Workspaces and Deployments
 
-After configuring user groups on your IDP, Workspace Admins and Deployment Admins can configure those groups as Teams via the Astronomer UI. To learn more about adding and setting permissions for Teams via the Astronomer UI, read [User Permissions](workspace-permissions.md#via-teams)
+After configuring user groups on your IDP, Workspace Admins and Deployment Admins can configure those groups as Teams via the Astronomer UI. To learn more about adding and setting permissions for Teams via the Astronomer UI, read [User Permissions](workspace-permissions.md#via-teams).
