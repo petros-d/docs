@@ -29,7 +29,7 @@ For more information about the **DAGs** page, see [Deployment Metrics](deploymen
 
 - Added more ways to sort pages with card views, such as the **Deployments** page
 - Added user avatars next to usernames in several places across the UI
-- A banner now appears in the UI if you are running an unsupported version of Astronomer Runtime on a Deployment
+- A banner now appears in the UI if a Deployment is running an unsupported version of Astronomer Runtime
 - Equivalent CPU/GB usage now appears next to all AU sliders when configuring a Deployment's resource settings
 
 ### Bug Fixes
