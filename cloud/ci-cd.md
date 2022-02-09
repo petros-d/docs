@@ -264,6 +264,7 @@ To automate code deploys to a single Deployment using [Jenkins](https://www.jenk
                         }
                     }
                 }" | jq -r '.data.imageCreate.id')
+                
     # Step 6. Pass the repository URL for the Docker image to your Astronomer Deployment. This completes the deploy process and triggers your Scheduler and Workers to restart.
     echo "deploy image"
     curl --location --request POST "https://api.astronomer.io/hub/v1" \
