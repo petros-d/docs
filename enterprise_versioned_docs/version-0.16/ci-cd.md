@@ -136,7 +136,7 @@ Once you've created your new Service Account, grab the API Key that was immediat
 The first step of this pipeline will authenticate against the Docker registry that stores an individual Docker image for every code push or configuration change:
 
 ```bash
-docker login registry.$${BASE_DOMAIN} -u _ -p $${API_KEY_SECRET}
+docker login registry.${BASE_DOMAIN} -u _ -p $${API_KEY_SECRET}
 ```
 
 In this example:
