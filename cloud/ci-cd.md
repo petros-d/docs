@@ -124,7 +124,7 @@ The following section provides basic templates for configuring individual CI pip
 
 ### GitHub Actions
 
-You can use this template with a GitHub repository that hosts a single Astronomer project created via `astrocloud dev init`. To start using the template:
+To automate code deploys to a single Deployment using [GitHub Actions](https://github.com/features/actions), complete the following setup in a GitHub repository hosting an Astronomer project:
 
 1. Set the following as [GitHub secrets](https://docs.github.com/en/actions/reference/encrypted-secrets#creating-encrypted-secrets-for-a-repository):
 
@@ -195,7 +195,7 @@ You can use the provided [Jenkins](https://www.jenkins.io/) script in any Git-ba
     pipeline {
      agent any
        stages {
-         stage('Deploy to astronomer') {
+         stage('Deploy to Astronomer') {
            when {
             expression {
               return env.GIT_BRANCH == "origin/main"
