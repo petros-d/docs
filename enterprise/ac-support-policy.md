@@ -23,8 +23,8 @@ For guidelines on how to upgrade, read [Upgrade Apache Airflow on Astronomer](ma
 
 To meet the unique needs of different operating environments, Astronomer Certified versions fall into one of two release channels:
 
-- **Stable:** Includes the latest Astronomer and Airflow features
-- **Long-term Support (LTS):** Includes long-term testing, stability, and maintenance for a core set of features
+- **Stable:** Prioritizes the latest Astronomer and Airflow features
+- **Long-term Support (LTS):** Prioritizes long-term testing, stability, and maintenance for a core set of features
 
 For users that want the newest features from Astronomer and Apache Airflow on an incremental basis, we recommend following the stable release channel and upgrading to new versions as soon as they are made generally available. New versions of AC are issued regularly and depend on Apache Airflow's community release schedule.
 
@@ -114,15 +114,20 @@ Maintenance is discontinued the last day of the month for a given version. For e
 
 The following table contains the exact lifecycle for each published version of Astronomer Certified. These timelines are based on the LTS and Stable release channel maintenance policies.
 
+### Stable Releases
+
 | AC Version                                                                           | Release Date   | End of Maintenance Date |
 | ------------------------------------------------------------------------------------ | -------------- | ----------------------- |
 | [1.10.12](https://github.com/astronomer/ap-airflow/blob/master/1.10.12/CHANGELOG.md) | Sep 30, 2020   | February 2022*         |
 | [1.10.14](https://github.com/astronomer/ap-airflow/blob/master/1.10.14/CHANGELOG.md) | Dec 10, 2020   | February 2022*         |
-| [1.10.15](https://github.com/astronomer/ap-airflow/blob/master/1.10.15/CHANGELOG.md) (LTS) | March 19, 2021 | September 2022         |
 | [2.0](https://github.com/astronomer/ap-airflow/blob/master/2.0.0/CHANGELOG.md)     | Dec 17, 2020   | February 2022*         |
-| [2.1](https://github.com/astronomer/ap-airflow/blob/master/2.1.4/CHANGELOG.md) (LTS)     | May 21, 2021   | November 2022           |
 | [2.2](https://github.com/astronomer/ap-airflow/blob/master/2.2.0/CHANGELOG.md)     | Oct 12, 2021   | April 2022              |
 
 > *Given the wide usage of AC 1.10.12, 1.10.14, and 2.0, Astronomer has extended the maintenance period for those versions through February 2022.
+
+### LTS Releases
+
+| [1.10.15](https://github.com/astronomer/ap-airflow/blob/master/1.10.15/CHANGELOG.md) (LTS) | March 19, 2021 | September 2022         |
+| [2.1](https://github.com/astronomer/ap-airflow/blob/master/2.1.4/CHANGELOG.md) (LTS)     | May 21, 2021   | November 2022           |
 
 If you have any questions or concerns, reach out to [Astronomer Support](https://support.astronomer.io).
