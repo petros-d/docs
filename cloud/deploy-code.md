@@ -67,7 +67,6 @@ If you deploy code to a Deployment that is running a previous version of your co
 
     These new workers can execute downstream tasks of DAG runs that started before the code deploy occurred, meaning that DAG runs can occasionally fail due to downstream tasks running code from a different source than their upstream tasks. To limit these failures, we recommend implementing at least two retries at the DAG level as described in the [DAG Best Practices Airflow Guide](https://www.astronomer.io/guides/dag-best-practices).
 
-
 Astronomer sets a grace period of 24 hours for all workers to allow running tasks to continue executing. This grace period is not configurable. If a task does not complete within 24 hours, its worker will be terminated. Airflow will mark the task as a [zombie](https://airflow.apache.org/docs/apache-airflow/stable/concepts/tasks.html#zombie-undead-tasks) and it will retry according to the task's retry policy. This is to ensure that our team can reliably upgrade and maintain Astronomer as a service.
 
 :::tip
