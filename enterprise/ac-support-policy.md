@@ -120,7 +120,7 @@ The following table contains the exact lifecycle for each published version of A
 | ------------------------------------------------------------------------------------------ | --------------- | -------------- | ----------------------- |
 | [1.10.12](https://github.com/astronomer/ap-airflow/blob/master/1.10.12/CHANGELOG.md)       | Stable          | Sep 30, 2020   | February 2022*         |
 | [1.10.14](https://github.com/astronomer/ap-airflow/blob/master/1.10.14/CHANGELOG.md)       | Stable          | Dec 10, 2020   | February 2022*         |
-| [1.10.15](https://github.com/astronomer/ap-airflow/blob/master/1.10.15/CHANGELOG.md) (LTS) | Stable          | March 19, 2021 | September 2022          |
+| [1.10.15](https://github.com/astronomer/ap-airflow/blob/master/1.10.15/CHANGELOG.md) | LTS          | March 19, 2021 | September 2022          |
 | [2.0](https://github.com/astronomer/ap-airflow/blob/master/2.0.0/CHANGELOG.md)             | Stable          | Dec 17, 2020   | February 2022*         |
 | [2.1](https://github.com/astronomer/ap-airflow/blob/master/2.1.4/CHANGELOG.md)       | LTS          | May 21, 2021   | November 2022           |
 | [2.2](https://github.com/astronomer/ap-airflow/blob/master/2.2.0/CHANGELOG.md)             | Stable          | Oct 12, 2021   | April 2022              |
