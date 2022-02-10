@@ -8,7 +8,7 @@ module.exports = {
   noIndex: false,
   onBrokenLinks: 'error',
   onBrokenMarkdownLinks: 'error',
-  favicon: 'img/favicon.svg',
+  favicon: 'img/favicon-32x32.png',
   organizationName: 'astronomer', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
   themeConfig: {
@@ -22,7 +22,7 @@ module.exports = {
 
       // Optional: see doc section below
       appId: 'TTRQ0VJY4D',
-      inputSelector:'.DocSearch',
+      inputSelector: '.DocSearch',
       // Optional: Algolia search parameters
       searchParameters: {
       },
@@ -182,7 +182,7 @@ module.exports = {
         gtag: {
           trackingID: 'G-W97HK48NPT',
           anonymizeIP: true,
-          },
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -200,18 +200,18 @@ module.exports = {
         id: 'enterprise',
         routeBasePath: 'enterprise',
         editUrl: ({ docPath }) =>
-            `https://github.com/astronomer/docs/blob/main/enterprise/${docPath}`,
+          `https://github.com/astronomer/docs/blob/main/enterprise/${docPath}`,
         editCurrentVersion: true,
         sidebarPath: require.resolve('./sidebarsEnterprise.js'),
         path: 'enterprise',
         lastVersion: 'current',
         versions: {
-        current: {
-          label: '0.27',
-          path: '',
-          banner: 'none',
-         },
-       },
+          current: {
+            label: '0.27',
+            path: '',
+            banner: 'none',
+          },
+        },
       },
     ],
   ],
