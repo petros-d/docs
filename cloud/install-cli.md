@@ -65,13 +65,13 @@ brew install astronomer/cloud/astrocloud
     - AMD64:
 
         ```powershell
-        Invoke-WebRequest -Uri https://goreleaserdev.blob.core.windows.net/goreleaser-test-container/releases/v0.0.2-alpha/cloud-cli_0.0.2-alpha_Windows_x86_64.tar.gz -o astrocloudcli.tar.gz
+        Invoke-WebRequest -Uri https://goreleaserdev.blob.core.windows.net/goreleaser-test-container/releases/v1.0.0/cloud-cli_1.0.0_Windows_x86_64.tar.gz -o astrocloudcli.tar.gz
         ```
 
     - ARM64:
 
         ```powershell
-        Invoke-WebRequest -Uri https://goreleaserdev.blob.core.windows.net/goreleaser-test-container/releases/v0.0.2-alpha/cloud-cli_0.0.2-alpha_Windows_arm64.tar.gz -OutFile astrocloudcli.tar.gz
+        Invoke-WebRequest -Uri https://goreleaserdev.blob.core.windows.net/goreleaser-test-container/releases/v1.0.0/cloud-cli_1.0.0_Windows_arm64.tar.gz -OutFile astrocloudcli.tar.gz
         ```
 
 3. Run the following command to unzip the executable:
